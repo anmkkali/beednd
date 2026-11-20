@@ -1,1 +1,10 @@
-{}
+{
+  "description": "Browse curated deals and discounts in one place, helping shoppers quickly discover savings on products and offers.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
