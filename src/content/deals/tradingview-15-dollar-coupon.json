@@ -1,0 +1,35 @@
+{
+  "id": "tradingview-15-dollar-coupon",
+  "slug": "tradingview-15-dollar-coupon",
+  "title": "TradingView Promo Code 2026: $15 Discount on 2nd Bill + Up to 17% Off",
+  "short_description": "Get TradingView promo code with $15 discount value after your first subscription purchase. Save up to 17% extra with annual billing.",
+  "brand_id": "tradingview",
+  "country": "GLOBAL",
+  "cities": [],
+  "areas": [],
+  "branch_info": [],
+  "category": "hosting-software",
+  "deal_type": "promo-code",
+  "discount_type": "fixed_amount",
+  "discount_value": "$15 OFF",
+  "numeric_discount_percent": 17,
+  "promo_code": "TV15SAVE",
+  "terms_and_conditions": [
+    "Valid for new paid members signing up through authorized link.",
+    "$15 credit applies toward subsequent monthly or annual renewal.",
+    "Includes 30-day trial of Pro/Premium features."
+  ],
+  "start_date": "2026-01-01T00:00:00Z",
+  "end_date": "2026-12-31T23:59:59Z",
+  "source_url": "https://www.tradingview.com/gopro",
+  "affiliate_url": "https://www.tradingview.com/?aff_id=dealssite",
+  "last_verified_at": "2026-11-21T00:15:00Z",
+  "status": "active",
+  "is_featured": false,
+  "is_sponsored": false,
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=tradingview.com&sz=128",
+    "alt": "TradingView Promo Code"
+  },
+  "tags": ["tradingview", "finance", "stocks", "software", "coupon code"]
+}

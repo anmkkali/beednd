@@ -1,0 +1,28 @@
+---
+interface Props {
+  slotType: 'leaderboard' | 'sidebar' | 'infeed';
+  adClient?: string;
+  adSlot?: string;
+}
+
+const { slotType, adClient = 'ca-pub-XXXXXXXXXX', adSlot = '1234567890' } = Astro.props;
+---
+
+<div class={`ad-container my-4 text-center select-none overflow-hidden ${
+  slotType === 'leaderboard' ? 'ad-slot-leaderboard' :
+  slotType === 'sidebar' ? 'ad-slot-sidebar' : 'ad-slot-infeed'
+}`}>
+  <!-- Zero CLS Placeholder with subtle badge -->
+  <div class="w-full h-full min-h-[90px] bg-base-900/60 border border-base-800 rounded-xl flex flex-col items-center justify-center p-2 relative group">
+    <span class="absolute top-1 right-2 text-[9px] text-gray-600 uppercase tracking-widest font-mono">
+      Advertisement
+    </span>
+    <div class="text-xs text-gray-500 flex items-center space-x-1.5">
+      <span>📢</span>
+      <span class="font-medium">Google AdSense Partner Spot</span>
+    </div>
+    <span class="text-[10px] text-gray-600 mt-0.5">
+      Targeted & Verified Retail Offers
+    </span>
+  </div>
+</div>

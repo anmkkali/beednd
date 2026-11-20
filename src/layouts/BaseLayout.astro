@@ -1,0 +1,85 @@
+---
+import Header from '../components/common/Header.astro';
+import Footer from '../components/common/Footer.astro';
+import LeftSidebar from '../components/common/LeftSidebar.astro';
+import PagefindModal from '../components/search/PagefindModal.astro';
+import MyCardSelector from '../components/filters/MyCardSelector.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  activeTopic?: string;
+  activeCategory?: string;
+  structuredData?: any;
+}
+
+const {
+  title,
+  description = "DealsSite - Discover verified retail discounts, coupons, bank card promotions, and store sales across Pakistan and the United States.",
+  image = "/og-image.jpg",
+  activeTopic = '',
+  activeCategory = 'all',
+  structuredData
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://dealssite.com');
+---
+
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- Primary Meta Tags -->
+    <title>{title} | DealsSite</title>
+    <meta name="title" content={`${title} | DealsSite`} />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={`${title} | DealsSite`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={`${title} | DealsSite`} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={image} />
+
+    <!-- Schema.org Structured Data -->
+    {structuredData && (
+      <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+    )}
+  </head>
+  <body class="bg-base-950 text-gray-100 flex flex-col min-h-screen">
+    <!-- Header with Top Banner -->
+    <Header />
+
+    <!-- Main Container with Resourify 2-Column Sidebar Layout -->
+    <div class="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-6 flex-1 flex gap-8">
+      <!-- Resourify Left Sticky Topics & Categories Panel -->
+      <LeftSidebar activeTopic={activeTopic} activeCategory={activeCategory} />
+
+      <!-- Center Main Content Feed -->
+      <main class="flex-1 min-w-0 pb-16">
+        <slot />
+      </main>
+    </div>
+
+    <!-- Global Footer -->
+    <Footer />
+
+    <!-- Global Modals (Instant Search & My Card) -->
+    <PagefindModal />
+    <MyCardSelector />
+  </body>
+</html>

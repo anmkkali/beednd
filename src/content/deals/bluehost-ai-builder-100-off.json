@@ -1,0 +1,35 @@
+{
+  "id": "bluehost-ai-builder-100-off",
+  "slug": "bluehost-ai-builder-100-off",
+  "title": "Bluehost AI Builder — Get 100% Off All AI Builder Plans Worth $80",
+  "short_description": "Apply code FREEMONTH at checkout to get 100% off on all eligible AI Builder website plans.",
+  "brand_id": "bluehost",
+  "country": "GLOBAL",
+  "cities": [],
+  "areas": [],
+  "branch_info": [],
+  "category": "hosting-software",
+  "deal_type": "promo-code",
+  "discount_type": "percentage",
+  "discount_value": "100% OFF",
+  "numeric_discount_percent": 100,
+  "promo_code": "FREEMONTH",
+  "terms_and_conditions": [
+    "Valid for new customers on initial billing period.",
+    "Applies to all standalone AI Builder plans.",
+    "Credit card verification required at checkout ($0 charge)."
+  ],
+  "start_date": "2026-01-01T00:00:00Z",
+  "end_date": "2026-12-31T23:59:59Z",
+  "source_url": "https://www.bluehost.com/special/ai-builder",
+  "affiliate_url": "https://www.bluehost.com/track/dealssite",
+  "last_verified_at": "2026-11-21T02:00:00Z",
+  "status": "active",
+  "is_featured": true,
+  "is_sponsored": true,
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=bluehost.com&sz=128",
+    "alt": "Bluehost 100% Off AI Builder Promo"
+  },
+  "tags": ["ai", "website builder", "free hosting", "promo code"]
+}

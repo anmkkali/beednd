@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import DealBannerCard from '../../components/deals/DealBannerCard.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const brands = await getCollection('brands');
+  const deals = await getCollection('deals');
+
+  return brands.map(brand => {
+    const brandDeals = deals.filter(d => d.data.brand_id === brand.data.id);
+    return {
+      params: { slug: brand.data.slug },
+      props: { brand: brand.data, deals: brandDeals }
+    };
+  });
+}
+
+const { brand, deals } = Astro.props;
+---
+
+<BaseLayout 
+  title={`${brand.name} Promo Codes, Coupons & Sales`}
+  description={`Find verified ${brand.name} discount codes, store clearance sales, and bank discounts.`}
+>
+  <div class="mb-8">
+    <div class="flex items-center space-x-4 mb-4">
+      <div class="w-14 h-14 rounded-2xl bg-base-900 border border-base-700 p-2.5 flex items-center justify-center">
+        <img src={brand.logo_url} alt={`${brand.name} logo`} class="w-full h-full object-contain" />
+      </div>
+      <div>
+        <h1 class="text-2xl sm:text-3xl font-black text-white">
+          {brand.name} Discounts & Deals
+        </h1>
+        <p class="text-xs text-gray-400 mt-1">{brand.short_bio}</p>
+      </div>
+    </div>
+
+    <div class="flex items-center space-x-3 text-xs">
+      <a 
+        href={brand.website_url} 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="text-brand-blue hover:underline"
+      >
+        Official Website &rarr;
+      </a>
+      <span class="text-gray-600">•</span>
+      <span class="text-emerald-400 font-mono">{deals.length} Active Verified Deals</span>
+    </div>
+  </div>
+
+  <div class="space-y-4">
+    {deals.length > 0 ? (
+      deals.map(deal => (
+        <DealBannerCard deal={deal.data} brandName={brand.name} brandLogo={brand.logo_url} />
+      ))
+    ) : (
+      <div class="p-8 text-center text-gray-500 bg-base-900 border border-base-800 rounded-xl">
+        No active deals currently for {brand.name}. Check back soon!
+      </div>
+    )}
+  </div>
+</BaseLayout>

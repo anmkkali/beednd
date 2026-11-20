@@ -1,0 +1,184 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import StackFinder from '../../components/deals/StackFinder.astro';
+import AdSlot from '../../components/ads/AdSlot.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const deals = await getCollection('deals');
+  const brands = await getCollection('brands');
+  const brandMap = new Map(brands.map(b => [b.data.id, b.data]));
+
+  return deals.map(deal => ({
+    params: { slug: deal.data.slug },
+    props: { 
+      deal: deal.data,
+      brand: brandMap.get(deal.data.brand_id)
+    }
+  }));
+}
+
+const { deal, brand } = Astro.props;
+
+// Schema.org Structured Data for Google Rich Snippets
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SaleEvent",
+      "name": deal.title,
+      "description": deal.short_description,
+      "startDate": deal.start_date,
+      "endDate": deal.end_date || undefined,
+      "eventStatus": deal.status === 'active' ? "https://schema.org/EventScheduled" : "https://schema.org/EventCancelled",
+      "organizer": {
+        "@type": "Organization",
+        "name": brand?.name || deal.brand_id,
+        "url": brand?.website_url || deal.source_url
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": deal.discount_value,
+      "category": deal.category,
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": deal.status === 'active' ? "https://schema.org/InStock" : "https://schema.org/Discontinued",
+      "url": deal.affiliate_url,
+      "seller": {
+        "@type": "Organization",
+        "name": brand?.name || deal.brand_id
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={`${deal.title} — ${brand?.name || ''}`}
+  description={deal.short_description}
+  structuredData={structuredData}
+>
+  <!-- Breadcrumb -->
+  <nav class="flex items-center space-x-2 text-xs text-gray-500 mb-4" aria-label="Breadcrumb">
+    <a href="/" class="hover:text-brand-blue">Home</a>
+    <span>/</span>
+    <a href={`/categories/${deal.category}`} class="hover:text-brand-blue capitalize">{deal.category.replace('-', ' ')}</a>
+    <span>/</span>
+    <span class="text-gray-300 truncate max-w-xs">{brand?.name || deal.brand_id}</span>
+  </nav>
+
+  <!-- Deal Core Container -->
+  <div class="bg-base-900 border border-base-700 rounded-2xl p-6 sm:p-8 mb-8">
+    <!-- Header with Badges -->
+    <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-xl bg-base-800 border border-base-700 p-1.5 flex items-center justify-center">
+          <img 
+            src={brand?.logo_url || `https://www.google.com/s2/favicons?domain=${deal.brand_id}.com&sz=64`} 
+            alt={`${brand?.name} logo`}
+            class="w-full h-full object-contain"
+          />
+        </div>
+        <div>
+          <a href={`/brands/${deal.brand_id}`} class="text-sm font-bold text-gray-300 hover:text-brand-blue">
+            {brand?.name}
+          </a>
+          <div class="flex items-center space-x-2 text-[11px] text-gray-500">
+            <span>Verified {deal.last_verified_at.split('T')[0]}</span>
+            <span>•</span>
+            <span class="text-emerald-400 font-medium">100% Guaranteed</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-center space-x-2">
+        <span class="text-xs font-bold px-3 py-1 bg-brand-blue/15 text-brand-blue border border-brand-blue/30 rounded-lg">
+          {deal.discount_value}
+        </span>
+      </div>
+    </div>
+
+    <!-- Title & Description -->
+    <h1 class="text-xl sm:text-2xl font-black text-white mb-3 leading-snug">
+      {deal.title}
+    </h1>
+    <p class="text-sm text-gray-300 leading-relaxed mb-6">
+      {deal.short_description}
+    </p>
+
+    <!-- Redemption & Action Box -->
+    <div class="bg-base-950 border border-base-800 rounded-xl p-5 mb-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      {deal.promo_code ? (
+        <div class="w-full sm:w-auto">
+          <div class="text-[10px] text-gray-400 uppercase tracking-wider font-semibold mb-1">Coupon Promo Code</div>
+          <div class="flex items-center space-x-2">
+            <code class="text-base font-black text-emerald-400 font-mono tracking-wider bg-base-900 px-3 py-1.5 rounded-lg border border-emerald-500/30">
+              {deal.promo_code}
+            </code>
+            <button 
+              type="button"
+              class="copy-code-btn px-4 py-2 bg-emerald-500/20 text-emerald-300 hover:bg-emerald-500/30 font-bold text-xs rounded-lg border border-emerald-500/40 transition-colors"
+              data-code={deal.promo_code}
+              data-outbound={deal.affiliate_url}
+            >
+              Copy Code & Visit Store
+            </button>
+          </div>
+        </div>
+      ) : (
+        <div>
+          <div class="text-[10px] text-gray-400 uppercase tracking-wider font-semibold mb-1">Promotion Status</div>
+          <div class="text-sm font-bold text-white">No Code Required (Direct Store Discount)</div>
+        </div>
+      )}
+
+      <a 
+        href={`/go/${deal.slug}`}
+        target="_blank"
+        rel="nofollow sponsored noopener noreferrer"
+        class="w-full sm:w-auto text-center px-6 py-2.5 bg-brand-blue text-base-950 font-black text-sm rounded-xl hover:bg-brand-blue/90 shadow-lg shadow-brand-blue/20 transition-all"
+      >
+        Open Store &rarr;
+      </a>
+    </div>
+
+    <!-- Stack Finder Calculation -->
+    {deal.bank_details && (
+      <StackFinder 
+        baseSalePercent={deal.numeric_discount_percent || 40} 
+        bankCashbackPercent={deal.bank_details.cashback_percent || 15}
+        promoCodePercent={5}
+      />
+    )}
+
+    <!-- Terms & Conditions -->
+    <div class="border-t border-base-800 pt-6 mt-6">
+      <h2 class="text-sm font-bold text-white mb-3">Terms & Verified Conditions</h2>
+      <ul class="space-y-1.5 text-xs text-gray-400 list-disc list-inside">
+        {deal.terms_and_conditions.map(term => (
+          <li>{term}</li>
+        ))}
+      </ul>
+    </div>
+
+    <!-- Branch Info if Offline -->
+    {deal.branch_info && deal.branch_info.length > 0 && (
+      <div class="border-t border-base-800 pt-6 mt-6">
+        <h2 class="text-sm font-bold text-white mb-3">Participating Branches & Locations</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          {deal.branch_info.map(branch => (
+            <div class="p-3 bg-base-800 rounded-lg border border-base-700 text-xs">
+              <div class="font-bold text-white">{branch.branch_name}</div>
+              <div class="text-gray-400 mt-0.5">{branch.address}</div>
+              {branch.phone && <div class="text-brand-blue font-mono mt-1">{branch.phone}</div>}
+            </div>
+          ))}
+        </div>
+      </div>
+    )}
+  </div>
+
+  <!-- In-Content Ad Placement -->
+  <AdSlot slotType="infeed" />
+</BaseLayout>

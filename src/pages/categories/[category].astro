@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import DealBannerCard from '../../components/deals/DealBannerCard.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const categories = [
+    'clothing-fashion',
+    'tech-electronics',
+    'hosting-software',
+    'food-dining',
+    'beauty-wellness',
+    'travel-lifestyle',
+    'groceries-essentials'
+  ];
+  const allDeals = await getCollection('deals');
+  const allBrands = await getCollection('brands');
+  const brandMap = new Map(allBrands.map(b => [b.data.id, b.data]));
+
+  return categories.map(cat => {
+    const catDeals = allDeals.filter(d => d.data.category === cat);
+    return {
+      params: { category: cat },
+      props: { 
+        categoryName: cat.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' & '),
+        categoryId: cat,
+        deals: catDeals,
+        brandMap
+      }
+    };
+  });
+}
+
+const { categoryName, categoryId, deals, brandMap } = Astro.props;
+---
+
+<BaseLayout 
+  title={`${categoryName} Promo Codes & Deals`}
+  description={`Browse verified ${categoryName} coupon codes, discounts, and store sales.`}
+  activeTopic={categoryId}
+>
+  <div class="mb-8">
+    <div class="flex items-center space-x-2 text-xs text-gray-500 mb-1">
+      <a href="/" class="hover:text-brand-blue">Home</a>
+      <span>/</span>
+      <a href="/categories" class="hover:text-brand-blue">Categories</a>
+      <span>/</span>
+      <span class="text-gray-300">{categoryName}</span>
+    </div>
+    
+    <h1 class="text-2xl sm:text-3xl font-black text-white">
+      {categoryName} Discounts & Coupons
+    </h1>
+    <p class="text-xs sm:text-sm text-gray-400 mt-1">
+      Verified deals, cashbacks, and store promotional vouchers for {categoryName}.
+    </p>
+  </div>
+
+  <div class="space-y-4">
+    {deals.length > 0 ? (
+      deals.map(deal => (
+        <DealBannerCard 
+          deal={deal.data} 
+          brandName={brandMap.get(deal.data.brand_id)?.name}
+          brandLogo={brandMap.get(deal.data.brand_id)?.logo_url} 
+        />
+      ))
+    ) : (
+      <div class="p-8 text-center text-gray-500 bg-base-900 border border-base-800 rounded-xl">
+        No active deals currently in {categoryName}. Check back shortly!
+      </div>
+    )}
+  </div>
+</BaseLayout>

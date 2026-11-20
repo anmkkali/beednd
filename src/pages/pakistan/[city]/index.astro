@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import DealBannerCard from '../../../components/deals/DealBannerCard.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const cities = ['karachi', 'lahore', 'islamabad', 'rawalpindi'];
+  const allDeals = await getCollection('deals');
+  const allBrands = await getCollection('brands');
+  const brandMap = new Map(allBrands.map(b => [b.data.id, b.data]));
+
+  return cities.map(city => {
+    const cityDeals = allDeals.filter(d => 
+      d.data.cities.some(c => c.toLowerCase() === city.toLowerCase())
+    );
+    return {
+      params: { city },
+      props: { cityName: city.charAt(0).toUpperCase() + city.slice(1), deals: cityDeals, brandMap }
+    };
+  });
+}
+
+const { cityName, deals, brandMap } = Astro.props;
+---
+
+<BaseLayout 
+  title={`Best Deals & Discounts in ${cityName}, Pakistan`}
+  description={`Explore verified in-store and online retail sales, mall branch promotions, and bank card offers in ${cityName}.`}
+>
+  <div class="mb-8">
+    <div class="flex items-center space-x-2 text-xs text-gray-500 mb-1">
+      <a href="/" class="hover:text-brand-blue">Home</a>
+      <span>/</span>
+      <a href="/pakistan" class="hover:text-brand-blue">Pakistan</a>
+      <span>/</span>
+      <span class="text-gray-300">{cityName}</span>
+    </div>
+    
+    <h1 class="text-2xl sm:text-3xl font-black text-white">
+      Discounts & In-Store Sales in {cityName}
+    </h1>
+    <p class="text-xs sm:text-sm text-gray-400 mt-1">
+      Discover physical outlet sales and bank card discounts across top malls and shopping hubs in {cityName}.
+    </p>
+  </div>
+
+  <div class="space-y-4">
+    {deals.length > 0 ? (
+      deals.map(deal => (
+        <DealBannerCard 
+          deal={deal.data} 
+          brandName={brandMap.get(deal.data.brand_id)?.name}
+          brandLogo={brandMap.get(deal.data.brand_id)?.logo_url} 
+        />
+      ))
+    ) : (
+      <div class="p-8 text-center text-gray-500 bg-base-900 border border-base-800 rounded-xl">
+        No active in-store deals currently found for {cityName}.
+      </div>
+    )}
+  </div>
+</BaseLayout>

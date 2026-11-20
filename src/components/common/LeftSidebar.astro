@@ -1,0 +1,124 @@
+---
+interface Props {
+  activeCategory?: string;
+  activeTopic?: string;
+}
+
+const { activeCategory = 'all', activeTopic = '' } = Astro.props;
+
+const topics = [
+  { id: 'clothing-fashion', name: 'Clothing & Fashion', icon: '👕', count: 48 },
+  { id: 'hosting-software', name: 'Hosting & AI Tools', icon: '🌐', count: 35 },
+  { id: 'tech-electronics', name: 'Tech & Electronics', icon: '💻', count: 42 },
+  { id: 'food-dining', name: 'Food & Dining', icon: '🍔', count: 28 },
+  { id: 'beauty-wellness', name: 'Beauty & Wellness', icon: '💄', count: 19 },
+  { id: 'travel-lifestyle', name: 'Travel & Hotels', icon: '✈️', count: 14 },
+];
+
+const dealTypes = [
+  { id: 'all', name: 'All Offers', icon: '⚡', count: 186 },
+  { id: 'promo-code', name: 'Promo Codes', icon: '🏷️', count: 64 },
+  { id: 'bank-card', name: 'Bank Card Deals', icon: '💳', count: 52 },
+  { id: 'store-sale', name: 'Store Sales', icon: '🛍️', count: 45 },
+  { id: 'in-store', name: 'In-Store / Offline', icon: '🏬', count: 38 },
+  { id: 'freebie', name: 'Freebies & Trials', icon: '🎁', count: 15 },
+];
+
+const cities = [
+  { id: 'karachi', name: 'Karachi', count: 42 },
+  { id: 'lahore', name: 'Lahore', count: 39 },
+  { id: 'islamabad', name: 'Islamabad', count: 24 },
+];
+---
+
+<aside class="w-64 shrink-0 hidden lg:block sticky top-20 h-[calc(100vh-5rem)] overflow-y-auto pr-3 text-xs select-none">
+  <!-- Topics (Main Categories) -->
+  <div class="mb-6">
+    <div class="text-[11px] font-bold tracking-wider uppercase text-gray-400 mb-2.5 px-3">
+      Topics
+    </div>
+    <nav class="space-y-0.5">
+      {topics.map((t) => (
+        <a 
+          href={`/categories/${t.id}`}
+          class:list={[
+            "flex items-center justify-between px-3 py-2 rounded-lg transition-colors group",
+            activeTopic === t.id 
+              ? "bg-brand-blue/10 text-brand-blue font-semibold border border-brand-blue/30" 
+              : "text-gray-300 hover:bg-base-800 hover:text-white"
+          ]}
+        >
+          <div class="flex items-center space-x-2.5 truncate">
+            <span class="text-sm">{t.icon}</span>
+            <span class="truncate">{t.name}</span>
+          </div>
+          <span class="text-[10px] text-gray-500 font-mono bg-base-900 px-1.5 py-0.5 rounded border border-base-700">
+            {t.count}
+          </span>
+        </a>
+      ))}
+    </nav>
+  </div>
+
+  <!-- Deal Types (Badges/Filters) -->
+  <div class="mb-6">
+    <div class="text-[11px] font-bold tracking-wider uppercase text-gray-400 mb-2.5 px-3">
+      Deal Types
+    </div>
+    <nav class="space-y-0.5">
+      {dealTypes.map((dt) => (
+        <a 
+          href={`/?type=${dt.id}`}
+          class:list={[
+            "flex items-center justify-between px-3 py-2 rounded-lg transition-colors group",
+            activeCategory === dt.id 
+              ? "bg-base-800 text-white font-medium border border-base-700" 
+              : "text-gray-400 hover:bg-base-850 hover:text-gray-200"
+          ]}
+        >
+          <div class="flex items-center space-x-2.5 truncate">
+            <span class="text-sm">{dt.icon}</span>
+            <span class="truncate">{dt.name}</span>
+          </div>
+          <span class="text-[10px] text-gray-500 font-mono">
+            {dt.count}
+          </span>
+        </a>
+      ))}
+    </nav>
+  </div>
+
+  <!-- In-Store Cities -->
+  <div class="mb-6">
+    <div class="text-[11px] font-bold tracking-wider uppercase text-gray-400 mb-2.5 px-3">
+      Cities (Offline Deals)
+    </div>
+    <div class="space-y-0.5">
+      {cities.map((c) => (
+        <a 
+          href={`/pakistan/${c.id}`}
+          class="flex items-center justify-between px-3 py-1.5 text-gray-400 hover:text-brand-blue hover:bg-base-800/50 rounded-lg transition-colors"
+        >
+          <span>📍 {c.name}</span>
+          <span class="text-[10px] text-gray-500">{c.count}</span>
+        </a>
+      ))}
+    </div>
+  </div>
+
+  <!-- Sponsored Sidebar Ad Placement (Zero CLS) -->
+  <div class="p-3 bg-base-900/80 border border-base-700/60 rounded-xl mb-4">
+    <div class="flex items-center justify-between text-[10px] text-gray-500 mb-1.5 uppercase tracking-wider font-semibold">
+      <span>Sponsored Partner</span>
+      <span class="bg-brand-gold/10 text-brand-gold px-1 rounded">Ad</span>
+    </div>
+    <div class="aspect-[4/3] bg-base-800 rounded-lg flex flex-col items-center justify-center p-3 text-center border border-dashed border-base-700">
+      <span class="text-xl mb-1">🚀</span>
+      <span class="text-xs font-bold text-white mb-0.5">Bluehost Pro Cloud</span>
+      <span class="text-[10px] text-gray-400">Save 75% on High-Speed Hosting</span>
+      <a href="/deals/bluehost-ai-builder-100-off" class="mt-2 text-[10px] bg-brand-blue text-base-950 font-bold px-2.5 py-1 rounded hover:bg-brand-blue/90">
+        Claim 75% Off &rarr;
+      </a>
+    </div>
+  </div>
+</aside>

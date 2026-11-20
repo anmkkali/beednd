@@ -1,0 +1,47 @@
+name: Automated Deal Ingestion & Enrichment
+
+on:
+  schedule:
+    - cron: '0 4,16 * * *' # Twice daily at 04:00 & 16:00 UTC
+  workflow_dispatch:
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+          cache-dependency-path: 'scripts/requirements.txt'
+
+      - name: Install Dependencies
+        run: |
+          pip install -r scripts/requirements.txt
+
+      - name: Run Pipeline
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python scripts/run_pipeline.py
+
+      - name: Commit & Push New Deals
+        run: |
+          git config user.name "dealssite-bot[bot]"
+          git config user.email "bot@dealssite.com"
+          git add src/content/deals/
+          if git diff --staged --quiet; then
+            echo "No new deals to commit."
+          else
+            git commit -m "chore(deals): automated batch deal ingestion [skip ci]"
+            git push origin main
+            if [ -n "${{ secrets.CLOUDFLARE_PAGES_DEPLOY_HOOK }}" ]; then
+              curl -X POST -d {} "${{ secrets.CLOUDFLARE_PAGES_DEPLOY_HOOK }}"
+            fi
+          fi
