@@ -28,6 +28,11 @@ function customSitemap() {
 
 export default defineConfig({
   site: 'https://dealssite.com',
+  prefetch: {
+    prefetchAll: true,
+    defaultStrategy: 'hover',
+  },
+  compressHTML: true,
   integrations: [
     tailwind({
       applyBaseStyles: false,
@@ -39,5 +44,4 @@ export default defineConfig({
     format: 'directory'
   }
 });
-
 

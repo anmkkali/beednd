@@ -1,5 +1,6 @@
 ---
 import Icon from '../common/Icon.astro';
+import BrandMark from '../common/BrandMark.astro';
 
 interface Props {
   deal: {
@@ -28,83 +29,92 @@ interface Props {
 
 const { deal, brandName = deal.brand_id, brandLogo } = Astro.props;
 const formattedType = deal.deal_type.replaceAll('-', ' ');
+const searchTags = [
+  ...(deal.tags || []),
+  deal.brand_id,
+  brandName,
+  deal.title,
+  deal.short_description,
+].join(' ').toLowerCase();
 ---
 
 <article
-  class="group border border-base-700 bg-base-950 p-4 transition-colors hover:bg-base-900 sm:p-5"
+  class="group border-b editorial-rule py-6 transition-colors first:border-t hover:bg-base-900/45 px-2 sm:px-4"
   data-deal-id={deal.id}
   data-market={deal.country || 'GLOBAL'}
   data-category={deal.category}
-  data-tags={(deal.tags || []).join(' ').toLowerCase()}
+  data-tags={searchTags}
 >
-  <div class="flex items-start gap-4">
-    <a href={`/brands/${deal.brand_id}`} class="flex h-12 w-12 shrink-0 items-center justify-center border border-base-700 bg-white p-2">
-      <img
-        src={brandLogo || `https://www.google.com/s2/favicons?domain=${deal.brand_id}.com&sz=64`}
-        alt={`${brandName} logo`}
-        class="h-full w-full object-contain"
-        loading="lazy"
-        width="36"
-        height="36"
-      />
+  <div class="flex items-start gap-4 sm:gap-5">
+    <a href={`/brands/${deal.brand_id}`} aria-label={`${brandName} deals`}>
+      <BrandMark name={brandName} logoUrl={brandLogo} size="md" />
     </a>
 
     <div class="min-w-0 flex-1">
-      <div class="mb-1.5 flex flex-wrap items-center gap-x-2 gap-y-1 text-[11px]">
-        <a href={`/brands/${deal.brand_id}`} class="font-bold uppercase tracking-wide text-gray-300 hover:text-brand-blue">{brandName}</a>
-        <span class="text-gray-700">/</span>
-        <span class="capitalize text-gray-500">{formattedType}</span>
-        {deal.country && deal.country !== 'GLOBAL' && (
-          <>
-            <span class="text-gray-700">/</span>
-            <span class="text-gray-500">{deal.country}</span>
-          </>
-        )}
-      </div>
-
-      <div class="flex flex-col justify-between gap-3 sm:flex-row sm:items-start">
-        <div class="min-w-0">
-          <h3 class="text-base font-bold leading-snug text-white transition-colors group-hover:text-brand-blue sm:text-lg">
-            <a href={`/deals/${deal.slug}`}>{deal.title}</a>
-          </h3>
-          <p class="mt-1.5 line-clamp-2 text-xs leading-relaxed text-gray-500 sm:text-sm">{deal.short_description}</p>
+      <!-- Top Meta Line -->
+      <div class="mb-2 flex flex-wrap items-center justify-between gap-2">
+        <div class="flex flex-wrap items-center gap-2 text-[13px] text-ink-muted">
+          <a href={`/brands/${deal.brand_id}`} class="font-semibold uppercase tracking-[0.1em] text-ink hover:underline">
+            {brandName}
+          </a>
+          <span>·</span>
+          <span class="capitalize">{formattedType}</span>
+          {deal.country && deal.country !== 'GLOBAL' && (
+            <>
+              <span>·</span>
+              <span>{deal.country === 'PK' ? 'Pakistan' : deal.country === 'US' ? 'USA' : deal.country}</span>
+            </>
+          )}
         </div>
-        <strong class="shrink-0 self-start border-b border-brand-blue px-1 py-1 text-sm text-brand-blue">
+
+        <span class="editorial-pill px-3.5 py-1 text-[13px] font-semibold tracking-wide text-ink">
           {deal.discount_value}
-        </strong>
+        </span>
       </div>
 
-      <div class="mt-4 flex flex-wrap items-center justify-between gap-3">
-        <div class="flex flex-wrap items-center gap-3 text-[11px] text-gray-500">
+      <!-- Editorial Serif Deal Title & Readable Description -->
+      <h3 class="text-2xl sm:text-[28px] leading-[1.15] text-ink">
+        <a href={`/deals/${deal.slug}`} class="hover:underline decoration-1 underline-offset-4">
+          {deal.title}
+        </a>
+      </h3>
+
+      <p class="mt-2 max-w-3xl text-[15px] leading-relaxed text-ink-muted">
+        {deal.short_description}
+      </p>
+
+      <!-- Bottom Meta & Minimal Single-Color Actions -->
+      <div class="mt-4 flex flex-wrap items-center justify-between gap-3 pt-2">
+        <div class="flex flex-wrap items-center gap-4 text-[13.5px] text-ink-muted">
           {deal.bank_details && (
-            <a href={`/banks/${deal.bank_details.bank_id}`} class="flex items-center gap-1.5 hover:text-brand-blue">
-              <Icon name="card" class="h-3.5 w-3.5" />
-              {deal.bank_details.bank_id.toUpperCase()} {deal.bank_details.cashback_percent}% extra
+            <a href={`/banks/${deal.bank_details.bank_id}`} class="inline-flex items-center gap-1.5 text-ink hover:underline">
+              <Icon name="card" class="h-4 w-4" />
+              <span>{deal.bank_details.bank_id.toUpperCase()} +{deal.bank_details.cashback_percent}% off</span>
             </a>
           )}
           {deal.cities && deal.cities.length > 0 && (
-            <span class="flex items-center gap-1.5">
-              <Icon name="location" class="h-3.5 w-3.5" />
-              {deal.cities.slice(0, 2).join(', ')}{deal.cities.length > 2 ? ` +${deal.cities.length - 2}` : ''}
+            <span class="inline-flex items-center gap-1.5">
+              <Icon name="location" class="h-4 w-4" />
+              <span>{deal.cities.slice(0, 3).join(', ')}{deal.cities.length > 3 ? ` +${deal.cities.length - 3}` : ''}</span>
             </span>
           )}
         </div>
 
-        <div class="flex items-center gap-2">
+        <div class="flex items-center gap-2.5">
           {deal.promo_code && (
             <button
               type="button"
-              class="copy-code-btn border border-base-700 bg-base-950 px-3 py-2 text-xs font-bold text-brand-blue hover:bg-base-900"
+              class="copy-code-btn btn-outline inline-flex items-center gap-2 px-3.5 py-2 text-[13px] font-semibold tracking-wider"
               data-code={deal.promo_code}
             >
-              {deal.promo_code}
+              <span>{deal.promo_code}</span>
             </button>
           )}
           <a
             href={`/deals/${deal.slug}`}
-            class="flex items-center gap-1.5 bg-brand-blue px-3 py-2 text-xs font-bold text-black hover:opacity-90"
+            class="btn-primary inline-flex items-center gap-2 px-4 py-2 text-[13px] font-semibold"
           >
-            View deal
+            <span>View Offer</span>
             <Icon name="arrow" class="h-3.5 w-3.5" />
           </a>
         </div>

@@ -2,62 +2,121 @@
 import Icon from './Icon.astro';
 ---
 
-<header class="sticky top-0 z-40 w-full border-b border-base-700 bg-base-950/95 backdrop-blur-lg">
-  <div class="mx-auto flex h-16 max-w-7xl items-center gap-3 px-4 sm:px-6 lg:px-8">
-    <a href="/" class="flex shrink-0 items-center gap-2.5" aria-label="DealsSite home">
-      <span class="flex h-9 w-9 items-center justify-center bg-brand-blue text-black">
-        <Icon name="tag" class="h-5 w-5" />
+<header class="sticky top-0 z-40 w-full border-b editorial-rule bg-base-950/95 backdrop-blur-md">
+  <div class="mx-auto flex h-[72px] max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
+    <!-- Editorial Wordmark -->
+    <a href="/" class="flex shrink-0 items-center gap-3 group" aria-label="DealsSite home">
+      <span class="flex h-9 w-9 items-center justify-center btn-primary">
+        <Icon name="tag" class="h-4 w-4" />
       </span>
-      <span class="font-serif text-2xl font-semibold tracking-tight text-white">DealsSite</span>
+      <div class="flex flex-col">
+        <span class="font-serif text-3xl leading-none tracking-tight text-ink">DealsSite</span>
+      </div>
     </a>
 
+    <!-- Clean Readable Search Bar -->
     <button
       type="button"
       id="header-search-btn"
-      class="mx-auto flex h-10 w-full max-w-xl items-center gap-2 border-b border-base-700 bg-transparent px-1 text-sm text-gray-400 transition-colors hover:border-brand-blue hover:text-white"
-      aria-label="Search deals and brands"
+      class="mx-auto flex h-11 w-full max-w-md items-center gap-3 border editorial-rule bg-base-900/60 px-4 text-[14px] text-ink-muted transition-colors hover:border-ink/50 hover:bg-base-900 hover:text-ink"
+      aria-label="Search deals, brands, categories and cities"
     >
-      <Icon name="search" class="h-4 w-4 shrink-0" />
-      <span class="truncate">Search deals, brands and categories</span>
-      <kbd class="ml-auto hidden text-[10px] text-gray-500 md:block">Ctrl K</kbd>
+      <Icon name="search" class="h-4 w-4 shrink-0 text-ink" />
+      <span class="truncate">Search brands, categories, or deals...</span>
+      <kbd class="ml-auto hidden border editorial-rule px-2 py-0.5 text-[11px] font-medium text-ink-muted sm:inline-block">
+        Ctrl K
+      </kbd>
     </button>
 
-    <nav class="hidden items-center gap-2 md:flex" aria-label="Primary navigation">
-      <a href="/brands" class="inline-flex h-10 items-center gap-2 bg-brand-blue px-3.5 text-xs font-bold text-black transition-opacity hover:opacity-90">
+    <!-- Minimal Desktop Actions -->
+    <nav class="hidden items-center gap-2.5 lg:flex" aria-label="Primary navigation">
+      <a
+        href="/brands"
+        class="btn-primary inline-flex h-10 items-center gap-2 px-4 text-[13px] font-semibold tracking-wide"
+      >
         <Icon name="grid" class="h-4 w-4" />
         Browse Brands
       </a>
 
-      <details class="relative">
-        <summary class="flex h-10 cursor-pointer list-none items-center gap-2 border border-base-700 px-3 text-xs font-semibold text-gray-200 hover:bg-base-900">
-          <Icon name="location" class="h-4 w-4 text-brand-blue" />
-          Cities
+      <a
+        href="/blog"
+        class="btn-outline inline-flex h-10 items-center gap-2 px-4 text-[13px] font-semibold"
+      >
+        <Icon name="book" class="h-4 w-4" />
+        Blog
+      </a>
+
+      <!-- Cities Dropdown Menu -->
+      <details class="relative" data-dropdown>
+        <summary class="btn-outline flex h-10 cursor-pointer list-none items-center gap-2 px-3.5 text-[13px] font-semibold">
+          <Icon name="location" class="h-4 w-4" />
+          <span>Cities</span>
+          <Icon name="chevron" class="h-4 w-4 text-ink-muted" />
         </summary>
-        <div class="absolute right-0 top-12 w-44 bg-base-900 p-2 shadow-2xl ring-1 ring-base-700">
-          <a href="/pakistan/karachi" class="block rounded-lg px-3 py-2 text-xs text-gray-300 hover:bg-base-800 hover:text-white">Karachi</a>
-          <a href="/pakistan/lahore" class="block rounded-lg px-3 py-2 text-xs text-gray-300 hover:bg-base-800 hover:text-white">Lahore</a>
-          <a href="/pakistan/islamabad" class="block rounded-lg px-3 py-2 text-xs text-gray-300 hover:bg-base-800 hover:text-white">Islamabad</a>
-          <a href="/pakistan/rawalpindi" class="block rounded-lg px-3 py-2 text-xs text-gray-300 hover:bg-base-800 hover:text-white">Rawalpindi</a>
+        <div class="absolute right-0 top-12 z-50 w-48 border editorial-rule bg-base-950 p-1.5 shadow-xl">
+          <a href="/pakistan/karachi" class="flex items-center justify-between px-3 py-2.5 text-[14px] text-ink hover:bg-base-900">
+            <span>Karachi</span>
+            <Icon name="arrow" class="h-3.5 w-3.5 text-ink-muted" />
+          </a>
+          <a href="/pakistan/lahore" class="flex items-center justify-between px-3 py-2.5 text-[14px] text-ink hover:bg-base-900">
+            <span>Lahore</span>
+            <Icon name="arrow" class="h-3.5 w-3.5 text-ink-muted" />
+          </a>
+          <a href="/pakistan/islamabad" class="flex items-center justify-between px-3 py-2.5 text-[14px] text-ink hover:bg-base-900">
+            <span>Islamabad</span>
+            <Icon name="arrow" class="h-3.5 w-3.5 text-ink-muted" />
+          </a>
+          <a href="/pakistan/rawalpindi" class="flex items-center justify-between px-3 py-2.5 text-[14px] text-ink hover:bg-base-900">
+            <span>Rawalpindi</span>
+            <Icon name="arrow" class="h-3.5 w-3.5 text-ink-muted" />
+          </a>
         </div>
       </details>
 
-      <label class="relative flex h-10 items-center gap-2 border border-base-700 px-3 text-xs font-semibold text-gray-300">
-        <Icon name="globe" class="h-4 w-4 text-brand-blue" />
-        <span id="detected-country-label" class="hidden lg:inline">Detecting</span>
-        <select id="country-switcher" class="absolute inset-0 cursor-pointer opacity-0" aria-label="Choose market">
-          <option value="AUTO">Auto detect</option>
-          <option value="ALL">All markets</option>
+      <!-- Auto Country Indicator / Override -->
+      <label
+        class="btn-outline relative flex h-10 cursor-pointer items-center gap-2 px-3.5 text-[13px] font-medium"
+        title="Brands automatically adjust to your country"
+      >
+        <Icon name="globe" class="h-4 w-4 shrink-0" />
+        <span id="detected-country-label" class="whitespace-nowrap">Auto</span>
+        <Icon name="chevron" class="h-3.5 w-3.5 text-ink-muted" />
+        <select id="country-switcher" class="absolute inset-0 cursor-pointer opacity-0" aria-label="Country market">
+          <option value="AUTO">Auto-detect Country</option>
           <option value="PK">Pakistan</option>
           <option value="US">United States</option>
+          <option value="ALL">All Countries</option>
         </select>
       </label>
     </nav>
   </div>
 
-  <div class="flex gap-2 overflow-x-auto px-4 pb-3 md:hidden">
-    <a href="/brands" class="whitespace-nowrap bg-brand-blue px-3 py-2 text-xs font-bold text-black">Browse Brands</a>
-    <a href="/pakistan/karachi" class="whitespace-nowrap rounded-lg bg-base-900 px-3 py-2 text-xs text-gray-300">Karachi</a>
-    <a href="/pakistan/lahore" class="whitespace-nowrap rounded-lg bg-base-900 px-3 py-2 text-xs text-gray-300">Lahore</a>
-    <a href="/pakistan/islamabad" class="whitespace-nowrap rounded-lg bg-base-900 px-3 py-2 text-xs text-gray-300">Islamabad</a>
+  <!-- Mobile / Tablet Quick Bar -->
+  <div class="flex items-center gap-2 overflow-x-auto border-t editorial-rule px-4 py-2.5 lg:hidden">
+    <a href="/brands" class="btn-primary whitespace-nowrap px-3.5 py-2 text-[13px] font-semibold">
+      Browse Brands
+    </a>
+    <a href="/blog" class="btn-outline whitespace-nowrap px-3.5 py-2 text-[13px] font-semibold">
+      Blog
+    </a>
+    <details class="relative shrink-0" data-dropdown>
+      <summary class="btn-outline flex cursor-pointer list-none items-center gap-1.5 whitespace-nowrap px-3.5 py-2 text-[13px] font-semibold">
+        <Icon name="location" class="h-3.5 w-3.5" />
+        <span>Cities</span>
+        <Icon name="chevron" class="h-3.5 w-3.5" />
+      </summary>
+      <div class="fixed left-4 right-4 top-[118px] z-50 border editorial-rule bg-base-950 p-2 shadow-xl sm:absolute sm:left-0 sm:right-auto sm:top-11 sm:w-48">
+        <a href="/pakistan/karachi" class="block px-3 py-2.5 text-[14px] text-ink hover:bg-base-900">Karachi</a>
+        <a href="/pakistan/lahore" class="block px-3 py-2.5 text-[14px] text-ink hover:bg-base-900">Lahore</a>
+        <a href="/pakistan/islamabad" class="block px-3 py-2.5 text-[14px] text-ink hover:bg-base-900">Islamabad</a>
+        <a href="/pakistan/rawalpindi" class="block px-3 py-2.5 text-[14px] text-ink hover:bg-base-900">Rawalpindi</a>
+      </div>
+    </details>
+    <a href="/categories/clothing-fashion" class="btn-outline whitespace-nowrap px-3.5 py-2 text-[13px] font-medium">
+      Clothing
+    </a>
+    <a href="/categories/tech-electronics" class="btn-outline whitespace-nowrap px-3.5 py-2 text-[13px] font-medium">
+      Tech
+    </a>
   </div>
 </header>

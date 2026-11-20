@@ -12,6 +12,15 @@ export default {
           700: 'rgb(var(--base-700) / <alpha-value>)',
           600: 'rgb(var(--base-600) / <alpha-value>)',
         },
+        ink: {
+          DEFAULT: 'rgb(var(--ink) / <alpha-value>)',
+          muted: 'rgb(var(--muted) / <alpha-value>)',
+          inverse: 'rgb(var(--ink-inverse) / <alpha-value>)',
+        },
+        line: {
+          DEFAULT: 'rgb(var(--line) / <alpha-value>)',
+          strong: 'rgb(var(--line-strong) / <alpha-value>)',
+        },
         brand: {
           blue: 'rgb(var(--accent) / <alpha-value>)',
           glow: 'rgb(var(--accent-strong) / <alpha-value>)',
@@ -23,7 +32,7 @@ export default {
       },
       fontFamily: {
         sans: [
-          'Manrope',
+          '"Plus Jakarta Sans"',
           '-apple-system',
           'BlinkMacSystemFont',
           '"Segoe UI"',
@@ -32,7 +41,7 @@ export default {
           'Arial',
           'sans-serif',
         ],
-        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+        serif: ['"Instrument Serif"', '"Playfair Display"', 'Georgia', 'serif'],
       },
     },
   },

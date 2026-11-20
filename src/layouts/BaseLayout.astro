@@ -16,11 +16,11 @@ interface Props {
 
 const {
   title,
-  description = "DealsSite - Discover verified retail discounts, coupons, bank card promotions, and store sales across Pakistan and the United States.",
-  image = "/og-image.jpg",
+  description = 'Current brand discounts, promo codes, and local store sales automatically tailored to your country.',
+  image = '/og-image.jpg',
   activeTopic = '',
   activeCategory = 'all',
-  structuredData
+  structuredData,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://dealssite.com');
@@ -33,46 +33,96 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://dealssit
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- Fast Non-Blocking Editorial Font Wiring -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      />
+    </noscript>
+
+    <!-- Zero-Latency Theme & Country Initialization Before Paint -->
     <script is:inline>
       (() => {
-        const saved = localStorage.getItem('dealssite_theme');
-        const preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-        document.documentElement.dataset.theme = saved || preferred;
+        try {
+          const savedTheme = localStorage.getItem('dealssite_theme');
+          document.documentElement.dataset.theme = savedTheme === 'dark' ? 'dark' : 'light';
+
+          const detectVisitorCountry = () => {
+            const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+            if (tz === 'Asia/Karachi') return 'PK';
+            if (
+              tz.startsWith('America/New_York') ||
+              tz.startsWith('America/Chicago') ||
+              tz.startsWith('America/Denver') ||
+              tz.startsWith('America/Los_Angeles') ||
+              tz.startsWith('America/Phoenix') ||
+              tz.startsWith('America/Detroit') ||
+              tz.startsWith('US/')
+            ) {
+              return 'US';
+            }
+            const langs = navigator.languages || [navigator.language || ''];
+            for (const lang of langs) {
+              const region = String(lang).split('-')[1]?.toUpperCase();
+              if (region === 'PK' || region === 'US') return region;
+            }
+            return 'ALL';
+          };
+
+          const savedMarket = localStorage.getItem('dealssite_market');
+          const market = savedMarket && savedMarket !== 'AUTO' ? savedMarket : detectVisitorCountry();
+          document.documentElement.dataset.market = market;
+          document.documentElement.dataset.marketMode = savedMarket && savedMarket !== 'AUTO' ? 'manual' : 'auto';
+        } catch {
+          document.documentElement.dataset.theme = 'light';
+          document.documentElement.dataset.market = 'ALL';
+        }
       })();
     </script>
-    
-    <!-- Primary Meta Tags -->
+
     <title>{title} | DealsSite</title>
     <meta name="title" content={`${title} | DealsSite`} />
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
 
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={`${title} | DealsSite`} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={image} />
 
-    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={canonicalURL} />
     <meta property="twitter:title" content={`${title} | DealsSite`} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={image} />
 
-    <!-- Schema.org Structured Data -->
     {structuredData && (
       <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
     )}
   </head>
-  <body class="bg-base-950 flex flex-col min-h-screen">
+  <body class="bg-base-950 text-ink flex flex-col min-h-screen">
     <Header />
 
-    <div class="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-8 flex-1 flex gap-10">
+    <div class="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-10 flex-1 flex gap-10">
       <LeftSidebar activeTopic={activeTopic} activeCategory={activeCategory} />
 
-      <main class="flex-1 min-w-0 pb-16">
+      <main class="flex-1 min-w-0 pb-20">
         <slot />
       </main>
     </div>
@@ -87,21 +137,34 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://dealssit
       const marketNames: Record<string, string> = {
         PK: 'Pakistan',
         US: 'United States',
-        ALL: 'All markets',
-        GLOBAL: 'Global',
+        ALL: 'All Countries',
+        GLOBAL: 'Worldwide',
       };
 
-      function fallbackCountry() {
-        const locale = navigator.language || '';
-        const region = locale.split('-')[1]?.toUpperCase();
-        if (region === 'PK' || region === 'US') return region;
-        const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-        if (timezone === 'Asia/Karachi') return 'PK';
-        return region || 'GLOBAL';
+      function detectVisitorCountry(): string {
+        const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+        if (tz === 'Asia/Karachi') return 'PK';
+        if (
+          tz.startsWith('America/New_York') ||
+          tz.startsWith('America/Chicago') ||
+          tz.startsWith('America/Denver') ||
+          tz.startsWith('America/Los_Angeles') ||
+          tz.startsWith('America/Phoenix') ||
+          tz.startsWith('America/Detroit') ||
+          tz.startsWith('US/')
+        ) {
+          return 'US';
+        }
+        const langs = navigator.languages || [navigator.language || ''];
+        for (const lang of langs) {
+          const region = String(lang).split('-')[1]?.toUpperCase();
+          if (region === 'PK' || region === 'US') return region;
+        }
+        return 'ALL';
       }
 
       function applyMarket(market: string, automatic = false) {
-        const normalized = market === 'PK' || market === 'US' || market === 'ALL' ? market : 'GLOBAL';
+        const normalized = market === 'PK' || market === 'US' || market === 'ALL' ? market : 'ALL';
         document.documentElement.dataset.market = normalized;
         document.querySelectorAll<HTMLElement>('[data-market]').forEach((item) => {
           const itemMarket = item.dataset.market || 'GLOBAL';
@@ -109,48 +172,40 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://dealssit
           item.classList.toggle('market-hidden', !visible);
         });
         if (countryLabel) {
-          countryLabel.textContent = automatic
-            ? `${marketNames[normalized] || 'Global'} · Auto`
-            : marketNames[normalized] || 'Global';
+          const label = marketNames[normalized] || 'All Countries';
+          countryLabel.textContent = automatic && normalized !== 'ALL' ? `${label} (Auto)` : label;
         }
+        window.dispatchEvent(new CustomEvent('dealssite:market-updated', { detail: { market: normalized } }));
       }
 
-      async function detectMarket() {
-        const saved = localStorage.getItem('dealssite_market');
-        if (saved && saved !== 'AUTO') {
-          if (countrySwitcher) countrySwitcher.value = saved;
-          applyMarket(saved);
-          return;
-        }
-
-        const fallback = fallbackCountry();
-        applyMarket(fallback, true);
-
-        try {
-          const controller = new AbortController();
-          const timeout = window.setTimeout(() => controller.abort(), 1800);
-          const response = await fetch('https://ipapi.co/json/', { signal: controller.signal });
-          window.clearTimeout(timeout);
-          if (!response.ok) return;
-          const data = await response.json();
-          if (data.country_code) applyMarket(String(data.country_code).toUpperCase(), true);
-        } catch {
-          // Locale and timezone fallback stays active when geo lookup is unavailable.
-        }
+      const saved = localStorage.getItem('dealssite_market');
+      if (saved && saved !== 'AUTO') {
+        if (countrySwitcher) countrySwitcher.value = saved;
+        applyMarket(saved, false);
+      } else {
+        if (countrySwitcher) countrySwitcher.value = 'AUTO';
+        applyMarket(detectVisitorCountry(), true);
       }
 
       countrySwitcher?.addEventListener('change', () => {
         const value = countrySwitcher.value;
         if (value === 'AUTO') {
           localStorage.removeItem('dealssite_market');
-          detectMarket();
+          applyMarket(detectVisitorCountry(), true);
         } else {
           localStorage.setItem('dealssite_market', value);
-          applyMarket(value);
+          applyMarket(value, false);
         }
       });
 
-      detectMarket();
+      // Close dropdown <details> menus cleanly when clicking outside
+      document.addEventListener('click', (event) => {
+        document.querySelectorAll<HTMLDetailsElement>('details[data-dropdown][open]').forEach((dropdown) => {
+          if (!dropdown.contains(event.target as Node)) {
+            dropdown.removeAttribute('open');
+          }
+        });
+      });
     </script>
   </body>
 </html>

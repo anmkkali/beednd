@@ -1,0 +1,29 @@
+---
+interface Props {
+  name: string;
+  logoUrl?: string;
+  size?: 'sm' | 'md' | 'lg';
+}
+
+const { name, logoUrl, size = 'md' } = Astro.props;
+const sizeClasses = {
+  sm: 'h-9 w-9 p-1.5 text-sm',
+  md: 'h-12 w-12 p-2 text-base',
+  lg: 'h-14 w-14 p-2.5 text-lg',
+}[size];
+const initial = name.trim().charAt(0).toUpperCase();
+---
+
+<span class={`relative inline-flex shrink-0 items-center justify-center border editorial-rule bg-white text-[#141413] font-serif font-semibold ${sizeClasses}`}>
+  {logoUrl ? (
+    <img
+      src={logoUrl}
+      alt={`${name} logo`}
+      class="h-full w-full object-contain"
+      loading="lazy"
+      decoding="async"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='inline';"
+    />
+  ) : null}
+  <span style={logoUrl ? 'display:none;' : ''}>{initial}</span>
+</span>

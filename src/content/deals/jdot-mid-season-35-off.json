@@ -1,0 +1,49 @@
+{
+  "id": "jdot-mid-season-35-off",
+  "slug": "jdot-mid-season-35-off",
+  "title": "J. Mid-Season Sale — Up to 35% Off Men's Kameez Shalwar, Pret & Fragrances",
+  "short_description": "Flat 25% to 35% off across men's wear, women's stitched pret, unstitched lawn, and signature perfumes in stores and online.",
+  "brand_id": "jdot",
+  "country": "PK",
+  "cities": ["Karachi", "Lahore", "Islamabad", "Rawalpindi"],
+  "areas": ["Dolmen Mall", "Packages Mall", "Centaurus Mall"],
+  "branch_info": [
+    {
+      "branch_name": "J. Dolmen Mall Clifton",
+      "address": "Ground Floor, Dolmen Mall Clifton, Karachi"
+    },
+    {
+      "branch_name": "J. Packages Mall",
+      "address": "Level 1, Packages Mall, Lahore"
+    }
+  ],
+  "category": "clothing-fashion",
+  "deal_type": "store-sale",
+  "bank_details": {
+    "bank_id": "meezan",
+    "eligible_cards": ["Titanium Debit", "Platinum Debit"],
+    "cashback_percent": 10,
+    "max_discount_cap": 2500
+  },
+  "discount_type": "percentage",
+  "discount_value": "UP TO 35% OFF",
+  "numeric_discount_percent": 35,
+  "terms_and_conditions": [
+    "Available on marked items online and at participating outlets across Pakistan.",
+    "Meezan Bank debit cardholders get extra discount at select POS terminals.",
+    "Valid while seasonal stock lasts."
+  ],
+  "start_date": "2026-05-01T00:00:00Z",
+  "end_date": "2026-12-31T23:59:59Z",
+  "source_url": "https://www.junaidjamshed.com",
+  "affiliate_url": "https://www.junaidjamshed.com",
+  "last_verified_at": "2026-11-21T03:15:00Z",
+  "status": "active",
+  "is_featured": false,
+  "is_sponsored": false,
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=junaidjamshed.com&sz=128",
+    "alt": "J. Mid Season Sale"
+  },
+  "tags": ["jdot", "men", "women", "unstitched", "pret", "fragrance", "clothing"]
+}

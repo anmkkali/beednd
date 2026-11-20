@@ -1,0 +1,35 @@
+{
+  "id": "sephora-beauty-insider-20-off",
+  "slug": "sephora-beauty-insider-20-off",
+  "title": "Sephora Savings Event — Up to 20% Off Skincare & Makeup",
+  "short_description": "Save up to 20% on skincare sets, daily makeup essentials, and fragrances online and in US stores with code SAVEMORE.",
+  "brand_id": "sephora",
+  "country": "US",
+  "cities": [],
+  "areas": [],
+  "branch_info": [],
+  "category": "beauty-wellness",
+  "deal_type": "promo-code",
+  "discount_type": "percentage",
+  "discount_value": "20% OFF",
+  "numeric_discount_percent": 20,
+  "promo_code": "SAVEMORE",
+  "terms_and_conditions": [
+    "Valid for Beauty Insider members across US online orders.",
+    "Applies to eligible skincare, makeup, and fragrance items.",
+    "Cannot be combined with other promotional offers."
+  ],
+  "start_date": "2026-04-01T00:00:00Z",
+  "end_date": "2026-12-31T23:59:59Z",
+  "source_url": "https://www.sephora.com/beauty/savings-event",
+  "affiliate_url": "https://www.sephora.com/beauty/savings-event",
+  "last_verified_at": "2026-11-21T03:00:00Z",
+  "status": "active",
+  "is_featured": false,
+  "is_sponsored": false,
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=sephora.com&sz=128",
+    "alt": "Sephora 20% Off"
+  },
+  "tags": ["sephora", "skincare", "makeup", "fragrance", "beauty"]
+}

@@ -1,97 +1,226 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import DealBannerCard from '../../components/deals/DealBannerCard.astro';
+import BrandMark from '../../components/common/BrandMark.astro';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
-  const categories = [
-    'clothing-fashion',
-    'tech-electronics',
-    'hosting-software',
-    'food-dining',
-    'beauty-wellness',
-    'travel-lifestyle',
-    'groceries-essentials'
-  ];
-  const allDeals = await getCollection('deals');
-  const allBrands = await getCollection('brands');
-  const brandMap = new Map(allBrands.map(b => [b.data.id, b.data]));
+  const categoryConfig: Record<string, { label: string; subs: { label: string; query: string }[] }> = {
+    'clothing-fashion': {
+      label: 'Clothing & Fashion',
+      subs: [
+        { label: 'All Clothing', query: 'all' },
+        { label: "Women's Pret", query: 'women' },
+        { label: 'Unstitched', query: 'unstitched' },
+        { label: "Men's Wear", query: 'men' },
+        { label: 'Footwear', query: 'footwear' },
+        { label: 'Accessories', query: 'accessories' },
+      ],
+    },
+    'tech-electronics': {
+      label: 'Tech & Electronics',
+      subs: [
+        { label: 'All Tech', query: 'all' },
+        { label: 'Smartphones', query: 'mobiles' },
+        { label: 'Laptops', query: 'laptops' },
+        { label: 'Market Tools', query: 'stocks' },
+      ],
+    },
+    'hosting-software': {
+      label: 'Software & Hosting',
+      subs: [
+        { label: 'All Software', query: 'all' },
+        { label: 'Web Hosting', query: 'hosting' },
+        { label: 'AI Builders', query: 'ai' },
+        { label: 'Finance Tools', query: 'finance' },
+      ],
+    },
+    'beauty-wellness': {
+      label: 'Beauty & Wellness',
+      subs: [
+        { label: 'All Beauty', query: 'all' },
+        { label: 'Skincare', query: 'skincare' },
+        { label: 'Makeup', query: 'makeup' },
+        { label: 'Fragrances', query: 'fragrance' },
+      ],
+    },
+    'food-dining': {
+      label: 'Food & Dining',
+      subs: [
+        { label: 'All Dining', query: 'all' },
+        { label: 'Restaurants', query: 'restaurants' },
+        { label: 'Cafes', query: 'cafes' },
+        { label: 'Delivery', query: 'delivery' },
+      ],
+    },
+    'travel-lifestyle': {
+      label: 'Travel & Hotels',
+      subs: [
+        { label: 'All Travel', query: 'all' },
+        { label: 'Hotels', query: 'hotels' },
+        { label: 'Flights', query: 'flights' },
+      ],
+    },
+    'groceries-essentials': {
+      label: 'Groceries',
+      subs: [
+        { label: 'All Groceries', query: 'all' },
+        { label: 'Supermarkets', query: 'supermarkets' },
+        { label: 'Essentials', query: 'essentials' },
+      ],
+    },
+  };
 
-  return categories.map(cat => {
-    const catDeals = allDeals.filter(d => d.data.category === cat);
-    const categoryBrands = allBrands.filter(brand => brand.data.categories.includes(cat));
+  const allDeals = await getCollection('deals', ({ data }) => data.status === 'active');
+  const allBrands = await getCollection('brands');
+  const brandMap = new Map(allBrands.map((b) => [b.data.id, b.data]));
+
+  return Object.entries(categoryConfig).map(([cat, meta]) => {
+    const catDeals = allDeals.filter((d) => d.data.category === cat);
+    const categoryBrands = allBrands.filter((brand) => brand.data.categories.includes(cat));
     return {
       params: { category: cat },
-      props: { 
-        categoryName: cat.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' & '),
+      props: {
+        categoryName: meta.label,
         categoryId: cat,
+        subcategories: meta.subs,
         deals: catDeals,
         categoryBrands,
-        brandMap
-      }
+        brandMap,
+      },
     };
   });
 }
 
-const { categoryName, categoryId, deals, categoryBrands, brandMap } = Astro.props;
+const { categoryName, categoryId, subcategories, deals, categoryBrands, brandMap } = Astro.props;
 ---
 
-<BaseLayout 
-  title={`${categoryName} Promo Codes & Deals`}
-  description={`Browse verified ${categoryName} coupon codes, discounts, and store sales.`}
+<BaseLayout
+  title={`${categoryName} Discounts & Brands`}
+  description={`Explore ${categoryName} brands, subcategories, and active discounts.`}
   activeTopic={categoryId}
 >
-  <div class="mb-8 max-w-3xl">
-    <div class="flex items-center space-x-2 text-xs text-gray-500 mb-1">
-      <a href="/" class="hover:text-brand-blue">Home</a>
+  <div class="mb-8 border-b editorial-rule pb-8">
+    <nav class="mb-3 flex items-center gap-2 text-[13px] text-ink-muted" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-ink hover:underline">Home</a>
       <span>/</span>
-      <a href="/categories" class="hover:text-brand-blue">Categories</a>
-      <span>/</span>
-      <span class="text-gray-300">{categoryName}</span>
-    </div>
-    
-    <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-white">
-      {categoryName} deals
+      <span class="text-ink">{categoryName}</span>
+    </nav>
+
+    <h1 class="text-4xl sm:text-6xl leading-[0.98] text-ink">
+      {categoryName}
     </h1>
-    <p class="text-xs sm:text-sm text-gray-400 mt-1">
-      Browse brands and current offers in {categoryName.toLowerCase()}.
+    <p class="mt-3 max-w-2xl text-[15.5px] leading-relaxed text-ink-muted">
+      Filter by subcategory or select a brand below to browse current discounts in {categoryName.toLowerCase()}.
     </p>
+
+    <!-- Interactive Subcategory Filter Pills -->
+    <div class="mt-6 flex flex-wrap gap-2" id="subcategory-pills">
+      {subcategories.map((sub) => (
+        <button
+          type="button"
+          data-sub-query={sub.query}
+          class:list={[
+            'editorial-pill px-4 py-1.5 text-[13.5px] font-medium transition-colors',
+            sub.query === 'all' ? 'btn-primary' : 'text-ink-muted hover:text-ink',
+          ]}
+        >
+          {sub.label}
+        </button>
+      ))}
+    </div>
   </div>
 
   {categoryBrands.length > 0 && (
-    <section class="mb-10">
-      <h2 class="mb-4 text-sm font-bold text-white">Brands in this category</h2>
-      <div class="grid grid-cols-2 gap-3 sm:grid-cols-4">
-        {categoryBrands.map(brand => (
+    <section class="mb-12">
+      <h2 class="mb-4 text-2xl sm:text-3xl text-ink">Brands in {categoryName}</h2>
+      <div class="grid grid-cols-2 border-l border-t editorial-rule sm:grid-cols-4">
+        {categoryBrands.map((brand) => (
           <a
             href={`/brands/${brand.data.slug}`}
             data-market={brand.data.country}
-            class="flex items-center gap-3 rounded-xl bg-base-900 p-3 hover:bg-base-800"
+            class="flex items-center gap-3.5 border-b border-r editorial-rule p-4 transition-colors hover:bg-base-900/70"
           >
-            <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-white p-1.5">
-              <img src={brand.data.logo_url} alt="" class="h-full w-full object-contain" />
-            </span>
-            <span class="truncate text-xs font-bold text-white">{brand.data.name}</span>
+            <BrandMark name={brand.data.name} logoUrl={brand.data.logo_url} size="sm" />
+            <span class="truncate text-[15px] font-semibold text-ink">{brand.data.name}</span>
           </a>
         ))}
       </div>
     </section>
   )}
 
-  <h2 class="mb-4 text-sm font-bold text-white">Current offers</h2>
-  <div class="space-y-3">
-    {deals.length > 0 ? (
-      deals.map(deal => (
-        <DealBannerCard 
-          deal={deal.data} 
-          brandName={brandMap.get(deal.data.brand_id)?.name}
-          brandLogo={brandMap.get(deal.data.brand_id)?.logo_url} 
-        />
-      ))
-    ) : (
-      <div class="rounded-xl bg-base-900 p-8 text-center text-gray-500">
-        No active deals currently in {categoryName}.
-      </div>
-    )}
-  </div>
+  <section>
+    <h2 class="mb-3 text-2xl sm:text-3xl text-ink">Active Offers</h2>
+    <div id="category-deals-list">
+      {deals.length > 0 ? (
+        deals.map((deal) => (
+          <div
+            data-cat-deal
+            data-market={deal.data.country}
+            data-sub-tags={[...(deal.data.tags || []), deal.data.title, deal.data.short_description, deal.data.brand_id].join(' ').toLowerCase()}
+          >
+            <DealBannerCard
+              deal={deal.data}
+              brandName={brandMap.get(deal.data.brand_id)?.name}
+              brandLogo={brandMap.get(deal.data.brand_id)?.logo_url}
+            />
+          </div>
+        ))
+      ) : null}
+    </div>
+    <div
+      id="category-empty-state"
+      class:list={[
+        'border-t border-b editorial-rule py-12 text-center text-[15px] text-ink-muted',
+        deals.length > 0 ? 'hidden' : '',
+      ]}
+    >
+      No active offers match this subcategory in your selected country right now.
+    </div>
+  </section>
+
+  <script>
+    const subButtons = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-sub-query]'));
+    const dealRows = Array.from(document.querySelectorAll<HTMLElement>('[data-cat-deal]'));
+    const emptyState = document.getElementById('category-empty-state');
+
+    function applySubcategory(sub: string) {
+      const normalized = sub.trim().toLowerCase() || 'all';
+      let visibleCount = 0;
+
+      dealRows.forEach((row) => {
+        const tags = row.dataset.subTags || '';
+        const matchesSub = normalized === 'all' || tags.includes(normalized);
+        row.classList.toggle('hidden', !matchesSub);
+        if (matchesSub && !row.classList.contains('market-hidden')) {
+          visibleCount += 1;
+        }
+      });
+
+      subButtons.forEach((btn) => {
+        const active = (btn.dataset.subQuery || 'all') === normalized;
+        btn.classList.toggle('btn-primary', active);
+        btn.classList.toggle('text-ink-muted', !active);
+      });
+
+      emptyState?.classList.toggle('hidden', visibleCount > 0);
+    }
+
+    subButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const query = btn.dataset.subQuery || 'all';
+        applySubcategory(query);
+        const url = new URL(window.location.href);
+        query === 'all' ? url.searchParams.delete('sub') : url.searchParams.set('sub', query);
+        history.replaceState({}, '', url);
+      });
+    });
+
+    window.addEventListener('dealssite:market-updated', () => {
+      const currentSub = new URLSearchParams(window.location.search).get('sub') || 'all';
+      applySubcategory(currentSub);
+    });
+
+    applySubcategory(new URLSearchParams(window.location.search).get('sub') || 'all');
+  </script>
 </BaseLayout>

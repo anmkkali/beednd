@@ -1,0 +1,35 @@
+{
+  "id": "nike-members-extra-25-off",
+  "slug": "nike-members-extra-25-off",
+  "title": "Nike Seasonal Sale — Extra 25% Off Select Footwear & Apparel",
+  "short_description": "Use promo code SPORT25 at checkout on select men's wear, women's activewear, and running footwear styles across the US store.",
+  "brand_id": "nike",
+  "country": "US",
+  "cities": [],
+  "areas": [],
+  "branch_info": [],
+  "category": "clothing-fashion",
+  "deal_type": "promo-code",
+  "discount_type": "percentage",
+  "discount_value": "25% OFF",
+  "numeric_discount_percent": 25,
+  "promo_code": "SPORT25",
+  "terms_and_conditions": [
+    "Valid on select sale and full-price styles online at Nike US.",
+    "Enter code SPORT25 during checkout.",
+    "Free standard shipping for signed-in members on orders over $50."
+  ],
+  "start_date": "2026-03-01T00:00:00Z",
+  "end_date": "2026-12-31T23:59:59Z",
+  "source_url": "https://www.nike.com/w/sale-3yaep",
+  "affiliate_url": "https://www.nike.com/w/sale-3yaep",
+  "last_verified_at": "2026-11-21T03:00:00Z",
+  "status": "active",
+  "is_featured": false,
+  "is_sponsored": false,
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=nike.com&sz=128",
+    "alt": "Nike 25% Off Sale"
+  },
+  "tags": ["nike", "men", "women", "footwear", "shoes", "activewear", "clothing"]
+}

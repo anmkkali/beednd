@@ -2,87 +2,112 @@
 import Icon from './Icon.astro';
 ---
 
-<footer class="mt-16 border-t border-base-700 bg-base-950 text-xs text-gray-500">
-  <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-    <div class="grid gap-8 md:grid-cols-[1.5fr_1fr_1fr_1fr]">
+<footer class="mt-20 border-t editorial-rule bg-base-950 text-[14px] text-ink-muted">
+  <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <div class="grid gap-10 md:grid-cols-[1.6fr_1fr_1fr_1fr]">
       <div>
-        <a href="/" class="mb-3 flex items-center gap-2 text-base font-extrabold text-white">
-          <span class="flex h-7 w-7 items-center justify-center rounded-md bg-brand-blue text-base-950">
+        <a href="/" class="mb-3 inline-flex items-center gap-2.5 text-ink">
+          <span class="flex h-8 w-8 items-center justify-center btn-primary">
             <Icon name="tag" class="h-4 w-4" />
           </span>
-          DealsSite
+          <span class="font-serif text-3xl leading-none">DealsSite</span>
         </a>
-        <p class="max-w-sm leading-relaxed">Current discounts and promo codes organized by country, brand, category and city.</p>
+        <p class="mt-2 max-w-sm text-[14.5px] leading-relaxed text-ink-muted">
+          Curated discounts, verified promo codes, and local retail offers organized cleanly by country, brand, category, and city.
+        </p>
       </div>
 
       <div>
-        <h2 class="mb-3 font-bold text-gray-200">Browse</h2>
-        <div class="space-y-2">
-          <a href="/brands" class="block hover:text-brand-blue">All brands</a>
-          <a href="/categories/clothing-fashion" class="block hover:text-brand-blue">Clothing & fashion</a>
-          <a href="/categories/tech-electronics" class="block hover:text-brand-blue">Tech & electronics</a>
-          <a href="/blog" class="block hover:text-brand-blue">Blog</a>
+        <h2 class="mb-3 font-sans text-[12px] font-semibold uppercase tracking-[0.16em] text-ink">Explore</h2>
+        <div class="space-y-2.5 text-[14.5px]">
+          <a href="/brands" class="block hover:text-ink">Browse Brands</a>
+          <a href="/categories/clothing-fashion" class="block hover:text-ink">Clothing & Fashion</a>
+          <a href="/categories/tech-electronics" class="block hover:text-ink">Tech & Electronics</a>
+          <a href="/blog" class="block hover:text-ink">Editorial Blog</a>
         </div>
       </div>
 
       <div>
-        <h2 class="mb-3 font-bold text-gray-200">Cities</h2>
-        <div class="space-y-2">
-          <a href="/pakistan/karachi" class="block hover:text-brand-blue">Karachi</a>
-          <a href="/pakistan/lahore" class="block hover:text-brand-blue">Lahore</a>
-          <a href="/pakistan/islamabad" class="block hover:text-brand-blue">Islamabad</a>
-          <a href="/pakistan/rawalpindi" class="block hover:text-brand-blue">Rawalpindi</a>
+        <h2 class="mb-3 font-sans text-[12px] font-semibold uppercase tracking-[0.16em] text-ink">Cities</h2>
+        <div class="space-y-2.5 text-[14.5px]">
+          <a href="/pakistan/karachi" class="block hover:text-ink">Karachi</a>
+          <a href="/pakistan/lahore" class="block hover:text-ink">Lahore</a>
+          <a href="/pakistan/islamabad" class="block hover:text-ink">Islamabad</a>
+          <a href="/pakistan/rawalpindi" class="block hover:text-ink">Rawalpindi</a>
         </div>
       </div>
 
       <div>
-        <h2 class="mb-3 font-bold text-gray-200">Banks</h2>
-        <div class="space-y-2">
-          <a href="/banks/hbl" class="block hover:text-brand-blue">HBL</a>
-          <a href="/banks/meezan" class="block hover:text-brand-blue">Meezan Bank</a>
-          <a href="/banks/alfalah" class="block hover:text-brand-blue">Bank Alfalah</a>
+        <h2 class="mb-3 font-sans text-[12px] font-semibold uppercase tracking-[0.16em] text-ink">Bank Offers</h2>
+        <div class="space-y-2.5 text-[14.5px]">
+          <a href="/banks/hbl" class="block hover:text-ink">HBL Cards</a>
+          <a href="/banks/meezan" class="block hover:text-ink">Meezan Bank</a>
+          <a href="/banks/alfalah" class="block hover:text-ink">Bank Alfalah</a>
         </div>
       </div>
     </div>
 
-    <div class="mt-10 flex flex-col gap-4 border-t border-base-700 pt-6 text-[11px] sm:flex-row sm:items-center sm:justify-between">
-      <p>Brand names and logos belong to their respective owners.</p>
+    <!-- Bottom Hairline Bar with Prominent Light / Dark Mode Toggle Switch -->
+    <div class="mt-12 flex flex-col gap-5 border-t editorial-rule pt-6 sm:flex-row sm:items-center sm:justify-between">
+      <p class="text-[13.5px] text-ink-muted">
+        &copy; {new Date().getFullYear()} DealsSite. All trademarks belong to their respective owners.
+      </p>
+
       <div class="flex items-center gap-4">
-        <div class="flex items-center border border-base-700 p-1" aria-label="Color theme">
-          <button type="button" data-theme-choice="light" class="theme-choice px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.14em] transition-colors">
-            Light
-          </button>
-          <button type="button" data-theme-choice="dark" class="theme-choice px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.14em] transition-colors">
-            Dark
-          </button>
-        </div>
-        <p>&copy; {new Date().getFullYear()} DealsSite</p>
+        <span class="text-[13px] font-medium text-ink-muted" id="theme-status-label">Appearance</span>
+        <button
+          type="button"
+          id="theme-toggle-switch"
+          role="switch"
+          aria-checked="false"
+          aria-label="Toggle dark mode and light mode"
+          class="group relative inline-flex h-10 items-center gap-3 border editorial-rule-strong bg-base-900 px-3.5 text-[13px] font-semibold text-ink transition-colors hover:bg-base-800"
+        >
+          <span class="flex items-center gap-1.5" data-mode-light>
+            <Icon name="sun" class="h-4 w-4" />
+            <span>Light</span>
+          </span>
+
+          <span class="relative inline-flex h-5 w-10 items-center rounded-full border editorial-rule-strong bg-base-950 p-0.5">
+            <span
+              id="theme-switch-knob"
+              class="h-3.5 w-3.5 rounded-full bg-ink transition-transform duration-200 translate-x-0"
+            ></span>
+          </span>
+
+          <span class="flex items-center gap-1.5" data-mode-dark>
+            <Icon name="moon" class="h-4 w-4" />
+            <span>Dark</span>
+          </span>
+        </button>
       </div>
     </div>
   </div>
 </footer>
 
 <script>
-  const themeButtons = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-theme-choice]'));
+  const toggleBtn = document.getElementById('theme-toggle-switch');
+  const knob = document.getElementById('theme-switch-knob');
+  const lightSpan = document.querySelector<HTMLElement>('[data-mode-light]');
+  const darkSpan = document.querySelector<HTMLElement>('[data-mode-dark]');
 
-  function updateThemeControls(theme: string) {
-    themeButtons.forEach((button) => {
-      const active = button.dataset.themeChoice === theme;
-      button.classList.toggle('bg-brand-blue', active);
-      button.classList.toggle('text-black', active);
-      button.classList.toggle('text-gray-500', !active);
-      button.setAttribute('aria-pressed', String(active));
-    });
+  function syncThemeUI(theme: string) {
+    const isDark = theme === 'dark';
+    toggleBtn?.setAttribute('aria-checked', String(isDark));
+    if (knob) {
+      knob.style.transform = isDark ? 'translateX(18px)' : 'translateX(0px)';
+    }
+    if (lightSpan) lightSpan.style.opacity = isDark ? '0.5' : '1';
+    if (darkSpan) darkSpan.style.opacity = isDark ? '1' : '0.5';
   }
 
-  themeButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      const theme = button.dataset.themeChoice || 'light';
-      document.documentElement.dataset.theme = theme;
-      localStorage.setItem('dealssite_theme', theme);
-      updateThemeControls(theme);
-    });
+  toggleBtn?.addEventListener('click', () => {
+    const current = document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light';
+    const next = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.dataset.theme = next;
+    localStorage.setItem('dealssite_theme', next);
+    syncThemeUI(next);
   });
 
-  updateThemeControls(document.documentElement.dataset.theme || 'light');
+  syncThemeUI(document.documentElement.dataset.theme || 'light');
 </script>

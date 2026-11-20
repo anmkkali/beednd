@@ -1,44 +1,41 @@
 ---
-// StackFinder Component - Calculates compound discount savings
+import Icon from '../common/Icon.astro';
+
 interface Props {
   baseSalePercent?: number;
   bankCashbackPercent?: number;
   promoCodePercent?: number;
 }
 
-const { baseSalePercent = 40, bankCashbackPercent = 15, promoCodePercent = 5 } = Astro.props;
+const { baseSalePercent = 40, bankCashbackPercent = 15, promoCodePercent = 0 } = Astro.props;
+const combined = Math.round(
+  (1 - (1 - baseSalePercent / 100) * (1 - bankCashbackPercent / 100) * (1 - promoCodePercent / 100)) * 100
+);
 ---
 
-<div class="bg-base-900 border border-brand-purple/40 rounded-xl p-4 my-4 text-xs">
-  <div class="flex items-center justify-between mb-3">
-    <div class="flex items-center space-x-1.5 font-bold text-white text-sm">
-      <span>⚡</span>
-      <span>Triple Stack Finder</span>
+<div class="my-6 border-t border-b editorial-rule py-5">
+  <div class="mb-4 flex items-center justify-between">
+    <div class="flex items-center gap-2 text-[15px] font-semibold text-ink">
+      <Icon name="card" class="h-4 w-4" />
+      <span>Combined Card & Sale Breakdown</span>
     </div>
-    <span class="text-[10px] text-brand-purple bg-brand-purple/10 px-2 py-0.5 rounded-full font-mono uppercase font-bold">
-      Compound Savings
+    <span class="editorial-pill px-3 py-0.5 text-[12.5px] font-semibold text-ink">
+      Net ~{combined}% Off
     </span>
   </div>
 
-  <div class="grid grid-cols-3 gap-2 text-center mb-3">
-    <div class="bg-base-800 p-2 rounded-lg border border-base-700">
-      <div class="text-[10px] text-gray-400">Store Sale</div>
-      <div class="text-sm font-bold text-white mt-0.5">-{baseSalePercent}%</div>
+  <div class="grid grid-cols-2 sm:grid-cols-3 divide-x editorial-rule border editorial-rule text-center">
+    <div class="p-3.5">
+      <div class="text-[12.5px] text-ink-muted">Store Markdown</div>
+      <div class="mt-1 font-serif text-2xl text-ink">-{baseSalePercent}%</div>
     </div>
-    <div class="bg-base-800 p-2 rounded-lg border border-base-700">
-      <div class="text-[10px] text-gray-400">Bank Card</div>
-      <div class="text-sm font-bold text-brand-purple mt-0.5">-{bankCashbackPercent}%</div>
+    <div class="p-3.5">
+      <div class="text-[12.5px] text-ink-muted">Bank Card Extra</div>
+      <div class="mt-1 font-serif text-2xl text-ink">-{bankCashbackPercent}%</div>
     </div>
-    <div class="bg-base-800 p-2 rounded-lg border border-base-700">
-      <div class="text-[10px] text-gray-400">Promo Code</div>
-      <div class="text-sm font-bold text-emerald-400 mt-0.5">-{promoCodePercent}%</div>
+    <div class="col-span-2 sm:col-span-1 border-t sm:border-t-0 editorial-rule p-3.5">
+      <div class="text-[12.5px] text-ink-muted">Estimated Total</div>
+      <div class="mt-1 font-serif text-2xl font-semibold text-ink">~{combined}% Off</div>
     </div>
-  </div>
-
-  <div class="flex items-center justify-between pt-2 border-t border-base-800">
-    <span class="text-gray-300 font-medium">Estimated Net Savings:</span>
-    <span class="text-sm font-black text-brand-blue font-mono">
-      ~{Math.round((1 - (1 - baseSalePercent/100) * (1 - bankCashbackPercent/100) * (1 - promoCodePercent/100)) * 100)}% OFF
-    </span>
   </div>
 </div>

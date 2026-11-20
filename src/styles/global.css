@@ -1,48 +1,61 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@400;500;600;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --base-950: 244 242 236;
-    --base-900: 238 235 227;
-    --base-800: 226 222 211;
-    --base-700: 196 190 176;
-    --base-600: 143 136 122;
-    --accent: 132 116 93;
-    --accent-strong: 96 81 61;
-    --ink: 25 24 20;
-    --muted: 103 99 90;
+    /* Exact warm paper & carbon ink palette from attached Natural Muse / Brand Strategy references */
+    --base-950: 245 244 239;
+    --base-900: 237 234 226;
+    --base-800: 226 222 212;
+    --base-700: 204 199 188;
+    --base-600: 138 133 122;
+    --line: 204 199 188;
+    --line-strong: 20 20 19;
+    --ink: 20 20 19;
+    --ink-inverse: 245 244 239;
+    --muted: 85 82 75;
+    --accent: 20 20 19;
+    --accent-strong: 48 47 43;
     color-scheme: light;
   }
 
   :root[data-theme='dark'] {
-    --base-950: 20 20 17;
-    --base-900: 29 29 25;
-    --base-800: 42 41 35;
-    --base-700: 68 65 56;
-    --base-600: 104 100 88;
-    --accent: 198 183 157;
-    --accent-strong: 224 215 196;
+    --base-950: 18 18 16;
+    --base-900: 26 26 23;
+    --base-800: 37 36 32;
+    --base-700: 58 56 50;
+    --base-600: 112 108 98;
+    --line: 58 56 50;
+    --line-strong: 244 242 236;
     --ink: 244 242 236;
-    --muted: 168 163 151;
+    --ink-inverse: 18 18 16;
+    --muted: 174 170 160;
+    --accent: 244 242 236;
+    --accent-strong: 216 211 199;
     color-scheme: dark;
   }
-  
+
+  html {
+    font-size: 16px;
+  }
+
   body {
-    @apply bg-base-950 font-sans antialiased min-h-screen selection:bg-brand-blue selection:text-black;
+    @apply bg-base-950 font-sans antialiased min-h-screen text-[15px] leading-relaxed;
     color: rgb(var(--ink));
-    transition: background-color 180ms ease, color 180ms ease;
+  }
+
+  ::selection {
+    background-color: rgb(var(--ink));
+    color: rgb(var(--ink-inverse));
   }
 
   h1,
   h2,
   h3 {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-weight: 500;
-    letter-spacing: -0.035em;
+    font-family: 'Instrument Serif', 'Playfair Display', Georgia, serif;
+    font-weight: 400;
+    letter-spacing: -0.02em;
   }
 
   button,
@@ -61,29 +74,79 @@ details > summary::-webkit-details-marker {
   display: none;
 }
 
-[data-theme='light'] .text-white,
-[data-theme='light'] .text-gray-100,
-[data-theme='light'] .text-gray-200,
-[data-theme='light'] .text-gray-300 {
-  color: rgb(var(--ink)) !important;
+.editorial-rule {
+  border-color: rgb(var(--ink) / 0.18);
 }
 
-[data-theme='light'] .text-gray-400,
-[data-theme='light'] .text-gray-500,
-[data-theme='light'] .text-gray-600 {
-  color: rgb(var(--muted)) !important;
+.editorial-rule-strong {
+  border-color: rgb(var(--ink) / 0.42);
 }
 
-[data-theme='light'] .text-gray-700 {
-  color: rgb(var(--base-600)) !important;
+.editorial-pill {
+  border: 1px solid rgb(var(--ink) / 0.34);
+  border-radius: 9999px;
 }
 
-[data-theme='light'] .bg-white {
-  background-color: #fff;
+.btn-primary {
+  background-color: rgb(var(--ink));
+  color: rgb(var(--ink-inverse));
+  transition: opacity 150ms ease;
 }
 
-[data-theme='light'] .ring-base-700 {
-  --tw-ring-color: rgb(var(--base-700));
+.btn-primary:hover {
+  opacity: 0.86;
+}
+
+.btn-outline {
+  border: 1px solid rgb(var(--ink) / 0.24);
+  color: rgb(var(--ink));
+  background-color: transparent;
+  transition: background-color 150ms ease, border-color 150ms ease;
+}
+
+.btn-outline:hover {
+  background-color: rgb(var(--base-900));
+  border-color: rgb(var(--ink) / 0.5);
+}
+
+.editorial-prose h1,
+.editorial-prose h2 {
+  font-size: 2.1rem;
+  line-height: 1.12;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: rgb(var(--ink));
+}
+
+.editorial-prose h3 {
+  font-size: 1.55rem;
+  line-height: 1.2;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: rgb(var(--ink));
+}
+
+.editorial-prose p,
+.editorial-prose li {
+  font-size: 1.03rem;
+  line-height: 1.8;
+  color: rgb(var(--muted));
+}
+
+.editorial-prose strong {
+  color: rgb(var(--ink));
+  font-weight: 600;
+}
+
+.editorial-prose ul {
+  list-style: disc;
+  padding-left: 1.35rem;
+  margin: 0.85rem 0;
+}
+
+.editorial-prose hr {
+  border-color: rgb(var(--ink) / 0.18);
+  margin: 2rem 0;
 }
 
 ::-webkit-scrollbar {
@@ -99,23 +162,4 @@ details > summary::-webkit-details-marker {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(var(--base-600));
-}
-
-.ad-slot-leaderboard {
-  min-height: 90px;
-  width: 100%;
-  max-width: 728px;
-  margin: 0 auto;
-}
-
-.ad-slot-sidebar {
-  min-height: 250px;
-  width: 100%;
-  max-width: 300px;
-  margin: 0 auto;
-}
-
-.ad-slot-infeed {
-  min-height: 120px;
-  width: 100%;
 }
