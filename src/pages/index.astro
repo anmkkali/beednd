@@ -1,122 +1,165 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import DealBannerCard from '../components/deals/DealBannerCard.astro';
-import AdSlot from '../components/ads/AdSlot.astro';
+import Icon from '../components/common/Icon.astro';
 import { getCollection } from 'astro:content';
 
-// Fetch all active deals and brands from Content Collections
 const allDeals = await getCollection('deals', ({ data }) => data.status === 'active');
 const allBrands = await getCollection('brands');
+const allPosts = await getCollection('blog', ({ data }) => data.is_published);
+const brandMap = new Map(allBrands.map((brand) => [brand.data.id, brand.data]));
 
-// Create brand lookup map
-const brandMap = new Map(allBrands.map(b => [b.data.id, b.data]));
-
-// Featured Hero Deal
-const featuredDeal = allDeals.find(d => d.data.is_featured) || allDeals[0];
-const regularDeals = allDeals.filter(d => d.id !== featuredDeal?.id);
-
-// Category Quick Filter Pills
 const filterPills = [
-  { label: 'All Offers', href: '/' },
-  { label: '💳 Bank Cards', href: '/?type=bank-card' },
-  { label: '🏷️ Promo Codes', href: '/?type=promo-code' },
-  { label: '🛍️ Store Sales', href: '/?type=store-sale' },
-  { label: '🏬 In-Store (Cities)', href: '/pakistan/karachi' },
+  { label: 'All offers', value: 'all' },
+  { label: 'Promo codes', value: 'promo-code' },
+  { label: 'Bank deals', value: 'bank-card' },
+  { label: 'Store sales', value: 'store-sale' },
 ];
 
 const structuredData = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "DealsSite",
-  "url": "https://dealssite.com",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://dealssite.com/search?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'DealsSite',
+  url: 'https://dealssite.com',
 };
 ---
 
-<BaseLayout 
-  title="Verified Discounts, Promo Codes & Bank Deals" 
-  description="Browse verified discounts, store sales, and bank card privileges from top brands worldwide and Pakistan."
+<BaseLayout
+  title="Deals from brands available in your country"
+  description="Find current discounts, promo codes and store offers from brands available in your market."
   structuredData={structuredData}
 >
-  <!-- Page Header -->
-  <div class="mb-6">
-    <div class="flex items-center space-x-2 text-xs text-gray-500 mb-1">
-      <a href="/" class="hover:text-brand-blue">Home</a>
-      <span>/</span>
-      <span class="text-gray-300">Trending Discounts</span>
-    </div>
-    
-    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+  <section class="mb-10 max-w-3xl">
+    <p class="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-brand-blue">Local deals, automatically</p>
+    <h1 class="text-3xl font-extrabold tracking-tight text-white sm:text-5xl">
+      Better deals from brands available near you.
+    </h1>
+    <p class="mt-4 max-w-2xl text-sm leading-6 text-gray-400 sm:text-base">
+      Your market is detected automatically. Browse current offers by brand, category or city.
+    </p>
+  </section>
+
+  <section class="mb-10" aria-labelledby="brands-heading">
+    <div class="mb-4 flex items-end justify-between gap-4">
       <div>
-        <h1 class="text-2xl sm:text-3xl font-black text-white tracking-tight">
-          Trending Retail & Bank Deals
-        </h1>
-        <p class="text-xs sm:text-sm text-gray-400 mt-1">
-          High-performance aggregator: verified coupons, branch discounts, and stackable bank offers.
-        </p>
+        <p class="mb-1 text-xs text-gray-500">Available in your market</p>
+        <h2 id="brands-heading" class="text-xl font-bold text-white">Browse brands</h2>
       </div>
-      
-      <div class="text-[11px] font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-md self-start sm:self-auto">
-        ● Live Index ({allDeals.length} Verified)
-      </div>
-    </div>
-  </div>
-
-  <!-- Featured Sponsored Banner / Hero Offer -->
-  {featuredDeal && (
-    <div class="mb-6">
-      <div class="text-[10px] font-bold text-brand-gold uppercase tracking-widest mb-1.5 flex items-center space-x-1">
-        <span>⭐</span>
-        <span>Featured Partner Spotlight</span>
-      </div>
-      <DealBannerCard 
-        deal={featuredDeal.data} 
-        brandName={brandMap.get(featuredDeal.data.brand_id)?.name}
-        brandLogo={brandMap.get(featuredDeal.data.brand_id)?.logo_url}
-      />
-    </div>
-  )}
-
-  <!-- Quick Filter Pills -->
-  <div class="flex items-center space-x-2 overflow-x-auto pb-3 mb-4 scrollbar-none text-xs">
-    {filterPills.map((pill, i) => (
-      <a 
-        href={pill.href}
-        class:list={[
-          "px-3.5 py-1.5 rounded-lg border whitespace-nowrap font-medium transition-colors",
-          i === 0 
-            ? "bg-base-800 text-white border-base-600 font-bold" 
-            : "bg-base-900 text-gray-400 border-base-700 hover:text-white hover:border-base-600"
-        ]}
-      >
-        {pill.label}
+      <a href="/brands" class="flex items-center gap-1.5 text-xs font-bold text-brand-blue hover:text-white">
+        View all
+        <Icon name="arrow" class="h-3.5 w-3.5" />
       </a>
-    ))}
-  </div>
+    </div>
 
-  <!-- Main Deals Feed -->
-  <div class="space-y-4">
-    {regularDeals.map((deal, idx) => (
-      <>
-        <DealBannerCard 
-          deal={deal.data} 
-          brandName={brandMap.get(deal.data.brand_id)?.name}
-          brandLogo={brandMap.get(deal.data.brand_id)?.logo_url}
-        />
-        {/* Insert zero-CLS Google AdSense placement after every 3rd deal */}
-        {(idx + 1) % 3 === 0 && (
-          <AdSlot slotType="infeed" />
-        )}
-      </>
-    ))}
-  </div>
+    <div class="grid grid-cols-2 gap-3 sm:grid-cols-4">
+      {allBrands.map((brand) => (
+        <a
+          href={`/brands/${brand.data.slug}`}
+          data-market={brand.data.country}
+          class="flex min-h-28 flex-col items-center justify-center rounded-2xl bg-base-900 p-4 text-center transition-colors hover:bg-base-800"
+        >
+          <span class="mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-white p-2">
+            <img src={brand.data.logo_url} alt={`${brand.data.name} logo`} class="h-full w-full object-contain" loading="lazy" />
+          </span>
+          <strong class="text-sm text-white">{brand.data.name}</strong>
+          <span class="mt-1 text-[10px] uppercase tracking-wide text-gray-500">
+            {brand.data.country === 'GLOBAL' ? 'Worldwide' : brand.data.country}
+          </span>
+        </a>
+      ))}
+    </div>
+  </section>
 
-  <!-- Bottom Google AdSense Leaderboard Placement -->
-  <div class="mt-8">
-    <AdSlot slotType="leaderboard" />
-  </div>
+  <section aria-labelledby="deals-heading">
+    <div class="mb-4 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+      <div>
+        <p class="mb-1 text-xs text-gray-500">Updated offers</p>
+        <h2 id="deals-heading" class="text-xl font-bold text-white">Latest deals</h2>
+      </div>
+      <div class="flex gap-1 overflow-x-auto rounded-xl bg-base-900 p-1" id="deal-type-filters">
+        {filterPills.map((filter) => (
+          <button
+            type="button"
+            data-type-filter={filter.value}
+            class:list={[
+              'whitespace-nowrap rounded-lg px-3 py-2 text-xs font-semibold transition-colors',
+              filter.value === 'all' ? 'bg-brand-blue text-base-950' : 'text-gray-400 hover:text-white',
+            ]}
+          >
+            {filter.label}
+          </button>
+        ))}
+      </div>
+    </div>
+
+    <div class="space-y-3" id="deal-feed">
+      {allDeals.map((deal) => (
+        <div data-deal-type={deal.data.deal_type} data-market={deal.data.country}>
+          <DealBannerCard
+            deal={deal.data}
+            brandName={brandMap.get(deal.data.brand_id)?.name}
+            brandLogo={brandMap.get(deal.data.brand_id)?.logo_url}
+          />
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="mt-14" aria-labelledby="blog-heading">
+    <div class="mb-4 flex items-end justify-between">
+      <div>
+        <p class="mb-1 text-xs text-gray-500">Useful reads</p>
+        <h2 id="blog-heading" class="text-xl font-bold text-white">From the blog</h2>
+      </div>
+      <a href="/blog" class="text-xs font-bold text-brand-blue hover:text-white">All articles</a>
+    </div>
+
+    <div class="grid gap-4 md:grid-cols-2">
+      {allPosts.slice(0, 4).map((post) => (
+        <a
+          href={`/blog/${post.slug}`}
+          data-market={post.data.target_country}
+          class="group overflow-hidden rounded-2xl bg-base-900 transition-colors hover:bg-base-800"
+        >
+          <div class="aspect-[16/8] overflow-hidden">
+            <img src={post.data.hero_image} alt="" class="h-full w-full object-cover opacity-80 transition-transform duration-300 group-hover:scale-[1.02]" loading="lazy" />
+          </div>
+          <div class="p-5">
+            <p class="mb-2 text-[10px] uppercase tracking-wide text-brand-blue">{post.data.target_country === 'GLOBAL' ? 'Global' : post.data.target_country}</p>
+            <h3 class="text-base font-bold leading-snug text-white">{post.data.title}</h3>
+            <p class="mt-2 line-clamp-2 text-xs leading-relaxed text-gray-500">{post.data.description}</p>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <script>
+    const typeButtons = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-type-filter]'));
+    const dealWrappers = Array.from(document.querySelectorAll<HTMLElement>('[data-deal-type]'));
+
+    function applyType(type: string) {
+      dealWrappers.forEach((wrapper) => {
+        wrapper.classList.toggle('hidden', type !== 'all' && wrapper.dataset.dealType !== type);
+      });
+      typeButtons.forEach((button) => {
+        const active = button.dataset.typeFilter === type;
+        button.classList.toggle('bg-brand-blue', active);
+        button.classList.toggle('text-base-950', active);
+        button.classList.toggle('text-gray-400', !active);
+      });
+    }
+
+    typeButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const type = button.dataset.typeFilter || 'all';
+        applyType(type);
+        const url = new URL(window.location.href);
+        type === 'all' ? url.searchParams.delete('type') : url.searchParams.set('type', type);
+        history.replaceState({}, '', url);
+      });
+    });
+
+    applyType(new URLSearchParams(window.location.search).get('type') || 'all');
+  </script>
 </BaseLayout>

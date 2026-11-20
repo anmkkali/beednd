@@ -1,85 +1,63 @@
 ---
-interface Props {
-  activeSearchQuery?: string;
-}
-const { activeSearchQuery = '' } = Astro.props;
+import Icon from './Icon.astro';
 ---
 
-<header class="sticky top-0 z-40 w-full border-b border-base-700/80 bg-base-950/90 backdrop-blur-md">
-  <!-- Top Flash Announcement Bar (Monetization & High Intent) -->
-  <div class="bg-gradient-to-r from-blue-700 via-indigo-600 to-purple-700 px-4 py-1.5 text-xs font-medium text-white flex items-center justify-between">
-    <div class="mx-auto flex items-center space-x-2 truncate">
-      <span class="bg-white/20 px-1.5 py-0.5 rounded text-[10px] font-bold tracking-wider uppercase">Flash Deal</span>
-      <span class="truncate">Bluehost AI Website Builder with 100% Promo Code (worth $80)</span>
-      <a href="/deals/bluehost-ai-builder-100-off" class="ml-2 underline font-semibold hover:text-white/80 transition-colors">Claim Now &rarr;</a>
-    </div>
+<header class="sticky top-0 z-40 w-full border-b border-base-800 bg-base-950/95 backdrop-blur-lg">
+  <div class="mx-auto flex h-16 max-w-7xl items-center gap-3 px-4 sm:px-6 lg:px-8">
+    <a href="/" class="flex shrink-0 items-center gap-2.5" aria-label="DealsSite home">
+      <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-blue text-base-950">
+        <Icon name="tag" class="h-5 w-5" />
+      </span>
+      <span class="text-lg font-extrabold tracking-tight text-white">DealsSite</span>
+    </a>
+
+    <button
+      type="button"
+      id="header-search-btn"
+      class="mx-auto flex h-10 w-full max-w-xl items-center gap-2 rounded-lg bg-base-900 px-3.5 text-sm text-gray-400 transition-colors hover:bg-base-800 hover:text-white"
+      aria-label="Search deals and brands"
+    >
+      <Icon name="search" class="h-4 w-4 shrink-0" />
+      <span class="truncate">Search deals, brands and categories</span>
+      <kbd class="ml-auto hidden text-[10px] text-gray-500 md:block">Ctrl K</kbd>
+    </button>
+
+    <nav class="hidden items-center gap-2 md:flex" aria-label="Primary navigation">
+      <a href="/brands" class="inline-flex h-10 items-center gap-2 rounded-lg bg-brand-blue px-3.5 text-xs font-bold text-base-950 transition-opacity hover:opacity-90">
+        <Icon name="grid" class="h-4 w-4" />
+        Browse Brands
+      </a>
+
+      <details class="relative">
+        <summary class="flex h-10 cursor-pointer list-none items-center gap-2 rounded-lg bg-base-900 px-3 text-xs font-semibold text-gray-200 hover:bg-base-800">
+          <Icon name="location" class="h-4 w-4 text-brand-blue" />
+          Cities
+        </summary>
+        <div class="absolute right-0 top-12 w-44 rounded-xl bg-base-900 p-2 shadow-2xl ring-1 ring-base-700">
+          <a href="/pakistan/karachi" class="block rounded-lg px-3 py-2 text-xs text-gray-300 hover:bg-base-800 hover:text-white">Karachi</a>
+          <a href="/pakistan/lahore" class="block rounded-lg px-3 py-2 text-xs text-gray-300 hover:bg-base-800 hover:text-white">Lahore</a>
+          <a href="/pakistan/islamabad" class="block rounded-lg px-3 py-2 text-xs text-gray-300 hover:bg-base-800 hover:text-white">Islamabad</a>
+          <a href="/pakistan/rawalpindi" class="block rounded-lg px-3 py-2 text-xs text-gray-300 hover:bg-base-800 hover:text-white">Rawalpindi</a>
+        </div>
+      </details>
+
+      <label class="relative flex h-10 items-center gap-2 rounded-lg bg-base-900 px-3 text-xs font-semibold text-gray-300">
+        <Icon name="globe" class="h-4 w-4 text-brand-blue" />
+        <span id="detected-country-label" class="hidden lg:inline">Detecting</span>
+        <select id="country-switcher" class="absolute inset-0 cursor-pointer opacity-0" aria-label="Choose market">
+          <option value="AUTO">Auto detect</option>
+          <option value="ALL">All markets</option>
+          <option value="PK">Pakistan</option>
+          <option value="US">United States</option>
+        </select>
+      </label>
+    </nav>
   </div>
 
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
-    <!-- Brand Logo -->
-    <div class="flex items-center space-x-3">
-      <a href="/" class="flex items-center space-x-2 group">
-        <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-brand-blue to-indigo-600 flex items-center justify-center text-white font-black text-xl shadow-lg shadow-brand-blue/20 group-hover:scale-105 transition-transform">
-          ⚡
-        </div>
-        <div class="flex flex-col">
-          <span class="text-lg font-black tracking-tight text-white group-hover:text-brand-blue transition-colors">
-            Deals<span class="text-brand-blue">Site</span>
-          </span>
-          <span class="text-[10px] text-gray-400 -mt-1 tracking-wider uppercase">Verified Savings</span>
-        </div>
-      </a>
-    </div>
-
-    <!-- Center Search Bar (Triggers Pagefind Modal) -->
-    <div class="flex-1 max-w-xl mx-2 hidden sm:block">
-      <button 
-        type="button"
-        id="header-search-btn"
-        class="w-full flex items-center justify-between px-3.5 py-2 text-sm text-gray-400 bg-base-900 border border-base-700 rounded-lg hover:border-brand-blue hover:text-gray-200 transition-all focus:outline-none focus:ring-1 focus:ring-brand-blue"
-        aria-label="Search deals, brands and bank cards"
-      >
-        <div class="flex items-center space-x-2">
-          <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-          </svg>
-          <span class="truncate">Search 1,400+ deals, brands, or banks...</span>
-        </div>
-        <kbd class="hidden md:inline-flex items-center px-1.5 py-0.5 text-[10px] font-semibold text-gray-400 bg-base-800 border border-base-700 rounded">
-          Ctrl + K
-        </kbd>
-      </button>
-    </div>
-
-    <!-- Right Quick Links & Modals -->
-    <div class="flex items-center space-x-3">
-      <a href="/pakistan/karachi" class="text-xs font-medium text-gray-300 hover:text-brand-blue transition-colors hidden md:block">
-        🇵🇰 Pakistan
-      </a>
-      <a href="/us" class="text-xs font-medium text-gray-300 hover:text-brand-blue transition-colors hidden md:block">
-        🇺🇸 USA
-      </a>
-      <a href="/blog" class="text-xs font-medium text-gray-300 hover:text-brand-blue transition-colors">
-        Guides
-      </a>
-      
-      <!-- 'My Card' Quick Filter Trigger -->
-      <button 
-        id="my-card-trigger-btn"
-        class="flex items-center space-x-1.5 px-3 py-1.5 text-xs font-semibold bg-base-800 border border-brand-purple/40 text-brand-purple rounded-lg hover:bg-brand-purple/10 transition-colors"
-        title="Personalize deals with your bank debit/credit cards"
-      >
-        <span>💳</span>
-        <span class="hidden sm:inline">My Card</span>
-      </button>
-
-      <!-- Submit Deal Button -->
-      <a 
-        href="/submit" 
-        class="px-3 py-1.5 text-xs font-semibold bg-brand-blue text-base-950 rounded-lg hover:bg-brand-blue/90 shadow-md shadow-brand-blue/10 transition-colors"
-      >
-        + Submit
-      </a>
-    </div>
+  <div class="flex gap-2 overflow-x-auto px-4 pb-3 md:hidden">
+    <a href="/brands" class="whitespace-nowrap rounded-lg bg-brand-blue px-3 py-2 text-xs font-bold text-base-950">Browse Brands</a>
+    <a href="/pakistan/karachi" class="whitespace-nowrap rounded-lg bg-base-900 px-3 py-2 text-xs text-gray-300">Karachi</a>
+    <a href="/pakistan/lahore" class="whitespace-nowrap rounded-lg bg-base-900 px-3 py-2 text-xs text-gray-300">Lahore</a>
+    <a href="/pakistan/islamabad" class="whitespace-nowrap rounded-lg bg-base-900 px-3 py-2 text-xs text-gray-300">Islamabad</a>
   </div>
 </header>

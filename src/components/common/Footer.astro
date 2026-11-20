@@ -1,69 +1,53 @@
 ---
+import Icon from './Icon.astro';
 ---
-<footer class="w-full border-t border-base-700/80 bg-base-900/60 mt-16 text-gray-400 text-xs">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <!-- Top Grid -->
-    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-10">
-      <div class="col-span-2">
-        <div class="flex items-center space-x-2 mb-3">
-          <div class="w-6 h-6 rounded bg-brand-blue flex items-center justify-center text-base-950 font-black text-sm">
-            ⚡
-          </div>
-          <span class="text-base font-black text-white">Deals<span class="text-brand-blue">Site</span></span>
+
+<footer class="mt-16 border-t border-base-800 bg-base-950 text-xs text-gray-500">
+  <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+    <div class="grid gap-8 md:grid-cols-[1.5fr_1fr_1fr_1fr]">
+      <div>
+        <a href="/" class="mb-3 flex items-center gap-2 text-base font-extrabold text-white">
+          <span class="flex h-7 w-7 items-center justify-center rounded-md bg-brand-blue text-base-950">
+            <Icon name="tag" class="h-4 w-4" />
+          </span>
+          DealsSite
+        </a>
+        <p class="max-w-sm leading-relaxed">Current discounts and promo codes organized by country, brand, category and city.</p>
+      </div>
+
+      <div>
+        <h2 class="mb-3 font-bold text-gray-200">Browse</h2>
+        <div class="space-y-2">
+          <a href="/brands" class="block hover:text-brand-blue">All brands</a>
+          <a href="/categories/clothing-fashion" class="block hover:text-brand-blue">Clothing & fashion</a>
+          <a href="/categories/tech-electronics" class="block hover:text-brand-blue">Tech & electronics</a>
+          <a href="/blog" class="block hover:text-brand-blue">Blog</a>
         </div>
-        <p class="text-xs text-gray-400 max-w-sm mb-4 leading-relaxed">
-          The lightning-fast, verified deals and coupon platform. We aggregate discounts from top global retail brands and Pakistani banking partners, verified with transparent timestamps.
-        </p>
-        <p class="text-[11px] text-gray-500">
-          Target: Lighthouse 98+ • Sub-1.2s LCP • Zero Javascript Bloat.
-        </p>
       </div>
 
-      <!-- Cities -->
       <div>
-        <h4 class="font-semibold text-white mb-3 text-sm">Pakistan Cities</h4>
-        <ul class="space-y-2">
-          <li><a href="/pakistan/karachi" class="hover:text-brand-blue transition-colors">Karachi Deals</a></li>
-          <li><a href="/pakistan/lahore" class="hover:text-brand-blue transition-colors">Lahore Deals</a></li>
-          <li><a href="/pakistan/islamabad" class="hover:text-brand-blue transition-colors">Islamabad Deals</a></li>
-          <li><a href="/pakistan/rawalpindi" class="hover:text-brand-blue transition-colors">Rawalpindi Deals</a></li>
-        </ul>
+        <h2 class="mb-3 font-bold text-gray-200">Cities</h2>
+        <div class="space-y-2">
+          <a href="/pakistan/karachi" class="block hover:text-brand-blue">Karachi</a>
+          <a href="/pakistan/lahore" class="block hover:text-brand-blue">Lahore</a>
+          <a href="/pakistan/islamabad" class="block hover:text-brand-blue">Islamabad</a>
+          <a href="/pakistan/rawalpindi" class="block hover:text-brand-blue">Rawalpindi</a>
+        </div>
       </div>
 
-      <!-- Banks -->
       <div>
-        <h4 class="font-semibold text-white mb-3 text-sm">Bank Cards</h4>
-        <ul class="space-y-2">
-          <li><a href="/banks/hbl" class="hover:text-brand-purple transition-colors">HBL Discounts</a></li>
-          <li><a href="/banks/meezan" class="hover:text-brand-purple transition-colors">Meezan Bank Cards</a></li>
-          <li><a href="/banks/alfalah" class="hover:text-brand-purple transition-colors">Bank Alfalah Alfa</a></li>
-          <li><a href="/blog/best-bank-card-discounts-2026" class="hover:text-brand-purple transition-colors">Card Compare 2026</a></li>
-        </ul>
-      </div>
-
-      <!-- Categories -->
-      <div>
-        <h4 class="font-semibold text-white mb-3 text-sm">Categories</h4>
-        <ul class="space-y-2">
-          <li><a href="/categories/clothing-fashion" class="hover:text-brand-blue transition-colors">Clothing & Fashion</a></li>
-          <li><a href="/categories/hosting-software" class="hover:text-brand-blue transition-colors">Hosting & AI Tools</a></li>
-          <li><a href="/categories/tech-electronics" class="hover:text-brand-blue transition-colors">Electronics</a></li>
-          <li><a href="/categories/food-dining" class="hover:text-brand-blue transition-colors">Food & Dining</a></li>
-        </ul>
+        <h2 class="mb-3 font-bold text-gray-200">Banks</h2>
+        <div class="space-y-2">
+          <a href="/banks/hbl" class="block hover:text-brand-blue">HBL</a>
+          <a href="/banks/meezan" class="block hover:text-brand-blue">Meezan Bank</a>
+          <a href="/banks/alfalah" class="block hover:text-brand-blue">Bank Alfalah</a>
+        </div>
       </div>
     </div>
 
-    <!-- FTC / Consumer Disclosure & Copyright -->
-    <div class="border-t border-base-800 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] text-gray-500">
-      <div class="max-w-2xl leading-relaxed">
-        <strong>Affiliate & Advertising Disclosure:</strong> DealsSite is reader-supported. When you claim deals or purchase products using links on our platform, we may earn an affiliate commission at no extra cost to you. All trademarks, logos, and brand names are property of their respective owners and used solely for identification.
-      </div>
-      <div class="flex items-center space-x-4 shrink-0">
-        <a href="/privacy" class="hover:text-gray-300">Privacy Policy</a>
-        <a href="/terms" class="hover:text-gray-300">Terms of Service</a>
-        <a href="/disclosure" class="hover:text-gray-300">Disclosure</a>
-        <span>&copy; {new Date().getFullYear()} DealsSite.</span>
-      </div>
+    <div class="mt-10 flex flex-col gap-3 border-t border-base-800 pt-6 text-[11px] sm:flex-row sm:items-center sm:justify-between">
+      <p>Brand names and logos belong to their respective owners.</p>
+      <p>&copy; {new Date().getFullYear()} DealsSite</p>
     </div>
   </div>
 </footer>

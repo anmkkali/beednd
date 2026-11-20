@@ -19,19 +19,21 @@ export async function getStaticPaths() {
 
   return categories.map(cat => {
     const catDeals = allDeals.filter(d => d.data.category === cat);
+    const categoryBrands = allBrands.filter(brand => brand.data.categories.includes(cat));
     return {
       params: { category: cat },
       props: { 
         categoryName: cat.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' & '),
         categoryId: cat,
         deals: catDeals,
+        categoryBrands,
         brandMap
       }
     };
   });
 }
 
-const { categoryName, categoryId, deals, brandMap } = Astro.props;
+const { categoryName, categoryId, deals, categoryBrands, brandMap } = Astro.props;
 ---
 
 <BaseLayout 
@@ -39,7 +41,7 @@ const { categoryName, categoryId, deals, brandMap } = Astro.props;
   description={`Browse verified ${categoryName} coupon codes, discounts, and store sales.`}
   activeTopic={categoryId}
 >
-  <div class="mb-8">
+  <div class="mb-8 max-w-3xl">
     <div class="flex items-center space-x-2 text-xs text-gray-500 mb-1">
       <a href="/" class="hover:text-brand-blue">Home</a>
       <span>/</span>
@@ -48,15 +50,36 @@ const { categoryName, categoryId, deals, brandMap } = Astro.props;
       <span class="text-gray-300">{categoryName}</span>
     </div>
     
-    <h1 class="text-2xl sm:text-3xl font-black text-white">
-      {categoryName} Discounts & Coupons
+    <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-white">
+      {categoryName} deals
     </h1>
     <p class="text-xs sm:text-sm text-gray-400 mt-1">
-      Verified deals, cashbacks, and store promotional vouchers for {categoryName}.
+      Browse brands and current offers in {categoryName.toLowerCase()}.
     </p>
   </div>
 
-  <div class="space-y-4">
+  {categoryBrands.length > 0 && (
+    <section class="mb-10">
+      <h2 class="mb-4 text-sm font-bold text-white">Brands in this category</h2>
+      <div class="grid grid-cols-2 gap-3 sm:grid-cols-4">
+        {categoryBrands.map(brand => (
+          <a
+            href={`/brands/${brand.data.slug}`}
+            data-market={brand.data.country}
+            class="flex items-center gap-3 rounded-xl bg-base-900 p-3 hover:bg-base-800"
+          >
+            <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-white p-1.5">
+              <img src={brand.data.logo_url} alt="" class="h-full w-full object-contain" />
+            </span>
+            <span class="truncate text-xs font-bold text-white">{brand.data.name}</span>
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <h2 class="mb-4 text-sm font-bold text-white">Current offers</h2>
+  <div class="space-y-3">
     {deals.length > 0 ? (
       deals.map(deal => (
         <DealBannerCard 
@@ -66,8 +89,8 @@ const { categoryName, categoryId, deals, brandMap } = Astro.props;
         />
       ))
     ) : (
-      <div class="p-8 text-center text-gray-500 bg-base-900 border border-base-800 rounded-xl">
-        No active deals currently in {categoryName}. Check back shortly!
+      <div class="rounded-xl bg-base-900 p-8 text-center text-gray-500">
+        No active deals currently in {categoryName}.
       </div>
     )}
   </div>

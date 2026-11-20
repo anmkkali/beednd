@@ -12,7 +12,14 @@
   }
 }
 
-/* Custom scrollbars */
+.market-hidden {
+  display: none !important;
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -28,7 +35,6 @@
   background: #374151;
 }
 
-/* Zero Cumulative Layout Shift (CLS) containers for Ads */
 .ad-slot-leaderboard {
   min-height: 90px;
   width: 100%;

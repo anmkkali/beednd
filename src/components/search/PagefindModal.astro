@@ -1,150 +1,171 @@
 ---
-// Pagefind Search Modal Component
+import { getCollection } from 'astro:content';
+import Icon from '../common/Icon.astro';
+
+const deals = await getCollection('deals', ({ data }) => data.status === 'active');
+const brands = await getCollection('brands');
+const posts = await getCollection('blog', ({ data }) => data.is_published);
+
+const categories = [
+  ['Clothing & Fashion', '/categories/clothing-fashion'],
+  ['Tech & Electronics', '/categories/tech-electronics'],
+  ['Software & Hosting', '/categories/hosting-software'],
+  ['Food & Dining', '/categories/food-dining'],
+  ['Beauty & Wellness', '/categories/beauty-wellness'],
+  ['Travel & Hotels', '/categories/travel-lifestyle'],
+  ['Groceries', '/categories/groceries-essentials'],
+];
+
+const cities = ['Karachi', 'Lahore', 'Islamabad', 'Rawalpindi'];
 ---
 
-<div id="search-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-start justify-center pt-20 p-4">
-  <div class="bg-base-900 border border-base-700 rounded-2xl max-w-2xl w-full p-4 shadow-2xl relative text-xs">
-    <div class="flex items-center space-x-3 border-b border-base-700 pb-3">
-      <svg class="w-5 h-5 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-      </svg>
-      <input 
-        type="search" 
+<div id="search-modal" class="fixed inset-0 z-50 hidden items-start justify-center bg-base-950/90 p-4 pt-[8vh] backdrop-blur-sm">
+  <div class="w-full max-w-2xl overflow-hidden rounded-2xl bg-base-900 shadow-2xl ring-1 ring-base-700">
+    <div class="flex items-center gap-3 px-5 py-4">
+      <Icon name="search" class="h-5 w-5 text-brand-blue" />
+      <input
+        type="search"
         id="pagefind-input"
-        placeholder="Type to search deals, brands, banks, categories..."
-        class="w-full bg-transparent text-sm text-white placeholder-gray-500 focus:outline-none"
-        autofocus
+        placeholder="Search a deal, brand, category or city"
+        class="w-full bg-transparent text-base text-white placeholder-gray-500 focus:outline-none"
+        autocomplete="off"
       />
-      <button id="close-search-modal-btn" class="text-gray-400 hover:text-white px-2 py-1 rounded">
-        ESC
-      </button>
+      <button id="close-search-modal-btn" class="rounded-md bg-base-800 px-2 py-1 text-[10px] text-gray-400 hover:text-white">ESC</button>
     </div>
 
-    <!-- Results Container -->
-    <div id="pagefind-results" class="mt-4 max-h-96 overflow-y-auto space-y-2">
-      <div class="p-8 text-center text-gray-500">
-        Start typing to search deals across Pakistan & US retail brands...
+    <div id="pagefind-results" class="max-h-[65vh] overflow-y-auto border-t border-base-800 p-3">
+      <p id="search-empty" class="hidden p-8 text-center text-sm text-gray-500">No matching deals or brands found.</p>
+
+      <div class="search-group">
+        <p class="px-3 py-2 text-[10px] font-bold uppercase tracking-[0.16em] text-gray-500">Brands</p>
+        {brands.map((brand) => (
+          <a
+            href={`/brands/${brand.data.slug}`}
+            data-search-item
+            data-search-term={`${brand.data.name} ${brand.data.categories.join(' ')} ${brand.data.country}`}
+            class="search-result-item flex items-center gap-3 rounded-lg px-3 py-2.5 hover:bg-base-800"
+          >
+            <span class="flex h-8 w-8 items-center justify-center rounded-md bg-white p-1.5">
+              <img src={brand.data.logo_url} alt="" class="h-full w-full object-contain" />
+            </span>
+            <span>
+              <strong class="block text-sm text-white">{brand.data.name}</strong>
+              <small class="text-[11px] text-gray-500">Brand</small>
+            </span>
+          </a>
+        ))}
+      </div>
+
+      <div class="search-group">
+        <p class="px-3 py-2 text-[10px] font-bold uppercase tracking-[0.16em] text-gray-500">Deals</p>
+        {deals.map((deal) => (
+          <a
+            href={`/deals/${deal.data.slug}`}
+            data-search-item
+            data-search-term={`${deal.data.title} ${deal.data.brand_id} ${deal.data.category} ${deal.data.tags.join(' ')}`}
+            class="search-result-item flex items-center justify-between gap-4 rounded-lg px-3 py-2.5 hover:bg-base-800"
+          >
+            <span class="line-clamp-1 text-sm text-gray-200">{deal.data.title}</span>
+            <strong class="shrink-0 text-xs text-brand-blue">{deal.data.discount_value}</strong>
+          </a>
+        ))}
+      </div>
+
+      <div class="search-group">
+        <p class="px-3 py-2 text-[10px] font-bold uppercase tracking-[0.16em] text-gray-500">Categories & cities</p>
+        {[...categories, ...cities.map((city) => [city, `/pakistan/${city.toLowerCase()}`])].map(([label, href]) => (
+          <a
+            href={href}
+            data-search-item
+            data-search-term={label}
+            class="search-result-item flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-gray-300 hover:bg-base-800 hover:text-white"
+          >
+            <Icon name={cities.includes(label) ? 'location' : 'grid'} class="h-4 w-4 text-brand-blue" />
+            {label}
+          </a>
+        ))}
+      </div>
+
+      <div class="search-group">
+        <p class="px-3 py-2 text-[10px] font-bold uppercase tracking-[0.16em] text-gray-500">From the blog</p>
+        {posts.map((post) => (
+          <a
+            href={`/blog/${post.slug}`}
+            data-search-item
+            data-search-term={`${post.data.title} ${post.data.tags.join(' ')}`}
+            class="search-result-item block rounded-lg px-3 py-2.5 text-sm text-gray-300 hover:bg-base-800 hover:text-white"
+          >
+            {post.data.title}
+          </a>
+        ))}
       </div>
     </div>
   </div>
 </div>
 
 <script>
-  // Search modal keybind listeners (Ctrl+K and ESC)
   const searchModal = document.getElementById('search-modal');
   const searchInput = document.getElementById('pagefind-input') as HTMLInputElement | null;
   const headerSearchBtn = document.getElementById('header-search-btn');
   const closeSearchBtn = document.getElementById('close-search-modal-btn');
+  const searchItems = Array.from(document.querySelectorAll<HTMLElement>('[data-search-item]'));
+  const searchGroups = Array.from(document.querySelectorAll<HTMLElement>('.search-group'));
+  const searchEmpty = document.getElementById('search-empty');
+
+  function filterSearch() {
+    const query = searchInput?.value.trim().toLowerCase() || '';
+    let visibleCount = 0;
+
+    searchItems.forEach((item) => {
+      const matches = !query || (item.dataset.searchTerm || '').toLowerCase().includes(query);
+      item.classList.toggle('hidden', !matches);
+      if (matches) visibleCount += 1;
+    });
+
+    searchGroups.forEach((group) => {
+      group.classList.toggle('hidden', !group.querySelector('[data-search-item]:not(.hidden)'));
+    });
+    searchEmpty?.classList.toggle('hidden', visibleCount > 0);
+  }
 
   function openSearch() {
     searchModal?.classList.remove('hidden');
     searchModal?.classList.add('flex');
-    searchInput?.focus();
+    document.body.style.overflow = 'hidden';
+    window.setTimeout(() => searchInput?.focus(), 0);
   }
 
   function closeSearch() {
     searchModal?.classList.add('hidden');
     searchModal?.classList.remove('flex');
+    document.body.style.overflow = '';
   }
 
   headerSearchBtn?.addEventListener('click', openSearch);
   closeSearchBtn?.addEventListener('click', closeSearch);
+  searchInput?.addEventListener('input', filterSearch);
+  searchModal?.addEventListener('click', (event) => {
+    if (event.target === searchModal) closeSearch();
+  });
 
-  window.addEventListener('keydown', (e) => {
-    if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
-      e.preventDefault();
+  window.addEventListener('keydown', (event) => {
+    if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') {
+      event.preventDefault();
       openSearch();
     }
-    if (e.key === 'Escape' && !searchModal?.classList.contains('hidden')) {
-      closeSearch();
-    }
+    if (event.key === 'Escape') closeSearch();
   });
 
-  // Client clipboard copy handler for promo codes
-  document.addEventListener('click', (e) => {
-    const target = (e.target as HTMLElement).closest('.copy-code-btn') as HTMLElement | null;
-    if (target) {
-      const code = target.getAttribute('data-code');
-      const outbound = target.getAttribute('data-outbound');
-      if (code) {
-        navigator.clipboard.writeText(code);
-        const originalText = target.innerHTML;
-        target.innerHTML = `<span class="text-emerald-300 font-bold">✓ COPIED!</span>`;
-        setTimeout(() => {
-          target.innerHTML = originalText;
-        }, 2500);
-
-        if (outbound) {
-          window.open(outbound, '_blank', 'noopener,noreferrer');
-        }
-      }
-    }
+  document.addEventListener('click', (event) => {
+    const target = (event.target as HTMLElement).closest('.copy-code-btn') as HTMLElement | null;
+    if (!target) return;
+    const code = target.dataset.code;
+    if (!code) return;
+    navigator.clipboard.writeText(code);
+    const originalText = target.textContent;
+    target.textContent = 'Copied';
+    window.setTimeout(() => {
+      target.textContent = originalText;
+    }, 1800);
   });
-
-  // 'My Card' Modal toggles
-  const cardModal = document.getElementById('my-card-modal');
-  const cardTrigger = document.getElementById('my-card-trigger-btn');
-  const closeCardBtn = document.getElementById('close-card-modal-btn');
-  const saveCardsBtn = document.getElementById('save-cards-btn');
-  const resetCardsBtn = document.getElementById('reset-cards-btn');
-
-  cardTrigger?.addEventListener('click', () => {
-    cardModal?.classList.remove('hidden');
-    cardModal?.classList.add('flex');
-  });
-
-  closeCardBtn?.addEventListener('click', () => {
-    cardModal?.classList.add('hidden');
-    cardModal?.classList.remove('flex');
-  });
-
-  saveCardsBtn?.addEventListener('click', () => {
-    const checked = Array.from(document.querySelectorAll('input[name="bank-select"]:checked')).map(
-      (el) => (el as HTMLInputElement).value
-    );
-    localStorage.setItem('dealssite_user_cards', JSON.stringify(checked));
-    cardModal?.classList.add('hidden');
-    cardModal?.classList.remove('flex');
-    applyCardFilter(checked);
-  });
-
-  resetCardsBtn?.addEventListener('click', () => {
-    document.querySelectorAll('input[name="bank-select"]').forEach((el) => {
-      (el as HTMLInputElement).checked = false;
-    });
-    localStorage.removeItem('dealssite_user_cards');
-    applyCardFilter([]);
-  });
-
-  function applyCardFilter(selectedBanks: string[]) {
-    const dealCards = document.querySelectorAll('article[data-bank-id]');
-    if (selectedBanks.length === 0) {
-      dealCards.forEach((c) => (c as HTMLElement).style.display = '');
-      return;
-    }
-    dealCards.forEach((card) => {
-      const bankId = card.getAttribute('data-bank-id');
-      if (bankId && selectedBanks.includes(bankId)) {
-        (card as HTMLElement).style.display = '';
-      } else if (!bankId) {
-        (card as HTMLElement).style.display = ''; // General deals remain visible
-      } else {
-        (card as HTMLElement).style.display = 'none';
-      }
-    });
-  }
-
-  // Restore saved cards from localStorage on page load
-  try {
-    const saved = JSON.parse(localStorage.getItem('dealssite_user_cards') || '[]');
-    if (saved && saved.length > 0) {
-      saved.forEach((bankVal: string) => {
-        const checkbox = document.querySelector(`input[name="bank-select"][value="${bankVal}"]`) as HTMLInputElement | null;
-        if (checkbox) checkbox.checked = true;
-      });
-      applyCardFilter(saved);
-    }
-  } catch (err) {
-    console.error('Error restoring cards from localStorage', err);
-  }
 </script>
