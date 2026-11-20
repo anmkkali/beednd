@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('blog', ({ data }) => data.is_published);
+---
+
+<BaseLayout 
+  title="Shopping Guides, Bank Discount Comparisons & Tips"
+  description="In-depth money-saving guides, Pakistani bank card comparisons, and seasonal shopping strategies."
+>
+  <div class="mb-8">
+    <h1 class="text-2xl sm:text-3xl font-black text-white">
+      Shopping & Savings Editorial Guides
+    </h1>
+    <p class="text-xs sm:text-sm text-gray-400 mt-1">
+      Data-driven guides on stacking discounts, maximizing bank reward points, and shopping smart.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    {allPosts.map(post => (
+      <article class="bg-base-900 border border-base-700/80 rounded-2xl overflow-hidden hover:border-brand-blue/50 transition-all group flex flex-col">
+        <div class="aspect-[16/9] w-full overflow-hidden bg-base-800">
+          <img 
+            src={post.data.hero_image} 
+            alt={post.data.title}
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            loading="lazy"
+          />
+        </div>
+        <div class="p-5 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center space-x-2 text-[11px] text-gray-400 mb-2">
+              <span>{post.data.published_date.split('T')[0]}</span>
+              <span>•</span>
+              <span class="text-brand-purple font-medium">{post.data.author}</span>
+            </div>
+            <h2 class="text-base font-bold text-white group-hover:text-brand-blue transition-colors line-clamp-2 mb-2">
+              <a href={`/blog/${post.slug}`}>
+                {post.data.title}
+              </a>
+            </h2>
+            <p class="text-xs text-gray-400 line-clamp-3 leading-relaxed mb-4">
+              {post.data.description}
+            </p>
+          </div>
+          <a href={`/blog/${post.slug}`} class="text-xs font-bold text-brand-blue flex items-center space-x-1 group-hover:translate-x-1 transition-transform">
+            <span>Read Complete Guide</span>
+            <span>&rarr;</span>
+          </a>
+        </div>
+      </article>
+    ))}
+  </div>
+</BaseLayout>

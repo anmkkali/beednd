@@ -1,0 +1,11 @@
+{
+  "id": "hbl",
+  "name": "Habib Bank Limited (HBL)",
+  "short_code": "hbl",
+  "country": "PK",
+  "logo_url": "https://www.google.com/s2/favicons?domain=hbl.com&sz=128",
+  "official_discounts_page": "https://www.hbl.com/personal/cards/discounts-and-promotions",
+  "helpline_number": "111-111-425",
+  "supported_card_tiers": ["Classic Debit", "Gold Credit", "Platinum Debit", "Platinum Credit", "World Elite"],
+  "primary_color_hex": "#008269"
+}

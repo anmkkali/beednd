@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map(post => ({
+    params: { slug: post.slug },
+    props: { post }
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": post.data.title,
+  "description": post.data.description,
+  "image": post.data.hero_image,
+  "datePublished": post.data.published_date,
+  "author": {
+    "@type": "Person",
+    "name": post.data.author
+  }
+};
+---
+
+<BaseLayout 
+  title={post.data.title}
+  description={post.data.description}
+  image={post.data.hero_image}
+  structuredData={structuredData}
+>
+  <article class="max-w-3xl mx-auto py-4">
+    <div class="mb-6">
+      <div class="text-xs text-gray-400 mb-2">
+        Published on {post.data.published_date.split('T')[0]} by <span class="text-brand-purple font-semibold">{post.data.author}</span>
+      </div>
+      <h1 class="text-2xl sm:text-4xl font-black text-white leading-tight mb-4">
+        {post.data.title}
+      </h1>
+      <p class="text-sm text-gray-300 leading-relaxed italic border-l-2 border-brand-blue pl-4 py-1">
+        {post.data.description}
+      </p>
+    </div>
+
+    <div class="aspect-[16/9] w-full rounded-2xl overflow-hidden mb-8 border border-base-700">
+      <img src={post.data.hero_image} alt={post.data.title} class="w-full h-full object-cover" />
+    </div>
+
+    <!-- Article Markdown Content -->
+    <div class="prose prose-invert prose-blue max-w-none text-sm leading-relaxed space-y-4 text-gray-300">
+      <Content />
+    </div>
+  </article>
+</BaseLayout>

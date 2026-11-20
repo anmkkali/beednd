@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import DealBannerCard from '../../components/deals/DealBannerCard.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const banks = await getCollection('banks');
+  const deals = await getCollection('deals');
+  const brands = await getCollection('brands');
+  const brandMap = new Map(brands.map(b => [b.data.id, b.data]));
+
+  return banks.map(bank => {
+    const bankDeals = deals.filter(d => d.data.bank_details?.bank_id === bank.data.id);
+    return {
+      params: { slug: bank.data.short_code },
+      props: { bank: bank.data, deals: bankDeals, brandMap }
+    };
+  });
+}
+
+const { bank, deals, brandMap } = Astro.props;
+---
+
+<BaseLayout 
+  title={`${bank.name} Card Discounts & Promotions`}
+  description={`Complete guide to ${bank.name} credit and debit card discounts across dining, clothing, and lifestyle.`}
+>
+  <div class="mb-8">
+    <div class="flex items-center space-x-4 mb-4">
+      <div class="w-14 h-14 rounded-2xl bg-base-900 border border-base-700 p-2.5 flex items-center justify-center">
+        <img src={bank.logo_url} alt={`${bank.name} logo`} class="w-full h-full object-contain" />
+      </div>
+      <div>
+        <h1 class="text-2xl sm:text-3xl font-black text-white">
+          {bank.name} Card Discounts
+        </h1>
+        <p class="text-xs text-gray-400 mt-1">Helpline: {bank.helpline_number}</p>
+      </div>
+    </div>
+
+    <!-- Supported Card Tiers -->
+    <div class="flex flex-wrap items-center gap-1.5 text-xs text-gray-400">
+      <span class="font-bold text-gray-300">Supported Tiers:</span>
+      {bank.supported_card_tiers.map(tier => (
+        <span class="px-2 py-0.5 bg-base-800 border border-base-700 rounded text-[11px]">
+          {tier}
+        </span>
+      ))}
+    </div>
+  </div>
+
+  <div class="space-y-4">
+    {deals.length > 0 ? (
+      deals.map(deal => (
+        <DealBannerCard 
+          deal={deal.data} 
+          brandName={brandMap.get(deal.data.brand_id)?.name}
+          brandLogo={brandMap.get(deal.data.brand_id)?.logo_url} 
+        />
+      ))
+    ) : (
+      <div class="p-8 text-center text-gray-500 bg-base-900 border border-base-800 rounded-xl">
+        No active card discounts currently listed for {bank.name}.
+      </div>
+    )}
+  </div>
+</BaseLayout>

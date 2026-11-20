@@ -1,0 +1,11 @@
+{
+  "id": "meezan",
+  "name": "Meezan Bank",
+  "short_code": "meezan",
+  "country": "PK",
+  "logo_url": "https://www.google.com/s2/favicons?domain=meezanbank.com&sz=128",
+  "official_discounts_page": "https://www.meezanbank.com/discounts-promotions/",
+  "helpline_number": "111-331-331",
+  "supported_card_tiers": ["Silver Debit", "Gold Debit", "Titanium Debit", "Platinum Debit", "Infinite"],
+  "primary_color_hex": "#58122D"
+}

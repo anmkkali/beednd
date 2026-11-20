@@ -1,0 +1,81 @@
+---
+// MyCardSelector Component - Client-side bank card personalization
+---
+
+<div id="my-card-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+  <div class="bg-base-900 border border-base-700 rounded-2xl max-w-lg w-full p-6 shadow-2xl relative text-xs">
+    <button 
+      id="close-card-modal-btn"
+      class="absolute top-4 right-4 text-gray-400 hover:text-white p-1 rounded-lg"
+      aria-label="Close modal"
+    >
+      ✕
+    </button>
+
+    <div class="flex items-center space-x-2 text-brand-purple mb-2">
+      <span class="text-lg">💳</span>
+      <h3 class="text-base font-bold text-white">Select Your Cards</h3>
+    </div>
+    <p class="text-gray-400 mb-5 leading-relaxed">
+      Choose your bank cards to instantly filter and highlight exclusive discounts across our entire catalog. Saved locally in your browser.
+    </p>
+
+    <!-- Bank Checkboxes -->
+    <div class="space-y-4 mb-6 max-h-64 overflow-y-auto pr-1">
+      <!-- HBL -->
+      <label class="flex items-center justify-between p-3 bg-base-800/80 border border-base-700 rounded-xl hover:border-brand-purple cursor-pointer">
+        <div class="flex items-center space-x-3">
+          <input type="checkbox" name="bank-select" value="hbl" class="w-4 h-4 text-brand-purple rounded bg-base-900 border-base-600 focus:ring-brand-purple">
+          <div>
+            <div class="font-bold text-white">Habib Bank Limited (HBL)</div>
+            <div class="text-[11px] text-gray-400">Platinum Debit, Gold Credit, World Elite</div>
+          </div>
+        </div>
+        <span class="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded">15 Deals</span>
+      </label>
+
+      <!-- Meezan -->
+      <label class="flex items-center justify-between p-3 bg-base-800/80 border border-base-700 rounded-xl hover:border-brand-purple cursor-pointer">
+        <div class="flex items-center space-x-3">
+          <input type="checkbox" name="bank-select" value="meezan" class="w-4 h-4 text-brand-purple rounded bg-base-900 border-base-600 focus:ring-brand-purple">
+          <div>
+            <div class="font-bold text-white">Meezan Bank</div>
+            <div class="text-[11px] text-gray-400">Titanium Debit, Platinum Islamic Card</div>
+          </div>
+        </div>
+        <span class="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded">11 Deals</span>
+      </label>
+
+      <!-- Alfalah -->
+      <label class="flex items-center justify-between p-3 bg-base-800/80 border border-base-700 rounded-xl hover:border-brand-purple cursor-pointer">
+        <div class="flex items-center space-x-3">
+          <input type="checkbox" name="bank-select" value="alfalah" class="w-4 h-4 text-brand-purple rounded bg-base-900 border-base-600 focus:ring-brand-purple">
+          <div>
+            <div class="font-bold text-white">Bank Alfalah</div>
+            <div class="text-[11px] text-gray-400">Visa Signature, Alfa Cashback Credit</div>
+          </div>
+        </div>
+        <span class="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded">18 Deals</span>
+      </label>
+    </div>
+
+    <!-- Actions -->
+    <div class="flex items-center justify-between pt-4 border-t border-base-800">
+      <button 
+        type="button" 
+        id="reset-cards-btn"
+        class="text-gray-400 hover:text-white font-medium"
+      >
+        Reset Selection
+      </button>
+
+      <button 
+        type="button"
+        id="save-cards-btn"
+        class="bg-brand-purple hover:bg-brand-purple/90 text-white font-bold px-4 py-2 rounded-xl transition-colors shadow-lg shadow-brand-purple/20"
+      >
+        Save & Apply Filter
+      </button>
+    </div>
+  </div>
+</div>

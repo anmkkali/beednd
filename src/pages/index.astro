@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import DealBannerCard from '../components/deals/DealBannerCard.astro';
+import AdSlot from '../components/ads/AdSlot.astro';
+import { getCollection } from 'astro:content';
+
+// Fetch all active deals and brands from Content Collections
+const allDeals = await getCollection('deals', ({ data }) => data.status === 'active');
+const allBrands = await getCollection('brands');
+
+// Create brand lookup map
+const brandMap = new Map(allBrands.map(b => [b.data.id, b.data]));
+
+// Featured Hero Deal
+const featuredDeal = allDeals.find(d => d.data.is_featured) || allDeals[0];
+const regularDeals = allDeals.filter(d => d.id !== featuredDeal?.id);
+
+// Category Quick Filter Pills
+const filterPills = [
+  { label: 'All Offers', href: '/' },
+  { label: '💳 Bank Cards', href: '/?type=bank-card' },
+  { label: '🏷️ Promo Codes', href: '/?type=promo-code' },
+  { label: '🛍️ Store Sales', href: '/?type=store-sale' },
+  { label: '🏬 In-Store (Cities)', href: '/pakistan/karachi' },
+];
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "DealsSite",
+  "url": "https://dealssite.com",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://dealssite.com/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+};
+---
+
+<BaseLayout 
+  title="Verified Discounts, Promo Codes & Bank Deals" 
+  description="Browse verified discounts, store sales, and bank card privileges from top brands worldwide and Pakistan."
+  structuredData={structuredData}
+>
+  <!-- Page Header -->
+  <div class="mb-6">
+    <div class="flex items-center space-x-2 text-xs text-gray-500 mb-1">
+      <a href="/" class="hover:text-brand-blue">Home</a>
+      <span>/</span>
+      <span class="text-gray-300">Trending Discounts</span>
+    </div>
+    
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+      <div>
+        <h1 class="text-2xl sm:text-3xl font-black text-white tracking-tight">
+          Trending Retail & Bank Deals
+        </h1>
+        <p class="text-xs sm:text-sm text-gray-400 mt-1">
+          High-performance aggregator: verified coupons, branch discounts, and stackable bank offers.
+        </p>
+      </div>
+      
+      <div class="text-[11px] font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-md self-start sm:self-auto">
+        ● Live Index ({allDeals.length} Verified)
+      </div>
+    </div>
+  </div>
+
+  <!-- Featured Sponsored Banner / Hero Offer -->
+  {featuredDeal && (
+    <div class="mb-6">
+      <div class="text-[10px] font-bold text-brand-gold uppercase tracking-widest mb-1.5 flex items-center space-x-1">
+        <span>⭐</span>
+        <span>Featured Partner Spotlight</span>
+      </div>
+      <DealBannerCard 
+        deal={featuredDeal.data} 
+        brandName={brandMap.get(featuredDeal.data.brand_id)?.name}
+        brandLogo={brandMap.get(featuredDeal.data.brand_id)?.logo_url}
+      />
+    </div>
+  )}
+
+  <!-- Quick Filter Pills -->
+  <div class="flex items-center space-x-2 overflow-x-auto pb-3 mb-4 scrollbar-none text-xs">
+    {filterPills.map((pill, i) => (
+      <a 
+        href={pill.href}
+        class:list={[
+          "px-3.5 py-1.5 rounded-lg border whitespace-nowrap font-medium transition-colors",
+          i === 0 
+            ? "bg-base-800 text-white border-base-600 font-bold" 
+            : "bg-base-900 text-gray-400 border-base-700 hover:text-white hover:border-base-600"
+        ]}
+      >
+        {pill.label}
+      </a>
+    ))}
+  </div>
+
+  <!-- Main Deals Feed -->
+  <div class="space-y-4">
+    {regularDeals.map((deal, idx) => (
+      <>
+        <DealBannerCard 
+          deal={deal.data} 
+          brandName={brandMap.get(deal.data.brand_id)?.name}
+          brandLogo={brandMap.get(deal.data.brand_id)?.logo_url}
+        />
+        {/* Insert zero-CLS Google AdSense placement after every 3rd deal */}
+        {(idx + 1) % 3 === 0 && (
+          <AdSlot slotType="infeed" />
+        )}
+      </>
+    ))}
+  </div>
+
+  <!-- Bottom Google AdSense Leaderboard Placement -->
+  <div class="mt-8">
+    <AdSlot slotType="leaderboard" />
+  </div>
+</BaseLayout>

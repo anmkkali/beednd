@@ -1,0 +1,47 @@
+{
+  "id": "sapphire-ready-to-wear-20-off",
+  "slug": "sapphire-ready-to-wear-20-off",
+  "title": "Sapphire 20% Off Ready-to-Wear Online Promo Code: SAPPHIRE20",
+  "short_description": "Enjoy 20% discount on entire women pret and luxury ready-to-wear collections using official verified coupon code.",
+  "brand_id": "sapphire",
+  "country": "PK",
+  "cities": ["Karachi", "Lahore", "Islamabad"],
+  "areas": ["Emporium Mall", "LuckyOne Mall"],
+  "branch_info": [
+    {
+      "branch_name": "Sapphire Emporium Mall",
+      "address": "1st Floor, Emporium Mall, Johar Town, Lahore",
+      "phone": "+92-42-32592000"
+    }
+  ],
+  "category": "clothing-fashion",
+  "deal_type": "promo-code",
+  "bank_details": {
+    "bank_id": "alfalah",
+    "eligible_cards": ["Visa Signature", "Platinum Credit"],
+    "cashback_percent": 10,
+    "max_discount_cap": 2000
+  },
+  "discount_type": "percentage",
+  "discount_value": "20% OFF",
+  "numeric_discount_percent": 20,
+  "promo_code": "SAPPHIRE20",
+  "terms_and_conditions": [
+    "Enter promo code SAPPHIRE20 at checkout.",
+    "Free shipping on orders above Rs. 2,000 across Pakistan.",
+    "Valid for online web purchases only."
+  ],
+  "start_date": "2026-07-01T00:00:00Z",
+  "end_date": "2026-12-31T23:59:59Z",
+  "source_url": "https://pk.sapphireonline.pk",
+  "affiliate_url": "https://pk.sapphireonline.pk?ref=dealssite",
+  "last_verified_at": "2026-11-20T18:00:00Z",
+  "status": "active",
+  "is_featured": false,
+  "is_sponsored": false,
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=sapphireonline.pk&sz=128",
+    "alt": "Sapphire 20% Off Ready-to-Wear Promo"
+  },
+  "tags": ["sapphire", "promo code", "online coupon", "clothing", "fashion"]
+}

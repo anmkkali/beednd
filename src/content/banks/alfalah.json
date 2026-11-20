@@ -1,0 +1,11 @@
+{
+  "id": "alfalah",
+  "name": "Bank Alfalah",
+  "short_code": "alfalah",
+  "country": "PK",
+  "logo_url": "https://www.google.com/s2/favicons?domain=bankalfalah.com&sz=128",
+  "official_discounts_page": "https://www.bankalfalah.com/personal-banking/cards/discounts-and-privileges/",
+  "helpline_number": "111-225-111",
+  "supported_card_tiers": ["Classic Debit", "Gold Credit", "Platinum Credit", "Visa Signature", "Premier"],
+  "primary_color_hex": "#BE0027"
+}

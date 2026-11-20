@@ -1,0 +1,12 @@
+{
+  "id": "bluehost",
+  "name": "Bluehost",
+  "slug": "bluehost",
+  "logo_url": "https://www.google.com/s2/favicons?domain=bluehost.com&sz=128",
+  "website_url": "https://www.bluehost.com",
+  "country": "GLOBAL",
+  "categories": ["hosting-software", "tech-electronics"],
+  "short_bio": "Leading cloud hosting, domain provider, and AI website building suite with 99.9% uptime and 24/7 technical support.",
+  "return_policy_days": 30,
+  "free_shipping_min_order": 0
+}
