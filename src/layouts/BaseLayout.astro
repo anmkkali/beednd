@@ -27,12 +27,19 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://dealssit
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="dark scroll-smooth">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <script is:inline>
+      (() => {
+        const saved = localStorage.getItem('dealssite_theme');
+        const preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.dataset.theme = saved || preferred;
+      })();
+    </script>
     
     <!-- Primary Meta Tags -->
     <title>{title} | DealsSite</title>
@@ -59,7 +66,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://dealssit
       <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
     )}
   </head>
-  <body class="bg-base-950 text-gray-100 flex flex-col min-h-screen">
+  <body class="bg-base-950 flex flex-col min-h-screen">
     <Header />
 
     <div class="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-8 flex-1 flex gap-10">

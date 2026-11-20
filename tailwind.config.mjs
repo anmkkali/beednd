@@ -6,23 +6,24 @@ export default {
     extend: {
       colors: {
         base: {
-          950: '#070A0F',
-          900: '#0B0F17',
-          800: '#111827',
-          700: '#1F2937',
-          600: '#374151',
+          950: 'rgb(var(--base-950) / <alpha-value>)',
+          900: 'rgb(var(--base-900) / <alpha-value>)',
+          800: 'rgb(var(--base-800) / <alpha-value>)',
+          700: 'rgb(var(--base-700) / <alpha-value>)',
+          600: 'rgb(var(--base-600) / <alpha-value>)',
         },
         brand: {
-          blue: '#38BDF8',
-          glow: '#0284C7',
-          emerald: '#10B981',
-          amber: '#F59E0B',
-          purple: '#818CF8',
-          gold: '#FBBF24',
+          blue: 'rgb(var(--accent) / <alpha-value>)',
+          glow: 'rgb(var(--accent-strong) / <alpha-value>)',
+          emerald: 'rgb(var(--accent) / <alpha-value>)',
+          amber: 'rgb(var(--accent) / <alpha-value>)',
+          purple: 'rgb(var(--accent) / <alpha-value>)',
+          gold: 'rgb(var(--accent) / <alpha-value>)',
         }
       },
       fontFamily: {
         sans: [
+          'Manrope',
           '-apple-system',
           'BlinkMacSystemFont',
           '"Segoe UI"',
@@ -31,6 +32,7 @@ export default {
           'Arial',
           'sans-serif',
         ],
+        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
       },
     },
   },

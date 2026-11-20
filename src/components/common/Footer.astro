@@ -2,7 +2,7 @@
 import Icon from './Icon.astro';
 ---
 
-<footer class="mt-16 border-t border-base-800 bg-base-950 text-xs text-gray-500">
+<footer class="mt-16 border-t border-base-700 bg-base-950 text-xs text-gray-500">
   <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
     <div class="grid gap-8 md:grid-cols-[1.5fr_1fr_1fr_1fr]">
       <div>
@@ -45,9 +45,44 @@ import Icon from './Icon.astro';
       </div>
     </div>
 
-    <div class="mt-10 flex flex-col gap-3 border-t border-base-800 pt-6 text-[11px] sm:flex-row sm:items-center sm:justify-between">
+    <div class="mt-10 flex flex-col gap-4 border-t border-base-700 pt-6 text-[11px] sm:flex-row sm:items-center sm:justify-between">
       <p>Brand names and logos belong to their respective owners.</p>
-      <p>&copy; {new Date().getFullYear()} DealsSite</p>
+      <div class="flex items-center gap-4">
+        <div class="flex items-center border border-base-700 p-1" aria-label="Color theme">
+          <button type="button" data-theme-choice="light" class="theme-choice px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.14em] transition-colors">
+            Light
+          </button>
+          <button type="button" data-theme-choice="dark" class="theme-choice px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.14em] transition-colors">
+            Dark
+          </button>
+        </div>
+        <p>&copy; {new Date().getFullYear()} DealsSite</p>
+      </div>
     </div>
   </div>
 </footer>
+
+<script>
+  const themeButtons = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-theme-choice]'));
+
+  function updateThemeControls(theme: string) {
+    themeButtons.forEach((button) => {
+      const active = button.dataset.themeChoice === theme;
+      button.classList.toggle('bg-brand-blue', active);
+      button.classList.toggle('text-black', active);
+      button.classList.toggle('text-gray-500', !active);
+      button.setAttribute('aria-pressed', String(active));
+    });
+  }
+
+  themeButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const theme = button.dataset.themeChoice || 'light';
+      document.documentElement.dataset.theme = theme;
+      localStorage.setItem('dealssite_theme', theme);
+      updateThemeControls(theme);
+    });
+  });
+
+  updateThemeControls(document.documentElement.dataset.theme || 'light');
+</script>

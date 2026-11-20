@@ -1,14 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
+    --base-950: 244 242 236;
+    --base-900: 238 235 227;
+    --base-800: 226 222 211;
+    --base-700: 196 190 176;
+    --base-600: 143 136 122;
+    --accent: 132 116 93;
+    --accent-strong: 96 81 61;
+    --ink: 25 24 20;
+    --muted: 103 99 90;
+    color-scheme: light;
+  }
+
+  :root[data-theme='dark'] {
+    --base-950: 20 20 17;
+    --base-900: 29 29 25;
+    --base-800: 42 41 35;
+    --base-700: 68 65 56;
+    --base-600: 104 100 88;
+    --accent: 198 183 157;
+    --accent-strong: 224 215 196;
+    --ink: 244 242 236;
+    --muted: 168 163 151;
     color-scheme: dark;
   }
   
   body {
-    @apply bg-base-950 text-gray-100 font-sans antialiased min-h-screen selection:bg-brand-blue selection:text-base-950;
+    @apply bg-base-950 font-sans antialiased min-h-screen selection:bg-brand-blue selection:text-black;
+    color: rgb(var(--ink));
+    transition: background-color 180ms ease, color 180ms ease;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 500;
+    letter-spacing: -0.035em;
+  }
+
+  button,
+  a,
+  input,
+  select {
+    -webkit-tap-highlight-color: transparent;
   }
 }
 
@@ -20,19 +61,44 @@ details > summary::-webkit-details-marker {
   display: none;
 }
 
+[data-theme='light'] .text-white,
+[data-theme='light'] .text-gray-100,
+[data-theme='light'] .text-gray-200,
+[data-theme='light'] .text-gray-300 {
+  color: rgb(var(--ink)) !important;
+}
+
+[data-theme='light'] .text-gray-400,
+[data-theme='light'] .text-gray-500,
+[data-theme='light'] .text-gray-600 {
+  color: rgb(var(--muted)) !important;
+}
+
+[data-theme='light'] .text-gray-700 {
+  color: rgb(var(--base-600)) !important;
+}
+
+[data-theme='light'] .bg-white {
+  background-color: #fff;
+}
+
+[data-theme='light'] .ring-base-700 {
+  --tw-ring-color: rgb(var(--base-700));
+}
+
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0B0F17;
+  background: rgb(var(--base-950));
 }
 ::-webkit-scrollbar-thumb {
-  background: #1F2937;
+  background: rgb(var(--base-700));
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #374151;
+  background: rgb(var(--base-600));
 }
 
 .ad-slot-leaderboard {

@@ -2,19 +2,19 @@
 import Icon from './Icon.astro';
 ---
 
-<header class="sticky top-0 z-40 w-full border-b border-base-800 bg-base-950/95 backdrop-blur-lg">
+<header class="sticky top-0 z-40 w-full border-b border-base-700 bg-base-950/95 backdrop-blur-lg">
   <div class="mx-auto flex h-16 max-w-7xl items-center gap-3 px-4 sm:px-6 lg:px-8">
     <a href="/" class="flex shrink-0 items-center gap-2.5" aria-label="DealsSite home">
-      <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-blue text-base-950">
+      <span class="flex h-9 w-9 items-center justify-center bg-brand-blue text-black">
         <Icon name="tag" class="h-5 w-5" />
       </span>
-      <span class="text-lg font-extrabold tracking-tight text-white">DealsSite</span>
+      <span class="font-serif text-2xl font-semibold tracking-tight text-white">DealsSite</span>
     </a>
 
     <button
       type="button"
       id="header-search-btn"
-      class="mx-auto flex h-10 w-full max-w-xl items-center gap-2 rounded-lg bg-base-900 px-3.5 text-sm text-gray-400 transition-colors hover:bg-base-800 hover:text-white"
+      class="mx-auto flex h-10 w-full max-w-xl items-center gap-2 border-b border-base-700 bg-transparent px-1 text-sm text-gray-400 transition-colors hover:border-brand-blue hover:text-white"
       aria-label="Search deals and brands"
     >
       <Icon name="search" class="h-4 w-4 shrink-0" />
@@ -23,17 +23,17 @@ import Icon from './Icon.astro';
     </button>
 
     <nav class="hidden items-center gap-2 md:flex" aria-label="Primary navigation">
-      <a href="/brands" class="inline-flex h-10 items-center gap-2 rounded-lg bg-brand-blue px-3.5 text-xs font-bold text-base-950 transition-opacity hover:opacity-90">
+      <a href="/brands" class="inline-flex h-10 items-center gap-2 bg-brand-blue px-3.5 text-xs font-bold text-black transition-opacity hover:opacity-90">
         <Icon name="grid" class="h-4 w-4" />
         Browse Brands
       </a>
 
       <details class="relative">
-        <summary class="flex h-10 cursor-pointer list-none items-center gap-2 rounded-lg bg-base-900 px-3 text-xs font-semibold text-gray-200 hover:bg-base-800">
+        <summary class="flex h-10 cursor-pointer list-none items-center gap-2 border border-base-700 px-3 text-xs font-semibold text-gray-200 hover:bg-base-900">
           <Icon name="location" class="h-4 w-4 text-brand-blue" />
           Cities
         </summary>
-        <div class="absolute right-0 top-12 w-44 rounded-xl bg-base-900 p-2 shadow-2xl ring-1 ring-base-700">
+        <div class="absolute right-0 top-12 w-44 bg-base-900 p-2 shadow-2xl ring-1 ring-base-700">
           <a href="/pakistan/karachi" class="block rounded-lg px-3 py-2 text-xs text-gray-300 hover:bg-base-800 hover:text-white">Karachi</a>
           <a href="/pakistan/lahore" class="block rounded-lg px-3 py-2 text-xs text-gray-300 hover:bg-base-800 hover:text-white">Lahore</a>
           <a href="/pakistan/islamabad" class="block rounded-lg px-3 py-2 text-xs text-gray-300 hover:bg-base-800 hover:text-white">Islamabad</a>
@@ -41,7 +41,7 @@ import Icon from './Icon.astro';
         </div>
       </details>
 
-      <label class="relative flex h-10 items-center gap-2 rounded-lg bg-base-900 px-3 text-xs font-semibold text-gray-300">
+      <label class="relative flex h-10 items-center gap-2 border border-base-700 px-3 text-xs font-semibold text-gray-300">
         <Icon name="globe" class="h-4 w-4 text-brand-blue" />
         <span id="detected-country-label" class="hidden lg:inline">Detecting</span>
         <select id="country-switcher" class="absolute inset-0 cursor-pointer opacity-0" aria-label="Choose market">
@@ -55,7 +55,7 @@ import Icon from './Icon.astro';
   </div>
 
   <div class="flex gap-2 overflow-x-auto px-4 pb-3 md:hidden">
-    <a href="/brands" class="whitespace-nowrap rounded-lg bg-brand-blue px-3 py-2 text-xs font-bold text-base-950">Browse Brands</a>
+    <a href="/brands" class="whitespace-nowrap bg-brand-blue px-3 py-2 text-xs font-bold text-black">Browse Brands</a>
     <a href="/pakistan/karachi" class="whitespace-nowrap rounded-lg bg-base-900 px-3 py-2 text-xs text-gray-300">Karachi</a>
     <a href="/pakistan/lahore" class="whitespace-nowrap rounded-lg bg-base-900 px-3 py-2 text-xs text-gray-300">Lahore</a>
     <a href="/pakistan/islamabad" class="whitespace-nowrap rounded-lg bg-base-900 px-3 py-2 text-xs text-gray-300">Islamabad</a>

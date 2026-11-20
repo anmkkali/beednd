@@ -31,14 +31,14 @@ const formattedType = deal.deal_type.replaceAll('-', ' ');
 ---
 
 <article
-  class="group rounded-2xl bg-base-900 p-4 transition-colors hover:bg-base-800/80 sm:p-5"
+  class="group border border-base-700 bg-base-950 p-4 transition-colors hover:bg-base-900 sm:p-5"
   data-deal-id={deal.id}
   data-market={deal.country || 'GLOBAL'}
   data-category={deal.category}
   data-tags={(deal.tags || []).join(' ').toLowerCase()}
 >
   <div class="flex items-start gap-4">
-    <a href={`/brands/${deal.brand_id}`} class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white p-2">
+    <a href={`/brands/${deal.brand_id}`} class="flex h-12 w-12 shrink-0 items-center justify-center border border-base-700 bg-white p-2">
       <img
         src={brandLogo || `https://www.google.com/s2/favicons?domain=${deal.brand_id}.com&sz=64`}
         alt={`${brandName} logo`}
@@ -69,7 +69,7 @@ const formattedType = deal.deal_type.replaceAll('-', ' ');
           </h3>
           <p class="mt-1.5 line-clamp-2 text-xs leading-relaxed text-gray-500 sm:text-sm">{deal.short_description}</p>
         </div>
-        <strong class="shrink-0 self-start rounded-lg bg-brand-blue/10 px-2.5 py-1.5 text-sm text-brand-blue">
+        <strong class="shrink-0 self-start border-b border-brand-blue px-1 py-1 text-sm text-brand-blue">
           {deal.discount_value}
         </strong>
       </div>
@@ -94,7 +94,7 @@ const formattedType = deal.deal_type.replaceAll('-', ' ');
           {deal.promo_code && (
             <button
               type="button"
-              class="copy-code-btn rounded-lg bg-base-950 px-3 py-2 text-xs font-bold text-brand-blue hover:bg-black"
+              class="copy-code-btn border border-base-700 bg-base-950 px-3 py-2 text-xs font-bold text-brand-blue hover:bg-base-900"
               data-code={deal.promo_code}
             >
               {deal.promo_code}
@@ -102,7 +102,7 @@ const formattedType = deal.deal_type.replaceAll('-', ' ');
           )}
           <a
             href={`/deals/${deal.slug}`}
-            class="flex items-center gap-1.5 rounded-lg bg-white px-3 py-2 text-xs font-bold text-base-950 hover:bg-brand-blue"
+            class="flex items-center gap-1.5 bg-brand-blue px-3 py-2 text-xs font-bold text-black hover:opacity-90"
           >
             View deal
             <Icon name="arrow" class="h-3.5 w-3.5" />
