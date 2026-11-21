@@ -127,8 +127,8 @@ const labels = {
       rows.forEach((row) => {
         const tokens = row.dataset.tokens || '';
         const ok =
-          (!group || tokens.includes(`|${group}|`)) &&
-          (!sub || tokens.includes(`|${sub}|`)) &&
+          (!group || tokens.includes(`|${group}|`) || tokens.includes('|all-items|')) &&
+          (!sub || tokens.includes(`|${sub}|`) || tokens.includes('|all-items|')) &&
           (!kind || row.dataset.kind === kind);
         row.classList.toggle('hidden', !ok);
       });

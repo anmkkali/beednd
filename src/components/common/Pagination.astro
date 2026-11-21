@@ -7,23 +7,18 @@ interface Props {
 const { target } = Astro.props;
 ---
 
-<nav
-  data-pagination
-  data-target={target}
-  aria-label="Pagination"
-  class="mt-6 flex flex-col gap-3 border-t editorial-rule pt-4 text-[14px] text-ink-muted sm:flex-row sm:items-center sm:justify-between"
->
-  <label class="flex items-center gap-2">
-    Rows per page
-    <select data-rows class="border editorial-rule bg-base-950 px-2 py-1 font-semibold text-ink">
-      <option value="10">10</option>
-      <option value="20">20</option>
-      <option value="50">50</option>
-    </select>
-  </label>
-  <div class="flex flex-wrap items-center gap-3">
+<nav data-pagination data-target={target} aria-label="Pagination" class="mt-6 border-t editorial-rule pt-4 text-[14px] text-ink-muted">
+  <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-3">
+    <label class="flex items-center gap-2">
+      <span>Rows<span class="hidden sm:inline"> per page</span></span>
+      <select data-rows class="border editorial-rule bg-base-950 px-2 py-1.5 font-semibold text-ink">
+        <option value="10">10</option>
+        <option value="20">20</option>
+        <option value="50">50</option>
+      </select>
+    </label>
     <span data-range class="whitespace-nowrap"></span>
-    <div data-pages class="flex items-center gap-1"></div>
+    <div data-pages class="flex w-full items-center justify-center gap-1 sm:w-auto"></div>
   </div>
 </nav>
 
@@ -45,7 +40,7 @@ const { target } = Astro.props;
     select.value = String(size);
 
     function pageButton(label: string, target: number, opts: { active?: boolean; disabled?: boolean; aria?: string } = {}) {
-      const base = 'inline-flex h-9 min-w-9 items-center justify-center border px-2.5 text-[13.5px] font-semibold transition-colors';
+      const base = 'inline-flex h-10 min-w-10 items-center justify-center border px-2.5 text-[13.5px] font-semibold transition-colors';
       const state = opts.active
         ? 'btn-primary editorial-rule'
         : opts.disabled
@@ -79,6 +74,7 @@ const { target } = Astro.props;
       eligible.forEach((item, index) => item.classList.toggle('page-hidden', index < start || index >= start + size));
 
       nav.classList.toggle('hidden', total === 0);
+      pagesEl!.classList.toggle('hidden', pages === 1);
       range!.textContent = total === 0 ? '0 of 0' : `${start + 1}-${Math.min(start + size, total)} of ${total}`;
       pagesEl!.innerHTML =
         pageButton(chevron('rotate-180'), page - 1, { disabled: page === 1, aria: 'Previous page' }) +

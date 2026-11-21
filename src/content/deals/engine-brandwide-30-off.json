@@ -1,0 +1,43 @@
+{
+  "id": "engine-brandwide-30-off",
+  "slug": "engine-brandwide-30-off",
+  "title": "Engine: 30% Off the Entire Brand, In-Store and Online",
+  "short_description": "Engine is offering 30% off across the whole brand, in its stores and on its online store in Pakistan. Sale dates and exclusions are set by Engine, so confirm them on the official store.",
+  "brand_id": "engine",
+  "country": "PK",
+  "cities": [],
+  "areas": [],
+  "branch_info": [],
+  "category": "clothing-fashion",
+  "deal_type": "store-sale",
+  "channels": [
+    "online",
+    "in-store"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "30% OFF",
+  "badge_text": "30% off entire brand",
+  "numeric_discount_percent": 30,
+  "terms_and_conditions": [
+    "Applies to the whole brand, in stores and online, as announced by Engine.",
+    "Sale dates and exclusions are set by Engine and can change.",
+    "Confirm the final price on the official store or at the outlet."
+  ],
+  "start_date": "2026-11-21T10:00:00Z",
+  "end_date": null,
+  "source_url": "https://www.engine.com.pk",
+  "affiliate_url": "https://www.engine.com.pk",
+  "last_verified_at": "2026-11-21T10:00:00Z",
+  "status": "active",
+  "is_trending": true,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=engine.com.pk&sz=128",
+    "alt": "Engine"
+  },
+  "tags": [
+    "all-items",
+    "clothing"
+  ]
+}

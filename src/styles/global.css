@@ -277,3 +277,10 @@ html[data-theme='dark'] .theme-icon-moon {
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(var(--base-600));
 }
+
+/* Mobile: the quick link row hides while scrolling down and returns on scroll up */
+@media (max-width: 1023px) {
+  header[data-compact] [data-quickbar] {
+    display: none;
+  }
+}

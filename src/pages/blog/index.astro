@@ -21,9 +21,9 @@ const allPosts = (await getCollection('blog', ({ data }) => data.is_published)).
     </p>
   </div>
 
-  <div class="grid border-l border-t editorial-rule sm:grid-cols-2 xl:grid-cols-3">
+  <div class="grid gap-4 sm:grid-cols-2 sm:gap-5 xl:grid-cols-3">
     {allPosts.map((post) => (
-      <article data-market={post.data.target_country} class="group flex flex-col border-b border-r editorial-rule transition-colors hover:bg-base-900/60">
+      <article data-market={post.data.target_country} class="group flex flex-col border editorial-rule bg-base-900/40 transition-colors hover:bg-base-900">
         <a href={`/blog/${post.slug}`} class="block aspect-[16/10] overflow-hidden border-b editorial-rule bg-base-900">
           <img
             src={post.data.hero_image}

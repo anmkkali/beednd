@@ -100,9 +100,13 @@ const filterHref = (categoryId: string, groupId: string, filter: { sub?: string;
     </nav>
 
     <div class="mt-6 border-t editorial-rule pt-4">
-      <button type="button" data-notify-open class="sb-link" title="Notify me by brand">
+      <button type="button" data-notify-open class="sb-link" title="Notify me">
         <Icon name="bell" class="h-[18px] w-[18px] shrink-0" />
-        <span class="sb-label truncate">Notify me by brand</span>
+        <span class="sb-label truncate">Notify me</span>
+      </button>
+      <button type="button" data-submit-open class="sb-link mt-0.5" title="Submit deal">
+        <Icon name="plus" class="h-[18px] w-[18px] shrink-0" />
+        <span class="sb-label truncate">Submit deal</span>
       </button>
     </div>
   </div>
@@ -114,10 +118,13 @@ const filterHref = (categoryId: string, groupId: string, filter: { sub?: string;
   const isDesktop = () => window.matchMedia('(min-width: 1024px)').matches;
   const isCollapsed = () => isDesktop() && root.dataset.sidebar === 'collapsed';
 
+  // On blog pages the sidebar starts minimised. That choice is not saved, so other pages keep your own setting.
+  const persist = !window.location.pathname.startsWith('/blog');
+
   function setCollapsed(collapsed: boolean) {
     if (collapsed) root.dataset.sidebar = 'collapsed';
     else delete root.dataset.sidebar;
-    localStorage.setItem('dealssite_sidebar', collapsed ? 'collapsed' : 'open');
+    if (persist) localStorage.setItem('dealssite_sidebar', collapsed ? 'collapsed' : 'open');
   }
 
   function closeDrawer() {
@@ -137,15 +144,23 @@ const filterHref = (categoryId: string, groupId: string, filter: { sub?: string;
     })
   );
 
-  // In the collapsed rail a category icon expands the sidebar instead of toggling a hidden menu
-  sidebar?.querySelectorAll<HTMLElement>('summary[data-sb-summary]').forEach((summary) => {
-    summary.addEventListener('click', (event) => {
+  // A click anywhere on the minimised rail opens it. Links still go to their page.
+  sidebar?.addEventListener(
+    'click',
+    (event) => {
       if (!isCollapsed()) return;
-      event.preventDefault();
+      const target = event.target as HTMLElement;
+      if (target.closest('#sidebar-toggle')) return;
+      const summary = target.closest('summary');
+      if (summary) {
+        event.preventDefault();
+        (summary.parentElement as HTMLDetailsElement).open = true;
+      }
+      if (target.closest('button[data-notify-open], button[data-submit-open]')) event.stopPropagation();
       setCollapsed(false);
-      (summary.parentElement as HTMLDetailsElement).open = true;
-    });
-  });
+    },
+    true
+  );
 
   // Highlight where you are and open the matching category and group
   const FILTER_KEYS = ['group', 'sub', 'kind', 'type'];

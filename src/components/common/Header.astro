@@ -10,23 +10,19 @@ const latest = (await getCollection('deals', ({ data }) => data.status === 'acti
 ---
 
 <header class="sticky top-0 z-30 w-full border-b editorial-rule bg-base-950/95 backdrop-blur-md">
-  <div class="flex h-16 items-center gap-2 px-4 sm:gap-3 sm:px-6 lg:px-10">
+  <div class="flex h-14 items-center gap-1 px-2 sm:h-16 sm:gap-3 sm:px-6 lg:px-10">
     <!-- Mobile only: menu, logo and theme switch. On desktop the logo lives in the sidebar. -->
     <button type="button" data-sidebar-open-btn class="icon-btn lg:hidden" aria-label="Open menu">
       <Icon name="menu" class="h-5 w-5" />
     </button>
-    <a href="/" class="font-serif text-[26px] font-semibold leading-none tracking-tight text-ink lg:hidden" aria-label="DealsSite home">
+    <a href="/" class="flex-1 text-center font-serif text-[26px] font-semibold leading-none tracking-tight text-ink sm:flex-none sm:text-left lg:hidden" aria-label="DealsSite home">
       DealsSite
     </a>
-    <button type="button" data-theme-toggle class="icon-btn lg:hidden" aria-label="Switch between light and dark mode">
-      <span class="theme-icon-moon inline-flex"><Icon name="moon" class="h-[18px] w-[18px]" /></span>
-      <span class="theme-icon-sun"><Icon name="sun" class="h-[18px] w-[18px]" /></span>
-    </button>
 
     <button
       type="button"
       id="header-search-btn"
-      class="flex h-10 w-10 shrink-0 items-center justify-center gap-3 border editorial-rule bg-base-900/60 text-[14px] text-ink-muted transition-colors hover:border-ink/50 hover:bg-base-900 hover:text-ink sm:w-auto sm:min-w-0 sm:flex-1 sm:justify-start sm:px-3.5"
+      class="flex h-10 w-10 shrink-0 items-center justify-center gap-3 border-0 bg-transparent text-[14px] sm:border editorial-rule sm:bg-base-900/60 text-ink-muted transition-colors hover:border-ink/50 hover:bg-base-900 hover:text-ink sm:w-auto sm:min-w-0 sm:flex-1 sm:justify-start sm:px-3.5"
       aria-label="Search deals, brands and categories"
     >
       <Icon name="search" class="h-[18px] w-[18px] shrink-0 text-ink" />
@@ -70,7 +66,7 @@ const latest = (await getCollection('deals', ({ data }) => data.status === 'acti
         <Icon name="bell" class="h-5 w-5" />
         <span data-bell-badge class="btn-primary absolute right-0.5 top-0.5 hidden min-w-[1.1rem] px-1 text-center text-[11px] font-bold leading-[1.1rem]">0</span>
       </summary>
-      <div class="fixed left-3 right-3 top-[68px] z-50 border editorial-rule bg-base-950 shadow-xl sm:absolute sm:left-auto sm:right-0 sm:top-12 sm:w-96">
+      <div data-mobile-panel class="fixed left-3 right-3 top-14 z-50 border editorial-rule bg-base-950 shadow-xl sm:absolute sm:left-auto sm:right-0 sm:top-12 sm:w-96">
         <p class="border-b editorial-rule px-4 py-3 text-[12px] font-semibold uppercase tracking-[0.16em] text-ink-muted">New discounts</p>
         <ul class="max-h-[60vh] overflow-y-auto">
           {latest.map((deal) => (
@@ -93,7 +89,7 @@ const latest = (await getCollection('deals', ({ data }) => data.status === 'acti
   </div>
 
   <!-- Mobile and tablet quick bar -->
-  <div class="flex items-center gap-2 overflow-x-auto border-t editorial-rule px-4 py-2 lg:hidden">
+  <div data-quickbar class="flex items-center gap-2 overflow-x-auto border-t editorial-rule px-4 py-2 lg:hidden">
     <a href="/brands" class="btn-primary inline-flex h-9 shrink-0 items-center px-3.5 text-[13px] font-semibold">Browse Brands</a>
     <a href="/blog" class="btn-outline inline-flex h-9 shrink-0 items-center px-3.5 text-[13px] font-semibold">Blog</a>
     <details class="shrink-0" data-dropdown>
@@ -102,7 +98,7 @@ const latest = (await getCollection('deals', ({ data }) => data.status === 'acti
         Cities
         <Icon name="chevron" class="h-3.5 w-3.5 text-ink-muted" />
       </summary>
-      <div data-cities-panel class="fixed left-3 right-3 top-[116px] z-50 max-h-[60vh] overflow-y-auto border editorial-rule bg-base-950 shadow-xl"></div>
+      <div data-cities-panel data-mobile-panel class="fixed left-3 right-3 top-[104px] z-50 max-h-[60vh] overflow-y-auto border editorial-rule bg-base-950 shadow-xl"></div>
     </details>
     <label class="btn-outline relative flex h-9 shrink-0 cursor-pointer items-center gap-1.5 px-3.5 text-[13px] font-medium">
       <Icon name="globe" class="h-3.5 w-3.5 shrink-0" />

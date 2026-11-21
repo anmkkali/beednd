@@ -18,12 +18,12 @@ const posts = (await getCollection('blog', ({ data }) => data.is_published))
       <Icon name="arrow" class="h-4 w-4" />
     </a>
   </div>
-  <div class="grid border-l border-t editorial-rule md:grid-cols-3">
+  <div class="grid gap-4 sm:gap-5 md:grid-cols-3">
     {posts.map((post) => (
       <a
         href={`/blog/${post.slug}`}
         data-market={post.data.target_country}
-        class="group flex flex-col border-b border-r editorial-rule transition-colors hover:bg-base-900/60"
+        class="group flex flex-col border editorial-rule bg-base-900/40 transition-colors hover:bg-base-900"
       >
         <div class="aspect-[16/10] overflow-hidden border-b editorial-rule bg-base-900">
           <img

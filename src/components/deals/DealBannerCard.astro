@@ -20,6 +20,7 @@ interface Props {
     affiliate_url: string;
     cities?: string[];
     tags?: string[];
+    channels?: string[];
     start_date: string;
     end_date?: string | null;
     last_verified_at: string;
@@ -106,6 +107,12 @@ const expiry = expiryLabel(deal.end_date, !!deal.limited_time);
           <span data-expiry-text>{expiry.label}</span>
         </span>
         {deal.country && deal.country !== 'GLOBAL' && <span class="font-medium">{deal.country}</span>}
+        {(deal.tags || []).includes('all-items') && (
+          <span class="border editorial-rule px-2 py-0.5 text-[11.5px] font-semibold text-ink">Entire brand</span>
+        )}
+        {(deal.channels || []).map((channel) => (
+          <span class="border editorial-rule px-2 py-0.5 text-[11.5px] font-semibold text-ink">{channel === 'in-store' ? 'In-store' : 'Online'}</span>
+        ))}
       </div>
 
       <!-- Title with summary pill on the right -->
@@ -136,13 +143,13 @@ const expiry = expiryLabel(deal.end_date, !!deal.limited_time);
           )}
         </div>
 
-        <div class="flex items-center gap-2.5">
+        <div class="flex w-full items-center gap-2.5 sm:w-auto">
           {deal.promo_code && (
-            <button type="button" class="copy-code-btn btn-outline px-3.5 py-2 text-[13px] font-semibold tracking-wider" data-code={deal.promo_code}>
+            <button type="button" class="copy-code-btn btn-outline flex-1 px-3.5 py-2.5 text-[13px] font-semibold tracking-wider sm:flex-none sm:py-2" data-code={deal.promo_code}>
               {deal.promo_code}
             </button>
           )}
-          <a href={`/deals/${deal.slug}`} class="btn-primary inline-flex items-center gap-2 px-4 py-2 text-[13px] font-semibold">
+          <a href={`/deals/${deal.slug}`} class="btn-primary inline-flex flex-1 items-center justify-center gap-2 px-4 py-2.5 text-[13px] font-semibold sm:flex-none sm:py-2">
             View offer
             <Icon name="arrow" class="h-3.5 w-3.5" />
           </a>

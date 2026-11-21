@@ -7,6 +7,7 @@ import AdSlot from '../components/ads/AdSlot.astro';
 import SponsorBar from '../components/common/SponsorBar.astro';
 import BlogStrip from '../components/common/BlogStrip.astro';
 import NotifyModal from '../components/common/NotifyModal.astro';
+import SubmitDealModal from '../components/common/SubmitDealModal.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -60,7 +61,8 @@ const fontsUrl =
           const d = document.documentElement;
           const ls = localStorage;
           d.dataset.theme = ls.getItem('dealssite_theme') === 'dark' ? 'dark' : 'light';
-          if (ls.getItem('dealssite_sidebar') === 'collapsed') d.dataset.sidebar = 'collapsed';
+          // Blog pages start with the sidebar minimised. Everywhere else follows the saved choice.
+          if (location.pathname.indexOf('/blog') === 0 || ls.getItem('dealssite_sidebar') === 'collapsed') d.dataset.sidebar = 'collapsed';
 
           const TZ = {
             'Asia/Karachi': 'PK', 'Asia/Kolkata': 'IN', 'Asia/Calcutta': 'IN', 'Asia/Dhaka': 'BD', 'Asia/Colombo': 'LK',
@@ -155,6 +157,7 @@ const fontsUrl =
 
     <PagefindModal />
     <NotifyModal />
+    <SubmitDealModal />
 
     <script>
       import { countries, countryByCode } from '../data/countries';
@@ -253,6 +256,35 @@ const fontsUrl =
           document.querySelectorAll('[data-bell-badge]').forEach((badge) => badge.classList.add('hidden'));
         }
       });
+
+      // Full-width mobile panels are placed right under the header, wherever the page is scrolled
+      document.addEventListener(
+        'toggle',
+        (event) => {
+          const details = event.target as HTMLDetailsElement;
+          if (!details.open) return;
+          const panel = details.querySelector<HTMLElement>('[data-mobile-panel]');
+          const header = document.querySelector('header');
+          if (panel && header && getComputedStyle(panel).position === 'fixed') {
+            panel.style.top = `${Math.round(header.getBoundingClientRect().bottom)}px`;
+          }
+        },
+        true
+      );
+
+      // Mobile: tuck away the quick link row while scrolling down, bring it back when scrolling up
+      const siteHeader = document.querySelector('header');
+      let lastScrollY = window.scrollY;
+      window.addEventListener(
+        'scroll',
+        () => {
+          const y = window.scrollY;
+          if (y === lastScrollY || !siteHeader || !window.matchMedia('(max-width: 1023px)').matches) return;
+          siteHeader.toggleAttribute('data-compact', y > lastScrollY && y > 120);
+          lastScrollY = y;
+        },
+        { passive: true }
+      );
 
       // Close dropdowns on outside click or Escape
       document.addEventListener('click', (event) => {

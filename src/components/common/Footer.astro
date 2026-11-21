@@ -17,6 +17,7 @@ const columns = [
     links: [
       ['About Us', '/about'],
       ['Contact Us', '/contact'],
+      ['Submit a Deal', '#submit-deal'],
       ['Sitemap', '/sitemap.xml'],
     ],
   },
@@ -53,7 +54,13 @@ const columns = [
           <h2 class="mb-3 font-sans text-[12px] font-semibold uppercase tracking-[0.16em] text-ink">{column.title}</h2>
           <ul class="space-y-2.5">
             {column.links.map(([label, href]) => (
-              <li><a href={href} class="hover:text-ink hover:underline">{label}</a></li>
+              <li>
+                {href === '#submit-deal' ? (
+                  <button type="button" data-submit-open class="hover:text-ink hover:underline">{label}</button>
+                ) : (
+                  <a href={href} class="hover:text-ink hover:underline">{label}</a>
+                )}
+              </li>
             ))}
           </ul>
         </div>

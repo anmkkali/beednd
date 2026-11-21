@@ -58,6 +58,7 @@ const dealsCollection = defineCollection({
     is_sponsored: z.boolean().default(false),
     is_trending: z.boolean().default(false),
     limited_time: z.boolean().default(false),
+    channels: z.array(z.enum(['online', 'in-store'])).default([]),
     offer_kind: z.enum(['discount', 'trial', 'free', 'promo', 'voucher', 'credits']).optional(),
     badge_text: z.string().max(80).optional(),
     image: z.object({

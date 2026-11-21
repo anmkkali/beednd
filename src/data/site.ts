@@ -12,3 +12,6 @@ export const sponsor = {
 // Email alert form. Paste the URL of a form service here (for example a Formspree form endpoint).
 // The form sends name, email and brand as a POST request. Leave empty until a service is connected.
 export const subscribeEndpoint = '';
+
+// Submit a deal form. Same idea as above: paste a form service URL here to receive submissions.
+export const submitDealEndpoint = '';

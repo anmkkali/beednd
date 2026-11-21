@@ -1,0 +1,149 @@
+---
+import Icon from './Icon.astro';
+import { submitDealEndpoint } from '../../data/site';
+
+const field = 'mt-1 w-full border editorial-rule bg-transparent px-3 py-2.5 text-[15px] font-normal text-ink placeholder:text-ink-muted focus:border-ink focus:outline-none';
+const hint = 'mt-1 text-[12.5px] font-normal text-ink-muted';
+---
+
+<div id="submit-modal" class="fixed inset-0 z-[80] hidden items-start justify-center overflow-y-auto bg-black/55 p-4 sm:items-center">
+  <div class="relative my-auto w-full max-w-xl border editorial-rule-strong bg-base-950 p-5 shadow-2xl sm:p-7" role="dialog" aria-modal="true" aria-labelledby="submit-title">
+    <button type="button" data-submit-close class="icon-btn absolute right-2 top-2" aria-label="Close">
+      <Icon name="close" class="h-5 w-5" />
+    </button>
+    <h2 id="submit-title" class="pr-8 text-[34px] leading-tight text-ink">Submit a deal</h2>
+    <p class="mt-1.5 text-[14.5px] leading-relaxed text-ink-muted">Found a good discount, voucher or offer? Share it with us. No account required.</p>
+
+    <form id="submit-form" class="mt-5 space-y-4" data-endpoint={submitDealEndpoint} novalidate>
+      <label class="block text-[13.5px] font-semibold text-ink">
+        What is the deal? <span aria-hidden="true">*</span>
+        <input name="title" type="text" required placeholder="e.g. Brand X flat 30% off in-store and online" class={field} />
+        <span class={`block ${hint}`}>The deal name, discount or offer headline.</span>
+      </label>
+      <label class="block text-[13.5px] font-semibold text-ink">
+        Deal details <span aria-hidden="true">*</span>
+        <textarea name="details" required rows="4" placeholder="Describe the offer, discount amount, promo code if needed, who qualifies and key terms." class={field}></textarea>
+        <span class={`block ${hint}`}>Include any coupon code, how to redeem it and any conditions.</span>
+      </label>
+      <label class="block text-[13.5px] font-semibold text-ink">
+        Link to claim the deal <span aria-hidden="true">*</span>
+        <input name="claim_url" type="url" required placeholder="https://example.com/claim-offer" class={field} />
+        <span class={`block ${hint}`}>Direct claim link, sign-up link or redemption page.</span>
+      </label>
+      <label class="block text-[13.5px] font-semibold text-ink">
+        Deal page link <span class="font-normal text-ink-muted">(optional)</span>
+        <input name="source_url" type="url" placeholder="https://example.com/pricing-or-announcement" class={field} />
+        <span class={`block ${hint}`}>Official product, pricing page or announcement.</span>
+      </label>
+      <label class="block text-[13.5px] font-semibold text-ink">
+        Your email <span aria-hidden="true">*</span>
+        <input name="email" type="email" required autocomplete="email" placeholder="you@example.com" class={field} />
+        <span class={`block ${hint}`}>Only used if we need to clarify details or tell you when it is verified.</span>
+      </label>
+
+      <!-- Hidden trap for spam bots. People never see or fill this. -->
+      <input name="website" type="text" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
+
+      <div class="border editorial-rule bg-base-900/60 p-4 text-[13.5px] leading-relaxed text-ink-muted">
+        <p class="mb-2 text-[11.5px] font-semibold uppercase tracking-[0.16em] text-ink">Submission guidelines</p>
+        <ul class="list-disc space-y-1 pl-4">
+          <li>Only submit <strong class="text-ink">real, currently active</strong> offers.</li>
+          <li><strong class="text-ink">No duplicates.</strong> Search the site for the deal first.</li>
+          <li><strong class="text-ink">No self-promotion or spam.</strong> Offers must come from genuine brands.</li>
+          <li>We check every submission before it is published.</li>
+        </ul>
+        <label class="mt-3 flex items-start gap-2.5 font-semibold text-ink">
+          <input name="confirm" type="checkbox" required class="mt-1 h-4 w-4 accent-[rgb(var(--ink))]" />
+          <span>I confirm this is a real deal and I agree to the guidelines above.</span>
+        </label>
+      </div>
+
+      <button type="submit" class="btn-primary w-full px-4 py-3 text-[14px] font-semibold">Submit deal</button>
+      <p id="submit-message" class="hidden text-[14px] leading-relaxed" role="status"></p>
+    </form>
+  </div>
+</div>
+
+<script>
+  const modal = document.getElementById('submit-modal');
+  const form = document.getElementById('submit-form') as HTMLFormElement | null;
+  const message = document.getElementById('submit-message');
+
+  function show(text: string, ok: boolean) {
+    if (!message) return;
+    message.textContent = text;
+    message.classList.remove('hidden');
+    message.classList.toggle('text-ink', ok);
+    message.classList.toggle('font-semibold', ok);
+    message.classList.toggle('text-ink-muted', !ok);
+  }
+
+  function open() {
+    message?.classList.add('hidden');
+    modal?.classList.remove('hidden');
+    modal?.classList.add('flex');
+    window.setTimeout(() => form?.querySelector<HTMLInputElement>('input[name="title"]')?.focus(), 10);
+  }
+
+  function close() {
+    modal?.classList.add('hidden');
+    modal?.classList.remove('flex');
+  }
+
+  document.addEventListener('click', (event) => {
+    const target = event.target as HTMLElement;
+    if (target.closest('[data-submit-open]')) {
+      event.preventDefault();
+      document.querySelectorAll('details[data-dropdown][open]').forEach((d) => d.removeAttribute('open'));
+      document.documentElement.removeAttribute('data-sidebar-open');
+      open();
+    }
+    if (target.closest('[data-submit-close]') || target === modal) close();
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') close();
+  });
+
+  form?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const data = new FormData(form);
+    if (String(data.get('website') || '')) return; // spam trap filled in
+
+    const title = String(data.get('title') || '').trim();
+    const details = String(data.get('details') || '').trim();
+    const claimUrl = String(data.get('claim_url') || '').trim();
+    const sourceUrl = String(data.get('source_url') || '').trim();
+    const email = String(data.get('email') || '').trim();
+    const isUrl = (value: string) => /^https?:\/\/\S+\.\S+/.test(value);
+
+    if (!title || !details || !isUrl(claimUrl) || !/^\S+@\S+\.\S+$/.test(email)) {
+      show('Please fill in the deal, the details, a valid claim link and your email.', false);
+      return;
+    }
+    if (sourceUrl && !isUrl(sourceUrl)) {
+      show('The deal page link must start with http:// or https://', false);
+      return;
+    }
+    if (!data.get('confirm')) {
+      show('Please tick the box to confirm the deal is real.', false);
+      return;
+    }
+    const endpoint = form.dataset.endpoint;
+    if (!endpoint) {
+      show('Deal submissions are not switched on yet. Please check back soon.', false);
+      return;
+    }
+    try {
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ type: 'deal-submission', title, details, claim_url: claimUrl, source_url: sourceUrl, email, page: location.href }),
+      });
+      if (!response.ok) throw new Error(String(response.status));
+      show('Thanks. We will check your deal and publish it if it qualifies.', true);
+      form.reset();
+    } catch {
+      show('Sorry, something went wrong. Please try again in a moment.', false);
+    }
+  });
+</script>
