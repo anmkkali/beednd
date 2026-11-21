@@ -19,6 +19,11 @@ const latest = (await getCollection('deals', ({ data }) => data.status === 'acti
       DealsSite
     </a>
 
+    <button type="button" data-theme-toggle class="icon-btn lg:hidden" aria-label="Switch between light and dark mode">
+      <span class="theme-icon-moon inline-flex"><Icon name="moon" class="h-[18px] w-[18px]" /></span>
+      <span class="theme-icon-sun"><Icon name="sun" class="h-[18px] w-[18px]" /></span>
+    </button>
+
     <button
       type="button"
       id="header-search-btn"

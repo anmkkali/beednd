@@ -29,15 +29,15 @@ const filterHref = (categoryId: string, groupId: string, filter: { sub?: string;
 
 <aside id="app-sidebar" class="flex flex-col border-r editorial-rule bg-base-950" aria-label="Site navigation">
   <!-- Logo row: logo, theme switch, search, collapse (like the ChatGPT sidebar) -->
-  <div class="sb-top flex h-16 shrink-0 items-center justify-between gap-1 px-3">
-    <a href="/" class="flex min-w-0 items-center gap-2.5" aria-label="DealsSite home">
+  <div class="sb-top flex h-16 shrink-0 items-center justify-between gap-1 px-3 max-lg:h-12 max-lg:justify-end">
+    <a href="/" class="flex min-w-0 items-center gap-2.5 max-lg:!hidden" aria-label="DealsSite home">
       <span class="btn-primary flex h-8 w-8 shrink-0 items-center justify-center">
         <Icon name="tag" class="h-4 w-4" />
       </span>
       <span class="sb-label whitespace-nowrap font-serif text-[24px] font-semibold leading-none tracking-tight text-ink">DealsSite</span>
     </a>
     <div class="sb-actions flex shrink-0 items-center">
-      <button type="button" data-theme-toggle class="icon-btn sb-hide-collapsed" aria-label="Switch between light and dark mode" title="Light / dark mode">
+      <button type="button" data-theme-toggle class="icon-btn sb-hide-collapsed max-lg:!hidden" aria-label="Switch between light and dark mode" title="Light / dark mode">
         <span class="theme-icon-moon inline-flex"><Icon name="moon" class="h-[18px] w-[18px]" /></span>
         <span class="theme-icon-sun"><Icon name="sun" class="h-[18px] w-[18px]" /></span>
       </button>

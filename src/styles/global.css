@@ -284,3 +284,10 @@ html[data-theme='dark'] .theme-icon-moon {
     display: none;
   }
 }
+
+[data-quickbar] {
+  scrollbar-width: none;
+}
+[data-quickbar]::-webkit-scrollbar {
+  display: none;
+}
