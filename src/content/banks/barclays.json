@@ -1,0 +1,9 @@
+{
+  "id": "barclays",
+  "name": "Barclays",
+  "short_code": "barclays",
+  "country": "GB",
+  "logo_url": "https://www.google.com/s2/favicons?domain=barclays.co.uk&sz=128",
+  "website_url": "https://barclays.co.uk",
+  "supported_card_tiers": []
+}

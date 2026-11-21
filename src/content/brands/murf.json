@@ -1,0 +1,12 @@
+{
+  "id": "murf",
+  "name": "Murf AI",
+  "slug": "murf",
+  "logo_url": "https://www.google.com/s2/favicons?domain=murf.ai&sz=128",
+  "website_url": "https://murf.ai",
+  "country": "GLOBAL",
+  "categories": [
+    "ai-tools"
+  ],
+  "short_bio": "AI voiceover generator."
+}

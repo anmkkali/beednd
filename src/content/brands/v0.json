@@ -1,0 +1,12 @@
+{
+  "id": "v0",
+  "name": "v0 by Vercel",
+  "slug": "v0",
+  "logo_url": "https://www.google.com/s2/favicons?domain=v0.dev&sz=128",
+  "website_url": "https://v0.dev",
+  "country": "GLOBAL",
+  "categories": [
+    "ai-tools"
+  ],
+  "short_bio": "AI interface generator from Vercel."
+}

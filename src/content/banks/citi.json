@@ -1,0 +1,9 @@
+{
+  "id": "citi",
+  "name": "Citi",
+  "short_code": "citi",
+  "country": "US",
+  "logo_url": "https://www.google.com/s2/favicons?domain=citi.com&sz=128",
+  "website_url": "https://citi.com",
+  "supported_card_tiers": []
+}

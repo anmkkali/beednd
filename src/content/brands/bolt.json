@@ -1,0 +1,12 @@
+{
+  "id": "bolt",
+  "name": "Bolt",
+  "slug": "bolt",
+  "logo_url": "https://www.google.com/s2/favicons?domain=bolt.new&sz=128",
+  "website_url": "https://bolt.new",
+  "country": "GLOBAL",
+  "categories": [
+    "ai-tools"
+  ],
+  "short_bio": "AI web app builder."
+}

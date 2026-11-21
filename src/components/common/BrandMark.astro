@@ -7,9 +7,9 @@ interface Props {
 
 const { name, logoUrl, size = 'md' } = Astro.props;
 const sizeClasses = {
-  sm: 'h-9 w-9 p-1.5 text-sm',
-  md: 'h-12 w-12 p-2 text-base',
-  lg: 'h-14 w-14 p-2.5 text-lg',
+  sm: 'h-8 w-8 p-1 text-sm sm:h-9 sm:w-9 sm:p-1.5',
+  md: 'h-10 w-10 p-1.5 text-base sm:h-12 sm:w-12 sm:p-2',
+  lg: 'h-12 w-12 p-2 text-lg sm:h-14 sm:w-14 sm:p-2.5',
 }[size];
 const initial = name.trim().charAt(0).toUpperCase();
 ---

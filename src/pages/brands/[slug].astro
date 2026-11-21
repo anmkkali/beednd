@@ -3,30 +3,31 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import DealBannerCard from '../../components/deals/DealBannerCard.astro';
 import BrandMark from '../../components/common/BrandMark.astro';
 import Icon from '../../components/common/Icon.astro';
+import Pagination from '../../components/common/Pagination.astro';
 import { getCollection } from 'astro:content';
+import { countryByCode } from '../../data/countries';
 
 export async function getStaticPaths() {
   const brands = await getCollection('brands');
   const deals = await getCollection('deals', ({ data }) => data.status === 'active');
 
-  return brands.map((brand) => {
-    const brandDeals = deals.filter((d) => d.data.brand_id === brand.data.id);
-    return {
-      params: { slug: brand.data.slug },
-      props: { brand: brand.data, deals: brandDeals },
-    };
-  });
+  return brands.map((brand) => ({
+    params: { slug: brand.data.slug },
+    props: { brand: brand.data, deals: deals.filter((d) => d.data.brand_id === brand.data.id) },
+  }));
 }
 
 const { brand, deals } = Astro.props;
+const countryName = brand.country === 'GLOBAL' ? 'Available worldwide' : countryByCode.get(brand.country)?.name || brand.country;
 ---
 
 <BaseLayout
-  title={`${brand.name} Discounts & Promo Codes`}
-  description={`Browse active ${brand.name} promo codes, seasonal sales, and store offers.`}
+  title={`${brand.name} Discounts and Promo Codes`}
+  description={`Browse active ${brand.name} discounts, promo codes and offers.`}
+  noindex={deals.length === 0}
 >
-  <div class="mb-8 border-b editorial-rule pb-8">
-    <nav class="mb-4 flex items-center gap-2 text-[13px] text-ink-muted" aria-label="Breadcrumb">
+  <div class="mb-6 border-b editorial-rule pb-6">
+    <nav class="mb-4 flex items-center gap-2 text-[13.5px] text-ink-muted" aria-label="Breadcrumb">
       <a href="/" class="hover:text-ink hover:underline">Home</a>
       <span>/</span>
       <a href="/brands" class="hover:text-ink hover:underline">Brands</a>
@@ -34,54 +35,42 @@ const { brand, deals } = Astro.props;
       <span class="text-ink">{brand.name}</span>
     </nav>
 
-    <div class="flex flex-col justify-between gap-6 sm:flex-row sm:items-start">
+    <div class="flex flex-col justify-between gap-5 sm:flex-row sm:items-start">
       <div class="flex items-start gap-4 sm:gap-5">
         <BrandMark name={brand.name} logoUrl={brand.logo_url} size="lg" />
         <div>
-          <h1 class="text-4xl sm:text-5xl leading-none text-ink">
-            {brand.name}
-          </h1>
-          <p class="mt-2.5 max-w-2xl text-[15.5px] leading-relaxed text-ink-muted">
-            {brand.short_bio}
-          </p>
+          <h1 class="text-4xl leading-none text-ink sm:text-5xl">{brand.name}</h1>
+          <p class="mt-2.5 max-w-2xl text-[15.5px] leading-relaxed text-ink-muted">{brand.short_bio}</p>
         </div>
       </div>
 
-      <a
-        href={brand.website_url}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="btn-outline inline-flex shrink-0 items-center gap-2 self-start px-4 py-2.5 text-[13.5px] font-semibold"
-      >
-        <span>Official Store</span>
-        <Icon name="arrow" class="h-4 w-4" />
-      </a>
+      <div class="flex shrink-0 flex-wrap gap-2 self-start">
+        <button type="button" data-notify-open data-brand={brand.id} class="btn-primary inline-flex items-center gap-2 px-4 py-2.5 text-[13.5px] font-semibold">
+          <Icon name="bell" class="h-4 w-4" />
+          Notify me
+        </button>
+        <a href={brand.website_url} target="_blank" rel="noopener noreferrer" class="btn-outline inline-flex items-center gap-2 px-4 py-2.5 text-[13.5px] font-semibold">
+          Official store
+          <Icon name="arrow" class="h-4 w-4" />
+        </a>
+      </div>
     </div>
 
     <div class="mt-5 flex flex-wrap items-center gap-3 text-[13.5px] text-ink-muted">
-      <span class="editorial-pill px-3.5 py-1 font-semibold text-ink">
-        {deals.length} Active {deals.length === 1 ? 'Offer' : 'Offers'}
-      </span>
-      <span>·</span>
-      <span>{brand.country === 'GLOBAL' ? 'Available Worldwide' : brand.country === 'PK' ? 'Pakistan' : 'United States'}</span>
-      {brand.return_policy_days ? (
-        <>
-          <span>·</span>
-          <span>{brand.return_policy_days}-day return policy</span>
-        </>
-      ) : null}
+      <span class="editorial-pill px-3.5 py-1 font-semibold text-ink">{deals.length} active {deals.length === 1 ? 'offer' : 'offers'}</span>
+      <span>{countryName}</span>
+      {brand.return_policy_days ? <span>{brand.return_policy_days}-day return policy</span> : null}
     </div>
   </div>
 
-  <div>
+  <div id="brand-deals" class="scroll-mt-24 border-t editorial-rule">
     {deals.length > 0 ? (
-      deals.map((deal) => (
-        <DealBannerCard deal={deal.data} brandName={brand.name} brandLogo={brand.logo_url} />
-      ))
+      deals.map((deal) => <DealBannerCard deal={deal.data} brandName={brand.name} brandLogo={brand.logo_url} />)
     ) : (
-      <div class="border-t border-b editorial-rule py-12 text-center text-[15px] text-ink-muted">
-        No active offers listed for {brand.name} at the moment.
+      <div class="border-b editorial-rule py-12 text-center text-[15px] text-ink-muted">
+        No active offers listed for {brand.name} yet. Use "Notify me" and we will email you when one appears.
       </div>
     )}
   </div>
+  <Pagination target="brand-deals" />
 </BaseLayout>

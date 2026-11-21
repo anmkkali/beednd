@@ -1,0 +1,9 @@
+{
+  "id": "sbi",
+  "name": "State Bank of India",
+  "short_code": "sbi",
+  "country": "IN",
+  "logo_url": "https://www.google.com/s2/favicons?domain=sbi.co.in&sz=128",
+  "website_url": "https://sbi.co.in",
+  "supported_card_tiers": []
+}

@@ -1,0 +1,9 @@
+{
+  "id": "abl",
+  "name": "Allied Bank",
+  "short_code": "abl",
+  "country": "PK",
+  "logo_url": "https://www.google.com/s2/favicons?domain=abl.com&sz=128",
+  "website_url": "https://abl.com",
+  "supported_card_tiers": []
+}

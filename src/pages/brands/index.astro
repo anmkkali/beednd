@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BrandMark from '../../components/common/BrandMark.astro';
 import Icon from '../../components/common/Icon.astro';
+import Pagination from '../../components/common/Pagination.astro';
 import { getCollection } from 'astro:content';
 
 const brands = await getCollection('brands');
@@ -30,9 +31,10 @@ deals.forEach((deal) => {
     </p>
   </div>
 
-  <div class="grid grid-cols-1 border-l border-t editorial-rule sm:grid-cols-2 md:grid-cols-3">
+  <div id="brands-grid" class="scroll-mt-24 grid grid-cols-1 border-l border-t editorial-rule sm:grid-cols-2 md:grid-cols-3">
     {brands.map((brand) => (
       <a
+        data-page-item
         href={`/brands/${brand.data.slug}`}
         data-market={brand.data.country}
         class="group flex flex-col justify-between border-b border-r editorial-rule p-6 transition-colors hover:bg-base-900/70"
@@ -67,4 +69,5 @@ deals.forEach((deal) => {
       </a>
     ))}
   </div>
+  <Pagination target="brands-grid" />
 </BaseLayout>

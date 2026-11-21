@@ -1,0 +1,9 @@
+{
+  "id": "lloyds",
+  "name": "Lloyds Bank",
+  "short_code": "lloyds",
+  "country": "GB",
+  "logo_url": "https://www.google.com/s2/favicons?domain=lloydsbank.com&sz=128",
+  "website_url": "https://lloydsbank.com",
+  "supported_card_tiers": []
+}

@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BrandMark from '../../components/common/BrandMark.astro';
+import Icon from '../../components/common/Icon.astro';
+import { getCollection } from 'astro:content';
+import { countryByCode } from '../../data/countries';
+
+const banks = await getCollection('banks');
+const deals = await getCollection('deals', ({ data }) => data.status === 'active');
+const brands = await getCollection('brands');
+const brandMap = new Map(brands.map((b) => [b.data.id, b.data]));
+
+const rows = banks
+  .map((bank) => {
+    const bankDeals = deals.filter((d) => d.data.bank_details?.bank_id === bank.data.id);
+    const partnerIds = [...new Set(bankDeals.map((d) => d.data.brand_id))];
+    return { bank: bank.data, count: bankDeals.length, partners: partnerIds.map((id) => brandMap.get(id)).filter(Boolean) };
+  })
+  .sort((a, b) => b.count - a.count || a.bank.name.localeCompare(b.bank.name));
+
+const withOffers = rows.filter((row) => row.count > 0);
+const withoutOffers = rows.filter((row) => row.count === 0);
+---
+
+<BaseLayout title="Bank and Card Deals" description="Discounts you get by paying with a bank card, shown with the bank and the brand.">
+  <div class="mb-8 border-b editorial-rule pb-6">
+    <nav class="mb-3 flex items-center gap-2 text-[13.5px] text-ink-muted" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-ink hover:underline">Home</a>
+      <span>/</span>
+      <span class="text-ink">Bank deals</span>
+    </nav>
+    <h1 class="text-5xl leading-[0.98] text-ink sm:text-6xl">Bank deals</h1>
+    <p class="mt-3 max-w-2xl text-[16px] leading-relaxed text-ink-muted">
+      Pick your bank to see the brands that give a discount on its cards.
+    </p>
+  </div>
+
+  {withOffers.length > 0 && (
+    <section class="mb-10">
+      <h2 class="mb-3 text-3xl text-ink">Banks with offers</h2>
+      <div class="grid border-l border-t editorial-rule sm:grid-cols-2 lg:grid-cols-3">
+        {withOffers.map(({ bank, count, partners }) => (
+          <a
+            href={`/banks/${bank.short_code}`}
+            data-market={bank.country}
+            class="group flex flex-col justify-between border-b border-r editorial-rule p-5 transition-colors hover:bg-base-900/70"
+          >
+            <div class="flex items-center gap-3">
+              <BrandMark name={bank.name} logoUrl={bank.logo_url} size="lg" />
+              <div class="min-w-0">
+                <h3 class="text-[24px] leading-tight text-ink group-hover:underline">{bank.name}</h3>
+                <p class="text-[13px] text-ink-muted">{countryByCode.get(bank.country)?.name || bank.country}</p>
+              </div>
+            </div>
+            <div class="mt-5 flex items-center gap-2">
+              <BrandMark name={bank.name} logoUrl={bank.logo_url} size="sm" />
+              {partners.map((brand) => (
+                <>
+                  <span class="text-[12px] text-ink-muted" aria-hidden="true">x</span>
+                  <BrandMark name={brand!.name} logoUrl={brand!.logo_url} size="sm" />
+                </>
+              ))}
+            </div>
+            <div class="mt-4 flex items-center justify-between border-t editorial-rule pt-3 text-[13.5px]">
+              <span class="font-medium text-ink">{count} {count === 1 ? 'offer' : 'offers'}</span>
+              <span class="inline-flex items-center gap-1.5 font-semibold text-ink">View <Icon name="arrow" class="h-4 w-4" /></span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <section>
+    <h2 class="mb-1 text-3xl text-ink">More banks</h2>
+    <p class="mb-3 text-[14.5px] text-ink-muted">No card offers are listed for these banks yet.</p>
+    <div class="grid grid-cols-2 border-l border-t editorial-rule sm:grid-cols-3 lg:grid-cols-4">
+      {withoutOffers.map(({ bank }) => (
+        <a
+          href={`/banks/${bank.short_code}`}
+          data-market={bank.country}
+          class="flex items-center gap-3 border-b border-r editorial-rule p-4 transition-colors hover:bg-base-900/70"
+        >
+          <BrandMark name={bank.name} logoUrl={bank.logo_url} size="sm" />
+          <span class="truncate text-[14.5px] font-semibold text-ink">{bank.name}</span>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

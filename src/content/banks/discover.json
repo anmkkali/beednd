@@ -1,0 +1,9 @@
+{
+  "id": "discover",
+  "name": "Discover",
+  "short_code": "discover",
+  "country": "US",
+  "logo_url": "https://www.google.com/s2/favicons?domain=discover.com&sz=128",
+  "website_url": "https://discover.com",
+  "supported_card_tiers": []
+}

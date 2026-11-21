@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import DealBannerCard from '../../../components/deals/DealBannerCard.astro';
+import Pagination from '../../../components/common/Pagination.astro';
 import { getCollection } from 'astro:content';
 import { countries, slugify } from '../../../data/countries';
 
@@ -61,7 +62,7 @@ const { country, city, deals, brandMap } = Astro.props;
     </div>
   </div>
 
-  <div>
+  <div id="city-deals" class="scroll-mt-24 border-t editorial-rule">
     {deals.length > 0 ? (
       deals.map((deal) => (
         <DealBannerCard
@@ -71,11 +72,12 @@ const { country, city, deals, brandMap } = Astro.props;
         />
       ))
     ) : (
-      <div class="border-y editorial-rule py-14 text-center">
+      <div class="border-b editorial-rule py-14 text-center">
         <p class="text-[16px] text-ink">No offers are listed for {city.name} yet.</p>
         <p class="mt-2 text-[14.5px] text-ink-muted">New offers are added as brands announce them. Browse all offers in the meantime.</p>
         <a href="/brands" class="btn-primary mt-5 inline-flex px-5 py-2.5 text-[14px] font-semibold">Browse Brands</a>
       </div>
     )}
   </div>
+  <Pagination target="city-deals" />
 </BaseLayout>

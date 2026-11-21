@@ -1,0 +1,12 @@
+{
+  "id": "github-copilot",
+  "name": "GitHub Copilot",
+  "slug": "github-copilot",
+  "logo_url": "https://www.google.com/s2/favicons?domain=github.com&sz=128",
+  "website_url": "https://github.com/features/copilot",
+  "country": "GLOBAL",
+  "categories": [
+    "ai-tools"
+  ],
+  "short_bio": "AI coding assistant from GitHub."
+}

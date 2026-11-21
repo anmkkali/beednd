@@ -1,0 +1,9 @@
+{
+  "id": "icici",
+  "name": "ICICI Bank",
+  "short_code": "icici",
+  "country": "IN",
+  "logo_url": "https://www.google.com/s2/favicons?domain=icicibank.com&sz=128",
+  "website_url": "https://icicibank.com",
+  "supported_card_tiers": []
+}

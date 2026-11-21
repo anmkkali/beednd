@@ -12,8 +12,9 @@ const quickLinks = [
   { label: 'Trending', href: '/?type=trending', icon: 'trending' },
   { label: 'Free trials', href: '/?type=trial', icon: 'sparkle' },
   { label: 'Promo codes', href: '/?type=promo-code', icon: 'tag' },
+  { label: 'Vouchers', href: '/?type=voucher', icon: 'tag' },
   { label: 'Store sales', href: '/?type=store-sale', icon: 'store' },
-  { label: 'Bank deals', href: '/?type=bank-card', icon: 'card' },
+  { label: 'Bank deals', href: '/banks', icon: 'card' },
 ];
 
 const filterHref = (categoryId: string, groupId: string, filter: { sub?: string; kind?: string }) => {
@@ -39,9 +40,6 @@ const filterHref = (categoryId: string, groupId: string, filter: { sub?: string;
       <button type="button" data-theme-toggle class="icon-btn sb-hide-collapsed" aria-label="Switch between light and dark mode" title="Light / dark mode">
         <span class="theme-icon-moon inline-flex"><Icon name="moon" class="h-[18px] w-[18px]" /></span>
         <span class="theme-icon-sun"><Icon name="sun" class="h-[18px] w-[18px]" /></span>
-      </button>
-      <button type="button" data-search-open class="icon-btn sb-hide-collapsed" aria-label="Search" title="Search">
-        <Icon name="search" class="h-[18px] w-[18px]" />
       </button>
       <button type="button" id="sidebar-toggle" class="icon-btn" aria-label="Collapse or expand sidebar" title="Collapse / expand sidebar">
         <Icon name="panel" class="h-[18px] w-[18px]" />
@@ -75,6 +73,12 @@ const filterHref = (categoryId: string, groupId: string, filter: { sub?: string;
               All {category.name}
             </a>
 
+            {(category.kinds || []).map((kind) => (
+              <a href={`/categories/${category.id}?kind=${kind.kind}`} data-sb-link class="sb-link">
+                {kind.label}
+              </a>
+            ))}
+
             {category.groups.map((group) => (
               <details class="sb-group" data-group={group.id}>
                 <summary class="sb-link cursor-pointer list-none" data-sb-summary>
@@ -94,6 +98,13 @@ const filterHref = (categoryId: string, groupId: string, filter: { sub?: string;
         </details>
       ))}
     </nav>
+
+    <div class="mt-6 border-t editorial-rule pt-4">
+      <button type="button" data-notify-open class="sb-link" title="Notify me by brand">
+        <Icon name="bell" class="h-[18px] w-[18px] shrink-0" />
+        <span class="sb-label truncate">Notify me by brand</span>
+      </button>
+    </div>
   </div>
 </aside>
 

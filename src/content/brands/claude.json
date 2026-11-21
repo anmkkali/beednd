@@ -1,0 +1,12 @@
+{
+  "id": "claude",
+  "name": "Claude",
+  "slug": "claude",
+  "logo_url": "https://www.google.com/s2/favicons?domain=claude.ai&sz=128",
+  "website_url": "https://claude.ai",
+  "country": "GLOBAL",
+  "categories": [
+    "ai-tools"
+  ],
+  "short_bio": "AI assistant from Anthropic."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "faysal",
+  "name": "Faysal Bank",
+  "short_code": "faysal",
+  "country": "PK",
+  "logo_url": "https://www.google.com/s2/favicons?domain=faysalbank.com&sz=128",
+  "website_url": "https://faysalbank.com",
+  "supported_card_tiers": []
+}

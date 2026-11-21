@@ -1,0 +1,9 @@
+{
+  "id": "mcb",
+  "name": "MCB Bank",
+  "short_code": "mcb",
+  "country": "PK",
+  "logo_url": "https://www.google.com/s2/favicons?domain=mcb.com.pk&sz=128",
+  "website_url": "https://mcb.com.pk",
+  "supported_card_tiers": []
+}

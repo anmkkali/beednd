@@ -1,0 +1,9 @@
+{
+  "id": "amex",
+  "name": "American Express",
+  "short_code": "amex",
+  "country": "US",
+  "logo_url": "https://www.google.com/s2/favicons?domain=americanexpress.com&sz=128",
+  "website_url": "https://americanexpress.com",
+  "supported_card_tiers": []
+}

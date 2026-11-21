@@ -1,0 +1,9 @@
+{
+  "id": "hmb",
+  "name": "Habib Metropolitan Bank",
+  "short_code": "hmb",
+  "country": "PK",
+  "logo_url": "https://www.google.com/s2/favicons?domain=habibmetro.com&sz=128",
+  "website_url": "https://habibmetro.com",
+  "supported_card_tiers": []
+}

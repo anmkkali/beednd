@@ -1,0 +1,113 @@
+---
+import { getCollection } from 'astro:content';
+import Icon from './Icon.astro';
+import { subscribeEndpoint } from '../../data/site';
+
+const brands = (await getCollection('brands')).sort((a, b) => a.data.name.localeCompare(b.data.name));
+---
+
+<div id="notify-modal" class="fixed inset-0 z-[80] hidden items-center justify-center bg-black/55 p-4">
+  <div class="relative w-full max-w-md border editorial-rule-strong bg-base-950 p-6 shadow-2xl" role="dialog" aria-modal="true" aria-labelledby="notify-title">
+    <button type="button" data-notify-close class="icon-btn absolute right-2 top-2" aria-label="Close">
+      <Icon name="close" class="h-5 w-5" />
+    </button>
+    <div class="flex items-center gap-2 text-ink">
+      <Icon name="bell" class="h-5 w-5" />
+      <p class="text-[12px] font-semibold uppercase tracking-[0.16em] text-ink-muted">Email alerts</p>
+    </div>
+    <h2 id="notify-title" class="mt-2 text-[32px] leading-tight text-ink">Get told when a brand has a new discount</h2>
+    <p class="mt-2 text-[14.5px] leading-relaxed text-ink-muted">Pick a brand and we will email you when its next discount is listed.</p>
+
+    <form id="notify-form" class="mt-5 space-y-3" data-endpoint={subscribeEndpoint} novalidate>
+      <label class="block text-[13.5px] font-semibold text-ink">
+        Your name
+        <input name="name" type="text" required autocomplete="name" class="mt-1 w-full border editorial-rule bg-transparent px-3 py-2.5 text-[15px] font-normal text-ink focus:border-ink focus:outline-none" />
+      </label>
+      <label class="block text-[13.5px] font-semibold text-ink">
+        Email
+        <input name="email" type="email" required autocomplete="email" class="mt-1 w-full border editorial-rule bg-transparent px-3 py-2.5 text-[15px] font-normal text-ink focus:border-ink focus:outline-none" />
+      </label>
+      <label class="block text-[13.5px] font-semibold text-ink">
+        Brand
+        <select name="brand" id="notify-brand" class="mt-1 w-full border editorial-rule bg-base-950 px-3 py-2.5 text-[15px] font-normal text-ink focus:border-ink focus:outline-none">
+          <option value="any">Any brand</option>
+          {brands.map((brand) => <option value={brand.data.id}>{brand.data.name}</option>)}
+        </select>
+      </label>
+      <button type="submit" class="btn-primary w-full px-4 py-3 text-[14px] font-semibold">Notify me</button>
+      <p id="notify-message" class="hidden text-[14px] leading-relaxed" role="status"></p>
+      <p class="text-[12.5px] leading-relaxed text-ink-muted">We only use your details to send these alerts. You can unsubscribe at any time. See the <a href="/privacy-policy" class="underline">Privacy Policy</a>.</p>
+    </form>
+  </div>
+</div>
+
+<script>
+  const modal = document.getElementById('notify-modal');
+  const form = document.getElementById('notify-form') as HTMLFormElement | null;
+  const brandSelect = document.getElementById('notify-brand') as HTMLSelectElement | null;
+  const message = document.getElementById('notify-message');
+
+  function show(text: string, ok: boolean) {
+    if (!message) return;
+    message.textContent = text;
+    message.classList.remove('hidden');
+    message.classList.toggle('text-ink', ok);
+    message.classList.toggle('font-semibold', ok);
+    message.classList.toggle('text-ink-muted', !ok);
+  }
+
+  function open(brand?: string) {
+    if (brandSelect) brandSelect.value = brand && [...brandSelect.options].some((o) => o.value === brand) ? brand : 'any';
+    message?.classList.add('hidden');
+    modal?.classList.remove('hidden');
+    modal?.classList.add('flex');
+    window.setTimeout(() => form?.querySelector<HTMLInputElement>('input[name="name"]')?.focus(), 10);
+  }
+
+  function close() {
+    modal?.classList.add('hidden');
+    modal?.classList.remove('flex');
+  }
+
+  document.addEventListener('click', (event) => {
+    const trigger = (event.target as HTMLElement).closest<HTMLElement>('[data-notify-open]');
+    if (trigger) {
+      event.preventDefault();
+      document.querySelectorAll('details[data-dropdown][open]').forEach((d) => d.removeAttribute('open'));
+      document.documentElement.removeAttribute('data-sidebar-open');
+      open(trigger.dataset.brand);
+    }
+    if ((event.target as HTMLElement).closest('[data-notify-close]') || event.target === modal) close();
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') close();
+  });
+
+  form?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const data = new FormData(form);
+    const name = String(data.get('name') || '').trim();
+    const email = String(data.get('email') || '').trim();
+    if (!name || !/^\S+@\S+\.\S+$/.test(email)) {
+      show('Please enter your name and a valid email address.', false);
+      return;
+    }
+    const endpoint = form.dataset.endpoint;
+    if (!endpoint) {
+      show('Email alerts are not switched on yet. Please check back soon.', false);
+      return;
+    }
+    try {
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ name, email, brand: data.get('brand'), page: location.href }),
+      });
+      if (!response.ok) throw new Error(String(response.status));
+      show('Thanks. We will email you when this brand has a new discount.', true);
+      form.reset();
+    } catch {
+      show('Sorry, something went wrong. Please try again in a moment.', false);
+    }
+  });
+</script>

@@ -1,0 +1,9 @@
+{
+  "id": "bop",
+  "name": "Bank of Punjab",
+  "short_code": "bop",
+  "country": "PK",
+  "logo_url": "https://www.google.com/s2/favicons?domain=bop.com.pk&sz=128",
+  "website_url": "https://bop.com.pk",
+  "supported_card_tiers": []
+}

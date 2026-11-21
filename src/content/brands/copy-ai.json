@@ -1,0 +1,12 @@
+{
+  "id": "copy-ai",
+  "name": "Copy.ai",
+  "slug": "copy-ai",
+  "logo_url": "https://www.google.com/s2/favicons?domain=copy.ai&sz=128",
+  "website_url": "https://copy.ai",
+  "country": "GLOBAL",
+  "categories": [
+    "ai-tools"
+  ],
+  "short_bio": "AI writing and marketing copy tool."
+}

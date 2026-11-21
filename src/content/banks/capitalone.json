@@ -1,0 +1,9 @@
+{
+  "id": "capitalone",
+  "name": "Capital One",
+  "short_code": "capitalone",
+  "country": "US",
+  "logo_url": "https://www.google.com/s2/favicons?domain=capitalone.com&sz=128",
+  "website_url": "https://capitalone.com",
+  "supported_card_tiers": []
+}

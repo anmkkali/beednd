@@ -26,7 +26,7 @@ const latest = (await getCollection('deals', ({ data }) => data.status === 'acti
     <button
       type="button"
       id="header-search-btn"
-      class="flex h-10 w-10 shrink-0 items-center justify-center gap-3 border editorial-rule bg-base-900/60 text-[14px] text-ink-muted transition-colors hover:border-ink/50 hover:bg-base-900 hover:text-ink sm:w-auto sm:min-w-0 sm:max-w-md sm:flex-1 sm:justify-start sm:px-3.5"
+      class="flex h-10 w-10 shrink-0 items-center justify-center gap-3 border editorial-rule bg-base-900/60 text-[14px] text-ink-muted transition-colors hover:border-ink/50 hover:bg-base-900 hover:text-ink sm:w-auto sm:min-w-0 sm:flex-1 sm:justify-start sm:px-3.5"
       aria-label="Search deals, brands and categories"
     >
       <Icon name="search" class="h-[18px] w-[18px] shrink-0 text-ink" />
@@ -34,7 +34,7 @@ const latest = (await getCollection('deals', ({ data }) => data.status === 'acti
       <kbd class="ml-auto hidden border editorial-rule px-1.5 py-0.5 text-[11px] font-medium md:inline-block">Ctrl K</kbd>
     </button>
 
-    <nav class="hidden items-center gap-2 lg:ml-auto lg:flex" aria-label="Primary">
+    <nav class="hidden shrink-0 items-center gap-2 lg:flex" aria-label="Primary">
       <a href="/brands" class="btn-primary inline-flex h-10 items-center gap-2 px-4 text-[13.5px] font-semibold">
         <Icon name="grid" class="h-4 w-4" />
         Browse Brands
@@ -84,6 +84,10 @@ const latest = (await getCollection('deals', ({ data }) => data.status === 'acti
           ))}
         </ul>
         <p data-notif-empty class="hidden px-4 py-6 text-center text-[14px] text-ink-muted">No new discounts for your country yet.</p>
+        <button type="button" data-notify-open class="flex w-full items-center justify-center gap-2 border-t editorial-rule px-4 py-3 text-[13.5px] font-semibold text-ink hover:bg-base-900">
+          <Icon name="bell" class="h-4 w-4" />
+          Get email alerts by brand
+        </button>
       </div>
     </details>
   </div>

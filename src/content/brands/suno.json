@@ -1,0 +1,12 @@
+{
+  "id": "suno",
+  "name": "Suno",
+  "slug": "suno",
+  "logo_url": "https://www.google.com/s2/favicons?domain=suno.com&sz=128",
+  "website_url": "https://suno.com",
+  "country": "GLOBAL",
+  "categories": [
+    "ai-tools"
+  ],
+  "short_bio": "AI music generator."
+}

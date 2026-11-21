@@ -1,0 +1,35 @@
+---
+import { sponsor } from '../../data/site';
+import Icon from './Icon.astro';
+---
+
+{
+  sponsor.enabled && (
+    <div id="sponsor-bar" class="relative flex flex-wrap items-center justify-center gap-x-3 gap-y-1 bg-ink px-10 py-2 text-[13px] text-ink-inverse">
+      <span class="border border-ink-inverse/50 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-[0.14em]">{sponsor.label}</span>
+      <span class="text-center">{sponsor.text}</span>
+      <a href={sponsor.href} class="bg-ink-inverse px-3 py-1 text-[12.5px] font-semibold text-ink hover:opacity-90">{sponsor.cta}</a>
+      <button type="button" id="sponsor-close" class="absolute right-2 top-1/2 inline-flex h-7 w-7 -translate-y-1/2 items-center justify-center hover:bg-ink-inverse/15" aria-label="Close sponsor bar">
+        <Icon name="close" class="h-4 w-4" />
+      </button>
+    </div>
+  )
+}
+
+<script is:inline>
+  (() => {
+    const bar = document.getElementById('sponsor-bar');
+    if (!bar) return;
+    try {
+      if (sessionStorage.getItem('dealssite_sponsor_closed')) bar.remove();
+    } catch (e) {}
+    const close = document.getElementById('sponsor-close');
+    if (close)
+      close.addEventListener('click', () => {
+        bar.remove();
+        try {
+          sessionStorage.setItem('dealssite_sponsor_closed', '1');
+        } catch (e) {}
+      });
+  })();
+</script>

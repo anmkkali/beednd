@@ -1,0 +1,12 @@
+{
+  "id": "luma",
+  "name": "Luma AI",
+  "slug": "luma",
+  "logo_url": "https://www.google.com/s2/favicons?domain=lumalabs.ai&sz=128",
+  "website_url": "https://lumalabs.ai",
+  "country": "GLOBAL",
+  "categories": [
+    "ai-tools"
+  ],
+  "short_bio": "AI video and 3D generation."
+}

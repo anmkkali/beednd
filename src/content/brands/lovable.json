@@ -1,0 +1,12 @@
+{
+  "id": "lovable",
+  "name": "Lovable",
+  "slug": "lovable",
+  "logo_url": "https://www.google.com/s2/favicons?domain=lovable.dev&sz=128",
+  "website_url": "https://lovable.dev",
+  "country": "GLOBAL",
+  "categories": [
+    "ai-tools"
+  ],
+  "short_bio": "AI app and website builder."
+}

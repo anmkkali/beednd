@@ -4,6 +4,9 @@ import Footer from '../components/common/Footer.astro';
 import LeftSidebar from '../components/common/LeftSidebar.astro';
 import PagefindModal from '../components/search/PagefindModal.astro';
 import AdSlot from '../components/ads/AdSlot.astro';
+import SponsorBar from '../components/common/SponsorBar.astro';
+import BlogStrip from '../components/common/BlogStrip.astro';
+import NotifyModal from '../components/common/NotifyModal.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -14,6 +17,7 @@ interface Props {
   activeCategory?: string;
   structuredData?: any;
   showTopAd?: boolean;
+  showBottom?: boolean;
   noindex?: boolean;
   ignoreMarket?: boolean;
 }
@@ -26,6 +30,7 @@ const {
   activeCategory = 'all',
   structuredData,
   showTopAd = true,
+  showBottom = true,
   noindex = false,
   ignoreMarket = false,
 } = Astro.props;
@@ -132,16 +137,24 @@ const fontsUrl =
       <LeftSidebar activeTopic={activeTopic} activeCategory={activeCategory} />
 
       <div class="flex min-w-0 flex-1 flex-col">
+        <SponsorBar />
         <Header />
         <main class="mx-auto w-full max-w-6xl flex-1 px-4 pb-20 pt-6 sm:px-6 lg:px-10">
           {showTopAd && <AdSlot slotType="leaderboard" />}
           <slot />
+          {showBottom && (
+            <>
+              <AdSlot slotType="leaderboard" />
+              <BlogStrip />
+            </>
+          )}
         </main>
         <Footer />
       </div>
     </div>
 
     <PagefindModal />
+    <NotifyModal />
 
     <script>
       import { countries, countryByCode } from '../data/countries';

@@ -58,7 +58,7 @@ const dealsCollection = defineCollection({
     is_sponsored: z.boolean().default(false),
     is_trending: z.boolean().default(false),
     limited_time: z.boolean().default(false),
-    offer_kind: z.enum(['discount', 'trial', 'free', 'promo', 'credits']).optional(),
+    offer_kind: z.enum(['discount', 'trial', 'free', 'promo', 'voucher', 'credits']).optional(),
     badge_text: z.string().max(80).optional(),
     image: z.object({
       src: z.string(),
@@ -92,10 +92,11 @@ const banksCollection = defineCollection({
     short_code: z.string(),
     country: z.string().regex(/^([A-Z]{2}|GLOBAL)$/).default('PK'),
     logo_url: z.string(),
-    official_discounts_page: z.string(),
-    helpline_number: z.string(),
-    supported_card_tiers: z.array(z.string()),
-    primary_color_hex: z.string()
+    website_url: z.string().optional(),
+    official_discounts_page: z.string().optional(),
+    helpline_number: z.string().optional(),
+    supported_card_tiers: z.array(z.string()).default([]),
+    primary_color_hex: z.string().optional()
   })
 });
 

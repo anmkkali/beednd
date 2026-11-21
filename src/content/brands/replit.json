@@ -1,0 +1,12 @@
+{
+  "id": "replit",
+  "name": "Replit",
+  "slug": "replit",
+  "logo_url": "https://www.google.com/s2/favicons?domain=replit.com&sz=128",
+  "website_url": "https://replit.com",
+  "country": "GLOBAL",
+  "categories": [
+    "ai-tools"
+  ],
+  "short_bio": "Browser-based coding platform with AI agent."
+}

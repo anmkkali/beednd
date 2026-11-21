@@ -1,0 +1,12 @@
+{
+  "id": "cursor",
+  "name": "Cursor",
+  "slug": "cursor",
+  "logo_url": "https://www.google.com/s2/favicons?domain=cursor.com&sz=128",
+  "website_url": "https://cursor.com",
+  "country": "GLOBAL",
+  "categories": [
+    "ai-tools"
+  ],
+  "short_bio": "AI code editor."
+}

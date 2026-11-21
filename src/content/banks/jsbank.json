@@ -1,0 +1,9 @@
+{
+  "id": "jsbank",
+  "name": "JS Bank",
+  "short_code": "jsbank",
+  "country": "PK",
+  "logo_url": "https://www.google.com/s2/favicons?domain=jsbl.com&sz=128",
+  "website_url": "https://jsbl.com",
+  "supported_card_tiers": []
+}

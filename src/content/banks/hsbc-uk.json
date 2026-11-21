@@ -1,0 +1,9 @@
+{
+  "id": "hsbc-uk",
+  "name": "HSBC UK",
+  "short_code": "hsbc-uk",
+  "country": "GB",
+  "logo_url": "https://www.google.com/s2/favicons?domain=hsbc.co.uk&sz=128",
+  "website_url": "https://hsbc.co.uk",
+  "supported_card_tiers": []
+}

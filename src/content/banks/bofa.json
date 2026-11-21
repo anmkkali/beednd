@@ -1,0 +1,9 @@
+{
+  "id": "bofa",
+  "name": "Bank of America",
+  "short_code": "bofa",
+  "country": "US",
+  "logo_url": "https://www.google.com/s2/favicons?domain=bankofamerica.com&sz=128",
+  "website_url": "https://bankofamerica.com",
+  "supported_card_tiers": []
+}

@@ -1,0 +1,36 @@
+{
+  "id": "copy-ai-free-plan",
+  "slug": "copy-ai-free-plan",
+  "title": "Copy.ai Free Plan",
+  "short_description": "Copy.ai offers a free plan. Features, limits and credits differ by plan and can change, so check the official pricing page before you sign up.",
+  "brand_id": "copy-ai",
+  "country": "GLOBAL",
+  "cities": [],
+  "areas": [],
+  "branch_info": [],
+  "category": "ai-tools",
+  "deal_type": "online",
+  "discount_type": "freebie",
+  "discount_value": "Free plan",
+  "badge_text": "Free plan available",
+  "terms_and_conditions": [
+    "Free plan limits such as credits, features and usage are set by Copy.ai and can change.",
+    "Paid plans unlock higher limits.",
+    "Check the official pricing page for current details."
+  ],
+  "start_date": "2026-11-21T23:20:39Z",
+  "end_date": null,
+  "source_url": "https://copy.ai",
+  "affiliate_url": "https://copy.ai",
+  "last_verified_at": "2026-11-21T23:20:39Z",
+  "status": "active",
+  "is_trending": false,
+  "offer_kind": "free",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=copy.ai&sz=128",
+    "alt": "Copy.ai"
+  },
+  "tags": [
+    "writing"
+  ]
+}

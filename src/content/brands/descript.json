@@ -1,0 +1,12 @@
+{
+  "id": "descript",
+  "name": "Descript",
+  "slug": "descript",
+  "logo_url": "https://www.google.com/s2/favicons?domain=descript.com&sz=128",
+  "website_url": "https://descript.com",
+  "country": "GLOBAL",
+  "categories": [
+    "ai-tools"
+  ],
+  "short_bio": "Audio and video editor with AI tools."
+}

@@ -1,0 +1,12 @@
+{
+  "id": "notion",
+  "name": "Notion",
+  "slug": "notion",
+  "logo_url": "https://www.google.com/s2/favicons?domain=notion.com&sz=128",
+  "website_url": "https://notion.com",
+  "country": "GLOBAL",
+  "categories": [
+    "ai-tools"
+  ],
+  "short_bio": "Workspace with built-in AI."
+}

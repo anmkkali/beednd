@@ -1,0 +1,9 @@
+{
+  "id": "scb-pk",
+  "name": "Standard Chartered Pakistan",
+  "short_code": "scb-pk",
+  "country": "PK",
+  "logo_url": "https://www.google.com/s2/favicons?domain=sc.com&sz=128",
+  "website_url": "https://sc.com",
+  "supported_card_tiers": []
+}

@@ -1,0 +1,9 @@
+{
+  "id": "kotak",
+  "name": "Kotak Mahindra Bank",
+  "short_code": "kotak",
+  "country": "IN",
+  "logo_url": "https://www.google.com/s2/favicons?domain=kotak.com&sz=128",
+  "website_url": "https://kotak.com",
+  "supported_card_tiers": []
+}

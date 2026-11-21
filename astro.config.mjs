@@ -15,9 +15,9 @@ const slugify = (value) =>
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '');
 
-// City pages are only listed in the sitemap once at least one active deal exists for them,
+// City, brand and bank pages are only listed in the sitemap once at least one active deal exists for them,
 // so search engines are not asked to index empty pages.
-function citiesWithDeals() {
+function pagesWithDeals() {
   const dir = path.join(root, 'src/content/deals');
   const found = new Set();
   for (const file of fs.readdirSync(dir).filter((name) => name.endsWith('.json'))) {
@@ -26,9 +26,14 @@ function citiesWithDeals() {
     for (const city of deal.cities || []) {
       found.add(`/city/${String(deal.country || '').toLowerCase()}/${slugify(city)}/`);
     }
+    found.add(`/brands/${deal.brand_id}/`);
+    if (deal.bank_details?.bank_id) found.add(`/banks/${deal.bank_details.bank_id}/`);
   }
   return found;
 }
+
+const needsDeals = (pathname) =>
+  /^\/(city\/[^/]+\/[^/]+|brands\/[^/]+|banks\/[^/]+)\/$/.test(pathname);
 
 function customSitemap() {
   return {
@@ -36,13 +41,13 @@ function customSitemap() {
     hooks: {
       'astro:build:done': async ({ dir, pages }) => {
         const outDir = fileURLToPath(dir);
-        const indexableCities = citiesWithDeals();
+        const indexable = pagesWithDeals();
         const today = new Date().toISOString().split('T')[0];
 
         const urls = pages
           .map((page) => '/' + page.pathname.replace(/^\/+/, '').replace(/index\.html$/, ''))
           .filter((pathname) => !pathname.startsWith('/go/'))
-          .filter((pathname) => !pathname.startsWith('/city/') || indexableCities.has(pathname))
+          .filter((pathname) => !needsDeals(pathname) || indexable.has(pathname))
           .map(
             (pathname) =>
               `  <url>\n    <loc>${SITE}${pathname}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>daily</changefreq>\n    <priority>${pathname === '/' ? '1.0' : '0.7'}</priority>\n  </url>`

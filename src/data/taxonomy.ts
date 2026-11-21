@@ -2,7 +2,7 @@
 // A group id must also appear as a tag on a deal (for example "women") for that deal to match.
 export type Filter = { label: string; sub?: string; kind?: string };
 export type Group = { id: string; label: string; filters: Filter[] };
-export type Category = { id: string; name: string; icon: string; blurb: string; groups: Group[] };
+export type Category = { id: string; name: string; icon: string; blurb: string; groups: Group[]; kinds?: Filter[] };
 
 export const KIND_FILTERS: Filter[] = [
   { label: 'Discounts', kind: 'discount' },
@@ -12,6 +12,21 @@ export const KIND_FILTERS: Filter[] = [
   { label: 'Credits & bonus', kind: 'credits' },
 ];
 
+// Free trials, free plans and credits only make sense for software, so other categories get codes and vouchers.
+export const SHOPPING_KINDS: Filter[] = [
+  { label: 'Promo codes', kind: 'promo' },
+  { label: 'Vouchers', kind: 'voucher' },
+];
+
+export const ALL_KIND_LABELS: Record<string, string> = {
+  discount: 'Discounts',
+  trial: 'Free trials',
+  free: 'Free',
+  promo: 'Promo codes',
+  voucher: 'Vouchers',
+  credits: 'Credits & bonus',
+};
+
 const group = (id: string, label: string, allLabel: string, filters: Filter[]): Group => ({
   id,
   label,
@@ -20,7 +35,9 @@ const group = (id: string, label: string, allLabel: string, filters: Filter[]): 
 
 const aiGroup = (id: string, label: string): Group => group(id, label, `All ${label} tools`, KIND_FILTERS);
 
-export const categories: Category[] = [
+const withShoppingKinds = (category: Category): Category => ({ ...category, kinds: SHOPPING_KINDS });
+
+const baseCategories: Category[] = [
   {
     id: 'clothing-fashion',
     name: 'Clothing & Fashion',
@@ -163,5 +180,9 @@ export const categories: Category[] = [
     ],
   },
 ];
+
+export const categories: Category[] = baseCategories.map((category) =>
+  category.id === 'ai-tools' ? category : withShoppingKinds(category)
+);
 
 export const categoryById = new Map(categories.map((category) => [category.id, category]));

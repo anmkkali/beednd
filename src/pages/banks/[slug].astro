@@ -2,7 +2,9 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import DealBannerCard from '../../components/deals/DealBannerCard.astro';
 import BrandMark from '../../components/common/BrandMark.astro';
+import Pagination from '../../components/common/Pagination.astro';
 import { getCollection } from 'astro:content';
+import { countryByCode } from '../../data/countries';
 
 export async function getStaticPaths() {
   const banks = await getCollection('banks');
@@ -12,23 +14,27 @@ export async function getStaticPaths() {
 
   return banks.map((bank) => {
     const bankDeals = deals.filter((d) => d.data.bank_details?.bank_id === bank.data.id);
+    const partners = [...new Set(bankDeals.map((d) => d.data.brand_id))].map((id) => brandMap.get(id)).filter(Boolean);
     return {
       params: { slug: bank.data.short_code },
-      props: { bank: bank.data, deals: bankDeals, brandMap },
+      props: { bank: bank.data, deals: bankDeals, partners, brandMap },
     };
   });
 }
 
-const { bank, deals, brandMap } = Astro.props;
+const { bank, deals, partners, brandMap } = Astro.props;
 ---
 
 <BaseLayout
   title={`${bank.name} Card Discounts`}
-  description={`Active retail and fashion discounts on ${bank.name} debit and credit cards.`}
+  description={`Brands that offer discounts on ${bank.name} cards.`}
+  noindex={deals.length === 0}
 >
-  <div class="mb-8 border-b editorial-rule pb-8">
-    <nav class="mb-4 flex items-center gap-2 text-[13px] text-ink-muted" aria-label="Breadcrumb">
+  <div class="mb-6 border-b editorial-rule pb-6">
+    <nav class="mb-4 flex items-center gap-2 text-[13.5px] text-ink-muted" aria-label="Breadcrumb">
       <a href="/" class="hover:text-ink hover:underline">Home</a>
+      <span>/</span>
+      <a href="/banks" class="hover:text-ink hover:underline">Bank deals</a>
       <span>/</span>
       <span class="text-ink">{bank.name}</span>
     </nav>
@@ -36,21 +42,43 @@ const { bank, deals, brandMap } = Astro.props;
     <div class="flex items-start gap-4">
       <BrandMark name={bank.name} logoUrl={bank.logo_url} size="lg" />
       <div>
-        <h1 class="text-4xl sm:text-5xl leading-none text-ink">{bank.name}</h1>
-        <p class="mt-2 text-[14.5px] text-ink-muted">Helpline: {bank.helpline_number}</p>
+        <h1 class="text-4xl leading-none text-ink sm:text-5xl">{bank.name}</h1>
+        <p class="mt-2 text-[14.5px] text-ink-muted">
+          {countryByCode.get(bank.country)?.name || bank.country}
+          {bank.helpline_number && <span> | Helpline {bank.helpline_number}</span>}
+        </p>
+        {(bank.official_discounts_page || bank.website_url) && (
+          <a href={bank.official_discounts_page || bank.website_url} target="_blank" rel="noopener noreferrer" class="mt-1 inline-block text-[14px] font-semibold text-ink underline">
+            Official {bank.official_discounts_page ? 'offers page' : 'website'}
+          </a>
+        )}
       </div>
     </div>
 
-    <div class="mt-5 flex flex-wrap items-center gap-2">
-      {bank.supported_card_tiers.map((tier) => (
-        <span class="editorial-pill px-3.5 py-1 text-[13px] text-ink">
-          {tier}
-        </span>
-      ))}
-    </div>
+    {partners.length > 0 && (
+      <div class="mt-5 flex flex-wrap items-center gap-2">
+        <BrandMark name={bank.name} logoUrl={bank.logo_url} size="sm" />
+        {partners.map((brand) => (
+          <>
+            <span class="text-[12px] text-ink-muted" aria-hidden="true">x</span>
+            <a href={`/brands/${brand!.slug}`} aria-label={brand!.name}>
+              <BrandMark name={brand!.name} logoUrl={brand!.logo_url} size="sm" />
+            </a>
+          </>
+        ))}
+      </div>
+    )}
+
+    {bank.supported_card_tiers.length > 0 && (
+      <div class="mt-5 flex flex-wrap items-center gap-2">
+        {bank.supported_card_tiers.map((tier) => (
+          <span class="editorial-pill px-3.5 py-1 text-[13px] text-ink">{tier}</span>
+        ))}
+      </div>
+    )}
   </div>
 
-  <div>
+  <div id="bank-deals" class="scroll-mt-24 border-t editorial-rule">
     {deals.length > 0 ? (
       deals.map((deal) => (
         <DealBannerCard
@@ -60,9 +88,10 @@ const { bank, deals, brandMap } = Astro.props;
         />
       ))
     ) : (
-      <div class="border-t border-b editorial-rule py-12 text-center text-[15px] text-ink-muted">
-        No active card discounts listed for {bank.name} right now.
+      <div class="border-b editorial-rule py-12 text-center text-[15px] text-ink-muted">
+        No card offers are listed for {bank.name} yet.
       </div>
     )}
   </div>
+  <Pagination target="bank-deals" />
 </BaseLayout>

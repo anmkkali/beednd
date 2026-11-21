@@ -1,0 +1,9 @@
+{
+  "id": "santander-uk",
+  "name": "Santander UK",
+  "short_code": "santander-uk",
+  "country": "GB",
+  "logo_url": "https://www.google.com/s2/favicons?domain=santander.co.uk&sz=128",
+  "website_url": "https://santander.co.uk",
+  "supported_card_tiers": []
+}

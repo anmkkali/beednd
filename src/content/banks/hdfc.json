@@ -1,0 +1,9 @@
+{
+  "id": "hdfc",
+  "name": "HDFC Bank",
+  "short_code": "hdfc",
+  "country": "IN",
+  "logo_url": "https://www.google.com/s2/favicons?domain=hdfcbank.com&sz=128",
+  "website_url": "https://hdfcbank.com",
+  "supported_card_tiers": []
+}

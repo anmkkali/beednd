@@ -1,0 +1,12 @@
+{
+  "id": "perplexity",
+  "name": "Perplexity",
+  "slug": "perplexity",
+  "logo_url": "https://www.google.com/s2/favicons?domain=perplexity.ai&sz=128",
+  "website_url": "https://perplexity.ai",
+  "country": "GLOBAL",
+  "categories": [
+    "ai-tools"
+  ],
+  "short_bio": "AI answer engine with cited sources."
+}

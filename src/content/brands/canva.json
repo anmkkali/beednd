@@ -1,0 +1,12 @@
+{
+  "id": "canva",
+  "name": "Canva",
+  "slug": "canva",
+  "logo_url": "https://www.google.com/s2/favicons?domain=canva.com&sz=128",
+  "website_url": "https://canva.com",
+  "country": "GLOBAL",
+  "categories": [
+    "ai-tools"
+  ],
+  "short_bio": "Design tool with AI image and writing features."
+}

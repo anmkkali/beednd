@@ -1,0 +1,115 @@
+---
+// Page controls for a list. The list container needs an id, and each row needs the data-page-item attribute.
+interface Props {
+  target: string;
+}
+
+const { target } = Astro.props;
+---
+
+<nav
+  data-pagination
+  data-target={target}
+  aria-label="Pagination"
+  class="mt-6 flex flex-col gap-3 border-t editorial-rule pt-4 text-[14px] text-ink-muted sm:flex-row sm:items-center sm:justify-between"
+>
+  <label class="flex items-center gap-2">
+    Rows per page
+    <select data-rows class="border editorial-rule bg-base-950 px-2 py-1 font-semibold text-ink">
+      <option value="10">10</option>
+      <option value="20">20</option>
+      <option value="50">50</option>
+    </select>
+  </label>
+  <div class="flex flex-wrap items-center gap-3">
+    <span data-range class="whitespace-nowrap"></span>
+    <div data-pages class="flex items-center gap-1"></div>
+  </div>
+</nav>
+
+<script>
+  const SIZE_KEY = 'dealssite_rows';
+  const chevron = (rotate: string) =>
+    `<svg class="h-4 w-4 ${rotate}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>`;
+
+  document.querySelectorAll<HTMLElement>('[data-pagination]').forEach((nav) => {
+    const container = document.getElementById(nav.dataset.target || '');
+    const select = nav.querySelector<HTMLSelectElement>('[data-rows]');
+    const range = nav.querySelector<HTMLElement>('[data-range]');
+    const pagesEl = nav.querySelector<HTMLElement>('[data-pages]');
+    if (!container || !select || !range || !pagesEl) return;
+
+    let page = 1;
+    let size = Number(localStorage.getItem(SIZE_KEY)) || 10;
+    if (![10, 20, 50].includes(size)) size = 10;
+    select.value = String(size);
+
+    function pageButton(label: string, target: number, opts: { active?: boolean; disabled?: boolean; aria?: string } = {}) {
+      const base = 'inline-flex h-9 min-w-9 items-center justify-center border px-2.5 text-[13.5px] font-semibold transition-colors';
+      const state = opts.active
+        ? 'btn-primary editorial-rule'
+        : opts.disabled
+          ? 'editorial-rule opacity-40 cursor-not-allowed'
+          : 'editorial-rule text-ink hover:bg-base-900';
+      return `<button type="button" data-go="${target}" class="${base} ${state}" ${opts.disabled ? 'disabled' : ''} ${opts.aria ? `aria-label="${opts.aria}"` : ''} ${opts.active ? 'aria-current="page"' : ''}>${label}</button>`;
+    }
+
+    function pageWindow(current: number, total: number) {
+      if (total <= 7) return Array.from({ length: total }, (_, i) => i + 1);
+      const set = new Set([1, 2, total - 1, total, current - 1, current, current + 1]);
+      const sorted = [...set].filter((n) => n >= 1 && n <= total).sort((a, b) => a - b);
+      const out: (number | string)[] = [];
+      sorted.forEach((n, i) => {
+        if (i && n - (sorted[i - 1] as number) > 1) out.push('...');
+        out.push(n);
+      });
+      return out;
+    }
+
+    function render(resetPage = false) {
+      const items = Array.from(container!.querySelectorAll<HTMLElement>('[data-page-item]'));
+      items.forEach((item) => item.classList.remove('page-hidden'));
+      // Rows hidden by a filter or by the country selection take no space, so they are not counted
+      const eligible = items.filter((item) => item.getClientRects().length > 0);
+      const total = eligible.length;
+      const pages = Math.max(1, Math.ceil(total / size));
+      if (resetPage || page > pages) page = 1;
+
+      const start = (page - 1) * size;
+      eligible.forEach((item, index) => item.classList.toggle('page-hidden', index < start || index >= start + size));
+
+      nav.classList.toggle('hidden', total === 0);
+      range!.textContent = total === 0 ? '0 of 0' : `${start + 1}-${Math.min(start + size, total)} of ${total}`;
+      pagesEl!.innerHTML =
+        pageButton(chevron('rotate-180'), page - 1, { disabled: page === 1, aria: 'Previous page' }) +
+        pageWindow(page, pages)
+          .map((n) => (n === '...' ? '<span class="px-1">...</span>' : pageButton(String(n), n as number, { active: n === page })))
+          .join('') +
+        pageButton(chevron(''), page + 1, { disabled: page === pages, aria: 'Next page' });
+    }
+
+    pagesEl.addEventListener('click', (event) => {
+      const button = (event.target as HTMLElement).closest<HTMLButtonElement>('[data-go]');
+      if (!button || button.disabled) return;
+      page = Number(button.dataset.go);
+      render();
+      container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    select.addEventListener('change', () => {
+      size = Number(select.value);
+      localStorage.setItem(SIZE_KEY, String(size));
+      render(true);
+    });
+
+    // Pages and the country switcher dispatch these after the visible rows change
+    window.addEventListener('dealssite:list-changed', () => render(true));
+    window.addEventListener('dealssite:market-updated', () => render(true));
+    render();
+  });
+</script>
+
+<style is:global>
+  .page-hidden {
+    display: none !important;
+  }
+</style>

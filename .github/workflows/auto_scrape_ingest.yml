@@ -35,7 +35,7 @@ jobs:
         run: |
           git config user.name "dealssite-bot[bot]"
           git config user.email "bot@dealssite.com"
-          git add src/content/deals/
+          git add src/content/deals/ src/content/brands/
           if git diff --staged --quiet; then
             echo "No new deals to commit."
           else

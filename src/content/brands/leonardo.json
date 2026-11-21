@@ -1,0 +1,12 @@
+{
+  "id": "leonardo",
+  "name": "Leonardo AI",
+  "slug": "leonardo",
+  "logo_url": "https://www.google.com/s2/favicons?domain=leonardo.ai&sz=128",
+  "website_url": "https://leonardo.ai",
+  "country": "GLOBAL",
+  "categories": [
+    "ai-tools"
+  ],
+  "short_bio": "AI image generation platform."
+}

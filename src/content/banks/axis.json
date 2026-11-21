@@ -1,0 +1,9 @@
+{
+  "id": "axis",
+  "name": "Axis Bank",
+  "short_code": "axis",
+  "country": "IN",
+  "logo_url": "https://www.google.com/s2/favicons?domain=axisbank.com&sz=128",
+  "website_url": "https://axisbank.com",
+  "supported_card_tiers": []
+}

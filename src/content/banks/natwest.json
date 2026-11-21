@@ -1,0 +1,9 @@
+{
+  "id": "natwest",
+  "name": "NatWest",
+  "short_code": "natwest",
+  "country": "GB",
+  "logo_url": "https://www.google.com/s2/favicons?domain=natwest.com&sz=128",
+  "website_url": "https://natwest.com",
+  "supported_card_tiers": []
+}

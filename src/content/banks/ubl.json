@@ -1,0 +1,9 @@
+{
+  "id": "ubl",
+  "name": "United Bank Limited (UBL)",
+  "short_code": "ubl",
+  "country": "PK",
+  "logo_url": "",
+  "website_url": "https://ubl.com.pk",
+  "supported_card_tiers": []
+}

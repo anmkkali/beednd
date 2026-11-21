@@ -1,0 +1,9 @@
+{
+  "id": "chase",
+  "name": "Chase",
+  "short_code": "chase",
+  "country": "US",
+  "logo_url": "https://www.google.com/s2/favicons?domain=chase.com&sz=128",
+  "website_url": "https://chase.com",
+  "supported_card_tiers": []
+}

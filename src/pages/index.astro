@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import DealBannerCard from '../components/deals/DealBannerCard.astro';
 import BrandMark from '../components/common/BrandMark.astro';
-import AdSlot from '../components/ads/AdSlot.astro';
+import Pagination from '../components/common/Pagination.astro';
 import Icon from '../components/common/Icon.astro';
 import { getCollection } from 'astro:content';
 import { dealKind } from '../lib/deals';
@@ -14,10 +14,11 @@ const allDeals = (await getCollection('deals', ({ data }) => data.status === 'ac
     b.data.last_verified_at.localeCompare(a.data.last_verified_at)
 );
 const allBrands = await getCollection('brands');
-const allPosts = (await getCollection('blog', ({ data }) => data.is_published)).sort((a, b) =>
-  b.data.published_date.localeCompare(a.data.published_date)
-);
 const brandMap = new Map(allBrands.map((brand) => [brand.data.id, brand.data]));
+const withDeals = new Set(allDeals.map((deal) => deal.data.brand_id));
+const localBrands = allBrands.filter((b) => b.data.country !== 'GLOBAL' && withDeals.has(b.data.id));
+const globalBrands = allBrands.filter((b) => b.data.country === 'GLOBAL' && withDeals.has(b.data.id)).slice(0, 8);
+const homeBrands = [...localBrands, ...globalBrands];
 
 const brandHighlight = new Map<string, string>();
 allDeals.forEach((deal) => {
@@ -29,6 +30,7 @@ const filterPills = [
   { label: 'Trending', value: 'trending' },
   { label: 'Free trials', value: 'trial' },
   { label: 'Promo codes', value: 'promo-code' },
+  { label: 'Vouchers', value: 'voucher' },
   { label: 'Store sales', value: 'store-sale' },
   { label: 'Bank deals', value: 'bank-card' },
 ];
@@ -78,7 +80,7 @@ const structuredData = {
       </a>
     </div>
     <div class="grid grid-cols-2 border-l border-t editorial-rule sm:grid-cols-3 md:grid-cols-4">
-      {allBrands.map((brand) => (
+      {homeBrands.map((brand) => (
         <a
           href={`/brands/${brand.data.slug}`}
           data-market={brand.data.country}
@@ -98,8 +100,6 @@ const structuredData = {
       ))}
     </div>
   </section>
-
-  <AdSlot slotType="infeed" />
 
   <section aria-labelledby="deals-heading">
     <div class="mb-3 flex flex-col justify-between gap-4 lg:flex-row lg:items-end">
@@ -124,7 +124,7 @@ const structuredData = {
       </div>
     </div>
 
-    <div id="deal-feed">
+    <div id="deal-feed" class="scroll-mt-24 border-t editorial-rule">
       {allDeals.map((deal) => (
         <div
           data-deal-wrapper
@@ -145,45 +145,7 @@ const structuredData = {
     <p id="deals-empty-msg" class="hidden border-y editorial-rule py-10 text-center text-[15px] text-ink-muted">
       No offers match this filter for your country yet. Try "All offers" or change the country.
     </p>
-  </section>
-
-  <section class="mt-16" aria-labelledby="blog-heading">
-    <div class="mb-6 flex items-end justify-between border-b editorial-rule pb-3">
-      <div>
-        <p class="text-[12px] font-semibold uppercase tracking-[0.16em] text-ink-muted">Journal</p>
-        <h2 id="blog-heading" class="mt-1 text-4xl text-ink">From the blog</h2>
-      </div>
-      <a href="/blog" class="inline-flex items-center gap-1.5 text-[14px] font-semibold text-ink hover:underline">
-        All posts
-        <Icon name="arrow" class="h-4 w-4" />
-      </a>
-    </div>
-    <div class="grid border-l border-t editorial-rule md:grid-cols-3">
-      {allPosts.slice(0, 3).map((post) => (
-        <a
-          href={`/blog/${post.slug}`}
-          data-market={post.data.target_country}
-          class="group flex flex-col border-b border-r editorial-rule transition-colors hover:bg-base-900/60"
-        >
-          <div class="aspect-[16/10] overflow-hidden border-b editorial-rule bg-base-900">
-            <img
-              src={post.data.hero_image}
-              alt={post.data.title}
-              width="600"
-              height="375"
-              class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-          <div class="p-5">
-            <p class="mb-2 text-[12.5px] font-medium text-ink-muted">{post.data.published_date.split('T')[0]}</p>
-            <h3 class="text-[24px] leading-[1.15] text-ink group-hover:underline">{post.data.title}</h3>
-            <p class="mt-2 line-clamp-3 text-[14.5px] leading-relaxed text-ink-muted">{post.data.description}</p>
-          </div>
-        </a>
-      ))}
-    </div>
+    <Pagination target="deal-feed" />
   </section>
 
   <script>
@@ -202,6 +164,7 @@ const structuredData = {
       if (type === 'trending') return wrapper.dataset.trending === 'true';
       if (type === 'trial') return wrapper.dataset.kind === 'trial';
       if (type === 'promo-code') return wrapper.dataset.kind === 'promo';
+      if (type === 'voucher') return wrapper.dataset.kind === 'voucher';
       if (type === 'bank-card') return wrapper.dataset.hasBank === 'true';
       return wrapper.dataset.dealType === type;
     }
@@ -215,6 +178,7 @@ const structuredData = {
         button.setAttribute('aria-pressed', String(active));
       });
       emptyMsg?.classList.toggle('hidden', wrappers.some(shown));
+      window.dispatchEvent(new CustomEvent('dealssite:list-changed'));
       if (caption) {
         const market = document.documentElement.dataset.activeMarket || 'ALL';
         const name = countryByCode.get(market)?.name || market;
@@ -230,7 +194,6 @@ const structuredData = {
         else url.searchParams.set('type', current);
         history.replaceState({}, '', url);
         refresh();
-        window.dispatchEvent(new CustomEvent('dealssite:filters-changed'));
       })
     );
 
