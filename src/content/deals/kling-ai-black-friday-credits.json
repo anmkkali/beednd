@@ -1,0 +1,29 @@
+{
+  "id": "kling-ai-black-friday-credits",
+  "slug": "kling-ai-black-friday-credits",
+  "title": "Kling AI Black Friday 2026: Up to 50% Off Plus 20% Bonus Credits",
+  "short_description": "Kling AI is advertising up to 50% off during its Black Friday promotion, with up to 20% bonus credits on eligible subscriber auto-recharges. A limited free generation allowance is also listed. Confirm current terms on the official page.",
+  "brand_id": "kling",
+  "country": "GLOBAL",
+  "category": "ai-tools",
+  "deal_type": "store-sale",
+  "discount_type": "percentage",
+  "discount_value": "Up to 50% off",
+  "badge_text": "Up to 50% off & up to 20% bonus",
+  "numeric_discount_percent": 50,
+  "terms_and_conditions": [
+    "Bonus credits apply to eligible subscriber auto-recharges only.",
+    "Offer terms, eligible plans and end date are set by Kling AI and may change.",
+    "Verify the offer on the official site before purchasing."
+  ],
+  "start_date": "2026-11-20T00:00:00Z",
+  "end_date": "2026-12-02T23:59:59Z",
+  "source_url": "https://klingai.com",
+  "affiliate_url": "https://klingai.com",
+  "last_verified_at": "2026-11-20T09:00:00Z",
+  "status": "active",
+  "image": { "src": "https://www.google.com/s2/favicons?domain=klingai.com&sz=128", "alt": "Kling AI" },
+  "tags": ["video", "image", "credits"],
+  "offer_kind": "credits",
+  "is_trending": false
+}

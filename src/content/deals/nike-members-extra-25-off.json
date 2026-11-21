@@ -31,5 +31,7 @@
     "src": "https://www.google.com/s2/favicons?domain=nike.com&sz=128",
     "alt": "Nike 25% Off Sale"
   },
-  "tags": ["nike", "men", "women", "footwear", "shoes", "activewear", "clothing"]
+  "tags": ["men", "women", "footwear", "activewear", "clothing"],
+  "offer_kind": "promo",
+  "is_trending": true
 }

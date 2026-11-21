@@ -1,6 +1,8 @@
 ---
+import { getCollection } from 'astro:content';
 import Icon from '../common/Icon.astro';
 import BrandMark from '../common/BrandMark.astro';
+import { dealKind, dealTokens, expiryLabel, shortDate } from '../../lib/deals';
 
 interface Props {
   deal: {
@@ -13,10 +15,17 @@ interface Props {
     category: string;
     deal_type: string;
     discount_value: string;
+    badge_text?: string;
     promo_code?: string;
     affiliate_url: string;
     cities?: string[];
     tags?: string[];
+    start_date: string;
+    end_date?: string | null;
+    last_verified_at: string;
+    is_trending?: boolean;
+    limited_time?: boolean;
+    offer_kind?: string;
     bank_details?: {
       bank_id: string;
       eligible_cards: string[];
@@ -28,93 +37,101 @@ interface Props {
 }
 
 const { deal, brandName = deal.brand_id, brandLogo } = Astro.props;
-const formattedType = deal.deal_type.replaceAll('-', ' ');
-const searchTags = [
-  ...(deal.tags || []),
-  deal.brand_id,
-  brandName,
-  deal.title,
-  deal.short_description,
-].join(' ').toLowerCase();
+const activeDeals = await getCollection('deals', ({ data }) => data.status === 'active');
+const brandDealCount = activeDeals.filter((d) => d.data.brand_id === deal.brand_id).length;
+
+const kind = dealKind(deal);
+const tagLabel = { discount: 'Discounts', trial: 'Trials', free: 'Free', promo: 'Promo Codes', credits: 'Credits' }[kind] || 'Deals';
+const expiry = expiryLabel(deal.end_date, !!deal.limited_time);
 ---
 
 <article
-  class="group border-b editorial-rule py-6 transition-colors first:border-t hover:bg-base-900/45 px-2 sm:px-4"
+  class="group border-b editorial-rule px-2 py-6 transition-colors first:border-t hover:bg-base-900/45 sm:px-4"
   data-deal-id={deal.id}
   data-market={deal.country || 'GLOBAL'}
-  data-category={deal.category}
-  data-tags={searchTags}
+  data-kind={kind}
+  data-tokens={dealTokens(deal)}
 >
   <div class="flex items-start gap-4 sm:gap-5">
-    <a href={`/brands/${deal.brand_id}`} aria-label={`${brandName} deals`}>
-      <BrandMark name={brandName} logoUrl={brandLogo} size="md" />
-    </a>
+    <div class="flex w-14 shrink-0 flex-col items-center gap-2">
+      <a href={`/brands/${deal.brand_id}`} aria-label={`${brandName} deals`}>
+        <BrandMark name={brandName} logoUrl={brandLogo} size="md" />
+      </a>
+      {brandDealCount > 1 && (
+        <a href={`/brands/${deal.brand_id}`} class="editorial-pill whitespace-nowrap px-2 py-0.5 text-[11.5px] font-semibold text-ink-muted hover:text-ink">
+          +{brandDealCount - 1} more
+        </a>
+      )}
+    </div>
 
     <div class="min-w-0 flex-1">
-      <!-- Top Meta Line -->
-      <div class="mb-2 flex flex-wrap items-center justify-between gap-2">
-        <div class="flex flex-wrap items-center gap-2 text-[13px] text-ink-muted">
-          <a href={`/brands/${deal.brand_id}`} class="font-semibold uppercase tracking-[0.1em] text-ink hover:underline">
-            {brandName}
-          </a>
-          <span>·</span>
-          <span class="capitalize">{formattedType}</span>
-          {deal.country && deal.country !== 'GLOBAL' && (
-            <>
-              <span>·</span>
-              <span>{deal.country === 'PK' ? 'Pakistan' : deal.country === 'US' ? 'USA' : deal.country}</span>
-            </>
-          )}
-        </div>
+      <!-- Meta line: brand, tag, status icons -->
+      <div class="mb-2 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-[13px] text-ink-muted">
+        <a href={`/brands/${deal.brand_id}`} class="font-bold text-ink hover:underline">{brandName}</a>
+        <span class="font-semibold">#{tagLabel}</span>
+        <span
+          data-new-badge
+          data-since={deal.last_verified_at}
+          class="editorial-pill hidden px-2 py-0.5 text-[11.5px] font-semibold text-ink"
+        >New</span>
+        <span class="inline-flex items-center gap-1">
+          <Icon name="calendar" class="h-3.5 w-3.5" />
+          {shortDate(deal.last_verified_at)}
+        </span>
+        {deal.is_trending && (
+          <span class="inline-flex items-center gap-1 font-semibold text-ink">
+            <Icon name="trending" class="h-3.5 w-3.5" />
+            Trending
+          </span>
+        )}
+        <span
+          data-expiry
+          data-end={deal.end_date || ''}
+          data-limited={deal.limited_time ? 'true' : 'false'}
+          class:list={['inline-flex items-center gap-1 font-semibold text-ink', !expiry.label && 'hidden']}
+        >
+          <Icon name="clock" class="h-3.5 w-3.5" />
+          <span data-expiry-text>{expiry.label}</span>
+        </span>
+        {deal.country && deal.country !== 'GLOBAL' && <span class="font-medium">{deal.country}</span>}
+      </div>
 
-        <span class="editorial-pill px-3.5 py-1 text-[13px] font-semibold tracking-wide text-ink">
-          {deal.discount_value}
+      <!-- Title with summary pill on the right -->
+      <div class="flex flex-col justify-between gap-2 sm:flex-row sm:items-start sm:gap-5">
+        <h3 class="text-[26px] leading-[1.15] text-ink sm:text-[28px]">
+          <a href={`/deals/${deal.slug}`} class="underline-offset-4 hover:underline">{deal.title}</a>
+        </h3>
+        <span class="editorial-pill max-w-[16rem] shrink-0 self-start px-3.5 py-1.5 text-[13px] font-semibold leading-snug text-ink sm:text-right">
+          {deal.badge_text || deal.discount_value}
         </span>
       </div>
 
-      <!-- Editorial Serif Deal Title & Readable Description -->
-      <h3 class="text-2xl sm:text-[28px] leading-[1.15] text-ink">
-        <a href={`/deals/${deal.slug}`} class="hover:underline decoration-1 underline-offset-4">
-          {deal.title}
-        </a>
-      </h3>
+      <p class="mt-2 max-w-3xl text-[15px] leading-relaxed text-ink-muted">{deal.short_description}</p>
 
-      <p class="mt-2 max-w-3xl text-[15px] leading-relaxed text-ink-muted">
-        {deal.short_description}
-      </p>
-
-      <!-- Bottom Meta & Minimal Single-Color Actions -->
-      <div class="mt-4 flex flex-wrap items-center justify-between gap-3 pt-2">
+      <div class="mt-4 flex flex-wrap items-center justify-between gap-3">
         <div class="flex flex-wrap items-center gap-4 text-[13.5px] text-ink-muted">
           {deal.bank_details && (
             <a href={`/banks/${deal.bank_details.bank_id}`} class="inline-flex items-center gap-1.5 text-ink hover:underline">
               <Icon name="card" class="h-4 w-4" />
-              <span>{deal.bank_details.bank_id.toUpperCase()} +{deal.bank_details.cashback_percent}% off</span>
+              {deal.bank_details.bank_id.toUpperCase()} +{deal.bank_details.cashback_percent}% off
             </a>
           )}
           {deal.cities && deal.cities.length > 0 && (
             <span class="inline-flex items-center gap-1.5">
               <Icon name="location" class="h-4 w-4" />
-              <span>{deal.cities.slice(0, 3).join(', ')}{deal.cities.length > 3 ? ` +${deal.cities.length - 3}` : ''}</span>
+              {deal.cities.slice(0, 3).join(', ')}{deal.cities.length > 3 ? ` +${deal.cities.length - 3}` : ''}
             </span>
           )}
         </div>
 
         <div class="flex items-center gap-2.5">
           {deal.promo_code && (
-            <button
-              type="button"
-              class="copy-code-btn btn-outline inline-flex items-center gap-2 px-3.5 py-2 text-[13px] font-semibold tracking-wider"
-              data-code={deal.promo_code}
-            >
-              <span>{deal.promo_code}</span>
+            <button type="button" class="copy-code-btn btn-outline px-3.5 py-2 text-[13px] font-semibold tracking-wider" data-code={deal.promo_code}>
+              {deal.promo_code}
             </button>
           )}
-          <a
-            href={`/deals/${deal.slug}`}
-            class="btn-primary inline-flex items-center gap-2 px-4 py-2 text-[13px] font-semibold"
-          >
-            <span>View Offer</span>
+          <a href={`/deals/${deal.slug}`} class="btn-primary inline-flex items-center gap-2 px-4 py-2 text-[13px] font-semibold">
+            View offer
             <Icon name="arrow" class="h-3.5 w-3.5" />
           </a>
         </div>
@@ -122,3 +139,29 @@ const searchTags = [
     </div>
   </div>
 </article>
+
+<script>
+  // Badges that depend on today's date are resolved in the browser, so they stay correct between builds.
+  const DAY = 86_400_000;
+  const now = Date.now();
+
+  document.querySelectorAll<HTMLElement>('[data-new-badge]').forEach((badge) => {
+    const since = Date.parse(badge.dataset.since || '');
+    if (!Number.isNaN(since) && now - since >= 0 && now - since <= 14 * DAY) badge.classList.remove('hidden');
+  });
+
+  document.querySelectorAll<HTMLElement>('[data-expiry]').forEach((el) => {
+    const end = el.dataset.end ? Date.parse(el.dataset.end) : NaN;
+    const limited = el.dataset.limited === 'true';
+    let label = '';
+    if (!Number.isNaN(end)) {
+      const days = Math.ceil((end - now) / DAY);
+      if (days < 0) label = 'Expired';
+      else if (days <= 30) label = days === 0 ? 'Expires today' : `Expires in ${days}d`;
+    }
+    if (!label && limited) label = 'Limited time';
+    const text = el.querySelector('[data-expiry-text]');
+    if (text) text.textContent = label;
+    el.classList.toggle('hidden', !label);
+  });
+</script>

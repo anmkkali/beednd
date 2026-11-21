@@ -1,234 +1,177 @@
 ---
 import Icon from './Icon.astro';
+import { categories } from '../../data/taxonomy';
 
 interface Props {
   activeCategory?: string;
   activeTopic?: string;
 }
 
-const { activeCategory = 'all', activeTopic = '' } = Astro.props;
-
-const categories = [
-  {
-    id: 'clothing-fashion',
-    name: 'Clothing & Fashion',
-    icon: 'apparel',
-    subcategories: [
-      { label: "Women's Pret", query: 'women' },
-      { label: 'Unstitched Fabrics', query: 'unstitched' },
-      { label: "Men's Wear", query: 'men' },
-      { label: 'Footwear & Active', query: 'footwear' },
-      { label: 'Accessories', query: 'accessories' },
-    ],
-    brands: [
-      { name: 'Khaadi', slug: 'khaadi', market: 'PK' },
-      { name: 'Sapphire', slug: 'sapphire', market: 'PK' },
-      { name: 'J. Junaid Jamshed', slug: 'jdot', market: 'PK' },
-      { name: 'Nike', slug: 'nike', market: 'US' },
-    ],
-  },
-  {
-    id: 'tech-electronics',
-    name: 'Tech & Electronics',
-    icon: 'tech',
-    subcategories: [
-      { label: 'Smartphones', query: 'mobiles' },
-      { label: 'Laptops & Gear', query: 'laptops' },
-      { label: 'Market Tools', query: 'stocks' },
-    ],
-    brands: [{ name: 'TradingView', slug: 'tradingview', market: 'GLOBAL' }],
-  },
-  {
-    id: 'hosting-software',
-    name: 'Software & Hosting',
-    icon: 'software',
-    subcategories: [
-      { label: 'Web Hosting', query: 'hosting' },
-      { label: 'AI Website Builders', query: 'ai' },
-      { label: 'Charting & Finance', query: 'finance' },
-    ],
-    brands: [
-      { name: 'Bluehost', slug: 'bluehost', market: 'GLOBAL' },
-      { name: 'TradingView', slug: 'tradingview', market: 'GLOBAL' },
-    ],
-  },
-  {
-    id: 'beauty-wellness',
-    name: 'Beauty & Wellness',
-    icon: 'beauty',
-    subcategories: [
-      { label: 'Skincare', query: 'skincare' },
-      { label: 'Makeup', query: 'makeup' },
-      { label: 'Fragrances', query: 'fragrance' },
-    ],
-    brands: [
-      { name: 'Sephora', slug: 'sephora', market: 'US' },
-      { name: 'J. Fragrances', slug: 'jdot', market: 'PK' },
-    ],
-  },
-  {
-    id: 'food-dining',
-    name: 'Food & Dining',
-    icon: 'food',
-    subcategories: [
-      { label: 'Restaurants', query: 'restaurants' },
-      { label: 'Cafes & Bakery', query: 'cafes' },
-      { label: 'Delivery Deals', query: 'delivery' },
-    ],
-    brands: [],
-  },
-  {
-    id: 'travel-lifestyle',
-    name: 'Travel & Hotels',
-    icon: 'travel',
-    subcategories: [
-      { label: 'Hotels & Stays', query: 'hotels' },
-      { label: 'Flights', query: 'flights' },
-    ],
-    brands: [],
-  },
-  {
-    id: 'groceries-essentials',
-    name: 'Groceries',
-    icon: 'grocery',
-    subcategories: [
-      { label: 'Supermarkets', query: 'supermarkets' },
-      { label: 'Daily Essentials', query: 'essentials' },
-    ],
-    brands: [],
-  },
+const quickLinks = [
+  { label: 'All offers', href: '/', icon: 'grid' },
+  { label: 'Trending', href: '/?type=trending', icon: 'trending' },
+  { label: 'Free trials', href: '/?type=trial', icon: 'sparkle' },
+  { label: 'Promo codes', href: '/?type=promo-code', icon: 'tag' },
+  { label: 'Store sales', href: '/?type=store-sale', icon: 'store' },
+  { label: 'Bank deals', href: '/?type=bank-card', icon: 'card' },
 ];
 
-const dealTypes = [
-  { id: 'promo-code', name: 'Promo Codes', icon: 'tag' },
-  { id: 'store-sale', name: 'Store Sales', icon: 'store' },
-  { id: 'bank-card', name: 'Bank Card Deals', icon: 'card' },
-];
+const filterHref = (categoryId: string, groupId: string, filter: { sub?: string; kind?: string }) => {
+  const params = new URLSearchParams({ group: groupId });
+  if (filter.sub) params.set('sub', filter.sub);
+  if (filter.kind) params.set('kind', filter.kind);
+  return `/categories/${categoryId}?${params.toString()}`;
+};
 ---
 
-<aside class="sticky top-24 hidden h-[calc(100vh-7rem)] w-64 shrink-0 overflow-y-auto border-r editorial-rule pr-6 lg:block select-none">
-  <!-- Categories with Expandable Subcategories & Brand Links -->
-  <div class="mb-8">
-    <p class="mb-3 text-[12px] font-semibold uppercase tracking-[0.16em] text-ink-muted">
-      Categories
-    </p>
-    <nav class="divide-y editorial-rule border-t border-b editorial-rule" aria-label="Deal categories">
-      {categories.map((category, index) => {
-        const isActive = activeTopic === category.id;
-        return (
-          <details open={isActive || index === 0} class="group py-1">
-            <summary class="flex cursor-pointer list-none items-center justify-between gap-2.5 py-2.5 text-[15px] text-ink transition-colors hover:opacity-75">
-              <span class="flex min-w-0 items-center gap-3">
-                <Icon name={category.icon} class="h-[18px] w-[18px] shrink-0 text-ink" />
-                <span class:list={['truncate', isActive ? 'font-bold' : 'font-medium']}>
-                  {category.name}
-                </span>
-              </span>
-              <Icon
-                name="chevron"
-                class="h-4 w-4 shrink-0 text-ink-muted transition-transform duration-150 group-open:rotate-180"
-              />
-            </summary>
+<div id="sidebar-backdrop" class="fixed inset-0 z-50 bg-black/40" data-sidebar-close></div>
 
-            <div class="mb-2 ml-3 border-l editorial-rule pl-4 pt-1 space-y-1">
-              <a
-                href={`/categories/${category.id}`}
-                class="block py-1 text-[13.5px] font-semibold text-ink hover:underline"
-              >
-                All {category.name}
-              </a>
-
-              {category.subcategories.map((sub) => (
-                <a
-                  href={`/categories/${category.id}?sub=${encodeURIComponent(sub.query)}`}
-                  class="block py-1 text-[13.5px] text-ink-muted transition-colors hover:text-ink"
-                >
-                  {sub.label}
-                </a>
-              ))}
-
-              {category.brands.length > 0 && (
-                <div class="pt-2 mt-1.5 border-t editorial-rule">
-                  <span class="block text-[11px] font-semibold uppercase tracking-[0.14em] text-ink-muted mb-1">
-                    Brands
-                  </span>
-                  {category.brands.map((brand) => (
-                    <a
-                      href={`/brands/${brand.slug}`}
-                      data-market={brand.market}
-                      class="block py-1 text-[13.5px] font-medium text-ink hover:underline"
-                    >
-                      {brand.name}
-                    </a>
-                  ))}
-                </div>
-              )}
-            </div>
-          </details>
-        );
-      })}
-    </nav>
+<aside id="app-sidebar" class="flex flex-col border-r editorial-rule bg-base-950" aria-label="Site navigation">
+  <!-- Logo row: logo, theme switch, search, collapse (like the ChatGPT sidebar) -->
+  <div class="sb-top flex h-16 shrink-0 items-center justify-between gap-1 px-3">
+    <a href="/" class="flex min-w-0 items-center gap-2.5" aria-label="DealsSite home">
+      <span class="btn-primary flex h-8 w-8 shrink-0 items-center justify-center">
+        <Icon name="tag" class="h-4 w-4" />
+      </span>
+      <span class="sb-label whitespace-nowrap font-serif text-[24px] font-semibold leading-none tracking-tight text-ink">DealsSite</span>
+    </a>
+    <div class="sb-actions flex shrink-0 items-center">
+      <button type="button" data-theme-toggle class="icon-btn sb-hide-collapsed" aria-label="Switch between light and dark mode" title="Light / dark mode">
+        <span class="theme-icon-moon inline-flex"><Icon name="moon" class="h-[18px] w-[18px]" /></span>
+        <span class="theme-icon-sun"><Icon name="sun" class="h-[18px] w-[18px]" /></span>
+      </button>
+      <button type="button" data-search-open class="icon-btn sb-hide-collapsed" aria-label="Search" title="Search">
+        <Icon name="search" class="h-[18px] w-[18px]" />
+      </button>
+      <button type="button" id="sidebar-toggle" class="icon-btn" aria-label="Collapse or expand sidebar" title="Collapse / expand sidebar">
+        <Icon name="panel" class="h-[18px] w-[18px]" />
+      </button>
+    </div>
   </div>
 
-  <!-- Offer Types -->
-  <div class="mb-8">
-    <p class="mb-3 text-[12px] font-semibold uppercase tracking-[0.16em] text-ink-muted">
-      Filter by Offer
-    </p>
-    <nav class="space-y-1">
-      <a
-        href="/"
-        class:list={[
-          'flex items-center gap-3 px-2.5 py-2 text-[14.5px] transition-colors',
-          activeCategory === 'all' ? 'bg-base-900 font-semibold text-ink' : 'text-ink-muted hover:bg-base-900/60 hover:text-ink',
-        ]}
-      >
-        <Icon name="grid" class="h-4 w-4 shrink-0" />
-        <span>All Offers</span>
-      </a>
-      {dealTypes.map((type) => (
-        <a
-          href={`/?type=${type.id}`}
-          class:list={[
-            'flex items-center gap-3 px-2.5 py-2 text-[14.5px] transition-colors',
-            activeCategory === type.id ? 'bg-base-900 font-semibold text-ink' : 'text-ink-muted hover:bg-base-900/60 hover:text-ink',
-          ]}
-        >
-          <Icon name={type.icon} class="h-4 w-4 shrink-0" />
-          <span>{type.name}</span>
+  <div class="min-h-0 flex-1 overflow-y-auto px-2 pb-8">
+    <nav class="space-y-0.5 pt-1" aria-label="Offer types">
+      {quickLinks.map((link) => (
+        <a href={link.href} data-sb-link class="sb-link" title={link.label}>
+          <Icon name={link.icon} class="h-[18px] w-[18px] shrink-0" />
+          <span class="sb-label truncate">{link.label}</span>
         </a>
       ))}
     </nav>
-  </div>
 
-  <!-- Cities Collapsible Dropdown -->
-  <div class="mb-8">
-    <details class="border-t border-b editorial-rule py-2.5 group">
-      <summary class="flex cursor-pointer list-none items-center justify-between text-[14.5px] font-semibold text-ink">
-        <span class="flex items-center gap-2.5">
-          <Icon name="location" class="h-4 w-4" />
-          <span>City Deals</span>
-        </span>
-        <Icon name="chevron" class="h-4 w-4 text-ink-muted transition-transform group-open:rotate-180" />
-      </summary>
-      <div class="mt-2 ml-3 border-l editorial-rule pl-4 space-y-1.5">
-        <a href="/pakistan/karachi" class="block py-1 text-[14px] text-ink-muted hover:text-ink">Karachi</a>
-        <a href="/pakistan/lahore" class="block py-1 text-[14px] text-ink-muted hover:text-ink">Lahore</a>
-        <a href="/pakistan/islamabad" class="block py-1 text-[14px] text-ink-muted hover:text-ink">Islamabad</a>
-        <a href="/pakistan/rawalpindi" class="block py-1 text-[14px] text-ink-muted hover:text-ink">Rawalpindi</a>
-      </div>
-    </details>
-  </div>
+    <p class="sb-heading mb-2 mt-7 px-3 text-[12px] font-semibold uppercase tracking-[0.16em] text-ink-muted">Categories</p>
 
-  <!-- Quick Directory Actions -->
-  <div class="space-y-2.5">
-    <a href="/brands" class="btn-primary flex items-center justify-between px-4 py-3 text-[14px] font-semibold">
-      <span>Browse Brands</span>
-      <Icon name="arrow" class="h-4 w-4" />
-    </a>
-    <a href="/blog" class="btn-outline flex items-center justify-between px-4 py-2.5 text-[14px] font-semibold">
-      <span>Read Blog</span>
-      <Icon name="book" class="h-4 w-4" />
-    </a>
+    <nav class="space-y-0.5" aria-label="Categories">
+      {categories.map((category) => (
+        <details class="sb-cat" data-category={category.id}>
+          <summary class="sb-link cursor-pointer list-none" data-sb-summary title={category.name}>
+            <Icon name={category.icon} class="h-[18px] w-[18px] shrink-0" />
+            <span class="sb-label flex-1 truncate">{category.name}</span>
+            <Icon name="chevron" class="sb-chevron h-4 w-4 shrink-0 text-ink-muted" />
+          </summary>
+
+          <div class="sb-nested ml-[1.4rem] border-l editorial-rule pl-2">
+            <a href={`/categories/${category.id}`} data-sb-link class="sb-link">
+              All {category.name}
+            </a>
+
+            {category.groups.map((group) => (
+              <details class="sb-group" data-group={group.id}>
+                <summary class="sb-link cursor-pointer list-none" data-sb-summary>
+                  <span class="flex-1 truncate">{group.label}</span>
+                  <Icon name="chevron" class="h-3.5 w-3.5 shrink-0 text-ink-muted" />
+                </summary>
+                <div class="ml-3 border-l editorial-rule pl-2">
+                  {group.filters.map((filter) => (
+                    <a href={filterHref(category.id, group.id, filter)} data-sb-link class="sb-link">
+                      {filter.label}
+                    </a>
+                  ))}
+                </div>
+              </details>
+            ))}
+          </div>
+        </details>
+      ))}
+    </nav>
   </div>
 </aside>
+
+<script>
+  const root = document.documentElement;
+  const sidebar = document.getElementById('app-sidebar');
+  const isDesktop = () => window.matchMedia('(min-width: 1024px)').matches;
+  const isCollapsed = () => isDesktop() && root.dataset.sidebar === 'collapsed';
+
+  function setCollapsed(collapsed: boolean) {
+    if (collapsed) root.dataset.sidebar = 'collapsed';
+    else delete root.dataset.sidebar;
+    localStorage.setItem('dealssite_sidebar', collapsed ? 'collapsed' : 'open');
+  }
+
+  function closeDrawer() {
+    delete root.dataset.sidebarOpen;
+  }
+
+  // Collapse button: collapses the desktop rail, closes the mobile drawer
+  document.getElementById('sidebar-toggle')?.addEventListener('click', () => {
+    if (isDesktop()) setCollapsed(!isCollapsed());
+    else closeDrawer();
+  });
+
+  document.querySelectorAll('[data-sidebar-close]').forEach((el) => el.addEventListener('click', closeDrawer));
+  document.querySelectorAll('[data-sidebar-open-btn]').forEach((el) =>
+    el.addEventListener('click', () => {
+      root.dataset.sidebarOpen = '';
+    })
+  );
+
+  // In the collapsed rail a category icon expands the sidebar instead of toggling a hidden menu
+  sidebar?.querySelectorAll<HTMLElement>('summary[data-sb-summary]').forEach((summary) => {
+    summary.addEventListener('click', (event) => {
+      if (!isCollapsed()) return;
+      event.preventDefault();
+      setCollapsed(false);
+      (summary.parentElement as HTMLDetailsElement).open = true;
+    });
+  });
+
+  // Highlight where you are and open the matching category and group
+  const FILTER_KEYS = ['group', 'sub', 'kind', 'type'];
+  const trimSlash = (path: string) => path.replace(/\/+$/, '') || '/';
+
+  function markActive() {
+    if (!sidebar) return;
+    const here = new URL(window.location.href);
+    sidebar.querySelectorAll<HTMLElement>('[data-active], [data-ancestor]').forEach((el) => {
+      delete el.dataset.active;
+      delete el.dataset.ancestor;
+    });
+
+    sidebar.querySelectorAll<HTMLAnchorElement>('a[data-sb-link]').forEach((link) => {
+      const target = new URL(link.href);
+      let active = trimSlash(target.pathname) === trimSlash(here.pathname);
+      if (active) {
+        for (const key of FILTER_KEYS) {
+          if ((target.searchParams.get(key) || '') !== (here.searchParams.get(key) || '')) active = false;
+        }
+      }
+      if (!active) return;
+      link.dataset.active = 'true';
+      let parent = link.parentElement;
+      while (parent && parent !== sidebar) {
+        if (parent instanceof HTMLDetailsElement) {
+          parent.open = true;
+          const summary = parent.querySelector(':scope > summary');
+          if (summary instanceof HTMLElement) summary.dataset.ancestor = 'true';
+        }
+        parent = parent.parentElement;
+      }
+      link.scrollIntoView({ block: 'nearest' });
+    });
+  }
+
+  markActive();
+  window.addEventListener('popstate', markActive);
+  window.addEventListener('dealssite:filters-changed', markActive);
+</script>

@@ -31,5 +31,7 @@
     "src": "https://www.google.com/s2/favicons?domain=sephora.com&sz=128",
     "alt": "Sephora 20% Off"
   },
-  "tags": ["sephora", "skincare", "makeup", "fragrance", "beauty"]
+  "tags": ["women", "skincare", "makeup", "fragrance", "beauty"],
+  "offer_kind": "promo",
+  "is_trending": false
 }

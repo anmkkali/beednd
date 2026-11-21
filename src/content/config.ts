@@ -8,7 +8,7 @@ const dealsCollection = defineCollection({
     title: z.string().min(5).max(140),
     short_description: z.string().max(300),
     brand_id: z.string(),
-    country: z.enum(['US', 'PK', 'GLOBAL']).default('GLOBAL'),
+    country: z.string().regex(/^([A-Z]{2}|GLOBAL)$/).default('GLOBAL'),
     cities: z.array(z.string()).default([]),
     areas: z.array(z.string()).default([]),
     branch_info: z.array(z.object({
@@ -20,7 +20,7 @@ const dealsCollection = defineCollection({
     category: z.enum([
       'clothing-fashion',
       'tech-electronics',
-      'hosting-software',
+      'ai-tools',
       'food-dining',
       'beauty-wellness',
       'travel-lifestyle',
@@ -56,6 +56,10 @@ const dealsCollection = defineCollection({
     status: z.enum(['active', 'expired', 'draft']).default('active'),
     is_featured: z.boolean().default(false),
     is_sponsored: z.boolean().default(false),
+    is_trending: z.boolean().default(false),
+    limited_time: z.boolean().default(false),
+    offer_kind: z.enum(['discount', 'trial', 'free', 'promo', 'credits']).optional(),
+    badge_text: z.string().max(80).optional(),
     image: z.object({
       src: z.string(),
       alt: z.string()
@@ -72,7 +76,7 @@ const brandsCollection = defineCollection({
     slug: z.string(),
     logo_url: z.string(),
     website_url: z.string(),
-    country: z.enum(['US', 'PK', 'GLOBAL']).default('GLOBAL'),
+    country: z.string().regex(/^([A-Z]{2}|GLOBAL)$/).default('GLOBAL'),
     categories: z.array(z.string()),
     short_bio: z.string(),
     return_policy_days: z.number().optional(),
@@ -86,7 +90,7 @@ const banksCollection = defineCollection({
     id: z.string(),
     name: z.string(),
     short_code: z.string(),
-    country: z.enum(['US', 'PK', 'GLOBAL']).default('PK'),
+    country: z.string().regex(/^([A-Z]{2}|GLOBAL)$/).default('PK'),
     logo_url: z.string(),
     official_discounts_page: z.string(),
     helpline_number: z.string(),
@@ -103,7 +107,7 @@ const blogCollection = defineCollection({
     published_date: z.string(),
     author: z.string().default('Editorial Team'),
     hero_image: z.string(),
-    target_country: z.enum(['US', 'PK', 'GLOBAL']).default('GLOBAL'),
+    target_country: z.string().regex(/^([A-Z]{2}|GLOBAL)$/).default('GLOBAL'),
     featured_deal_ids: z.array(z.string()).default([]),
     tags: z.array(z.string()),
     is_published: z.boolean().default(true)

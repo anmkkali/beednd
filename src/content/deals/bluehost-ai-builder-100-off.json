@@ -8,7 +8,7 @@
   "cities": [],
   "areas": [],
   "branch_info": [],
-  "category": "hosting-software",
+  "category": "ai-tools",
   "deal_type": "promo-code",
   "discount_type": "percentage",
   "discount_value": "100% OFF",
@@ -31,5 +31,7 @@
     "src": "https://www.google.com/s2/favicons?domain=bluehost.com&sz=128",
     "alt": "Bluehost 100% Off AI Builder Promo"
   },
-  "tags": ["ai", "website builder", "free hosting", "promo code"]
+  "tags": ["website-builder", "ai", "hosting", "promo code"],
+  "offer_kind": "promo",
+  "is_trending": false
 }

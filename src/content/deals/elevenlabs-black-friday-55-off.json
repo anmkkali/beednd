@@ -1,0 +1,29 @@
+{
+  "id": "elevenlabs-black-friday-55-off",
+  "slug": "elevenlabs-black-friday-55-off",
+  "title": "ElevenLabs Black Friday: 55% Off Annual Plans Plus Student Offers",
+  "short_description": "ElevenLabs is advertising up to 55% off eligible annual plans through December 1, 2026, with student offers listed alongside. Confirm plan details on the official pricing page.",
+  "brand_id": "elevenlabs",
+  "country": "GLOBAL",
+  "category": "ai-tools",
+  "deal_type": "store-sale",
+  "discount_type": "percentage",
+  "discount_value": "55% off",
+  "badge_text": "Black Friday deals + student offers",
+  "numeric_discount_percent": 55,
+  "terms_and_conditions": [
+    "Applies to eligible annual plans through December 1, 2026.",
+    "Student offers require eligibility verification by ElevenLabs.",
+    "Verify the offer on the official site before purchasing."
+  ],
+  "start_date": "2026-11-17T00:00:00Z",
+  "end_date": "2026-12-01T23:59:59Z",
+  "source_url": "https://elevenlabs.io",
+  "affiliate_url": "https://elevenlabs.io",
+  "last_verified_at": "2026-11-17T09:00:00Z",
+  "status": "active",
+  "image": { "src": "https://www.google.com/s2/favicons?domain=elevenlabs.io&sz=128", "alt": "ElevenLabs" },
+  "tags": ["voice"],
+  "offer_kind": "trial",
+  "is_trending": true
+}

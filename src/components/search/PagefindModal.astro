@@ -2,80 +2,52 @@
 import { getCollection } from 'astro:content';
 import Icon from '../common/Icon.astro';
 import BrandMark from '../common/BrandMark.astro';
+import { categories } from '../../data/taxonomy';
 
 const deals = await getCollection('deals', ({ data }) => data.status === 'active');
 const brands = await getCollection('brands');
 const posts = await getCollection('blog', ({ data }) => data.is_published);
-
-const categories = [
-  ['Clothing & Fashion', '/categories/clothing-fashion'],
-  ['Tech & Electronics', '/categories/tech-electronics'],
-  ['Software & Hosting', '/categories/hosting-software'],
-  ['Beauty & Wellness', '/categories/beauty-wellness'],
-  ['Food & Dining', '/categories/food-dining'],
-  ['Travel & Hotels', '/categories/travel-lifestyle'],
-  ['Groceries', '/categories/groceries-essentials'],
-];
-
-const cities = ['Karachi', 'Lahore', 'Islamabad', 'Rawalpindi'];
 ---
 
-<div
-  id="search-modal"
-  class="fixed inset-0 z-50 hidden items-start justify-center bg-black/55 p-4 pt-[7vh] backdrop-blur-xs"
->
+<div id="search-modal" class="fixed inset-0 z-[70] hidden items-start justify-center bg-black/55 p-4 pt-[7vh]">
   <div class="w-full max-w-2xl overflow-hidden border editorial-rule-strong bg-base-950 shadow-2xl">
-    <!-- Clean Search Input Row -->
     <div class="flex items-center gap-3 border-b editorial-rule px-5 py-4">
       <Icon name="search" class="h-5 w-5 shrink-0 text-ink" />
       <input
         type="search"
         id="pagefind-input"
-        placeholder="Search brands, deals, categories, or cities..."
+        placeholder="Search brands, deals, categories"
         class="w-full bg-transparent text-[16px] text-ink placeholder:text-ink-muted focus:outline-none"
         autocomplete="off"
       />
-      <button
-        id="close-search-modal-btn"
-        type="button"
-        class="btn-outline px-2.5 py-1 text-[12px] font-semibold"
-      >
-        ESC
-      </button>
+      <button id="close-search-modal-btn" type="button" class="btn-outline px-2.5 py-1 text-[12px] font-semibold">ESC</button>
     </div>
 
-    <!-- Quick Filter Chips inside Search -->
-    <div class="flex flex-wrap items-center gap-2 border-b editorial-rule bg-base-900/50 px-5 py-2.5 text-[12.5px]">
-      <span class="text-ink-muted font-medium">Quick jump:</span>
+    <div class="flex flex-wrap items-center gap-2 border-b editorial-rule bg-base-900/50 px-5 py-2.5 text-[13px]">
+      <span class="font-medium text-ink-muted">Try:</span>
+      <button type="button" data-quick-query="trial" class="editorial-pill px-3 py-0.5 text-ink hover:bg-base-800">Free trial</button>
+      <button type="button" data-quick-query="video" class="editorial-pill px-3 py-0.5 text-ink hover:bg-base-800">AI video</button>
       <button type="button" data-quick-query="clothing" class="editorial-pill px-3 py-0.5 text-ink hover:bg-base-800">Clothing</button>
-      <button type="button" data-quick-query="promo" class="editorial-pill px-3 py-0.5 text-ink hover:bg-base-800">Promo Codes</button>
-      <button type="button" data-quick-query="karachi" class="editorial-pill px-3 py-0.5 text-ink hover:bg-base-800">Karachi</button>
-      <button type="button" data-quick-query="lahore" class="editorial-pill px-3 py-0.5 text-ink hover:bg-base-800">Lahore</button>
+      <button type="button" data-quick-query="promo" class="editorial-pill px-3 py-0.5 text-ink hover:bg-base-800">Promo code</button>
     </div>
 
-    <div id="pagefind-results" class="max-h-[62vh] overflow-y-auto p-4 space-y-5">
-      <p id="search-empty" class="hidden py-10 text-center text-[15px] text-ink-muted">
-        No matching brands or offers found. Try another keyword.
-      </p>
+    <div class="max-h-[62vh] space-y-5 overflow-y-auto p-4">
+      <p id="search-empty" class="hidden py-10 text-center text-[15px] text-ink-muted">No matching brands or offers found.</p>
 
       <div class="search-group">
-        <p class="mb-2 px-2 text-[11.5px] font-semibold uppercase tracking-[0.16em] text-ink-muted">Brands</p>
-        <div class="divide-y editorial-rule border-t border-b editorial-rule">
+        <p class="mb-2 px-2 text-[12px] font-semibold uppercase tracking-[0.16em] text-ink-muted">Brands</p>
+        <div class="divide-y editorial-rule border-y editorial-rule">
           {brands.map((brand) => (
             <a
               href={`/brands/${brand.data.slug}`}
               data-search-item
-              data-search-term={`${brand.data.name} ${brand.data.categories.join(' ')} ${brand.data.country}`}
-              class="flex items-center justify-between gap-3 px-2 py-2.5 transition-colors hover:bg-base-900"
+              data-market={brand.data.country}
+              data-search-term={`${brand.data.name} ${brand.data.categories.join(' ')} brand`}
+              class="flex items-center justify-between gap-3 px-2 py-2.5 hover:bg-base-900"
             >
               <span class="flex items-center gap-3">
                 <BrandMark name={brand.data.name} logoUrl={brand.data.logo_url} size="sm" />
-                <span>
-                  <strong class="block text-[15px] font-semibold text-ink">{brand.data.name}</strong>
-                  <span class="text-[12.5px] text-ink-muted capitalize">
-                    {brand.data.categories[0]?.replaceAll('-', ' ')} · {brand.data.country === 'GLOBAL' ? 'Worldwide' : brand.data.country}
-                  </span>
-                </span>
+                <span class="text-[15px] font-semibold text-ink">{brand.data.name}</span>
               </span>
               <Icon name="arrow" class="h-4 w-4 text-ink-muted" />
             </a>
@@ -84,48 +56,48 @@ const cities = ['Karachi', 'Lahore', 'Islamabad', 'Rawalpindi'];
       </div>
 
       <div class="search-group">
-        <p class="mb-2 px-2 text-[11.5px] font-semibold uppercase tracking-[0.16em] text-ink-muted">Active Deals</p>
-        <div class="divide-y editorial-rule border-t border-b editorial-rule">
+        <p class="mb-2 px-2 text-[12px] font-semibold uppercase tracking-[0.16em] text-ink-muted">Deals</p>
+        <div class="divide-y editorial-rule border-y editorial-rule">
           {deals.map((deal) => (
             <a
               href={`/deals/${deal.data.slug}`}
               data-search-item
-              data-search-term={`${deal.data.title} ${deal.data.brand_id} ${deal.data.category} ${deal.data.deal_type} ${deal.data.cities.join(' ')} ${deal.data.tags.join(' ')}`}
-              class="flex items-center justify-between gap-4 px-2 py-3 transition-colors hover:bg-base-900"
+              data-market={deal.data.country}
+              data-search-term={`${deal.data.title} ${deal.data.brand_id} ${deal.data.category} ${deal.data.offer_kind || ''} ${deal.data.deal_type} ${deal.data.cities.join(' ')} ${deal.data.tags.join(' ')}`}
+              class="flex items-center justify-between gap-4 px-2 py-3 hover:bg-base-900"
             >
               <span class="line-clamp-1 text-[14.5px] font-medium text-ink">{deal.data.title}</span>
-              <span class="editorial-pill shrink-0 px-2.5 py-0.5 text-[12px] font-semibold text-ink">
-                {deal.data.discount_value}
-              </span>
+              <span class="editorial-pill shrink-0 px-2.5 py-0.5 text-[12.5px] font-semibold text-ink">{deal.data.discount_value}</span>
             </a>
           ))}
         </div>
       </div>
 
       <div class="search-group">
-        <p class="mb-2 px-2 text-[11.5px] font-semibold uppercase tracking-[0.16em] text-ink-muted">Categories & Cities</p>
+        <p class="mb-2 px-2 text-[12px] font-semibold uppercase tracking-[0.16em] text-ink-muted">Categories</p>
         <div class="grid grid-cols-2 gap-2">
-          {[...categories, ...cities.map((city) => [city, `/pakistan/${city.toLowerCase()}`])].map(([label, href]) => (
+          {categories.map((category) => (
             <a
-              href={href}
+              href={`/categories/${category.id}`}
               data-search-item
-              data-search-term={label}
-              class="flex items-center gap-2.5 border editorial-rule px-3 py-2.5 text-[14px] font-medium text-ink transition-colors hover:bg-base-900"
+              data-search-term={`${category.name} ${category.groups.map((g) => g.label).join(' ')}`}
+              class="flex items-center gap-2.5 border editorial-rule px-3 py-2.5 text-[14px] font-medium text-ink hover:bg-base-900"
             >
-              <Icon name={cities.includes(label) ? 'location' : 'grid'} class="h-4 w-4 shrink-0 text-ink-muted" />
-              <span class="truncate">{label}</span>
+              <Icon name={category.icon} class="h-4 w-4 shrink-0" />
+              <span class="truncate">{category.name}</span>
             </a>
           ))}
         </div>
       </div>
 
       <div class="search-group">
-        <p class="mb-2 px-2 text-[11.5px] font-semibold uppercase tracking-[0.16em] text-ink-muted">Blog</p>
-        <div class="divide-y editorial-rule border-t border-b editorial-rule">
+        <p class="mb-2 px-2 text-[12px] font-semibold uppercase tracking-[0.16em] text-ink-muted">Blog</p>
+        <div class="divide-y editorial-rule border-y editorial-rule">
           {posts.map((post) => (
             <a
               href={`/blog/${post.slug}`}
               data-search-item
+              data-market={post.data.target_country}
               data-search-term={`${post.data.title} ${post.data.tags.join(' ')} blog`}
               class="flex items-center justify-between gap-3 px-2 py-2.5 text-[14.5px] text-ink hover:bg-base-900"
             >
@@ -140,58 +112,58 @@ const cities = ['Karachi', 'Lahore', 'Islamabad', 'Rawalpindi'];
 </div>
 
 <script>
-  const searchModal = document.getElementById('search-modal');
-  const searchInput = document.getElementById('pagefind-input') as HTMLInputElement | null;
-  const headerSearchBtn = document.getElementById('header-search-btn');
-  const closeSearchBtn = document.getElementById('close-search-modal-btn');
-  const searchItems = Array.from(document.querySelectorAll<HTMLElement>('[data-search-item]'));
-  const searchGroups = Array.from(document.querySelectorAll<HTMLElement>('.search-group'));
-  const searchEmpty = document.getElementById('search-empty');
-  const quickButtons = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-quick-query]'));
+  const modal = document.getElementById('search-modal');
+  const input = document.getElementById('pagefind-input') as HTMLInputElement | null;
+  const items = Array.from(document.querySelectorAll<HTMLElement>('[data-search-item]'));
+  const groups = Array.from(document.querySelectorAll<HTMLElement>('.search-group'));
+  const emptyMsg = document.getElementById('search-empty');
+  const shown = (el: Element) => getComputedStyle(el).display !== 'none';
 
-  function filterSearch() {
-    const query = searchInput?.value.trim().toLowerCase() || '';
-    let visibleCount = 0;
-
-    searchItems.forEach((item) => {
-      const matches = !query || (item.dataset.searchTerm || '').toLowerCase().includes(query);
-      item.classList.toggle('hidden', !matches);
-      if (matches) visibleCount += 1;
+  function filter() {
+    const query = input?.value.trim().toLowerCase() || '';
+    items.forEach((item) => {
+      const match = !query || (item.dataset.searchTerm || '').toLowerCase().includes(query);
+      item.classList.toggle('search-miss', !match);
     });
-
-    searchGroups.forEach((group) => {
-      group.classList.toggle('hidden', !group.querySelector('[data-search-item]:not(.hidden)'));
+    let anyVisible = false;
+    groups.forEach((group) => {
+      const has = Array.from(group.querySelectorAll<HTMLElement>('[data-search-item]')).some(
+        (el) => !el.classList.contains('search-miss') && shown(el)
+      );
+      group.style.display = has ? '' : 'none';
+      if (has) anyVisible = true;
     });
-    searchEmpty?.classList.toggle('hidden', visibleCount > 0);
+    emptyMsg?.classList.toggle('hidden', anyVisible);
   }
 
   function openSearch() {
-    searchModal?.classList.remove('hidden');
-    searchModal?.classList.add('flex');
+    modal?.classList.remove('hidden');
+    modal?.classList.add('flex');
     document.body.style.overflow = 'hidden';
-    window.setTimeout(() => searchInput?.focus(), 10);
+    filter();
+    window.setTimeout(() => input?.focus(), 10);
   }
 
   function closeSearch() {
-    searchModal?.classList.add('hidden');
-    searchModal?.classList.remove('flex');
+    modal?.classList.add('hidden');
+    modal?.classList.remove('flex');
     document.body.style.overflow = '';
   }
 
-  headerSearchBtn?.addEventListener('click', openSearch);
-  closeSearchBtn?.addEventListener('click', closeSearch);
-  searchInput?.addEventListener('input', filterSearch);
-  quickButtons.forEach((btn) => {
+  document.querySelectorAll('#header-search-btn, [data-search-open]').forEach((el) => el.addEventListener('click', openSearch));
+  document.getElementById('close-search-modal-btn')?.addEventListener('click', closeSearch);
+  input?.addEventListener('input', filter);
+  modal?.addEventListener('click', (event) => {
+    if (event.target === modal) closeSearch();
+  });
+  document.querySelectorAll<HTMLButtonElement>('[data-quick-query]').forEach((btn) =>
     btn.addEventListener('click', () => {
-      if (!searchInput) return;
-      searchInput.value = btn.dataset.quickQuery || '';
-      filterSearch();
-      searchInput.focus();
-    });
-  });
-  searchModal?.addEventListener('click', (event) => {
-    if (event.target === searchModal) closeSearch();
-  });
+      if (!input) return;
+      input.value = btn.dataset.quickQuery || '';
+      filter();
+      input.focus();
+    })
+  );
 
   window.addEventListener('keydown', (event) => {
     if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') {
@@ -201,20 +173,22 @@ const cities = ['Karachi', 'Lahore', 'Islamabad', 'Rawalpindi'];
     if (event.key === 'Escape') closeSearch();
   });
 
+  // Copy-code buttons used on deal cards and deal pages
   document.addEventListener('click', (event) => {
-    const target = (event.target as HTMLElement).closest('.copy-code-btn') as HTMLElement | null;
-    if (!target) return;
-    const code = target.dataset.code;
-    const outbound = target.dataset.outbound;
+    const button = (event.target as HTMLElement).closest('.copy-code-btn') as HTMLElement | null;
+    if (!button) return;
+    const code = button.dataset.code;
     if (!code) return;
-    navigator.clipboard.writeText(code);
-    const originalText = target.textContent;
-    target.textContent = 'Copied';
-    window.setTimeout(() => {
-      target.textContent = originalText;
-    }, 1800);
-    if (outbound) {
-      window.open(outbound, '_blank', 'noopener,noreferrer');
-    }
+    navigator.clipboard?.writeText(code);
+    const original = button.textContent;
+    button.textContent = 'Copied';
+    window.setTimeout(() => (button.textContent = original), 1800);
+    if (button.dataset.outbound) window.open(button.dataset.outbound, '_blank', 'noopener,noreferrer');
   });
 </script>
+
+<style is:global>
+  .search-miss {
+    display: none !important;
+  }
+</style>

@@ -1,0 +1,10 @@
+{
+  "id": "meshy",
+  "name": "Meshy AI",
+  "slug": "meshy",
+  "logo_url": "https://www.google.com/s2/favicons?domain=meshy.ai&sz=128",
+  "website_url": "https://www.meshy.ai",
+  "country": "GLOBAL",
+  "categories": ["ai-tools"],
+  "short_bio": "AI 3D model generation from text prompts and images."
+}

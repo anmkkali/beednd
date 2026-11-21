@@ -1,0 +1,10 @@
+{
+  "id": "kling",
+  "name": "Kling AI",
+  "slug": "kling",
+  "logo_url": "https://www.google.com/s2/favicons?domain=klingai.com&sz=128",
+  "website_url": "https://klingai.com",
+  "country": "GLOBAL",
+  "categories": ["ai-tools"],
+  "short_bio": "AI video and image generation from text and reference images."
+}

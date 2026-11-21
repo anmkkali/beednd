@@ -2,144 +2,91 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import DealBannerCard from '../../components/deals/DealBannerCard.astro';
 import BrandMark from '../../components/common/BrandMark.astro';
+import AdSlot from '../../components/ads/AdSlot.astro';
 import { getCollection } from 'astro:content';
+import { categories, KIND_FILTERS } from '../../data/taxonomy';
+import { dealKind, dealTokens } from '../../lib/deals';
 
 export async function getStaticPaths() {
-  const categoryConfig: Record<string, { label: string; subs: { label: string; query: string }[] }> = {
-    'clothing-fashion': {
-      label: 'Clothing & Fashion',
-      subs: [
-        { label: 'All Clothing', query: 'all' },
-        { label: "Women's Pret", query: 'women' },
-        { label: 'Unstitched', query: 'unstitched' },
-        { label: "Men's Wear", query: 'men' },
-        { label: 'Footwear', query: 'footwear' },
-        { label: 'Accessories', query: 'accessories' },
-      ],
-    },
-    'tech-electronics': {
-      label: 'Tech & Electronics',
-      subs: [
-        { label: 'All Tech', query: 'all' },
-        { label: 'Smartphones', query: 'mobiles' },
-        { label: 'Laptops', query: 'laptops' },
-        { label: 'Market Tools', query: 'stocks' },
-      ],
-    },
-    'hosting-software': {
-      label: 'Software & Hosting',
-      subs: [
-        { label: 'All Software', query: 'all' },
-        { label: 'Web Hosting', query: 'hosting' },
-        { label: 'AI Builders', query: 'ai' },
-        { label: 'Finance Tools', query: 'finance' },
-      ],
-    },
-    'beauty-wellness': {
-      label: 'Beauty & Wellness',
-      subs: [
-        { label: 'All Beauty', query: 'all' },
-        { label: 'Skincare', query: 'skincare' },
-        { label: 'Makeup', query: 'makeup' },
-        { label: 'Fragrances', query: 'fragrance' },
-      ],
-    },
-    'food-dining': {
-      label: 'Food & Dining',
-      subs: [
-        { label: 'All Dining', query: 'all' },
-        { label: 'Restaurants', query: 'restaurants' },
-        { label: 'Cafes', query: 'cafes' },
-        { label: 'Delivery', query: 'delivery' },
-      ],
-    },
-    'travel-lifestyle': {
-      label: 'Travel & Hotels',
-      subs: [
-        { label: 'All Travel', query: 'all' },
-        { label: 'Hotels', query: 'hotels' },
-        { label: 'Flights', query: 'flights' },
-      ],
-    },
-    'groceries-essentials': {
-      label: 'Groceries',
-      subs: [
-        { label: 'All Groceries', query: 'all' },
-        { label: 'Supermarkets', query: 'supermarkets' },
-        { label: 'Essentials', query: 'essentials' },
-      ],
-    },
-  };
-
   const allDeals = await getCollection('deals', ({ data }) => data.status === 'active');
   const allBrands = await getCollection('brands');
   const brandMap = new Map(allBrands.map((b) => [b.data.id, b.data]));
 
-  return Object.entries(categoryConfig).map(([cat, meta]) => {
-    const catDeals = allDeals.filter((d) => d.data.category === cat);
-    const categoryBrands = allBrands.filter((brand) => brand.data.categories.includes(cat));
-    return {
-      params: { category: cat },
-      props: {
-        categoryName: meta.label,
-        categoryId: cat,
-        subcategories: meta.subs,
-        deals: catDeals,
-        categoryBrands,
-        brandMap,
-      },
-    };
-  });
+  return categories.map((category) => ({
+    params: { category: category.id },
+    props: {
+      category,
+      deals: allDeals.filter((d) => d.data.category === category.id),
+      categoryBrands: allBrands.filter((b) => b.data.categories.includes(category.id)),
+      brandMap,
+    },
+  }));
 }
 
-const { categoryName, categoryId, subcategories, deals, categoryBrands, brandMap } = Astro.props;
+const { category, deals, categoryBrands, brandMap } = Astro.props;
 ---
 
 <BaseLayout
-  title={`${categoryName} Discounts & Brands`}
-  description={`Explore ${categoryName} brands, subcategories, and active discounts.`}
-  activeTopic={categoryId}
+  title={`${category.name} Discounts and Promo Codes`}
+  description={`Browse ${category.name.toLowerCase()} brands, discounts, free trials and promo codes.`}
+  activeTopic={category.id}
 >
-  <div class="mb-8 border-b editorial-rule pb-8">
-    <nav class="mb-3 flex items-center gap-2 text-[13px] text-ink-muted" aria-label="Breadcrumb">
+  <div class="mb-6 border-b editorial-rule pb-6">
+    <nav class="mb-3 flex items-center gap-2 text-[13.5px] text-ink-muted" aria-label="Breadcrumb">
       <a href="/" class="hover:text-ink hover:underline">Home</a>
       <span>/</span>
-      <span class="text-ink">{categoryName}</span>
+      <span class="text-ink">{category.name}</span>
     </nav>
+    <h1 class="text-5xl leading-[0.98] text-ink sm:text-6xl">{category.name}</h1>
+    <p class="mt-3 max-w-2xl text-[16px] leading-relaxed text-ink-muted">{category.blurb}</p>
 
-    <h1 class="text-4xl sm:text-6xl leading-[0.98] text-ink">
-      {categoryName}
-    </h1>
-    <p class="mt-3 max-w-2xl text-[15.5px] leading-relaxed text-ink-muted">
-      Filter by subcategory or select a brand below to browse current discounts in {categoryName.toLowerCase()}.
-    </p>
+    <div class="mt-6 space-y-3" id="filter-bar">
+      <div class="flex flex-wrap gap-2" data-row="groups">
+        <button type="button" data-group="all" aria-pressed="true" class="editorial-pill btn-primary px-4 py-1.5 text-[13.5px] font-medium">All</button>
+        {category.groups.map((group) => (
+          <button type="button" data-group={group.id} aria-pressed="false" class="editorial-pill px-4 py-1.5 text-[13.5px] font-medium text-ink-muted hover:text-ink">
+            {group.label}
+          </button>
+        ))}
+      </div>
 
-    <!-- Interactive Subcategory Filter Pills -->
-    <div class="mt-6 flex flex-wrap gap-2" id="subcategory-pills">
-      {subcategories.map((sub) => (
-        <button
-          type="button"
-          data-sub-query={sub.query}
-          class:list={[
-            'editorial-pill px-4 py-1.5 text-[13.5px] font-medium transition-colors',
-            sub.query === 'all' ? 'btn-primary' : 'text-ink-muted hover:text-ink',
-          ]}
-        >
-          {sub.label}
-        </button>
+      {category.groups.map((group) => (
+        <div class="hidden flex-wrap gap-2" data-row="filters" data-filters-for={group.id} data-has-kind={group.filters.some((f) => f.kind) ? 'true' : 'false'}>
+          {group.filters.map((filter) => (
+            <button
+              type="button"
+              data-filter
+              data-sub={filter.sub || ''}
+              data-kind={filter.kind || ''}
+              class="border editorial-rule px-3.5 py-1 text-[13.5px] text-ink-muted hover:text-ink"
+            >
+              {filter.label}
+            </button>
+          ))}
+        </div>
       ))}
+
+      <div class="flex flex-wrap items-center gap-2" data-row="kinds">
+        <span class="mr-1 text-[12px] font-semibold uppercase tracking-[0.14em] text-ink-muted">Offer type</span>
+        <button type="button" data-kind-pill="" class="border editorial-rule px-3.5 py-1 text-[13.5px] text-ink-muted hover:text-ink">All offers</button>
+        {KIND_FILTERS.map((filter) => (
+          <button type="button" data-kind-pill={filter.kind} class="border editorial-rule px-3.5 py-1 text-[13.5px] text-ink-muted hover:text-ink">
+            {filter.label}
+          </button>
+        ))}
+      </div>
     </div>
   </div>
 
   {categoryBrands.length > 0 && (
-    <section class="mb-12">
-      <h2 class="mb-4 text-2xl sm:text-3xl text-ink">Brands in {categoryName}</h2>
+    <section class="mb-8">
+      <h2 class="mb-3 text-3xl text-ink">Brands</h2>
       <div class="grid grid-cols-2 border-l border-t editorial-rule sm:grid-cols-4">
         {categoryBrands.map((brand) => (
           <a
             href={`/brands/${brand.data.slug}`}
             data-market={brand.data.country}
-            class="flex items-center gap-3.5 border-b border-r editorial-rule p-4 transition-colors hover:bg-base-900/70"
+            class="flex items-center gap-3 border-b border-r editorial-rule p-4 transition-colors hover:bg-base-900/70"
           >
             <BrandMark name={brand.data.name} logoUrl={brand.data.logo_url} size="sm" />
             <span class="truncate text-[15px] font-semibold text-ink">{brand.data.name}</span>
@@ -149,78 +96,114 @@ const { categoryName, categoryId, subcategories, deals, categoryBrands, brandMap
     </section>
   )}
 
+  <AdSlot slotType="infeed" />
+
   <section>
-    <h2 class="mb-3 text-2xl sm:text-3xl text-ink">Active Offers</h2>
-    <div id="category-deals-list">
-      {deals.length > 0 ? (
-        deals.map((deal) => (
-          <div
-            data-cat-deal
-            data-market={deal.data.country}
-            data-sub-tags={[...(deal.data.tags || []), deal.data.title, deal.data.short_description, deal.data.brand_id].join(' ').toLowerCase()}
-          >
-            <DealBannerCard
-              deal={deal.data}
-              brandName={brandMap.get(deal.data.brand_id)?.name}
-              brandLogo={brandMap.get(deal.data.brand_id)?.logo_url}
-            />
-          </div>
-        ))
-      ) : null}
+    <h2 class="mb-2 text-3xl text-ink">Offers</h2>
+    <div id="category-deals">
+      {deals.map((deal) => (
+        <div data-cat-deal data-market={deal.data.country} data-tokens={dealTokens(deal.data)} data-kind={dealKind(deal.data)}>
+          <DealBannerCard
+            deal={deal.data}
+            brandName={brandMap.get(deal.data.brand_id)?.name}
+            brandLogo={brandMap.get(deal.data.brand_id)?.logo_url}
+          />
+        </div>
+      ))}
     </div>
-    <div
-      id="category-empty-state"
-      class:list={[
-        'border-t border-b editorial-rule py-12 text-center text-[15px] text-ink-muted',
-        deals.length > 0 ? 'hidden' : '',
-      ]}
-    >
-      No active offers match this subcategory in your selected country right now.
-    </div>
+    <p id="category-empty" class:list={['border-y editorial-rule py-12 text-center text-[15px] text-ink-muted', deals.length > 0 && 'hidden']}>
+      No offers here yet for your country. Try another filter, or choose a different country.
+    </p>
   </section>
 
   <script>
-    const subButtons = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-sub-query]'));
-    const dealRows = Array.from(document.querySelectorAll<HTMLElement>('[data-cat-deal]'));
-    const emptyState = document.getElementById('category-empty-state');
+    const groupButtons = Array.from(document.querySelectorAll<HTMLButtonElement>('button[data-group]'));
+    const filterRows = Array.from(document.querySelectorAll<HTMLElement>('[data-filters-for]'));
+    const filterButtons = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-filter]'));
+    const kindRow = document.querySelector<HTMLElement>('[data-row="kinds"]');
+    const kindButtons = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-kind-pill]'));
+    const rows = Array.from(document.querySelectorAll<HTMLElement>('[data-cat-deal]'));
+    const emptyMsg = document.getElementById('category-empty');
+    const shown = (el: Element) => getComputedStyle(el).display !== 'none';
 
-    function applySubcategory(sub: string) {
-      const normalized = sub.trim().toLowerCase() || 'all';
-      let visibleCount = 0;
+    const state = { group: 'all', sub: '', kind: '' };
+    const setActive = (el: HTMLElement, active: boolean) => {
+      el.classList.toggle('btn-primary', active);
+      el.classList.toggle('text-ink-muted', !active);
+      el.setAttribute('aria-pressed', String(active));
+    };
 
-      dealRows.forEach((row) => {
-        const tags = row.dataset.subTags || '';
-        const matchesSub = normalized === 'all' || tags.includes(normalized);
-        row.classList.toggle('hidden', !matchesSub);
-        if (matchesSub && !row.classList.contains('market-hidden')) {
-          visibleCount += 1;
-        }
+    function render() {
+      groupButtons.forEach((button) => setActive(button, button.dataset.group === state.group));
+
+      let activeRowHasKind = false;
+      filterRows.forEach((row) => {
+        const isActive = row.dataset.filtersFor === state.group;
+        row.classList.toggle('hidden', !isActive);
+        row.classList.toggle('flex', isActive);
+        if (isActive) activeRowHasKind = row.dataset.hasKind === 'true';
+      });
+      filterButtons.forEach((button) => {
+        const sub = button.dataset.sub || '';
+        const kind = button.dataset.kind || '';
+        const isAll = !sub && !kind;
+        const active = isAll ? !state.sub && !state.kind : sub ? sub === state.sub : kind === state.kind;
+        setActive(button, active);
       });
 
-      subButtons.forEach((btn) => {
-        const active = (btn.dataset.subQuery || 'all') === normalized;
-        btn.classList.toggle('btn-primary', active);
-        btn.classList.toggle('text-ink-muted', !active);
-      });
+      // The offer-type row is only needed when the group's own filters do not already cover it
+      kindRow?.classList.toggle('hidden', state.group !== 'all' && activeRowHasKind);
+      kindButtons.forEach((button) => setActive(button, (button.dataset.kindPill || '') === state.kind));
 
-      emptyState?.classList.toggle('hidden', visibleCount > 0);
+      rows.forEach((row) => {
+        const tokens = row.dataset.tokens || '';
+        const ok =
+          (!state.group || state.group === 'all' || tokens.includes(`|${state.group}|`)) &&
+          (!state.sub || tokens.includes(`|${state.sub}|`)) &&
+          (!state.kind || row.dataset.kind === state.kind);
+        row.classList.toggle('hidden', !ok);
+      });
+      emptyMsg?.classList.toggle('hidden', rows.some(shown));
     }
 
-    subButtons.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const query = btn.dataset.subQuery || 'all';
-        applySubcategory(query);
-        const url = new URL(window.location.href);
-        query === 'all' ? url.searchParams.delete('sub') : url.searchParams.set('sub', query);
-        history.replaceState({}, '', url);
-      });
-    });
+    function sync() {
+      const url = new URL(window.location.href);
+      const set = (key: string, value: string) => (value && value !== 'all' ? url.searchParams.set(key, value) : url.searchParams.delete(key));
+      set('group', state.group);
+      set('sub', state.sub);
+      set('kind', state.kind);
+      history.replaceState({}, '', url);
+      render();
+      window.dispatchEvent(new CustomEvent('dealssite:filters-changed'));
+    }
 
-    window.addEventListener('dealssite:market-updated', () => {
-      const currentSub = new URLSearchParams(window.location.search).get('sub') || 'all';
-      applySubcategory(currentSub);
-    });
+    groupButtons.forEach((button) =>
+      button.addEventListener('click', () => {
+        state.group = button.dataset.group || 'all';
+        state.sub = '';
+        state.kind = '';
+        sync();
+      })
+    );
+    filterButtons.forEach((button) =>
+      button.addEventListener('click', () => {
+        state.sub = button.dataset.sub || '';
+        state.kind = button.dataset.kind || '';
+        sync();
+      })
+    );
+    kindButtons.forEach((button) =>
+      button.addEventListener('click', () => {
+        state.kind = button.dataset.kindPill || '';
+        sync();
+      })
+    );
 
-    applySubcategory(new URLSearchParams(window.location.search).get('sub') || 'all');
+    const params = new URLSearchParams(window.location.search);
+    state.group = params.get('group') || 'all';
+    state.sub = params.get('sub') || '';
+    state.kind = params.get('kind') || '';
+    window.addEventListener('dealssite:market-updated', render);
+    render();
   </script>
 </BaseLayout>

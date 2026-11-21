@@ -1,0 +1,29 @@
+{
+  "id": "meshy-ai-first-month-70-off",
+  "slug": "meshy-ai-first-month-70-off",
+  "title": "Meshy AI Black Friday: Up to 70% Off Your First Month",
+  "short_description": "Meshy AI is advertising up to 70% off a first-month subscription between Nov 20 and Dec 12, 2026. Check the official pricing page for the plans and codes that apply to you.",
+  "brand_id": "meshy",
+  "country": "GLOBAL",
+  "category": "ai-tools",
+  "deal_type": "store-sale",
+  "discount_type": "percentage",
+  "discount_value": "Up to 70% off",
+  "badge_text": "Up to 70% off first month",
+  "numeric_discount_percent": 70,
+  "terms_and_conditions": [
+    "Applies to the first month of eligible new subscriptions.",
+    "Valid from Nov 20 to Dec 12, 2026 per the brand's announcement.",
+    "Verify the offer on the official site before purchasing."
+  ],
+  "start_date": "2026-11-20T00:00:00Z",
+  "end_date": "2026-12-12T23:59:59Z",
+  "source_url": "https://www.meshy.ai",
+  "affiliate_url": "https://www.meshy.ai",
+  "last_verified_at": "2026-11-20T09:00:00Z",
+  "status": "active",
+  "image": { "src": "https://www.google.com/s2/favicons?domain=meshy.ai&sz=128", "alt": "Meshy AI" },
+  "tags": ["3d"],
+  "offer_kind": "discount",
+  "is_trending": false
+}

@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const deals = await getCollection('deals');
+  return deals.map((deal) => ({
+    params: { slug: deal.data.slug },
+    props: { url: deal.data.affiliate_url, brand: deal.data.brand_id },
+  }));
+}
+
+const { url } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="refresh" content={`0; url=${url}`} />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Redirecting to the store</title>
+    <style>
+      body { margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center; font-family: system-ui, sans-serif; background: #f5f4ef; color: #141413; }
+      a { color: inherit; }
+    </style>
+  </head>
+  <body>
+    <p>Taking you to the store. If nothing happens, <a href={url} rel="nofollow sponsored noopener">continue here</a>.</p>
+  </body>
+</html>

@@ -8,7 +8,7 @@
   "cities": [],
   "areas": [],
   "branch_info": [],
-  "category": "hosting-software",
+  "category": "tech-electronics",
   "deal_type": "promo-code",
   "discount_type": "fixed_amount",
   "discount_value": "$15 OFF",
@@ -31,5 +31,7 @@
     "src": "https://www.google.com/s2/favicons?domain=tradingview.com&sz=128",
     "alt": "TradingView Promo Code"
   },
-  "tags": ["tradingview", "finance", "stocks", "software", "coupon code"]
+  "tags": ["finance", "charting", "stocks", "software", "coupon code"],
+  "offer_kind": "promo",
+  "is_trending": false
 }

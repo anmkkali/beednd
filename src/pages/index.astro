@@ -2,26 +2,35 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import DealBannerCard from '../components/deals/DealBannerCard.astro';
 import BrandMark from '../components/common/BrandMark.astro';
+import AdSlot from '../components/ads/AdSlot.astro';
 import Icon from '../components/common/Icon.astro';
 import { getCollection } from 'astro:content';
+import { dealKind } from '../lib/deals';
+import { categoryById } from '../data/taxonomy';
 
-const allDeals = await getCollection('deals', ({ data }) => data.status === 'active');
+const allDeals = (await getCollection('deals', ({ data }) => data.status === 'active')).sort(
+  (a, b) =>
+    Number(b.data.is_trending) - Number(a.data.is_trending) ||
+    b.data.last_verified_at.localeCompare(a.data.last_verified_at)
+);
 const allBrands = await getCollection('brands');
-const allPosts = await getCollection('blog', ({ data }) => data.is_published);
+const allPosts = (await getCollection('blog', ({ data }) => data.is_published)).sort((a, b) =>
+  b.data.published_date.localeCompare(a.data.published_date)
+);
 const brandMap = new Map(allBrands.map((brand) => [brand.data.id, brand.data]));
 
 const brandHighlight = new Map<string, string>();
 allDeals.forEach((deal) => {
-  if (!brandHighlight.has(deal.data.brand_id)) {
-    brandHighlight.set(deal.data.brand_id, deal.data.discount_value);
-  }
+  if (!brandHighlight.has(deal.data.brand_id)) brandHighlight.set(deal.data.brand_id, deal.data.discount_value);
 });
 
 const filterPills = [
-  { label: 'All Offers', value: 'all' },
-  { label: 'Promo Codes', value: 'promo-code' },
-  { label: 'Store Sales', value: 'store-sale' },
-  { label: 'Bank Deals', value: 'bank-card' },
+  { label: 'All offers', value: 'all' },
+  { label: 'Trending', value: 'trending' },
+  { label: 'Free trials', value: 'trial' },
+  { label: 'Promo codes', value: 'promo-code' },
+  { label: 'Store sales', value: 'store-sale' },
+  { label: 'Bank deals', value: 'bank-card' },
 ];
 
 const structuredData = {
@@ -33,50 +42,41 @@ const structuredData = {
 ---
 
 <BaseLayout
-  title="Curated Brand Discounts & Promo Codes"
-  description="Discover active discounts, brand sales, and promo codes automatically matched to your country."
+  title="Discounts, Promo Codes and Free Trials"
+  description="Browse current brand discounts, promo codes and free trials, automatically matched to your country."
   structuredData={structuredData}
 >
-  <!-- Editorial Minimal Hero Inspired by Natural Muse -->
-  <section class="mb-14 border-b editorial-rule pb-10">
-    <div class="mb-4 flex flex-wrap items-center justify-between gap-2 text-[13px] text-ink-muted">
-      <span class="editorial-pill px-3.5 py-1 font-medium text-ink">Curated Savings Directory</span>
-      <span id="hero-market-caption" class="font-medium">Showing offers for your location</span>
+  <section class="mb-12 border-b editorial-rule pb-10">
+    <div class="mb-4 flex flex-wrap items-center justify-between gap-2 text-[13.5px] text-ink-muted">
+      <span class="editorial-pill px-3.5 py-1 font-medium text-ink">Updated daily</span>
+      <span id="hero-market-caption" class="font-medium">Offers for your location</span>
     </div>
-
-    <h1 class="mt-4 text-5xl sm:text-7xl lg:text-[82px] leading-[0.94] tracking-tight text-ink">
-      Everyday Discounts, Curated Simply.
-    </h1>
-
+    <h1 class="text-5xl leading-[0.95] text-ink sm:text-7xl lg:text-[84px]">Everyday discounts, curated simply.</h1>
     <div class="mt-6 flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
       <p class="max-w-xl text-[16px] leading-relaxed text-ink-muted">
-        Brands and active markdowns automatically adjust to the country you open from. Browse by brand logo, category, or city without clutter.
+        Brands and offers adjust to the country you open the site from. Browse by brand, category or city.
       </p>
-      <div class="flex flex-wrap items-center gap-3 shrink-0">
+      <div class="flex shrink-0 flex-wrap items-center gap-3">
         <a href="/brands" class="btn-primary inline-flex items-center gap-2 px-5 py-2.5 text-[14px] font-semibold">
-          <span>Browse Brands</span>
+          Browse Brands
           <Icon name="arrow" class="h-4 w-4" />
         </a>
-        <a href="/blog" class="btn-outline inline-flex items-center gap-2 px-5 py-2.5 text-[14px] font-semibold">
-          <span>Read Blog</span>
-        </a>
+        <a href="/blog" class="btn-outline inline-flex items-center gap-2 px-5 py-2.5 text-[14px] font-semibold">Read Blog</a>
       </div>
     </div>
   </section>
 
-  <!-- Brands on Discount Grid (Logos + Active Discount Tag) -->
-  <section class="mb-14" aria-labelledby="brands-heading">
+  <section class="mb-4" aria-labelledby="brands-heading">
     <div class="mb-5 flex items-end justify-between gap-4 border-b editorial-rule pb-3">
       <div>
-        <p class="text-[12px] font-semibold uppercase tracking-[0.16em] text-ink-muted">Brands on Sale</p>
-        <h2 id="brands-heading" class="mt-1 text-3xl sm:text-4xl text-ink">Shop by Brand</h2>
+        <p class="text-[12px] font-semibold uppercase tracking-[0.16em] text-ink-muted">Brands with offers</p>
+        <h2 id="brands-heading" class="mt-1 text-4xl text-ink">Shop by brand</h2>
       </div>
       <a href="/brands" class="inline-flex items-center gap-1.5 text-[14px] font-semibold text-ink hover:underline">
-        <span>All Brands</span>
+        All brands
         <Icon name="arrow" class="h-4 w-4" />
       </a>
     </div>
-
     <div class="grid grid-cols-2 border-l border-t editorial-rule sm:grid-cols-3 md:grid-cols-4">
       {allBrands.map((brand) => (
         <a
@@ -87,40 +87,34 @@ const structuredData = {
           <div class="flex items-start justify-between gap-2">
             <BrandMark name={brand.data.name} logoUrl={brand.data.logo_url} size="md" />
             {brandHighlight.get(brand.data.id) && (
-              <span class="editorial-pill px-2.5 py-0.5 text-[11.5px] font-semibold text-ink">
-                {brandHighlight.get(brand.data.id)}
-              </span>
+              <span class="editorial-pill px-2.5 py-0.5 text-[11.5px] font-semibold text-ink">{brandHighlight.get(brand.data.id)}</span>
             )}
           </div>
-
           <div class="mt-5">
-            <strong class="block text-[16px] font-semibold text-ink group-hover:underline">
-              {brand.data.name}
-            </strong>
-            <span class="mt-0.5 block text-[13px] text-ink-muted capitalize">
-              {brand.data.categories[0]?.replaceAll('-', ' ')}
-            </span>
+            <strong class="block text-[16px] font-semibold text-ink group-hover:underline">{brand.data.name}</strong>
+            <span class="mt-0.5 block text-[13px] text-ink-muted">{categoryById.get(brand.data.categories[0])?.name}</span>
           </div>
         </a>
       ))}
     </div>
   </section>
 
-  <!-- Active Deals Feed -->
-  <section aria-labelledby="deals-heading">
-    <div class="mb-4 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
-      <div>
-        <p class="text-[12px] font-semibold uppercase tracking-[0.16em] text-ink-muted">Verified Markdowns</p>
-        <h2 id="deals-heading" class="mt-1 text-3xl sm:text-4xl text-ink">Active Offers</h2>
-      </div>
+  <AdSlot slotType="infeed" />
 
+  <section aria-labelledby="deals-heading">
+    <div class="mb-3 flex flex-col justify-between gap-4 lg:flex-row lg:items-end">
+      <div>
+        <p class="text-[12px] font-semibold uppercase tracking-[0.16em] text-ink-muted">Verified markdowns</p>
+        <h2 id="deals-heading" class="mt-1 text-4xl text-ink">Active offers</h2>
+      </div>
       <div class="flex flex-wrap gap-1.5" id="deal-type-filters">
         {filterPills.map((filter) => (
           <button
             type="button"
             data-type-filter={filter.value}
+            aria-pressed={filter.value === 'all'}
             class:list={[
-              'px-3.5 py-1.5 text-[13.5px] font-medium transition-colors editorial-pill',
+              'editorial-pill px-3.5 py-1.5 text-[13.5px] font-medium transition-colors',
               filter.value === 'all' ? 'btn-primary' : 'text-ink-muted hover:text-ink',
             ]}
           >
@@ -134,9 +128,11 @@ const structuredData = {
       {allDeals.map((deal) => (
         <div
           data-deal-wrapper
-          data-deal-type={deal.data.deal_type}
-          data-has-bank={deal.data.bank_details ? 'true' : 'false'}
           data-market={deal.data.country}
+          data-deal-type={deal.data.deal_type}
+          data-kind={dealKind(deal.data)}
+          data-trending={deal.data.is_trending ? 'true' : 'false'}
+          data-has-bank={deal.data.bank_details ? 'true' : 'false'}
         >
           <DealBannerCard
             deal={deal.data}
@@ -146,53 +142,44 @@ const structuredData = {
         </div>
       ))}
     </div>
-
-    <p id="deals-empty-msg" class="hidden border-t border-b editorial-rule py-10 text-center text-[15px] text-ink-muted">
-      No offers match this filter right now. Try selecting "All Offers".
+    <p id="deals-empty-msg" class="hidden border-y editorial-rule py-10 text-center text-[15px] text-ink-muted">
+      No offers match this filter for your country yet. Try "All offers" or change the country.
     </p>
   </section>
 
-  <!-- Bottom Blog Section -->
-  <section class="mt-16 pt-4" aria-labelledby="blog-heading">
+  <section class="mt-16" aria-labelledby="blog-heading">
     <div class="mb-6 flex items-end justify-between border-b editorial-rule pb-3">
       <div>
-        <p class="text-[12px] font-semibold uppercase tracking-[0.16em] text-ink-muted">Editorial Journal</p>
-        <h2 id="blog-heading" class="mt-1 text-3xl sm:text-4xl text-ink">From the Blog</h2>
+        <p class="text-[12px] font-semibold uppercase tracking-[0.16em] text-ink-muted">Journal</p>
+        <h2 id="blog-heading" class="mt-1 text-4xl text-ink">From the blog</h2>
       </div>
       <a href="/blog" class="inline-flex items-center gap-1.5 text-[14px] font-semibold text-ink hover:underline">
-        <span>View All Posts</span>
+        All posts
         <Icon name="arrow" class="h-4 w-4" />
       </a>
     </div>
-
-    <div class="grid border-l border-t editorial-rule md:grid-cols-2">
-      {allPosts.slice(0, 4).map((post) => (
+    <div class="grid border-l border-t editorial-rule md:grid-cols-3">
+      {allPosts.slice(0, 3).map((post) => (
         <a
           href={`/blog/${post.slug}`}
           data-market={post.data.target_country}
-          class="group flex flex-col justify-between border-b border-r editorial-rule transition-colors hover:bg-base-900/60"
+          class="group flex flex-col border-b border-r editorial-rule transition-colors hover:bg-base-900/60"
         >
-          <div class="aspect-[16/9] overflow-hidden bg-base-900 border-b editorial-rule">
+          <div class="aspect-[16/10] overflow-hidden border-b editorial-rule bg-base-900">
             <img
               src={post.data.hero_image}
               alt={post.data.title}
+              width="600"
+              height="375"
               class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
               loading="lazy"
               decoding="async"
             />
           </div>
-          <div class="p-6">
-            <div class="mb-2 flex items-center gap-2 text-[12.5px] font-medium text-ink-muted">
-              <span>{post.data.published_date.split('T')[0]}</span>
-              <span>·</span>
-              <span>{post.data.target_country === 'GLOBAL' ? 'Global' : post.data.target_country}</span>
-            </div>
-            <h3 class="text-2xl sm:text-3xl leading-snug text-ink group-hover:underline">
-              {post.data.title}
-            </h3>
-            <p class="mt-2.5 line-clamp-2 text-[15px] leading-relaxed text-ink-muted">
-              {post.data.description}
-            </p>
+          <div class="p-5">
+            <p class="mb-2 text-[12.5px] font-medium text-ink-muted">{post.data.published_date.split('T')[0]}</p>
+            <h3 class="text-[24px] leading-[1.15] text-ink group-hover:underline">{post.data.title}</h3>
+            <p class="mt-2 line-clamp-3 text-[14.5px] leading-relaxed text-ink-muted">{post.data.description}</p>
           </div>
         </a>
       ))}
@@ -200,55 +187,55 @@ const structuredData = {
   </section>
 
   <script>
-    const typeButtons = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-type-filter]'));
-    const dealWrappers = Array.from(document.querySelectorAll<HTMLElement>('[data-deal-wrapper]'));
+    import { countryByCode } from '../data/countries';
+
+    const buttons = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-type-filter]'));
+    const wrappers = Array.from(document.querySelectorAll<HTMLElement>('[data-deal-wrapper]'));
     const emptyMsg = document.getElementById('deals-empty-msg');
-    const marketCaption = document.getElementById('hero-market-caption');
+    const caption = document.getElementById('hero-market-caption');
+    const shown = (el: Element) => getComputedStyle(el).display !== 'none';
 
-    function checkVisibleDeals() {
-      const anyVisible = dealWrappers.some(
-        (el) => !el.classList.contains('hidden') && !el.classList.contains('market-hidden')
-      );
-      emptyMsg?.classList.toggle('hidden', anyVisible);
+    let current = 'all';
 
-      if (marketCaption) {
-        const m = document.documentElement.dataset.market || 'ALL';
-        marketCaption.textContent =
-          m === 'PK'
-            ? 'Showing brands for Pakistan'
-            : m === 'US'
-            ? 'Showing brands for United States'
-            : 'Showing international & local brands';
+    function matches(wrapper: HTMLElement, type: string) {
+      if (type === 'all') return true;
+      if (type === 'trending') return wrapper.dataset.trending === 'true';
+      if (type === 'trial') return wrapper.dataset.kind === 'trial';
+      if (type === 'promo-code') return wrapper.dataset.kind === 'promo';
+      if (type === 'bank-card') return wrapper.dataset.hasBank === 'true';
+      return wrapper.dataset.dealType === type;
+    }
+
+    function refresh() {
+      wrappers.forEach((wrapper) => wrapper.classList.toggle('hidden', !matches(wrapper, current)));
+      buttons.forEach((button) => {
+        const active = button.dataset.typeFilter === current;
+        button.classList.toggle('btn-primary', active);
+        button.classList.toggle('text-ink-muted', !active);
+        button.setAttribute('aria-pressed', String(active));
+      });
+      emptyMsg?.classList.toggle('hidden', wrappers.some(shown));
+      if (caption) {
+        const market = document.documentElement.dataset.activeMarket || 'ALL';
+        const name = countryByCode.get(market)?.name || market;
+        caption.textContent = market === 'ALL' ? 'Offers from every country' : `Offers for ${name} and worldwide`;
       }
     }
 
-    function applyType(type: string) {
-      dealWrappers.forEach((wrapper) => {
-        const matches =
-          type === 'all' ||
-          wrapper.dataset.dealType === type ||
-          (type === 'bank-card' && wrapper.dataset.hasBank === 'true');
-        wrapper.classList.toggle('hidden', !matches);
-      });
-      typeButtons.forEach((button) => {
-        const active = button.dataset.typeFilter === type;
-        button.classList.toggle('btn-primary', active);
-        button.classList.toggle('text-ink-muted', !active);
-      });
-      checkVisibleDeals();
-    }
-
-    typeButtons.forEach((button) => {
+    buttons.forEach((button) =>
       button.addEventListener('click', () => {
-        const type = button.dataset.typeFilter || 'all';
-        applyType(type);
+        current = button.dataset.typeFilter || 'all';
         const url = new URL(window.location.href);
-        type === 'all' ? url.searchParams.delete('type') : url.searchParams.set('type', type);
+        if (current === 'all') url.searchParams.delete('type');
+        else url.searchParams.set('type', current);
         history.replaceState({}, '', url);
-      });
-    });
+        refresh();
+        window.dispatchEvent(new CustomEvent('dealssite:filters-changed'));
+      })
+    );
 
-    window.addEventListener('dealssite:market-updated', checkVisibleDeals);
-    applyType(new URLSearchParams(window.location.search).get('type') || 'all');
+    window.addEventListener('dealssite:market-updated', refresh);
+    current = new URLSearchParams(window.location.search).get('type') || 'all';
+    refresh();
   </script>
 </BaseLayout>

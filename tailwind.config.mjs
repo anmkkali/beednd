@@ -41,7 +41,7 @@ export default {
           'Arial',
           'sans-serif',
         ],
-        serif: ['"Instrument Serif"', '"Playfair Display"', 'Georgia', 'serif'],
+        serif: ['"EB Garamond"', 'Garamond', 'Georgia', 'serif'],
       },
     },
   },

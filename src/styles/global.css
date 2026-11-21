@@ -53,9 +53,9 @@
   h1,
   h2,
   h3 {
-    font-family: 'Instrument Serif', 'Playfair Display', Georgia, serif;
-    font-weight: 400;
-    letter-spacing: -0.02em;
+    font-family: 'EB Garamond', Garamond, Georgia, serif;
+    font-weight: 500;
+    letter-spacing: -0.012em;
   }
 
   button,
@@ -107,6 +107,120 @@ details > summary::-webkit-details-marker {
 .btn-outline:hover {
   background-color: rgb(var(--base-900));
   border-color: rgb(var(--ink) / 0.5);
+}
+
+/* Icon buttons (theme, search, sidebar collapse, menu) */
+.icon-btn {
+  display: inline-flex;
+  height: 2.25rem;
+  width: 2.25rem;
+  align-items: center;
+  justify-content: center;
+  color: rgb(var(--ink));
+  transition: background-color 120ms ease;
+}
+.icon-btn:hover {
+  background-color: rgb(var(--ink) / 0.07);
+}
+.sb-actions .icon-btn {
+  height: 2rem;
+  width: 2rem;
+}
+
+/* Theme toggle shows the icon of the mode you will switch to */
+.theme-icon-sun {
+  display: none;
+}
+html[data-theme='dark'] .theme-icon-sun {
+  display: inline-flex;
+}
+html[data-theme='dark'] .theme-icon-moon {
+  display: none;
+}
+
+/* Sidebar links: square hover box, light tint when active (ChatGPT-style) */
+.sb-link {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.55rem 0.75rem;
+  font-size: 14.5px;
+  line-height: 1.3;
+  color: rgb(var(--muted));
+  border-radius: 0;
+  transition: background-color 120ms ease, color 120ms ease;
+}
+.sb-link:hover {
+  background-color: rgb(var(--ink) / 0.06);
+  color: rgb(var(--ink));
+}
+.sb-link[data-active='true'] {
+  background-color: rgb(var(--ink) / 0.11);
+  color: rgb(var(--ink));
+  font-weight: 600;
+  box-shadow: inset 2px 0 0 rgb(var(--ink));
+}
+.sb-link[data-ancestor='true'] {
+  color: rgb(var(--ink));
+  font-weight: 600;
+}
+.sb-nested .sb-link {
+  font-size: 14px;
+  padding: 0.45rem 0.6rem;
+}
+
+/* Sidebar layout: drawer on mobile, sticky rail on desktop */
+#app-sidebar {
+  transition: transform 200ms ease, width 200ms ease;
+}
+@media (max-width: 1023px) {
+  #app-sidebar {
+    position: fixed;
+    inset: 0 auto 0 0;
+    z-index: 60;
+    width: 18rem;
+    max-width: 86vw;
+    transform: translateX(-100%);
+  }
+  html[data-sidebar-open] #app-sidebar {
+    transform: none;
+  }
+  #sidebar-backdrop {
+    display: none;
+  }
+  html[data-sidebar-open] #sidebar-backdrop {
+    display: block;
+  }
+}
+@media (min-width: 1024px) {
+  #app-sidebar {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 18rem;
+    flex-shrink: 0;
+  }
+  #sidebar-backdrop {
+    display: none !important;
+  }
+  html[data-sidebar='collapsed'] #app-sidebar {
+    width: 4.25rem;
+  }
+  html[data-sidebar='collapsed'] #app-sidebar :is(.sb-label, .sb-nested, .sb-chevron, .sb-heading, .sb-hide-collapsed) {
+    display: none;
+  }
+  html[data-sidebar='collapsed'] #app-sidebar .sb-link {
+    justify-content: center;
+    padding-inline: 0;
+  }
+  html[data-sidebar='collapsed'] #app-sidebar .sb-top {
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.25rem;
+    height: auto;
+    padding-block: 0.75rem;
+  }
 }
 
 .editorial-prose h1,

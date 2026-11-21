@@ -1,28 +1,22 @@
 ---
+// Reserved ad space. Replace the placeholder block with the Google AdSense snippet once the account is approved.
+// The fixed minimum height keeps the layout from shifting when the real ad loads.
 interface Props {
-  slotType: 'leaderboard' | 'sidebar' | 'infeed';
-  adClient?: string;
-  adSlot?: string;
+  slotType?: 'leaderboard' | 'infeed' | 'rectangle';
 }
 
-const { slotType, adClient = 'ca-pub-XXXXXXXXXX', adSlot = '1234567890' } = Astro.props;
+const { slotType = 'leaderboard' } = Astro.props;
+const size = {
+  leaderboard: { box: 'min-h-[100px] sm:min-h-[90px]', text: 'Banner ad space  728 x 90' },
+  infeed: { box: 'min-h-[120px]', text: 'In-feed ad space  responsive' },
+  rectangle: { box: 'min-h-[250px]', text: 'Rectangle ad space  300 x 250' },
+}[slotType];
 ---
 
-<div class={`ad-container my-4 text-center select-none overflow-hidden ${
-  slotType === 'leaderboard' ? 'ad-slot-leaderboard' :
-  slotType === 'sidebar' ? 'ad-slot-sidebar' : 'ad-slot-infeed'
-}`}>
-  <!-- Zero CLS Placeholder with subtle badge -->
-  <div class="w-full h-full min-h-[90px] bg-base-900/60 border border-base-800 rounded-xl flex flex-col items-center justify-center p-2 relative group">
-    <span class="absolute top-1 right-2 text-[9px] text-gray-600 uppercase tracking-widest font-mono">
-      Advertisement
-    </span>
-    <div class="text-xs text-gray-500 flex items-center space-x-1.5">
-      <span>📢</span>
-      <span class="font-medium">Google AdSense Partner Spot</span>
-    </div>
-    <span class="text-[10px] text-gray-600 mt-0.5">
-      Targeted & Verified Retail Offers
-    </span>
-  </div>
-</div>
+<aside
+  aria-label="Advertisement"
+  class={`my-6 flex w-full flex-col items-center justify-center border border-dashed editorial-rule-strong px-4 text-center ${size.box}`}
+>
+  <span class="text-[11px] font-semibold uppercase tracking-[0.2em] text-ink-muted">Advertisement</span>
+  <span class="mt-1 text-[13px] text-ink-muted">{size.text}</span>
+</aside>

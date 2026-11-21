@@ -45,5 +45,7 @@
     "src": "https://www.google.com/s2/favicons?domain=junaidjamshed.com&sz=128",
     "alt": "J. Mid Season Sale"
   },
-  "tags": ["jdot", "men", "women", "unstitched", "pret", "fragrance", "clothing"]
+  "tags": ["men", "women", "unstitched", "stitched", "pret", "fragrance", "clothing"],
+  "offer_kind": "discount",
+  "is_trending": false
 }

@@ -53,5 +53,8 @@
     "src": "https://www.google.com/s2/favicons?domain=khaadi.com&sz=128",
     "alt": "Khaadi Summer Clearance Sale"
   },
-  "tags": ["khaadi", "women", "unstitched", "pret", "accessories", "clothing", "fashion", "lahore", "karachi"]
+  "tags": ["women", "men", "unstitched", "stitched", "pret", "accessories", "clothing", "fashion"],
+  "offer_kind": "discount",
+  "is_trending": true,
+  "limited_time": true
 }

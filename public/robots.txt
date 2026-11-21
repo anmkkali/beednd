@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /go/
 
-Sitemap: https://dealssite.com/sitemap-index.xml
+Sitemap: https://dealssite.com/sitemap.xml

@@ -3,6 +3,7 @@ import Header from '../components/common/Header.astro';
 import Footer from '../components/common/Footer.astro';
 import LeftSidebar from '../components/common/LeftSidebar.astro';
 import PagefindModal from '../components/search/PagefindModal.astro';
+import AdSlot from '../components/ads/AdSlot.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -12,199 +13,245 @@ interface Props {
   activeTopic?: string;
   activeCategory?: string;
   structuredData?: any;
+  showTopAd?: boolean;
+  noindex?: boolean;
+  ignoreMarket?: boolean;
 }
 
 const {
   title,
-  description = 'Current brand discounts, promo codes, and local store sales automatically tailored to your country.',
+  description = 'Current brand discounts, promo codes and free trials, automatically matched to your country.',
   image = '/og-image.jpg',
   activeTopic = '',
   activeCategory = 'all',
   structuredData,
+  showTopAd = true,
+  noindex = false,
+  ignoreMarket = false,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://dealssite.com');
+const fontsUrl =
+  'https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap';
 ---
 
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<!doctype html>
+<html lang="en" class="scroll-smooth" data-ignore-market={ignoreMarket ? '' : undefined}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
 
-    <!-- Fast Non-Blocking Editorial Font Wiring -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="preload"
-      as="style"
-      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
-      media="print"
-      onload="this.media='all'"
-    />
-    <noscript>
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
-      />
-    </noscript>
+    <link rel="stylesheet" href={fontsUrl} media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href={fontsUrl} /></noscript>
 
-    <!-- Zero-Latency Theme & Country Initialization Before Paint -->
+    <!-- Runs before first paint: theme, sidebar state and country, so nothing flashes or shifts -->
     <script is:inline>
       (() => {
         try {
-          const savedTheme = localStorage.getItem('dealssite_theme');
-          document.documentElement.dataset.theme = savedTheme === 'dark' ? 'dark' : 'light';
+          const d = document.documentElement;
+          const ls = localStorage;
+          d.dataset.theme = ls.getItem('dealssite_theme') === 'dark' ? 'dark' : 'light';
+          if (ls.getItem('dealssite_sidebar') === 'collapsed') d.dataset.sidebar = 'collapsed';
 
-          const detectVisitorCountry = () => {
+          const TZ = {
+            'Asia/Karachi': 'PK', 'Asia/Kolkata': 'IN', 'Asia/Calcutta': 'IN', 'Asia/Dhaka': 'BD', 'Asia/Colombo': 'LK',
+            'Asia/Kathmandu': 'NP', 'Asia/Kabul': 'AF', 'Asia/Dubai': 'AE', 'Asia/Riyadh': 'SA', 'Asia/Qatar': 'QA',
+            'Asia/Kuwait': 'KW', 'Asia/Muscat': 'OM', 'Asia/Bahrain': 'BH', 'Asia/Tehran': 'IR', 'Asia/Baghdad': 'IQ',
+            'Asia/Jerusalem': 'IL', 'Asia/Amman': 'JO', 'Asia/Beirut': 'LB', 'Europe/Istanbul': 'TR', 'Asia/Istanbul': 'TR',
+            'Europe/London': 'GB', 'Europe/Dublin': 'IE', 'Europe/Paris': 'FR', 'Europe/Berlin': 'DE', 'Europe/Madrid': 'ES',
+            'Europe/Rome': 'IT', 'Europe/Amsterdam': 'NL', 'Europe/Brussels': 'BE', 'Europe/Zurich': 'CH', 'Europe/Vienna': 'AT',
+            'Europe/Stockholm': 'SE', 'Europe/Oslo': 'NO', 'Europe/Copenhagen': 'DK', 'Europe/Helsinki': 'FI', 'Europe/Warsaw': 'PL',
+            'Europe/Prague': 'CZ', 'Europe/Athens': 'GR', 'Europe/Lisbon': 'PT', 'Europe/Kyiv': 'UA', 'Europe/Kiev': 'UA',
+            'Europe/Moscow': 'RU', 'Asia/Shanghai': 'CN', 'Asia/Hong_Kong': 'HK', 'Asia/Tokyo': 'JP', 'Asia/Seoul': 'KR',
+            'Asia/Singapore': 'SG', 'Asia/Kuala_Lumpur': 'MY', 'Asia/Jakarta': 'ID', 'Asia/Bangkok': 'TH', 'Asia/Ho_Chi_Minh': 'VN',
+            'Asia/Manila': 'PH', 'Asia/Taipei': 'TW', 'Australia/Sydney': 'AU', 'Australia/Melbourne': 'AU', 'Australia/Brisbane': 'AU',
+            'Australia/Perth': 'AU', 'Pacific/Auckland': 'NZ', 'Africa/Cairo': 'EG', 'Africa/Lagos': 'NG', 'Africa/Nairobi': 'KE',
+            'Africa/Johannesburg': 'ZA', 'Africa/Casablanca': 'MA', 'Africa/Accra': 'GH', 'Africa/Addis_Ababa': 'ET',
+            'Africa/Algiers': 'DZ', 'Africa/Tunis': 'TN', 'America/Toronto': 'CA', 'America/Vancouver': 'CA',
+            'America/Montreal': 'CA', 'America/Edmonton': 'CA', 'America/Winnipeg': 'CA', 'America/Halifax': 'CA',
+            'America/Mexico_City': 'MX', 'America/Sao_Paulo': 'BR', 'America/Argentina/Buenos_Aires': 'AR',
+            'America/Bogota': 'CO', 'America/Lima': 'PE', 'America/Santiago': 'CL', 'America/Caracas': 'VE',
+          };
+          const US = /^(America\/(New_York|Chicago|Denver|Los_Angeles|Phoenix|Detroit|Anchorage|Boise|Indiana|Kentucky|Juneau)|Pacific\/Honolulu|US\/)/;
+          const detect = () => {
             const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
-            if (tz === 'Asia/Karachi') return 'PK';
-            if (
-              tz.startsWith('America/New_York') ||
-              tz.startsWith('America/Chicago') ||
-              tz.startsWith('America/Denver') ||
-              tz.startsWith('America/Los_Angeles') ||
-              tz.startsWith('America/Phoenix') ||
-              tz.startsWith('America/Detroit') ||
-              tz.startsWith('US/')
-            ) {
-              return 'US';
-            }
+            if (TZ[tz]) return TZ[tz];
+            if (US.test(tz)) return 'US';
             const langs = navigator.languages || [navigator.language || ''];
             for (const lang of langs) {
-              const region = String(lang).split('-')[1]?.toUpperCase();
-              if (region === 'PK' || region === 'US') return region;
+              const region = String(lang).split('-')[1];
+              if (region && /^[A-Za-z]{2}$/.test(region)) return region.toUpperCase();
             }
             return 'ALL';
           };
+          window.__detectMarket = detect;
 
-          const savedMarket = localStorage.getItem('dealssite_market');
-          const market = savedMarket && savedMarket !== 'AUTO' ? savedMarket : detectVisitorCountry();
-          document.documentElement.dataset.market = market;
-          document.documentElement.dataset.marketMode = savedMarket && savedMarket !== 'AUTO' ? 'manual' : 'auto';
-        } catch {
+          const saved = ls.getItem('dealssite_market');
+          const manual = saved && saved !== 'AUTO' && /^([A-Z]{2}|ALL)$/.test(saved);
+          const market = manual ? saved : detect();
+          d.dataset.activeMarket = market;
+          d.dataset.marketMode = manual ? 'manual' : 'auto';
+          if (market !== 'ALL') {
+            const style = document.createElement('style');
+            style.id = 'market-style';
+            style.textContent = 'html:not([data-ignore-market]) [data-market]:not([data-market="' + market + '"]):not([data-market="GLOBAL"]){display:none!important}';
+            document.head.appendChild(style);
+          }
+        } catch (e) {
           document.documentElement.dataset.theme = 'light';
-          document.documentElement.dataset.market = 'ALL';
         }
       })();
     </script>
 
     <title>{title} | DealsSite</title>
-    <meta name="title" content={`${title} | DealsSite`} />
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+    {noindex && <meta name="robots" content="noindex, follow" />}
 
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="DealsSite" />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={`${title} | DealsSite`} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={image} />
 
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={canonicalURL} />
-    <meta property="twitter:title" content={`${title} | DealsSite`} />
-    <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={image} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={`${title} | DealsSite`} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
 
-    {structuredData && (
-      <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
-    )}
+    {structuredData && <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />}
   </head>
-  <body class="bg-base-950 text-ink flex flex-col min-h-screen">
-    <Header />
-
-    <div class="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-10 flex-1 flex gap-10">
+  <body class="bg-base-950 text-ink">
+    <div class="flex min-h-screen">
       <LeftSidebar activeTopic={activeTopic} activeCategory={activeCategory} />
 
-      <main class="flex-1 min-w-0 pb-20">
-        <slot />
-      </main>
+      <div class="flex min-w-0 flex-1 flex-col">
+        <Header />
+        <main class="mx-auto w-full max-w-6xl flex-1 px-4 pb-20 pt-6 sm:px-6 lg:px-10">
+          {showTopAd && <AdSlot slotType="leaderboard" />}
+          <slot />
+        </main>
+        <Footer />
+      </div>
     </div>
 
-    <Footer />
     <PagefindModal />
 
     <script>
-      const countryLabel = document.getElementById('detected-country-label');
-      const countrySwitcher = document.getElementById('country-switcher') as HTMLSelectElement | null;
+      import { countries, countryByCode } from '../data/countries';
 
-      const marketNames: Record<string, string> = {
-        PK: 'Pakistan',
-        US: 'United States',
-        ALL: 'All Countries',
-        GLOBAL: 'Worldwide',
-      };
+      const root = document.documentElement;
+      const visible = (el: Element) => getComputedStyle(el).display !== 'none';
 
-      function detectVisitorCountry(): string {
-        const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
-        if (tz === 'Asia/Karachi') return 'PK';
-        if (
-          tz.startsWith('America/New_York') ||
-          tz.startsWith('America/Chicago') ||
-          tz.startsWith('America/Denver') ||
-          tz.startsWith('America/Los_Angeles') ||
-          tz.startsWith('America/Phoenix') ||
-          tz.startsWith('America/Detroit') ||
-          tz.startsWith('US/')
-        ) {
-          return 'US';
-        }
-        const langs = navigator.languages || [navigator.language || ''];
-        for (const lang of langs) {
-          const region = String(lang).split('-')[1]?.toUpperCase();
-          if (region === 'PK' || region === 'US') return region;
-        }
-        return 'ALL';
+      // Light / dark theme: every [data-theme-toggle] button works the same way
+      document.querySelectorAll('[data-theme-toggle]').forEach((button) =>
+        button.addEventListener('click', () => {
+          const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+          root.dataset.theme = next;
+          localStorage.setItem('dealssite_theme', next);
+        })
+      );
+
+      // Country selector, filled with every country
+      const selects = Array.from(document.querySelectorAll<HTMLSelectElement>('[data-country-select]'));
+      const optionsHtml = countries.map((c) => `<option value="${c.code}">${c.name}</option>`).join('');
+      selects.forEach((select) => select.insertAdjacentHTML('beforeend', optionsHtml));
+
+      function marketName(market: string) {
+        return market === 'ALL' ? 'All countries' : countryByCode.get(market)?.name || market;
       }
 
-      function applyMarket(market: string, automatic = false) {
-        const normalized = market === 'PK' || market === 'US' || market === 'ALL' ? market : 'ALL';
-        document.documentElement.dataset.market = normalized;
-        document.querySelectorAll<HTMLElement>('[data-market]').forEach((item) => {
-          const itemMarket = item.dataset.market || 'GLOBAL';
-          const visible = normalized === 'ALL' || itemMarket === 'GLOBAL' || itemMarket === normalized;
-          item.classList.toggle('market-hidden', !visible);
+      function renderCities(market: string) {
+        const country = countryByCode.get(market);
+        const html = country
+          ? `<p class="px-4 pb-1 pt-3 text-[12px] font-semibold uppercase tracking-[0.14em] text-ink-muted">Cities in ${country.name}</p>` +
+            country.cities
+              .map(
+                (city) =>
+                  `<a href="/city/${country.code.toLowerCase()}/${city.slug}/" class="block px-4 py-2.5 text-[14.5px] text-ink hover:bg-base-900">${city.name}</a>`
+              )
+              .join('')
+          : `<p class="px-4 py-4 text-[14px] leading-relaxed text-ink-muted">Pick a country to see its cities.</p>`;
+        document.querySelectorAll('[data-cities-panel]').forEach((panel) => (panel.innerHTML = html));
+      }
+
+      function updateBell() {
+        const items = Array.from(document.querySelectorAll<HTMLElement>('[data-notif-item]')).filter(visible);
+        const seen = Number(localStorage.getItem('dealssite_notif_seen') || 0);
+        const unread = items.filter((item) => Number(item.dataset.ts) > seen).length;
+        document.querySelectorAll<HTMLElement>('[data-bell-badge]').forEach((badge) => {
+          badge.textContent = String(unread);
+          badge.classList.toggle('hidden', unread === 0);
         });
-        if (countryLabel) {
-          const label = marketNames[normalized] || 'All Countries';
-          countryLabel.textContent = automatic && normalized !== 'ALL' ? `${label} (Auto)` : label;
+        document.querySelectorAll('[data-notif-empty]').forEach((el) => el.classList.toggle('hidden', items.length > 0));
+      }
+
+      function applyMarket(market: string, automatic: boolean) {
+        root.dataset.activeMarket = market;
+        root.dataset.marketMode = automatic ? 'auto' : 'manual';
+        let style = document.getElementById('market-style') as HTMLStyleElement | null;
+        if (!style) {
+          style = document.createElement('style');
+          style.id = 'market-style';
+          document.head.appendChild(style);
         }
-        window.dispatchEvent(new CustomEvent('dealssite:market-updated', { detail: { market: normalized } }));
+        style.textContent =
+          market === 'ALL'
+            ? ''
+            : `html:not([data-ignore-market]) [data-market]:not([data-market="${market}"]):not([data-market="GLOBAL"]){display:none!important}`;
+
+        const name = marketName(market);
+        document.querySelectorAll('[data-country-label]').forEach((label) => {
+          label.textContent = automatic && market !== 'ALL' ? `${name} (Auto)` : name;
+        });
+        selects.forEach((select) => (select.value = automatic ? 'AUTO' : market));
+        renderCities(market);
+        updateBell();
+        window.dispatchEvent(new CustomEvent('dealssite:market-updated', { detail: { market } }));
       }
 
+      const detect = (window as any).__detectMarket as (() => string) | undefined;
       const saved = localStorage.getItem('dealssite_market');
-      if (saved && saved !== 'AUTO') {
-        if (countrySwitcher) countrySwitcher.value = saved;
-        applyMarket(saved, false);
-      } else {
-        if (countrySwitcher) countrySwitcher.value = 'AUTO';
-        applyMarket(detectVisitorCountry(), true);
-      }
+      const manual = saved && saved !== 'AUTO' && /^([A-Z]{2}|ALL)$/.test(saved);
+      applyMarket(manual ? saved! : detect ? detect() : 'ALL', !manual);
 
-      countrySwitcher?.addEventListener('change', () => {
-        const value = countrySwitcher.value;
-        if (value === 'AUTO') {
-          localStorage.removeItem('dealssite_market');
-          applyMarket(detectVisitorCountry(), true);
-        } else {
-          localStorage.setItem('dealssite_market', value);
-          applyMarket(value, false);
+      selects.forEach((select) =>
+        select.addEventListener('change', () => {
+          if (select.value === 'AUTO') {
+            localStorage.removeItem('dealssite_market');
+            applyMarket(detect ? detect() : 'ALL', true);
+          } else {
+            localStorage.setItem('dealssite_market', select.value);
+            applyMarket(select.value, false);
+          }
+        })
+      );
+
+      // Opening the bell marks everything as read
+      document.querySelector('[data-bell]')?.addEventListener('toggle', (event) => {
+        if ((event.target as HTMLDetailsElement).open) {
+          localStorage.setItem('dealssite_notif_seen', String(Date.now()));
+          document.querySelectorAll('[data-bell-badge]').forEach((badge) => badge.classList.add('hidden'));
         }
       });
 
-      // Close dropdown <details> menus cleanly when clicking outside
+      // Close dropdowns on outside click or Escape
       document.addEventListener('click', (event) => {
         document.querySelectorAll<HTMLDetailsElement>('details[data-dropdown][open]').forEach((dropdown) => {
-          if (!dropdown.contains(event.target as Node)) {
-            dropdown.removeAttribute('open');
-          }
+          if (!dropdown.contains(event.target as Node)) dropdown.removeAttribute('open');
         });
+      });
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+          document.querySelectorAll('details[data-dropdown][open]').forEach((dropdown) => dropdown.removeAttribute('open'));
+          delete root.dataset.sidebarOpen;
+        }
       });
     </script>
   </body>
