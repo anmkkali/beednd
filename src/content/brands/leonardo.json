@@ -8,5 +8,11 @@
   "categories": [
     "ai-tools"
   ],
-  "short_bio": "AI image generation platform."
+  "short_bio": "AI image generation platform.",
+  "about": "Leonardo.Ai is an AI image generator with many style models, popular for game art, characters, concept art and product visuals.",
+  "known_for": [
+    "Concept and game art",
+    "Character design",
+    "Product visuals"
+  ]
 }

@@ -5,8 +5,18 @@
   "short_description": "Massive seasonal clearance sale on unstitched, ready-to-wear pret, and fabrics across all Pakistan retail outlets.",
   "brand_id": "khaadi",
   "country": "PK",
-  "cities": ["Karachi", "Lahore", "Islamabad", "Rawalpindi"],
-  "areas": ["Dolmen Mall Clifton", "Packages Mall", "Centaurus Mall", "LuckyOne Mall"],
+  "cities": [
+    "Karachi",
+    "Lahore",
+    "Islamabad",
+    "Rawalpindi"
+  ],
+  "areas": [
+    "Dolmen Mall Clifton",
+    "Packages Mall",
+    "Centaurus Mall",
+    "LuckyOne Mall"
+  ],
   "branch_info": [
     {
       "branch_name": "Khaadi Packages Mall",
@@ -28,7 +38,11 @@
   "deal_type": "store-sale",
   "bank_details": {
     "bank_id": "hbl",
-    "eligible_cards": ["Platinum Debit", "Platinum Credit", "World Elite"],
+    "eligible_cards": [
+      "Platinum Debit",
+      "Platinum Credit",
+      "World Elite"
+    ],
     "cashback_percent": 15,
     "max_discount_cap": 3000
   },
@@ -53,8 +67,21 @@
     "src": "https://www.google.com/s2/favicons?domain=khaadi.com&sz=128",
     "alt": "Khaadi Summer Clearance Sale"
   },
-  "tags": ["women", "men", "unstitched", "stitched", "pret", "accessories", "clothing", "fashion"],
+  "tags": [
+    "women",
+    "men",
+    "unstitched",
+    "stitched",
+    "pret",
+    "accessories",
+    "clothing",
+    "fashion"
+  ],
   "offer_kind": "discount",
   "is_trending": true,
-  "limited_time": true
+  "limited_time": true,
+  "channels": [
+    "in-store",
+    "online"
+  ]
 }

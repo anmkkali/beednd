@@ -8,5 +8,11 @@
   "categories": [
     "ai-tools"
   ],
-  "short_bio": "AI writing assistant."
+  "short_bio": "AI writing assistant.",
+  "about": "Grammarly checks spelling, grammar and tone as you write in email, documents and the browser, and its AI can rewrite or shorten text.",
+  "known_for": [
+    "Proofreading",
+    "Professional emails",
+    "Improving tone"
+  ]
 }

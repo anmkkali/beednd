@@ -8,5 +8,11 @@
   "categories": [
     "ai-tools"
   ],
-  "short_bio": "AI meeting notes and transcription."
+  "short_bio": "AI meeting notes and transcription.",
+  "about": "Otter records meetings and lectures, transcribes them live and produces summaries you can search later.",
+  "known_for": [
+    "Meeting transcripts",
+    "Lectures and interviews",
+    "Summaries"
+  ]
 }

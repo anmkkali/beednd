@@ -8,5 +8,11 @@
   "categories": [
     "ai-tools"
   ],
-  "short_bio": "AI video and image generation tools."
+  "short_bio": "AI video and image generation tools.",
+  "about": "Runway is a creative suite for AI video and images. It generates clips from text or images and offers editing tools such as removing backgrounds and extending shots.",
+  "known_for": [
+    "Video generation",
+    "Video editing effects",
+    "Creative projects"
+  ]
 }

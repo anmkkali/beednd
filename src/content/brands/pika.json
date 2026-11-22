@@ -8,5 +8,11 @@
   "categories": [
     "ai-tools"
   ],
-  "short_bio": "AI video generator."
+  "short_bio": "AI video generator.",
+  "about": "Pika creates short AI videos from text or images and has effects for adding or changing objects in a clip.",
+  "known_for": [
+    "Short social videos",
+    "Video effects",
+    "Animating images"
+  ]
 }

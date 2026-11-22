@@ -5,8 +5,16 @@
   "logo_url": "https://www.google.com/s2/favicons?domain=bluehost.com&sz=128",
   "website_url": "https://www.bluehost.com",
   "country": "GLOBAL",
-  "categories": ["ai-tools"],
+  "categories": [
+    "ai-tools"
+  ],
   "short_bio": "Leading cloud hosting, domain provider, and AI website building suite with 99.9% uptime and 24/7 technical support.",
   "return_policy_days": 30,
-  "free_shipping_min_order": 0
+  "free_shipping_min_order": 0,
+  "about": "Bluehost is a web hosting company that also sells domain names and a website builder. People use it to put a blog, portfolio or small business site online without managing servers.",
+  "known_for": [
+    "Hosting a website or blog",
+    "Registering a domain",
+    "Building a simple site"
+  ]
 }

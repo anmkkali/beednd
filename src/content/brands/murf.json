@@ -8,5 +8,11 @@
   "categories": [
     "ai-tools"
   ],
-  "short_bio": "AI voiceover generator."
+  "short_bio": "AI voiceover generator.",
+  "about": "Murf produces natural-sounding AI voiceovers from text. You pick a voice, adjust pace and tone, and download the audio for videos, ads or training.",
+  "known_for": [
+    "Voiceovers for videos",
+    "E-learning narration",
+    "Ads"
+  ]
 }

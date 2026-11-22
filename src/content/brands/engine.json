@@ -8,5 +8,10 @@
   "categories": [
     "clothing-fashion"
   ],
-  "short_bio": "Pakistani clothing brand."
+  "short_bio": "Pakistani clothing brand.",
+  "about": "Engine is a Pakistani clothing brand with stores across the country and an online shop, selling everyday western and fusion wear.",
+  "known_for": [
+    "Everyday clothing",
+    "Seasonal sales"
+  ]
 }

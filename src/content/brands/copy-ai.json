@@ -8,5 +8,11 @@
   "categories": [
     "ai-tools"
   ],
-  "short_bio": "AI writing and marketing copy tool."
+  "short_bio": "AI writing and marketing copy tool.",
+  "about": "Copy.ai generates marketing text such as product descriptions, emails and social posts, and can run repeatable writing workflows for sales and marketing teams.",
+  "known_for": [
+    "Marketing copy",
+    "Sales emails",
+    "Product descriptions"
+  ]
 }

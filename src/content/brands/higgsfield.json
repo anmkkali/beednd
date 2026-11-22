@@ -5,6 +5,14 @@
   "logo_url": "https://www.google.com/s2/favicons?domain=higgsfield.ai&sz=128",
   "website_url": "https://higgsfield.ai",
   "country": "GLOBAL",
-  "categories": ["ai-tools"],
-  "short_bio": "AI video and image creation tools with cinematic camera controls."
+  "categories": [
+    "ai-tools"
+  ],
+  "short_bio": "AI video and image creation tools with cinematic camera controls.",
+  "about": "Higgsfield is an AI video and image tool known for cinematic camera movements such as zooms, pans and orbits that you can apply to a still image.",
+  "known_for": [
+    "Short cinematic clips",
+    "Social media video",
+    "Animating photos"
+  ]
 }

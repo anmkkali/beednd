@@ -8,5 +8,11 @@
   "categories": [
     "ai-tools"
   ],
-  "short_bio": "Workspace with built-in AI."
+  "short_bio": "Workspace with built-in AI.",
+  "about": "Notion is a workspace for notes, documents, tasks and databases in one place. Its AI helps write, summarise and answer questions about your pages.",
+  "known_for": [
+    "Notes and wikis",
+    "Project tracking",
+    "Team documentation"
+  ]
 }

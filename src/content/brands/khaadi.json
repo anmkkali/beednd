@@ -5,8 +5,16 @@
   "logo_url": "https://www.google.com/s2/favicons?domain=khaadi.com&sz=128",
   "website_url": "https://pk.khaadi.com",
   "country": "PK",
-  "categories": ["clothing-fashion"],
+  "categories": [
+    "clothing-fashion"
+  ],
   "short_bio": "Premier Pakistani clothing and lifestyle brand famous for handwoven fabrics, contemporary ready-to-wear, and home accessories.",
   "return_policy_days": 14,
-  "free_shipping_min_order": 2500
+  "free_shipping_min_order": 2500,
+  "about": "Khaadi is a Pakistani clothing brand known for handwoven fabrics, ready-to-wear and unstitched collections, with stores across the country and an online shop.",
+  "known_for": [
+    "Unstitched and ready-to-wear",
+    "Seasonal collections",
+    "Home accessories"
+  ]
 }

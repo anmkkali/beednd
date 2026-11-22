@@ -8,5 +8,11 @@
   "categories": [
     "ai-tools"
   ],
-  "short_bio": "AI image generator known for text in images."
+  "short_bio": "AI image generator known for text in images.",
+  "about": "Ideogram is an AI image generator that is particularly good at putting readable text inside images, such as posters, logos and cards.",
+  "known_for": [
+    "Posters and typography",
+    "Logos",
+    "Social media images"
+  ]
 }

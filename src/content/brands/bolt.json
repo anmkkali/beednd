@@ -8,5 +8,11 @@
   "categories": [
     "ai-tools"
   ],
-  "short_bio": "AI web app builder."
+  "short_bio": "AI web app builder.",
+  "about": "Bolt turns a text prompt into a working web app that runs in the browser. You describe what you want, it writes the code, and you can keep editing it by chatting.",
+  "known_for": [
+    "Prototyping app ideas",
+    "Building simple web apps without coding",
+    "Quick landing pages"
+  ]
 }

@@ -8,5 +8,11 @@
   "categories": [
     "ai-tools"
   ],
-  "short_bio": "AI avatar video platform."
+  "short_bio": "AI avatar video platform.",
+  "about": "Synthesia creates videos with AI presenters from a text script, in many languages. Companies use it for training, onboarding and product explainers.",
+  "known_for": [
+    "Training videos",
+    "Company explainers",
+    "Multilingual videos"
+  ]
 }

@@ -8,5 +8,11 @@
   "categories": [
     "ai-tools"
   ],
-  "short_bio": "Browser-based coding platform with AI agent."
+  "short_bio": "Browser-based coding platform with AI agent.",
+  "about": "Replit is a coding platform in the browser. You can write, run and host projects without installing anything, and its AI agent can build an app from a description.",
+  "known_for": [
+    "Learning to code",
+    "Building and hosting small apps",
+    "Prototypes"
+  ]
 }

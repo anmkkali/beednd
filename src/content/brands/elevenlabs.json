@@ -5,6 +5,14 @@
   "logo_url": "https://www.google.com/s2/favicons?domain=elevenlabs.io&sz=128",
   "website_url": "https://elevenlabs.io",
   "country": "GLOBAL",
-  "categories": ["ai-tools"],
-  "short_bio": "AI voice generation, text to speech and dubbing."
+  "categories": [
+    "ai-tools"
+  ],
+  "short_bio": "AI voice generation, text to speech and dubbing.",
+  "about": "ElevenLabs creates realistic AI voices. You type text and get speech in many languages and voices, and it can also dub videos and clone a voice you own.",
+  "known_for": [
+    "Voiceovers",
+    "Audiobooks",
+    "Dubbing videos"
+  ]
 }

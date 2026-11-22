@@ -8,5 +8,11 @@
   "categories": [
     "ai-tools"
   ],
-  "short_bio": "AI interface generator from Vercel."
+  "short_bio": "AI interface generator from Vercel.",
+  "about": "v0 by Vercel generates user interfaces and front-end code from a text prompt, mainly for web apps built with React.",
+  "known_for": [
+    "Designing app screens",
+    "Front-end code",
+    "Prototyping"
+  ]
 }

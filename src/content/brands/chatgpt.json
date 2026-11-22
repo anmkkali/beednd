@@ -8,5 +8,11 @@
   "categories": [
     "ai-tools"
   ],
-  "short_bio": "AI assistant from OpenAI."
+  "short_bio": "AI assistant from OpenAI.",
+  "about": "ChatGPT is an AI assistant from OpenAI. You type questions or tasks and it answers, writes, summarises, explains and helps with code or images.",
+  "known_for": [
+    "Writing and editing",
+    "Learning and research",
+    "Coding help"
+  ]
 }

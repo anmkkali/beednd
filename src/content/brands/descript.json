@@ -8,5 +8,11 @@
   "categories": [
     "ai-tools"
   ],
-  "short_bio": "Audio and video editor with AI tools."
+  "short_bio": "Audio and video editor with AI tools.",
+  "about": "Descript edits audio and video by editing a transcript. Delete a word in the text and it disappears from the recording. It also removes filler words and can clone a voice.",
+  "known_for": [
+    "Podcast editing",
+    "Video editing for creators",
+    "Transcripts and captions"
+  ]
 }

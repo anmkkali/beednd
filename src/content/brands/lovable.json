@@ -8,5 +8,11 @@
   "categories": [
     "ai-tools"
   ],
-  "short_bio": "AI app and website builder."
+  "short_bio": "AI app and website builder.",
+  "about": "Lovable builds a working website or app from a chat description, including the design and the code, so non-programmers can launch an idea.",
+  "known_for": [
+    "Launching an idea quickly",
+    "Simple apps and sites",
+    "Prototypes"
+  ]
 }

@@ -8,5 +8,11 @@
   "categories": [
     "ai-tools"
   ],
-  "short_bio": "AI assistant from Google."
+  "short_bio": "AI assistant from Google.",
+  "about": "Gemini is Google's AI assistant. It answers questions, writes, summarises and works with Google apps such as Gmail, Docs and Search.",
+  "known_for": [
+    "Everyday questions",
+    "Writing help",
+    "Working with Google apps"
+  ]
 }

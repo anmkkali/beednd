@@ -61,6 +61,7 @@ const dealsCollection = defineCollection({
     channels: z.array(z.enum(['online', 'in-store'])).default([]),
     offer_kind: z.enum(['discount', 'trial', 'free', 'promo', 'voucher', 'credits']).optional(),
     badge_text: z.string().max(80).optional(),
+    applies_to: z.string().max(80).optional(),
     image: z.object({
       src: z.string(),
       alt: z.string()
@@ -80,6 +81,8 @@ const brandsCollection = defineCollection({
     country: z.string().regex(/^([A-Z]{2}|GLOBAL)$/).default('GLOBAL'),
     categories: z.array(z.string()),
     short_bio: z.string(),
+    about: z.string().optional(),
+    known_for: z.array(z.string()).default([]),
     return_policy_days: z.number().optional(),
     free_shipping_min_order: z.number().optional()
   })

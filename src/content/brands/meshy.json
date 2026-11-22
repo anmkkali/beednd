@@ -5,6 +5,14 @@
   "logo_url": "https://www.google.com/s2/favicons?domain=meshy.ai&sz=128",
   "website_url": "https://www.meshy.ai",
   "country": "GLOBAL",
-  "categories": ["ai-tools"],
-  "short_bio": "AI 3D model generation from text prompts and images."
+  "categories": [
+    "ai-tools"
+  ],
+  "short_bio": "AI 3D model generation from text prompts and images.",
+  "about": "Meshy generates 3D models from a text prompt or a picture, ready to use in games, 3D printing and animation.",
+  "known_for": [
+    "Game assets",
+    "3D printing models",
+    "Quick 3D concepts"
+  ]
 }

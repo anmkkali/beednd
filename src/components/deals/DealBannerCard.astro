@@ -16,6 +16,7 @@ interface Props {
     deal_type: string;
     discount_value: string;
     badge_text?: string;
+    applies_to?: string;
     promo_code?: string;
     affiliate_url: string;
     cities?: string[];
@@ -46,6 +47,16 @@ const bank = allBanks.find((b) => b.data.id === deal.bank_details?.bank_id);
 const kind = dealKind(deal);
 const tagLabel =
   { discount: 'Discounts', trial: 'Trials', free: 'Free', promo: 'Promo Codes', voucher: 'Vouchers', credits: 'Credits' }[kind] || 'Deals';
+// Where the offer works. Not shown for AI tools, which are always online.
+const channelSet = new Set(
+  deal.channels && deal.channels.length
+    ? deal.channels
+    : deal.deal_type === 'online' ? ['online'] : deal.deal_type === 'in-store' ? ['in-store'] : []
+);
+const channelLabel =
+  deal.category === 'ai-tools' || channelSet.size === 0
+    ? ''
+    : channelSet.size === 2 ? 'In-store + Online' : channelSet.has('in-store') ? 'In-store' : 'Online';
 const expiry = expiryLabel(deal.end_date, !!deal.limited_time);
 ---
 
@@ -87,6 +98,9 @@ const expiry = expiryLabel(deal.end_date, !!deal.limited_time);
           data-since={deal.last_verified_at}
           class="editorial-pill hidden px-2 py-0.5 text-[11.5px] font-semibold text-ink"
         >New</span>
+        {channelLabel && (
+          <span class="border editorial-rule px-2 py-0.5 text-[11.5px] font-semibold text-ink">{channelLabel}</span>
+        )}
         <span class="inline-flex items-center gap-1">
           <Icon name="calendar" class="h-3.5 w-3.5" />
           {shortDate(deal.last_verified_at)}
@@ -110,9 +124,9 @@ const expiry = expiryLabel(deal.end_date, !!deal.limited_time);
         {(deal.tags || []).includes('all-items') && (
           <span class="border editorial-rule px-2 py-0.5 text-[11.5px] font-semibold text-ink">Entire brand</span>
         )}
-        {(deal.channels || []).map((channel) => (
-          <span class="border editorial-rule px-2 py-0.5 text-[11.5px] font-semibold text-ink">{channel === 'in-store' ? 'In-store' : 'Online'}</span>
-        ))}
+        {deal.applies_to && !(deal.tags || []).includes('all-items') && (
+          <span class="border editorial-rule px-2 py-0.5 text-[11.5px] font-semibold text-ink">On: {deal.applies_to}</span>
+        )}
       </div>
 
       <!-- Title with summary pill on the right -->

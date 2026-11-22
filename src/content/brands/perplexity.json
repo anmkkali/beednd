@@ -8,5 +8,11 @@
   "categories": [
     "ai-tools"
   ],
-  "short_bio": "AI answer engine with cited sources."
+  "short_bio": "AI answer engine with cited sources.",
+  "about": "Perplexity is an AI search tool. It answers a question in plain language and lists the sources it used, so you can check them.",
+  "known_for": [
+    "Research with sources",
+    "Quick factual answers",
+    "Comparing products"
+  ]
 }

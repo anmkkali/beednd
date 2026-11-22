@@ -5,8 +5,17 @@
   "logo_url": "https://www.google.com/s2/favicons?domain=sapphireonline.pk&sz=128",
   "website_url": "https://pk.sapphireonline.pk",
   "country": "PK",
-  "categories": ["clothing-fashion", "beauty-wellness"],
+  "categories": [
+    "clothing-fashion",
+    "beauty-wellness"
+  ],
   "short_bio": "Renowned high-street retail apparel and cosmetics brand known for fine fabrics, pret collections, and modern accessories.",
   "return_policy_days": 14,
-  "free_shipping_min_order": 2000
+  "free_shipping_min_order": 2000,
+  "about": "Sapphire is a Pakistani retail brand selling clothing, fabrics and cosmetics through stores and online.",
+  "known_for": [
+    "Pret and unstitched",
+    "Seasonal collections",
+    "Cosmetics"
+  ]
 }

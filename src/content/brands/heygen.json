@@ -8,5 +8,11 @@
   "categories": [
     "ai-tools"
   ],
-  "short_bio": "AI avatar video generator."
+  "short_bio": "AI avatar video generator.",
+  "about": "HeyGen makes videos with a realistic AI presenter. You type a script, choose an avatar and voice, and get a talking-head video, with translation into other languages.",
+  "known_for": [
+    "Training and explainer videos",
+    "Marketing videos without filming",
+    "Translating videos"
+  ]
 }

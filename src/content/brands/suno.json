@@ -8,5 +8,11 @@
   "categories": [
     "ai-tools"
   ],
-  "short_bio": "AI music generator."
+  "short_bio": "AI music generator.",
+  "about": "Suno generates complete songs, with vocals and music, from a text description or your own lyrics.",
+  "known_for": [
+    "Songs from lyrics",
+    "Background music",
+    "Music ideas"
+  ]
 }

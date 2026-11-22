@@ -8,5 +8,11 @@
   "categories": [
     "ai-tools"
   ],
-  "short_bio": "AI assistant from Anthropic."
+  "short_bio": "AI assistant from Anthropic.",
+  "about": "Claude is an AI assistant from Anthropic. It is used for long writing, reading large documents, analysis and programming help.",
+  "known_for": [
+    "Summarising long documents",
+    "Writing and editing",
+    "Coding help"
+  ]
 }
