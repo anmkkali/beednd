@@ -29,7 +29,7 @@ const filterHref = (categoryId: string, groupId: string, filter: { sub?: string;
 
 <aside id="app-sidebar" class="flex flex-col border-r editorial-rule bg-base-950" aria-label="Site navigation">
   <!-- Logo row: logo, theme switch, search, collapse (like the ChatGPT sidebar) -->
-  <div class="sb-top flex h-16 shrink-0 items-center justify-between gap-1 px-3 max-lg:h-12 max-lg:justify-end">
+  <div class="sb-top flex h-16 shrink-0 items-center justify-between gap-1 px-3 max-lg:!hidden">
     <a href="/" class="flex min-w-0 items-center gap-2.5 max-lg:!hidden" aria-label="DealsSite home">
       <span class="btn-primary flex h-8 w-8 shrink-0 items-center justify-center">
         <Icon name="tag" class="h-4 w-4" />
@@ -48,7 +48,7 @@ const filterHref = (categoryId: string, groupId: string, filter: { sub?: string;
   </div>
 
   <div class="min-h-0 flex-1 overflow-y-auto px-2 pb-8">
-    <nav class="space-y-0.5 pt-1" aria-label="Offer types">
+    <nav class="space-y-0.5 pt-1 max-lg:pt-3" aria-label="Offer types">
       {quickLinks.map((link) => (
         <a href={link.href} data-sb-link class="sb-link" title={link.label}>
           <Icon name={link.icon} class="h-[18px] w-[18px] shrink-0" />
@@ -103,6 +103,12 @@ const filterHref = (categoryId: string, groupId: string, filter: { sub?: string;
       <button type="button" data-notify-open class="sb-link" title="Notify me">
         <Icon name="bell" class="h-[18px] w-[18px] shrink-0" />
         <span class="sb-label truncate">Notify me</span>
+      </button>
+      <button type="button" data-theme-toggle class="sb-link mt-0.5 lg:hidden" title="Switch light or dark mode">
+        <span class="theme-icon-moon inline-flex"><Icon name="moon" class="h-[18px] w-[18px] shrink-0" /></span>
+        <span class="theme-icon-sun"><Icon name="sun" class="h-[18px] w-[18px] shrink-0" /></span>
+        <span class="sb-label theme-text-dark truncate">Dark mode</span>
+        <span class="sb-label theme-text-light truncate">Light mode</span>
       </button>
       <button type="button" data-submit-open class="sb-link mt-0.5" title="Submit deal">
         <Icon name="plus" class="h-[18px] w-[18px] shrink-0" />

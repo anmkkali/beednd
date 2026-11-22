@@ -10,20 +10,16 @@ const latest = (await getCollection('deals', ({ data }) => data.status === 'acti
 ---
 
 <header class="sticky top-0 z-30 w-full border-b editorial-rule bg-base-950/95 backdrop-blur-md">
-  <div class="flex h-14 items-center gap-1 px-2 sm:h-16 sm:gap-3 sm:px-6 lg:px-10">
+  <div class="grid h-14 grid-cols-[1fr_auto_1fr] items-center px-2 sm:flex sm:h-16 sm:gap-3 sm:px-6 lg:px-10">
     <!-- Mobile only: menu, logo and theme switch. On desktop the logo lives in the sidebar. -->
-    <button type="button" data-sidebar-open-btn class="icon-btn lg:hidden" aria-label="Open menu">
+    <button type="button" data-sidebar-open-btn class="icon-btn justify-self-start lg:hidden" aria-label="Open menu">
       <Icon name="menu" class="h-5 w-5" />
     </button>
-    <a href="/" class="flex-1 text-center font-serif text-[26px] font-semibold leading-none tracking-tight text-ink sm:flex-none sm:text-left lg:hidden" aria-label="DealsSite home">
+    <a href="/" class="text-center font-serif text-[26px] font-semibold leading-none tracking-tight text-ink sm:flex-none sm:text-left lg:hidden" aria-label="DealsSite home">
       DealsSite
     </a>
 
-    <button type="button" data-theme-toggle class="icon-btn lg:hidden" aria-label="Switch between light and dark mode">
-      <span class="theme-icon-moon inline-flex"><Icon name="moon" class="h-[18px] w-[18px]" /></span>
-      <span class="theme-icon-sun"><Icon name="sun" class="h-[18px] w-[18px]" /></span>
-    </button>
-
+    <div class="flex items-center justify-end sm:contents">
     <button
       type="button"
       id="header-search-btn"
@@ -66,7 +62,7 @@ const latest = (await getCollection('deals', ({ data }) => data.status === 'acti
     </nav>
 
     <!-- Notifications -->
-    <details class="relative ml-auto shrink-0 lg:ml-0" data-dropdown data-bell>
+    <details class="relative shrink-0 sm:ml-auto lg:ml-0" data-dropdown data-bell>
       <summary class="icon-btn relative cursor-pointer list-none" aria-label="New discounts" title="New discounts">
         <Icon name="bell" class="h-5 w-5" />
         <span data-bell-badge class="btn-primary absolute right-0.5 top-0.5 hidden min-w-[1.1rem] px-1 text-center text-[11px] font-bold leading-[1.1rem]">0</span>
@@ -91,6 +87,7 @@ const latest = (await getCollection('deals', ({ data }) => data.status === 'acti
         </button>
       </div>
     </details>
+    </div>
   </div>
 
   <!-- Mobile and tablet quick bar -->
