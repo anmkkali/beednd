@@ -1,0 +1,30 @@
+---
+// "What this brand is" section. Shown under every deal and brand page, above the bottom ad.
+interface Props {
+  brand: { name: string; categories: string[]; short_bio: string; about?: string; known_for?: string[] };
+  class?: string;
+}
+const { brand, class: className = '' } = Astro.props;
+const names: Record<string, string> = {
+  'clothing-fashion': 'Clothing & Fashion', 'tech-electronics': 'Tech & Electronics', 'ai-tools': 'AI Tools',
+  'food-dining': 'Food & Dining', 'beauty-wellness': 'Beauty & Wellness', 'travel-lifestyle': 'Travel & Hotels',
+  'groceries-essentials': 'Groceries',
+};
+const isAI = brand.categories.includes('ai-tools');
+const categoryLine = brand.categories.map((c) => names[c] || c).join(' / ');
+const known = brand.known_for || [];
+---
+
+<section class:list={['border editorial-rule p-5 sm:p-7', className]} aria-labelledby="about-brand">
+  <p class="text-[12px] font-semibold uppercase tracking-[0.14em] text-ink-muted">{categoryLine}</p>
+  <h2 id="about-brand" class="mt-1 text-[26px] leading-tight text-ink sm:text-[32px]">
+    {isAI ? `What ${brand.name} is used for` : `About ${brand.name}`}
+  </h2>
+  <p class="mt-3 max-w-3xl text-[15px] leading-relaxed text-ink-muted">{brand.about || brand.short_bio}</p>
+  {known.length > 0 && (
+    <div class="mt-4 flex flex-wrap items-center gap-2">
+      <span class="text-[13px] font-semibold text-ink">{isAI ? 'Good for:' : 'Known for:'}</span>
+      {known.map((item) => <span class="editorial-pill px-3 py-1 text-[12.5px] text-ink">{item}</span>)}
+    </div>
+  )}
+</section>

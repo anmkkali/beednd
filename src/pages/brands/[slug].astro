@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import DealBannerCard from '../../components/deals/DealBannerCard.astro';
 import BrandMark from '../../components/common/BrandMark.astro';
 import Icon from '../../components/common/Icon.astro';
+import BrandAbout from '../../components/common/BrandAbout.astro';
 import Pagination from '../../components/common/Pagination.astro';
 import { getCollection } from 'astro:content';
 import { countryByCode } from '../../data/countries';
@@ -18,13 +19,6 @@ export async function getStaticPaths() {
 }
 
 const { brand, deals } = Astro.props;
-const categoryNames: Record<string, string> = {
-  'clothing-fashion': 'Clothing & Fashion', 'tech-electronics': 'Tech & Electronics', 'ai-tools': 'AI Tools',
-  'food-dining': 'Food & Dining', 'beauty-wellness': 'Beauty & Wellness', 'travel-lifestyle': 'Travel & Hotels',
-  'groceries-essentials': 'Groceries',
-};
-const isAI = brand.categories.includes('ai-tools');
-const categoryLine = brand.categories.map((c) => categoryNames[c] || c).join(' / ');
 const countryName = brand.country === 'GLOBAL' ? 'Available worldwide' : countryByCode.get(brand.country)?.name || brand.country;
 ---
 
@@ -81,17 +75,5 @@ const countryName = brand.country === 'GLOBAL' ? 'Available worldwide' : country
   </div>
   <Pagination target="brand-deals" />
 
-  <section class="mt-10 border editorial-rule p-5 sm:p-7" aria-labelledby="about-brand">
-    <p class="text-[12px] font-semibold uppercase tracking-[0.14em] text-ink-muted">{categoryLine}</p>
-    <h2 id="about-brand" class="mt-1 text-[26px] leading-tight text-ink sm:text-[32px]">
-      {isAI ? `What ${brand.name} is used for` : `About ${brand.name}`}
-    </h2>
-    <p class="mt-3 max-w-3xl text-[15px] leading-relaxed text-ink-muted">{brand.about || brand.short_bio}</p>
-    {brand.known_for.length > 0 && (
-      <div class="mt-4 flex flex-wrap items-center gap-2">
-        <span class="text-[13px] font-semibold text-ink">{isAI ? 'Good for:' : 'Known for:'}</span>
-        {brand.known_for.map((item) => <span class="editorial-pill px-3 py-1 text-[12.5px] text-ink">{item}</span>)}
-      </div>
-    )}
-  </section>
+  <BrandAbout brand={brand} class="mt-10" />
 </BaseLayout>
