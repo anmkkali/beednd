@@ -8,7 +8,7 @@ const { brand, class: className = '' } = Astro.props;
 const names: Record<string, string> = {
   'clothing-fashion': 'Clothing & Fashion', 'tech-electronics': 'Tech & Electronics', 'ai-tools': 'AI Tools',
   'food-dining': 'Food & Dining', 'beauty-wellness': 'Beauty & Wellness', 'travel-lifestyle': 'Travel & Hotels',
-  'groceries-essentials': 'Groceries',
+  'groceries-essentials': 'Groceries', pets: 'Pets',
 };
 const isAI = brand.categories.includes('ai-tools');
 const categoryLine = brand.categories.map((c) => names[c] || c).join(' / ');

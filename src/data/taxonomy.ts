@@ -42,7 +42,7 @@ const baseCategories: Category[] = [
     id: 'clothing-fashion',
     name: 'Clothing & Fashion',
     icon: 'apparel',
-    blurb: 'Menswear, womenswear, kids and pets. Pick a group, then narrow down to trousers, co-ord sets, footwear and more.',
+    blurb: 'Menswear, womenswear and kids. Pick a group, then narrow down to trousers, co-ord sets, footwear and more.',
     groups: [
       group('men', "Men's", "All men's clothing", [
         { label: 'Stitched (shalwar kameez)', sub: 'stitched' },
@@ -77,11 +77,6 @@ const baseCategories: Category[] = [
         { label: 'Winter wear', sub: 'winter' },
         { label: 'Footwear', sub: 'footwear' },
         { label: 'Accessories', sub: 'accessories' },
-      ]),
-      group('pets', 'Pets', 'All pet products', [
-        { label: 'Pet clothing', sub: 'apparel' },
-        { label: 'Pet food', sub: 'food' },
-        { label: 'Pet accessories', sub: 'accessories' },
       ]),
     ],
   },
@@ -183,6 +178,17 @@ const baseCategories: Category[] = [
       group('flights', 'Flights', 'All flights', []),
       group('experiences', 'Tours & Experiences', 'All tours & experiences', []),
       group('car-rental', 'Car Rentals', 'All car rentals', []),
+    ],
+  },
+  {
+    id: 'pets',
+    name: 'Pets',
+    icon: 'paw',
+    blurb: 'Food, clothing and accessories for dogs, cats and other pets.',
+    groups: [
+      group('pet-food', 'Pet food', 'All pet food', []),
+      group('pet-clothing', 'Pet clothing', 'All pet clothing', []),
+      group('pet-accessories', 'Pet accessories', 'All pet accessories', []),
     ],
   },
   {

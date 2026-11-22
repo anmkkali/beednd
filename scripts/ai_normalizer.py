@@ -20,7 +20,7 @@ class NormalizedDeal(BaseModel):
     title: str = Field(description="Clear SEO headline, max 100 characters")
     short_description: str = Field(description="Concise description of the deal")
     brand_id: str = Field(description="Normalized brand id, e.g. 'khaadi', 'bluehost'")
-    category: str = Field(description="clothing-fashion | ai-tools | tech-electronics | food-dining | beauty-wellness | travel-lifestyle | groceries-essentials")
+    category: str = Field(description="clothing-fashion | ai-tools | tech-electronics | food-dining | beauty-wellness | travel-lifestyle | groceries-essentials | pets")
     deal_type: str = Field(description="online | in-store | bank-card | promo-code | store-sale")
     discount_value: str = Field(description="e.g. '50% OFF', '$15 OFF'")
     numeric_discount_percent: Optional[int] = Field(default=None)

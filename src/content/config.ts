@@ -24,7 +24,8 @@ const dealsCollection = defineCollection({
       'food-dining',
       'beauty-wellness',
       'travel-lifestyle',
-      'groceries-essentials'
+      'groceries-essentials',
+      'pets'
     ]),
     deal_type: z.enum([
       'online',

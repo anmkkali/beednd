@@ -73,12 +73,6 @@ const filterHref = (categoryId: string, groupId: string, filter: { sub?: string;
               All {category.name}
             </a>
 
-            {(category.kinds || []).map((kind) => (
-              <a href={`/categories/${category.id}?kind=${kind.kind}`} data-sb-link class="sb-link">
-                {kind.label}
-              </a>
-            ))}
-
             {category.groups.map((group) => (
               <details class="sb-group" data-group={group.id}>
                 <summary class="sb-link cursor-pointer list-none" data-sb-summary>
