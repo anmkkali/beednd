@@ -301,3 +301,10 @@ html[data-theme='dark'] .theme-text-light {
 html[data-theme='dark'] .theme-text-dark {
   display: none;
 }
+
+.brand-track {
+  scrollbar-width: none;
+}
+.brand-track::-webkit-scrollbar {
+  display: none;
+}

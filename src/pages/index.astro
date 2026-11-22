@@ -72,29 +72,38 @@ const structuredData = {
     <div class="mb-5 flex items-end justify-between gap-4 border-b editorial-rule pb-3">
       <div>
         <p class="text-[12px] font-semibold uppercase tracking-[0.16em] text-ink-muted">Brands with offers</p>
-        <h2 id="brands-heading" class="mt-1 text-4xl text-ink">Shop by brand</h2>
+        <h2 id="brands-heading" class="mt-1 text-3xl text-ink sm:text-4xl">Shop by brand</h2>
       </div>
-      <a href="/brands" class="inline-flex items-center gap-1.5 text-[14px] font-semibold text-ink hover:underline">
-        All brands
-        <Icon name="arrow" class="h-4 w-4" />
-      </a>
+      <div class="flex items-center gap-2">
+        <button type="button" data-brand-prev class="icon-btn hidden border editorial-rule sm:inline-flex" aria-label="Previous brands">
+          <Icon name="arrow" class="h-4 w-4 rotate-180" />
+        </button>
+        <button type="button" data-brand-next class="icon-btn hidden border editorial-rule sm:inline-flex" aria-label="Next brands">
+          <Icon name="arrow" class="h-4 w-4" />
+        </button>
+        <a href="/brands" class="inline-flex items-center gap-1.5 whitespace-nowrap text-[14px] sm:ml-1 font-semibold text-ink hover:underline">
+          All brands
+          <Icon name="arrow" class="h-4 w-4" />
+        </a>
+      </div>
     </div>
-    <div class="grid grid-cols-2 border-l border-t editorial-rule sm:grid-cols-3 md:grid-cols-4">
+    <div id="brand-track" class="brand-track flex overflow-x-auto border-l border-t editorial-rule">
       {homeBrands.map((brand) => (
         <a
           href={`/brands/${brand.data.slug}`}
           data-market={brand.data.country}
-          class="group flex flex-col justify-between border-b border-r editorial-rule p-5 transition-colors hover:bg-base-900/70"
+          data-brand-card
+          class="group flex w-[10.5rem] shrink-0 flex-col justify-between border-b border-r editorial-rule p-4 transition-colors hover:bg-base-900/70 sm:w-[15rem] sm:p-5"
         >
           <div class="flex items-start justify-between gap-2">
             <BrandMark name={brand.data.name} logoUrl={brand.data.logo_url} size="md" />
             {brandHighlight.get(brand.data.id) && (
-              <span class="editorial-pill px-2.5 py-0.5 text-[11.5px] font-semibold text-ink">{brandHighlight.get(brand.data.id)}</span>
+              <span class="editorial-pill whitespace-nowrap px-2 py-0.5 text-[11px] font-semibold text-ink">{brandHighlight.get(brand.data.id)}</span>
             )}
           </div>
-          <div class="mt-5">
-            <strong class="block text-[16px] font-semibold text-ink group-hover:underline">{brand.data.name}</strong>
-            <span class="mt-0.5 block text-[13px] text-ink-muted">{categoryById.get(brand.data.categories[0])?.name}</span>
+          <div class="mt-4 sm:mt-5">
+            <strong class="block truncate text-[15px] font-semibold text-ink group-hover:underline sm:text-[16px]">{brand.data.name}</strong>
+            <span class="mt-0.5 block truncate text-[12.5px] text-ink-muted sm:text-[13px]">{categoryById.get(brand.data.categories[0])?.name}</span>
           </div>
         </a>
       ))}
@@ -202,3 +211,59 @@ const structuredData = {
     refresh();
   </script>
 </BaseLayout>
+
+<script>
+  // Brand strip: drifts slowly, pauses on hover, focus or touch, and the arrows scroll it by hand.
+  const track = document.getElementById('brand-track');
+  if (track) {
+    [...track.children].forEach((card) => {
+      const clone = card.cloneNode(true) as HTMLElement;
+      clone.setAttribute('aria-hidden', 'true');
+      clone.tabIndex = -1;
+      track.appendChild(clone);
+    });
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let paused = false;
+    let resumeTimer = 0;
+    let pos = track.scrollLeft;
+    let last = 0;
+    const half = () => track.scrollWidth / 2;
+    const wrap = () => {
+      const h = half();
+      if (h <= track.clientWidth) return;
+      if (track.scrollLeft >= h) track.scrollLeft -= h;
+      else if (track.scrollLeft <= 0) track.scrollLeft += h;
+    };
+    const hold = (ms = 0) => {
+      paused = true;
+      clearTimeout(resumeTimer);
+      if (ms) resumeTimer = window.setTimeout(() => { paused = false; pos = track.scrollLeft; }, ms);
+    };
+    const release = () => { clearTimeout(resumeTimer); paused = false; pos = track.scrollLeft; };
+
+    track.addEventListener('mouseenter', () => hold());
+    track.addEventListener('mouseleave', release);
+    track.addEventListener('focusin', () => hold());
+    track.addEventListener('focusout', release);
+    track.addEventListener('touchstart', () => hold(4000), { passive: true });
+    track.addEventListener('touchend', () => hold(3000), { passive: true });
+    track.addEventListener('wheel', () => hold(3000), { passive: true });
+    track.addEventListener('scroll', wrap, { passive: true });
+
+    const step = () => (track.querySelector<HTMLElement>('[data-brand-card]')?.offsetWidth || 240) * 2;
+    document.querySelector('[data-brand-prev]')?.addEventListener('click', () => { hold(3500); wrap(); track.scrollBy({ left: -step(), behavior: 'smooth' }); });
+    document.querySelector('[data-brand-next]')?.addEventListener('click', () => { hold(3500); track.scrollBy({ left: step(), behavior: 'smooth' }); });
+
+    const tick = (t: number) => {
+      const dt = last ? Math.min(t - last, 64) : 16;
+      last = t;
+      if (!paused && !reduce && half() > track.clientWidth) {
+        pos += dt * 0.035;
+        track.scrollLeft = pos;
+        pos = track.scrollLeft;
+      }
+      requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
+</script>

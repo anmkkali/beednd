@@ -17,6 +17,7 @@ interface Props {
     discount_value: string;
     badge_text?: string;
     applies_to?: string;
+    is_sponsored?: boolean;
     promo_code?: string;
     affiliate_url: string;
     cities?: string[];
@@ -92,6 +93,7 @@ const expiry = expiryLabel(deal.end_date, !!deal.limited_time);
       <!-- Meta line: brand, tag, status icons -->
       <div class="mb-1.5 flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[12px] text-ink-muted sm:mb-2 sm:gap-x-3 sm:gap-y-1.5 sm:text-[13px]">
         <a href={`/brands/${deal.brand_id}`} class="font-bold text-ink hover:underline">{brandName}</a>
+        {deal.is_sponsored && <span class="border border-ink px-2 py-0.5 text-[10.5px] font-semibold uppercase tracking-[0.12em] text-ink">Sponsored</span>}
         <span class="font-semibold">#{tagLabel}</span>
         <span
           data-new-badge

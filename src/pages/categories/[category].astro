@@ -16,7 +16,10 @@ export async function getStaticPaths() {
     params: { category: category.id },
     props: {
       category,
-      deals: allDeals.filter((d) => d.data.category === category.id),
+      deals: allDeals
+        .filter((d) => d.data.category === category.id)
+        // Sponsored and affiliate placements always lead the list.
+        .sort((a, b) => Number(b.data.is_sponsored) - Number(a.data.is_sponsored)),
       categoryBrands: allBrands.filter((b) => b.data.categories.includes(category.id)),
       brandMap,
     },
