@@ -135,12 +135,12 @@ const fontsUrl =
     {structuredData && <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />}
   </head>
   <body class="bg-base-950 text-ink">
-    <div class="flex min-h-screen">
+    <SponsorBar />
+    <Header />
+    <div class="flex min-h-[calc(100vh-65px)]">
       <LeftSidebar activeTopic={activeTopic} activeCategory={activeCategory} />
 
       <div class="flex min-w-0 flex-1 flex-col">
-        <SponsorBar />
-        <Header />
         <main class="mx-auto w-full max-w-6xl flex-1 px-4 pb-20 pt-6 sm:px-6 lg:px-10">
           {showTopAd && <AdSlot slotType="leaderboard" />}
           <slot />
@@ -264,26 +264,14 @@ const fontsUrl =
           const details = event.target as HTMLDetailsElement;
           if (!details.open) return;
           const panel = details.querySelector<HTMLElement>('[data-mobile-panel]');
-          const header = document.querySelector('header');
-          if (panel && header && getComputedStyle(panel).position === 'fixed') {
-            panel.style.top = `${Math.round(header.getBoundingClientRect().bottom)}px`;
+          const header = details.closest('header');
+          if (panel && getComputedStyle(panel).position === 'fixed') {
+            // Bell sits in the header; the Cities button sits in the quick row, so anchor to its own bottom
+            const anchor = header ? header.getBoundingClientRect().bottom : details.getBoundingClientRect().bottom + 4;
+            panel.style.top = `${Math.round(anchor)}px`;
           }
         },
         true
-      );
-
-      // Mobile: tuck away the quick link row while scrolling down, bring it back when scrolling up
-      const siteHeader = document.querySelector('header');
-      let lastScrollY = window.scrollY;
-      window.addEventListener(
-        'scroll',
-        () => {
-          const y = window.scrollY;
-          if (y === lastScrollY || !siteHeader || !window.matchMedia('(max-width: 1023px)').matches) return;
-          siteHeader.toggleAttribute('data-compact', y > lastScrollY && y > 120);
-          lastScrollY = y;
-        },
-        { passive: true }
       );
 
       // Close dropdowns on outside click or Escape

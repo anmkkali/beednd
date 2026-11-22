@@ -177,8 +177,8 @@ html[data-theme='dark'] .theme-icon-moon {
 @media (max-width: 1023px) {
   #app-sidebar {
     position: fixed;
-    inset: 0 auto 0 0;
-    z-index: 60;
+    inset: 56px auto 0 0;
+    z-index: 26;
     width: 18rem;
     max-width: 86vw;
     transform: translateX(-100%);
@@ -196,8 +196,8 @@ html[data-theme='dark'] .theme-icon-moon {
 @media (min-width: 1024px) {
   #app-sidebar {
     position: sticky;
-    top: 0;
-    height: 100vh;
+    top: 65px;
+    height: calc(100vh - 65px);
     width: 18rem;
     flex-shrink: 0;
   }
@@ -278,10 +278,27 @@ html[data-theme='dark'] .theme-icon-moon {
   background: rgb(var(--base-600));
 }
 
-/* Mobile: the quick link row hides while scrolling down and returns on scroll up */
-@media (max-width: 1023px) {
-  header[data-compact] [data-quickbar] {
+/* Header menu button: hamburger when closed, cross when open (desktop: expanded sidebar counts as open) */
+.hb-close {
+  display: none;
+}
+@media (min-width: 1024px) {
+  html:not([data-sidebar='collapsed']) .hb-open {
     display: none;
+  }
+  html:not([data-sidebar='collapsed']) .hb-close {
+    display: block;
+  }
+}
+@media (max-width: 1023px) {
+  html[data-sidebar-open] .hb-open {
+    display: none;
+  }
+  html[data-sidebar-open] .hb-close {
+    display: block;
+  }
+  html[data-sidebar-open] {
+    overflow: hidden;
   }
 }
 

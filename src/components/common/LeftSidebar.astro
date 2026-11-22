@@ -25,30 +25,11 @@ const filterHref = (categoryId: string, groupId: string, filter: { sub?: string;
 };
 ---
 
-<div id="sidebar-backdrop" class="fixed inset-0 z-50 bg-black/40" data-sidebar-close></div>
+<div id="sidebar-backdrop" class="fixed inset-0 z-[25] bg-black/40" data-sidebar-close></div>
 
 <aside id="app-sidebar" class="flex flex-col border-r editorial-rule bg-base-950" aria-label="Site navigation">
-  <!-- Logo row: logo, theme switch, search, collapse (like the ChatGPT sidebar) -->
-  <div class="sb-top flex h-16 shrink-0 items-center justify-between gap-1 px-3 max-lg:!hidden">
-    <a href="/" class="flex min-w-0 items-center gap-2.5 max-lg:!hidden" aria-label="DealsSite home">
-      <span class="btn-primary flex h-8 w-8 shrink-0 items-center justify-center">
-        <Icon name="tag" class="h-4 w-4" />
-      </span>
-      <span class="sb-label whitespace-nowrap font-serif text-[24px] font-semibold leading-none tracking-tight text-ink">DealsSite</span>
-    </a>
-    <div class="sb-actions flex shrink-0 items-center">
-      <button type="button" data-theme-toggle class="icon-btn sb-hide-collapsed max-lg:!hidden" aria-label="Switch between light and dark mode" title="Light / dark mode">
-        <span class="theme-icon-moon inline-flex"><Icon name="moon" class="h-[18px] w-[18px]" /></span>
-        <span class="theme-icon-sun"><Icon name="sun" class="h-[18px] w-[18px]" /></span>
-      </button>
-      <button type="button" id="sidebar-toggle" class="icon-btn" aria-label="Collapse or expand sidebar" title="Collapse / expand sidebar">
-        <Icon name="panel" class="h-[18px] w-[18px]" />
-      </button>
-    </div>
-  </div>
-
   <div class="min-h-0 flex-1 overflow-y-auto px-2 pb-8">
-    <nav class="space-y-0.5 pt-1 max-lg:pt-3" aria-label="Offer types">
+    <nav class="space-y-0.5 pt-3" aria-label="Offer types">
       {quickLinks.map((link) => (
         <a href={link.href} data-sb-link class="sb-link" title={link.label}>
           <Icon name={link.icon} class="h-[18px] w-[18px] shrink-0" />
@@ -98,7 +79,7 @@ const filterHref = (categoryId: string, groupId: string, filter: { sub?: string;
         <Icon name="bell" class="h-[18px] w-[18px] shrink-0" />
         <span class="sb-label truncate">Notify me</span>
       </button>
-      <button type="button" data-theme-toggle class="sb-link mt-0.5 lg:hidden" title="Switch light or dark mode">
+      <button type="button" data-theme-toggle class="sb-link mt-0.5" title="Switch light or dark mode">
         <span class="theme-icon-moon inline-flex"><Icon name="moon" class="h-[18px] w-[18px] shrink-0" /></span>
         <span class="theme-icon-sun"><Icon name="sun" class="h-[18px] w-[18px] shrink-0" /></span>
         <span class="sb-label theme-text-dark truncate">Dark mode</span>
@@ -127,22 +108,27 @@ const filterHref = (categoryId: string, groupId: string, filter: { sub?: string;
     if (persist) localStorage.setItem('dealssite_sidebar', collapsed ? 'collapsed' : 'open');
   }
 
+  const header = document.querySelector('header');
+  function openDrawer() {
+    // The drawer starts right under the header, so the cross button stays visible and clickable.
+    if (sidebar && header) sidebar.style.top = `${Math.round(header.getBoundingClientRect().bottom)}px`;
+    root.dataset.sidebarOpen = '';
+  }
   function closeDrawer() {
     delete root.dataset.sidebarOpen;
   }
 
-  // Collapse button: collapses the desktop rail, closes the mobile drawer
-  document.getElementById('sidebar-toggle')?.addEventListener('click', () => {
-    if (isDesktop()) setCollapsed(!isCollapsed());
-    else closeDrawer();
-  });
-
-  document.querySelectorAll('[data-sidebar-close]').forEach((el) => el.addEventListener('click', closeDrawer));
-  document.querySelectorAll('[data-sidebar-open-btn]').forEach((el) =>
+  // Header menu button: collapses or expands the desktop rail, opens or closes the mobile drawer
+  document.querySelectorAll('[data-menu-toggle]').forEach((el) =>
     el.addEventListener('click', () => {
-      root.dataset.sidebarOpen = '';
+      if (isDesktop()) setCollapsed(!isCollapsed());
+      else if ('sidebarOpen' in root.dataset) closeDrawer();
+      else openDrawer();
     })
   );
+
+  document.querySelectorAll('[data-sidebar-close]').forEach((el) => el.addEventListener('click', closeDrawer));
+  window.addEventListener('resize', () => { if (isDesktop()) closeDrawer(); });
 
   // A click anywhere on the minimised rail opens it. Links still go to their page.
   sidebar?.addEventListener(
@@ -150,7 +136,6 @@ const filterHref = (categoryId: string, groupId: string, filter: { sub?: string;
     (event) => {
       if (!isCollapsed()) return;
       const target = event.target as HTMLElement;
-      if (target.closest('#sidebar-toggle')) return;
       const summary = target.closest('summary');
       if (summary) {
         event.preventDefault();
