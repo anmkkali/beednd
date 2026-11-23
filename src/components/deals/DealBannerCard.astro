@@ -69,8 +69,8 @@ const expiry = expiryLabel(deal.end_date, !!deal.limited_time);
   data-kind={kind}
   data-tokens={dealTokens(deal)}
 >
-  <div class="flex items-start gap-2.5 sm:gap-4">
-    <div class="flex w-9 shrink-0 flex-col items-center gap-1 sm:w-11 sm:gap-1.5">
+  <div class="flex items-stretch gap-2.5 sm:gap-4">
+    <div class="flex w-9 shrink-0 flex-col items-center gap-1 self-start sm:w-11 sm:gap-1.5">
       <a href={`/brands/${deal.brand_id}`} aria-label={`${brandName} deals`}>
         <BrandMark name={brandName} logoUrl={brandLogo} size="sm" />
       </a>
@@ -163,7 +163,7 @@ const expiry = expiryLabel(deal.end_date, !!deal.limited_time);
       <span class="editorial-pill whitespace-nowrap px-2.5 py-0.5 text-right text-[11.5px] font-semibold leading-tight text-ink sm:text-[12px]">
         {deal.badge_text || deal.discount_value}
       </span>
-      <div class="flex flex-wrap items-center justify-end gap-1.5 sm:gap-2">
+      <div class="mt-auto flex flex-wrap items-center justify-end gap-1.5 sm:gap-2">
         {deal.promo_code && (
           <button type="button" class="copy-code-btn btn-outline px-2.5 py-1 text-[11.5px] font-mono font-semibold tracking-wider" data-code={deal.promo_code}>
             {deal.promo_code}
