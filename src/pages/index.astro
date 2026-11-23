@@ -49,23 +49,28 @@ const structuredData = {
   description="Browse current brand discounts, promo codes and free trials, automatically matched to your country."
   structuredData={structuredData}
 >
-  <section class="mb-12 border-b editorial-rule pb-10">
-    <div class="mb-4 flex flex-wrap items-center justify-between gap-2 text-[13.5px] text-ink-muted">
-      <span class="editorial-pill px-3.5 py-1 font-medium text-ink">Updated daily</span>
-      <span id="hero-market-caption" class="font-medium">Offers for your location</span>
+  <section class="mb-8 border-b editorial-rule pb-8">
+    <div class="mb-3 flex flex-wrap items-center justify-between gap-2 text-[13px] text-ink-muted">
+      <span class="editorial-pill px-3 py-0.5 font-medium text-ink text-[12.5px]">Updated daily</span>
+      <span id="hero-market-caption" class="font-medium text-[13px]">Offers for your location</span>
     </div>
-    <h1 class="text-5xl leading-[0.95] text-ink sm:text-7xl lg:text-[84px]">Everyday discounts, curated simply.</h1>
-    <div class="mt-6 flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
-      <p class="max-w-xl text-[16px] leading-relaxed text-ink-muted">
-        Brands and offers adjust to the country you open the site from. Browse by brand, category or city.
-      </p>
-      <div class="flex shrink-0 flex-wrap items-center gap-3">
-        <a href="/brands" class="btn-primary inline-flex items-center gap-2 px-5 py-2.5 text-[14px] font-semibold">
-          Browse Brands
-          <Icon name="arrow" class="h-4 w-4" />
-        </a>
-        <a href="/blog" class="btn-outline inline-flex items-center gap-2 px-5 py-2.5 text-[14px] font-semibold">Read Blog</a>
+    <!-- Two-column layout: text left, right reserved for future graphic -->
+    <div class="flex flex-col gap-6 lg:flex-row lg:items-center lg:gap-10">
+      <div class="lg:max-w-[55%]">
+        <h1 class="text-[38px] font-serif leading-[1.05] text-ink sm:text-[48px] lg:text-[58px]">Everyday discounts, curated simply.</h1>
+        <p class="mt-4 max-w-lg text-[14.5px] leading-relaxed text-ink-muted sm:text-[15.5px]">
+          Brands and offers adjust to the country you open the site from. Browse by brand, category or city.
+        </p>
+        <div class="mt-5 flex flex-wrap items-center gap-3">
+          <a href="/brands" class="btn-primary inline-flex items-center gap-2 px-5 py-2.5 text-[13.5px] font-semibold">
+            Browse Brands
+            <Icon name="arrow" class="h-4 w-4" />
+          </a>
+          <a href="/blog" class="btn-outline inline-flex items-center gap-2 px-5 py-2.5 text-[13.5px] font-semibold">Read Blog</a>
+        </div>
       </div>
+      <!-- Right side: reserved for future graphic / illustration -->
+      <div class="hidden lg:block lg:flex-1 lg:min-h-[160px]" aria-hidden="true"></div>
     </div>
   </section>
 

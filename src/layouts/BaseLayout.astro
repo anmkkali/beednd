@@ -135,8 +135,10 @@ const fontsUrl =
     {structuredData && <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />}
   </head>
   <body class="bg-base-950 text-ink">
-    <SponsorBar />
-    <Header />
+    <div id="sticky-top" class="sticky top-0 z-30 w-full">
+      <SponsorBar />
+      <Header />
+    </div>
     <div class="flex min-h-[calc(100vh-65px)]">
       <LeftSidebar activeTopic={activeTopic} activeCategory={activeCategory} />
 

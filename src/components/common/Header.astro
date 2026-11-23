@@ -9,7 +9,7 @@ const latest = (await getCollection('deals', ({ data }) => data.status === 'acti
   .slice(0, 8);
 ---
 
-<header class="sticky top-0 z-30 w-full border-b editorial-rule bg-base-950/95 backdrop-blur-md">
+<header class="w-full border-b editorial-rule bg-base-950/95 backdrop-blur-md">
   <div class="relative flex h-14 items-center justify-between px-3 sm:h-16 sm:px-5">
     <!-- LEFT: Menu button (hamburger + Menu label) -->
     <div class="flex items-center gap-2">
@@ -35,8 +35,19 @@ const latest = (await getCollection('deals', ({ data }) => data.status === 'acti
       </a>
     </div>
 
-    <!-- RIGHT: Expanding Search, Cities, Country, Notifications, Blog -->
+    <!-- RIGHT: Expanding Search, Blog Icon, Cities, Country, Notifications -->
     <div class="flex items-center gap-1.5 sm:gap-2">
+      <!-- Blog icon-only button (hover to expand label) -->
+      <a
+        href="/blog"
+        class="group flex h-9 w-9 items-center justify-center overflow-hidden rounded-full border editorial-rule bg-base-900/60 text-ink transition-all duration-200 hover:w-auto hover:gap-1.5 hover:border-ink/50 hover:bg-base-900 hover:px-3 focus:outline-none sm:h-10 sm:w-10 sm:hover:w-auto sm:hover:gap-1.5 sm:hover:px-3.5"
+        aria-label="Blog"
+        title="Blog"
+      >
+        <Icon name="book" class="h-4 w-4 shrink-0 text-ink" />
+        <span class="max-w-0 overflow-hidden whitespace-nowrap text-[13px] font-semibold text-ink transition-all duration-200 group-hover:max-w-[4rem]">Blog</span>
+      </a>
+
       <!-- Expanding search trigger -->
       <button
         type="button"

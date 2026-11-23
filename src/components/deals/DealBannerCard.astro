@@ -131,18 +131,19 @@ const expiry = expiryLabel(deal.end_date, !!deal.limited_time);
         )}
       </div>
 
-      <!-- Title with summary pill on the right -->
-      <div class="flex flex-col justify-between gap-1.5 sm:flex-row sm:items-start sm:gap-4">
-        <h3 class="text-[16px] font-semibold leading-snug text-ink sm:text-[18px]">
+      <!-- Title row: badge top-aligned on right, title on left -->
+      <div class="flex items-start justify-between gap-3 sm:gap-4">
+        <h3 class="min-w-0 flex-1 text-[16px] font-semibold leading-snug text-ink sm:text-[18px]">
           <a href={`/deals/${deal.slug}`} class="underline-offset-2 hover:underline">{deal.title}</a>
         </h3>
-        <span class="editorial-pill shrink-0 self-start px-2.5 py-0.5 text-[11.5px] font-semibold leading-tight text-ink sm:text-[12px] sm:text-right">
+        <span class="editorial-pill mt-0.5 shrink-0 whitespace-nowrap px-2.5 py-0.5 text-[11.5px] font-semibold leading-tight text-ink sm:text-[12px]">
           {deal.badge_text || deal.discount_value}
         </span>
       </div>
 
-      <p class="mt-1 line-clamp-1 max-w-3xl text-[12.5px] leading-relaxed text-ink-muted sm:line-clamp-2 sm:text-[13.5px]">{deal.short_description}</p>
+      <p class="mt-1 line-clamp-2 max-w-3xl text-[12.5px] leading-relaxed text-ink-muted sm:text-[13.5px]">{deal.short_description}</p>
 
+      <!-- Bottom row: location/bank chips left, action buttons right — always aligned bottom -->
       <div class="mt-2 flex flex-wrap items-center justify-between gap-2">
         <div class="flex flex-wrap items-center gap-3 text-[12px] text-ink-muted">
           {deal.bank_details && (
@@ -159,13 +160,13 @@ const expiry = expiryLabel(deal.end_date, !!deal.limited_time);
           )}
         </div>
 
-        <div class="flex w-full items-center gap-2 sm:w-auto">
+        <div class="flex items-center gap-2">
           {deal.promo_code && (
-            <button type="button" class="copy-code-btn btn-outline flex-1 px-2.5 py-1 text-[11.5px] font-mono font-semibold tracking-wider sm:flex-none" data-code={deal.promo_code}>
+            <button type="button" class="copy-code-btn btn-outline px-2.5 py-1 text-[11.5px] font-mono font-semibold tracking-wider" data-code={deal.promo_code}>
               {deal.promo_code}
             </button>
           )}
-          <a href={`/deals/${deal.slug}`} class="btn-primary inline-flex flex-1 items-center justify-center gap-1.5 px-3 py-1.5 text-[12px] font-semibold sm:flex-none">
+          <a href={`/deals/${deal.slug}`} class="btn-primary inline-flex items-center gap-1.5 whitespace-nowrap px-3 py-1.5 text-[12px] font-semibold">
             View offer
             <Icon name="arrow" class="h-3 w-3" />
           </a>
