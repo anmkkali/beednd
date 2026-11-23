@@ -139,37 +139,41 @@ const expiry = expiryLabel(deal.end_date, !!deal.limited_time);
 
       <p class="mt-1 line-clamp-2 max-w-3xl text-[12.5px] leading-relaxed text-ink-muted sm:text-[13.5px]">{deal.short_description}</p>
 
-      <!-- Bottom row: location/bank chips -->
-      <div class="mt-2 flex flex-wrap items-center gap-3 text-[12px] text-ink-muted">
-        {deal.bank_details && (
-          <a href={`/banks/${deal.bank_details.bank_id}`} class="inline-flex items-center gap-1 text-ink hover:underline">
-            <Icon name="card" class="h-3.5 w-3.5" />
-            {deal.bank_details.bank_id.toUpperCase()} +{deal.bank_details.cashback_percent}% off
-          </a>
-        )}
-        {deal.cities && deal.cities.length > 0 && (
-          <span class="inline-flex items-center gap-1">
-            <Icon name="location" class="h-3.5 w-3.5" />
-            {deal.cities.slice(0, 3).join(', ')}{deal.cities.length > 3 ? ` +${deal.cities.length - 3}` : ''}
-          </span>
-        )}
+      <!-- Location/bank chips (only rendered if present) -->
+      {(deal.bank_details || (deal.cities && deal.cities.length > 0)) && (
+        <div class="mt-2 flex flex-wrap items-center gap-3 text-[12px] text-ink-muted">
+          {deal.bank_details && (
+            <a href={`/banks/${deal.bank_details.bank_id}`} class="inline-flex items-center gap-1 text-ink hover:underline">
+              <Icon name="card" class="h-3.5 w-3.5" />
+              {deal.bank_details.bank_id.toUpperCase()} +{deal.bank_details.cashback_percent}% off
+            </a>
+          )}
+          {deal.cities && deal.cities.length > 0 && (
+            <span class="inline-flex items-center gap-1">
+              <Icon name="location" class="h-3.5 w-3.5" />
+              {deal.cities.slice(0, 3).join(', ')}{deal.cities.length > 3 ? ` +${deal.cities.length - 3}` : ''}
+            </span>
+          )}
+        </div>
+      )}
+    </div>
+
+    <!-- Col 3: Right action column — badge at top, View offer & promo code at bottom -->
+    <div class="flex shrink-0 flex-col justify-between items-end self-stretch gap-2 min-w-[7rem] sm:min-w-[8.5rem]">
+      <span class="editorial-pill whitespace-nowrap px-2.5 py-0.5 text-right text-[11.5px] font-semibold leading-tight text-ink sm:text-[12px]">
+        {deal.badge_text || deal.discount_value}
+      </span>
+      <div class="flex flex-wrap items-center justify-end gap-1.5 sm:gap-2">
         {deal.promo_code && (
           <button type="button" class="copy-code-btn btn-outline px-2.5 py-1 text-[11.5px] font-mono font-semibold tracking-wider" data-code={deal.promo_code}>
             {deal.promo_code}
           </button>
         )}
+        <a href={`/deals/${deal.slug}`} class="btn-primary inline-flex items-center gap-1.5 whitespace-nowrap px-3 py-1.5 text-[12px] font-semibold">
+          View offer
+          <Icon name="arrow" class="h-3 w-3" />
+        </a>
       </div>
-    </div>
-
-    <!-- Col 3: Right action column — badge + view offer tight together -->
-    <div class="flex w-28 shrink-0 flex-col items-end gap-2 sm:w-36">
-      <span class="editorial-pill whitespace-nowrap px-2.5 py-0.5 text-right text-[11.5px] font-semibold leading-tight text-ink sm:text-[12px]">
-        {deal.badge_text || deal.discount_value}
-      </span>
-      <a href={`/deals/${deal.slug}`} class="btn-primary inline-flex items-center gap-1.5 whitespace-nowrap px-3 py-1.5 text-[12px] font-semibold">
-        View offer
-        <Icon name="arrow" class="h-3 w-3" />
-      </a>
     </div>
   </div>
 </article>
