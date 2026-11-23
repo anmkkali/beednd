@@ -4,6 +4,7 @@ import DealBannerCard from '../components/deals/DealBannerCard.astro';
 import BrandMark from '../components/common/BrandMark.astro';
 import Pagination from '../components/common/Pagination.astro';
 import Icon from '../components/common/Icon.astro';
+import AdSlot from '../components/ads/AdSlot.astro';
 import { getCollection } from 'astro:content';
 import { dealKind } from '../lib/deals';
 import { categoryById } from '../data/taxonomy';
@@ -68,6 +69,11 @@ const structuredData = {
     </div>
   </section>
 
+  <!-- Leaderboard Ad: Placed below Hero heading & description -->
+  <div class="my-6">
+    <AdSlot slotType="leaderboard" />
+  </div>
+
   <section class="mb-4" aria-labelledby="brands-heading">
     <div class="mb-5 flex items-end justify-between gap-4 border-b editorial-rule pb-3">
       <div>
@@ -75,10 +81,10 @@ const structuredData = {
         <h2 id="brands-heading" class="mt-1 text-3xl text-ink sm:text-4xl">Shop by brand</h2>
       </div>
       <div class="flex items-center gap-2">
-        <button type="button" data-brand-prev class="icon-btn hidden border editorial-rule sm:inline-flex" aria-label="Previous brands">
+        <button type="button" data-brand-prev class="icon-btn border editorial-rule inline-flex" aria-label="Previous brands" title="Previous brands">
           <Icon name="arrow" class="h-4 w-4 rotate-180" />
         </button>
-        <button type="button" data-brand-next class="icon-btn hidden border editorial-rule sm:inline-flex" aria-label="Next brands">
+        <button type="button" data-brand-next class="icon-btn border editorial-rule inline-flex" aria-label="Next brands" title="Next brands">
           <Icon name="arrow" class="h-4 w-4" />
         </button>
         <a href="/brands" class="inline-flex items-center gap-1.5 whitespace-nowrap text-[14px] sm:ml-1 font-semibold text-ink hover:underline">
@@ -213,54 +219,93 @@ const structuredData = {
 </BaseLayout>
 
 <script>
-  // Brand strip: drifts slowly, pauses on hover, focus or touch, and the arrows scroll it by hand.
+  // Brand strip: auto-drifts in continuous loop, pauses on hover / focus / touch, left/right buttons step smoothly
   const track = document.getElementById('brand-track');
   if (track) {
-    [...track.children].forEach((card) => {
-      const clone = card.cloneNode(true) as HTMLElement;
-      clone.setAttribute('aria-hidden', 'true');
-      clone.tabIndex = -1;
-      track.appendChild(clone);
-    });
+    const originalChildren = Array.from(track.children);
+    // Duplicate cards twice to ensure smooth infinite loop
+    for (let i = 0; i < 2; i++) {
+      originalChildren.forEach((card) => {
+        const clone = card.cloneNode(true) as HTMLElement;
+        clone.setAttribute('aria-hidden', 'true');
+        clone.tabIndex = -1;
+        track.appendChild(clone);
+      });
+    }
+
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     let paused = false;
     let resumeTimer = 0;
     let pos = track.scrollLeft;
     let last = 0;
-    const half = () => track.scrollWidth / 2;
+
+    const baseWidth = () => originalChildren.reduce((acc, el) => acc + (el as HTMLElement).offsetWidth, 0) || (track.scrollWidth / 3);
+
     const wrap = () => {
-      const h = half();
-      if (h <= track.clientWidth) return;
-      if (track.scrollLeft >= h) track.scrollLeft -= h;
-      else if (track.scrollLeft <= 0) track.scrollLeft += h;
+      const bw = baseWidth();
+      if (bw <= 0) return;
+      if (track.scrollLeft >= bw * 2) {
+        track.scrollLeft -= bw;
+        pos = track.scrollLeft;
+      } else if (track.scrollLeft <= 0) {
+        track.scrollLeft += bw;
+        pos = track.scrollLeft;
+      }
     };
+
     const hold = (ms = 0) => {
       paused = true;
       clearTimeout(resumeTimer);
-      if (ms) resumeTimer = window.setTimeout(() => { paused = false; pos = track.scrollLeft; }, ms);
+      if (ms > 0) {
+        resumeTimer = window.setTimeout(() => {
+          paused = false;
+          pos = track.scrollLeft;
+        }, ms);
+      }
     };
-    const release = () => { clearTimeout(resumeTimer); paused = false; pos = track.scrollLeft; };
 
-    track.addEventListener('mouseenter', () => hold());
+    const release = () => {
+      clearTimeout(resumeTimer);
+      paused = false;
+      pos = track.scrollLeft;
+    };
+
+    track.addEventListener('mouseenter', () => hold(0));
     track.addEventListener('mouseleave', release);
-    track.addEventListener('focusin', () => hold());
+    track.addEventListener('focusin', () => hold(0));
     track.addEventListener('focusout', release);
     track.addEventListener('touchstart', () => hold(4000), { passive: true });
-    track.addEventListener('touchend', () => hold(3000), { passive: true });
-    track.addEventListener('wheel', () => hold(3000), { passive: true });
+    track.addEventListener('touchend', () => hold(1500), { passive: true });
+    track.addEventListener('wheel', () => hold(2000), { passive: true });
     track.addEventListener('scroll', wrap, { passive: true });
 
     const step = () => (track.querySelector<HTMLElement>('[data-brand-card]')?.offsetWidth || 240) * 2;
-    document.querySelector('[data-brand-prev]')?.addEventListener('click', () => { hold(3500); wrap(); track.scrollBy({ left: -step(), behavior: 'smooth' }); });
-    document.querySelector('[data-brand-next]')?.addEventListener('click', () => { hold(3500); track.scrollBy({ left: step(), behavior: 'smooth' }); });
+    const prevBtn = document.querySelector('[data-brand-prev]');
+    const nextBtn = document.querySelector('[data-brand-next]');
+
+    prevBtn?.addEventListener('mouseenter', () => hold(0));
+    prevBtn?.addEventListener('mouseleave', release);
+    prevBtn?.addEventListener('click', () => {
+      hold(2500);
+      wrap();
+      track.scrollBy({ left: -step(), behavior: 'smooth' });
+    });
+
+    nextBtn?.addEventListener('mouseenter', () => hold(0));
+    nextBtn?.addEventListener('mouseleave', release);
+    nextBtn?.addEventListener('click', () => {
+      hold(2500);
+      wrap();
+      track.scrollBy({ left: step(), behavior: 'smooth' });
+    });
 
     const tick = (t: number) => {
       const dt = last ? Math.min(t - last, 64) : 16;
       last = t;
-      if (!paused && !reduce && half() > track.clientWidth) {
-        pos += dt * 0.035;
+      if (!paused && !reduce && track.scrollWidth > track.clientWidth) {
+        pos += dt * 0.075;
         track.scrollLeft = pos;
-        pos = track.scrollLeft;
+        wrap();
       }
       requestAnimationFrame(tick);
     };

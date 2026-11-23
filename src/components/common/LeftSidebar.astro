@@ -1,20 +1,42 @@
 ---
 import Icon from './Icon.astro';
 import { categories } from '../../data/taxonomy';
+import { getCollection } from 'astro:content';
+import { dealKind } from '../../lib/deals';
 
 interface Props {
   activeCategory?: string;
   activeTopic?: string;
 }
 
+const allDeals = await getCollection('deals', ({ data }) => data.status === 'active');
+const allBrands = await getCollection('brands');
+
+const counts: Record<string, number> = {
+  'all': allDeals.length,
+  'trending': allDeals.filter((d) => d.data.is_trending).length,
+  'brands': allBrands.length,
+  'trial': allDeals.filter((d) => dealKind(d.data) === 'trial').length,
+  'promo-code': allDeals.filter((d) => dealKind(d.data) === 'promo').length,
+  'voucher': allDeals.filter((d) => dealKind(d.data) === 'voucher').length,
+  'store-sale': allDeals.filter((d) => d.data.deal_type === 'in-store' || (d.data.channels || []).includes('in-store')).length,
+  'bank-deals': allDeals.filter((d) => !!d.data.bank_details).length,
+};
+
+const categoryCounts = new Map<string, number>();
+categories.forEach((cat) => {
+  categoryCounts.set(cat.id, allDeals.filter((d) => d.data.category === cat.id).length);
+});
+
 const quickLinks = [
-  { label: 'All offers', href: '/', icon: 'grid' },
-  { label: 'Trending', href: '/?type=trending', icon: 'trending' },
-  { label: 'Free trials', href: '/?type=trial', icon: 'sparkle' },
-  { label: 'Promo codes', href: '/?type=promo-code', icon: 'tag' },
-  { label: 'Vouchers', href: '/?type=voucher', icon: 'tag' },
-  { label: 'Store sales', href: '/?type=store-sale', icon: 'store' },
-  { label: 'Bank deals', href: '/banks', icon: 'card' },
+  { label: 'All offers', href: '/', icon: 'grid', key: 'all' },
+  { label: 'Trending', href: '/?type=trending', icon: 'trending', key: 'trending' },
+  { label: 'Browse Brands', href: '/brands', icon: 'store', key: 'brands' },
+  { label: 'Free trials', href: '/?type=trial', icon: 'sparkle', key: 'trial' },
+  { label: 'Promo codes', href: '/?type=promo-code', icon: 'tag', key: 'promo-code' },
+  { label: 'Vouchers', href: '/?type=voucher', icon: 'tag', key: 'voucher' },
+  { label: 'Store sales', href: '/?type=store-sale', icon: 'store', key: 'store-sale' },
+  { label: 'Bank deals', href: '/banks', icon: 'card', key: 'bank-deals' },
 ];
 
 const filterHref = (categoryId: string, groupId: string, filter: { sub?: string; kind?: string }) => {
@@ -31,9 +53,12 @@ const filterHref = (categoryId: string, groupId: string, filter: { sub?: string;
   <div class="min-h-0 flex-1 overflow-y-auto px-2 pb-8">
     <nav class="space-y-0.5 pt-3" aria-label="Offer types">
       {quickLinks.map((link) => (
-        <a href={link.href} data-sb-link class="sb-link" title={link.label}>
+        <a href={link.href} data-sb-link class="sb-link group" title={link.label}>
           <Icon name={link.icon} class="h-[18px] w-[18px] shrink-0" />
           <span class="sb-label truncate">{link.label}</span>
+          <span class="sb-badge ml-auto rounded-full bg-base-900 border editorial-rule px-2 py-0.5 text-[11px] font-mono font-medium text-ink-muted group-hover:text-ink">
+            {counts[link.key] ?? 0}
+          </span>
         </a>
       ))}
     </nav>
@@ -42,10 +67,13 @@ const filterHref = (categoryId: string, groupId: string, filter: { sub?: string;
 
     <nav class="space-y-0.5" aria-label="Categories">
       {categories.map((category) => (
-        <details class="sb-cat" data-category={category.id}>
-          <summary class="sb-link cursor-pointer list-none" data-sb-summary title={category.name}>
+        <details class="sb-cat group" data-category={category.id}>
+          <summary class="sb-link cursor-pointer list-none group" data-sb-summary title={category.name}>
             <Icon name={category.icon} class="h-[18px] w-[18px] shrink-0" />
             <span class="sb-label flex-1 truncate">{category.name}</span>
+            <span class="sb-badge mr-1 rounded-full bg-base-900 border editorial-rule px-2 py-0.5 text-[11px] font-mono font-medium text-ink-muted group-hover:text-ink">
+              {categoryCounts.get(category.id) ?? 0}
+            </span>
             <Icon name="chevron" class="sb-chevron h-4 w-4 shrink-0 text-ink-muted" />
           </summary>
 
@@ -128,61 +156,19 @@ const filterHref = (categoryId: string, groupId: string, filter: { sub?: string;
   );
 
   document.querySelectorAll('[data-sidebar-close]').forEach((el) => el.addEventListener('click', closeDrawer));
-  window.addEventListener('resize', () => { if (isDesktop()) closeDrawer(); });
 
-  // A click anywhere on the minimised rail opens it. Links still go to their page.
-  sidebar?.addEventListener(
-    'click',
-    (event) => {
-      if (!isCollapsed()) return;
-      const target = event.target as HTMLElement;
-      const summary = target.closest('summary');
-      if (summary) {
-        event.preventDefault();
-        (summary.parentElement as HTMLDetailsElement).open = true;
+  // Highlight active link matching current path
+  const currentPath = window.location.pathname;
+  document.querySelectorAll<HTMLAnchorElement>('[data-sb-link]').forEach((a) => {
+    const href = a.getAttribute('href');
+    if (href === currentPath || (href && href !== '/' && currentPath.startsWith(href))) {
+      a.dataset.active = 'true';
+      const details = a.closest('details');
+      if (details) {
+        details.open = true;
+        const summaryLink = details.querySelector<HTMLElement>('[data-sb-summary]');
+        if (summaryLink) summaryLink.dataset.ancestor = 'true';
       }
-      if (target.closest('button[data-notify-open], button[data-submit-open]')) event.stopPropagation();
-      setCollapsed(false);
-    },
-    true
-  );
-
-  // Highlight where you are and open the matching category and group
-  const FILTER_KEYS = ['group', 'sub', 'kind', 'type'];
-  const trimSlash = (path: string) => path.replace(/\/+$/, '') || '/';
-
-  function markActive() {
-    if (!sidebar) return;
-    const here = new URL(window.location.href);
-    sidebar.querySelectorAll<HTMLElement>('[data-active], [data-ancestor]').forEach((el) => {
-      delete el.dataset.active;
-      delete el.dataset.ancestor;
-    });
-
-    sidebar.querySelectorAll<HTMLAnchorElement>('a[data-sb-link]').forEach((link) => {
-      const target = new URL(link.href);
-      let active = trimSlash(target.pathname) === trimSlash(here.pathname);
-      if (active) {
-        for (const key of FILTER_KEYS) {
-          if ((target.searchParams.get(key) || '') !== (here.searchParams.get(key) || '')) active = false;
-        }
-      }
-      if (!active) return;
-      link.dataset.active = 'true';
-      let parent = link.parentElement;
-      while (parent && parent !== sidebar) {
-        if (parent instanceof HTMLDetailsElement) {
-          parent.open = true;
-          const summary = parent.querySelector(':scope > summary');
-          if (summary instanceof HTMLElement) summary.dataset.ancestor = 'true';
-        }
-        parent = parent.parentElement;
-      }
-      link.scrollIntoView({ block: 'nearest' });
-    });
-  }
-
-  markActive();
-  window.addEventListener('popstate', markActive);
-  window.addEventListener('dealssite:filters-changed', markActive);
+    }
+  });
 </script>

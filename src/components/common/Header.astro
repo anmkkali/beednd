@@ -10,114 +10,120 @@ const latest = (await getCollection('deals', ({ data }) => data.status === 'acti
 ---
 
 <header class="sticky top-0 z-30 w-full border-b editorial-rule bg-base-950/95 backdrop-blur-md">
-  <div class="grid h-14 grid-cols-[1fr_auto_1fr] items-center px-2 sm:flex sm:h-16 sm:gap-3 sm:px-4 lg:px-5">
-    <!-- Menu button: hamburger when the sidebar is closed, cross when it is open. Same on mobile and web. -->
-    <div class="flex items-center gap-1 justify-self-start sm:gap-2">
-      <button type="button" data-menu-toggle class="icon-btn" aria-label="Open or close menu">
+  <div class="relative flex h-14 items-center justify-between px-3 sm:h-16 sm:px-5">
+    <!-- LEFT: Menu button (hamburger + Menu label) -->
+    <div class="flex items-center gap-2">
+      <button
+        type="button"
+        data-menu-toggle
+        class="inline-flex h-9 items-center gap-1.5 rounded-full px-2.5 py-1 text-ink transition-colors hover:bg-base-900 focus:outline-none sm:h-10 sm:px-3"
+        aria-label="Open or close menu"
+      >
         <Icon name="menu" class="hb-open h-5 w-5" />
         <Icon name="close" class="hb-close h-5 w-5" />
+        <span class="hidden text-[13.5px] font-semibold tracking-wide sm:inline">Menu</span>
       </button>
-      <a href="/" class="hidden items-center gap-2.5 sm:flex" aria-label="DealsSite home">
-        <span class="btn-primary hidden h-8 w-8 shrink-0 items-center justify-center lg:flex">
-          <Icon name="tag" class="h-4 w-4" />
+    </div>
+
+    <!-- CENTER: Brand Logo perfectly centered on desktop and mobile -->
+    <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center pointer-events-auto">
+      <a href="/" class="flex items-center justify-center gap-2 text-ink transition-opacity hover:opacity-85" aria-label="DealsSite home">
+        <span class="btn-primary hidden h-7 w-7 shrink-0 items-center justify-center rounded-sm sm:flex">
+          <Icon name="tag" class="h-3.5 w-3.5" />
         </span>
-        <span class="whitespace-nowrap font-serif text-[26px] font-semibold leading-none tracking-tight text-ink">DealsSite</span>
+        <span class="font-serif text-[24px] font-bold leading-none tracking-tight sm:text-[28px]">DealsSite</span>
       </a>
     </div>
-    <a href="/" class="text-center font-serif text-[26px] font-semibold leading-none tracking-tight text-ink sm:hidden" aria-label="DealsSite home">
-      DealsSite
-    </a>
 
-    <div class="flex items-center justify-end sm:contents">
-    <button
-      type="button"
-      id="header-search-btn"
-      class="flex h-10 w-10 shrink-0 items-center justify-center gap-3 border-0 bg-transparent text-[14px] sm:border editorial-rule sm:bg-base-900/60 text-ink-muted transition-colors hover:border-ink/50 hover:bg-base-900 hover:text-ink sm:w-auto sm:min-w-0 sm:flex-1 sm:justify-start sm:px-3.5"
-      aria-label="Search deals, brands and categories"
-    >
-      <Icon name="search" class="h-[18px] w-[18px] shrink-0 text-ink" />
-      <span class="hidden truncate sm:inline">Search brands, categories or deals</span>
-      <kbd class="ml-auto hidden border editorial-rule px-1.5 py-0.5 text-[11px] font-medium md:inline-block">Ctrl K</kbd>
-    </button>
+    <!-- RIGHT: Expanding Search, Cities, Country, Notifications, Blog -->
+    <div class="flex items-center gap-1.5 sm:gap-2">
+      <!-- Expanding search trigger -->
+      <button
+        type="button"
+        id="header-search-btn"
+        class="group flex h-9 w-9 items-center justify-center rounded-full border editorial-rule bg-base-900/60 text-ink transition-all duration-200 hover:border-ink/50 hover:bg-base-900 focus:outline-none sm:h-10 sm:w-44 sm:justify-start sm:px-3.5 md:w-52 md:hover:w-64"
+        aria-label="Search deals, brands and categories"
+        title="Search (Ctrl+K)"
+      >
+        <Icon name="search" class="h-4 w-4 shrink-0 text-ink transition-transform group-hover:scale-110" />
+        <span class="hidden truncate text-[13px] text-ink-muted group-hover:text-ink sm:inline sm:ml-2">Search deals...</span>
+        <kbd class="ml-auto hidden border editorial-rule px-1.5 py-0.5 text-[10px] font-mono text-ink-muted md:inline-block">Ctrl K</kbd>
+      </button>
 
-    <nav class="hidden shrink-0 items-center gap-2 lg:flex" aria-label="Primary">
-      <a href="/brands" class="btn-primary inline-flex h-10 items-center gap-2 px-4 text-[13.5px] font-semibold">
-        <Icon name="grid" class="h-4 w-4" />
-        Browse Brands
-      </a>
-      <a href="/blog" class="btn-outline inline-flex h-10 items-center gap-2 px-4 text-[13.5px] font-semibold">
-        <Icon name="book" class="h-4 w-4" />
-        Blog
-      </a>
-
+      <!-- Cities dropdown with Location Icon -->
       <details class="relative" data-dropdown>
-        <summary class="btn-outline flex h-10 cursor-pointer list-none items-center gap-2 px-3.5 text-[13.5px] font-semibold">
-          <Icon name="location" class="h-4 w-4" />
-          Cities
-          <Icon name="chevron" class="h-4 w-4 text-ink-muted" />
+        <summary
+          class="btn-outline flex h-9 cursor-pointer list-none items-center gap-1.5 rounded-full px-2.5 text-[12.5px] font-semibold transition-colors sm:h-10 sm:px-3 sm:text-[13px]"
+          title="Select city"
+        >
+          <Icon name="location" class="h-4 w-4 shrink-0 text-ink" />
+          <span class="hidden sm:inline">Cities</span>
+          <Icon name="chevron" class="h-3.5 w-3.5 text-ink-muted" />
         </summary>
-        <div data-cities-panel class="absolute right-0 top-12 z-50 max-h-[70vh] w-64 overflow-y-auto border editorial-rule bg-base-950 shadow-xl"></div>
+        <div data-cities-panel class="absolute right-0 top-11 z-50 max-h-[70vh] w-64 overflow-y-auto border editorial-rule bg-base-950 shadow-xl sm:top-12"></div>
       </details>
 
-      <label class="btn-outline relative flex h-10 cursor-pointer items-center gap-2 px-3.5 text-[13.5px] font-medium" title="Country">
-        <Icon name="globe" class="h-4 w-4 shrink-0" />
-        <span data-country-label class="max-w-[10rem] truncate">Detecting</span>
-        <Icon name="chevron" class="h-4 w-4 text-ink-muted" />
+      <!-- Country selector with Globe Icon -->
+      <label
+        class="btn-outline relative flex h-9 cursor-pointer items-center gap-1.5 rounded-full px-2.5 text-[12.5px] font-medium transition-colors sm:h-10 sm:px-3 sm:text-[13px]"
+        title="Change country"
+      >
+        <Icon name="globe" class="h-4 w-4 shrink-0 text-ink" />
+        <span data-country-label class="max-w-[7.5rem] truncate hidden md:inline">Detecting</span>
+        <Icon name="chevron" class="h-3.5 w-3.5 text-ink-muted hidden md:inline" />
         <select data-country-select class="absolute inset-0 h-full w-full cursor-pointer opacity-0" aria-label="Choose country">
           <option value="AUTO">Auto-detect</option>
           <option value="ALL">All countries</option>
         </select>
       </label>
-    </nav>
 
-    <!-- Notifications -->
-    <details class="relative shrink-0 sm:ml-auto lg:ml-0" data-dropdown data-bell>
-      <summary class="icon-btn relative cursor-pointer list-none" aria-label="New discounts" title="New discounts">
-        <Icon name="bell" class="h-5 w-5" />
-        <span data-bell-badge class="btn-primary absolute right-0.5 top-0.5 hidden min-w-[1.1rem] px-1 text-center text-[11px] font-bold leading-[1.1rem]">0</span>
-      </summary>
-      <div data-mobile-panel class="fixed left-3 right-3 top-14 z-50 border editorial-rule bg-base-950 shadow-xl sm:absolute sm:left-auto sm:right-0 sm:top-12 sm:w-96">
-        <p class="border-b editorial-rule px-4 py-3 text-[12px] font-semibold uppercase tracking-[0.16em] text-ink-muted">New discounts</p>
-        <ul class="max-h-[60vh] overflow-y-auto">
-          {latest.map((deal) => (
-            <li data-notif-item data-market={deal.data.country} data-ts={Date.parse(deal.data.last_verified_at)}>
-              <a href={`/deals/${deal.data.slug}`} class="block border-b editorial-rule px-4 py-3 hover:bg-base-900">
-                <span class="block text-[12.5px] font-semibold uppercase tracking-[0.08em] text-ink-muted">{brandNames.get(deal.data.brand_id) || deal.data.brand_id}</span>
-                <span class="mt-0.5 block text-[14.5px] leading-snug text-ink">{deal.data.title}</span>
-                <span class="mt-1 inline-block text-[13px] font-semibold text-ink">{deal.data.badge_text || deal.data.discount_value}</span>
-              </a>
-            </li>
-          ))}
-        </ul>
-        <p data-notif-empty class="hidden px-4 py-6 text-center text-[14px] text-ink-muted">No new discounts for your country yet.</p>
-        <button type="button" data-notify-open class="flex w-full items-center justify-center gap-2 border-t editorial-rule px-4 py-3 text-[13.5px] font-semibold text-ink hover:bg-base-900">
-          <Icon name="bell" class="h-4 w-4" />
-          Get email alerts by brand
-        </button>
-      </div>
-    </details>
+      <!-- Notification Bell -->
+      <details class="relative shrink-0" data-dropdown data-bell>
+        <summary class="icon-btn relative h-9 w-9 cursor-pointer list-none rounded-full sm:h-10 sm:w-10" aria-label="New discounts" title="New discounts">
+          <Icon name="bell" class="h-4 w-4 sm:h-[18px] sm:w-[18px]" />
+          <span data-bell-badge class="btn-primary absolute right-1 top-1 hidden min-w-[1rem] rounded-full px-1 text-center text-[10px] font-bold leading-[1rem]">0</span>
+        </summary>
+        <div data-mobile-panel class="fixed left-3 right-3 top-14 z-50 border editorial-rule bg-base-950 shadow-xl sm:absolute sm:left-auto sm:right-0 sm:top-12 sm:w-96">
+          <p class="border-b editorial-rule px-4 py-3 text-[12px] font-semibold uppercase tracking-[0.16em] text-ink-muted">New discounts</p>
+          <ul class="max-h-[60vh] overflow-y-auto">
+            {latest.map((deal) => (
+              <li data-notif-item data-market={deal.data.country} data-ts={Date.parse(deal.data.last_verified_at)}>
+                <a href={`/deals/${deal.data.slug}`} class="block border-b editorial-rule px-4 py-3 hover:bg-base-900">
+                  <span class="block text-[12px] font-semibold uppercase tracking-[0.08em] text-ink-muted">{brandNames.get(deal.data.brand_id) || deal.data.brand_id}</span>
+                  <span class="mt-0.5 block text-[14px] leading-snug text-ink">{deal.data.title}</span>
+                  <span class="mt-1 inline-block text-[12.5px] font-semibold text-ink">{deal.data.badge_text || deal.data.discount_value}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+          <p data-notif-empty class="hidden px-4 py-6 text-center text-[14px] text-ink-muted">No new discounts for your country yet.</p>
+          <button type="button" data-notify-open class="flex w-full items-center justify-center gap-2 border-t editorial-rule px-4 py-3 text-[13px] font-semibold text-ink hover:bg-base-900">
+            <Icon name="bell" class="h-4 w-4" />
+            Get email alerts by brand
+          </button>
+        </div>
+      </details>
     </div>
   </div>
 </header>
 
-<!-- Mobile and tablet quick row. Scrolls away with the page, so nothing flickers. -->
-<div data-quickbar class="flex items-center gap-2 overflow-x-auto border-b editorial-rule bg-base-950 px-4 py-2 lg:hidden">
-    <a href="/brands" class="btn-primary inline-flex h-9 shrink-0 items-center px-3.5 text-[13px] font-semibold">Browse Brands</a>
-    <a href="/blog" class="btn-outline inline-flex h-9 shrink-0 items-center px-3.5 text-[13px] font-semibold">Blog</a>
-    <details class="shrink-0" data-dropdown>
-      <summary class="btn-outline flex h-9 cursor-pointer list-none items-center gap-1.5 px-3.5 text-[13px] font-semibold">
-        <Icon name="location" class="h-3.5 w-3.5" />
-        Cities
-        <Icon name="chevron" class="h-3.5 w-3.5 text-ink-muted" />
-      </summary>
-      <div data-cities-panel data-mobile-panel class="fixed left-3 right-3 top-[104px] z-50 max-h-[60vh] overflow-y-auto border editorial-rule bg-base-950 shadow-xl"></div>
-    </details>
-    <label class="btn-outline relative flex h-9 shrink-0 cursor-pointer items-center gap-1.5 px-3.5 text-[13px] font-medium">
-      <Icon name="globe" class="h-3.5 w-3.5 shrink-0" />
-      <span data-country-label class="max-w-[8rem] truncate">Detecting</span>
-      <select data-country-select class="absolute inset-0 h-full w-full cursor-pointer opacity-0" aria-label="Choose country">
-        <option value="AUTO">Auto-detect</option>
-        <option value="ALL">All countries</option>
-      </select>
-    </label>
-  </div>
+<!-- Mobile quick row. Compact & scrolls away with page. -->
+<div data-quickbar class="flex items-center gap-2 overflow-x-auto border-b editorial-rule bg-base-950 px-3 py-1.5 sm:hidden">
+  <a href="/blog" class="btn-outline inline-flex h-8 shrink-0 items-center rounded-full px-3 text-[12px] font-semibold">Blog</a>
+  <details class="shrink-0" data-dropdown>
+    <summary class="btn-outline flex h-8 cursor-pointer list-none items-center gap-1.5 rounded-full px-3 text-[12px] font-semibold">
+      <Icon name="location" class="h-3.5 w-3.5" />
+      Cities
+      <Icon name="chevron" class="h-3 w-3 text-ink-muted" />
+    </summary>
+    <div data-cities-panel data-mobile-panel class="fixed left-3 right-3 top-[100px] z-50 max-h-[60vh] overflow-y-auto border editorial-rule bg-base-950 shadow-xl"></div>
+  </details>
+  <label class="btn-outline relative flex h-8 shrink-0 cursor-pointer items-center gap-1.5 rounded-full px-3 text-[12px] font-medium">
+    <Icon name="globe" class="h-3.5 w-3.5 shrink-0" />
+    <span data-country-label class="max-w-[7rem] truncate">Detecting</span>
+    <select data-country-select class="absolute inset-0 h-full w-full cursor-pointer opacity-0" aria-label="Choose country">
+      <option value="AUTO">Auto-detect</option>
+      <option value="ALL">All countries</option>
+    </select>
+  </label>
+</div>

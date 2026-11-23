@@ -7,33 +7,104 @@ import { categories } from '../../data/taxonomy';
 const deals = await getCollection('deals', ({ data }) => data.status === 'active');
 const brands = await getCollection('brands');
 const posts = await getCollection('blog', ({ data }) => data.is_published);
+
+const brandMap = new Map(brands.map((b) => [b.data.id, b.data]));
+
+const fashionSynonyms = 'trouser trousers pants pant denim jeans shirt shirts polo tee tees t-shirt kurtas kurta lawn unstitched stitched fabric fabrics apparel clothes clothing wear suit bottoms';
+const aiSynonyms = 'ai llm gpt model generator video transcription voice prompts bot builder';
+const techSynonyms = 'laptop computer phone mobile hardware gadgets accessories audio hosting server';
+
+function getEnrichedTerms(deal: any, brandName: string) {
+  let extra = '';
+  const cat = deal.data.category;
+  if (cat === 'clothing-fashion' || deal.data.brand_id === 'engine' || deal.data.brand_id === 'khaadi' || deal.data.brand_id === 'sapphire') {
+    extra += ` ${fashionSynonyms}`;
+  } else if (cat === 'ai-tools') {
+    extra += ` ${aiSynonyms}`;
+  } else if (cat === 'tech-electronics') {
+    extra += ` ${techSynonyms}`;
+  }
+  return `${deal.data.title} ${brandName} ${deal.data.brand_id} ${cat} ${deal.data.offer_kind || ''} ${deal.data.deal_type} ${(deal.data.cities || []).join(' ')} ${(deal.data.tags || []).join(' ')} ${deal.data.discount_value} ${deal.data.applies_to || ''} ${extra}`.toLowerCase();
+}
 ---
 
-<div id="search-modal" class="fixed inset-0 z-[70] hidden items-start justify-center bg-black/55 p-4 pt-[7vh]">
-  <div class="w-full max-w-2xl overflow-hidden border editorial-rule-strong bg-base-950 shadow-2xl">
-    <div class="flex items-center gap-3 border-b editorial-rule px-5 py-4">
+<div id="search-modal" class="fixed inset-0 z-[70] hidden items-start justify-center bg-black/60 p-3 pt-[5vh] sm:p-6 sm:pt-[7vh] backdrop-blur-sm">
+  <div class="w-full max-w-4xl overflow-hidden border editorial-rule-strong bg-base-950 shadow-2xl">
+    <!-- Search Input Bar -->
+    <div class="flex items-center gap-3 border-b editorial-rule px-4 py-3.5 sm:px-6 sm:py-4">
       <Icon name="search" class="h-5 w-5 shrink-0 text-ink" />
       <input
         type="search"
         id="pagefind-input"
-        placeholder="Search brands, deals, categories"
-        class="w-full bg-transparent text-[16px] text-ink placeholder:text-ink-muted focus:outline-none"
+        placeholder="Search brands, items (e.g. trouser, shoes, AI), discounts or cities..."
+        class="w-full bg-transparent text-[15px] sm:text-[17px] text-ink placeholder:text-ink-muted focus:outline-none"
         autocomplete="off"
       />
-      <button id="close-search-modal-btn" type="button" class="btn-outline px-2.5 py-1 text-[12px] font-semibold">ESC</button>
+      <button id="close-search-modal-btn" type="button" class="btn-outline px-2.5 py-1 text-[11.5px] font-semibold">ESC</button>
     </div>
 
-    <div class="flex flex-wrap items-center gap-2 border-b editorial-rule bg-base-900/50 px-5 py-2.5 text-[13px]">
-      <span class="font-medium text-ink-muted">Try:</span>
-      <button type="button" data-quick-query="trial" class="editorial-pill px-3 py-0.5 text-ink hover:bg-base-800">Free trial</button>
-      <button type="button" data-quick-query="video" class="editorial-pill px-3 py-0.5 text-ink hover:bg-base-800">AI video</button>
-      <button type="button" data-quick-query="clothing" class="editorial-pill px-3 py-0.5 text-ink hover:bg-base-800">Clothing</button>
-      <button type="button" data-quick-query="promo" class="editorial-pill px-3 py-0.5 text-ink hover:bg-base-800">Promo code</button>
+    <!-- Quick Query Suggestions -->
+    <div class="flex flex-wrap items-center gap-2 border-b editorial-rule bg-base-900/50 px-4 py-2 text-[12.5px] sm:px-6">
+      <span class="font-medium text-ink-muted">Quick:</span>
+      <button type="button" data-quick-query="trouser" class="editorial-pill px-2.5 py-0.5 text-ink hover:bg-base-800">Trouser</button>
+      <button type="button" data-quick-query="clothing" class="editorial-pill px-2.5 py-0.5 text-ink hover:bg-base-800">Clothing</button>
+      <button type="button" data-quick-query="trial" class="editorial-pill px-2.5 py-0.5 text-ink hover:bg-base-800">Free trials</button>
+      <button type="button" data-quick-query="ai" class="editorial-pill px-2.5 py-0.5 text-ink hover:bg-base-800">AI tools</button>
+      <button type="button" data-quick-query="promo" class="editorial-pill px-2.5 py-0.5 text-ink hover:bg-base-800">Promo code</button>
     </div>
 
-    <div class="max-h-[62vh] space-y-5 overflow-y-auto p-4">
-      <p id="search-empty" class="hidden py-10 text-center text-[15px] text-ink-muted">No matching brands or offers found.</p>
+    <!-- Search Results List -->
+    <div class="max-h-[68vh] space-y-6 overflow-y-auto p-4 sm:p-6">
+      <p id="search-empty" class="hidden py-12 text-center text-[15px] text-ink-muted">No matching brands or offers found for this query.</p>
 
+      <!-- DEALS GROUP -->
+      <div class="search-group">
+        <div class="mb-2.5 flex items-center justify-between px-2">
+          <p class="text-[12px] font-semibold uppercase tracking-[0.16em] text-ink-muted">Discounts & Offers</p>
+          <span class="text-[11px] text-ink-muted">Filtered by country & city</span>
+        </div>
+        <div class="divide-y editorial-rule border-y editorial-rule">
+          {deals.map((deal) => {
+            const brand = brandMap.get(deal.data.brand_id);
+            const brandName = brand?.name || deal.data.brand_id;
+            const searchTerm = getEnrichedTerms(deal, brandName);
+            return (
+              <a
+                href={`/deals/${deal.data.slug}`}
+                data-search-item
+                data-market={deal.data.country}
+                data-search-term={searchTerm}
+                class="flex items-center justify-between gap-3 px-3 py-3 hover:bg-base-900 transition-colors"
+              >
+                <div class="flex items-center gap-3 min-w-0">
+                  <div class="shrink-0">
+                    <BrandMark name={brandName} logoUrl={brand?.logo_url} size="sm" />
+                  </div>
+                  <div class="min-w-0">
+                    <div class="flex items-center gap-2">
+                      <span class="text-[11.5px] font-bold uppercase tracking-wider text-ink-muted">{brandName}</span>
+                      {deal.data.cities && deal.data.cities.length > 0 && (
+                        <span class="hidden items-center gap-1 text-[11px] text-ink-muted sm:inline-flex">
+                          <Icon name="location" class="h-3 w-3" />
+                          {deal.data.cities.slice(0, 2).join(', ')}{deal.data.cities.length > 2 ? ` +${deal.data.cities.length - 2}` : ''}
+                        </span>
+                      )}
+                    </div>
+                    <span class="line-clamp-1 text-[14px] font-semibold text-ink sm:text-[14.5px]">{deal.data.title}</span>
+                  </div>
+                </div>
+                <div class="shrink-0 text-right">
+                  <span class="editorial-pill px-2.5 py-1 text-[12px] font-semibold text-ink">
+                    {deal.data.badge_text || deal.data.discount_value}
+                  </span>
+                </div>
+              </a>
+            );
+          })}
+        </div>
+      </div>
+
+      <!-- BRANDS GROUP -->
       <div class="search-group">
         <p class="mb-2 px-2 text-[12px] font-semibold uppercase tracking-[0.16em] text-ink-muted">Brands</p>
         <div class="divide-y editorial-rule border-y editorial-rule">
@@ -42,12 +113,15 @@ const posts = await getCollection('blog', ({ data }) => data.is_published);
               href={`/brands/${brand.data.slug}`}
               data-search-item
               data-market={brand.data.country}
-              data-search-term={`${brand.data.name} ${brand.data.categories.join(' ')} brand`}
-              class="flex items-center justify-between gap-3 px-2 py-2.5 hover:bg-base-900"
+              data-search-term={`${brand.data.name} ${brand.data.categories.join(' ')} ${brand.data.country} brand ${brand.data.name.toLowerCase() === 'engine' ? fashionSynonyms : ''}`}
+              class="flex items-center justify-between gap-3 px-3 py-2.5 hover:bg-base-900 transition-colors"
             >
               <span class="flex items-center gap-3">
                 <BrandMark name={brand.data.name} logoUrl={brand.data.logo_url} size="sm" />
-                <span class="text-[15px] font-semibold text-ink">{brand.data.name}</span>
+                <span class="text-[14.5px] font-semibold text-ink">{brand.data.name}</span>
+                {brand.data.country && brand.data.country !== 'GLOBAL' && (
+                  <span class="text-[11px] font-medium text-ink-muted border editorial-rule px-1.5 py-0.2 rounded">{brand.data.country}</span>
+                )}
               </span>
               <Icon name="arrow" class="h-4 w-4 text-ink-muted" />
             </a>
@@ -55,33 +129,16 @@ const posts = await getCollection('blog', ({ data }) => data.is_published);
         </div>
       </div>
 
-      <div class="search-group">
-        <p class="mb-2 px-2 text-[12px] font-semibold uppercase tracking-[0.16em] text-ink-muted">Deals</p>
-        <div class="divide-y editorial-rule border-y editorial-rule">
-          {deals.map((deal) => (
-            <a
-              href={`/deals/${deal.data.slug}`}
-              data-search-item
-              data-market={deal.data.country}
-              data-search-term={`${deal.data.title} ${deal.data.brand_id} ${deal.data.category} ${deal.data.offer_kind || ''} ${deal.data.deal_type} ${deal.data.cities.join(' ')} ${deal.data.tags.join(' ')}`}
-              class="flex items-center justify-between gap-4 px-2 py-3 hover:bg-base-900"
-            >
-              <span class="line-clamp-1 text-[14.5px] font-medium text-ink">{deal.data.title}</span>
-              <span class="editorial-pill shrink-0 px-2.5 py-0.5 text-[12.5px] font-semibold text-ink">{deal.data.discount_value}</span>
-            </a>
-          ))}
-        </div>
-      </div>
-
+      <!-- CATEGORIES GROUP -->
       <div class="search-group">
         <p class="mb-2 px-2 text-[12px] font-semibold uppercase tracking-[0.16em] text-ink-muted">Categories</p>
-        <div class="grid grid-cols-2 gap-2">
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
           {categories.map((category) => (
             <a
               href={`/categories/${category.id}`}
               data-search-item
-              data-search-term={`${category.name} ${category.groups.map((g) => g.label).join(' ')}`}
-              class="flex items-center gap-2.5 border editorial-rule px-3 py-2.5 text-[14px] font-medium text-ink hover:bg-base-900"
+              data-search-term={`${category.name} ${category.groups.map((g) => g.label).join(' ')} ${category.id === 'clothing-fashion' ? fashionSynonyms : ''}`}
+              class="flex items-center gap-2 border editorial-rule px-3 py-2 text-[13px] font-medium text-ink hover:bg-base-900 transition-colors"
             >
               <Icon name={category.icon} class="h-4 w-4 shrink-0" />
               <span class="truncate">{category.name}</span>
@@ -90,8 +147,9 @@ const posts = await getCollection('blog', ({ data }) => data.is_published);
         </div>
       </div>
 
+      <!-- BLOG GROUP -->
       <div class="search-group">
-        <p class="mb-2 px-2 text-[12px] font-semibold uppercase tracking-[0.16em] text-ink-muted">Blog</p>
+        <p class="mb-2 px-2 text-[12px] font-semibold uppercase tracking-[0.16em] text-ink-muted">Buying Guides & Blog</p>
         <div class="divide-y editorial-rule border-y editorial-rule">
           {posts.map((post) => (
             <a
@@ -99,9 +157,9 @@ const posts = await getCollection('blog', ({ data }) => data.is_published);
               data-search-item
               data-market={post.data.target_country}
               data-search-term={`${post.data.title} ${post.data.tags.join(' ')} blog`}
-              class="flex items-center justify-between gap-3 px-2 py-2.5 text-[14.5px] text-ink hover:bg-base-900"
+              class="flex items-center justify-between gap-3 px-3 py-2.5 text-[14px] text-ink hover:bg-base-900 transition-colors"
             >
-              <span>{post.data.title}</span>
+              <span class="truncate">{post.data.title}</span>
               <Icon name="arrow" class="h-4 w-4 shrink-0 text-ink-muted" />
             </a>
           ))}

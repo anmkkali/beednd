@@ -4,10 +4,49 @@ import { sponsor } from '../../data/site';
 
 {
   sponsor.enabled && (
-    <div id="sponsor-bar" class="flex items-center justify-center gap-2.5 bg-ink px-3 py-2 text-[11.5px] text-ink-inverse sm:flex-wrap sm:gap-x-3 sm:gap-y-1.5 sm:px-4 sm:text-[13px]">
-      <span class="shrink-0 border border-ink-inverse/50 px-1.5 py-0.5 text-[9.5px] sm:px-2 sm:text-[11px] font-semibold uppercase tracking-[0.12em]">{sponsor.label}</span>
-      <span class="min-w-0 flex-1 text-left leading-tight sm:flex-none sm:text-center sm:leading-snug">{sponsor.text}</span>
-      <a href={sponsor.href} class="shrink-0 whitespace-nowrap bg-ink-inverse px-2.5 py-1 text-[11.5px] font-semibold text-ink hover:opacity-90 sm:text-[12.5px]">{sponsor.cta}</a>
+    <div
+      id="sponsor-bar"
+      class="group relative overflow-hidden bg-ink py-2 text-[11.5px] text-ink-inverse sm:text-[12.5px]"
+      aria-label="Sponsor announcement"
+    >
+      <div class="marquee-track flex w-max items-center gap-12 group-hover:[animation-play-state:paused]">
+        {[0, 1, 2, 3].map(() => (
+          <div class="flex shrink-0 items-center gap-3 sm:gap-4">
+            <span class="shrink-0 border border-ink-inverse/50 px-1.5 py-0.5 text-[9.5px] font-semibold uppercase tracking-[0.14em] sm:text-[10.5px]">
+              {sponsor.label}
+            </span>
+            <span class="whitespace-nowrap font-medium text-ink-inverse/90">
+              {sponsor.text}
+            </span>
+            <a
+              href={sponsor.href}
+              class="shrink-0 whitespace-nowrap bg-ink-inverse px-2.5 py-0.5 text-[11px] font-semibold text-ink transition-opacity hover:opacity-90 sm:text-[12px]"
+            >
+              {sponsor.cta}
+            </a>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
+
+<style>
+  .marquee-track {
+    animation: sponsorMarquee 26s linear infinite;
+    will-change: transform;
+  }
+  @keyframes sponsorMarquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+      animation: none;
+    }
+  }
+</style>
