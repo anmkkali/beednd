@@ -69,8 +69,73 @@ const expiry = expiryLabel(deal.end_date, !!deal.limited_time);
   data-kind={kind}
   data-tokens={dealTokens(deal)}
 >
-  <div class="flex items-stretch gap-2.5 sm:gap-4">
-    <div class="flex w-9 shrink-0 flex-col items-center gap-1 self-start sm:w-11 sm:gap-1.5">
+  <!-- Mobile layout (< 640px) — Compact, neat, zero vertical stretching or text squishing -->
+  <div class="flex flex-col gap-2 sm:hidden">
+    <!-- Top row: Brand info on left, Badge on right -->
+    <div class="flex items-center justify-between gap-2">
+      <div class="flex items-center gap-2 min-w-0">
+        <a href={`/brands/${deal.brand_id}`} aria-label={`${brandName} deals`} class="shrink-0">
+          <BrandMark name={brandName} logoUrl={brandLogo} size="sm" />
+        </a>
+        <div class="flex items-center gap-1.5 min-w-0 text-[12px]">
+          <a href={`/brands/${deal.brand_id}`} class="font-bold text-ink truncate">{brandName}</a>
+          <span class="text-ink-muted shrink-0 text-[11px]">#{tagLabel}</span>
+          {channelLabel && (
+            <span class="border editorial-rule px-1 py-0.2 text-[9.5px] font-medium text-ink shrink-0">{channelLabel}</span>
+          )}
+        </div>
+      </div>
+      <span class="editorial-pill shrink-0 whitespace-nowrap px-2 py-0.5 text-right text-[11px] font-semibold leading-tight text-ink">
+        {deal.badge_text || deal.discount_value}
+      </span>
+    </div>
+
+    <!-- Title -->
+    <h3 class="text-[14.5px] font-semibold leading-snug text-ink">
+      <a href={`/deals/${deal.slug}`} class="underline-offset-2 hover:underline line-clamp-2">{deal.title}</a>
+    </h3>
+
+    <!-- Description (compact) -->
+    <p class="line-clamp-2 text-[12px] leading-relaxed text-ink-muted">{deal.short_description}</p>
+
+    <!-- Bottom row: Chips on left, View offer on right -->
+    <div class="flex items-center justify-between gap-2 pt-0.5">
+      <div class="flex items-center gap-2 text-[11px] text-ink-muted truncate">
+        {deal.bank_details ? (
+          <span class="inline-flex items-center gap-1 text-ink truncate">
+            <Icon name="card" class="h-3 w-3 shrink-0" />
+            <span class="truncate">{deal.bank_details.bank_id.toUpperCase()} +{deal.bank_details.cashback_percent}%</span>
+          </span>
+        ) : deal.cities && deal.cities.length > 0 ? (
+          <span class="inline-flex items-center gap-1 truncate">
+            <Icon name="location" class="h-3 w-3 shrink-0" />
+            <span class="truncate">{deal.cities[0]}{deal.cities.length > 1 ? ` +${deal.cities.length - 1}` : ''}</span>
+          </span>
+        ) : (
+          <span class="inline-flex items-center gap-1">
+            <Icon name="calendar" class="h-3 w-3 shrink-0" />
+            <span>{shortDate(deal.last_verified_at)}</span>
+          </span>
+        )}
+      </div>
+
+      <div class="flex items-center gap-1.5 shrink-0">
+        {deal.promo_code && (
+          <button type="button" class="copy-code-btn btn-outline px-2 py-0.5 text-[11px] font-mono font-semibold" data-code={deal.promo_code}>
+            {deal.promo_code}
+          </button>
+        )}
+        <a href={`/deals/${deal.slug}`} class="btn-primary inline-flex items-center gap-1 whitespace-nowrap px-2.5 py-1 text-[11.5px] font-semibold">
+          View offer
+          <Icon name="arrow" class="h-2.5 w-2.5" />
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Desktop layout (sm:flex) — 3-column perfected layout -->
+  <div class="hidden sm:flex items-stretch gap-4">
+    <div class="flex w-11 shrink-0 flex-col items-center gap-1.5 self-start">
       <a href={`/brands/${deal.brand_id}`} aria-label={`${brandName} deals`}>
         <BrandMark name={brandName} logoUrl={brandLogo} size="sm" />
       </a>
@@ -92,7 +157,7 @@ const expiry = expiryLabel(deal.end_date, !!deal.limited_time);
     <!-- Col 2: Main content -->
     <div class="min-w-0 flex-1">
       <!-- Meta line: brand, tag, status icons -->
-      <div class="mb-1 flex flex-wrap items-center gap-x-2 gap-y-0.5 text-[11px] text-ink-muted sm:gap-x-2.5 sm:text-[12px]">
+      <div class="mb-1 flex flex-wrap items-center gap-x-2.5 gap-y-0.5 text-[12px] text-ink-muted">
         <a href={`/brands/${deal.brand_id}`} class="font-bold text-ink hover:underline">{brandName}</a>
         {deal.is_sponsored && <span class="border border-ink px-1.5 py-0.2 text-[9.5px] font-semibold uppercase tracking-[0.1em] text-ink">Sponsored</span>}
         <span class="font-medium">#{tagLabel}</span>
@@ -133,11 +198,11 @@ const expiry = expiryLabel(deal.end_date, !!deal.limited_time);
       </div>
 
       <!-- Title -->
-      <h3 class="text-[16px] font-semibold leading-snug text-ink sm:text-[18px]">
+      <h3 class="text-[18px] font-semibold leading-snug text-ink">
         <a href={`/deals/${deal.slug}`} class="underline-offset-2 hover:underline">{deal.title}</a>
       </h3>
 
-      <p class="mt-1 line-clamp-2 max-w-3xl text-[12.5px] leading-relaxed text-ink-muted sm:text-[13.5px]">{deal.short_description}</p>
+      <p class="mt-1 line-clamp-2 max-w-3xl text-[13.5px] leading-relaxed text-ink-muted">{deal.short_description}</p>
 
       <!-- Location/bank chips (only rendered if present) -->
       {(deal.bank_details || (deal.cities && deal.cities.length > 0)) && (
@@ -159,11 +224,11 @@ const expiry = expiryLabel(deal.end_date, !!deal.limited_time);
     </div>
 
     <!-- Col 3: Right action column — badge at top, View offer & promo code at bottom -->
-    <div class="flex shrink-0 flex-col justify-between items-end self-stretch gap-2 min-w-[7rem] sm:min-w-[8.5rem]">
-      <span class="editorial-pill whitespace-nowrap px-2.5 py-0.5 text-right text-[11.5px] font-semibold leading-tight text-ink sm:text-[12px]">
+    <div class="flex shrink-0 flex-col justify-between items-end self-stretch gap-2 min-w-[8.5rem]">
+      <span class="editorial-pill whitespace-nowrap px-2.5 py-0.5 text-right text-[12px] font-semibold leading-tight text-ink">
         {deal.badge_text || deal.discount_value}
       </span>
-      <div class="mt-auto flex flex-wrap items-center justify-end gap-1.5 sm:gap-2">
+      <div class="mt-auto flex flex-wrap items-center justify-end gap-2">
         {deal.promo_code && (
           <button type="button" class="copy-code-btn btn-outline px-2.5 py-1 text-[11.5px] font-mono font-semibold tracking-wider" data-code={deal.promo_code}>
             {deal.promo_code}

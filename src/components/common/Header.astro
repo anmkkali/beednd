@@ -27,11 +27,11 @@ const latest = (await getCollection('deals', ({ data }) => data.status === 'acti
 
     <!-- CENTER: Brand Logo perfectly centered on desktop and mobile -->
     <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center pointer-events-auto">
-      <a href="/" class="flex items-center justify-center gap-2 text-ink transition-opacity hover:opacity-85" aria-label="DealsSite home">
+      <a href="/" class="flex items-center justify-center gap-1.5 text-ink transition-opacity hover:opacity-85 sm:gap-2" aria-label="DealsSite home">
         <span class="btn-primary hidden h-7 w-7 shrink-0 items-center justify-center rounded-sm sm:flex">
           <Icon name="tag" class="h-3.5 w-3.5" />
         </span>
-        <span class="font-serif text-[24px] font-bold leading-none tracking-tight sm:text-[28px]">DealsSite</span>
+        <span class="font-serif text-[21px] font-bold leading-none tracking-tight sm:text-[28px]">DealsSite</span>
       </a>
     </div>
 
@@ -50,10 +50,10 @@ const latest = (await getCollection('deals', ({ data }) => data.status === 'acti
         <kbd class="ml-auto hidden border editorial-rule px-1.5 py-0.5 text-[10px] font-mono text-ink-muted sm:group-hover:inline-block">Ctrl K</kbd>
       </button>
 
-      <!-- Blog button (on right of search, icon + text always visible) -->
+      <!-- Blog button (desktop header; mobile has it in quickbar below) -->
       <a
         href="/blog"
-        class="btn-outline flex h-9 items-center gap-1.5 rounded-full px-2.5 text-[12.5px] font-semibold transition-colors sm:h-10 sm:px-3.5 sm:text-[13px]"
+        class="btn-outline hidden sm:inline-flex h-9 items-center gap-1.5 rounded-full px-2.5 text-[12.5px] font-semibold transition-colors sm:h-10 sm:px-3.5 sm:text-[13px]"
         aria-label="Blog"
         title="Blog"
       >
@@ -61,8 +61,8 @@ const latest = (await getCollection('deals', ({ data }) => data.status === 'acti
         <span>Blog</span>
       </a>
 
-      <!-- Cities dropdown with Location Icon -->
-      <details class="relative" data-dropdown>
+      <!-- Cities dropdown (desktop header; mobile has it in quickbar below) -->
+      <details class="relative hidden sm:block" data-dropdown>
         <summary
           class="btn-outline flex h-9 cursor-pointer list-none items-center gap-1.5 rounded-full px-2.5 text-[12.5px] font-semibold transition-colors sm:h-10 sm:px-3 sm:text-[13px]"
           title="Select city"
@@ -74,9 +74,9 @@ const latest = (await getCollection('deals', ({ data }) => data.status === 'acti
         <div data-cities-panel class="absolute right-0 top-11 z-50 max-h-[70vh] w-64 overflow-y-auto border editorial-rule bg-base-950 shadow-xl sm:top-12"></div>
       </details>
 
-      <!-- Country selector with Globe Icon -->
+      <!-- Country selector (desktop header; mobile has it in quickbar below) -->
       <label
-        class="btn-outline relative flex h-9 cursor-pointer items-center gap-1.5 rounded-full px-2.5 text-[12.5px] font-medium transition-colors sm:h-10 sm:px-3 sm:text-[13px]"
+        class="btn-outline relative hidden sm:flex h-9 cursor-pointer items-center gap-1.5 rounded-full px-2.5 text-[12.5px] font-medium transition-colors sm:h-10 sm:px-3 sm:text-[13px]"
         title="Change country"
       >
         <Icon name="globe" class="h-4 w-4 shrink-0 text-ink" />
