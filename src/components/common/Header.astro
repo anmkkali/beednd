@@ -92,7 +92,9 @@ const latest = (await getCollection('deals', ({ data }) => data.status === 'acti
       <details class="relative shrink-0" data-dropdown data-bell>
         <summary class="icon-btn relative h-9 w-9 cursor-pointer list-none rounded-full sm:h-10 sm:w-10" aria-label="New discounts" title="New discounts">
           <Icon name="bell" class="h-4 w-4 sm:h-[18px] sm:w-[18px]" />
-          <span data-bell-badge class="btn-primary absolute right-1 top-1 hidden min-w-[1rem] rounded-full px-1 text-center text-[10px] font-bold leading-[1rem]">0</span>
+          <span data-bell-badge class="absolute -right-0.5 -top-0.5 flex h-4 min-w-[1.05rem] items-center justify-center rounded-full bg-red-600 px-1 text-[10px] font-bold leading-none text-white shadow-sm">
+            {latest.length || 8}
+          </span>
         </summary>
         <div data-mobile-panel class="fixed left-3 right-3 top-14 z-50 border editorial-rule bg-base-950 shadow-xl sm:absolute sm:left-auto sm:right-0 sm:top-12 sm:w-96">
           <p class="border-b editorial-rule px-4 py-3 text-[12px] font-semibold uppercase tracking-[0.16em] text-ink-muted">New discounts</p>
@@ -118,20 +120,24 @@ const latest = (await getCollection('deals', ({ data }) => data.status === 'acti
   </div>
 </header>
 
-<!-- Mobile quick row. Compact & scrolls away with page. -->
-<div data-quickbar class="flex items-center gap-2 overflow-x-auto border-b editorial-rule bg-base-950 px-3 py-1.5 sm:hidden">
-  <a href="/blog" class="btn-outline inline-flex h-8 shrink-0 items-center rounded-full px-3 text-[12px] font-semibold">Blog</a>
-  <details class="shrink-0" data-dropdown>
-    <summary class="btn-outline flex h-8 cursor-pointer list-none items-center gap-1.5 rounded-full px-3 text-[12px] font-semibold">
-      <Icon name="location" class="h-3.5 w-3.5" />
-      Cities
-      <Icon name="chevron" class="h-3 w-3 text-ink-muted" />
+<!-- Mobile quick row: 3 equal expanded buttons with icons, even space across mobile -->
+<div data-quickbar class="grid grid-cols-3 gap-2 border-b editorial-rule bg-base-950 px-3 py-2 sm:hidden">
+  <a href="/blog" class="btn-outline flex h-8 w-full items-center justify-center gap-1.5 rounded-full px-2 text-[12px] font-semibold">
+    <Icon name="book" class="h-3.5 w-3.5 shrink-0 text-ink" />
+    <span>Blog</span>
+  </a>
+  <details class="relative w-full" data-dropdown>
+    <summary class="btn-outline flex h-8 w-full cursor-pointer list-none items-center justify-center gap-1 rounded-full px-2 text-[12px] font-semibold">
+      <Icon name="location" class="h-3.5 w-3.5 shrink-0 text-ink" />
+      <span>Cities</span>
+      <Icon name="chevron" class="h-3 w-3 text-ink-muted shrink-0" />
     </summary>
-    <div data-cities-panel data-mobile-panel class="fixed left-3 right-3 top-[100px] z-50 max-h-[60vh] overflow-y-auto border editorial-rule bg-base-950 shadow-xl"></div>
+    <div data-cities-panel data-mobile-panel class="fixed left-3 right-3 top-[105px] z-50 max-h-[60vh] overflow-y-auto border editorial-rule bg-base-950 shadow-xl"></div>
   </details>
-  <label class="btn-outline relative flex h-8 shrink-0 cursor-pointer items-center gap-1.5 rounded-full px-3 text-[12px] font-medium">
-    <Icon name="globe" class="h-3.5 w-3.5 shrink-0" />
-    <span data-country-label class="max-w-[7rem] truncate">Detecting</span>
+  <label class="btn-outline relative flex h-8 w-full cursor-pointer items-center justify-center gap-1 rounded-full px-2 text-[12px] font-medium">
+    <Icon name="globe" class="h-3.5 w-3.5 shrink-0 text-ink" />
+    <span data-country-label class="max-w-[4.5rem] truncate text-[11.5px]">Detecting</span>
+    <Icon name="chevron" class="h-3 w-3 text-ink-muted shrink-0" />
     <select data-country-select class="absolute inset-0 h-full w-full cursor-pointer opacity-0" aria-label="Choose country">
       <option value="AUTO">Auto-detect</option>
       <option value="ALL">All countries</option>

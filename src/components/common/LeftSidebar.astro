@@ -47,9 +47,27 @@ const filterHref = (categoryId: string, groupId: string, filter: { sub?: string;
 };
 ---
 
-<div id="sidebar-backdrop" class="fixed inset-0 z-[25] bg-black/40" data-sidebar-close></div>
+<div id="sidebar-backdrop" class="fixed inset-0 z-[75] bg-black/60 backdrop-blur-sm" data-sidebar-close></div>
 
 <aside id="app-sidebar" class="flex flex-col border-r editorial-rule bg-base-950" aria-label="Site navigation">
+  <!-- Mobile Drawer Header with brand logo & close button -->
+  <div class="flex items-center justify-between border-b editorial-rule px-4 py-3.5 lg:hidden">
+    <div class="flex items-center gap-2">
+      <span class="btn-primary flex h-6 w-6 items-center justify-center rounded-sm">
+        <Icon name="tag" class="h-3 w-3" />
+      </span>
+      <span class="font-serif text-[20px] font-bold text-ink">DealsSite</span>
+    </div>
+    <button
+      type="button"
+      data-sidebar-close
+      class="icon-btn -mr-1.5 h-8 w-8 text-ink"
+      aria-label="Close menu"
+    >
+      <Icon name="close" class="h-5 w-5" />
+    </button>
+  </div>
+
   <div class="min-h-0 flex-1 overflow-y-auto px-2 pb-8">
     <nav class="space-y-0.5 pt-3" aria-label="Offer types">
       {quickLinks.map((link) => (

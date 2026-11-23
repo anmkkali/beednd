@@ -6,21 +6,21 @@ import { sponsor } from '../../data/site';
   sponsor.enabled && (
     <div
       id="sponsor-bar"
-      class="group relative overflow-hidden bg-ink py-2 text-[11.5px] text-ink-inverse sm:text-[12.5px]"
+      class="group relative overflow-hidden border-b border-white/10 bg-[#121215] py-2 text-[11.5px] text-white sm:text-[12.5px]"
       aria-label="Sponsor announcement"
     >
       <div class="marquee-track flex w-max items-center gap-12 group-hover:[animation-play-state:paused]">
         {[0, 1, 2, 3].map(() => (
           <div class="flex shrink-0 items-center gap-3 sm:gap-4">
-            <span class="shrink-0 border border-ink-inverse/50 px-1.5 py-0.5 text-[9.5px] font-semibold uppercase tracking-[0.14em] sm:text-[10.5px]">
+            <span class="shrink-0 border border-white/40 px-1.5 py-0.5 text-[9.5px] font-semibold uppercase tracking-[0.14em] text-white sm:text-[10.5px]">
               {sponsor.label}
             </span>
-            <span class="whitespace-nowrap font-medium text-ink-inverse/90">
+            <span class="whitespace-nowrap font-medium text-white/90">
               {sponsor.text}
             </span>
             <a
               href={sponsor.href}
-              class="shrink-0 whitespace-nowrap bg-ink-inverse px-2.5 py-0.5 text-[11px] font-semibold text-ink transition-opacity hover:opacity-90 sm:text-[12px]"
+              class="shrink-0 whitespace-nowrap rounded-sm bg-white px-2.5 py-0.5 text-[11px] font-semibold text-black transition-opacity hover:opacity-90 sm:text-[12px]"
             >
               {sponsor.cta}
             </a>

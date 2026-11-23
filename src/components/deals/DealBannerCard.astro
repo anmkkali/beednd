@@ -79,7 +79,6 @@ const expiry = expiryLabel(deal.end_date, !!deal.limited_time);
         </a>
         <div class="flex items-center gap-1.5 min-w-0 text-[12px]">
           <a href={`/brands/${deal.brand_id}`} class="font-bold text-ink truncate">{brandName}</a>
-          <span class="text-ink-muted shrink-0 text-[11px]">#{tagLabel}</span>
           {channelLabel && (
             <span class="border editorial-rule px-1 py-0.2 text-[9.5px] font-medium text-ink shrink-0">{channelLabel}</span>
           )}
@@ -160,7 +159,6 @@ const expiry = expiryLabel(deal.end_date, !!deal.limited_time);
       <div class="mb-1 flex flex-wrap items-center gap-x-2.5 gap-y-0.5 text-[12px] text-ink-muted">
         <a href={`/brands/${deal.brand_id}`} class="font-bold text-ink hover:underline">{brandName}</a>
         {deal.is_sponsored && <span class="border border-ink px-1.5 py-0.2 text-[9.5px] font-semibold uppercase tracking-[0.1em] text-ink">Sponsored</span>}
-        <span class="font-medium">#{tagLabel}</span>
         <span
           data-new-badge
           data-since={deal.last_verified_at}

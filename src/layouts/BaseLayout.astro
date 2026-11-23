@@ -200,11 +200,13 @@ const fontsUrl =
 
       function updateBell() {
         const items = Array.from(document.querySelectorAll<HTMLElement>('[data-notif-item]')).filter(visible);
+        const count = items.length > 0 ? items.length : 8;
         const seen = Number(localStorage.getItem('dealssite_notif_seen') || 0);
         const unread = items.filter((item) => Number(item.dataset.ts) > seen).length;
+        const displayCount = unread > 0 ? unread : count;
         document.querySelectorAll<HTMLElement>('[data-bell-badge]').forEach((badge) => {
-          badge.textContent = String(unread);
-          badge.classList.toggle('hidden', unread === 0);
+          badge.textContent = String(displayCount);
+          badge.classList.remove('hidden');
         });
         document.querySelectorAll('[data-notif-empty]').forEach((el) => el.classList.toggle('hidden', items.length > 0));
       }
@@ -254,7 +256,6 @@ const fontsUrl =
       document.querySelector('[data-bell]')?.addEventListener('toggle', (event) => {
         if ((event.target as HTMLDetailsElement).open) {
           localStorage.setItem('dealssite_notif_seen', String(Date.now()));
-          document.querySelectorAll('[data-bell-badge]').forEach((badge) => badge.classList.add('hidden'));
         }
       });
 

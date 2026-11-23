@@ -127,6 +127,16 @@ html[data-theme='dark'] .editorial-pill,
   background-color: rgb(var(--ink) / 0.03);
 }
 
+/* Selected button / active pill in dark mode: solid bright pill with crisp dark text */
+html[data-theme='dark'] .btn-primary,
+:root[data-theme='dark'] .btn-primary,
+html[data-theme='dark'] .editorial-pill.btn-primary {
+  background-color: rgb(236 236 240) !important;
+  color: rgb(10 10 12) !important;
+  border-color: rgb(236 236 240) !important;
+  font-weight: 600 !important;
+}
+
 html[data-theme='dark'] .btn-outline,
 :root[data-theme='dark'] .btn-outline {
   border: 1px solid rgb(var(--ink) / 0.11);
@@ -142,22 +152,6 @@ html[data-theme='dark'] .btn-outline:hover,
 html[data-theme='dark'] .border-ink,
 :root[data-theme='dark'] .border-ink {
   border-color: rgb(var(--ink) / 0.2) !important;
-}
-
-html[data-theme='dark'] #sponsor-bar {
-  background-color: rgb(14 14 17) !important;
-  color: rgb(var(--ink)) !important;
-  border-bottom: 1px solid rgb(var(--ink) / 0.075);
-}
-
-html[data-theme='dark'] #sponsor-bar a {
-  background-color: rgb(var(--ink) / 0.12) !important;
-  color: rgb(var(--ink)) !important;
-}
-
-html[data-theme='dark'] #sponsor-bar span.border {
-  border-color: rgb(var(--ink) / 0.2) !important;
-  color: rgb(var(--ink) / 0.85) !important;
 }
 
 /* Icon buttons (theme, search, sidebar collapse, menu) */
@@ -228,10 +222,12 @@ html[data-theme='dark'] .theme-icon-moon {
 @media (max-width: 1023px) {
   #app-sidebar {
     position: fixed;
-    inset: 56px auto 0 0;
-    z-index: 26;
+    inset: 0 auto 0 0;
+    z-index: 80;
     width: 18rem;
     max-width: 86vw;
+    height: 100vh;
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.4);
     transform: translateX(-100%);
   }
   html[data-sidebar-open] #app-sidebar {
@@ -239,6 +235,7 @@ html[data-theme='dark'] .theme-icon-moon {
   }
   #sidebar-backdrop {
     display: none;
+    z-index: 75;
   }
   html[data-sidebar-open] #sidebar-backdrop {
     display: block;
