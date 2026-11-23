@@ -21,18 +21,19 @@
   }
 
   :root[data-theme='dark'] {
-    --base-950: 18 18 16;
-    --base-900: 26 26 23;
-    --base-800: 37 36 32;
-    --base-700: 58 56 50;
-    --base-600: 112 108 98;
-    --line: 58 56 50;
-    --line-strong: 244 242 236;
-    --ink: 244 242 236;
-    --ink-inverse: 18 18 16;
-    --muted: 174 170 160;
-    --accent: 244 242 236;
-    --accent-strong: 216 211 199;
+    /* Fully optimized deep obsidian palette — eye-friendly & immersive */
+    --base-950: 10 10 12;
+    --base-900: 18 18 20;
+    --base-800: 26 26 30;
+    --base-700: 38 38 44;
+    --base-600: 64 64 74;
+    --line: 28 28 32;
+    --line-strong: 55 55 64;
+    --ink: 236 236 240;
+    --ink-inverse: 10 10 12;
+    --muted: 154 154 162;
+    --accent: 236 236 240;
+    --accent-strong: 205 205 215;
     color-scheme: dark;
   }
 
@@ -107,6 +108,56 @@ details > summary::-webkit-details-marker {
 .btn-outline:hover {
   background-color: rgb(var(--base-900));
   border-color: rgb(var(--ink) / 0.5);
+}
+
+/* Dark mode specific outline & border optimizations — softened opacity to prevent visual glare */
+html[data-theme='dark'] .editorial-rule,
+:root[data-theme='dark'] .editorial-rule {
+  border-color: rgb(var(--ink) / 0.075);
+}
+
+html[data-theme='dark'] .editorial-rule-strong,
+:root[data-theme='dark'] .editorial-rule-strong {
+  border-color: rgb(var(--ink) / 0.15);
+}
+
+html[data-theme='dark'] .editorial-pill,
+:root[data-theme='dark'] .editorial-pill {
+  border: 1px solid rgb(var(--ink) / 0.12);
+  background-color: rgb(var(--ink) / 0.03);
+}
+
+html[data-theme='dark'] .btn-outline,
+:root[data-theme='dark'] .btn-outline {
+  border: 1px solid rgb(var(--ink) / 0.11);
+  background-color: rgb(var(--base-900) / 0.4);
+}
+
+html[data-theme='dark'] .btn-outline:hover,
+:root[data-theme='dark'] .btn-outline:hover {
+  background-color: rgb(var(--base-900));
+  border-color: rgb(var(--ink) / 0.28);
+}
+
+html[data-theme='dark'] .border-ink,
+:root[data-theme='dark'] .border-ink {
+  border-color: rgb(var(--ink) / 0.2) !important;
+}
+
+html[data-theme='dark'] #sponsor-bar {
+  background-color: rgb(14 14 17) !important;
+  color: rgb(var(--ink)) !important;
+  border-bottom: 1px solid rgb(var(--ink) / 0.075);
+}
+
+html[data-theme='dark'] #sponsor-bar a {
+  background-color: rgb(var(--ink) / 0.12) !important;
+  color: rgb(var(--ink)) !important;
+}
+
+html[data-theme='dark'] #sponsor-bar span.border {
+  border-color: rgb(var(--ink) / 0.2) !important;
+  color: rgb(var(--ink) / 0.85) !important;
 }
 
 /* Icon buttons (theme, search, sidebar collapse, menu) */
