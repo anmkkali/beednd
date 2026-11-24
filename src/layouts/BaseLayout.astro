@@ -8,6 +8,7 @@ import SponsorBar from '../components/common/SponsorBar.astro';
 import BlogStrip from '../components/common/BlogStrip.astro';
 import NotifyModal from '../components/common/NotifyModal.astro';
 import SubmitDealModal from '../components/common/SubmitDealModal.astro';
+import { ViewTransitions } from 'astro:transitions';
 import '../styles/global.css';
 
 interface Props {
@@ -139,9 +140,10 @@ const fontsUrl =
     <meta name="twitter:image" content={image} />
 
     {structuredData && <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />}
+    <ViewTransitions />
   </head>
   <body class="bg-base-950 text-ink">
-    <div id="sticky-top" class="sticky top-0 z-30 w-full">
+    <div id="sticky-top" class="sticky top-0 z-30 w-full" transition:persist="sticky-top">
       <SponsorBar />
       <Header />
     </div>
@@ -149,7 +151,7 @@ const fontsUrl =
       <LeftSidebar activeTopic={activeTopic} activeCategory={activeCategory} />
 
       <div class="flex min-w-0 flex-1 flex-col">
-        <main class="mx-auto w-full max-w-6xl flex-1 px-4 pb-20 pt-6 sm:px-6 lg:px-10">
+        <main class="mx-auto w-full max-w-6xl flex-1 px-4 pb-20 pt-6 sm:px-6 lg:px-10" transition:animate="fade">
           <slot />
           {showBottom && (
             <>
@@ -424,6 +426,32 @@ const fontsUrl =
 
       const catPathMatch = window.location.pathname.match(/^\/categories\/([^/]+)/);
       if (catPathMatch?.[1]) recordInterest(catPathMatch[1], 3);
+
+      // Preserve theme, sidebar, market, and language state across Astro ClientRouter transitions (zero flicker)
+      document.addEventListener('astro:before-swap', (ev: any) => {
+        const newDoc = ev.newDocument as Document;
+        if (!newDoc) return;
+        const nr = newDoc.documentElement;
+        if (root.dataset.theme) nr.dataset.theme = root.dataset.theme;
+        if (root.dataset.sidebar) nr.dataset.sidebar = root.dataset.sidebar;
+        if (root.dataset.activeMarket) nr.dataset.activeMarket = root.dataset.activeMarket;
+        if (root.dataset.marketMode) nr.dataset.marketMode = root.dataset.marketMode;
+        if (root.dataset.activeLang) nr.dataset.activeLang = root.dataset.activeLang;
+        nr.lang = root.lang;
+        nr.dir = root.dir;
+        const mStyle = document.getElementById('market-style');
+        if (mStyle && !newDoc.getElementById('market-style')) {
+          newDoc.head.appendChild(mStyle.cloneNode(true));
+        }
+      });
+
+      document.addEventListener('astro:page-load', () => {
+        const m = window.location.pathname.match(/^\/categories\/([^/]+)/);
+        if (m?.[1]) recordInterest(m[1], 3);
+        const curLang = (root.dataset.activeLang || 'en') as LangCode;
+        if (curLang !== 'en') applyLanguage(curLang, !localStorage.getItem('dealssite_lang'));
+        updateBell();
+      });
 
       document.addEventListener('click', (e) => {
         const target = e.target as HTMLElement | null;

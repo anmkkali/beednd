@@ -8,25 +8,39 @@ import { categories, ALL_KIND_LABELS } from '../../data/taxonomy';
 import { dealKind, dealTokens } from '../../lib/deals';
 
 export async function getStaticPaths() {
-  const allDeals = await getCollection('deals', ({ data }) => data.status === 'active');
+  const nowMs = Date.now();
+  const allDeals = (await getCollection('deals', ({ data }) => data.status === 'active')).filter(
+    (d) => !d.data.end_date || Number.isNaN(Date.parse(d.data.end_date)) || Date.parse(d.data.end_date) >= nowMs
+  );
   const allBrands = await getCollection('brands');
   const brandMap = new Map(allBrands.map((b) => [b.data.id, b.data]));
 
-  return categories.map((category) => ({
-    params: { category: category.id },
-    props: {
-      category,
-      deals: allDeals
-        .filter((d) => d.data.category === category.id)
-        // Sponsored and affiliate placements always lead the list.
-        .sort((a, b) => Number(b.data.is_sponsored) - Number(a.data.is_sponsored)),
-      categoryBrands: allBrands.filter((b) => b.data.categories.includes(category.id)),
-      brandMap,
-    },
-  }));
+  return categories.map((category) => {
+    const catDeals = allDeals
+      .filter((d) => d.data.category === category.id)
+      // Sponsored and affiliate placements always lead the list.
+      .sort((a, b) => Number(b.data.is_sponsored) - Number(a.data.is_sponsored));
+
+    const brandTokensMap = new Map<string, string>();
+    catDeals.forEach((d) => {
+      const prev = brandTokensMap.get(d.data.brand_id) || '';
+      brandTokensMap.set(d.data.brand_id, prev + dealTokens(d.data));
+    });
+
+    return {
+      params: { category: category.id },
+      props: {
+        category,
+        deals: catDeals,
+        categoryBrands: allBrands.filter((b) => b.data.categories.includes(category.id) && brandTokensMap.has(b.data.id)),
+        brandTokensMap,
+        brandMap,
+      },
+    };
+  });
 }
 
-const { category, deals, categoryBrands, brandMap } = Astro.props;
+const { category, deals, categoryBrands, brandTokensMap, brandMap } = Astro.props;
 
 // Labels used for the "Showing" line. Filtering itself is driven by the sidebar links.
 const subLabels: Record<string, string> = {};
@@ -66,6 +80,7 @@ const labels = {
             href={`/brands/${brand.data.slug}`}
             data-cat-brand
             data-market={brand.data.country}
+            data-brand-tokens={brandTokensMap.get(brand.data.id) || ''}
             class="flex items-center gap-3 border-b border-r editorial-rule p-3 transition-colors hover:bg-base-900/70 sm:p-4"
           >
             <BrandMark name={brand.data.name} logoUrl={brand.data.logo_url} size="sm" />
@@ -97,59 +112,75 @@ const labels = {
   </section>
 
   <script>
-    const rows = Array.from(document.querySelectorAll<HTMLElement>('[data-cat-deal]'));
-    const emptyMsg = document.getElementById('category-empty');
-    const summary = document.getElementById('filter-summary');
-    const summaryText = document.getElementById('filter-text');
+    function initCategoryPage() {
+      const rows = Array.from(document.querySelectorAll<HTMLElement>('[data-cat-deal]'));
+      if (!rows.length && !document.getElementById('category-deals')) return;
+      const emptyMsg = document.getElementById('category-empty');
+      const summary = document.getElementById('filter-summary');
+      const summaryText = document.getElementById('filter-text');
 
-    // Show the first few brands, with a button for the rest
-    const brandItems = Array.from(document.querySelectorAll<HTMLElement>('[data-cat-brand]'));
-    const moreButton = document.getElementById('brands-more');
-    const BRAND_LIMIT = 8;
-    let brandsExpanded = false;
+      // Show the first few brands, with a button for the rest
+      const brandItems = Array.from(document.querySelectorAll<HTMLElement>('[data-cat-brand]'));
+      const moreButton = document.getElementById('brands-more');
+      const BRAND_LIMIT = 8;
+      let brandsExpanded = false;
 
-    function limitBrands() {
-      if (!moreButton) return;
-      brandItems.forEach((item) => item.classList.remove('brand-extra'));
-      const shown = brandItems.filter((item) => item.getClientRects().length > 0);
-      if (!brandsExpanded) shown.slice(BRAND_LIMIT).forEach((item) => item.classList.add('brand-extra'));
-      moreButton.classList.toggle('hidden', shown.length <= BRAND_LIMIT);
-      moreButton.textContent = brandsExpanded ? 'Show fewer brands' : `Show all ${shown.length} brands`;
-    }
-    moreButton?.addEventListener('click', () => {
-      brandsExpanded = !brandsExpanded;
-      limitBrands();
-    });
-
-    const params = new URLSearchParams(window.location.search);
-    const group = params.get('group') || '';
-    const sub = params.get('sub') || '';
-    const kind = params.get('kind') || '';
-
-    function apply() {
-      rows.forEach((row) => {
-        const tokens = row.dataset.tokens || '';
-        const ok =
-          (!group || tokens.includes(`|${group}|`) || tokens.includes('|all-items|')) &&
-          (!sub || tokens.includes(`|${sub}|`) || tokens.includes('|all-items|')) &&
-          (!kind || row.dataset.kind === kind);
-        row.classList.toggle('hidden', !ok);
+      function limitBrands() {
+        if (!moreButton) return;
+        brandItems.forEach((item) => item.classList.remove('brand-extra'));
+        const shown = brandItems.filter((item) => !item.classList.contains('hidden') && item.getClientRects().length > 0);
+        if (!brandsExpanded) shown.slice(BRAND_LIMIT).forEach((item) => item.classList.add('brand-extra'));
+        moreButton.classList.toggle('hidden', shown.length <= BRAND_LIMIT);
+        moreButton.textContent = brandsExpanded ? 'Show fewer brands' : `Show all ${shown.length} brands`;
+      }
+      moreButton?.addEventListener('click', () => {
+        brandsExpanded = !brandsExpanded;
+        limitBrands();
       });
-      const visibleRows = rows.some((row) => row.getClientRects().length > 0);
-      emptyMsg?.classList.toggle('hidden', visibleRows);
-      limitBrands();
-      window.dispatchEvent(new CustomEvent('dealssite:list-changed'));
+
+      const params = new URLSearchParams(window.location.search);
+      const group = params.get('group') || '';
+      const sub = params.get('sub') || '';
+      const kind = params.get('kind') || '';
+
+      function apply() {
+        rows.forEach((row) => {
+          const tokens = row.dataset.tokens || '';
+          const ok =
+            (!group || tokens.includes(`|${group}|`) || tokens.includes('|all-items|')) &&
+            (!sub || tokens.includes(`|${sub}|`) || tokens.includes('|all-items|')) &&
+            (!kind || row.dataset.kind === kind);
+          row.classList.toggle('hidden', !ok);
+        });
+        brandItems.forEach((b) => {
+          const bTokens = b.dataset.brandTokens || '';
+          const ok =
+            (!group || bTokens.includes(`|${group}|`) || bTokens.includes('|all-items|')) &&
+            (!sub || bTokens.includes(`|${sub}|`) || bTokens.includes('|all-items|'));
+          b.classList.toggle('hidden', !ok);
+        });
+        const visibleRows = rows.some((row) => !row.classList.contains('hidden') && row.getClientRects().length > 0);
+        emptyMsg?.classList.toggle('hidden', visibleRows);
+        limitBrands();
+        window.dispatchEvent(new CustomEvent('dealssite:list-changed'));
+      }
+
+      if (summary && summaryText) {
+        if (group || sub || kind) {
+          const labels = JSON.parse(summary.dataset.labels || '{}');
+          const parts = [labels.groups?.[group], labels.subs?.[sub], labels.kinds?.[kind]].filter(Boolean);
+          summaryText.textContent = parts.join(' / ');
+          summary.classList.remove('hidden');
+        } else {
+          summary.classList.add('hidden');
+        }
+      }
+
+      window.addEventListener('dealssite:market-updated', apply);
+      apply();
     }
 
-    if (summary && summaryText && (group || sub || kind)) {
-      const labels = JSON.parse(summary.dataset.labels || '{}');
-      const parts = [labels.groups?.[group], labels.subs?.[sub], labels.kinds?.[kind]].filter(Boolean);
-      summaryText.textContent = parts.join(' / ');
-      summary.classList.remove('hidden');
-    }
-
-    window.addEventListener('dealssite:market-updated', apply);
-    apply();
+    document.addEventListener('astro:page-load', initCategoryPage);
   </script>
 
   <style is:global>

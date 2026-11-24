@@ -5,12 +5,18 @@
   "short_description": "Up to 60% off electronics, Amazon devices, home appliances, and Lightning Deals through Cyber Monday.",
   "brand_id": "amazon-us",
   "country": "US",
-  "cities": ["New York", "Los Angeles", "Chicago"],
+  "cities": [
+    "New York",
+    "Los Angeles",
+    "Chicago"
+  ],
   "areas": [],
   "branch_info": [],
   "category": "tech-electronics",
   "deal_type": "online",
-  "channels": ["online"],
+  "channels": [
+    "online"
+  ],
   "discount_type": "percentage",
   "discount_value": "UP TO 60% OFF",
   "badge_text": "Up to 60% Off",
@@ -33,5 +39,13 @@
     "src": "https://www.google.com/s2/favicons?domain=amazon.com&sz=128",
     "alt": "Amazon US Black Friday"
   },
-  "tags": ["all-items"]
+  "tags": [
+    "mobiles",
+    "smartphones",
+    "computers",
+    "laptops",
+    "appliances",
+    "kitchen",
+    "audio"
+  ]
 }

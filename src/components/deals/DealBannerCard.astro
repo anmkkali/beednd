@@ -276,62 +276,65 @@ const expiry = expiryLabel(deal.end_date, !!deal.limited_time);
 </article>
 
 <script>
-  // Badges that depend on today's date are resolved in the browser, so they stay correct between builds.
-  const DAY = 86_400_000;
-  const now = Date.now();
+  function initDealCards() {
+    const DAY = 86_400_000;
+    const now = Date.now();
 
-  document.querySelectorAll<HTMLElement>('[data-new-badge]').forEach((badge) => {
-    const since = Date.parse(badge.dataset.since || '');
-    if (!Number.isNaN(since) && now - since >= 0 && now - since <= 14 * DAY) badge.classList.remove('hidden');
-  });
-
-  document.querySelectorAll<HTMLElement>('[data-expiry]').forEach((el) => {
-    const end = el.dataset.end ? Date.parse(el.dataset.end) : NaN;
-    const limited = el.dataset.limited === 'true';
-    let label = '';
-    if (!Number.isNaN(end)) {
-      const days = Math.ceil((end - now) / DAY);
-      if (days < 0) label = 'Expired';
-      else if (days <= 30) label = days === 0 ? 'Expires today' : `Expires in ${days}d`;
-    }
-    if (!label && limited) label = 'Limited time';
-    const text = el.querySelector('[data-expiry-text]');
-    if (text) text.textContent = label;
-    el.classList.toggle('hidden', !label);
-  });
-
-  // Hide expired deal banners automatically from active feeds (but keep visible inside #expired-brand-deals)
-  document.querySelectorAll<HTMLElement>('[data-deal-id]').forEach((card) => {
-    if (card.closest('#expired-brand-deals')) return;
-    const status = card.dataset.status || 'active';
-    const endRaw = card.dataset.endDate || '';
-    const endMs = endRaw ? Date.parse(endRaw) : NaN;
-    if (status === 'expired' || (!Number.isNaN(endMs) && endMs < now)) {
-      const wrapper = card.closest<HTMLElement>('[data-deal-wrapper], [data-cat-deal]') || card;
-      wrapper.style.display = 'none';
-    }
-  });
-
-  // Live countdown timer for upcoming ("Discount Coming Soon") deals
-  function updateCountdowns() {
-    const t = Date.now();
-    document.querySelectorAll<HTMLElement>('[data-countdown]').forEach((el) => {
-      const target = Date.parse(el.dataset.countdown || '');
-      const textEl = el.querySelector('[data-countdown-text]');
-      if (!textEl || Number.isNaN(target)) return;
-      const diff = target - t;
-      if (diff <= 0) {
-        textEl.textContent = 'Live now';
-        return;
-      }
-      const d = Math.floor(diff / 86_400_000);
-      const h = Math.floor((diff % 86_400_000) / 3_600_000);
-      const m = Math.floor((diff % 3_600_000) / 60_000);
-      textEl.textContent = d > 0 ? `${d}d ${h}h ${m}m` : `${h}h ${m}m`;
+    document.querySelectorAll<HTMLElement>('[data-new-badge]').forEach((badge) => {
+      const since = Date.parse(badge.dataset.since || '');
+      if (!Number.isNaN(since) && now - since >= 0 && now - since <= 14 * DAY) badge.classList.remove('hidden');
     });
+
+    document.querySelectorAll<HTMLElement>('[data-expiry]').forEach((el) => {
+      const end = el.dataset.end ? Date.parse(el.dataset.end) : NaN;
+      const limited = el.dataset.limited === 'true';
+      let label = '';
+      if (!Number.isNaN(end)) {
+        const days = Math.ceil((end - now) / DAY);
+        if (days < 0) label = 'Expired';
+        else if (days <= 30) label = days === 0 ? 'Expires today' : `Expires in ${days}d`;
+      }
+      if (!label && limited) label = 'Limited time';
+      const text = el.querySelector('[data-expiry-text]');
+      if (text) text.textContent = label;
+      el.classList.toggle('hidden', !label);
+    });
+
+    // Hide expired deal banners automatically from active feeds (but keep visible inside #expired-brand-deals)
+    document.querySelectorAll<HTMLElement>('[data-deal-id]').forEach((card) => {
+      if (card.closest('#expired-brand-deals')) return;
+      const status = card.dataset.status || 'active';
+      const endRaw = card.dataset.endDate || '';
+      const endMs = endRaw ? Date.parse(endRaw) : NaN;
+      if (status === 'expired' || (!Number.isNaN(endMs) && endMs < now)) {
+        const wrapper = card.closest<HTMLElement>('[data-deal-wrapper], [data-cat-deal]') || card;
+        wrapper.style.display = 'none';
+      }
+    });
+
+    // Live countdown timer for upcoming ("Discount Coming Soon") deals
+    function updateCountdowns() {
+      const t = Date.now();
+      document.querySelectorAll<HTMLElement>('[data-countdown]').forEach((el) => {
+        const target = Date.parse(el.dataset.countdown || '');
+        const textEl = el.querySelector('[data-countdown-text]');
+        if (!textEl || Number.isNaN(target)) return;
+        const diff = target - t;
+        if (diff <= 0) {
+          textEl.textContent = 'Live now';
+          return;
+        }
+        const d = Math.floor(diff / 86_400_000);
+        const h = Math.floor((diff % 86_400_000) / 3_600_000);
+        const m = Math.floor((diff % 3_600_000) / 60_000);
+        textEl.textContent = d > 0 ? `${d}d ${h}h ${m}m` : `${h}h ${m}m`;
+      });
+    }
+    updateCountdowns();
+    if (!(window as any).__dsCountdownTimer && document.querySelector('[data-countdown]')) {
+      (window as any).__dsCountdownTimer = setInterval(updateCountdowns, 60_000);
+    }
   }
-  updateCountdowns();
-  if (document.querySelector('[data-countdown]')) {
-    setInterval(updateCountdowns, 60_000);
-  }
+
+  document.addEventListener('astro:page-load', initDealCards);
 </script>

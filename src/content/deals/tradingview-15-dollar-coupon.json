@@ -31,7 +31,11 @@
     "src": "https://www.google.com/s2/favicons?domain=tradingview.com&sz=128",
     "alt": "TradingView Promo Code"
   },
-  "tags": ["finance", "charting", "stocks", "software", "coupon code"],
+  "tags": [
+    "finance",
+    "charting",
+    "stocks"
+  ],
   "offer_kind": "promo",
   "is_trending": false
 }

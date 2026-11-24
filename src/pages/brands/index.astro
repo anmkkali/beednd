@@ -121,36 +121,41 @@ const grouped = categories.map((cat) => {
   </div>
 
   <script>
-    const catBtns = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-brand-cat]'));
-    const sections = Array.from(document.querySelectorAll<HTMLElement>('[data-brand-section]'));
-    let activeCat = 'all';
+    function initBrandsPage() {
+      const catBtns = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-brand-cat]'));
+      if (!catBtns.length) return;
+      const sections = Array.from(document.querySelectorAll<HTMLElement>('[data-brand-section]'));
+      let activeCat = 'all';
 
-    function updateBrandSections() {
-      sections.forEach((sec) => {
-        const catMatch = activeCat === 'all' || sec.dataset.brandSection === activeCat;
-        const items = Array.from(sec.querySelectorAll<HTMLElement>('[data-brand-item]'));
-        const visibleCount = items.filter((el) => getComputedStyle(el).display !== 'none').length;
-        const countEl = sec.querySelector('[data-section-count]');
-        if (countEl) countEl.textContent = String(visibleCount);
-        sec.classList.toggle('hidden', !catMatch || visibleCount === 0);
-      });
+      function updateBrandSections() {
+        sections.forEach((sec) => {
+          const catMatch = activeCat === 'all' || sec.dataset.brandSection === activeCat;
+          const items = Array.from(sec.querySelectorAll<HTMLElement>('[data-brand-item]'));
+          const visibleCount = items.filter((el) => getComputedStyle(el).display !== 'none').length;
+          const countEl = sec.querySelector('[data-section-count]');
+          if (countEl) countEl.textContent = String(visibleCount);
+          sec.classList.toggle('hidden', !catMatch || visibleCount === 0);
+        });
 
-      catBtns.forEach((btn) => {
-        const on = btn.dataset.brandCat === activeCat;
-        btn.classList.toggle('btn-primary', on);
-        btn.classList.toggle('text-ink-muted', !on);
-        btn.setAttribute('aria-pressed', String(on));
-      });
+        catBtns.forEach((btn) => {
+          const on = btn.dataset.brandCat === activeCat;
+          btn.classList.toggle('btn-primary', on);
+          btn.classList.toggle('text-ink-muted', !on);
+          btn.setAttribute('aria-pressed', String(on));
+        });
+      }
+
+      catBtns.forEach((btn) =>
+        btn.addEventListener('click', () => {
+          activeCat = btn.dataset.brandCat || 'all';
+          updateBrandSections();
+        })
+      );
+
+      window.addEventListener('dealssite:market-updated', updateBrandSections);
+      updateBrandSections();
     }
 
-    catBtns.forEach((btn) =>
-      btn.addEventListener('click', () => {
-        activeCat = btn.dataset.brandCat || 'all';
-        updateBrandSections();
-      })
-    );
-
-    window.addEventListener('dealssite:market-updated', updateBrandSections);
-    updateBrandSections();
+    document.addEventListener('astro:page-load', initBrandsPage);
   </script>
 </BaseLayout>

@@ -27,8 +27,11 @@ const { target } = Astro.props;
   const chevron = (rotate: string) =>
     `<svg class="h-4 w-4 ${rotate}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>`;
 
-  document.querySelectorAll<HTMLElement>('[data-pagination]').forEach((nav) => {
-    const container = document.getElementById(nav.dataset.target || '');
+  document.addEventListener('astro:page-load', () => {
+    document.querySelectorAll<HTMLElement>('[data-pagination]').forEach((nav) => {
+      if (nav.dataset.pgInit) return;
+      nav.dataset.pgInit = '1';
+      const container = document.getElementById(nav.dataset.target || '');
     const select = nav.querySelector<HTMLSelectElement>('[data-rows]');
     const range = nav.querySelector<HTMLElement>('[data-range]');
     const pagesEl = nav.querySelector<HTMLElement>('[data-pages]');
@@ -101,6 +104,7 @@ const { target } = Astro.props;
     window.addEventListener('dealssite:list-changed', () => render(true));
     window.addEventListener('dealssite:market-updated', () => render(true));
     render();
+    });
   });
 </script>
 

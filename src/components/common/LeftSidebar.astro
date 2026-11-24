@@ -72,6 +72,7 @@ const filterHref = (categoryId: string, groupId: string, filter: { sub?: string;
 
 <aside
   id="app-sidebar"
+  transition:persist="app-sidebar"
   class="flex flex-col border-r editorial-rule bg-base-950"
   aria-label="Site navigation"
   data-deals-meta={JSON.stringify(dealsMeta)}
@@ -217,20 +218,29 @@ const filterHref = (categoryId: string, groupId: string, filter: { sub?: string;
 
   document.querySelectorAll('[data-sidebar-close]').forEach((el) => el.addEventListener('click', closeDrawer));
 
-  // Highlight active link matching current path
-  const currentPath = window.location.pathname;
-  document.querySelectorAll<HTMLAnchorElement>('[data-sb-link]').forEach((a) => {
-    const href = a.getAttribute('href');
-    if (href === currentPath || (href && href !== '/' && currentPath.startsWith(href))) {
-      a.dataset.active = 'true';
-      const details = a.closest('details');
-      if (details) {
-        details.open = true;
-        const summaryLink = details.querySelector<HTMLElement>('[data-sb-summary]');
-        if (summaryLink) summaryLink.dataset.ancestor = 'true';
+  // Highlight active link matching current path (updates smoothly without reloading sidebar)
+  function syncSidebarActive() {
+    const currentPath = window.location.pathname;
+    const currentFull = window.location.pathname + window.location.search;
+    document.querySelectorAll<HTMLAnchorElement>('[data-sb-link]').forEach((a) => {
+      delete a.dataset.active;
+      const href = a.getAttribute('href') || '';
+      const exact = href === currentFull || (href === '/' && currentFull === '/');
+      const pathMatch = !href.includes('?') && (href === currentPath || (href !== '/' && currentPath.startsWith(href) && !window.location.search));
+      if (exact || pathMatch) {
+        a.dataset.active = 'true';
+        const details = a.closest('details');
+        if (details) {
+          details.open = true;
+          const summaryLink = details.querySelector<HTMLElement>('[data-sb-summary]');
+          if (summaryLink) summaryLink.dataset.ancestor = 'true';
+        }
       }
-    }
-  });
+    });
+    closeDrawer();
+  }
+
+  document.addEventListener('astro:page-load', syncSidebarActive);
 
   // Update sidebar counts dynamically based on the active country (market) and non-expired deals
   function updateSidebarCounts() {

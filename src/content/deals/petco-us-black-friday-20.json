@@ -10,13 +10,17 @@
   "branch_info": [],
   "category": "pets",
   "deal_type": "promo-code",
-  "channels": ["online"],
+  "channels": [
+    "online"
+  ],
   "discount_type": "percentage",
   "discount_value": "20% OFF",
   "badge_text": "20% Off Sitewide",
   "numeric_discount_percent": 20,
   "promo_code": "BLACKFRIDAY20",
-  "terms_and_conditions": ["Apply BLACKFRIDAY20 at checkout on eligible items."],
+  "terms_and_conditions": [
+    "Apply BLACKFRIDAY20 at checkout on eligible items."
+  ],
   "start_date": "2026-11-22T00:00:00Z",
   "end_date": "2026-11-30T23:59:00Z",
   "source_url": "https://www.petco.com/shop/en/petcostore/c/deals",
@@ -27,6 +31,12 @@
   "is_coming_soon": false,
   "limited_time": true,
   "offer_kind": "promo",
-  "image": { "src": "https://www.google.com/s2/favicons?domain=petco.com&sz=128", "alt": "Petco" },
-  "tags": ["pet-food", "all-items"]
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=petco.com&sz=128",
+    "alt": "Petco"
+  },
+  "tags": [
+    "pet-food",
+    "pet-accessories"
+  ]
 }

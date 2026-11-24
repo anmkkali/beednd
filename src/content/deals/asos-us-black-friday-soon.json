@@ -10,7 +10,9 @@
   "branch_info": [],
   "category": "clothing-fashion",
   "deal_type": "online",
-  "channels": ["online"],
+  "channels": [
+    "online"
+  ],
   "discount_type": "percentage",
   "discount_value": "COMING SOON",
   "badge_text": "Discount Coming Soon",
@@ -33,5 +35,12 @@
     "src": "https://www.google.com/s2/favicons?domain=asos.com&sz=128",
     "alt": "ASOS US Black Friday"
   },
-  "tags": ["all-items"]
+  "tags": [
+    "men",
+    "women",
+    "western",
+    "shirts",
+    "trousers",
+    "footwear"
+  ]
 }

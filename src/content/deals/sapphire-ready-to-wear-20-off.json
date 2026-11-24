@@ -5,8 +5,15 @@
   "short_description": "Enjoy 20% discount on entire women pret and luxury ready-to-wear collections using official verified coupon code.",
   "brand_id": "sapphire",
   "country": "PK",
-  "cities": ["Karachi", "Lahore", "Islamabad"],
-  "areas": ["Emporium Mall", "LuckyOne Mall"],
+  "cities": [
+    "Karachi",
+    "Lahore",
+    "Islamabad"
+  ],
+  "areas": [
+    "Emporium Mall",
+    "LuckyOne Mall"
+  ],
   "branch_info": [
     {
       "branch_name": "Sapphire Emporium Mall",
@@ -18,7 +25,10 @@
   "deal_type": "promo-code",
   "bank_details": {
     "bank_id": "alfalah",
-    "eligible_cards": ["Visa Signature", "Platinum Credit"],
+    "eligible_cards": [
+      "Visa Signature",
+      "Platinum Credit"
+    ],
     "cashback_percent": 10,
     "max_discount_cap": 2000
   },
@@ -43,7 +53,13 @@
     "src": "https://www.google.com/s2/favicons?domain=sapphireonline.pk&sz=128",
     "alt": "Sapphire 20% Off Ready-to-Wear Promo"
   },
-  "tags": ["women", "pret", "accessories", "clothing", "fashion", "promo code"],
+  "tags": [
+    "women",
+    "men",
+    "unstitched",
+    "pret",
+    "winter"
+  ],
   "offer_kind": "promo",
   "is_trending": false
 }

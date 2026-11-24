@@ -5,17 +5,26 @@
   "short_description": "Bundle discounts on cat food, Bentonite litter combos, Wanpy, Whiskas, Reflex and Josera across Pakistan.",
   "brand_id": "petsone-pk",
   "country": "PK",
-  "cities": ["Lahore", "Karachi", "Islamabad"],
+  "cities": [
+    "Lahore",
+    "Karachi",
+    "Islamabad"
+  ],
   "areas": [],
   "branch_info": [],
   "category": "pets",
   "deal_type": "online",
-  "channels": ["online"],
+  "channels": [
+    "online"
+  ],
   "discount_type": "percentage",
   "discount_value": "UP TO 25% OFF",
   "badge_text": "Up to 25% Off",
   "numeric_discount_percent": 25,
-  "terms_and_conditions": ["Verified on PetsOne.pk online store.", "Valid on selected food and litter bundles."],
+  "terms_and_conditions": [
+    "Verified on PetsOne.pk online store.",
+    "Valid on selected food and litter bundles."
+  ],
   "start_date": "2026-11-21T00:00:00Z",
   "end_date": "2026-12-05T23:59:00Z",
   "source_url": "https://petsone.pk/",
@@ -26,6 +35,12 @@
   "is_coming_soon": false,
   "limited_time": true,
   "offer_kind": "discount",
-  "image": { "src": "https://www.google.com/s2/favicons?domain=petsone.pk&sz=128", "alt": "PetsOne.pk" },
-  "tags": ["pet-food", "all-items"]
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=petsone.pk&sz=128",
+    "alt": "PetsOne.pk"
+  },
+  "tags": [
+    "pet-food",
+    "pet-accessories"
+  ]
 }

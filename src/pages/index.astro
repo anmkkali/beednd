@@ -172,97 +172,102 @@ const structuredData = {
   <script>
     import { countryByCode } from '../data/countries';
 
-    const buttons = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-type-filter]'));
-    const wrappers = Array.from(document.querySelectorAll<HTMLElement>('[data-deal-wrapper]'));
-    const emptyMsg = document.getElementById('deals-empty-msg');
-    const caption = document.getElementById('hero-market-caption');
-    const shown = (el: Element) => getComputedStyle(el).display !== 'none';
+    function initHomeFeed() {
+      const feed = document.getElementById('deal-feed');
+      if (!feed) return;
+      const buttons = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-type-filter]'));
+      const wrappers = Array.from(document.querySelectorAll<HTMLElement>('[data-deal-wrapper]'));
+      const emptyMsg = document.getElementById('deals-empty-msg');
+      const caption = document.getElementById('hero-market-caption');
+      const shown = (el: Element) => getComputedStyle(el).display !== 'none';
 
-    let current = 'all';
+      let current = 'all';
 
-    function matches(wrapper: HTMLElement, type: string) {
-      if (type === 'all') return true;
-      if (type === 'trending') return wrapper.dataset.trending === 'true';
-      if (type === 'trial') return wrapper.dataset.kind === 'trial';
-      if (type === 'promo-code') return wrapper.dataset.kind === 'promo';
-      if (type === 'voucher') return wrapper.dataset.kind === 'voucher';
-      if (type === 'bank-card') return wrapper.dataset.hasBank === 'true';
-      return wrapper.dataset.dealType === type;
-    }
-
-    const feed = document.getElementById('deal-feed');
-
-    function personalizeFeed() {
-      if (!feed || current !== 'all') return;
-      try {
-        const interest = JSON.parse(localStorage.getItem('dealssite_interest') || '{}') as Record<string, number>;
-        const sortedCats = Object.entries(interest).sort((a, b) => b[1] - a[1]);
-        const topCat = sortedCats[0]?.[0];
-        const topScore = sortedCats[0]?.[1] || 0;
-        if (!topCat || topScore < 2) return;
-
-        const preferred: HTMLElement[] = [];
-        const others: HTMLElement[] = [];
-        wrappers.forEach((w) => {
-          if (w.dataset.category === topCat) preferred.push(w);
-          else others.push(w);
-        });
-        if (!preferred.length || !others.length) return;
-
-        // Interleave: 3 preferred category deals, then 1 other category deal so user mostly sees what they browse
-        const frag = document.createDocumentFragment();
-        let pIdx = 0;
-        let oIdx = 0;
-        while (pIdx < preferred.length || oIdx < others.length) {
-          for (let k = 0; k < 3 && pIdx < preferred.length; k++) frag.appendChild(preferred[pIdx++]);
-          if (oIdx < others.length) frag.appendChild(others[oIdx++]);
-          if (pIdx >= preferred.length) {
-            while (oIdx < others.length) frag.appendChild(others[oIdx++]);
-          }
-        }
-        feed.appendChild(frag);
-      } catch {}
-    }
-
-    function refresh() {
-      personalizeFeed();
-      wrappers.forEach((wrapper) => wrapper.classList.toggle('hidden', !matches(wrapper, current)));
-      buttons.forEach((button) => {
-        const active = button.dataset.typeFilter === current;
-        button.classList.toggle('btn-primary', active);
-        button.classList.toggle('text-ink-muted', !active);
-        button.setAttribute('aria-pressed', String(active));
-      });
-      emptyMsg?.classList.toggle('hidden', wrappers.some(shown));
-      window.dispatchEvent(new CustomEvent('dealssite:list-changed'));
-      if (caption) {
-        const market = document.documentElement.dataset.activeMarket || 'ALL';
-        const name = countryByCode.get(market)?.name || market;
-        caption.textContent = market === 'ALL' ? 'Offers from every country' : `Offers for ${name} and worldwide`;
+      function matches(wrapper: HTMLElement, type: string) {
+        if (type === 'all') return true;
+        if (type === 'trending') return wrapper.dataset.trending === 'true';
+        if (type === 'trial') return wrapper.dataset.kind === 'trial';
+        if (type === 'promo-code') return wrapper.dataset.kind === 'promo';
+        if (type === 'voucher') return wrapper.dataset.kind === 'voucher';
+        if (type === 'bank-card') return wrapper.dataset.hasBank === 'true';
+        return wrapper.dataset.dealType === type;
       }
+
+      function personalizeFeed() {
+        if (!feed || current !== 'all') return;
+        try {
+          const interest = JSON.parse(localStorage.getItem('dealssite_interest') || '{}') as Record<string, number>;
+          const sortedCats = Object.entries(interest).sort((a, b) => b[1] - a[1]);
+          const topCat = sortedCats[0]?.[0];
+          const topScore = sortedCats[0]?.[1] || 0;
+          if (!topCat || topScore < 2) return;
+
+          const preferred: HTMLElement[] = [];
+          const others: HTMLElement[] = [];
+          wrappers.forEach((w) => {
+            if (w.dataset.category === topCat) preferred.push(w);
+            else others.push(w);
+          });
+          if (!preferred.length || !others.length) return;
+
+          const frag = document.createDocumentFragment();
+          let pIdx = 0;
+          let oIdx = 0;
+          while (pIdx < preferred.length || oIdx < others.length) {
+            for (let k = 0; k < 3 && pIdx < preferred.length; k++) frag.appendChild(preferred[pIdx++]);
+            if (oIdx < others.length) frag.appendChild(others[oIdx++]);
+            if (pIdx >= preferred.length) {
+              while (oIdx < others.length) frag.appendChild(others[oIdx++]);
+            }
+          }
+          feed.appendChild(frag);
+        } catch {}
+      }
+
+      function refresh() {
+        personalizeFeed();
+        wrappers.forEach((wrapper) => wrapper.classList.toggle('hidden', !matches(wrapper, current)));
+        buttons.forEach((button) => {
+          const active = button.dataset.typeFilter === current;
+          button.classList.toggle('btn-primary', active);
+          button.classList.toggle('text-ink-muted', !active);
+          button.setAttribute('aria-pressed', String(active));
+        });
+        emptyMsg?.classList.toggle('hidden', wrappers.some(shown));
+        window.dispatchEvent(new CustomEvent('dealssite:list-changed'));
+        if (caption) {
+          const market = document.documentElement.dataset.activeMarket || 'ALL';
+          const name = countryByCode.get(market)?.name || market;
+          caption.textContent = market === 'ALL' ? 'Offers from every country' : `Offers for ${name} and worldwide`;
+        }
+      }
+
+      buttons.forEach((button) =>
+        button.addEventListener('click', () => {
+          current = button.dataset.typeFilter || 'all';
+          const url = new URL(window.location.href);
+          if (current === 'all') url.searchParams.delete('type');
+          else url.searchParams.set('type', current);
+          history.replaceState({}, '', url);
+          refresh();
+        })
+      );
+
+      window.addEventListener('dealssite:market-updated', refresh);
+      current = new URLSearchParams(window.location.search).get('type') || 'all';
+      refresh();
     }
 
-    buttons.forEach((button) =>
-      button.addEventListener('click', () => {
-        current = button.dataset.typeFilter || 'all';
-        const url = new URL(window.location.href);
-        if (current === 'all') url.searchParams.delete('type');
-        else url.searchParams.set('type', current);
-        history.replaceState({}, '', url);
-        refresh();
-      })
-    );
-
-    window.addEventListener('dealssite:market-updated', refresh);
-    current = new URLSearchParams(window.location.search).get('type') || 'all';
-    refresh();
+    document.addEventListener('astro:page-load', initHomeFeed);
   </script>
 </BaseLayout>
 
 <script>
   // Brand strip: auto-drifts in continuous loop, pauses on hover / focus / touch, left/right buttons step smoothly
-  const track = document.getElementById('brand-track');
-  if (track) {
+  function initBrandTrack() {
+    const track = document.getElementById('brand-track');
+    if (!track || track.dataset.trackInit) return;
+    track.dataset.trackInit = '1';
     const originalChildren = Array.from(track.children);
     // Duplicate cards twice to ensure smooth infinite loop
     for (let i = 0; i < 2; i++) {
@@ -352,4 +357,5 @@ const structuredData = {
     };
     requestAnimationFrame(tick);
   }
+  document.addEventListener('astro:page-load', initBrandTrack);
 </script>

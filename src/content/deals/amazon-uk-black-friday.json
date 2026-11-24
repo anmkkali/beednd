@@ -5,12 +5,18 @@
   "short_description": "Deep markdowns on electronics, Dyson, Echo devices, and home goods through Cyber Monday.",
   "brand_id": "amazon-uk",
   "country": "GB",
-  "cities": ["London", "Manchester", "Birmingham"],
+  "cities": [
+    "London",
+    "Manchester",
+    "Birmingham"
+  ],
   "areas": [],
   "branch_info": [],
   "category": "tech-electronics",
   "deal_type": "online",
-  "channels": ["online"],
+  "channels": [
+    "online"
+  ],
   "discount_type": "percentage",
   "discount_value": "UP TO 60% OFF",
   "badge_text": "Up to 60% Off",
@@ -33,5 +39,12 @@
     "src": "https://www.google.com/s2/favicons?domain=amazon.co.uk&sz=128",
     "alt": "Amazon UK Black Friday"
   },
-  "tags": ["all-items"]
+  "tags": [
+    "mobiles",
+    "smartphones",
+    "computers",
+    "laptops",
+    "appliances",
+    "audio"
+  ]
 }
