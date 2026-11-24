@@ -2,8 +2,8 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BrandMark from '../../components/common/BrandMark.astro';
 import Icon from '../../components/common/Icon.astro';
-import Pagination from '../../components/common/Pagination.astro';
 import { getCollection } from 'astro:content';
+import { categories } from '../../data/taxonomy';
 
 const brands = await getCollection('brands');
 const deals = await getCollection('deals', ({ data }) => data.status === 'active');
@@ -13,61 +13,144 @@ const topDiscounts = new Map<string, string>();
 deals.forEach((deal) => {
   dealCounts.set(deal.data.brand_id, (dealCounts.get(deal.data.brand_id) || 0) + 1);
   if (!topDiscounts.has(deal.data.brand_id)) {
-    topDiscounts.set(deal.data.brand_id, deal.data.discount_value);
+    topDiscounts.set(deal.data.brand_id, deal.data.is_coming_soon ? 'Coming Soon' : deal.data.discount_value);
   }
 });
+
+// Group brands by taxonomy category, prioritizing brands that have active deals first
+const grouped = categories.map((cat) => {
+  const catBrands = brands
+    .filter((b) => b.data.categories.includes(cat.id))
+    .sort((a, b) => (dealCounts.get(b.data.id) || 0) - (dealCounts.get(a.data.id) || 0) || a.data.name.localeCompare(b.data.name));
+  return { category: cat, brands: catBrands };
+}).filter((g) => g.brands.length > 0);
 ---
 
-<BaseLayout title="Browse Brands on Sale" description="Explore brands with active discounts, promo codes, and seasonal sales.">
-  <div class="mb-10 border-b editorial-rule pb-8">
+<BaseLayout title="Browse Brands on Sale" description="Explore verified brands by category with active discounts, promo codes, and upcoming sales.">
+  <div class="mb-6 border-b editorial-rule pb-6">
     <nav class="mb-3 flex items-center gap-2 text-[13px] text-ink-muted" aria-label="Breadcrumb">
       <a href="/" class="hover:text-ink hover:underline">Home</a>
       <span>/</span>
-      <span class="text-ink">Brands</span>
+      <span class="text-ink" data-i18n="browse_brands">Brands</span>
     </nav>
-    <h1 class="text-4xl sm:text-6xl leading-[0.98] text-ink">Brands on Discount</h1>
-    <p class="mt-3 max-w-2xl text-[15.5px] leading-relaxed text-ink-muted">
-      Select any brand below to view all active discount cards, promo codes, and participating outlets for your market.
+    <h1 class="text-4xl sm:text-5xl leading-[1.02] text-ink" data-i18n="browse_brands">Browse Brands</h1>
+    <p class="mt-2.5 max-w-2xl text-[14.5px] leading-relaxed text-ink-muted sm:text-[15.5px]">
+      Organized by category. Select any brand below to view active discount cards, promo codes, and official sale links for your country.
     </p>
+
+    <!-- Category filter pills -->
+    <div class="mt-5 flex gap-1.5 overflow-x-auto pb-1 sm:flex-wrap sm:overflow-visible" id="brand-cat-filters">
+      <button
+        type="button"
+        data-brand-cat="all"
+        aria-pressed="true"
+        class="editorial-pill btn-primary shrink-0 whitespace-nowrap px-3.5 py-1.5 text-[12.5px] font-semibold transition-colors sm:text-[13px]"
+      >
+        All Categories
+      </button>
+      {grouped.map(({ category }) => (
+        <button
+          type="button"
+          data-brand-cat={category.id}
+          aria-pressed="false"
+          class="editorial-pill shrink-0 whitespace-nowrap px-3.5 py-1.5 text-[12.5px] font-medium text-ink-muted transition-colors hover:text-ink sm:text-[13px]"
+        >
+          {category.name}
+        </button>
+      ))}
+    </div>
   </div>
 
-  <div id="brands-grid" class="scroll-mt-24 grid grid-cols-1 border-l border-t editorial-rule sm:grid-cols-2 md:grid-cols-3">
-    {brands.map((brand) => (
-      <a
-        data-page-item
-        href={`/brands/${brand.data.slug}`}
-        data-market={brand.data.country}
-        class="group flex flex-col justify-between border-b border-r editorial-rule p-6 transition-colors hover:bg-base-900/70"
-      >
-        <div>
-          <div class="mb-5 flex items-start justify-between gap-3">
-            <BrandMark name={brand.data.name} logoUrl={brand.data.logo_url} size="lg" />
-            {topDiscounts.get(brand.data.id) && (
-              <span class="editorial-pill px-3 py-1 text-[12px] font-semibold text-ink">
-                {topDiscounts.get(brand.data.id)}
-              </span>
-            )}
+  <div class="space-y-10" id="brands-sections">
+    {grouped.map(({ category, brands: catBrands }) => (
+      <section data-brand-section={category.id} aria-labelledby={`cat-${category.id}`}>
+        <div class="mb-4 flex flex-wrap items-end justify-between gap-3 border-b editorial-rule pb-2.5">
+          <div class="flex items-center gap-2.5">
+            <Icon name={category.icon} class="h-5 w-5 text-ink" />
+            <h2 id={`cat-${category.id}`} class="text-2xl sm:text-3xl text-ink">{category.name}</h2>
+            <span data-section-count class="editorial-pill px-2 py-0.5 text-[11px] font-mono font-semibold text-ink-muted">
+              {catBrands.length}
+            </span>
           </div>
-
-          <h2 class="text-3xl leading-tight text-ink group-hover:underline">
-            {brand.data.name}
-          </h2>
-          <p class="mt-2 line-clamp-2 text-[14.5px] leading-relaxed text-ink-muted">
-            {brand.data.short_bio}
-          </p>
+          <a href={`/categories/${category.id}`} class="inline-flex items-center gap-1.5 text-[13px] font-semibold text-ink hover:underline">
+            <span>View {category.name} offers</span>
+            <Icon name="arrow" class="h-3.5 w-3.5" />
+          </a>
         </div>
 
-        <div class="mt-6 flex items-center justify-between border-t editorial-rule pt-4 text-[13.5px]">
-          <span class="font-medium text-ink">
-            {dealCounts.get(brand.data.id) || 0} active {(dealCounts.get(brand.data.id) || 0) === 1 ? 'offer' : 'offers'}
-          </span>
-          <span class="inline-flex items-center gap-1.5 font-semibold text-ink">
-            <span>View Deals</span>
-            <Icon name="arrow" class="h-4 w-4" />
-          </span>
+        <div class="grid grid-cols-1 border-l border-t editorial-rule sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          {catBrands.map((brand) => (
+            <a
+              href={`/brands/${brand.data.slug}`}
+              data-market={brand.data.country}
+              data-brand-item
+              class="group flex flex-col justify-between border-b border-r editorial-rule p-4 transition-colors hover:bg-base-900/70"
+            >
+              <div>
+                <div class="mb-3 flex items-start justify-between gap-2">
+                  <BrandMark name={brand.data.name} logoUrl={brand.data.logo_url} size="sm" />
+                  {topDiscounts.get(brand.data.id) && (
+                    <span class="editorial-pill px-2 py-0.5 text-[10.5px] font-semibold text-ink">
+                      {topDiscounts.get(brand.data.id)}
+                    </span>
+                  )}
+                </div>
+
+                <h3 class="truncate text-[16px] font-semibold leading-tight text-ink group-hover:underline">
+                  {brand.data.name}
+                </h3>
+                <p class="mt-1 line-clamp-2 text-[12.5px] leading-relaxed text-ink-muted">
+                  {brand.data.short_bio}
+                </p>
+              </div>
+
+              <div class="mt-3 flex items-center justify-between border-t editorial-rule pt-2.5 text-[12px]">
+                <span class="font-medium text-ink-muted">
+                  {dealCounts.get(brand.data.id) || 0} active {(dealCounts.get(brand.data.id) || 0) === 1 ? 'offer' : 'offers'}
+                </span>
+                <span class="inline-flex items-center gap-1 font-semibold text-ink">
+                  <span>View</span>
+                  <Icon name="arrow" class="h-3 w-3" />
+                </span>
+              </div>
+            </a>
+          ))}
         </div>
-      </a>
+      </section>
     ))}
   </div>
-  <Pagination target="brands-grid" />
+
+  <script>
+    const catBtns = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-brand-cat]'));
+    const sections = Array.from(document.querySelectorAll<HTMLElement>('[data-brand-section]'));
+    let activeCat = 'all';
+
+    function updateBrandSections() {
+      sections.forEach((sec) => {
+        const catMatch = activeCat === 'all' || sec.dataset.brandSection === activeCat;
+        const items = Array.from(sec.querySelectorAll<HTMLElement>('[data-brand-item]'));
+        const visibleCount = items.filter((el) => getComputedStyle(el).display !== 'none').length;
+        const countEl = sec.querySelector('[data-section-count]');
+        if (countEl) countEl.textContent = String(visibleCount);
+        sec.classList.toggle('hidden', !catMatch || visibleCount === 0);
+      });
+
+      catBtns.forEach((btn) => {
+        const on = btn.dataset.brandCat === activeCat;
+        btn.classList.toggle('btn-primary', on);
+        btn.classList.toggle('text-ink-muted', !on);
+        btn.setAttribute('aria-pressed', String(on));
+      });
+    }
+
+    catBtns.forEach((btn) =>
+      btn.addEventListener('click', () => {
+        activeCat = btn.dataset.brandCat || 'all';
+        updateBrandSections();
+      })
+    );
+
+    window.addEventListener('dealssite:market-updated', updateBrandSections);
+    updateBrandSections();
+  </script>
 </BaseLayout>

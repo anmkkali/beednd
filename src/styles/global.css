@@ -352,11 +352,13 @@ html[data-theme='dark'] .theme-icon-moon {
 
 [data-quickbar],
 #deal-type-filters,
+#brand-cat-filters,
 .brand-track {
   scrollbar-width: none;
 }
 [data-quickbar]::-webkit-scrollbar,
 #deal-type-filters::-webkit-scrollbar,
+#brand-cat-filters::-webkit-scrollbar,
 .brand-track::-webkit-scrollbar {
   display: none;
 }
