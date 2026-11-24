@@ -1,5 +1,6 @@
 ---
 import Icon from './Icon.astro';
+import Logo from './Logo.astro';
 
 const columns = [
   {
@@ -38,11 +39,8 @@ const columns = [
   <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-10">
     <div class="grid gap-10 md:grid-cols-[1.6fr_1fr_1fr_1fr]">
       <div>
-        <a href="/" class="inline-flex items-center gap-2.5 text-ink">
-          <span class="btn-primary flex h-8 w-8 items-center justify-center">
-            <Icon name="tag" class="h-4 w-4" />
-          </span>
-          <span class="font-serif text-[28px] font-semibold leading-none">DealsSite</span>
+        <a href="/" class="inline-flex items-center text-ink transition-opacity hover:opacity-85" aria-label="DealsSite home">
+          <Logo class="h-8 w-auto max-w-[170px]" />
         </a>
         <p class="mt-3 max-w-sm leading-relaxed">
           Discounts, promo codes and free trials from brands around the world, shown for the country you are in.

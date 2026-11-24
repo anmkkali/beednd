@@ -1,4 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="8" fill="#0B0F17"/>
-  <path d="M18 4L8 18h7l-2 10 11-14h-7l2-10z" fill="#38BDF8"/>
+<svg width="91" height="107" viewBox="0 0 91 107" fill="none" xmlns="http://www.w3.org/2000/svg">
+<style>
+  rect, circle { fill: #0a0a0c; }
+  @media (prefers-color-scheme: dark) {
+    rect, circle { fill: #ffffff; }
+  }
+</style>
+<rect x="8.63477" y="87.2578" width="72.9326" height="19.7422" rx="4"/>
+<rect y="54.5723" width="90.2021" height="19.7422" rx="4"/>
+<rect x="8.63477" y="21.8867" width="72.9326" height="19.7422" rx="4"/>
+<circle cx="29.0991" cy="8.00049" r="8.00049"/>
+<circle cx="61.103" cy="8.00049" r="8.00049"/>
 </svg>

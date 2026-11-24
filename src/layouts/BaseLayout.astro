@@ -47,6 +47,8 @@ const fontsUrl =
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon-black.svg" media="(prefers-color-scheme: light)" />
+    <link rel="icon" type="image/svg+xml" href="/favicon-white.svg" media="(prefers-color-scheme: dark)" />
     <meta name="generator" content={Astro.generator} />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -166,12 +168,20 @@ const fontsUrl =
       const root = document.documentElement;
       const visible = (el: Element) => getComputedStyle(el).display !== 'none';
 
+      function updateFavicon(theme: string) {
+        const fav = document.querySelector<HTMLLinkElement>('link[rel="icon"]');
+        if (fav) fav.href = theme === 'dark' ? '/favicon-white.svg' : '/favicon-black.svg';
+      }
+
+      if (root.dataset.theme) updateFavicon(root.dataset.theme);
+
       // Light / dark theme: every [data-theme-toggle] button works the same way
       document.querySelectorAll('[data-theme-toggle]').forEach((button) =>
         button.addEventListener('click', () => {
           const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
           root.dataset.theme = next;
           localStorage.setItem('dealssite_theme', next);
+          updateFavicon(next);
         })
       );
 

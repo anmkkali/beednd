@@ -1,5 +1,6 @@
 ---
 import Icon from './Icon.astro';
+import Logo from './Logo.astro';
 import { categories } from '../../data/taxonomy';
 import { getCollection } from 'astro:content';
 import { dealKind } from '../../lib/deals';
@@ -52,12 +53,9 @@ const filterHref = (categoryId: string, groupId: string, filter: { sub?: string;
 <aside id="app-sidebar" class="flex flex-col border-r editorial-rule bg-base-950" aria-label="Site navigation">
   <!-- Mobile Drawer Header with brand logo & close button -->
   <div class="flex items-center justify-between border-b editorial-rule px-4 py-3.5 lg:hidden">
-    <div class="flex items-center gap-2">
-      <span class="btn-primary flex h-6 w-6 items-center justify-center rounded-sm">
-        <Icon name="tag" class="h-3 w-3" />
-      </span>
-      <span class="font-serif text-[20px] font-bold text-ink">DealsSite</span>
-    </div>
+    <a href="/" class="flex items-center" aria-label="DealsSite home">
+      <Logo class="h-6 w-auto max-w-[130px]" />
+    </a>
     <button
       type="button"
       data-sidebar-close

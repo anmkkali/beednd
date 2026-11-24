@@ -1,5 +1,6 @@
 ---
 import Icon from './Icon.astro';
+import Logo from './Logo.astro';
 import { getCollection } from 'astro:content';
 
 const brands = await getCollection('brands');
@@ -27,11 +28,8 @@ const latest = (await getCollection('deals', ({ data }) => data.status === 'acti
 
     <!-- CENTER: Brand Logo perfectly centered on desktop and mobile -->
     <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center pointer-events-auto">
-      <a href="/" class="flex items-center justify-center gap-1.5 text-ink transition-opacity hover:opacity-85 sm:gap-2" aria-label="DealsSite home">
-        <span class="btn-primary hidden h-7 w-7 shrink-0 items-center justify-center rounded-sm sm:flex">
-          <Icon name="tag" class="h-3.5 w-3.5" />
-        </span>
-        <span class="font-serif text-[21px] font-bold leading-none tracking-tight sm:text-[28px]">DealsSite</span>
+      <a href="/" class="flex items-center justify-center transition-opacity hover:opacity-85" aria-label="DealsSite home">
+        <Logo class="h-6 sm:h-7.5 w-auto max-w-[130px] sm:max-w-[170px]" />
       </a>
     </div>
 
