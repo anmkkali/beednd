@@ -21,6 +21,9 @@ export async function getStaticPaths() {
 }
 
 const { deal, brand } = Astro.props;
+const isExpired =
+  deal.status === 'expired' ||
+  (deal.end_date && !Number.isNaN(Date.parse(deal.end_date)) && Date.parse(deal.end_date) < Date.now());
 
 const structuredData = {
   '@context': 'https://schema.org',
@@ -52,6 +55,17 @@ const structuredData = {
 
   <!-- Editorial Deal Detail Sheet -->
   <article class="border-t border-b editorial-rule py-8">
+    {isExpired && (
+      <div class="mb-6 flex flex-wrap items-center justify-between gap-3 border editorial-rule bg-base-900/70 px-4 py-3 text-[13.5px]">
+        <div class="flex items-center gap-2 text-ink">
+          <Icon name="clock" class="h-4 w-4 shrink-0" />
+          <span><strong>Offer Expired:</strong> This promotion has ended. Check {brand?.name || deal.brand_id} for new live offers.</span>
+        </div>
+        <a href={`/brands/${deal.brand_id}`} class="btn-primary px-3 py-1.5 text-[12px] font-semibold">
+          View Current Offers
+        </a>
+      </div>
+    )}
     <div class="mb-6 flex flex-wrap items-center justify-between gap-4">
       <div class="flex items-center gap-4">
         <BrandMark name={brand?.name || deal.brand_id} logoUrl={brand?.logo_url} size="md" />

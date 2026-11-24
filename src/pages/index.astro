@@ -9,11 +9,14 @@ import { getCollection } from 'astro:content';
 import { dealKind } from '../lib/deals';
 import { categoryById } from '../data/taxonomy';
 
-const allDeals = (await getCollection('deals', ({ data }) => data.status === 'active')).sort(
-  (a, b) =>
-    Number(b.data.is_trending) - Number(a.data.is_trending) ||
-    b.data.last_verified_at.localeCompare(a.data.last_verified_at)
-);
+const nowMs = Date.now();
+const allDeals = (await getCollection('deals', ({ data }) => data.status === 'active'))
+  .filter((d) => !d.data.end_date || Number.isNaN(Date.parse(d.data.end_date)) || Date.parse(d.data.end_date) >= nowMs)
+  .sort(
+    (a, b) =>
+      Number(b.data.is_trending) - Number(a.data.is_trending) ||
+      b.data.last_verified_at.localeCompare(a.data.last_verified_at)
+  );
 const allBrands = await getCollection('brands');
 const brandMap = new Map(allBrands.map((brand) => [brand.data.id, brand.data]));
 const withDeals = new Set(allDeals.map((deal) => deal.data.brand_id));

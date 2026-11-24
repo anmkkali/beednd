@@ -26,6 +26,7 @@ interface Props {
     start_date: string;
     end_date?: string | null;
     last_verified_at: string;
+    status?: string;
     is_trending?: boolean;
     is_coming_soon?: boolean;
     limited_time?: boolean;
@@ -69,6 +70,8 @@ const expiry = expiryLabel(deal.end_date, !!deal.limited_time);
   data-market={deal.country || 'GLOBAL'}
   data-kind={kind}
   data-category={deal.category}
+  data-end-date={deal.end_date || ''}
+  data-status={deal.status || 'active'}
   data-tokens={dealTokens(deal)}
 >
   <!-- Mobile layout (< 640px) — Compact, neat, zero vertical stretching or text squishing -->
@@ -295,6 +298,18 @@ const expiry = expiryLabel(deal.end_date, !!deal.limited_time);
     const text = el.querySelector('[data-expiry-text]');
     if (text) text.textContent = label;
     el.classList.toggle('hidden', !label);
+  });
+
+  // Hide expired deal banners automatically from active feeds (but keep visible inside #expired-brand-deals)
+  document.querySelectorAll<HTMLElement>('[data-deal-id]').forEach((card) => {
+    if (card.closest('#expired-brand-deals')) return;
+    const status = card.dataset.status || 'active';
+    const endRaw = card.dataset.endDate || '';
+    const endMs = endRaw ? Date.parse(endRaw) : NaN;
+    if (status === 'expired' || (!Number.isNaN(endMs) && endMs < now)) {
+      const wrapper = card.closest<HTMLElement>('[data-deal-wrapper], [data-cat-deal]') || card;
+      wrapper.style.display = 'none';
+    }
   });
 
   // Live countdown timer for upcoming ("Discount Coming Soon") deals

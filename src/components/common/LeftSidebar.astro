@@ -11,13 +11,32 @@ interface Props {
   activeTopic?: string;
 }
 
-const allDeals = await getCollection('deals', ({ data }) => data.status === 'active');
+const nowMs = Date.now();
+const allDeals = (await getCollection('deals', ({ data }) => data.status === 'active')).filter(
+  (d) => !d.data.end_date || Number.isNaN(Date.parse(d.data.end_date)) || Date.parse(d.data.end_date) >= nowMs
+);
 const allBrands = await getCollection('brands');
+const activeBrandIds = new Set(allDeals.map((d) => d.data.brand_id));
+const brandsWithDeals = allBrands.filter((b) => activeBrandIds.has(b.data.id));
+
+const dealsMeta = allDeals.map((d) => ({
+  m: d.data.country || 'GLOBAL',
+  k: dealKind(d.data),
+  t: !!d.data.is_trending,
+  s: d.data.deal_type === 'in-store' || (d.data.channels || []).includes('in-store'),
+  b: !!d.data.bank_details,
+  c: d.data.category,
+  ed: d.data.end_date || '',
+}));
+
+const brandsMeta = brandsWithDeals.map((b) => ({
+  m: b.data.country || 'GLOBAL',
+}));
 
 const counts: Record<string, number> = {
   'all': allDeals.length,
   'trending': allDeals.filter((d) => d.data.is_trending).length,
-  'brands': allBrands.length,
+  'brands': brandsWithDeals.length,
   'trial': allDeals.filter((d) => dealKind(d.data) === 'trial').length,
   'promo-code': allDeals.filter((d) => dealKind(d.data) === 'promo').length,
   'voucher': allDeals.filter((d) => dealKind(d.data) === 'voucher').length,
@@ -51,7 +70,13 @@ const filterHref = (categoryId: string, groupId: string, filter: { sub?: string;
 
 <div id="sidebar-backdrop" class="fixed inset-0 z-[75] bg-black/60 backdrop-blur-sm" data-sidebar-close></div>
 
-<aside id="app-sidebar" class="flex flex-col border-r editorial-rule bg-base-950" aria-label="Site navigation">
+<aside
+  id="app-sidebar"
+  class="flex flex-col border-r editorial-rule bg-base-950"
+  aria-label="Site navigation"
+  data-deals-meta={JSON.stringify(dealsMeta)}
+  data-brands-meta={JSON.stringify(brandsMeta)}
+>
   <!-- Mobile Drawer Header with brand logo & close button -->
   <div class="flex items-center justify-between border-b editorial-rule px-4 py-3.5 lg:hidden">
     <a href="/" class="flex items-center" aria-label="DealsSite home">
@@ -73,7 +98,7 @@ const filterHref = (categoryId: string, groupId: string, filter: { sub?: string;
         <a href={link.href} data-sb-link class="sb-link group" title={link.label}>
           <Icon name={link.icon} class="h-[18px] w-[18px] shrink-0" />
           <span class="sb-label truncate" data-i18n={link.i18n}>{link.label}</span>
-          <span class="sb-badge ml-auto rounded-full bg-base-900 border editorial-rule px-2 py-0.5 text-[11px] font-mono font-medium text-ink-muted group-hover:text-ink">
+          <span data-sb-count={link.key} class="sb-badge ml-auto rounded-full bg-base-900 border editorial-rule px-2 py-0.5 text-[11px] font-mono font-medium text-ink-muted group-hover:text-ink">
             {counts[link.key] ?? 0}
           </span>
         </a>
@@ -88,7 +113,7 @@ const filterHref = (categoryId: string, groupId: string, filter: { sub?: string;
           <summary class="sb-link cursor-pointer list-none group" data-sb-summary title={category.name}>
             <Icon name={category.icon} class="h-[18px] w-[18px] shrink-0" />
             <span class="sb-label flex-1 truncate">{category.name}</span>
-            <span class="sb-badge mr-1 rounded-full bg-base-900 border editorial-rule px-2 py-0.5 text-[11px] font-mono font-medium text-ink-muted group-hover:text-ink">
+            <span data-sb-cat-count={category.id} class="sb-badge mr-1 rounded-full bg-base-900 border editorial-rule px-2 py-0.5 text-[11px] font-mono font-medium text-ink-muted group-hover:text-ink">
               {categoryCounts.get(category.id) ?? 0}
             </span>
             <Icon name="chevron" class="sb-chevron h-4 w-4 shrink-0 text-ink-muted" />
@@ -206,4 +231,46 @@ const filterHref = (categoryId: string, groupId: string, filter: { sub?: string;
       }
     }
   });
+
+  // Update sidebar counts dynamically based on the active country (market) and non-expired deals
+  function updateSidebarCounts() {
+    if (!sidebar) return;
+    try {
+      const market = root.dataset.activeMarket || 'ALL';
+      const now = Date.now();
+      const deals = (JSON.parse(sidebar.dataset.dealsMeta || '[]') as any[]).filter((d) => {
+        if (d.ed) {
+          const t = Date.parse(d.ed);
+          if (!Number.isNaN(t) && t < now) return false;
+        }
+        return market === 'ALL' || d.m === market || d.m === 'GLOBAL';
+      });
+      const brands = (JSON.parse(sidebar.dataset.brandsMeta || '[]') as any[]).filter(
+        (b) => market === 'ALL' || b.m === market || b.m === 'GLOBAL'
+      );
+
+      const map: Record<string, number> = {
+        all: deals.length,
+        trending: deals.filter((d) => d.t).length,
+        brands: brands.length,
+        trial: deals.filter((d) => d.k === 'trial').length,
+        'promo-code': deals.filter((d) => d.k === 'promo').length,
+        voucher: deals.filter((d) => d.k === 'voucher').length,
+        'store-sale': deals.filter((d) => d.s).length,
+        'bank-deals': deals.filter((d) => d.b).length,
+      };
+
+      document.querySelectorAll<HTMLElement>('[data-sb-count]').forEach((el) => {
+        const key = el.dataset.sbCount || '';
+        if (key in map) el.textContent = String(map[key]);
+      });
+      document.querySelectorAll<HTMLElement>('[data-sb-cat-count]').forEach((el) => {
+        const cat = el.dataset.sbCatCount || '';
+        el.textContent = String(deals.filter((d) => d.c === cat).length);
+      });
+    } catch {}
+  }
+
+  window.addEventListener('dealssite:market-updated', updateSidebarCounts);
+  updateSidebarCounts();
 </script>
