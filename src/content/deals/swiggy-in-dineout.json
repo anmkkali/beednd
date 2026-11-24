@@ -1,0 +1,47 @@
+{
+  "id": "swiggy-in-dineout",
+  "slug": "swiggy-in-dineout",
+  "title": "Swiggy: Weekend Food & Dineout Promo Codes",
+  "short_description": "Meal combos, Swiggy Dineout restaurant discounts, and flash weekend promo codes.",
+  "brand_id": "swiggy",
+  "country": "IN",
+  "cities": [
+    "Mumbai",
+    "Delhi",
+    "Bengaluru"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "food-dining",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "UP TO 40% OFF",
+  "badge_text": "Up to 40% Off",
+  "numeric_discount_percent": 40,
+  "terms_and_conditions": [
+    "Verified from official brand portal or seasonal sale announcement.",
+    "Exclusions, caps, and validity are set by the brand or partner bank."
+  ],
+  "start_date": "2026-11-23T00:00:00Z",
+  "end_date": "2026-12-10T23:59:00Z",
+  "source_url": "https://www.swiggy.com/",
+  "affiliate_url": "https://www.swiggy.com/",
+  "last_verified_at": "2026-11-25T00:00:00Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "voucher",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=swiggy.com&sz=128",
+    "alt": "Swiggy: Weekend Food & Dineout Promo Codes"
+  },
+  "tags": [
+    "delivery",
+    "restaurants",
+    "fast-food"
+  ]
+}

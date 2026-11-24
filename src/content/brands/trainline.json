@@ -1,0 +1,16 @@
+{
+  "id": "trainline",
+  "name": "Trainline",
+  "slug": "trainline",
+  "logo_url": "https://www.google.com/s2/favicons?domain=thetrainline.com&sz=128",
+  "website_url": "https://www.thetrainline.com/",
+  "country": "GB",
+  "categories": [
+    "travel-lifestyle"
+  ],
+  "short_bio": "UK rail & coach platform with digital Railcard and advance ticket savings.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}

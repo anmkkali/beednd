@@ -1,0 +1,16 @@
+{
+  "id": "zepto",
+  "name": "Zepto",
+  "slug": "zepto",
+  "logo_url": "https://www.google.com/s2/favicons?domain=zeptonow.com&sz=128",
+  "website_url": "https://www.zeptonow.com/",
+  "country": "IN",
+  "categories": [
+    "groceries-essentials"
+  ],
+  "short_bio": "10-minute grocery delivery with weekend and midnight flash discounts.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}

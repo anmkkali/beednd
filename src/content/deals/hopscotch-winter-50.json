@@ -1,0 +1,50 @@
+{
+  "id": "hopscotch-winter-50",
+  "slug": "hopscotch-winter-50",
+  "title": "Hopscotch: Up to 50% Off Toddler & Kids Winter Collection",
+  "short_description": "Seasonal markdowns up to 50% off on toddler and kids' winter collections across Pakistan.",
+  "brand_id": "hopscotch",
+  "country": "PK",
+  "cities": [
+    "Lahore",
+    "Karachi",
+    "Islamabad"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "clothing-fashion",
+  "deal_type": "store-sale",
+  "channels": [
+    "online",
+    "in-store"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "UP TO 50% OFF",
+  "badge_text": "Up to 50% Off",
+  "numeric_discount_percent": 50,
+  "terms_and_conditions": [
+    "Verified from official brand portal or seasonal sale announcement.",
+    "Exclusions, caps, and validity are set by the brand or partner bank."
+  ],
+  "start_date": "2026-11-23T00:00:00Z",
+  "end_date": "2026-12-05T23:59:00Z",
+  "source_url": "https://hopscotch.pk/",
+  "affiliate_url": "https://hopscotch.pk/",
+  "last_verified_at": "2026-11-25T00:00:00Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=hopscotch.pk&sz=128",
+    "alt": "Hopscotch: Up to 50% Off Toddler & Kids Winter Collection"
+  },
+  "tags": [
+    "kids",
+    "baby",
+    "boys",
+    "girls",
+    "winter"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "foodpanda",
+  "name": "foodpanda Pakistan",
+  "slug": "foodpanda",
+  "logo_url": "https://www.google.com/s2/favicons?domain=foodpanda.pk&sz=128",
+  "website_url": "https://www.foodpanda.pk/",
+  "country": "PK",
+  "categories": [
+    "food-dining"
+  ],
+  "short_bio": "Pakistan's leading food and grocery delivery platform with daily bank card discounts.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}

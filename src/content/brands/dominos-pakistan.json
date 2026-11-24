@@ -1,0 +1,16 @@
+{
+  "id": "dominos-pakistan",
+  "name": "Domino's Pakistan",
+  "slug": "dominos-pakistan",
+  "logo_url": "https://www.google.com/s2/favicons?domain=dominos.com.pk&sz=128",
+  "website_url": "https://www.dominos.com.pk/",
+  "country": "PK",
+  "categories": [
+    "food-dining"
+  ],
+  "short_bio": "Pizza delivery and dine-in deals across major Pakistani cities.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "blinkit",
+  "name": "Blinkit",
+  "slug": "blinkit",
+  "logo_url": "https://www.google.com/s2/favicons?domain=blinkit.com&sz=128",
+  "website_url": "https://blinkit.com/",
+  "country": "IN",
+  "categories": [
+    "groceries-essentials"
+  ],
+  "short_bio": "Quick-commerce grocery delivery with flash price drops on daily essentials.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}

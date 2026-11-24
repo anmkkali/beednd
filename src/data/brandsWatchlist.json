@@ -1,0 +1,6099 @@
+[
+  {
+    "id": "1-800-petmeds",
+    "name": "1-800-PetMeds",
+    "country": "US",
+    "category": "pets",
+    "url": "https://www.1800petmeds.com/deals.html"
+  },
+  {
+    "id": "24-mantra-organic",
+    "name": "24 Mantra Organic",
+    "country": "IN",
+    "category": "groceries-essentials",
+    "url": "https://24mantraorganic.com/"
+  },
+  {
+    "id": "abel-cole",
+    "name": "Abel & Cole",
+    "country": "GB",
+    "category": "groceries-essentials",
+    "url": "https://www.abelandcole.co.uk/"
+  },
+  {
+    "id": "abercrombie-fitch",
+    "name": "Abercrombie & Fitch",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://www.abercrombie.com/shop/us/sale"
+  },
+  {
+    "id": "abhibus",
+    "name": "AbhiBus",
+    "country": "IN",
+    "category": "travel-lifestyle",
+    "url": "https://www.abhibus.com/"
+  },
+  {
+    "id": "accessorize",
+    "name": "Accessorize",
+    "country": "GB",
+    "category": "clothing-fashion",
+    "url": "https://www.accessorize.com/uk/sale/"
+  },
+  {
+    "id": "accufix-cosmetics",
+    "name": "AccuFix Cosmetics",
+    "country": "PK",
+    "category": "beauty-wellness",
+    "url": "https://accufixcosmetics.com/collections/all"
+  },
+  {
+    "id": "acer",
+    "name": "Acer",
+    "country": "US",
+    "category": "tech-electronics",
+    "url": "https://store.acer.com/en-us/"
+  },
+  {
+    "id": "acer-uk",
+    "name": "Acer UK",
+    "country": "GB",
+    "category": "tech-electronics",
+    "url": "https://store.acer.com/en-gb/"
+  },
+  {
+    "id": "adidas",
+    "name": "Adidas",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://www.adidas.com/us/sale"
+  },
+  {
+    "id": "adidas-india",
+    "name": "Adidas India",
+    "country": "IN",
+    "category": "clothing-fashion",
+    "url": "https://www.adidas.co.in/"
+  },
+  {
+    "id": "aerie",
+    "name": "Aerie",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://www.ae.com/us/en/x/aerie/aerie-clearance?menu=cat4840006"
+  },
+  {
+    "id": "agha-noor",
+    "name": "Agha Noor",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://pk.aghanoorofficial.com/collections/sale"
+  },
+  {
+    "id": "agoda-india",
+    "name": "Agoda India",
+    "country": "IN",
+    "category": "travel-lifestyle",
+    "url": "https://www.agoda.com/en-in/"
+  },
+  {
+    "id": "air-india",
+    "name": "Air India",
+    "country": "IN",
+    "category": "travel-lifestyle",
+    "url": "https://www.airindia.com/"
+  },
+  {
+    "id": "airblue",
+    "name": "Airblue",
+    "country": "PK",
+    "category": "travel-lifestyle",
+    "url": "https://www.airblue.com/"
+  },
+  {
+    "id": "airbnb",
+    "name": "Airbnb",
+    "country": "US",
+    "category": "travel-lifestyle",
+    "url": "https://www.airbnb.com/"
+  },
+  {
+    "id": "airsial",
+    "name": "AirSial",
+    "country": "PK",
+    "category": "travel-lifestyle",
+    "url": "https://www.airsial.com/"
+  },
+  {
+    "id": "ajio",
+    "name": "AJIO",
+    "country": "IN",
+    "category": "clothing-fashion",
+    "url": "https://www.ajio.com/"
+  },
+  {
+    "id": "akasa-air",
+    "name": "Akasa Air",
+    "country": "IN",
+    "category": "travel-lifestyle",
+    "url": "https://www.akasaair.com/"
+  },
+  {
+    "id": "akshayakalpa-organic",
+    "name": "Akshayakalpa Organic",
+    "country": "IN",
+    "category": "groceries-essentials",
+    "url": "https://akshayakalpa.org/"
+  },
+  {
+    "id": "al-baik",
+    "name": "Al Baik",
+    "country": "SA",
+    "category": "food-dining",
+    "url": "https://www.albaik.com/"
+  },
+  {
+    "id": "al-fatah",
+    "name": "Al-Fatah",
+    "country": "PK",
+    "category": "groceries-essentials",
+    "url": "https://alfatah.pk/pages/grocery-foods"
+  },
+  {
+    "id": "alaska-airlines",
+    "name": "Alaska Airlines",
+    "country": "US",
+    "category": "travel-lifestyle",
+    "url": "https://www.alaskaair.com/content/deals/flights/sale"
+  },
+  {
+    "id": "albertsons",
+    "name": "Albertsons",
+    "country": "US",
+    "category": "groceries-essentials",
+    "url": "https://www.albertsons.com/weeklyad/"
+  },
+  {
+    "id": "aldi-uk",
+    "name": "Aldi UK",
+    "country": "GB",
+    "category": "groceries-essentials",
+    "url": "https://www.aldi.co.uk/specialbuys"
+  },
+  {
+    "id": "alkaram-studio",
+    "name": "Alkaram Studio",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://www.alkaramstudio.com/collections/unstitched-sale-1"
+  },
+  {
+    "id": "allen-solly",
+    "name": "Allen Solly",
+    "country": "IN",
+    "category": "clothing-fashion",
+    "url": "https://allensolly.abfrl.in/"
+  },
+  {
+    "id": "allsaints",
+    "name": "AllSaints",
+    "country": "GB",
+    "category": "clothing-fashion",
+    "url": "https://www.allsaints.com/sale.html"
+  },
+  {
+    "id": "almirah",
+    "name": "Almirah",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://almirah.com.pk/collections/sale"
+  },
+  {
+    "id": "alo-yoga",
+    "name": "Alo Yoga",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://www.aloyoga.com/collections/womens-sale-all"
+  },
+  {
+    "id": "amazon-saudi-arabia",
+    "name": "Amazon Saudi Arabia",
+    "country": "SA",
+    "category": "tech-electronics",
+    "url": "https://www.amazon.sa/events/whitefriday"
+  },
+  {
+    "id": "amazon-uae",
+    "name": "Amazon UAE",
+    "country": "AE",
+    "category": "tech-electronics",
+    "url": "https://www.amazon.ae/events/whitefriday"
+  },
+  {
+    "id": "amazon-uk",
+    "name": "Amazon UK",
+    "country": "GB",
+    "category": "tech-electronics",
+    "url": "https://www.amazon.co.uk/blackfriday"
+  },
+  {
+    "id": "amazon-us",
+    "name": "Amazon US",
+    "country": "US",
+    "category": "tech-electronics",
+    "url": "https://www.amazon.com/blackfriday"
+  },
+  {
+    "id": "american-airlines",
+    "name": "American Airlines",
+    "country": "US",
+    "category": "travel-lifestyle",
+    "url": "https://www.aa.com/homePage.do?locale=en_US"
+  },
+  {
+    "id": "american-eagle",
+    "name": "American Eagle",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://www.ae.com/us/en/x/clearance?menu=cat4840004"
+  },
+  {
+    "id": "animed-direct",
+    "name": "Animed Direct",
+    "country": "GB",
+    "category": "pets",
+    "url": "https://www.animed.co.uk/"
+  },
+  {
+    "id": "anker",
+    "name": "Anker",
+    "country": "US",
+    "category": "tech-electronics",
+    "url": "https://www.anker.com/"
+  },
+  {
+    "id": "anthropologie",
+    "name": "Anthropologie",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://www.anthropologie.com/sale-all"
+  },
+  {
+    "id": "ao-com",
+    "name": "AO.com",
+    "country": "GB",
+    "category": "tech-electronics",
+    "url": "https://ao.com/deals"
+  },
+  {
+    "id": "apple",
+    "name": "Apple",
+    "country": "US",
+    "category": "tech-electronics",
+    "url": "https://www.apple.com/store"
+  },
+  {
+    "id": "apple-india",
+    "name": "Apple India",
+    "country": "IN",
+    "category": "tech-electronics",
+    "url": "https://www.apple.com/in/"
+  },
+  {
+    "id": "apple-uk",
+    "name": "Apple UK",
+    "country": "GB",
+    "category": "tech-electronics",
+    "url": "https://www.apple.com/uk/store"
+  },
+  {
+    "id": "applebee-s",
+    "name": "Applebee's",
+    "country": "US",
+    "category": "food-dining",
+    "url": "https://www.applebees.com/en/specials"
+  },
+  {
+    "id": "appliances-direct",
+    "name": "Appliances Direct",
+    "country": "GB",
+    "category": "tech-electronics",
+    "url": "https://www.appliancesdirect.co.uk/content/deals"
+  },
+  {
+    "id": "aqualogica",
+    "name": "Aqualogica",
+    "country": "IN",
+    "category": "beauty-wellness",
+    "url": "https://aqualogica.in/collections/sale-page"
+  },
+  {
+    "id": "argos",
+    "name": "Argos",
+    "country": "GB",
+    "category": "tech-electronics",
+    "url": "https://www.argos.co.uk/amazing-deals"
+  },
+  {
+    "id": "arrow-india",
+    "name": "Arrow India",
+    "country": "IN",
+    "category": "clothing-fashion",
+    "url": "https://arrow.nnnow.com/"
+  },
+  {
+    "id": "asda",
+    "name": "Asda",
+    "country": "GB",
+    "category": "groceries-essentials",
+    "url": "https://www.asda.com/groceries/special-offers/all-offers"
+  },
+  {
+    "id": "ask-italian",
+    "name": "ASK Italian",
+    "country": "GB",
+    "category": "food-dining",
+    "url": "https://www.askitalian.co.uk/offers"
+  },
+  {
+    "id": "asos",
+    "name": "ASOS",
+    "country": "GB",
+    "category": "clothing-fashion",
+    "url": "https://www.asos.com/"
+  },
+  {
+    "id": "astore",
+    "name": "Astore",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://astore.pk/"
+  },
+  {
+    "id": "asus",
+    "name": "ASUS",
+    "country": "US",
+    "category": "tech-electronics",
+    "url": "https://www.asus.com/us/deals/"
+  },
+  {
+    "id": "asus-india",
+    "name": "ASUS India",
+    "country": "IN",
+    "category": "tech-electronics",
+    "url": "https://www.asus.com/in/"
+  },
+  {
+    "id": "asus-uk",
+    "name": "ASUS UK",
+    "country": "GB",
+    "category": "tech-electronics",
+    "url": "https://www.asus.com/uk/deals/"
+  },
+  {
+    "id": "athleta",
+    "name": "Athleta",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://athleta.gap.com/browse/sale/all-sale?cid=1023728"
+  },
+  {
+    "id": "atomberg",
+    "name": "Atomberg",
+    "country": "IN",
+    "category": "tech-electronics",
+    "url": "https://atomberg.com/"
+  },
+  {
+    "id": "audionic",
+    "name": "Audionic",
+    "country": "PK",
+    "category": "tech-electronics",
+    "url": "https://audionic.co/collections/11-11-sale"
+  },
+  {
+    "id": "aura-crafts",
+    "name": "Aura Crafts",
+    "country": "PK",
+    "category": "beauty-wellness",
+    "url": "https://aura-crafts.com/"
+  },
+  {
+    "id": "aurelia",
+    "name": "Aurelia",
+    "country": "IN",
+    "category": "clothing-fashion",
+    "url": "https://shopforaurelia.com/"
+  },
+  {
+    "id": "avari-hotels",
+    "name": "Avari Hotels",
+    "country": "PK",
+    "category": "travel-lifestyle",
+    "url": "https://avari.com/"
+  },
+  {
+    "id": "avis",
+    "name": "Avis",
+    "country": "US",
+    "category": "travel-lifestyle",
+    "url": "https://www.avis.com/en/offers/us-offers"
+  },
+  {
+    "id": "avis-uk",
+    "name": "Avis UK",
+    "country": "GB",
+    "category": "travel-lifestyle",
+    "url": "https://www.avis.co.uk/car-hire-offers"
+  },
+  {
+    "id": "b-h-photo-video",
+    "name": "B&H Photo Video",
+    "country": "US",
+    "category": "tech-electronics",
+    "url": "https://www.bhphotovideo.com/c/browse/holiday-savings/ci/41102"
+  },
+  {
+    "id": "bagallery",
+    "name": "Bagallery",
+    "country": "PK",
+    "category": "beauty-wellness",
+    "url": "https://bagallery.com/collections/clearance-sale"
+  },
+  {
+    "id": "bajaj-electricals",
+    "name": "Bajaj Electricals",
+    "country": "IN",
+    "category": "tech-electronics",
+    "url": "https://www.bajajelectricals.com/"
+  },
+  {
+    "id": "bakingo",
+    "name": "Bakingo",
+    "country": "IN",
+    "category": "food-dining",
+    "url": "https://www.bakingo.com/"
+  },
+  {
+    "id": "banana-republic",
+    "name": "Banana Republic",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://bananarepublic.gap.com/"
+  },
+  {
+    "id": "barbeque-nation",
+    "name": "Barbeque Nation",
+    "country": "IN",
+    "category": "food-dining",
+    "url": "https://www.barbequenation.com/deals"
+  },
+  {
+    "id": "barbour",
+    "name": "Barbour",
+    "country": "GB",
+    "category": "clothing-fashion",
+    "url": "https://www.barbour.com/gb/"
+  },
+  {
+    "id": "bareeze",
+    "name": "Bareeze",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://www.bareeze.com/sale"
+  },
+  {
+    "id": "bark-barkbox",
+    "name": "BARK / BarkBox",
+    "country": "US",
+    "category": "pets",
+    "url": "https://bark.co/"
+  },
+  {
+    "id": "baskin-robbins-pakistan",
+    "name": "Baskin Robbins Pakistan",
+    "country": "PK",
+    "category": "food-dining",
+    "url": "https://shop.baskinrobbins.pk/"
+  },
+  {
+    "id": "bata-india",
+    "name": "Bata India",
+    "country": "IN",
+    "category": "clothing-fashion",
+    "url": "https://www.bata.com/in/"
+  },
+  {
+    "id": "bata-pakistan",
+    "name": "Bata Pakistan",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://www.bata.com.pk/collections/super-sale"
+  },
+  {
+    "id": "bath-body-works",
+    "name": "Bath & Body Works",
+    "country": "US",
+    "category": "beauty-wellness",
+    "url": "https://www.bathandbodyworks.com/g/top-offers"
+  },
+  {
+    "id": "bazaar-technologies",
+    "name": "Bazaar Technologies",
+    "country": "PK",
+    "category": "groceries-essentials",
+    "url": "https://www.bazaartech.com/"
+  },
+  {
+    "id": "bba-by-suleman",
+    "name": "BBA by Suleman",
+    "country": "PK",
+    "category": "beauty-wellness",
+    "url": "https://bbabysuleman.com/"
+  },
+  {
+    "id": "beardo",
+    "name": "Beardo",
+    "country": "IN",
+    "category": "beauty-wellness",
+    "url": "https://beardo.in/"
+  },
+  {
+    "id": "beats-by-dre",
+    "name": "Beats by Dre",
+    "country": "US",
+    "category": "tech-electronics",
+    "url": "https://www.beatsbydre.com/"
+  },
+  {
+    "id": "beauty-bay",
+    "name": "BEAUTY BAY",
+    "country": "GB",
+    "category": "beauty-wellness",
+    "url": "https://www.beautybay.com/l/sale/"
+  },
+  {
+    "id": "beechtree",
+    "name": "Beechtree",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://beechtree.pk/collections/sale"
+  },
+  {
+    "id": "behrouz-biryani",
+    "name": "Behrouz Biryani",
+    "country": "IN",
+    "category": "food-dining",
+    "url": "https://www.behrouzbiryani.com/"
+  },
+  {
+    "id": "bella-duke",
+    "name": "Bella+Duke",
+    "country": "GB",
+    "category": "pets",
+    "url": "https://www.bellaandduke.com/"
+  },
+  {
+    "id": "benny-s-bowl",
+    "name": "Benny's Bowl",
+    "country": "IN",
+    "category": "pets",
+    "url": "https://www.bennysbowl.com/"
+  },
+  {
+    "id": "best-buy",
+    "name": "Best Buy",
+    "country": "US",
+    "category": "tech-electronics",
+    "url": "https://www.bestbuy.com/top-deals"
+  },
+  {
+    "id": "bewakoof",
+    "name": "Bewakoof",
+    "country": "IN",
+    "category": "clothing-fashion",
+    "url": "https://www.bewakoof.com/"
+  },
+  {
+    "id": "biba",
+    "name": "Biba",
+    "country": "IN",
+    "category": "clothing-fashion",
+    "url": "https://www.biba.in/"
+  },
+  {
+    "id": "bigbasket",
+    "name": "BigBasket",
+    "country": "IN",
+    "category": "groceries-essentials",
+    "url": "https://www.bigbasket.com/"
+  },
+  {
+    "id": "bikanervala",
+    "name": "Bikanervala",
+    "country": "IN",
+    "category": "food-dining",
+    "url": "https://bikanervala.com/"
+  },
+  {
+    "id": "biotique",
+    "name": "Biotique",
+    "country": "IN",
+    "category": "beauty-wellness",
+    "url": "https://www.biotique.com/"
+  },
+  {
+    "id": "bj-s-wholesale-club",
+    "name": "BJ's Wholesale Club",
+    "country": "US",
+    "category": "groceries-essentials",
+    "url": "https://www.bjs.com/deals/"
+  },
+  {
+    "id": "blinkit",
+    "name": "Blinkit",
+    "country": "IN",
+    "category": "groceries-essentials",
+    "url": "https://blinkit.com/"
+  },
+  {
+    "id": "bloomingdale-s",
+    "name": "Bloomingdale's",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://www.bloomingdales.com/shop/sale?id=3977"
+  },
+  {
+    "id": "blue-tokai-coffee-roasters",
+    "name": "Blue Tokai Coffee Roasters",
+    "country": "IN",
+    "category": "food-dining",
+    "url": "https://bluetokaicoffee.com/"
+  },
+  {
+    "id": "bluehost",
+    "name": "Bluehost",
+    "country": "GLOBAL",
+    "category": "ai-tools",
+    "url": "https://www.bluehost.com"
+  },
+  {
+    "id": "boat-lifestyle",
+    "name": "boAt Lifestyle",
+    "country": "IN",
+    "category": "tech-electronics",
+    "url": "https://www.boat-lifestyle.com/"
+  },
+  {
+    "id": "boden",
+    "name": "Boden",
+    "country": "GB",
+    "category": "clothing-fashion",
+    "url": "https://www.boden.com/collections/sale-view-all"
+  },
+  {
+    "id": "bolt",
+    "name": "Bolt",
+    "country": "GLOBAL",
+    "category": "ai-tools",
+    "url": "https://bolt.new"
+  },
+  {
+    "id": "bombay-shaving-company",
+    "name": "Bombay Shaving Company",
+    "country": "IN",
+    "category": "beauty-wellness",
+    "url": "https://www.bombayshavingcompany.com/"
+  },
+  {
+    "id": "bonanza-satrangi",
+    "name": "Bonanza Satrangi",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://bonanzasatrangi.com/collections/sale-unstitched"
+  },
+  {
+    "id": "bonanza-satrangi-fragrances",
+    "name": "Bonanza Satrangi Fragrances",
+    "country": "PK",
+    "category": "beauty-wellness",
+    "url": "https://bonanzasatrangi.com/collections/fragrances"
+  },
+  {
+    "id": "boohoo",
+    "name": "boohoo",
+    "country": "GB",
+    "category": "clothing-fashion",
+    "url": "https://www.boohoo.com/categories/sale"
+  },
+  {
+    "id": "booking-com",
+    "name": "Booking.com",
+    "country": "US",
+    "category": "travel-lifestyle",
+    "url": "https://www.booking.com/dealspage.html"
+  },
+  {
+    "id": "booking-com",
+    "name": "Booking.com",
+    "country": "GB",
+    "category": "travel-lifestyle",
+    "url": "https://www.booking.com/dealspage.html"
+  },
+  {
+    "id": "booking-com",
+    "name": "Booking.com",
+    "country": "IN",
+    "category": "travel-lifestyle",
+    "url": "https://www.booking.com/"
+  },
+  {
+    "id": "booking-com-uk",
+    "name": "Booking.com UK",
+    "country": "GB",
+    "category": "travel-lifestyle",
+    "url": "https://www.booking.com/"
+  },
+  {
+    "id": "booking-com-us",
+    "name": "Booking.com US",
+    "country": "US",
+    "category": "travel-lifestyle",
+    "url": "https://www.booking.com/"
+  },
+  {
+    "id": "bookkaru",
+    "name": "Bookkaru",
+    "country": "PK",
+    "category": "travel-lifestyle",
+    "url": "https://bookkaru.com/"
+  },
+  {
+    "id": "boost-lifestyle",
+    "name": "Boost Lifestyle",
+    "country": "PK",
+    "category": "tech-electronics",
+    "url": "https://boost-lifestyle.co/collections/sale"
+  },
+  {
+    "id": "booths",
+    "name": "Booths",
+    "country": "GB",
+    "category": "groceries-essentials",
+    "url": "https://www.booths.co.uk/"
+  },
+  {
+    "id": "boots",
+    "name": "Boots",
+    "country": "GB",
+    "category": "beauty-wellness",
+    "url": "https://www.boots.com/offers"
+  },
+  {
+    "id": "boots-opticians",
+    "name": "Boots Opticians",
+    "country": "GB",
+    "category": "beauty-wellness",
+    "url": "https://www.boots.com/opticians-service/opticians-offers/"
+  },
+  {
+    "id": "borjan",
+    "name": "Borjan",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://www.borjan.com.pk/collections/sale"
+  },
+  {
+    "id": "bose",
+    "name": "Bose",
+    "country": "US",
+    "category": "tech-electronics",
+    "url": "https://www.bose.com/home"
+  },
+  {
+    "id": "bose-uk",
+    "name": "Bose UK",
+    "country": "GB",
+    "category": "tech-electronics",
+    "url": "https://www.bose.co.uk/home"
+  },
+  {
+    "id": "boult-audio-goboult",
+    "name": "Boult Audio (Goboult)",
+    "country": "IN",
+    "category": "tech-electronics",
+    "url": "https://goboult.co.in/"
+  },
+  {
+    "id": "breakout",
+    "name": "Breakout",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://www.breakout.com.pk/collections/blessed-friday-sale"
+  },
+  {
+    "id": "breville",
+    "name": "Breville",
+    "country": "US",
+    "category": "tech-electronics",
+    "url": "https://www.breville.com/en-us"
+  },
+  {
+    "id": "british-airways",
+    "name": "British Airways",
+    "country": "GB",
+    "category": "travel-lifestyle",
+    "url": "https://www.britishairways.com/content/offers/sale"
+  },
+  {
+    "id": "broadway-pizza",
+    "name": "Broadway Pizza",
+    "country": "PK",
+    "category": "food-dining",
+    "url": "https://www.broadwaypizza.com.pk/"
+  },
+  {
+    "id": "brooks-brothers",
+    "name": "Brooks Brothers",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://www.brooksbrothers.com/sale"
+  },
+  {
+    "id": "bt",
+    "name": "BT",
+    "country": "GB",
+    "category": "tech-electronics",
+    "url": "https://www.bt.com/"
+  },
+  {
+    "id": "budget-car-rental",
+    "name": "Budget Car Rental",
+    "country": "US",
+    "category": "travel-lifestyle",
+    "url": "https://www.budget.com/en/offers/us-offers"
+  },
+  {
+    "id": "bulk",
+    "name": "Bulk",
+    "country": "GB",
+    "category": "beauty-wellness",
+    "url": "https://www.bulk.com/uk/todays-offers"
+  },
+  {
+    "id": "bundu-khan",
+    "name": "Bundu Khan",
+    "country": "PK",
+    "category": "food-dining",
+    "url": "https://bundukhan.pk/"
+  },
+  {
+    "id": "burger-king",
+    "name": "Burger King",
+    "country": "US",
+    "category": "food-dining",
+    "url": "https://www.bk.com/"
+  },
+  {
+    "id": "burger-king-india",
+    "name": "Burger King India",
+    "country": "IN",
+    "category": "food-dining",
+    "url": "https://www.burgerking.in/"
+  },
+  {
+    "id": "burger-lab",
+    "name": "Burger Lab",
+    "country": "PK",
+    "category": "food-dining",
+    "url": "https://burgerlab.com.pk/"
+  },
+  {
+    "id": "burger-o-clock",
+    "name": "Burger O'Clock",
+    "country": "PK",
+    "category": "food-dining",
+    "url": "https://burgeroclock.com.pk/"
+  },
+  {
+    "id": "burns-pet-nutrition",
+    "name": "Burns Pet Nutrition",
+    "country": "GB",
+    "category": "pets",
+    "url": "https://burnspet.co.uk/"
+  },
+  {
+    "id": "butternut-box",
+    "name": "Butternut Box",
+    "country": "GB",
+    "category": "pets",
+    "url": "https://butternutbox.com/"
+  },
+  {
+    "id": "caff-nero-uk",
+    "name": "Caff\u00e8 Nero UK",
+    "country": "GB",
+    "category": "food-dining",
+    "url": "https://www.caffenero.com/uk"
+  },
+  {
+    "id": "california-pizza",
+    "name": "California Pizza",
+    "country": "PK",
+    "category": "food-dining",
+    "url": "https://californiapizza.com.pk/"
+  },
+  {
+    "id": "calvin-klein",
+    "name": "Calvin Klein",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://www.calvinklein.us/en/sale"
+  },
+  {
+    "id": "cambridge",
+    "name": "Cambridge",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://thecambridgeshop.com/collections/sale-all"
+  },
+  {
+    "id": "campus-shoes",
+    "name": "Campus Shoes",
+    "country": "IN",
+    "category": "clothing-fashion",
+    "url": "https://www.campusshoes.com/"
+  },
+  {
+    "id": "canva",
+    "name": "Canva",
+    "country": "GLOBAL",
+    "category": "ai-tools",
+    "url": "https://canva.com"
+  },
+  {
+    "id": "captain-zack",
+    "name": "Captain Zack",
+    "country": "IN",
+    "category": "pets",
+    "url": "https://captainzack.in/"
+  },
+  {
+    "id": "caratlane",
+    "name": "CaratLane",
+    "country": "IN",
+    "category": "clothing-fashion",
+    "url": "https://www.caratlane.com/"
+  },
+  {
+    "id": "careem",
+    "name": "Careem",
+    "country": "AE",
+    "category": "food-dining",
+    "url": "https://www.careem.com/"
+  },
+  {
+    "id": "carhartt",
+    "name": "Carhartt",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://www.carhartt.com/c/sale"
+  },
+  {
+    "id": "carrefour-pakistan",
+    "name": "Carrefour Pakistan",
+    "country": "PK",
+    "category": "groceries-essentials",
+    "url": "https://www.carrefour.pk/mafpak/en"
+  },
+  {
+    "id": "carrefour-uae",
+    "name": "Carrefour UAE",
+    "country": "AE",
+    "category": "groceries-essentials",
+    "url": "https://www.carrefouruae.com/mafuae/en/"
+  },
+  {
+    "id": "carter-s",
+    "name": "Carter's",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://www.carters.com/c/deals"
+  },
+  {
+    "id": "castore",
+    "name": "Castore",
+    "country": "GB",
+    "category": "clothing-fashion",
+    "url": "https://castore.com/collections/outlet"
+  },
+  {
+    "id": "center-parcs-uk",
+    "name": "Center Parcs UK",
+    "country": "GB",
+    "category": "travel-lifestyle",
+    "url": "https://www.centerparcs.co.uk/"
+  },
+  {
+    "id": "chaayos",
+    "name": "Chaayos",
+    "country": "IN",
+    "category": "food-dining",
+    "url": "https://chaayos.com/"
+  },
+  {
+    "id": "chai-point",
+    "name": "Chai Point",
+    "country": "IN",
+    "category": "food-dining",
+    "url": "https://www.chaipoint.com/"
+  },
+  {
+    "id": "charcoal",
+    "name": "Charcoal",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://charcoal.com.pk/collections/flash-sale"
+  },
+  {
+    "id": "charles-tyrwhitt",
+    "name": "Charles Tyrwhitt",
+    "country": "GB",
+    "category": "clothing-fashion",
+    "url": "https://www.charlestyrwhitt.com/"
+  },
+  {
+    "id": "charlotte-tilbury",
+    "name": "Charlotte Tilbury",
+    "country": "US",
+    "category": "beauty-wellness",
+    "url": "https://www.charlottetilbury.com/us"
+  },
+  {
+    "id": "charlotte-tilbury-uk",
+    "name": "Charlotte Tilbury UK",
+    "country": "GB",
+    "category": "beauty-wellness",
+    "url": "https://www.charlottetilbury.com/uk"
+  },
+  {
+    "id": "chase-up",
+    "name": "Chase Up",
+    "country": "PK",
+    "category": "groceries-essentials",
+    "url": "https://www.chaseupgrocery.com/"
+  },
+  {
+    "id": "chase-value",
+    "name": "Chase Value",
+    "country": "PK",
+    "category": "groceries-essentials",
+    "url": "https://chasevalue.pk/"
+  },
+  {
+    "id": "chatgpt",
+    "name": "ChatGPT",
+    "country": "GLOBAL",
+    "category": "ai-tools",
+    "url": "https://chatgpt.com"
+  },
+  {
+    "id": "cheezious",
+    "name": "Cheezious",
+    "country": "PK",
+    "category": "food-dining",
+    "url": "https://cheezious.com/"
+  },
+  {
+    "id": "chewy",
+    "name": "Chewy",
+    "country": "US",
+    "category": "pets",
+    "url": "https://www.chewy.com/deals/todays-deals-2723"
+  },
+  {
+    "id": "chick-fil-a",
+    "name": "Chick-fil-A",
+    "country": "US",
+    "category": "food-dining",
+    "url": "https://www.chick-fil-a.com/"
+  },
+  {
+    "id": "chili-s",
+    "name": "Chili's",
+    "country": "US",
+    "category": "food-dining",
+    "url": "https://www.chilis.com/specials"
+  },
+  {
+    "id": "chiltanpure",
+    "name": "ChiltanPure",
+    "country": "PK",
+    "category": "beauty-wellness",
+    "url": "https://chiltanpure.com/collections/50-percent-discount"
+  },
+  {
+    "id": "chinyere",
+    "name": "Chinyere",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://www.chinyere.pk/"
+  },
+  {
+    "id": "chipotle",
+    "name": "Chipotle",
+    "country": "US",
+    "category": "food-dining",
+    "url": "https://www.chipotle.com/rewards"
+  },
+  {
+    "id": "choice-hotels",
+    "name": "Choice Hotels",
+    "country": "US",
+    "category": "travel-lifestyle",
+    "url": "https://www.choicehotels.com/deals"
+  },
+  {
+    "id": "clarks",
+    "name": "Clarks",
+    "country": "GB",
+    "category": "clothing-fashion",
+    "url": "https://www.clarks.com/en-gb/sale/sale_uk-c"
+  },
+  {
+    "id": "claude",
+    "name": "Claude",
+    "country": "GLOBAL",
+    "category": "ai-tools",
+    "url": "https://claude.ai"
+  },
+  {
+    "id": "cleartrip",
+    "name": "Cleartrip",
+    "country": "IN",
+    "category": "travel-lifestyle",
+    "url": "https://www.cleartrip.com/"
+  },
+  {
+    "id": "clinique",
+    "name": "Clinique",
+    "country": "US",
+    "category": "beauty-wellness",
+    "url": "https://www.clinique.com/pages/offers"
+  },
+  {
+    "id": "co-op",
+    "name": "Co-op",
+    "country": "GB",
+    "category": "groceries-essentials",
+    "url": "https://www.coop.co.uk/offers"
+  },
+  {
+    "id": "coach",
+    "name": "Coach",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://www.coach.com/shop/sale/view-all"
+  },
+  {
+    "id": "colish",
+    "name": "Colish",
+    "country": "PK",
+    "category": "beauty-wellness",
+    "url": "https://colishco.com/"
+  },
+  {
+    "id": "colorshow",
+    "name": "Colorshow",
+    "country": "PK",
+    "category": "beauty-wellness",
+    "url": "https://www.colorshow.pk/"
+  },
+  {
+    "id": "columbia-sportswear",
+    "name": "Columbia Sportswear",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://www.columbia.com/c/sale/"
+  },
+  {
+    "id": "computer-zone-czone",
+    "name": "Computer Zone (CZone)",
+    "country": "PK",
+    "category": "tech-electronics",
+    "url": "https://www.czone.com.pk/"
+  },
+  {
+    "id": "conatural",
+    "name": "CoNatural",
+    "country": "PK",
+    "category": "beauty-wellness",
+    "url": "https://conaturalintl.com/collections/new-sale"
+  },
+  {
+    "id": "converse",
+    "name": "Converse",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://www.converse.com/shop/sale"
+  },
+  {
+    "id": "copy-ai",
+    "name": "Copy.ai",
+    "country": "GLOBAL",
+    "category": "ai-tools",
+    "url": "https://copy.ai"
+  },
+  {
+    "id": "corsair",
+    "name": "Corsair",
+    "country": "US",
+    "category": "tech-electronics",
+    "url": "https://www.corsair.com/us/en/s/black-friday"
+  },
+  {
+    "id": "costa-coffee",
+    "name": "Costa Coffee",
+    "country": "GB",
+    "category": "food-dining",
+    "url": "https://www.costa.co.uk/"
+  },
+  {
+    "id": "costco",
+    "name": "Costco",
+    "country": "US",
+    "category": "groceries-essentials",
+    "url": "https://www.costco.com/o/-/warehouse-savings"
+  },
+  {
+    "id": "cougar",
+    "name": "Cougar",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://cougar.com.pk/collections/flat-50-off"
+  },
+  {
+    "id": "crew-clothing",
+    "name": "Crew Clothing",
+    "country": "GB",
+    "category": "clothing-fashion",
+    "url": "https://www.crewclothing.co.uk/collections/sale"
+  },
+  {
+    "id": "crocs",
+    "name": "Crocs",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://www.crocs.com/c/sale"
+  },
+  {
+    "id": "croma",
+    "name": "Croma",
+    "country": "IN",
+    "category": "tech-electronics",
+    "url": "https://www.croma.com/"
+  },
+  {
+    "id": "cross-stitch",
+    "name": "Cross Stitch",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://crossstitch.pk/collections/sale"
+  },
+  {
+    "id": "cult-beauty",
+    "name": "Cult Beauty",
+    "country": "GB",
+    "category": "beauty-wellness",
+    "url": "https://www.cultbeauty.co.uk/c/sale/"
+  },
+  {
+    "id": "currys",
+    "name": "Currys",
+    "country": "GB",
+    "category": "tech-electronics",
+    "url": "https://www.currys.co.uk/sale.html"
+  },
+  {
+    "id": "cursor",
+    "name": "Cursor",
+    "country": "GLOBAL",
+    "category": "ai-tools",
+    "url": "https://cursor.com"
+  },
+  {
+    "id": "da-milano",
+    "name": "Da Milano",
+    "country": "IN",
+    "category": "clothing-fashion",
+    "url": "https://www.damilano.com/"
+  },
+  {
+    "id": "daewoo-express",
+    "name": "Daewoo Express",
+    "country": "PK",
+    "category": "travel-lifestyle",
+    "url": "https://daewoo.com.pk/"
+  },
+  {
+    "id": "danube",
+    "name": "Danube",
+    "country": "SA",
+    "category": "groceries-essentials",
+    "url": "https://www.danube.sa/"
+  },
+  {
+    "id": "dany-technologies",
+    "name": "Dany Technologies",
+    "country": "PK",
+    "category": "tech-electronics",
+    "url": "https://danytech.com.pk/collections/all"
+  },
+  {
+    "id": "daraz",
+    "name": "Daraz",
+    "country": "PK",
+    "category": "tech-electronics",
+    "url": "https://www.daraz.pk/"
+  },
+  {
+    "id": "dari-mooch",
+    "name": "Dari Mooch",
+    "country": "PK",
+    "category": "beauty-wellness",
+    "url": "https://www.darimooch.com/collections/flash-sale"
+  },
+  {
+    "id": "dawlance",
+    "name": "Dawlance",
+    "country": "PK",
+    "category": "tech-electronics",
+    "url": "https://www.dawlance.com.pk/"
+  },
+  {
+    "id": "debenhams",
+    "name": "Debenhams",
+    "country": "GB",
+    "category": "clothing-fashion",
+    "url": "https://www.debenhams.com/categories/sale"
+  },
+  {
+    "id": "deliveroo",
+    "name": "Deliveroo",
+    "country": "GB",
+    "category": "food-dining",
+    "url": "https://deliveroo.co.uk/"
+  },
+  {
+    "id": "deliveroo-uk",
+    "name": "Deliveroo UK",
+    "country": "GB",
+    "category": "food-dining",
+    "url": "https://deliveroo.co.uk/"
+  },
+  {
+    "id": "dell",
+    "name": "Dell",
+    "country": "US",
+    "category": "tech-electronics",
+    "url": "https://www.dell.com/en-us/shop/deals/dc"
+  },
+  {
+    "id": "dell-store-india",
+    "name": "Dell Store India",
+    "country": "IN",
+    "category": "tech-electronics",
+    "url": "https://www.dellstore.com/computer-accessories/laptops.html"
+  },
+  {
+    "id": "dell-uk",
+    "name": "Dell UK",
+    "country": "GB",
+    "category": "tech-electronics",
+    "url": "https://www.dell.com/en-gb/shop/deals/dc"
+  },
+  {
+    "id": "delta-air-lines",
+    "name": "Delta Air Lines",
+    "country": "US",
+    "category": "travel-lifestyle",
+    "url": "https://www.delta.com/us/en/flight-deals/current-flight-deals"
+  },
+  {
+    "id": "descript",
+    "name": "Descript",
+    "country": "GLOBAL",
+    "category": "ai-tools",
+    "url": "https://descript.com"
+  },
+  {
+    "id": "diners",
+    "name": "Diners",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://diners.com.pk/"
+  },
+  {
+    "id": "district-by-zomato",
+    "name": "District by Zomato",
+    "country": "IN",
+    "category": "food-dining",
+    "url": "https://www.district.in/"
+  },
+  {
+    "id": "dmart-ready",
+    "name": "DMart Ready",
+    "country": "IN",
+    "category": "groceries-essentials",
+    "url": "https://www.dmart.in/"
+  },
+  {
+    "id": "dogsee-chew",
+    "name": "Dogsee Chew",
+    "country": "IN",
+    "category": "pets",
+    "url": "https://dogseechew.com/"
+  },
+  {
+    "id": "dollar-shave-club",
+    "name": "Dollar Shave Club",
+    "country": "US",
+    "category": "beauty-wellness",
+    "url": "https://us.dollarshaveclub.com/"
+  },
+  {
+    "id": "domino-s",
+    "name": "Domino's",
+    "country": "US",
+    "category": "food-dining",
+    "url": "https://www.dominos.com/deals"
+  },
+  {
+    "id": "domino-s-india",
+    "name": "Domino's India",
+    "country": "IN",
+    "category": "food-dining",
+    "url": "https://www.dominos.co.in/"
+  },
+  {
+    "id": "domino-s-pakistan",
+    "name": "Domino's Pakistan",
+    "country": "PK",
+    "category": "food-dining",
+    "url": "https://www.dominos.com.pk/"
+  },
+  {
+    "id": "dominos-pakistan",
+    "name": "Domino's Pakistan",
+    "country": "PK",
+    "category": "food-dining",
+    "url": "https://www.dominos.com.pk/"
+  },
+  {
+    "id": "domino-s-uk",
+    "name": "Domino's UK",
+    "country": "GB",
+    "category": "food-dining",
+    "url": "https://www.dominos.co.uk/"
+  },
+  {
+    "id": "dominos-us",
+    "name": "Domino's US",
+    "country": "US",
+    "category": "food-dining",
+    "url": "https://www.dominos.com/"
+  },
+  {
+    "id": "doordash",
+    "name": "DoorDash",
+    "country": "US",
+    "category": "food-dining",
+    "url": "https://www.doordash.com/promos/"
+  },
+  {
+    "id": "dr-martens",
+    "name": "Dr. Martens",
+    "country": "GB",
+    "category": "clothing-fashion",
+    "url": "https://www.drmartens.com/uk/en_gb/"
+  },
+  {
+    "id": "drools",
+    "name": "Drools",
+    "country": "IN",
+    "category": "pets",
+    "url": "https://drools.com/"
+  },
+  {
+    "id": "drunk-elephant",
+    "name": "Drunk Elephant",
+    "country": "US",
+    "category": "beauty-wellness",
+    "url": "https://www.drunkelephant.com/"
+  },
+  {
+    "id": "dunkin",
+    "name": "Dunkin'",
+    "country": "US",
+    "category": "food-dining",
+    "url": "https://www.dunkindonuts.com/rewards/"
+  },
+  {
+    "id": "dunkin-pakistan",
+    "name": "Dunkin' Pakistan",
+    "country": "PK",
+    "category": "food-dining",
+    "url": "https://www.dunkindonuts.pk/"
+  },
+  {
+    "id": "dyson",
+    "name": "Dyson",
+    "country": "US",
+    "category": "tech-electronics",
+    "url": "https://www.dyson.com/deals"
+  },
+  {
+    "id": "dyson-uk",
+    "name": "Dyson UK",
+    "country": "GB",
+    "category": "tech-electronics",
+    "url": "https://www.dyson.co.uk/en"
+  },
+  {
+    "id": "e-l-f-cosmetics",
+    "name": "e.l.f. Cosmetics",
+    "country": "US",
+    "category": "beauty-wellness",
+    "url": "https://www.elfcosmetics.com/pages/promotion-details"
+  },
+  {
+    "id": "easemytrip",
+    "name": "EaseMyTrip",
+    "country": "IN",
+    "category": "travel-lifestyle",
+    "url": "https://www.easemytrip.com/"
+  },
+  {
+    "id": "easyjet",
+    "name": "easyJet",
+    "country": "GB",
+    "category": "travel-lifestyle",
+    "url": "https://www.easyjet.com/en/cheap-flights"
+  },
+  {
+    "id": "eatsure",
+    "name": "EatSure",
+    "country": "IN",
+    "category": "food-dining",
+    "url": "https://www.eatsure.com/"
+  },
+  {
+    "id": "eazydiner",
+    "name": "EazyDiner",
+    "country": "IN",
+    "category": "food-dining",
+    "url": "https://www.eazydiner.com/"
+  },
+  {
+    "id": "ebuyer",
+    "name": "Ebuyer",
+    "country": "GB",
+    "category": "tech-electronics",
+    "url": "https://www.ebuyer.com/sale"
+  },
+  {
+    "id": "ecs",
+    "name": "ECS",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://shopecs.com/collections/sale"
+  },
+  {
+    "id": "eddie-bauer",
+    "name": "Eddie Bauer",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://www.eddiebauer.com/collections/clearance"
+  },
+  {
+    "id": "edenrobe",
+    "name": "Edenrobe",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://edenrobe.com/collections/sale"
+  },
+  {
+    "id": "ee",
+    "name": "EE",
+    "country": "GB",
+    "category": "tech-electronics",
+    "url": "https://ee.co.uk/"
+  },
+  {
+    "id": "elemis-uk",
+    "name": "ELEMIS UK",
+    "country": "GB",
+    "category": "beauty-wellness",
+    "url": "https://elemis.com/uk/offers"
+  },
+  {
+    "id": "elevenlabs",
+    "name": "ElevenLabs",
+    "country": "GLOBAL",
+    "category": "ai-tools",
+    "url": "https://elevenlabs.io"
+  },
+  {
+    "id": "emirates-airlines",
+    "name": "Emirates Airlines",
+    "country": "AE",
+    "category": "travel-lifestyle",
+    "url": "https://www.emirates.com/"
+  },
+  {
+    "id": "engine",
+    "name": "Engine",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://www.engine.com.pk"
+  },
+  {
+    "id": "enterprise-rent-a-car",
+    "name": "Enterprise Rent-A-Car",
+    "country": "US",
+    "category": "travel-lifestyle",
+    "url": "https://www.enterprise.com/en/car-rental/deals.html"
+  },
+  {
+    "id": "esajee-s",
+    "name": "Esajee's",
+    "country": "PK",
+    "category": "groceries-essentials",
+    "url": "https://esajee.com/"
+  },
+  {
+    "id": "espa",
+    "name": "ESPA",
+    "country": "GB",
+    "category": "beauty-wellness",
+    "url": "https://www.espaskincare.com/c/offers/"
+  },
+  {
+    "id": "est-e-lauder",
+    "name": "Est\u00e9e Lauder",
+    "country": "US",
+    "category": "beauty-wellness",
+    "url": "https://www.esteelauder.com/promotions"
+  },
+  {
+    "id": "ethnic-by-outfitters-ethnc",
+    "name": "Ethnic by Outfitters (ETHNC)",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://pk.ethnc.com/"
+  },
+  {
+    "id": "eurostar",
+    "name": "Eurostar",
+    "country": "GB",
+    "category": "travel-lifestyle",
+    "url": "https://www.eurostar.com/uk-en"
+  },
+  {
+    "id": "expedia",
+    "name": "Expedia",
+    "country": "US",
+    "category": "travel-lifestyle",
+    "url": "https://www.expedia.com/deals"
+  },
+  {
+    "id": "expedia-uk",
+    "name": "Expedia UK",
+    "country": "GB",
+    "category": "travel-lifestyle",
+    "url": "https://www.expedia.co.uk/"
+  },
+  {
+    "id": "extra-stores",
+    "name": "eXtra Stores",
+    "country": "SA",
+    "category": "tech-electronics",
+    "url": "https://www.extra.com/en-sa/"
+  },
+  {
+    "id": "faasos",
+    "name": "Faasos",
+    "country": "IN",
+    "category": "food-dining",
+    "url": "https://faasos.com/"
+  },
+  {
+    "id": "fabhotels",
+    "name": "FabHotels",
+    "country": "IN",
+    "category": "travel-lifestyle",
+    "url": "https://www.fabhotels.com/"
+  },
+  {
+    "id": "fabindia",
+    "name": "Fabindia",
+    "country": "IN",
+    "category": "clothing-fashion",
+    "url": "https://www.fabindia.com/"
+  },
+  {
+    "id": "faces-canada",
+    "name": "Faces Canada",
+    "country": "IN",
+    "category": "beauty-wellness",
+    "url": "https://www.facescanada.com/"
+  },
+  {
+    "id": "factor",
+    "name": "Factor",
+    "country": "US",
+    "category": "food-dining",
+    "url": "https://www.factor75.com/eat/coupon-codes-and-promotions"
+  },
+  {
+    "id": "faisal-movers",
+    "name": "Faisal Movers",
+    "country": "PK",
+    "category": "travel-lifestyle",
+    "url": "https://faisalmovers.com/booking/"
+  },
+  {
+    "id": "farmfoods",
+    "name": "Farmfoods",
+    "country": "GB",
+    "category": "groceries-essentials",
+    "url": "https://www.farmfoods.co.uk/"
+  },
+  {
+    "id": "farmina-india",
+    "name": "Farmina India",
+    "country": "IN",
+    "category": "pets",
+    "url": "https://www.farmina.com/in/"
+  },
+  {
+    "id": "fashion-factory",
+    "name": "Fashion Factory",
+    "country": "IN",
+    "category": "clothing-fashion",
+    "url": "https://reliancefashionfactorystores.com/"
+  },
+  {
+    "id": "faster",
+    "name": "FASTER",
+    "country": "PK",
+    "category": "tech-electronics",
+    "url": "https://pk.hellofaster.com/"
+  },
+  {
+    "id": "fatface",
+    "name": "FatFace",
+    "country": "GB",
+    "category": "clothing-fashion",
+    "url": "https://www.fatface.com/sales"
+  },
+  {
+    "id": "fenty-beauty",
+    "name": "Fenty Beauty",
+    "country": "US",
+    "category": "beauty-wellness",
+    "url": "https://fentybeauty.com/collections/sale"
+  },
+  {
+    "id": "fire-boltt",
+    "name": "Fire-Boltt",
+    "country": "IN",
+    "category": "tech-electronics",
+    "url": "https://www.fireboltt.com/"
+  },
+  {
+    "id": "fireflies",
+    "name": "Fireflies.ai",
+    "country": "GLOBAL",
+    "category": "ai-tools",
+    "url": "https://fireflies.ai"
+  },
+  {
+    "id": "flannels",
+    "name": "Flannels",
+    "country": "GB",
+    "category": "clothing-fashion",
+    "url": "https://www.flannels.com/clearancehome"
+  },
+  {
+    "id": "flipkart",
+    "name": "Flipkart",
+    "country": "IN",
+    "category": "tech-electronics",
+    "url": "https://www.flipkart.com/"
+  },
+  {
+    "id": "flipkart-minutes",
+    "name": "Flipkart Minutes",
+    "country": "IN",
+    "category": "groceries-essentials",
+    "url": "https://www.flipkart.com/flipkart-minutes-store?marketplace=HYPERLOCAL"
+  },
+  {
+    "id": "fly-jinnah",
+    "name": "Fly Jinnah",
+    "country": "PK",
+    "category": "travel-lifestyle",
+    "url": "https://www.flyjinnah.com/"
+  },
+  {
+    "id": "flynas",
+    "name": "Flynas",
+    "country": "SA",
+    "category": "travel-lifestyle",
+    "url": "https://www.flynas.com/en"
+  },
+  {
+    "id": "foodpanda-pakistan",
+    "name": "foodpanda Pakistan",
+    "country": "PK",
+    "category": "food-dining",
+    "url": "https://www.foodpanda.pk/"
+  },
+  {
+    "id": "foodpanda",
+    "name": "foodpanda Pakistan",
+    "country": "PK",
+    "category": "food-dining",
+    "url": "https://www.foodpanda.pk/"
+  },
+  {
+    "id": "footasylum",
+    "name": "Footasylum",
+    "country": "GB",
+    "category": "clothing-fashion",
+    "url": "https://www.footasylum.com/sale-all/"
+  },
+  {
+    "id": "forthglade",
+    "name": "Forthglade",
+    "country": "GB",
+    "category": "pets",
+    "url": "https://forthglade.com/"
+  },
+  {
+    "id": "fossil",
+    "name": "Fossil",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://www.fossil.com/en-us/sale/"
+  },
+  {
+    "id": "foxtale",
+    "name": "Foxtale",
+    "country": "IN",
+    "category": "beauty-wellness",
+    "url": "https://foxtale.in/"
+  },
+  {
+    "id": "fragrance-direct",
+    "name": "Fragrance Direct",
+    "country": "GB",
+    "category": "beauty-wellness",
+    "url": "https://www.fragrancedirect.co.uk/"
+  },
+  {
+    "id": "framer",
+    "name": "Framer",
+    "country": "GLOBAL",
+    "category": "ai-tools",
+    "url": "https://framer.com"
+  },
+  {
+    "id": "free-people",
+    "name": "Free People",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://www.freepeople.com/sale-all/"
+  },
+  {
+    "id": "freshtohome",
+    "name": "FreshToHome",
+    "country": "IN",
+    "category": "groceries-essentials",
+    "url": "https://www.freshtohome.com/"
+  },
+  {
+    "id": "furor",
+    "name": "Furor",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://furorjeans.com/collections/sale"
+  },
+  {
+    "id": "gamma",
+    "name": "Gamma",
+    "country": "GLOBAL",
+    "category": "ai-tools",
+    "url": "https://gamma.app"
+  },
+  {
+    "id": "gap",
+    "name": "Gap",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://www.gap.com/"
+  },
+  {
+    "id": "garmin",
+    "name": "Garmin",
+    "country": "US",
+    "category": "tech-electronics",
+    "url": "https://www.garmin.com/en-US/c/promotions/"
+  },
+  {
+    "id": "generation",
+    "name": "Generation",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://generation.com.pk/collections/50-sale"
+  },
+  {
+    "id": "getyourguide",
+    "name": "GetYourGuide",
+    "country": "US",
+    "category": "travel-lifestyle",
+    "url": "https://www.getyourguide.com/"
+  },
+  {
+    "id": "giffgaff",
+    "name": "giffgaff",
+    "country": "GB",
+    "category": "tech-electronics",
+    "url": "https://www.giffgaff.com/sim-only-deals"
+  },
+  {
+    "id": "github-copilot",
+    "name": "GitHub Copilot",
+    "country": "GLOBAL",
+    "category": "ai-tools",
+    "url": "https://github.com/features/copilot"
+  },
+  {
+    "id": "giva",
+    "name": "GIVA",
+    "country": "IN",
+    "category": "clothing-fashion",
+    "url": "https://www.giva.co/"
+  },
+  {
+    "id": "global-desi",
+    "name": "Global Desi",
+    "country": "IN",
+    "category": "clothing-fashion",
+    "url": "https://www.globaldesi.in/"
+  },
+  {
+    "id": "gloria-jean-s-coffees-pakistan",
+    "name": "Gloria Jean's Coffees Pakistan",
+    "country": "PK",
+    "category": "food-dining",
+    "url": "https://gloriajeanscoffees.com.pk/"
+  },
+  {
+    "id": "glossier",
+    "name": "Glossier",
+    "country": "US",
+    "category": "beauty-wellness",
+    "url": "https://www.glossier.com/"
+  },
+  {
+    "id": "gnc",
+    "name": "GNC",
+    "country": "US",
+    "category": "beauty-wellness",
+    "url": "https://www.gnc.com/sale.html"
+  },
+  {
+    "id": "goibibo",
+    "name": "Goibibo",
+    "country": "IN",
+    "category": "travel-lifestyle",
+    "url": "https://www.goibibo.com/"
+  },
+  {
+    "id": "goofy-tails",
+    "name": "Goofy Tails",
+    "country": "IN",
+    "category": "pets",
+    "url": "https://goofytails.com/"
+  },
+  {
+    "id": "gemini",
+    "name": "Google Gemini",
+    "country": "GLOBAL",
+    "category": "ai-tools",
+    "url": "https://gemini.google.com"
+  },
+  {
+    "id": "google-store-fitbit",
+    "name": "Google Store / Fitbit",
+    "country": "US",
+    "category": "tech-electronics",
+    "url": "https://store.google.com/us/collection/offers?hl=en-US"
+  },
+  {
+    "id": "gopuff",
+    "name": "Gopuff",
+    "country": "US",
+    "category": "groceries-essentials",
+    "url": "https://www.gopuff.com/"
+  },
+  {
+    "id": "gopuff-uk",
+    "name": "Gopuff UK",
+    "country": "GB",
+    "category": "groceries-essentials",
+    "url": "https://www.gopuff.com/gb/"
+  },
+  {
+    "id": "gousto",
+    "name": "Gousto",
+    "country": "GB",
+    "category": "food-dining",
+    "url": "https://www.gousto.co.uk/"
+  },
+  {
+    "id": "gozayaan",
+    "name": "GoZayaan",
+    "country": "PK",
+    "category": "travel-lifestyle",
+    "url": "https://gozayaan.com/"
+  },
+  {
+    "id": "grammarly",
+    "name": "Grammarly",
+    "country": "GLOBAL",
+    "category": "ai-tools",
+    "url": "https://grammarly.com"
+  },
+  {
+    "id": "gree-dwp-home",
+    "name": "Gree (DWP Home)",
+    "country": "PK",
+    "category": "tech-electronics",
+    "url": "https://dwphome.pk/promotions"
+  },
+  {
+    "id": "greenvalley-hypermarket",
+    "name": "Greenvalley Hypermarket",
+    "country": "PK",
+    "category": "groceries-essentials",
+    "url": "https://greenvalley.pk/"
+  },
+  {
+    "id": "greggs",
+    "name": "Greggs",
+    "country": "GB",
+    "category": "food-dining",
+    "url": "https://www.greggs.com/order"
+  },
+  {
+    "id": "grenade",
+    "name": "Grenade",
+    "country": "GB",
+    "category": "beauty-wellness",
+    "url": "https://www.grenade.com/collections/grenade-outlet"
+  },
+  {
+    "id": "grocerapp",
+    "name": "GrocerApp",
+    "country": "PK",
+    "category": "groceries-essentials",
+    "url": "https://grocerapp.pk/"
+  },
+  {
+    "id": "groww",
+    "name": "Groww",
+    "country": "IN",
+    "category": "tech-electronics",
+    "url": "https://groww.in/"
+  },
+  {
+    "id": "grubhub",
+    "name": "Grubhub",
+    "country": "US",
+    "category": "food-dining",
+    "url": "https://www.grubhub.com/offers"
+  },
+  {
+    "id": "gul-ahmed-ideas",
+    "name": "Gul Ahmed Ideas",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://www.gulahmedshop.com/collections/sale"
+  },
+  {
+    "id": "gymshark",
+    "name": "Gymshark",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://www.gymshark.com/"
+  },
+  {
+    "id": "gymshark-uk",
+    "name": "Gymshark UK",
+    "country": "GB",
+    "category": "clothing-fashion",
+    "url": "https://uk.gymshark.com/collections/outlet"
+  },
+  {
+    "id": "h-m-india",
+    "name": "H&M India",
+    "country": "IN",
+    "category": "clothing-fashion",
+    "url": "https://www2.hm.com/en_in/index.html"
+  },
+  {
+    "id": "h-m-uk",
+    "name": "H&M UK",
+    "country": "GB",
+    "category": "clothing-fashion",
+    "url": "https://www2.hm.com/en_gb/index.html"
+  },
+  {
+    "id": "h-m-us",
+    "name": "H&M US",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://www2.hm.com/en_us/index.html"
+  },
+  {
+    "id": "h-e-b",
+    "name": "H-E-B",
+    "country": "US",
+    "category": "groceries-essentials",
+    "url": "https://www.heb.com/collections/weekly-ad"
+  },
+  {
+    "id": "haier-pakistan",
+    "name": "Haier Pakistan",
+    "country": "PK",
+    "category": "tech-electronics",
+    "url": "https://www.haier.com/pk/"
+  },
+  {
+    "id": "haldiram-s",
+    "name": "Haldiram's",
+    "country": "IN",
+    "category": "food-dining",
+    "url": "https://www.haldiram.com/"
+  },
+  {
+    "id": "hammer",
+    "name": "Hammer",
+    "country": "IN",
+    "category": "tech-electronics",
+    "url": "https://hammeronline.in/"
+  },
+  {
+    "id": "hardee-s-pakistan",
+    "name": "Hardee's Pakistan",
+    "country": "PK",
+    "category": "food-dining",
+    "url": "https://www.hardees.com.pk/"
+  },
+  {
+    "id": "harringtons-pet-food",
+    "name": "Harringtons Pet Food",
+    "country": "GB",
+    "category": "pets",
+    "url": "https://www.harringtonspetfood.com/"
+  },
+  {
+    "id": "harrods",
+    "name": "Harrods",
+    "country": "GB",
+    "category": "clothing-fashion",
+    "url": "https://www.harrods.com/en-gb/sale"
+  },
+  {
+    "id": "harry-s",
+    "name": "Harry's",
+    "country": "US",
+    "category": "beauty-wellness",
+    "url": "https://www.harrys.com/"
+  },
+  {
+    "id": "harvester",
+    "name": "Harvester",
+    "country": "GB",
+    "category": "food-dining",
+    "url": "https://www.harvester.co.uk/offers"
+  },
+  {
+    "id": "harvey-nichols",
+    "name": "Harvey Nichols",
+    "country": "GB",
+    "category": "clothing-fashion",
+    "url": "https://www.harveynichols.com/sale"
+  },
+  {
+    "id": "havells",
+    "name": "Havells",
+    "country": "IN",
+    "category": "tech-electronics",
+    "url": "https://havells.com/"
+  },
+  {
+    "id": "haven",
+    "name": "Haven",
+    "country": "GB",
+    "category": "travel-lifestyle",
+    "url": "https://www.haven.com/offers/last-minute-deals"
+  },
+  {
+    "id": "heads-up-for-tails",
+    "name": "Heads Up For Tails",
+    "country": "IN",
+    "category": "pets",
+    "url": "https://headsupfortails.com/"
+  },
+  {
+    "id": "healthkart",
+    "name": "HealthKart",
+    "country": "IN",
+    "category": "beauty-wellness",
+    "url": "https://www.healthkart.com/"
+  },
+  {
+    "id": "healthy-tails-store",
+    "name": "Healthy Tails Store",
+    "country": "PK",
+    "category": "pets",
+    "url": "https://healthytailsstore.com/"
+  },
+  {
+    "id": "hellofresh",
+    "name": "HelloFresh",
+    "country": "US",
+    "category": "food-dining",
+    "url": "https://www.hellofresh.com/eat/coupon-codes-and-promotions"
+  },
+  {
+    "id": "hellofresh-uk",
+    "name": "HelloFresh UK",
+    "country": "GB",
+    "category": "food-dining",
+    "url": "https://www.hellofresh.co.uk/"
+  },
+  {
+    "id": "hemani-herbals",
+    "name": "Hemani Herbals",
+    "country": "PK",
+    "category": "beauty-wellness",
+    "url": "https://pk.hemaniherbals.com/"
+  },
+  {
+    "id": "herbiotics",
+    "name": "Herbiotics",
+    "country": "PK",
+    "category": "beauty-wellness",
+    "url": "https://herbiotics.com.pk/"
+  },
+  {
+    "id": "hertz",
+    "name": "Hertz",
+    "country": "US",
+    "category": "travel-lifestyle",
+    "url": "https://www.hertz.com/us/en/deals-and-offers"
+  },
+  {
+    "id": "heygen",
+    "name": "HeyGen",
+    "country": "GLOBAL",
+    "category": "ai-tools",
+    "url": "https://heygen.com"
+  },
+  {
+    "id": "hidesign",
+    "name": "Hidesign",
+    "country": "IN",
+    "category": "clothing-fashion",
+    "url": "https://hidesign.com/"
+  },
+  {
+    "id": "higgsfield",
+    "name": "Higgsfield AI",
+    "country": "GLOBAL",
+    "category": "ai-tools",
+    "url": "https://higgsfield.ai"
+  },
+  {
+    "id": "highfy",
+    "name": "Highfy",
+    "country": "PK",
+    "category": "beauty-wellness",
+    "url": "https://highfy.pk/"
+  },
+  {
+    "id": "hill-s-pet-nutrition",
+    "name": "Hill's Pet Nutrition",
+    "country": "US",
+    "category": "pets",
+    "url": "https://www.hillspet.com/special-offers"
+  },
+  {
+    "id": "hilton",
+    "name": "Hilton",
+    "country": "US",
+    "category": "travel-lifestyle",
+    "url": "https://www.hilton.com/en/offers/"
+  },
+  {
+    "id": "hilton-uk",
+    "name": "Hilton UK",
+    "country": "GB",
+    "category": "travel-lifestyle",
+    "url": "https://www.hilton.com/en-gb/"
+  },
+  {
+    "id": "hobbs",
+    "name": "Hobbs",
+    "country": "GB",
+    "category": "clothing-fashion",
+    "url": "https://www.hobbs.com/sale/"
+  },
+  {
+    "id": "holland-barrett",
+    "name": "Holland & Barrett",
+    "country": "GB",
+    "category": "beauty-wellness",
+    "url": "https://www.hollandandbarrett.com/shop/offers/"
+  },
+  {
+    "id": "hollister",
+    "name": "Hollister",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://www.hollisterco.com/shop/us/sale"
+  },
+  {
+    "id": "hopscotch",
+    "name": "Hopscotch",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://hopscotch.pk/"
+  },
+  {
+    "id": "hotels-com",
+    "name": "Hotels.com",
+    "country": "US",
+    "category": "travel-lifestyle",
+    "url": "https://www.hotels.com/"
+  },
+  {
+    "id": "hotels-com-uk",
+    "name": "Hotels.com UK",
+    "country": "GB",
+    "category": "travel-lifestyle",
+    "url": "https://uk.hotels.com/"
+  },
+  {
+    "id": "house-of-fraser",
+    "name": "House of Fraser",
+    "country": "GB",
+    "category": "clothing-fashion",
+    "url": "https://www.houseoffraser.co.uk/sale"
+  },
+  {
+    "id": "hp",
+    "name": "HP",
+    "country": "US",
+    "category": "tech-electronics",
+    "url": "https://www.hp.com/us-en/shop/slp/weekly-deals"
+  },
+  {
+    "id": "hp-india",
+    "name": "HP India",
+    "country": "IN",
+    "category": "tech-electronics",
+    "url": "https://www.hp.com/in-en/shop/"
+  },
+  {
+    "id": "hp-uk",
+    "name": "HP UK",
+    "country": "GB",
+    "category": "tech-electronics",
+    "url": "https://www.hp.com/gb-en/shop/"
+  },
+  {
+    "id": "hub-leather",
+    "name": "HUB Leather",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://hub.com.pk/"
+  },
+  {
+    "id": "huel-uk",
+    "name": "Huel UK",
+    "country": "GB",
+    "category": "beauty-wellness",
+    "url": "https://uk.huel.com/"
+  },
+  {
+    "id": "hungerstation",
+    "name": "HungerStation",
+    "country": "SA",
+    "category": "food-dining",
+    "url": "https://hungerstation.com/sa-en"
+  },
+  {
+    "id": "hush-puppies-pakistan",
+    "name": "Hush Puppies Pakistan",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://www.hushpuppies.com.pk/"
+  },
+  {
+    "id": "hyatt",
+    "name": "Hyatt",
+    "country": "US",
+    "category": "travel-lifestyle",
+    "url": "https://world.hyatt.com/content/gp/en/offers.html"
+  },
+  {
+    "id": "iceland",
+    "name": "Iceland",
+    "country": "GB",
+    "category": "groceries-essentials",
+    "url": "https://www.iceland.co.uk/offers"
+  },
+  {
+    "id": "id-mobile",
+    "name": "iD Mobile",
+    "country": "GB",
+    "category": "tech-electronics",
+    "url": "https://www.idmobile.co.uk/"
+  },
+  {
+    "id": "ideogram",
+    "name": "Ideogram",
+    "country": "GLOBAL",
+    "category": "ai-tools",
+    "url": "https://ideogram.ai"
+  },
+  {
+    "id": "iherb",
+    "name": "iHerb",
+    "country": "US",
+    "category": "beauty-wellness",
+    "url": "https://www.iherb.com/deals"
+  },
+  {
+    "id": "ihg-hotels-resorts",
+    "name": "IHG Hotels & Resorts",
+    "country": "US",
+    "category": "travel-lifestyle",
+    "url": "https://www.ihg.com/explore/last-minute-hotel-deals"
+  },
+  {
+    "id": "ihg-hotels-resorts-uk",
+    "name": "IHG Hotels & Resorts UK",
+    "country": "GB",
+    "category": "travel-lifestyle",
+    "url": "https://www.ihg.com/hotels/gb/en/reservation"
+  },
+  {
+    "id": "imtiaz",
+    "name": "Imtiaz",
+    "country": "PK",
+    "category": "groceries-essentials",
+    "url": "https://imtiaz.com.pk/"
+  },
+  {
+    "id": "imtiaz-super-market",
+    "name": "Imtiaz Super Market",
+    "country": "PK",
+    "category": "groceries-essentials",
+    "url": "https://imtiaz.com.pk/"
+  },
+  {
+    "id": "indigo",
+    "name": "IndiGo",
+    "country": "IN",
+    "category": "travel-lifestyle",
+    "url": "https://www.goindigo.in/flights"
+  },
+  {
+    "id": "infinix-pakistan",
+    "name": "Infinix Pakistan",
+    "country": "PK",
+    "category": "tech-electronics",
+    "url": "https://pk.infinixmobility.com/"
+  },
+  {
+    "id": "insignia",
+    "name": "Insignia",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://insignia.com.pk/"
+  },
+  {
+    "id": "itc-hotels",
+    "name": "ITC Hotels",
+    "country": "IN",
+    "category": "travel-lifestyle",
+    "url": "https://www.itchotels.com/in/en"
+  },
+  {
+    "id": "itsu",
+    "name": "itsu",
+    "country": "GB",
+    "category": "food-dining",
+    "url": "https://www.itsu.com/"
+  },
+  {
+    "id": "ixigo",
+    "name": "ixigo",
+    "country": "IN",
+    "category": "travel-lifestyle",
+    "url": "https://www.ixigo.com/"
+  },
+  {
+    "id": "j-junaid-jamshed",
+    "name": "J. (Junaid Jamshed)",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://www.junaidjamshed.com/collections/sale"
+  },
+  {
+    "id": "j-fragrances",
+    "name": "J. Fragrances",
+    "country": "PK",
+    "category": "beauty-wellness",
+    "url": "https://www.junaidjamshed.com/collections/fragrances"
+  },
+  {
+    "id": "j-crew",
+    "name": "J.Crew",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://www.jcrew.com/sale"
+  },
+  {
+    "id": "jacked-nutrition",
+    "name": "Jacked Nutrition",
+    "country": "PK",
+    "category": "beauty-wellness",
+    "url": "https://jackednutrition.pk/collections/deals"
+  },
+  {
+    "id": "jafferjees",
+    "name": "Jafferjees",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://jafferjees.com/"
+  },
+  {
+    "id": "jalal-sons",
+    "name": "Jalal Sons",
+    "country": "PK",
+    "category": "groceries-essentials",
+    "url": "https://www.jalalsons.com.pk/"
+  },
+  {
+    "id": "jarir-bookstore",
+    "name": "Jarir Bookstore",
+    "country": "SA",
+    "category": "tech-electronics",
+    "url": "https://www.jarir.com/sa-en/"
+  },
+  {
+    "id": "jbl",
+    "name": "JBL",
+    "country": "US",
+    "category": "tech-electronics",
+    "url": "https://www.jbl.com/sale/"
+  },
+  {
+    "id": "jbl-india",
+    "name": "JBL India",
+    "country": "IN",
+    "category": "tech-electronics",
+    "url": "https://in.jbl.com/"
+  },
+  {
+    "id": "jd-sports",
+    "name": "JD Sports",
+    "country": "GB",
+    "category": "clothing-fashion",
+    "url": "https://www.jdsports.co.uk/sale/"
+  },
+  {
+    "id": "jenpharm",
+    "name": "Jenpharm",
+    "country": "PK",
+    "category": "beauty-wellness",
+    "url": "https://jenpharm.com/collections/jenpharm-sale"
+  },
+  {
+    "id": "jet2holidays",
+    "name": "Jet2holidays",
+    "country": "GB",
+    "category": "travel-lifestyle",
+    "url": "https://www.jet2holidays.com/deals-of-the-week"
+  },
+  {
+    "id": "jetblue",
+    "name": "JetBlue",
+    "country": "US",
+    "category": "travel-lifestyle",
+    "url": "https://www.jetblue.com/best-fare-finder"
+  },
+  {
+    "id": "jiomart",
+    "name": "JioMart",
+    "country": "IN",
+    "category": "groceries-essentials",
+    "url": "https://www.jiomart.com/"
+  },
+  {
+    "id": "jo-malone-london-uk",
+    "name": "Jo Malone London UK",
+    "country": "GB",
+    "category": "beauty-wellness",
+    "url": "https://www.jomalone.co.uk/"
+  },
+  {
+    "id": "john-lewis",
+    "name": "John Lewis",
+    "country": "GB",
+    "category": "clothing-fashion",
+    "url": "https://www.johnlewis.com/special-offers/c50000110"
+  },
+  {
+    "id": "jollyes",
+    "name": "Jollyes",
+    "country": "GB",
+    "category": "pets",
+    "url": "https://www.jollyes.co.uk/offers.html"
+  },
+  {
+    "id": "joules",
+    "name": "Joules",
+    "country": "GB",
+    "category": "clothing-fashion",
+    "url": "https://www.joules.com/sales"
+  },
+  {
+    "id": "julk",
+    "name": "Julk\u00e9",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://www.julke.pk/collections/sale"
+  },
+  {
+    "id": "just-eat",
+    "name": "Just Eat",
+    "country": "GB",
+    "category": "food-dining",
+    "url": "https://www.just-eat.co.uk/"
+  },
+  {
+    "id": "just-eat-uk",
+    "name": "Just Eat UK",
+    "country": "GB",
+    "category": "food-dining",
+    "url": "https://www.just-eat.co.uk/"
+  },
+  {
+    "id": "justdogs",
+    "name": "JUSTDOGS",
+    "country": "IN",
+    "category": "pets",
+    "url": "https://www.justdogsstore.com/"
+  },
+  {
+    "id": "k-n-s",
+    "name": "K&N's",
+    "country": "PK",
+    "category": "groceries-essentials",
+    "url": "https://shop-kandns.pk/"
+  },
+  {
+    "id": "kababjees",
+    "name": "Kababjees",
+    "country": "PK",
+    "category": "food-dining",
+    "url": "https://kababjees.com/"
+  },
+  {
+    "id": "kama-ayurveda",
+    "name": "Kama Ayurveda",
+    "country": "IN",
+    "category": "beauty-wellness",
+    "url": "https://www.kamaayurveda.com/in"
+  },
+  {
+    "id": "kapiva",
+    "name": "Kapiva",
+    "country": "IN",
+    "category": "beauty-wellness",
+    "url": "https://kapiva.in/"
+  },
+  {
+    "id": "karen-millen",
+    "name": "Karen Millen",
+    "country": "GB",
+    "category": "clothing-fashion",
+    "url": "https://www.karenmillen.com/categories/womens-sale"
+  },
+  {
+    "id": "kate-spade",
+    "name": "Kate Spade",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://www.katespade.com/shop/sale/view-all"
+  },
+  {
+    "id": "katkin",
+    "name": "KatKin",
+    "country": "GB",
+    "category": "pets",
+    "url": "https://www.katkin.com/"
+  },
+  {
+    "id": "kayak",
+    "name": "KAYAK",
+    "country": "US",
+    "category": "travel-lifestyle",
+    "url": "https://www.kayak.com/"
+  },
+  {
+    "id": "kayseria",
+    "name": "Kayseria",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://sefam.com/pages/kayseria"
+  },
+  {
+    "id": "kendra-scott",
+    "name": "Kendra Scott",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://www.kendrascott.com/sales/"
+  },
+  {
+    "id": "kenwood-pakistan",
+    "name": "Kenwood Pakistan",
+    "country": "PK",
+    "category": "tech-electronics",
+    "url": "https://www.kenwoodpakistan.pk/"
+  },
+  {
+    "id": "kfc",
+    "name": "KFC",
+    "country": "US",
+    "category": "food-dining",
+    "url": "https://www.kfc.com/"
+  },
+  {
+    "id": "kfc-india",
+    "name": "KFC India",
+    "country": "IN",
+    "category": "food-dining",
+    "url": "https://online.kfc.co.in/"
+  },
+  {
+    "id": "kfc-pakistan",
+    "name": "KFC Pakistan",
+    "country": "PK",
+    "category": "food-dining",
+    "url": "https://www.kfcpakistan.com/"
+  },
+  {
+    "id": "khaadi",
+    "name": "Khaadi",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://pk.khaadi.com"
+  },
+  {
+    "id": "khaalis",
+    "name": "Khaalis",
+    "country": "PK",
+    "category": "groceries-essentials",
+    "url": "https://khaalis.pk/"
+  },
+  {
+    "id": "khas-stores",
+    "name": "Khas Stores",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://khasstores.com/"
+  },
+  {
+    "id": "kiehl-s",
+    "name": "Kiehl's",
+    "country": "US",
+    "category": "beauty-wellness",
+    "url": "https://www.kiehls.com/offers.html"
+  },
+  {
+    "id": "kiehl-s-uk",
+    "name": "Kiehl's UK",
+    "country": "GB",
+    "category": "beauty-wellness",
+    "url": "https://www.kiehls.co.uk/offers.html"
+  },
+  {
+    "id": "kitchenaid",
+    "name": "KitchenAid",
+    "country": "US",
+    "category": "tech-electronics",
+    "url": "https://www.kitchenaid.com/"
+  },
+  {
+    "id": "kling",
+    "name": "Kling AI",
+    "country": "GLOBAL",
+    "category": "ai-tools",
+    "url": "https://klingai.com"
+  },
+  {
+    "id": "kong",
+    "name": "KONG",
+    "country": "US",
+    "category": "pets",
+    "url": "https://www.kongcompany.com/"
+  },
+  {
+    "id": "krave-mart",
+    "name": "Krave Mart",
+    "country": "PK",
+    "category": "groceries-essentials",
+    "url": "https://kravemart.com/"
+  },
+  {
+    "id": "krispy-kreme",
+    "name": "Krispy Kreme",
+    "country": "US",
+    "category": "food-dining",
+    "url": "https://www.krispykreme.com/offers"
+  },
+  {
+    "id": "l-l-bean",
+    "name": "L.L.Bean",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://www.llbean.com/llb/shop/32?page=sale"
+  },
+  {
+    "id": "la-roche-posay",
+    "name": "La Roche-Posay",
+    "country": "US",
+    "category": "beauty-wellness",
+    "url": "https://www.laroche-posay.us/special-offers.html"
+  },
+  {
+    "id": "laithwaites-wine",
+    "name": "Laithwaites Wine",
+    "country": "GB",
+    "category": "groceries-essentials",
+    "url": "https://www.laithwaites.co.uk/wine/on-offer-wine"
+  },
+  {
+    "id": "lakm-india",
+    "name": "Lakm\u00e9 India",
+    "country": "IN",
+    "category": "beauty-wellness",
+    "url": "https://www.lakmeindia.com/"
+  },
+  {
+    "id": "lama-retail",
+    "name": "LAMA Retail",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://lamaretail.com/"
+  },
+  {
+    "id": "lanc-me",
+    "name": "Lanc\u00f4me",
+    "country": "US",
+    "category": "beauty-wellness",
+    "url": "https://www.lancome-usa.com/special-offers.html"
+  },
+  {
+    "id": "laptops-direct",
+    "name": "Laptops Direct",
+    "country": "GB",
+    "category": "tech-electronics",
+    "url": "https://www.laptopsdirect.co.uk/"
+  },
+  {
+    "id": "lastminute-com",
+    "name": "lastminute.com",
+    "country": "GB",
+    "category": "travel-lifestyle",
+    "url": "https://www.lastminute.com/deals"
+  },
+  {
+    "id": "lawrencepur",
+    "name": "Lawrencepur",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://lawrencepur.com/"
+  },
+  {
+    "id": "layers-bakeshop",
+    "name": "Layers Bakeshop",
+    "country": "PK",
+    "category": "food-dining",
+    "url": "https://layers.pk/"
+  },
+  {
+    "id": "leisure-club",
+    "name": "Leisure Club",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://sefam.com/collections/leisure-club"
+  },
+  {
+    "id": "lemon-tree-hotels",
+    "name": "Lemon Tree Hotels",
+    "country": "IN",
+    "category": "travel-lifestyle",
+    "url": "https://www.lemontreehotels.com/"
+  },
+  {
+    "id": "lenovo",
+    "name": "Lenovo",
+    "country": "US",
+    "category": "tech-electronics",
+    "url": "https://www.lenovo.com/us/en/d/deals/"
+  },
+  {
+    "id": "lenovo-india",
+    "name": "Lenovo India",
+    "country": "IN",
+    "category": "tech-electronics",
+    "url": "https://www.lenovo.com/in/en/"
+  },
+  {
+    "id": "lenovo-uk",
+    "name": "Lenovo UK",
+    "country": "GB",
+    "category": "tech-electronics",
+    "url": "https://www.lenovo.com/gb/en/d/sale/"
+  },
+  {
+    "id": "lenskart",
+    "name": "Lenskart",
+    "country": "IN",
+    "category": "clothing-fashion",
+    "url": "https://www.lenskart.com/eyeglasses.html"
+  },
+  {
+    "id": "leonardo",
+    "name": "Leonardo AI",
+    "country": "GLOBAL",
+    "category": "ai-tools",
+    "url": "https://leonardo.ai"
+  },
+  {
+    "id": "levi-s",
+    "name": "Levi's",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://www.levi.com/US/en_US/sale/c/levi_clothing_sale_us"
+  },
+  {
+    "id": "levi-s-india",
+    "name": "Levi's India",
+    "country": "IN",
+    "category": "clothing-fashion",
+    "url": "https://levi.in/"
+  },
+  {
+    "id": "lg-india",
+    "name": "LG India",
+    "country": "IN",
+    "category": "tech-electronics",
+    "url": "https://www.lg.com/in/"
+  },
+  {
+    "id": "lg-uk",
+    "name": "LG UK",
+    "country": "GB",
+    "category": "tech-electronics",
+    "url": "https://www.lg.com/uk/promotion/"
+  },
+  {
+    "id": "lg-us",
+    "name": "LG US",
+    "country": "US",
+    "category": "tech-electronics",
+    "url": "https://www.lg.com/us/promotions"
+  },
+  {
+    "id": "libas",
+    "name": "Libas",
+    "country": "IN",
+    "category": "clothing-fashion",
+    "url": "https://www.libas.in/"
+  },
+  {
+    "id": "licious",
+    "name": "Licious",
+    "country": "IN",
+    "category": "groceries-essentials",
+    "url": "https://www.licious.in/"
+  },
+  {
+    "id": "lidl-gb",
+    "name": "Lidl GB",
+    "country": "GB",
+    "category": "groceries-essentials",
+    "url": "https://www.lidl.co.uk/c/food-offers/s10023092"
+  },
+  {
+    "id": "lifestyle-stores",
+    "name": "Lifestyle Stores",
+    "country": "IN",
+    "category": "clothing-fashion",
+    "url": "https://www.lifestylestores.com/in/en/"
+  },
+  {
+    "id": "lily-s-kitchen",
+    "name": "Lily's Kitchen",
+    "country": "GB",
+    "category": "pets",
+    "url": "https://www.lilyskitchen.co.uk/"
+  },
+  {
+    "id": "limelight",
+    "name": "Limelight",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://www.limelight.pk/collections/new-on-sale"
+  },
+  {
+    "id": "litter-robot-whisker",
+    "name": "Litter-Robot / Whisker",
+    "country": "US",
+    "category": "pets",
+    "url": "https://www.litter-robot.com/shop-holiday-offers.html"
+  },
+  {
+    "id": "liz-earle",
+    "name": "Liz Earle",
+    "country": "GB",
+    "category": "beauty-wellness",
+    "url": "https://www.lizearle.com/offers/"
+  },
+  {
+    "id": "logitech",
+    "name": "Logitech",
+    "country": "US",
+    "category": "tech-electronics",
+    "url": "https://www.logitech.com/en-us/shop/deals"
+  },
+  {
+    "id": "lookfantastic",
+    "name": "LOOKFANTASTIC",
+    "country": "GB",
+    "category": "beauty-wellness",
+    "url": "https://www.lookfantastic.com/c/health-beauty/offers/"
+  },
+  {
+    "id": "lords-labradors",
+    "name": "Lords & Labradors",
+    "country": "GB",
+    "category": "pets",
+    "url": "https://www.lordsandlabradors.co.uk/collections/outlet"
+  },
+  {
+    "id": "louis-philippe",
+    "name": "Louis Philippe",
+    "country": "IN",
+    "category": "clothing-fashion",
+    "url": "https://louisphilippe.abfrl.in/"
+  },
+  {
+    "id": "lovable",
+    "name": "Lovable",
+    "country": "GLOBAL",
+    "category": "ai-tools",
+    "url": "https://lovable.dev"
+  },
+  {
+    "id": "loveholidays",
+    "name": "loveholidays",
+    "country": "GB",
+    "category": "travel-lifestyle",
+    "url": "https://www.loveholidays.com/holidays/cheap-holidays.html"
+  },
+  {
+    "id": "lulu-hypermarket-uae",
+    "name": "Lulu Hypermarket UAE",
+    "country": "AE",
+    "category": "groceries-essentials",
+    "url": "https://www.luluhypermarket.com/en-ae"
+  },
+  {
+    "id": "lululemon",
+    "name": "Lululemon",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://shop.lululemon.com/c/we-made-too-much/n18mhd"
+  },
+  {
+    "id": "luma",
+    "name": "Luma AI",
+    "country": "GLOBAL",
+    "category": "ai-tools",
+    "url": "https://lumalabs.ai"
+  },
+  {
+    "id": "luscious-cosmetics",
+    "name": "Luscious Cosmetics",
+    "country": "PK",
+    "category": "beauty-wellness",
+    "url": "https://iloveluscious.com/"
+  },
+  {
+    "id": "lush",
+    "name": "Lush",
+    "country": "US",
+    "category": "beauty-wellness",
+    "url": "https://www.lush.com/"
+  },
+  {
+    "id": "lush-uk",
+    "name": "Lush UK",
+    "country": "GB",
+    "category": "beauty-wellness",
+    "url": "https://www.lush.com/uk/en"
+  },
+  {
+    "id": "mac-cosmetics",
+    "name": "MAC Cosmetics",
+    "country": "US",
+    "category": "beauty-wellness",
+    "url": "https://www.maccosmetics.com/collections/sale"
+  },
+  {
+    "id": "macy-s",
+    "name": "Macy's",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://www.macys.com/shop/sale?id=3536"
+  },
+  {
+    "id": "madewell",
+    "name": "Madewell",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://www.madewell.com/sale/womens/"
+  },
+  {
+    "id": "magicpin",
+    "name": "Magicpin",
+    "country": "IN",
+    "category": "food-dining",
+    "url": "https://magicpin.in/"
+  },
+  {
+    "id": "majestic-wine",
+    "name": "Majestic Wine",
+    "country": "GB",
+    "category": "groceries-essentials",
+    "url": "https://www.majestic.co.uk/latest-wine-offers"
+  },
+  {
+    "id": "makemytrip",
+    "name": "MakeMyTrip",
+    "country": "IN",
+    "category": "travel-lifestyle",
+    "url": "https://www.makemytrip.com/"
+  },
+  {
+    "id": "makeup-city",
+    "name": "Makeup City",
+    "country": "PK",
+    "category": "beauty-wellness",
+    "url": "https://www.makeupcityshop.com/collections/sale"
+  },
+  {
+    "id": "mamaearth",
+    "name": "Mamaearth",
+    "country": "IN",
+    "category": "beauty-wellness",
+    "url": "https://mamaearth.in/"
+  },
+  {
+    "id": "mango-uk",
+    "name": "Mango UK",
+    "country": "GB",
+    "category": "clothing-fashion",
+    "url": "https://shop.mango.com/gb/en"
+  },
+  {
+    "id": "manscaped",
+    "name": "Manscaped",
+    "country": "US",
+    "category": "beauty-wellness",
+    "url": "https://www.manscaped.com/"
+  },
+  {
+    "id": "manyavar",
+    "name": "Manyavar",
+    "country": "IN",
+    "category": "clothing-fashion",
+    "url": "https://www.manyavar.com/"
+  },
+  {
+    "id": "maria-b",
+    "name": "Maria.B.",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://www.mariab.pk/collections/all-sale"
+  },
+  {
+    "id": "marks-spencer",
+    "name": "Marks & Spencer",
+    "country": "GB",
+    "category": "clothing-fashion",
+    "url": "https://www.marksandspencer.com/c/offers"
+  },
+  {
+    "id": "marks-spencer-india",
+    "name": "Marks & Spencer India",
+    "country": "IN",
+    "category": "clothing-fashion",
+    "url": "https://www.marksandspencer.in/"
+  },
+  {
+    "id": "marriott",
+    "name": "Marriott",
+    "country": "US",
+    "category": "travel-lifestyle",
+    "url": "https://www.marriott.com/offers.mi"
+  },
+  {
+    "id": "marriott-bonvoy-uk",
+    "name": "Marriott Bonvoy UK",
+    "country": "GB",
+    "category": "travel-lifestyle",
+    "url": "https://www.marriott.com/en-gb/default.mi"
+  },
+  {
+    "id": "marriott-hotels-pakistan",
+    "name": "Marriott Hotels Pakistan",
+    "country": "PK",
+    "category": "travel-lifestyle",
+    "url": "https://www.marriott.com/en-gb/destinations/pakistan.mi"
+  },
+  {
+    "id": "marshall-uk",
+    "name": "Marshall UK",
+    "country": "GB",
+    "category": "tech-electronics",
+    "url": "https://www.marshall.com/gb/en"
+  },
+  {
+    "id": "marshall-s-pet-zone",
+    "name": "Marshall's Pet Zone",
+    "country": "IN",
+    "category": "pets",
+    "url": "https://www.marshallspetzone.com/"
+  },
+  {
+    "id": "masarrat-misbah-makeup",
+    "name": "Masarrat Misbah Makeup",
+    "country": "PK",
+    "category": "beauty-wellness",
+    "url": "https://masarratmakeup.com/"
+  },
+  {
+    "id": "matalan",
+    "name": "Matalan",
+    "country": "GB",
+    "category": "clothing-fashion",
+    "url": "https://www.matalan.co.uk/c/sale/"
+  },
+  {
+    "id": "mcaffeine",
+    "name": "mCaffeine",
+    "country": "IN",
+    "category": "beauty-wellness",
+    "url": "https://www.mcaffeine.com/"
+  },
+  {
+    "id": "mcdonald-s",
+    "name": "McDonald's",
+    "country": "US",
+    "category": "food-dining",
+    "url": "https://www.mcdonalds.com/us/en-us/deals.html"
+  },
+  {
+    "id": "mcdonald-s-india",
+    "name": "McDonald's India",
+    "country": "IN",
+    "category": "food-dining",
+    "url": "https://mcdindia.com/"
+  },
+  {
+    "id": "mcdonald-s-pakistan",
+    "name": "McDonald's Pakistan",
+    "country": "PK",
+    "category": "food-dining",
+    "url": "https://www.mcdonalds.com.pk/"
+  },
+  {
+    "id": "mega-pk",
+    "name": "Mega.pk",
+    "country": "PK",
+    "category": "tech-electronics",
+    "url": "https://www.mega.pk/"
+  },
+  {
+    "id": "meijer",
+    "name": "Meijer",
+    "country": "US",
+    "category": "groceries-essentials",
+    "url": "https://www.meijer.com/shopping/weekly-ad"
+  },
+  {
+    "id": "menu-foods",
+    "name": "Menu Foods",
+    "country": "PK",
+    "category": "groceries-essentials",
+    "url": "https://shop.menu.com.pk/"
+  },
+  {
+    "id": "meraki-pets",
+    "name": "Meraki Pets",
+    "country": "PK",
+    "category": "pets",
+    "url": "https://merakipet.pk/"
+  },
+  {
+    "id": "mercantile-apple-authorized",
+    "name": "Mercantile (Apple Authorized)",
+    "country": "PK",
+    "category": "tech-electronics",
+    "url": "https://mercantile.com.pk/"
+  },
+  {
+    "id": "meshy",
+    "name": "Meshy AI",
+    "country": "GLOBAL",
+    "category": "ai-tools",
+    "url": "https://www.meshy.ai"
+  },
+  {
+    "id": "metro-cash-carry-pk",
+    "name": "Metro Cash & Carry Pakistan",
+    "country": "PK",
+    "category": "groceries-essentials",
+    "url": "https://www.metro-online.pk/"
+  },
+  {
+    "id": "metro-collection-shoes",
+    "name": "Metro Collection Shoes",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://metrocollectionshoes.com/"
+  },
+  {
+    "id": "metro-pakistan",
+    "name": "METRO Pakistan",
+    "country": "PK",
+    "category": "groceries-essentials",
+    "url": "https://www.metro-online.pk/"
+  },
+  {
+    "id": "metro-shoes",
+    "name": "Metro Shoes",
+    "country": "IN",
+    "category": "clothing-fashion",
+    "url": "https://www.metroshoes.com/"
+  },
+  {
+    "id": "michael-kors",
+    "name": "Michael Kors",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://www.michaelkors.com/sale/"
+  },
+  {
+    "id": "micro-center",
+    "name": "Micro Center",
+    "country": "US",
+    "category": "tech-electronics",
+    "url": "https://www.microcenter.com/site/content/top-deals.aspx"
+  },
+  {
+    "id": "milkbasket",
+    "name": "Milkbasket",
+    "country": "IN",
+    "category": "groceries-essentials",
+    "url": "https://milkbasket.in/"
+  },
+  {
+    "id": "miller-carter",
+    "name": "Miller & Carter",
+    "country": "GB",
+    "category": "food-dining",
+    "url": "https://www.millerandcarter.co.uk/offers"
+  },
+  {
+    "id": "minimalist",
+    "name": "Minimalist",
+    "country": "IN",
+    "category": "beauty-wellness",
+    "url": "https://beminimalist.co/"
+  },
+  {
+    "id": "minnie-minors",
+    "name": "Minnie Minors",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://www.minnieminors.com/collections/winter-sale"
+  },
+  {
+    "id": "misfits-market",
+    "name": "Misfits Market",
+    "country": "US",
+    "category": "groceries-essentials",
+    "url": "https://www.misfitsmarket.com/how-it-works"
+  },
+  {
+    "id": "mistore-pk-xiaomi",
+    "name": "MiStore.pk (Xiaomi)",
+    "country": "PK",
+    "category": "tech-electronics",
+    "url": "https://mistore.pk/"
+  },
+  {
+    "id": "mocciani",
+    "name": "Mocciani",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://mocciani.com.pk/"
+  },
+  {
+    "id": "mochi-shoes",
+    "name": "Mochi Shoes",
+    "country": "IN",
+    "category": "clothing-fashion",
+    "url": "https://www.mochishoes.com/"
+  },
+  {
+    "id": "mokobara",
+    "name": "Mokobara",
+    "country": "IN",
+    "category": "clothing-fashion",
+    "url": "https://mokobara.com/collections/trolley-luggage-suitcases-bags"
+  },
+  {
+    "id": "monark",
+    "name": "Monark",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://monark.com.pk/collections/sale"
+  },
+  {
+    "id": "monsoon",
+    "name": "Monsoon",
+    "country": "GB",
+    "category": "clothing-fashion",
+    "url": "https://www.monsoon.co.uk/sale/"
+  },
+  {
+    "id": "morrisons",
+    "name": "Morrisons",
+    "country": "GB",
+    "category": "groceries-essentials",
+    "url": "https://groceries.morrisons.com/promotions"
+  },
+  {
+    "id": "moss-bros",
+    "name": "Moss Bros",
+    "country": "GB",
+    "category": "clothing-fashion",
+    "url": "https://www.moss.co.uk/sale"
+  },
+  {
+    "id": "mountain-warehouse",
+    "name": "Mountain Warehouse",
+    "country": "GB",
+    "category": "clothing-fashion",
+    "url": "https://www.mountainwarehouse.com/clearance/"
+  },
+  {
+    "id": "msi",
+    "name": "MSI",
+    "country": "US",
+    "category": "tech-electronics",
+    "url": "https://us-store.msi.com/dealsanddiscounts"
+  },
+  {
+    "id": "murf",
+    "name": "Murf AI",
+    "country": "GLOBAL",
+    "category": "ai-tools",
+    "url": "https://murf.ai"
+  },
+  {
+    "id": "muscleblaze",
+    "name": "MuscleBlaze",
+    "country": "IN",
+    "category": "beauty-wellness",
+    "url": "https://www.muscleblaze.com/"
+  },
+  {
+    "id": "myntra",
+    "name": "Myntra",
+    "country": "IN",
+    "category": "clothing-fashion",
+    "url": "https://www.myntra.com/"
+  },
+  {
+    "id": "mypets-pk",
+    "name": "MyPets.pk",
+    "country": "PK",
+    "category": "pets",
+    "url": "https://mypets.pk/"
+  },
+  {
+    "id": "myprotein",
+    "name": "Myprotein",
+    "country": "GB",
+    "category": "beauty-wellness",
+    "url": "https://www.myprotein.com/"
+  },
+  {
+    "id": "myraymond",
+    "name": "MyRaymond",
+    "country": "IN",
+    "category": "clothing-fashion",
+    "url": "https://myraymond.com/"
+  },
+  {
+    "id": "m-venpick-hotel-karachi",
+    "name": "M\u00f6venpick Hotel Karachi",
+    "country": "PK",
+    "category": "travel-lifestyle",
+    "url": "https://movenpick.accor.com/en/hotels/karachi/B4N7.html"
+  },
+  {
+    "id": "nahdi-pharmacy",
+    "name": "Nahdi Pharmacy",
+    "country": "SA",
+    "category": "beauty-wellness",
+    "url": "https://www.nahdionline.com/en/"
+  },
+  {
+    "id": "naheed-pk",
+    "name": "Naheed.pk",
+    "country": "PK",
+    "category": "groceries-essentials",
+    "url": "https://www.naheed.pk/"
+  },
+  {
+    "id": "namshi-ksa",
+    "name": "Namshi KSA",
+    "country": "SA",
+    "category": "clothing-fashion",
+    "url": "https://www.namshi.com/saudi-en/"
+  },
+  {
+    "id": "nando-s-pakistan",
+    "name": "Nando's Pakistan",
+    "country": "PK",
+    "category": "food-dining",
+    "url": "https://www.nandos.pk/"
+  },
+  {
+    "id": "nando-s-uk",
+    "name": "Nando's UK",
+    "country": "GB",
+    "category": "food-dining",
+    "url": "https://www.nandos.co.uk/"
+  },
+  {
+    "id": "national-express",
+    "name": "National Express",
+    "country": "GB",
+    "category": "travel-lifestyle",
+    "url": "https://www.nationalexpress.com/en/offers/cheap-coach-tickets"
+  },
+  {
+    "id": "nature-s-basket",
+    "name": "Nature's Basket",
+    "country": "IN",
+    "category": "groceries-essentials",
+    "url": "https://www.naturesbasket.co.in/"
+  },
+  {
+    "id": "ndure",
+    "name": "Ndure",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://www.ndure.com/collections/sale"
+  },
+  {
+    "id": "neal-s-yard-remedies",
+    "name": "Neal's Yard Remedies",
+    "country": "GB",
+    "category": "beauty-wellness",
+    "url": "https://www.nealsyardremedies.com/pages/offers"
+  },
+  {
+    "id": "new-balance",
+    "name": "New Balance",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://www.newbalance.com/"
+  },
+  {
+    "id": "new-look",
+    "name": "New Look",
+    "country": "GB",
+    "category": "clothing-fashion",
+    "url": "https://www.newlook.com/uk/sale"
+  },
+  {
+    "id": "newegg",
+    "name": "Newegg",
+    "country": "US",
+    "category": "tech-electronics",
+    "url": "https://www.newegg.com/Newegg-Deals/EventSaleStore/ID-9447"
+  },
+  {
+    "id": "next",
+    "name": "Next",
+    "country": "GB",
+    "category": "clothing-fashion",
+    "url": "https://www.next.co.uk/nextsale"
+  },
+  {
+    "id": "nike",
+    "name": "Nike",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://www.nike.com/w/sale-3yaep"
+  },
+  {
+    "id": "nike-india",
+    "name": "Nike India",
+    "country": "IN",
+    "category": "clothing-fashion",
+    "url": "https://www.nike.in/men/men-s-shoes/c/92564"
+  },
+  {
+    "id": "nirvana-botanics",
+    "name": "Nirvana Botanics",
+    "country": "PK",
+    "category": "beauty-wellness",
+    "url": "https://www.nirvanabotanics.com/"
+  },
+  {
+    "id": "nishat-linen",
+    "name": "Nishat Linen",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://nishatlinen.com/collections/sale26"
+  },
+  {
+    "id": "noise",
+    "name": "Noise",
+    "country": "IN",
+    "category": "tech-electronics",
+    "url": "https://www.gonoise.com/"
+  },
+  {
+    "id": "nom-nom",
+    "name": "Nom Nom",
+    "country": "US",
+    "category": "pets",
+    "url": "https://www.nomnomnow.com/"
+  },
+  {
+    "id": "noon-ksa",
+    "name": "Noon KSA",
+    "country": "SA",
+    "category": "tech-electronics",
+    "url": "https://www.noon.com/saudi-en/"
+  },
+  {
+    "id": "noon-uae",
+    "name": "Noon UAE",
+    "country": "AE",
+    "category": "tech-electronics",
+    "url": "https://www.noon.com/uae-en/"
+  },
+  {
+    "id": "nordstrom",
+    "name": "Nordstrom",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://www.nordstrom.com/browse/sale"
+  },
+  {
+    "id": "nothing-india",
+    "name": "Nothing India",
+    "country": "IN",
+    "category": "tech-electronics",
+    "url": "https://in.nothing.tech/"
+  },
+  {
+    "id": "nothing-uk",
+    "name": "Nothing UK",
+    "country": "GB",
+    "category": "tech-electronics",
+    "url": "https://nothing.tech/"
+  },
+  {
+    "id": "notion",
+    "name": "Notion",
+    "country": "GLOBAL",
+    "category": "ai-tools",
+    "url": "https://notion.com"
+  },
+  {
+    "id": "nutrifactor",
+    "name": "Nutrifactor",
+    "country": "PK",
+    "category": "beauty-wellness",
+    "url": "https://www.nutrifactor.com.pk/collections/offers-discounts"
+  },
+  {
+    "id": "nykaa",
+    "name": "Nykaa",
+    "country": "IN",
+    "category": "beauty-wellness",
+    "url": "https://www.nykaa.com/"
+  },
+  {
+    "id": "nykaa-fashion",
+    "name": "Nykaa Fashion",
+    "country": "IN",
+    "category": "clothing-fashion",
+    "url": "https://www.nykaafashion.com/"
+  },
+  {
+    "id": "o2",
+    "name": "O2",
+    "country": "GB",
+    "category": "tech-electronics",
+    "url": "https://www.o2.co.uk/shop/phones"
+  },
+  {
+    "id": "oberoi-hotels-resorts",
+    "name": "Oberoi Hotels & Resorts",
+    "country": "IN",
+    "category": "travel-lifestyle",
+    "url": "https://www.oberoihotels.com/"
+  },
+  {
+    "id": "ocado",
+    "name": "Ocado",
+    "country": "GB",
+    "category": "groceries-essentials",
+    "url": "https://www.ocado.com/"
+  },
+  {
+    "id": "oddbox",
+    "name": "Oddbox",
+    "country": "GB",
+    "category": "groceries-essentials",
+    "url": "https://www.oddbox.co.uk/"
+  },
+  {
+    "id": "office",
+    "name": "OFFICE",
+    "country": "GB",
+    "category": "clothing-fashion",
+    "url": "https://www.office.co.uk/sale"
+  },
+  {
+    "id": "old-navy",
+    "name": "Old Navy",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://oldnavy.gap.com/"
+  },
+  {
+    "id": "olive-garden",
+    "name": "Olive Garden",
+    "country": "US",
+    "category": "food-dining",
+    "url": "https://www.olivegarden.com/specials"
+  },
+  {
+    "id": "ollie",
+    "name": "Ollie",
+    "country": "US",
+    "category": "pets",
+    "url": "https://www.ollie.com/"
+  },
+  {
+    "id": "on-the-beach",
+    "name": "On the Beach",
+    "country": "GB",
+    "category": "travel-lifestyle",
+    "url": "https://www.onthebeach.co.uk/holidays/sale"
+  },
+  {
+    "id": "one",
+    "name": "ONE",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://beoneshopone.com/"
+  },
+  {
+    "id": "oneplus-india",
+    "name": "OnePlus India",
+    "country": "IN",
+    "category": "tech-electronics",
+    "url": "https://www.oneplus.in/"
+  },
+  {
+    "id": "oppo-india",
+    "name": "OPPO India",
+    "country": "IN",
+    "category": "tech-electronics",
+    "url": "https://www.oppo.com/in/"
+  },
+  {
+    "id": "oppo-pakistan",
+    "name": "OPPO Pakistan",
+    "country": "PK",
+    "category": "tech-electronics",
+    "url": "https://www.oppo.com/pk/"
+  },
+  {
+    "id": "optimum-nutrition",
+    "name": "Optimum Nutrition",
+    "country": "US",
+    "category": "beauty-wellness",
+    "url": "https://www.optimumnutrition.com/en-us/pages/offers"
+  },
+  {
+    "id": "optp",
+    "name": "OPTP",
+    "country": "PK",
+    "category": "food-dining",
+    "url": "https://www.optp.pk/"
+  },
+  {
+    "id": "organic-india",
+    "name": "Organic India",
+    "country": "IN",
+    "category": "groceries-essentials",
+    "url": "https://organicindia.com/"
+  },
+  {
+    "id": "organic-tattva",
+    "name": "Organic Tattva",
+    "country": "IN",
+    "category": "groceries-essentials",
+    "url": "https://organictattva.com/"
+  },
+  {
+    "id": "organic-traveller",
+    "name": "Organic Traveller",
+    "country": "PK",
+    "category": "beauty-wellness",
+    "url": "https://organictraveller.store/"
+  },
+  {
+    "id": "orient-electronics",
+    "name": "Orient Electronics",
+    "country": "PK",
+    "category": "tech-electronics",
+    "url": "https://www.orient.com.pk/"
+  },
+  {
+    "id": "oshkosh-b-gosh",
+    "name": "OshKosh B'gosh",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://www.carters.com/b/oshkosh/c/deals"
+  },
+  {
+    "id": "otter",
+    "name": "Otter.ai",
+    "country": "GLOBAL",
+    "category": "ai-tools",
+    "url": "https://otter.ai"
+  },
+  {
+    "id": "ounass-uae",
+    "name": "Ounass UAE",
+    "country": "AE",
+    "category": "clothing-fashion",
+    "url": "https://www.ounass.ae/"
+  },
+  {
+    "id": "outfitters",
+    "name": "Outfitters",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://outfitters.com.pk/collections/women-season-end-sale-upto-50-off"
+  },
+  {
+    "id": "oven-story-pizza",
+    "name": "Oven Story Pizza",
+    "country": "IN",
+    "category": "food-dining",
+    "url": "https://www.ovenstory.in/"
+  },
+  {
+    "id": "overclockers-uk",
+    "name": "Overclockers UK",
+    "country": "GB",
+    "category": "tech-electronics",
+    "url": "https://www.overclockers.co.uk/deals"
+  },
+  {
+    "id": "oyo",
+    "name": "OYO",
+    "country": "IN",
+    "category": "travel-lifestyle",
+    "url": "https://www.oyorooms.com/"
+  },
+  {
+    "id": "oziva",
+    "name": "OZiva",
+    "country": "IN",
+    "category": "beauty-wellness",
+    "url": "https://www.oziva.in/"
+  },
+  {
+    "id": "pakistan-international-airlines-pia",
+    "name": "Pakistan International Airlines (PIA)",
+    "country": "PK",
+    "category": "travel-lifestyle",
+    "url": "https://www.piac.com.pk/"
+  },
+  {
+    "id": "paklap",
+    "name": "PakLap",
+    "country": "PK",
+    "category": "tech-electronics",
+    "url": "https://www.paklap.pk/"
+  },
+  {
+    "id": "pandamart-foodpanda",
+    "name": "pandamart (foodpanda)",
+    "country": "PK",
+    "category": "groceries-essentials",
+    "url": "https://www.foodpanda.pk/groceries"
+  },
+  {
+    "id": "panera-bread",
+    "name": "Panera Bread",
+    "country": "US",
+    "category": "food-dining",
+    "url": "https://www.panerabread.com/en-us/panera-promo-codes-discount-coupons-deals.html"
+  },
+  {
+    "id": "pantaloons",
+    "name": "Pantaloons",
+    "country": "IN",
+    "category": "clothing-fashion",
+    "url": "https://www.pantaloons.com/"
+  },
+  {
+    "id": "papa-johns",
+    "name": "Papa Johns",
+    "country": "US",
+    "category": "food-dining",
+    "url": "https://www.papajohns.com/specials/"
+  },
+  {
+    "id": "papa-johns-uk",
+    "name": "Papa Johns UK",
+    "country": "GB",
+    "category": "food-dining",
+    "url": "https://www.papajohns.co.uk/deals"
+  },
+  {
+    "id": "patagonia",
+    "name": "Patagonia",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://www.patagonia.com/shop/web-specials"
+  },
+  {
+    "id": "paula-s-choice",
+    "name": "Paula's Choice",
+    "country": "US",
+    "category": "beauty-wellness",
+    "url": "https://www.paulaschoice.com/skin-care-products/sale"
+  },
+  {
+    "id": "pawfectly-made",
+    "name": "Pawfectly Made",
+    "country": "IN",
+    "category": "pets",
+    "url": "https://pawfectlymade.com/"
+  },
+  {
+    "id": "pearl-continental-hotels",
+    "name": "Pearl-Continental Hotels",
+    "country": "PK",
+    "category": "travel-lifestyle",
+    "url": "https://www.pchotels.com/"
+  },
+  {
+    "id": "pedigree-india",
+    "name": "Pedigree India",
+    "country": "IN",
+    "category": "pets",
+    "url": "https://www.pedigree.in/dog-products/dry-dog-food"
+  },
+  {
+    "id": "pel",
+    "name": "PEL",
+    "country": "PK",
+    "category": "tech-electronics",
+    "url": "https://eshop.pel.com.pk/"
+  },
+  {
+    "id": "peloton",
+    "name": "Peloton",
+    "country": "US",
+    "category": "beauty-wellness",
+    "url": "https://www.onepeloton.com/offers"
+  },
+  {
+    "id": "perplexity",
+    "name": "Perplexity",
+    "country": "GLOBAL",
+    "category": "ai-tools",
+    "url": "https://perplexity.ai"
+  },
+  {
+    "id": "pet-drugs-online",
+    "name": "Pet Drugs Online",
+    "country": "GB",
+    "category": "pets",
+    "url": "https://www.petdrugsonline.co.uk/offers-and-multibuys"
+  },
+  {
+    "id": "pet-supplies-plus",
+    "name": "Pet Supplies Plus",
+    "country": "US",
+    "category": "pets",
+    "url": "https://www.petsuppliesplus.com/offers"
+  },
+  {
+    "id": "petbazaar-pk",
+    "name": "PetBazaar.pk",
+    "country": "PK",
+    "category": "pets",
+    "url": "https://petbazaar.pk/"
+  },
+  {
+    "id": "petco",
+    "name": "Petco",
+    "country": "US",
+    "category": "pets",
+    "url": "https://www.petco.com/category/top-deals"
+  },
+  {
+    "id": "peter-england",
+    "name": "Peter England",
+    "country": "IN",
+    "category": "clothing-fashion",
+    "url": "https://peterengland.abfrl.in/"
+  },
+  {
+    "id": "petlife-pk",
+    "name": "Petlife.pk",
+    "country": "PK",
+    "category": "pets",
+    "url": "https://petlife.pk/"
+  },
+  {
+    "id": "petmania-pk",
+    "name": "Petmania.pk",
+    "country": "PK",
+    "category": "pets",
+    "url": "https://petmania.pk/"
+  },
+  {
+    "id": "petmart-pk",
+    "name": "PetMart.pk",
+    "country": "PK",
+    "category": "pets",
+    "url": "https://petmart.pk/"
+  },
+  {
+    "id": "petplanet",
+    "name": "PetPlanet",
+    "country": "GB",
+    "category": "pets",
+    "url": "https://petplanet.co.uk/collections/special-offers"
+  },
+  {
+    "id": "pets-mall",
+    "name": "Pets Mall",
+    "country": "PK",
+    "category": "pets",
+    "url": "https://petsmall.pk/"
+  },
+  {
+    "id": "pets-mart-pakistan",
+    "name": "Pets Mart Pakistan",
+    "country": "PK",
+    "category": "pets",
+    "url": "https://petsmartpakistan.com/"
+  },
+  {
+    "id": "petscity-pk",
+    "name": "PetsCity.pk",
+    "country": "PK",
+    "category": "pets",
+    "url": "https://petscity.pk/"
+  },
+  {
+    "id": "petshoppak",
+    "name": "PetShopPak",
+    "country": "PK",
+    "category": "pets",
+    "url": "https://petshoppak.com/"
+  },
+  {
+    "id": "petsmart",
+    "name": "PetSmart",
+    "country": "US",
+    "category": "pets",
+    "url": "https://www.petsmart.com/sale/"
+  },
+  {
+    "id": "petsone-pk",
+    "name": "PetsOne.pk",
+    "country": "PK",
+    "category": "pets",
+    "url": "https://petsone.pk/"
+  },
+  {
+    "id": "petspark-pk",
+    "name": "PetsPark.pk",
+    "country": "PK",
+    "category": "pets",
+    "url": "https://petspark.pk/"
+  },
+  {
+    "id": "petsworld",
+    "name": "Petsworld",
+    "country": "IN",
+    "category": "pets",
+    "url": "https://petsworld.in/"
+  },
+  {
+    "id": "petsworld-pk",
+    "name": "PetsWorld.pk",
+    "country": "PK",
+    "category": "pets",
+    "url": "https://petsworld.pk/"
+  },
+  {
+    "id": "petzone-ksa",
+    "name": "Petzone KSA",
+    "country": "SA",
+    "category": "pets",
+    "url": "https://www.petzone.com/sa-en/"
+  },
+  {
+    "id": "petzone-uae",
+    "name": "Petzone UAE",
+    "country": "AE",
+    "category": "pets",
+    "url": "https://www.petzone.com/ae-en/"
+  },
+  {
+    "id": "phase-eight",
+    "name": "Phase Eight",
+    "country": "GB",
+    "category": "clothing-fashion",
+    "url": "https://www.phase-eight.com/sale/new-lines/"
+  },
+  {
+    "id": "pia",
+    "name": "PIA (Pakistan International Airlines)",
+    "country": "PK",
+    "category": "travel-lifestyle",
+    "url": "https://www.piac.com.pk/"
+  },
+  {
+    "id": "pika",
+    "name": "Pika",
+    "country": "GLOBAL",
+    "category": "ai-tools",
+    "url": "https://pika.art"
+  },
+  {
+    "id": "pilgrim",
+    "name": "Pilgrim",
+    "country": "IN",
+    "category": "beauty-wellness",
+    "url": "https://discoverpilgrim.com/"
+  },
+  {
+    "id": "pizza-hut",
+    "name": "Pizza Hut",
+    "country": "US",
+    "category": "food-dining",
+    "url": "https://www.pizzahut.com/deals"
+  },
+  {
+    "id": "pizza-hut-india",
+    "name": "Pizza Hut India",
+    "country": "IN",
+    "category": "food-dining",
+    "url": "https://www.pizzahut.co.in/"
+  },
+  {
+    "id": "pizza-hut-pakistan",
+    "name": "Pizza Hut Pakistan",
+    "country": "PK",
+    "category": "food-dining",
+    "url": "https://www.pizzahutpakistan.com/en"
+  },
+  {
+    "id": "pizza-hut-uk",
+    "name": "Pizza Hut UK",
+    "country": "GB",
+    "category": "food-dining",
+    "url": "https://www.pizzahut.co.uk/"
+  },
+  {
+    "id": "pizzaexpress",
+    "name": "PizzaExpress",
+    "country": "GB",
+    "category": "food-dining",
+    "url": "https://www.pizzaexpress.com/offers"
+  },
+  {
+    "id": "plum-goodness",
+    "name": "Plum Goodness",
+    "country": "IN",
+    "category": "beauty-wellness",
+    "url": "https://plumgoodness.com/"
+  },
+  {
+    "id": "pooch-mutt",
+    "name": "Pooch & Mutt",
+    "country": "GB",
+    "category": "pets",
+    "url": "https://www.poochandmutt.co.uk/collections/landing/sale"
+  },
+  {
+    "id": "poorvika",
+    "name": "Poorvika",
+    "country": "IN",
+    "category": "tech-electronics",
+    "url": "https://poorvika.com/"
+  },
+  {
+    "id": "popeyes",
+    "name": "Popeyes",
+    "country": "US",
+    "category": "food-dining",
+    "url": "https://www.popeyes.com/offers"
+  },
+  {
+    "id": "portronics",
+    "name": "Portronics",
+    "country": "IN",
+    "category": "tech-electronics",
+    "url": "https://www.portronics.com/"
+  },
+  {
+    "id": "premier-inn",
+    "name": "Premier Inn",
+    "country": "GB",
+    "category": "travel-lifestyle",
+    "url": "https://www.premierinn.com/gb/en/home.html"
+  },
+  {
+    "id": "pret-a-manger",
+    "name": "Pret A Manger",
+    "country": "GB",
+    "category": "food-dining",
+    "url": "https://www.pret.co.uk/en-GB"
+  },
+  {
+    "id": "prettylittlething",
+    "name": "PrettyLittleThing",
+    "country": "GB",
+    "category": "clothing-fashion",
+    "url": "https://www.prettylittlething.com/categories/womens-sale"
+  },
+  {
+    "id": "prezzo",
+    "name": "Prezzo",
+    "country": "GB",
+    "category": "food-dining",
+    "url": "https://www.prezzo.co.uk/about/offers/"
+  },
+  {
+    "id": "priceline",
+    "name": "Priceline",
+    "country": "US",
+    "category": "travel-lifestyle",
+    "url": "https://www.priceline.com/"
+  },
+  {
+    "id": "priceoye",
+    "name": "PriceOye",
+    "country": "PK",
+    "category": "tech-electronics",
+    "url": "https://priceoye.pk/sale"
+  },
+  {
+    "id": "primark-uk",
+    "name": "Primark UK",
+    "country": "GB",
+    "category": "clothing-fashion",
+    "url": "https://www.primark.com/en-gb/c/sale/all"
+  },
+  {
+    "id": "publix",
+    "name": "Publix",
+    "country": "US",
+    "category": "groceries-essentials",
+    "url": "https://www.publix.com/savings/weekly-ad"
+  },
+  {
+    "id": "puma",
+    "name": "Puma",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://us.puma.com/us/en/sale/all-sale"
+  },
+  {
+    "id": "puma-india",
+    "name": "Puma India",
+    "country": "IN",
+    "category": "clothing-fashion",
+    "url": "https://in.puma.com/in/en"
+  },
+  {
+    "id": "purina",
+    "name": "Purina",
+    "country": "US",
+    "category": "pets",
+    "url": "https://www.purina.com/offers"
+  },
+  {
+    "id": "purina-uk",
+    "name": "Purina UK",
+    "country": "GB",
+    "category": "pets",
+    "url": "https://www.purina.co.uk/"
+  },
+  {
+    "id": "purplle",
+    "name": "Purplle",
+    "country": "IN",
+    "category": "beauty-wellness",
+    "url": "https://www.purplle.com/"
+  },
+  {
+    "id": "rainbow-cash-carry",
+    "name": "Rainbow Cash & Carry",
+    "country": "PK",
+    "category": "groceries-essentials",
+    "url": "https://rainbowcc.com.pk/"
+  },
+  {
+    "id": "ralph-lauren",
+    "name": "Ralph Lauren",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://www.ralphlauren.com/women"
+  },
+  {
+    "id": "ramada-islamabad",
+    "name": "Ramada Islamabad",
+    "country": "PK",
+    "category": "travel-lifestyle",
+    "url": "https://ramadaislamabad.com/"
+  },
+  {
+    "id": "ranchers-cafe",
+    "name": "Ranchers Cafe",
+    "country": "PK",
+    "category": "food-dining",
+    "url": "https://rancherscafe.com/"
+  },
+  {
+    "id": "rang-jah",
+    "name": "Rang Jah",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://pk.rangjah.com/"
+  },
+  {
+    "id": "rare-beauty",
+    "name": "Rare Beauty",
+    "country": "US",
+    "category": "beauty-wellness",
+    "url": "https://www.rarebeauty.com/pages/salesandpromotions"
+  },
+  {
+    "id": "rare-rabbit",
+    "name": "Rare Rabbit",
+    "country": "IN",
+    "category": "clothing-fashion",
+    "url": "https://thehouseofrare.com/"
+  },
+  {
+    "id": "ray-ban",
+    "name": "Ray-Ban",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://www.ray-ban.com/usa/sunglasses/clearance"
+  },
+  {
+    "id": "razer",
+    "name": "Razer",
+    "country": "US",
+    "category": "tech-electronics",
+    "url": "https://www.razer.com/campaigns/cyber-weekend"
+  },
+  {
+    "id": "realme-india",
+    "name": "Realme India",
+    "country": "IN",
+    "category": "tech-electronics",
+    "url": "https://www.realme.com/in/"
+  },
+  {
+    "id": "realme-pakistan",
+    "name": "realme Pakistan",
+    "country": "PK",
+    "category": "tech-electronics",
+    "url": "https://www.realme.com/pk/"
+  },
+  {
+    "id": "redbus",
+    "name": "redBus",
+    "country": "IN",
+    "category": "travel-lifestyle",
+    "url": "https://www.redbus.in/"
+  },
+  {
+    "id": "redtape",
+    "name": "RedTape",
+    "country": "IN",
+    "category": "clothing-fashion",
+    "url": "https://redtape.com/"
+  },
+  {
+    "id": "reebok",
+    "name": "Reebok",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://www.reebok.com/collections/sale"
+  },
+  {
+    "id": "regatta",
+    "name": "Regatta",
+    "country": "GB",
+    "category": "clothing-fashion",
+    "url": "https://www.regatta.com/sale/"
+  },
+  {
+    "id": "reiss",
+    "name": "Reiss",
+    "country": "GB",
+    "category": "clothing-fashion",
+    "url": "https://www.reiss.com/sales"
+  },
+  {
+    "id": "reliance-digital",
+    "name": "Reliance Digital",
+    "country": "IN",
+    "category": "tech-electronics",
+    "url": "https://www.reliancedigital.in/"
+  },
+  {
+    "id": "reliance-trends",
+    "name": "Reliance Trends",
+    "country": "IN",
+    "category": "clothing-fashion",
+    "url": "https://trends.ajio.com/"
+  },
+  {
+    "id": "ren-e-cosmetics",
+    "name": "REN\u00c9E Cosmetics",
+    "country": "IN",
+    "category": "beauty-wellness",
+    "url": "https://www.reneecosmetics.in/"
+  },
+  {
+    "id": "replit",
+    "name": "Replit",
+    "country": "GLOBAL",
+    "category": "ai-tools",
+    "url": "https://replit.com"
+  },
+  {
+    "id": "republic-of-cats",
+    "name": "Republic of Cats",
+    "country": "GB",
+    "category": "pets",
+    "url": "https://www.republicofcats.com/"
+  },
+  {
+    "id": "richer-sounds",
+    "name": "Richer Sounds",
+    "country": "GB",
+    "category": "tech-electronics",
+    "url": "https://www.richersounds.com/offers"
+  },
+  {
+    "id": "rituals-uk",
+    "name": "Rituals UK",
+    "country": "GB",
+    "category": "beauty-wellness",
+    "url": "https://www.rituals.com/en-gb/home"
+  },
+  {
+    "id": "rivaj-uk",
+    "name": "Rivaj UK",
+    "country": "PK",
+    "category": "beauty-wellness",
+    "url": "https://rivaj-uk.com/collections/sale"
+  },
+  {
+    "id": "river-island",
+    "name": "River Island",
+    "country": "GB",
+    "category": "clothing-fashion",
+    "url": "https://www.riverisland.com/sale"
+  },
+  {
+    "id": "riverford-organic-farmers",
+    "name": "Riverford Organic Farmers",
+    "country": "GB",
+    "category": "groceries-essentials",
+    "url": "https://www.riverford.co.uk/"
+  },
+  {
+    "id": "robinhood",
+    "name": "Robinhood",
+    "country": "US",
+    "category": "tech-electronics",
+    "url": "https://robinhood.com/us/en/legend/"
+  },
+  {
+    "id": "ronin",
+    "name": "Ronin",
+    "country": "PK",
+    "category": "tech-electronics",
+    "url": "https://ronin.pk/"
+  },
+  {
+    "id": "roomy-hotels",
+    "name": "Roomy Hotels",
+    "country": "PK",
+    "category": "travel-lifestyle",
+    "url": "https://roomy.pk/"
+  },
+  {
+    "id": "rover",
+    "name": "Rover",
+    "country": "US",
+    "category": "pets",
+    "url": "https://www.rover.com/"
+  },
+  {
+    "id": "royal-canin-india",
+    "name": "Royal Canin India",
+    "country": "IN",
+    "category": "pets",
+    "url": "https://www.royalcanin.com/in"
+  },
+  {
+    "id": "royal-caribbean",
+    "name": "Royal Caribbean",
+    "country": "US",
+    "category": "travel-lifestyle",
+    "url": "https://www.royalcaribbean.com/cruises"
+  },
+  {
+    "id": "royal-tag",
+    "name": "Royal Tag",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://royaltag.com.pk/collections/sale"
+  },
+  {
+    "id": "ruffwear",
+    "name": "Ruffwear",
+    "country": "US",
+    "category": "pets",
+    "url": "https://ruffwear.com/collections/specials"
+  },
+  {
+    "id": "runway",
+    "name": "Runway",
+    "country": "GLOBAL",
+    "category": "ai-tools",
+    "url": "https://runwayml.com"
+  },
+  {
+    "id": "ryanair-uk",
+    "name": "Ryanair UK",
+    "country": "GB",
+    "category": "travel-lifestyle",
+    "url": "https://www.ryanair.com/gb/en/"
+  },
+  {
+    "id": "sabroso",
+    "name": "Sabroso",
+    "country": "PK",
+    "category": "groceries-essentials",
+    "url": "https://shopsabroso.pk/"
+  },
+  {
+    "id": "saeed-ghani",
+    "name": "Saeed Ghani",
+    "country": "PK",
+    "category": "beauty-wellness",
+    "url": "https://saeedghani.pk/collections/deals-kits"
+  },
+  {
+    "id": "safeway",
+    "name": "Safeway",
+    "country": "US",
+    "category": "groceries-essentials",
+    "url": "https://www.safeway.com/weeklyad/"
+  },
+  {
+    "id": "sainsbury-s",
+    "name": "Sainsbury's",
+    "country": "GB",
+    "category": "groceries-essentials",
+    "url": "https://www.sainsburys.co.uk/gol-ui/offers"
+  },
+  {
+    "id": "salt-n-pepper",
+    "name": "Salt'n Pepper",
+    "country": "PK",
+    "category": "food-dining",
+    "url": "https://saltnpepper.com.pk/"
+  },
+  {
+    "id": "sam-s-club",
+    "name": "Sam's Club",
+    "country": "US",
+    "category": "groceries-essentials",
+    "url": "https://www.samsclub.com/"
+  },
+  {
+    "id": "samsung-india",
+    "name": "Samsung India",
+    "country": "IN",
+    "category": "tech-electronics",
+    "url": "https://www.samsung.com/in/"
+  },
+  {
+    "id": "samsung-pakistan",
+    "name": "Samsung Pakistan",
+    "country": "PK",
+    "category": "tech-electronics",
+    "url": "https://www.samsung.com/pk/offer/"
+  },
+  {
+    "id": "samsung-uk",
+    "name": "Samsung UK",
+    "country": "GB",
+    "category": "tech-electronics",
+    "url": "https://www.samsung.com/uk/offer/"
+  },
+  {
+    "id": "samsung-us",
+    "name": "Samsung US",
+    "country": "US",
+    "category": "tech-electronics",
+    "url": "https://www.samsung.com/us/offer/"
+  },
+  {
+    "id": "sana-safinaz",
+    "name": "Sana Safinaz",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://sanasafinaz.com/collections/sale"
+  },
+  {
+    "id": "sangeetha-mobiles",
+    "name": "Sangeetha Mobiles",
+    "country": "IN",
+    "category": "tech-electronics",
+    "url": "https://www.sangeetha.com/"
+  },
+  {
+    "id": "sapphire",
+    "name": "Sapphire",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://pk.sapphireonline.pk"
+  },
+  {
+    "id": "sastaticket-pk",
+    "name": "Sastaticket.pk",
+    "country": "PK",
+    "category": "travel-lifestyle",
+    "url": "https://www.sastaticket.pk/"
+  },
+  {
+    "id": "saudia-airlines",
+    "name": "Saudia Airlines",
+    "country": "SA",
+    "category": "travel-lifestyle",
+    "url": "https://www.saudia.com/"
+  },
+  {
+    "id": "save-mart-online",
+    "name": "Save Mart Online",
+    "country": "PK",
+    "category": "groceries-essentials",
+    "url": "https://savemartonline.com/"
+  },
+  {
+    "id": "saya",
+    "name": "Saya",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://saya.pk/"
+  },
+  {
+    "id": "scan-computers",
+    "name": "Scan Computers",
+    "country": "GB",
+    "category": "tech-electronics",
+    "url": "https://www.scan.co.uk/"
+  },
+  {
+    "id": "scents-n-stories",
+    "name": "Scents N Stories",
+    "country": "PK",
+    "category": "beauty-wellness",
+    "url": "https://scentsnstories.pk/"
+  },
+  {
+    "id": "schuh",
+    "name": "schuh",
+    "country": "GB",
+    "category": "clothing-fashion",
+    "url": "https://www.schuh.co.uk/sale/"
+  },
+  {
+    "id": "science-in-sport",
+    "name": "Science in Sport",
+    "country": "GB",
+    "category": "beauty-wellness",
+    "url": "https://www.scienceinsport.com/special-offers"
+  },
+  {
+    "id": "second-cup-pakistan",
+    "name": "Second Cup Pakistan",
+    "country": "PK",
+    "category": "food-dining",
+    "url": "https://secondcup.pk/"
+  },
+  {
+    "id": "seeking-alpha",
+    "name": "Seeking Alpha",
+    "country": "US",
+    "category": "tech-electronics",
+    "url": "https://seekingalpha.com/subscriptions"
+  },
+  {
+    "id": "selfridges",
+    "name": "Selfridges",
+    "country": "GB",
+    "category": "clothing-fashion",
+    "url": "https://www.selfridges.com/GB/en/"
+  },
+  {
+    "id": "sennheiser",
+    "name": "Sennheiser",
+    "country": "US",
+    "category": "tech-electronics",
+    "url": "https://us.sennheiser-hearing.com/collections/offers-collection"
+  },
+  {
+    "id": "sephora",
+    "name": "Sephora",
+    "country": "US",
+    "category": "beauty-wellness",
+    "url": "https://www.sephora.com/sale"
+  },
+  {
+    "id": "sephora-uk",
+    "name": "Sephora UK",
+    "country": "GB",
+    "category": "beauty-wellness",
+    "url": "https://www.sephora.co.uk/offers"
+  },
+  {
+    "id": "serena-hotels-pakistan",
+    "name": "Serena Hotels Pakistan",
+    "country": "PK",
+    "category": "travel-lifestyle",
+    "url": "https://www.serenahotels.com/islamabad"
+  },
+  {
+    "id": "serena-hotels",
+    "name": "Serena Hotels Pakistan",
+    "country": "PK",
+    "category": "travel-lifestyle",
+    "url": "https://www.serenahotels.com/"
+  },
+  {
+    "id": "sereneair",
+    "name": "SereneAir",
+    "country": "PK",
+    "category": "travel-lifestyle",
+    "url": "https://www.sereneair.com/"
+  },
+  {
+    "id": "servis",
+    "name": "Servis",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://servis.pk/"
+  },
+  {
+    "id": "shakehands",
+    "name": "ShakeHands",
+    "country": "IN",
+    "category": "pets",
+    "url": "https://shakehands.co.in/"
+  },
+  {
+    "id": "shangrila-resort-skardu",
+    "name": "Shangrila Resort Skardu",
+    "country": "PK",
+    "category": "travel-lifestyle",
+    "url": "https://shangrilaresorts.com.pk/"
+  },
+  {
+    "id": "sharaf-dg",
+    "name": "Sharaf DG",
+    "country": "AE",
+    "category": "tech-electronics",
+    "url": "https://uae.sharafdg.com/"
+  },
+  {
+    "id": "sharkninja",
+    "name": "SharkNinja",
+    "country": "US",
+    "category": "tech-electronics",
+    "url": "https://www.sharkninja.com/sales-offers/shop-all-sale"
+  },
+  {
+    "id": "sharkninja-uk",
+    "name": "SharkNinja UK",
+    "country": "GB",
+    "category": "tech-electronics",
+    "url": "https://www.sharkninja.co.uk/discount-codes.html"
+  },
+  {
+    "id": "shoe-planet",
+    "name": "Shoe Planet",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://www.shoeplanet.pk/"
+  },
+  {
+    "id": "shophive",
+    "name": "Shophive",
+    "country": "PK",
+    "category": "tech-electronics",
+    "url": "https://www.shophive.com/"
+  },
+  {
+    "id": "shoppers-stop",
+    "name": "Shoppers Stop",
+    "country": "IN",
+    "category": "clothing-fashion",
+    "url": "https://www.shoppersstop.com/"
+  },
+  {
+    "id": "sixt-uk",
+    "name": "SIXT UK",
+    "country": "GB",
+    "category": "travel-lifestyle",
+    "url": "https://www.sixt.co.uk/"
+  },
+  {
+    "id": "size",
+    "name": "size?",
+    "country": "GB",
+    "category": "clothing-fashion",
+    "url": "https://www.size.co.uk/collections/sale"
+  },
+  {
+    "id": "skechers",
+    "name": "Skechers",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://www.skechers.com/sale/"
+  },
+  {
+    "id": "sky",
+    "name": "Sky",
+    "country": "GB",
+    "category": "tech-electronics",
+    "url": "https://www.sky.com/deals"
+  },
+  {
+    "id": "skyways-bus-service",
+    "name": "Skyways Bus Service",
+    "country": "PK",
+    "category": "travel-lifestyle",
+    "url": "https://skywaysonline.pk/"
+  },
+  {
+    "id": "smarty",
+    "name": "SMARTY",
+    "country": "GB",
+    "category": "tech-electronics",
+    "url": "https://smarty.co.uk/sim-only"
+  },
+  {
+    "id": "smytten",
+    "name": "Smytten",
+    "country": "IN",
+    "category": "beauty-wellness",
+    "url": "https://smytten.com/"
+  },
+  {
+    "id": "snitch",
+    "name": "Snitch",
+    "country": "IN",
+    "category": "clothing-fashion",
+    "url": "https://www.snitch.com/"
+  },
+  {
+    "id": "so-kamal",
+    "name": "So Kamal",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://www.sokamal.com/collections/sale"
+  },
+  {
+    "id": "soch",
+    "name": "Soch",
+    "country": "IN",
+    "category": "clothing-fashion",
+    "url": "https://www.soch.com/in/"
+  },
+  {
+    "id": "sol-de-janeiro",
+    "name": "Sol de Janeiro",
+    "country": "US",
+    "category": "beauty-wellness",
+    "url": "https://soldejaneiro.com/collections/all"
+  },
+  {
+    "id": "sonos",
+    "name": "Sonos",
+    "country": "US",
+    "category": "tech-electronics",
+    "url": "https://www.sonos.com/en-us/shop/promotional-offers"
+  },
+  {
+    "id": "sony-electronics",
+    "name": "Sony Electronics",
+    "country": "US",
+    "category": "tech-electronics",
+    "url": "https://electronics.sony.com/"
+  },
+  {
+    "id": "sony-india",
+    "name": "Sony India",
+    "country": "IN",
+    "category": "tech-electronics",
+    "url": "https://www.sony.co.in/"
+  },
+  {
+    "id": "sony-uk",
+    "name": "Sony UK",
+    "country": "GB",
+    "category": "tech-electronics",
+    "url": "https://www.sony.co.uk/store/"
+  },
+  {
+    "id": "southwest-airlines",
+    "name": "Southwest Airlines",
+    "country": "US",
+    "category": "travel-lifestyle",
+    "url": "https://www.southwest.com/special-offers/flight-deals/"
+  },
+  {
+    "id": "space-nk",
+    "name": "Space NK",
+    "country": "GB",
+    "category": "beauty-wellness",
+    "url": "https://www.spacenk.com/uk/offers"
+  },
+  {
+    "id": "specsavers",
+    "name": "Specsavers",
+    "country": "GB",
+    "category": "beauty-wellness",
+    "url": "https://www.specsavers.co.uk/offers"
+  },
+  {
+    "id": "spencer-s",
+    "name": "Spencer's",
+    "country": "IN",
+    "category": "groceries-essentials",
+    "url": "https://www.spencers.in/"
+  },
+  {
+    "id": "spicejet",
+    "name": "SpiceJet",
+    "country": "IN",
+    "category": "travel-lifestyle",
+    "url": "https://www.spicejet.com/"
+  },
+  {
+    "id": "sploot",
+    "name": "Sploot",
+    "country": "IN",
+    "category": "pets",
+    "url": "https://sploot.space/"
+  },
+  {
+    "id": "sports-direct",
+    "name": "Sports Direct",
+    "country": "GB",
+    "category": "clothing-fashion",
+    "url": "https://www.sportsdirect.com/sale"
+  },
+  {
+    "id": "spot-tango",
+    "name": "Spot & Tango",
+    "country": "US",
+    "category": "pets",
+    "url": "https://www.spotandtango.com/unkibble"
+  },
+  {
+    "id": "sputnik-footwear",
+    "name": "Sputnik Footwear",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://sputnikfootwear.com/"
+  },
+  {
+    "id": "starbucks",
+    "name": "Starbucks",
+    "country": "US",
+    "category": "food-dining",
+    "url": "https://www.starbucks.com/rewards"
+  },
+  {
+    "id": "starbucks-uk",
+    "name": "Starbucks UK",
+    "country": "GB",
+    "category": "food-dining",
+    "url": "https://www.starbucks.co.uk/"
+  },
+  {
+    "id": "starquik",
+    "name": "StarQuik",
+    "country": "IN",
+    "category": "groceries-essentials",
+    "url": "https://www.starquik.com/"
+  },
+  {
+    "id": "stylo",
+    "name": "Stylo",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://stylo.pk/collections/sale"
+  },
+  {
+    "id": "subway",
+    "name": "Subway",
+    "country": "US",
+    "category": "food-dining",
+    "url": "https://www.subway.com/"
+  },
+  {
+    "id": "subway-india",
+    "name": "Subway India",
+    "country": "IN",
+    "category": "food-dining",
+    "url": "https://subway.in/"
+  },
+  {
+    "id": "sugar-cosmetics",
+    "name": "SUGAR Cosmetics",
+    "country": "IN",
+    "category": "beauty-wellness",
+    "url": "https://www.sugarcosmetics.com/"
+  },
+  {
+    "id": "suno",
+    "name": "Suno",
+    "country": "GLOBAL",
+    "category": "ai-tools",
+    "url": "https://suno.com"
+  },
+  {
+    "id": "superdrug",
+    "name": "Superdrug",
+    "country": "GB",
+    "category": "beauty-wellness",
+    "url": "https://www.superdrug.com/top-offers"
+  },
+  {
+    "id": "superdry",
+    "name": "Superdry",
+    "country": "GB",
+    "category": "clothing-fashion",
+    "url": "https://www.superdry.com/sale/"
+  },
+  {
+    "id": "supertails",
+    "name": "Supertails",
+    "country": "IN",
+    "category": "pets",
+    "url": "https://supertails.com/"
+  },
+  {
+    "id": "sweaty-betty",
+    "name": "Sweaty Betty",
+    "country": "GB",
+    "category": "clothing-fashion",
+    "url": "https://www.sweatybetty.com/shop"
+  },
+  {
+    "id": "swiggy",
+    "name": "Swiggy",
+    "country": "IN",
+    "category": "food-dining",
+    "url": "https://www.swiggy.com/"
+  },
+  {
+    "id": "swiggy-instamart",
+    "name": "Swiggy Instamart",
+    "country": "IN",
+    "category": "groceries-essentials",
+    "url": "https://www.swiggy.com/instamart"
+  },
+  {
+    "id": "swiss-beauty",
+    "name": "Swiss Beauty",
+    "country": "IN",
+    "category": "beauty-wellness",
+    "url": "https://swissbeauty.in/"
+  },
+  {
+    "id": "synthesia",
+    "name": "Synthesia",
+    "country": "GLOBAL",
+    "category": "ai-tools",
+    "url": "https://synthesia.io"
+  },
+  {
+    "id": "taco-bell",
+    "name": "Taco Bell",
+    "country": "US",
+    "category": "food-dining",
+    "url": "https://www.tacobell.com/offers-and-deals"
+  },
+  {
+    "id": "taco-bell-india",
+    "name": "Taco Bell India",
+    "country": "IN",
+    "category": "food-dining",
+    "url": "https://www.tacobell.co.in/"
+  },
+  {
+    "id": "tails-com",
+    "name": "Tails.com",
+    "country": "GB",
+    "category": "pets",
+    "url": "https://tails.com/gb/"
+  },
+  {
+    "id": "taj-hotels",
+    "name": "Taj Hotels",
+    "country": "IN",
+    "category": "travel-lifestyle",
+    "url": "https://www.tajhotels.com/en-in"
+  },
+  {
+    "id": "talabat",
+    "name": "Talabat",
+    "country": "AE",
+    "category": "food-dining",
+    "url": "https://www.talabat.com/uae"
+  },
+  {
+    "id": "tanishq",
+    "name": "Tanishq",
+    "country": "IN",
+    "category": "clothing-fashion",
+    "url": "https://www.tanishq.co.in/"
+  },
+  {
+    "id": "target",
+    "name": "Target",
+    "country": "US",
+    "category": "groceries-essentials",
+    "url": "https://www.target.com/c/top-deals/-/N-4xw74"
+  },
+  {
+    "id": "tata-cliq",
+    "name": "Tata CLiQ",
+    "country": "IN",
+    "category": "clothing-fashion",
+    "url": "https://www.tatacliq.com/"
+  },
+  {
+    "id": "tata-cliq-luxury",
+    "name": "Tata CLiQ Luxury",
+    "country": "IN",
+    "category": "clothing-fashion",
+    "url": "https://luxury.tatacliq.com/"
+  },
+  {
+    "id": "tatcha",
+    "name": "Tatcha",
+    "country": "US",
+    "category": "beauty-wellness",
+    "url": "https://tatcha.com/"
+  },
+  {
+    "id": "tcl-pakistan",
+    "name": "TCL Pakistan",
+    "country": "PK",
+    "category": "tech-electronics",
+    "url": "https://www.tclpakistan.com/"
+  },
+  {
+    "id": "tecno-pakistan",
+    "name": "TECNO Pakistan",
+    "country": "PK",
+    "category": "tech-electronics",
+    "url": "https://www.tecno-mobile.com/pak/"
+  },
+  {
+    "id": "tehzeeb-bakers",
+    "name": "Tehzeeb Bakers",
+    "country": "PK",
+    "category": "food-dining",
+    "url": "https://www.tehzeeb.com/"
+  },
+  {
+    "id": "telemart-telex",
+    "name": "Telemart (TeleX)",
+    "country": "PK",
+    "category": "tech-electronics",
+    "url": "https://www.telex.pk/"
+  },
+  {
+    "id": "tendercuts",
+    "name": "TenderCuts",
+    "country": "IN",
+    "category": "groceries-essentials",
+    "url": "https://tendercuts.in/"
+  },
+  {
+    "id": "tesco",
+    "name": "Tesco",
+    "country": "GB",
+    "category": "groceries-essentials",
+    "url": "https://www.tesco.com/shop/en-GB/promotions"
+  },
+  {
+    "id": "the-body-shop",
+    "name": "The Body Shop",
+    "country": "GB",
+    "category": "beauty-wellness",
+    "url": "https://www.thebodyshop.com/pages/offers/sale-offers"
+  },
+  {
+    "id": "the-coffee-bean-tea-leaf-pakistan",
+    "name": "The Coffee Bean & Tea Leaf Pakistan",
+    "country": "PK",
+    "category": "food-dining",
+    "url": "https://www.coffeebean.pk/"
+  },
+  {
+    "id": "the-derma-co",
+    "name": "The Derma Co",
+    "country": "IN",
+    "category": "beauty-wellness",
+    "url": "https://thedermaco.com/"
+  },
+  {
+    "id": "the-farmer-s-dog",
+    "name": "The Farmer's Dog",
+    "country": "US",
+    "category": "pets",
+    "url": "https://www.thefarmersdog.com/"
+  },
+  {
+    "id": "the-fragrance-shop",
+    "name": "The Fragrance Shop",
+    "country": "GB",
+    "category": "beauty-wellness",
+    "url": "https://www.thefragranceshop.co.uk/fragrance-offers"
+  },
+  {
+    "id": "the-man-company",
+    "name": "The Man Company",
+    "country": "IN",
+    "category": "beauty-wellness",
+    "url": "https://www.themancompany.com/"
+  },
+  {
+    "id": "the-nishat-hotel",
+    "name": "The Nishat Hotel",
+    "country": "PK",
+    "category": "travel-lifestyle",
+    "url": "https://nishathotels.com/"
+  },
+  {
+    "id": "the-north-face",
+    "name": "The North Face",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://www.thenorthface.com/en-us/c/sale-829803"
+  },
+  {
+    "id": "the-ordinary",
+    "name": "The Ordinary",
+    "country": "US",
+    "category": "beauty-wellness",
+    "url": "https://theordinary.com/en-us"
+  },
+  {
+    "id": "the-perfume-shop",
+    "name": "The Perfume Shop",
+    "country": "GB",
+    "category": "beauty-wellness",
+    "url": "https://www.theperfumeshop.com/offers/all-offers/fragrance-offers/c/W30050"
+  },
+  {
+    "id": "the-pet-store-pk",
+    "name": "The Pet Store PK",
+    "country": "PK",
+    "category": "pets",
+    "url": "https://www.thepetstorepk.com/"
+  },
+  {
+    "id": "the-protein-factory",
+    "name": "The Protein Factory",
+    "country": "PK",
+    "category": "beauty-wellness",
+    "url": "https://theproteinfactory.pk/"
+  },
+  {
+    "id": "the-souled-store",
+    "name": "The Souled Store",
+    "country": "IN",
+    "category": "clothing-fashion",
+    "url": "https://www.thesouledstore.com/"
+  },
+  {
+    "id": "the-vitamin-shoppe",
+    "name": "The Vitamin Shoppe",
+    "country": "US",
+    "category": "beauty-wellness",
+    "url": "https://www.vitaminshoppe.com/sv/sale"
+  },
+  {
+    "id": "therabody",
+    "name": "Therabody",
+    "country": "US",
+    "category": "beauty-wellness",
+    "url": "https://www.therabody.com/collections/therabody-sale"
+  },
+  {
+    "id": "third-wave-coffee",
+    "name": "Third Wave Coffee",
+    "country": "IN",
+    "category": "food-dining",
+    "url": "https://thirdwavecoffee.in/"
+  },
+  {
+    "id": "three-uk",
+    "name": "Three UK",
+    "country": "GB",
+    "category": "tech-electronics",
+    "url": "https://www.three.co.uk/offers/latest-offers"
+  },
+  {
+    "id": "thrillophilia",
+    "name": "Thrillophilia",
+    "country": "IN",
+    "category": "travel-lifestyle",
+    "url": "https://www.thrillophilia.com/countries/india/tours"
+  },
+  {
+    "id": "thrive-market",
+    "name": "Thrive Market",
+    "country": "US",
+    "category": "groceries-essentials",
+    "url": "https://thrivemarket.com/c/all-deals"
+  },
+  {
+    "id": "tim-hortons-pakistan",
+    "name": "Tim Hortons Pakistan",
+    "country": "PK",
+    "category": "food-dining",
+    "url": "https://www.timhortons.com.pk/"
+  },
+  {
+    "id": "timberland",
+    "name": "Timberland",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://www.timberland.com/en-us/holiday-deals"
+  },
+  {
+    "id": "tira-beauty",
+    "name": "Tira Beauty",
+    "country": "IN",
+    "category": "beauty-wellness",
+    "url": "https://www.tirabeauty.com/"
+  },
+  {
+    "id": "tk-maxx-uk",
+    "name": "TK Maxx UK",
+    "country": "GB",
+    "category": "clothing-fashion",
+    "url": "https://www.tkmaxx.com/uk/en/"
+  },
+  {
+    "id": "toby-carvery",
+    "name": "Toby Carvery",
+    "country": "GB",
+    "category": "food-dining",
+    "url": "https://www.tobycarvery.co.uk/offers"
+  },
+  {
+    "id": "tommy-hilfiger",
+    "name": "Tommy Hilfiger",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://usa.tommy.com/en/sale"
+  },
+  {
+    "id": "tractor-supply-co",
+    "name": "Tractor Supply Co.",
+    "country": "US",
+    "category": "pets",
+    "url": "https://www.tractorsupply.com/tsc/sale"
+  },
+  {
+    "id": "trader-joe-s",
+    "name": "Trader Joe's",
+    "country": "US",
+    "category": "groceries-essentials",
+    "url": "https://www.traderjoes.com/home.html"
+  },
+  {
+    "id": "tradingview",
+    "name": "TradingView",
+    "country": "GLOBAL",
+    "category": "tech-electronics",
+    "url": "https://www.tradingview.com"
+  },
+  {
+    "id": "tradingview",
+    "name": "TradingView",
+    "country": "US",
+    "category": "tech-electronics",
+    "url": "https://www.tradingview.com/black-friday/"
+  },
+  {
+    "id": "trainline",
+    "name": "Trainline",
+    "country": "GB",
+    "category": "travel-lifestyle",
+    "url": "https://www.thetrainline.com/"
+  },
+  {
+    "id": "travelodge-uk",
+    "name": "Travelodge UK",
+    "country": "GB",
+    "category": "travel-lifestyle",
+    "url": "https://www.travelodge.co.uk/hotel-deals"
+  },
+  {
+    "id": "treebo",
+    "name": "Treebo",
+    "country": "IN",
+    "category": "travel-lifestyle",
+    "url": "https://www.treebo.com/"
+  },
+  {
+    "id": "trego",
+    "name": "Trego",
+    "country": "PK",
+    "category": "beauty-wellness",
+    "url": "https://trego.pk/"
+  },
+  {
+    "id": "tui-uk",
+    "name": "TUI UK",
+    "country": "GB",
+    "category": "travel-lifestyle",
+    "url": "https://www.tui.co.uk/discount-codes/"
+  },
+  {
+    "id": "two-brothers-organic-farms",
+    "name": "Two Brothers Organic Farms",
+    "country": "IN",
+    "category": "groceries-essentials",
+    "url": "https://twobrothersindiashop.com/"
+  },
+  {
+    "id": "uber-eats",
+    "name": "Uber Eats",
+    "country": "US",
+    "category": "food-dining",
+    "url": "https://www.ubereats.com/"
+  },
+  {
+    "id": "uber-eats-uk",
+    "name": "Uber Eats UK",
+    "country": "GB",
+    "category": "food-dining",
+    "url": "https://www.ubereats.com/gb"
+  },
+  {
+    "id": "uber-eats-us",
+    "name": "Uber Eats US",
+    "country": "US",
+    "category": "food-dining",
+    "url": "https://www.ubereats.com/"
+  },
+  {
+    "id": "ugg",
+    "name": "UGG",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://www.ugg.com/"
+  },
+  {
+    "id": "ulta-beauty",
+    "name": "Ulta Beauty",
+    "country": "US",
+    "category": "beauty-wellness",
+    "url": "https://www.ulta.com/promotion/sale"
+  },
+  {
+    "id": "under-armour",
+    "name": "Under Armour",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://www.underarmour.com/en-us/c/outlet/"
+  },
+  {
+    "id": "uniqlo-india",
+    "name": "Uniqlo India",
+    "country": "IN",
+    "category": "clothing-fashion",
+    "url": "https://www.uniqlo.com/in/en/"
+  },
+  {
+    "id": "uniqlo-uk",
+    "name": "UNIQLO UK",
+    "country": "GB",
+    "category": "clothing-fashion",
+    "url": "https://www.uniqlo.com/uk/en/"
+  },
+  {
+    "id": "uniqlo-us",
+    "name": "Uniqlo US",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://www.uniqlo.com/us/en/feature/sale/women"
+  },
+  {
+    "id": "united-airlines",
+    "name": "United Airlines",
+    "country": "US",
+    "category": "travel-lifestyle",
+    "url": "https://www.united.com/en/us/fly/travel/trip-planning/travel-deals.html"
+  },
+  {
+    "id": "uniworth",
+    "name": "Uniworth",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://uniworthshop.com/collections/sale"
+  },
+  {
+    "id": "unze-london-pakistan",
+    "name": "Unze London Pakistan",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://unze.com.pk/collections/women-sale"
+  },
+  {
+    "id": "urban-outfitters",
+    "name": "Urban Outfitters",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://www.urbanoutfitters.com/sale"
+  },
+  {
+    "id": "ustraa",
+    "name": "Ustraa",
+    "country": "IN",
+    "category": "beauty-wellness",
+    "url": "https://www.ustraa.com/"
+  },
+  {
+    "id": "v0",
+    "name": "v0 by Vercel",
+    "country": "GLOBAL",
+    "category": "ai-tools",
+    "url": "https://v0.dev"
+  },
+  {
+    "id": "van-heusen-india",
+    "name": "Van Heusen India",
+    "country": "IN",
+    "category": "clothing-fashion",
+    "url": "https://vanheusenindia.abfrl.in/"
+  },
+  {
+    "id": "vans",
+    "name": "Vans",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://www.vans.com/en-us/c/sale-5410"
+  },
+  {
+    "id": "vegas-pk",
+    "name": "Vegas.pk",
+    "country": "PK",
+    "category": "beauty-wellness",
+    "url": "https://www.vegas.pk/"
+  },
+  {
+    "id": "very",
+    "name": "Very",
+    "country": "GB",
+    "category": "clothing-fashion",
+    "url": "https://www.very.co.uk/offers"
+  },
+  {
+    "id": "viator",
+    "name": "Viator",
+    "country": "US",
+    "category": "travel-lifestyle",
+    "url": "https://www.viator.com/"
+  },
+  {
+    "id": "vijay-sales",
+    "name": "Vijay Sales",
+    "country": "IN",
+    "category": "tech-electronics",
+    "url": "https://www.vijaysales.com/"
+  },
+  {
+    "id": "vince-care",
+    "name": "Vince Care",
+    "country": "PK",
+    "category": "beauty-wellness",
+    "url": "https://vincecare.com/collections/offers"
+  },
+  {
+    "id": "viovet",
+    "name": "VioVet",
+    "country": "GB",
+    "category": "pets",
+    "url": "https://www.viovet.co.uk/flp/special-offers"
+  },
+  {
+    "id": "virgin-atlantic",
+    "name": "Virgin Atlantic",
+    "country": "GB",
+    "category": "travel-lifestyle",
+    "url": "https://flights.virginatlantic.com/en-gb/"
+  },
+  {
+    "id": "virgin-media",
+    "name": "Virgin Media",
+    "country": "GB",
+    "category": "tech-electronics",
+    "url": "https://www.virginmedia.com/"
+  },
+  {
+    "id": "virgin-wines",
+    "name": "Virgin Wines",
+    "country": "GB",
+    "category": "groceries-essentials",
+    "url": "https://www.virginwines.co.uk/wines/special-offer"
+  },
+  {
+    "id": "vivo-india",
+    "name": "Vivo India",
+    "country": "IN",
+    "category": "tech-electronics",
+    "url": "https://www.vivo.com/in"
+  },
+  {
+    "id": "vivo-pakistan",
+    "name": "vivo Pakistan",
+    "country": "PK",
+    "category": "tech-electronics",
+    "url": "https://www.vivo.com/pk"
+  },
+  {
+    "id": "vodafone-uk",
+    "name": "Vodafone UK",
+    "country": "GB",
+    "category": "tech-electronics",
+    "url": "https://www.vodafone.co.uk/"
+  },
+  {
+    "id": "voltas",
+    "name": "Voltas",
+    "country": "IN",
+    "category": "tech-electronics",
+    "url": "https://www.voltas.in/"
+  },
+  {
+    "id": "vuori",
+    "name": "Vuori",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://vuoriclothing.com/collections/sale-1"
+  },
+  {
+    "id": "w-for-woman",
+    "name": "W for Woman",
+    "country": "IN",
+    "category": "clothing-fashion",
+    "url": "https://www.wforwoman.com/"
+  },
+  {
+    "id": "wagamama",
+    "name": "wagamama",
+    "country": "GB",
+    "category": "food-dining",
+    "url": "https://www.wagamama.com/"
+  },
+  {
+    "id": "waitrose",
+    "name": "Waitrose",
+    "country": "GB",
+    "category": "groceries-essentials",
+    "url": "https://www.waitrose.com/ecom/shop/browse/offers"
+  },
+  {
+    "id": "walmart",
+    "name": "Walmart",
+    "country": "US",
+    "category": "groceries-essentials",
+    "url": "https://www.walmart.com/shop/deals/black-friday"
+  },
+  {
+    "id": "wegmans",
+    "name": "Wegmans",
+    "country": "US",
+    "category": "groceries-essentials",
+    "url": "https://www.wegmans.com/shop/coupons"
+  },
+  {
+    "id": "wendy-s",
+    "name": "Wendy's",
+    "country": "US",
+    "category": "food-dining",
+    "url": "https://www.wendys.com/offers-coupons"
+  },
+  {
+    "id": "westside",
+    "name": "Westside",
+    "country": "IN",
+    "category": "clothing-fashion",
+    "url": "https://www.westside.com/"
+  },
+  {
+    "id": "whirlpool",
+    "name": "Whirlpool",
+    "country": "US",
+    "category": "tech-electronics",
+    "url": "https://www.whirlpool.com/promotions.html"
+  },
+  {
+    "id": "whiskas-india",
+    "name": "Whiskas India",
+    "country": "IN",
+    "category": "pets",
+    "url": "https://www.whiskas.in/"
+  },
+  {
+    "id": "whistles",
+    "name": "Whistles",
+    "country": "GB",
+    "category": "clothing-fashion",
+    "url": "https://www.whistles.com/sale/50-off/"
+  },
+  {
+    "id": "white-stuff",
+    "name": "White Stuff",
+    "country": "GB",
+    "category": "clothing-fashion",
+    "url": "https://www.whitestuff.com/sale"
+  },
+  {
+    "id": "whole-foods-market",
+    "name": "Whole Foods Market",
+    "country": "US",
+    "category": "groceries-essentials",
+    "url": "https://www.wholefoodsmarket.com/sales-flyer"
+  },
+  {
+    "id": "wiggles",
+    "name": "Wiggles",
+    "country": "IN",
+    "category": "pets",
+    "url": "https://www.wiggles.in/"
+  },
+  {
+    "id": "wild-one",
+    "name": "Wild One",
+    "country": "US",
+    "category": "pets",
+    "url": "https://wildone.com/"
+  },
+  {
+    "id": "wildcraft",
+    "name": "Wildcraft",
+    "country": "IN",
+    "category": "clothing-fashion",
+    "url": "https://wildcraft.com/"
+  },
+  {
+    "id": "woodland",
+    "name": "Woodland",
+    "country": "IN",
+    "category": "clothing-fashion",
+    "url": "https://www.woodlandworldwide.com/"
+  },
+  {
+    "id": "woot-amazon",
+    "name": "Woot (Amazon)",
+    "country": "US",
+    "category": "tech-electronics",
+    "url": "https://www.woot.com/"
+  },
+  {
+    "id": "wow-skin-science-buywow",
+    "name": "WOW Skin Science (Buywow)",
+    "country": "IN",
+    "category": "beauty-wellness",
+    "url": "https://www.buywow.in/"
+  },
+  {
+    "id": "wow-momo",
+    "name": "Wow! Momo",
+    "country": "IN",
+    "category": "food-dining",
+    "url": "https://www.wowmomo.com/"
+  },
+  {
+    "id": "wrogn",
+    "name": "Wrogn",
+    "country": "IN",
+    "category": "clothing-fashion",
+    "url": "https://wrogn.com/"
+  },
+  {
+    "id": "wyndham-hotels-resorts",
+    "name": "Wyndham Hotels & Resorts",
+    "country": "US",
+    "category": "travel-lifestyle",
+    "url": "https://www.wyndhamhotels.com/hotel-deals"
+  },
+  {
+    "id": "xcessories-hub",
+    "name": "Xcessories Hub",
+    "country": "PK",
+    "category": "tech-electronics",
+    "url": "https://xcessorieshub.com/"
+  },
+  {
+    "id": "xiaomi-india",
+    "name": "Xiaomi India",
+    "country": "IN",
+    "category": "tech-electronics",
+    "url": "https://www.mi.com/in/"
+  },
+  {
+    "id": "yatra",
+    "name": "Yatra",
+    "country": "IN",
+    "category": "travel-lifestyle",
+    "url": "https://www.yatra.com/"
+  },
+  {
+    "id": "yo-sushi",
+    "name": "YO! Sushi",
+    "country": "GB",
+    "category": "food-dining",
+    "url": "https://yosushi.com/"
+  },
+  {
+    "id": "yumove",
+    "name": "YuMOVE",
+    "country": "GB",
+    "category": "pets",
+    "url": "https://yumove.co.uk/collections/shop-the-sale"
+  },
+  {
+    "id": "zah-computers",
+    "name": "ZAH Computers",
+    "country": "PK",
+    "category": "tech-electronics",
+    "url": "https://zahcomputers.pk/"
+  },
+  {
+    "id": "zapp",
+    "name": "Zapp",
+    "country": "GB",
+    "category": "groceries-essentials",
+    "url": "https://www.justzapp.com/"
+  },
+  {
+    "id": "zappfresh",
+    "name": "Zappfresh",
+    "country": "IN",
+    "category": "groceries-essentials",
+    "url": "https://zappfresh.com/"
+  },
+  {
+    "id": "zara-india",
+    "name": "Zara India",
+    "country": "IN",
+    "category": "clothing-fashion",
+    "url": "https://www.zara.com/in/en/woman-special-prices-l1314.html"
+  },
+  {
+    "id": "zara-uk",
+    "name": "Zara UK",
+    "country": "GB",
+    "category": "clothing-fashion",
+    "url": "https://www.zara.com/uk/en/woman-special-prices-l1314.html"
+  },
+  {
+    "id": "zara-us",
+    "name": "Zara US",
+    "country": "US",
+    "category": "clothing-fashion",
+    "url": "https://www.zara.com/us/en/woman-mkt1000.html"
+  },
+  {
+    "id": "zay-beauty",
+    "name": "Zay Beauty",
+    "country": "PK",
+    "category": "beauty-wellness",
+    "url": "https://pk.zaybeauty.com/"
+  },
+  {
+    "id": "zeen",
+    "name": "Zeen",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://zeenwoman.com/collections/sale"
+  },
+  {
+    "id": "zellbury",
+    "name": "Zellbury",
+    "country": "PK",
+    "category": "clothing-fashion",
+    "url": "https://zellbury.com/"
+  },
+  {
+    "id": "zepto",
+    "name": "Zepto",
+    "country": "IN",
+    "category": "groceries-essentials",
+    "url": "https://www.zepto.com/"
+  },
+  {
+    "id": "zero-lifestyle",
+    "name": "Zero Lifestyle",
+    "country": "PK",
+    "category": "tech-electronics",
+    "url": "https://zerolifestyle.co/"
+  },
+  {
+    "id": "zerodha",
+    "name": "Zerodha",
+    "country": "IN",
+    "category": "tech-electronics",
+    "url": "https://zerodha.com/"
+  },
+  {
+    "id": "zigly",
+    "name": "Zigly",
+    "country": "IN",
+    "category": "pets",
+    "url": "https://zigly.com/"
+  },
+  {
+    "id": "zizzi",
+    "name": "Zizzi",
+    "country": "GB",
+    "category": "food-dining",
+    "url": "https://www.zizzi.co.uk/offers"
+  },
+  {
+    "id": "zomato",
+    "name": "Zomato",
+    "country": "IN",
+    "category": "food-dining",
+    "url": "https://www.zomato.com/"
+  },
+  {
+    "id": "zoomcar",
+    "name": "Zoomcar",
+    "country": "IN",
+    "category": "travel-lifestyle",
+    "url": "https://www.zoomcar.com/"
+  },
+  {
+    "id": "zooplus-uk",
+    "name": "zooplus UK",
+    "country": "GB",
+    "category": "pets",
+    "url": "https://www.zooplus.co.uk/info/about/special_offers"
+  },
+  {
+    "id": "zostel",
+    "name": "Zostel",
+    "country": "IN",
+    "category": "travel-lifestyle",
+    "url": "https://www.zostel.com/"
+  }
+]

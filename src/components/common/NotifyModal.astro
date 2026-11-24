@@ -1,9 +1,9 @@
 ---
-import { getCollection } from 'astro:content';
 import Icon from './Icon.astro';
 import { subscribeEndpoint } from '../../data/site';
+import brandsWatchlist from '../../data/brandsWatchlist.json';
 
-const brands = (await getCollection('brands')).sort((a, b) => a.data.name.localeCompare(b.data.name));
+const brands = [...brandsWatchlist].sort((a, b) => a.name.localeCompare(b.name));
 ---
 
 <div id="notify-modal" class="fixed inset-0 z-[80] hidden items-center justify-center bg-black/55 p-4">
@@ -30,8 +30,12 @@ const brands = (await getCollection('brands')).sort((a, b) => a.data.name.locale
       <label class="block text-[13.5px] font-semibold text-ink">
         Brand
         <select name="brand" id="notify-brand" class="mt-1 w-full border editorial-rule bg-base-950 px-3 py-2.5 text-[15px] font-normal text-ink focus:border-ink focus:outline-none">
-          <option value="any">Any brand</option>
-          {brands.map((brand) => <option value={brand.data.id}>{brand.data.name}</option>)}
+          <option value="any" data-brand-market="ALL">Any brand</option>
+          {brands.map((brand) => (
+            <option value={brand.id} data-brand-market={brand.country}>
+              {brand.name}
+            </option>
+          ))}
         </select>
       </label>
       <button type="submit" class="btn-primary w-full px-4 py-3 text-[14px] font-semibold">Notify me</button>
@@ -56,13 +60,28 @@ const brands = (await getCollection('brands')).sort((a, b) => a.data.name.locale
     message.classList.toggle('text-ink-muted', !ok);
   }
 
+  function filterNotifyBrands() {
+    if (!brandSelect) return;
+    const market = document.documentElement.dataset.activeMarket || 'ALL';
+    Array.from(brandSelect.options).forEach((opt) => {
+      const m = opt.dataset.brandMarket || 'ALL';
+      const showOpt = opt.value === 'any' || market === 'ALL' || m === market || m === 'GLOBAL';
+      opt.hidden = !showOpt;
+      opt.disabled = !showOpt;
+    });
+  }
+
   function open(brand?: string) {
-    if (brandSelect) brandSelect.value = brand && [...brandSelect.options].some((o) => o.value === brand) ? brand : 'any';
+    filterNotifyBrands();
+    if (brandSelect) brandSelect.value = brand && [...brandSelect.options].some((o) => o.value === brand && !o.disabled) ? brand : 'any';
     message?.classList.add('hidden');
     modal?.classList.remove('hidden');
     modal?.classList.add('flex');
     window.setTimeout(() => form?.querySelector<HTMLInputElement>('input[name="name"]')?.focus(), 10);
   }
+
+  window.addEventListener('dealssite:market-updated', filterNotifyBrands);
+  document.addEventListener('astro:page-load', filterNotifyBrands);
 
   function close() {
     modal?.classList.add('hidden');

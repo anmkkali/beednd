@@ -1,0 +1,43 @@
+{
+  "id": "expedia-us-black-friday-50",
+  "slug": "expedia-us-black-friday-50",
+  "title": "Expedia: Black Friday & Travel Tuesday Up to 50% Off",
+  "short_description": "Up to 40%\u201350% off select hotel stays, flight+hotel bundles, and car rentals for One Key members.",
+  "brand_id": "expedia",
+  "country": "US",
+  "cities": [],
+  "areas": [],
+  "branch_info": [],
+  "category": "travel-lifestyle",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "UP TO 50% OFF",
+  "badge_text": "Up to 50% Off",
+  "numeric_discount_percent": 50,
+  "terms_and_conditions": [
+    "Verified from official brand portal or seasonal sale announcement.",
+    "Exclusions, caps, and validity are set by the brand or partner bank."
+  ],
+  "start_date": "2026-11-24T00:00:00Z",
+  "end_date": "2026-12-03T23:59:00Z",
+  "source_url": "https://www.expedia.com/",
+  "affiliate_url": "https://www.expedia.com/",
+  "last_verified_at": "2026-11-25T00:00:00Z",
+  "status": "active",
+  "is_trending": true,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=expedia.com&sz=128",
+    "alt": "Expedia: Black Friday & Travel Tuesday Up to 50% Off"
+  },
+  "tags": [
+    "hotels",
+    "flights",
+    "car-rental"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "serena-hotels",
+  "name": "Serena Hotels Pakistan",
+  "slug": "serena-hotels",
+  "logo_url": "https://www.google.com/s2/favicons?domain=serenahotels.com&sz=128",
+  "website_url": "https://www.serenahotels.com/",
+  "country": "PK",
+  "categories": [
+    "travel-lifestyle"
+  ],
+  "short_bio": "Luxury hospitality group offering seasonal weekend and dining packages in Pakistan.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}

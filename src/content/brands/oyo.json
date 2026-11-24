@@ -1,0 +1,16 @@
+{
+  "id": "oyo",
+  "name": "OYO",
+  "slug": "oyo",
+  "logo_url": "https://www.google.com/s2/favicons?domain=oyorooms.com&sz=128",
+  "website_url": "https://www.oyorooms.com/",
+  "country": "IN",
+  "categories": [
+    "travel-lifestyle"
+  ],
+  "short_bio": "Hospitality chain offering up to 40-50% off winter getaway coupon codes.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}

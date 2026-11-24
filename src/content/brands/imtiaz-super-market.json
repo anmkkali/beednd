@@ -1,0 +1,16 @@
+{
+  "id": "imtiaz-super-market",
+  "name": "Imtiaz Super Market",
+  "slug": "imtiaz-super-market",
+  "logo_url": "https://www.google.com/s2/favicons?domain=imtiaz.com.pk&sz=128",
+  "website_url": "https://imtiaz.com.pk/",
+  "country": "PK",
+  "categories": [
+    "groceries-essentials"
+  ],
+  "short_bio": "Major Pakistani supermarket chain with bank card grocery discounts.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}

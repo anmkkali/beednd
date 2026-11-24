@@ -1,0 +1,16 @@
+{
+  "id": "deliveroo-uk",
+  "name": "Deliveroo UK",
+  "slug": "deliveroo-uk",
+  "logo_url": "https://www.google.com/s2/favicons?domain=deliveroo.co.uk&sz=128",
+  "website_url": "https://deliveroo.co.uk/",
+  "country": "GB",
+  "categories": [
+    "food-dining"
+  ],
+  "short_bio": "UK food and convenience delivery with Black Friday hub & family bundle vouchers.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}

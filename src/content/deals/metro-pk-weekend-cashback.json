@@ -1,0 +1,57 @@
+{
+  "id": "metro-pk-weekend-cashback",
+  "slug": "metro-pk-weekend-cashback",
+  "title": "Metro Cash & Carry: 10%\u201320% Weekend Bank Card Grocery Deals",
+  "short_description": "Weekend grocery discounts and flat cashback up to 20% with HBL, UBL, and Meezan cards.",
+  "brand_id": "metro-cash-carry-pk",
+  "country": "PK",
+  "cities": [
+    "Lahore",
+    "Karachi",
+    "Islamabad",
+    "Faisalabad"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "groceries-essentials",
+  "deal_type": "bank-card",
+  "channels": [
+    "online",
+    "in-store"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "UP TO 20% OFF",
+  "badge_text": "Up to 20% Bank Off",
+  "numeric_discount_percent": 20,
+  "terms_and_conditions": [
+    "Verified from official brand portal or seasonal sale announcement.",
+    "Exclusions, caps, and validity are set by the brand or partner bank."
+  ],
+  "start_date": "2026-11-22T00:00:00Z",
+  "end_date": "2026-12-15T23:59:00Z",
+  "source_url": "https://www.metro-online.pk/",
+  "affiliate_url": "https://www.metro-online.pk/",
+  "last_verified_at": "2026-11-25T00:00:00Z",
+  "status": "active",
+  "is_trending": true,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=metro-online.pk&sz=128",
+    "alt": "Metro Cash & Carry: 10%\u201320% Weekend Bank Card Grocery Deals"
+  },
+  "tags": [
+    "supermarkets",
+    "household",
+    "fresh"
+  ],
+  "bank_details": {
+    "bank_id": "hbl",
+    "eligible_cards": [
+      "Visa",
+      "Mastercard"
+    ],
+    "cashback_percent": 20
+  }
+}

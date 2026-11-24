@@ -1,0 +1,16 @@
+{
+  "id": "walmart",
+  "name": "Walmart",
+  "slug": "walmart",
+  "logo_url": "https://www.google.com/s2/favicons?domain=walmart.com&sz=128",
+  "website_url": "https://www.walmart.com/shop/deals/black-friday",
+  "country": "US",
+  "categories": [
+    "groceries-essentials"
+  ],
+  "short_bio": "US retail giant with Black Friday deals across groceries, home, and electronics.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}

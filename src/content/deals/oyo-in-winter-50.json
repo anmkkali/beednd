@@ -1,0 +1,45 @@
+{
+  "id": "oyo-in-winter-50",
+  "slug": "oyo-in-winter-50",
+  "title": "OYO: Up to 50% Off Winter Getaway Hotel Coupons",
+  "short_description": "App-exclusive flash coupons up to 40%\u201350% off winter weekend getaways across India.",
+  "brand_id": "oyo",
+  "country": "IN",
+  "cities": [
+    "Delhi",
+    "Mumbai",
+    "Bengaluru"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "travel-lifestyle",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "UP TO 50% OFF",
+  "badge_text": "Up to 50% Off",
+  "numeric_discount_percent": 50,
+  "terms_and_conditions": [
+    "Verified from official brand portal or seasonal sale announcement.",
+    "Exclusions, caps, and validity are set by the brand or partner bank."
+  ],
+  "start_date": "2026-11-23T00:00:00Z",
+  "end_date": "2026-12-05T23:59:00Z",
+  "source_url": "https://www.oyorooms.com/",
+  "affiliate_url": "https://www.oyorooms.com/",
+  "last_verified_at": "2026-11-25T00:00:00Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "voucher",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=oyorooms.com&sz=128",
+    "alt": "OYO: Up to 50% Off Winter Getaway Hotel Coupons"
+  },
+  "tags": [
+    "hotels"
+  ]
+}

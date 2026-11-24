@@ -1,0 +1,16 @@
+{
+  "id": "asda",
+  "name": "Asda",
+  "slug": "asda",
+  "logo_url": "https://www.google.com/s2/favicons?domain=asda.com&sz=128",
+  "website_url": "https://www.asda.com/",
+  "country": "GB",
+  "categories": [
+    "groceries-essentials"
+  ],
+  "short_bio": "UK supermarket with November Rollback deals across groceries and George homeware.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}

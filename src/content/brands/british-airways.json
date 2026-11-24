@@ -1,0 +1,16 @@
+{
+  "id": "british-airways",
+  "name": "British Airways",
+  "slug": "british-airways",
+  "logo_url": "https://www.google.com/s2/favicons?domain=britishairways.com&sz=128",
+  "website_url": "https://www.britishairways.com/",
+  "country": "GB",
+  "categories": [
+    "travel-lifestyle"
+  ],
+  "short_bio": "UK flag carrier running Black Friday flight & holiday sales plus 3x Avios.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}

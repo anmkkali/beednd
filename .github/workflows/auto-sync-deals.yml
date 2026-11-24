@@ -1,0 +1,48 @@
+name: Auto Sync Brand Deals & AI Tools (Every 12 Hours)
+
+on:
+  schedule:
+    # Runs twice daily (every 12 hours at 00:00 and 12:00 UTC)
+    - cron: '0 */12 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync-deals:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run 12-hour deal lifecycle & brand discount scanner
+        run: python scripts/auto_sync_deals.py
+
+      - name: Set up Node.js & verify Astro build
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies & build check
+        run: |
+          npm ci
+          ASTRO_TELEMETRY_DISABLED=1 npm run build
+
+      - name: Commit and push updated deals
+        run: |
+          git config user.name "BeeDND Auto-Sync Bot"
+          git config user.email "bot@beednd.com"
+          git add src/content/brands src/content/deals
+          if git diff --staged --quiet; then
+            echo "No new deal updates in this 12h cycle."
+          else
+            git commit -m "chore(bot): 12h automated deal verification & expiry sync"
+            git push
+          fi

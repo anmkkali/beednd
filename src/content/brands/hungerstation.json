@@ -1,0 +1,16 @@
+{
+  "id": "hungerstation",
+  "name": "HungerStation",
+  "slug": "hungerstation",
+  "logo_url": "https://www.google.com/s2/favicons?domain=hungerstation.com&sz=128",
+  "website_url": "https://hungerstation.com/sa-en",
+  "country": "SA",
+  "categories": [
+    "food-dining"
+  ],
+  "short_bio": "Saudi Arabia's leading food and HungerStation Market delivery platform.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}

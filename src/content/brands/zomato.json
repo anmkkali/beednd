@@ -1,0 +1,16 @@
+{
+  "id": "zomato",
+  "name": "Zomato",
+  "slug": "zomato",
+  "logo_url": "https://www.google.com/s2/favicons?domain=zomato.com&sz=128",
+  "website_url": "https://www.zomato.com/",
+  "country": "IN",
+  "categories": [
+    "food-dining"
+  ],
+  "short_bio": "Indian food delivery and dining platform with Zomato Gold 20-50% off deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}

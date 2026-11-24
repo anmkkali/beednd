@@ -1,0 +1,16 @@
+{
+  "id": "swiggy",
+  "name": "Swiggy",
+  "slug": "swiggy",
+  "logo_url": "https://www.google.com/s2/favicons?domain=swiggy.com&sz=128",
+  "website_url": "https://www.swiggy.com/",
+  "country": "IN",
+  "categories": [
+    "food-dining"
+  ],
+  "short_bio": "Indian food delivery and Swiggy Dineout platform with weekend promo codes.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}

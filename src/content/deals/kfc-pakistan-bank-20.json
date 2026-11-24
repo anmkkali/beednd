@@ -1,0 +1,56 @@
+{
+  "id": "kfc-pakistan-bank-20",
+  "slug": "kfc-pakistan-bank-20",
+  "title": "KFC Pakistan: 15%\u201320% Off on Meezan, HBL & Digital Wallets",
+  "short_description": "15% to 20% off dine-in and takeaway with eligible Meezan Bank, HBL cards, Easypaisa & JazzCash.",
+  "brand_id": "kfc-pakistan",
+  "country": "PK",
+  "cities": [
+    "Karachi",
+    "Lahore",
+    "Islamabad"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "food-dining",
+  "deal_type": "bank-card",
+  "channels": [
+    "online",
+    "in-store"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "UP TO 20% OFF",
+  "badge_text": "Up to 20% Bank Off",
+  "numeric_discount_percent": 20,
+  "terms_and_conditions": [
+    "Verified from official brand portal or seasonal sale announcement.",
+    "Exclusions, caps, and validity are set by the brand or partner bank."
+  ],
+  "start_date": "2026-11-20T00:00:00Z",
+  "end_date": "2026-12-15T23:59:00Z",
+  "source_url": "https://www.kfcpakistan.com/",
+  "affiliate_url": "https://www.kfcpakistan.com/",
+  "last_verified_at": "2026-11-25T00:00:00Z",
+  "status": "active",
+  "is_trending": true,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=kfcpakistan.com&sz=128",
+    "alt": "KFC Pakistan: 15%\u201320% Off on Meezan, HBL & Digital Wallets"
+  },
+  "tags": [
+    "fast-food",
+    "chicken",
+    "burgers"
+  ],
+  "bank_details": {
+    "bank_id": "meezan",
+    "eligible_cards": [
+      "Visa",
+      "Mastercard"
+    ],
+    "cashback_percent": 20
+  }
+}

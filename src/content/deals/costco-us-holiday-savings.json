@@ -1,0 +1,43 @@
+{
+  "id": "costco-us-holiday-savings",
+  "slug": "costco-us-holiday-savings",
+  "title": "Costco: Holiday Savings & Black Friday Booklet",
+  "short_description": "Member savings on groceries, appliances, electronics, and Costco Travel vacation bundles.",
+  "brand_id": "costco",
+  "country": "US",
+  "cities": [],
+  "areas": [],
+  "branch_info": [],
+  "category": "groceries-essentials",
+  "deal_type": "store-sale",
+  "channels": [
+    "online",
+    "in-store"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "HOLIDAY SAVINGS",
+  "badge_text": "Member Savings",
+  "numeric_discount_percent": 30,
+  "terms_and_conditions": [
+    "Verified from official brand portal or seasonal sale announcement.",
+    "Exclusions, caps, and validity are set by the brand or partner bank."
+  ],
+  "start_date": "2026-11-20T00:00:00Z",
+  "end_date": "2026-12-02T23:59:00Z",
+  "source_url": "https://www.costco.com/black-friday.html",
+  "affiliate_url": "https://www.costco.com/black-friday.html",
+  "last_verified_at": "2026-11-25T00:00:00Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "voucher",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=costco.com&sz=128",
+    "alt": "Costco: Holiday Savings & Black Friday Booklet"
+  },
+  "tags": [
+    "supermarkets",
+    "household"
+  ]
+}

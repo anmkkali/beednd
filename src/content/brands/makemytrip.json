@@ -1,0 +1,16 @@
+{
+  "id": "makemytrip",
+  "name": "MakeMyTrip",
+  "slug": "makemytrip",
+  "logo_url": "https://www.google.com/s2/favicons?domain=makemytrip.com&sz=128",
+  "website_url": "https://www.makemytrip.com/",
+  "country": "IN",
+  "categories": [
+    "travel-lifestyle"
+  ],
+  "short_bio": "Indian travel portal with Black Friday flight, hotel, and airport cab coupons.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}

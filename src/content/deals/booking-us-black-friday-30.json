@@ -1,0 +1,42 @@
+{
+  "id": "booking-us-black-friday-30",
+  "slug": "booking-us-black-friday-30",
+  "title": "Booking.com: Black Friday Deals 30%+ Off Stays",
+  "short_description": "30% or more off participating properties worldwide with Genius loyalty tier perks.",
+  "brand_id": "booking-com-us",
+  "country": "US",
+  "cities": [],
+  "areas": [],
+  "branch_info": [],
+  "category": "travel-lifestyle",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "30%+ OFF",
+  "badge_text": "30%+ Off Stays",
+  "numeric_discount_percent": 30,
+  "terms_and_conditions": [
+    "Verified from official brand portal or seasonal sale announcement.",
+    "Exclusions, caps, and validity are set by the brand or partner bank."
+  ],
+  "start_date": "2026-11-21T00:00:00Z",
+  "end_date": "2026-12-03T23:59:00Z",
+  "source_url": "https://www.booking.com/",
+  "affiliate_url": "https://www.booking.com/",
+  "last_verified_at": "2026-11-25T00:00:00Z",
+  "status": "active",
+  "is_trending": true,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=booking.com&sz=128",
+    "alt": "Booking.com: Black Friday Deals 30%+ Off Stays"
+  },
+  "tags": [
+    "hotels",
+    "car-rental"
+  ]
+}

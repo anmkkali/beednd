@@ -1,0 +1,47 @@
+{
+  "id": "blinkit-in-flash-deals",
+  "slug": "blinkit-in-flash-deals",
+  "title": "Blinkit: Flash Drops on Snacks, Grooming & Essentials",
+  "short_description": "Spontaneous weekend price drops on imported snacks, grooming, and daily household essentials.",
+  "brand_id": "blinkit",
+  "country": "IN",
+  "cities": [
+    "Delhi",
+    "Mumbai",
+    "Bengaluru"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "groceries-essentials",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "FLASH DEALS",
+  "badge_text": "Flash Price Drops",
+  "numeric_discount_percent": 30,
+  "terms_and_conditions": [
+    "Verified from official brand portal or seasonal sale announcement.",
+    "Exclusions, caps, and validity are set by the brand or partner bank."
+  ],
+  "start_date": "2026-11-24T00:00:00Z",
+  "end_date": "2026-12-05T23:59:00Z",
+  "source_url": "https://blinkit.com/",
+  "affiliate_url": "https://blinkit.com/",
+  "last_verified_at": "2026-11-25T00:00:00Z",
+  "status": "active",
+  "is_trending": true,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=blinkit.com&sz=128",
+    "alt": "Blinkit: Flash Drops on Snacks, Grooming & Essentials"
+  },
+  "tags": [
+    "supermarkets",
+    "fresh",
+    "household"
+  ]
+}

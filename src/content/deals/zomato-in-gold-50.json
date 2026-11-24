@@ -1,0 +1,48 @@
+{
+  "id": "zomato-in-gold-50",
+  "slug": "zomato-in-gold-50",
+  "title": "Zomato: Zomato Gold 20%\u201350% Off Dining & Bank Cashback",
+  "short_description": "20% to 50% off partner restaurants via Zomato Gold plus delivery discounts and bank offers.",
+  "brand_id": "zomato",
+  "country": "IN",
+  "cities": [
+    "Mumbai",
+    "Delhi",
+    "Bengaluru"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "food-dining",
+  "deal_type": "bank-card",
+  "channels": [
+    "online",
+    "in-store"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "UP TO 50% OFF",
+  "badge_text": "Up to 50% Off",
+  "numeric_discount_percent": 50,
+  "terms_and_conditions": [
+    "Verified from official brand portal or seasonal sale announcement.",
+    "Exclusions, caps, and validity are set by the brand or partner bank."
+  ],
+  "start_date": "2026-11-22T00:00:00Z",
+  "end_date": "2026-12-10T23:59:00Z",
+  "source_url": "https://www.zomato.com/",
+  "affiliate_url": "https://www.zomato.com/",
+  "last_verified_at": "2026-11-25T00:00:00Z",
+  "status": "active",
+  "is_trending": true,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "voucher",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=zomato.com&sz=128",
+    "alt": "Zomato: Zomato Gold 20%\u201350% Off Dining & Bank Cashback"
+  },
+  "tags": [
+    "restaurants",
+    "delivery",
+    "fine-dining"
+  ]
+}

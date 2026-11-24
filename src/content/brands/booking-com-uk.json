@@ -1,0 +1,16 @@
+{
+  "id": "booking-com-uk",
+  "name": "Booking.com UK",
+  "slug": "booking-com-uk",
+  "logo_url": "https://www.google.com/s2/favicons?domain=booking.com&sz=128",
+  "website_url": "https://www.booking.com/",
+  "country": "GB",
+  "categories": [
+    "travel-lifestyle"
+  ],
+  "short_bio": "Black Friday Getaway Sale with up to 40% off participating UK & global stays.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}

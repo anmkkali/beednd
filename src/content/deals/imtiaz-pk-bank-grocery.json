@@ -1,0 +1,56 @@
+{
+  "id": "imtiaz-pk-bank-grocery",
+  "slug": "imtiaz-pk-bank-grocery",
+  "title": "Imtiaz Super Market: Bank Card Discounts on Groceries",
+  "short_description": "Partner bank debit and credit card discounts on monthly groceries and household essentials.",
+  "brand_id": "imtiaz-super-market",
+  "country": "PK",
+  "cities": [
+    "Karachi",
+    "Lahore",
+    "Islamabad"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "groceries-essentials",
+  "deal_type": "bank-card",
+  "channels": [
+    "online",
+    "in-store"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "UP TO 15% OFF",
+  "badge_text": "Up to 15% Bank Off",
+  "numeric_discount_percent": 15,
+  "terms_and_conditions": [
+    "Verified from official brand portal or seasonal sale announcement.",
+    "Exclusions, caps, and validity are set by the brand or partner bank."
+  ],
+  "start_date": "2026-11-22T00:00:00Z",
+  "end_date": "2026-12-15T23:59:00Z",
+  "source_url": "https://imtiaz.com.pk/",
+  "affiliate_url": "https://imtiaz.com.pk/",
+  "last_verified_at": "2026-11-25T00:00:00Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=imtiaz.com.pk&sz=128",
+    "alt": "Imtiaz Super Market: Bank Card Discounts on Groceries"
+  },
+  "tags": [
+    "supermarkets",
+    "household",
+    "fresh"
+  ],
+  "bank_details": {
+    "bank_id": "alfalah",
+    "eligible_cards": [
+      "Visa",
+      "Mastercard"
+    ],
+    "cashback_percent": 15
+  }
+}

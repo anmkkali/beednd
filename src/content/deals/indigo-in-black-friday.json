@@ -1,0 +1,45 @@
+{
+  "id": "indigo-in-black-friday",
+  "slug": "indigo-in-black-friday",
+  "title": "IndiGo: Black Friday & Winter Travel Fare Sale",
+  "short_description": "Discounted fares across domestic and international routes during late-November sale window.",
+  "brand_id": "indigo",
+  "country": "IN",
+  "cities": [
+    "Delhi",
+    "Mumbai",
+    "Bengaluru"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "travel-lifestyle",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "SALE FARES",
+  "badge_text": "Winter Fare Sale",
+  "numeric_discount_percent": 25,
+  "terms_and_conditions": [
+    "Verified from official brand portal or seasonal sale announcement.",
+    "Exclusions, caps, and validity are set by the brand or partner bank."
+  ],
+  "start_date": "2026-11-25T00:00:00Z",
+  "end_date": "2026-11-28T23:59:00Z",
+  "source_url": "https://www.goindigo.in/",
+  "affiliate_url": "https://www.goindigo.in/",
+  "last_verified_at": "2026-11-25T00:00:00Z",
+  "status": "active",
+  "is_trending": true,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=goindigo.in&sz=128",
+    "alt": "IndiGo: Black Friday & Winter Travel Fare Sale"
+  },
+  "tags": [
+    "flights"
+  ]
+}

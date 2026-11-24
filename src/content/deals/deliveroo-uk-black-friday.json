@@ -1,0 +1,45 @@
+{
+  "id": "deliveroo-uk-black-friday",
+  "slug": "deliveroo-uk-black-friday",
+  "title": "Deliveroo UK: Black Friday Hub & Family Meal Bundles",
+  "short_description": "Savings on convenience retail, grocery top-ups, and mid-week restaurant family bundles.",
+  "brand_id": "deliveroo-uk",
+  "country": "GB",
+  "cities": [
+    "London",
+    "Manchester"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "food-dining",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "BUNDLE DEALS",
+  "badge_text": "Bundle Vouchers",
+  "numeric_discount_percent": 25,
+  "terms_and_conditions": [
+    "Verified from official brand portal or seasonal sale announcement.",
+    "Exclusions, caps, and validity are set by the brand or partner bank."
+  ],
+  "start_date": "2026-11-22T00:00:00Z",
+  "end_date": "2026-12-02T23:59:00Z",
+  "source_url": "https://deliveroo.co.uk/",
+  "affiliate_url": "https://deliveroo.co.uk/",
+  "last_verified_at": "2026-11-25T00:00:00Z",
+  "status": "active",
+  "is_trending": true,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "voucher",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=deliveroo.co.uk&sz=128",
+    "alt": "Deliveroo UK: Black Friday Hub & Family Meal Bundles"
+  },
+  "tags": [
+    "delivery",
+    "restaurants"
+  ]
+}

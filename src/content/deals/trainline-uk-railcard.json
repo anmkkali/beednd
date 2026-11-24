@@ -1,0 +1,44 @@
+{
+  "id": "trainline-uk-railcard",
+  "slug": "trainline-uk-railcard",
+  "title": "Trainline UK: Digital Railcard & Advance Ticket Savings",
+  "short_description": "Save on UK rail travel with digital Railcard promotions and advance fare discounts.",
+  "brand_id": "trainline",
+  "country": "GB",
+  "cities": [
+    "London",
+    "Manchester"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "travel-lifestyle",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "RAILCARD DEALS",
+  "badge_text": "Rail Savings",
+  "numeric_discount_percent": 33,
+  "terms_and_conditions": [
+    "Verified from official brand portal or seasonal sale announcement.",
+    "Exclusions, caps, and validity are set by the brand or partner bank."
+  ],
+  "start_date": "2026-11-21T00:00:00Z",
+  "end_date": "2026-12-10T23:59:00Z",
+  "source_url": "https://www.thetrainline.com/",
+  "affiliate_url": "https://www.thetrainline.com/",
+  "last_verified_at": "2026-11-25T00:00:00Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "voucher",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=thetrainline.com&sz=128",
+    "alt": "Trainline UK: Digital Railcard & Advance Ticket Savings"
+  },
+  "tags": [
+    "experiences"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "id": "pia-online-booking-15",
+  "slug": "pia-online-booking-15",
+  "title": "PIA: Up to 15% Off Direct Online Flight Bookings",
+  "short_description": "Save up to 15% on selected domestic and international routes booked via PIA web portal or app.",
+  "brand_id": "pia",
+  "country": "PK",
+  "cities": [
+    "Karachi",
+    "Lahore",
+    "Islamabad"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "travel-lifestyle",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "UP TO 15% OFF",
+  "badge_text": "Up to 15% Off",
+  "numeric_discount_percent": 15,
+  "terms_and_conditions": [
+    "Verified from official brand portal or seasonal sale announcement.",
+    "Exclusions, caps, and validity are set by the brand or partner bank."
+  ],
+  "start_date": "2026-11-20T00:00:00Z",
+  "end_date": "2026-12-20T23:59:00Z",
+  "source_url": "https://www.piac.com.pk/",
+  "affiliate_url": "https://www.piac.com.pk/",
+  "last_verified_at": "2026-11-25T00:00:00Z",
+  "status": "active",
+  "is_trending": true,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=piac.com.pk&sz=128",
+    "alt": "PIA: Up to 15% Off Direct Online Flight Bookings"
+  },
+  "tags": [
+    "flights"
+  ]
+}

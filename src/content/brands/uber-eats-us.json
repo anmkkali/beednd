@@ -1,0 +1,16 @@
+{
+  "id": "uber-eats-us",
+  "name": "Uber Eats US",
+  "slug": "uber-eats-us",
+  "logo_url": "https://www.google.com/s2/favicons?domain=ubereats.com&sz=128",
+  "website_url": "https://www.ubereats.com/",
+  "country": "US",
+  "categories": [
+    "food-dining"
+  ],
+  "short_bio": "Food and grocery delivery with seasonal promo codes and Uber One perks.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}

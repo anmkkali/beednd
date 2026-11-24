@@ -1,0 +1,16 @@
+{
+  "id": "dominos-us",
+  "name": "Domino's US",
+  "slug": "dominos-us",
+  "logo_url": "https://www.google.com/s2/favicons?domain=dominos.com&sz=128",
+  "website_url": "https://www.dominos.com/",
+  "country": "US",
+  "categories": [
+    "food-dining"
+  ],
+  "short_bio": "Nationwide carryout Mix & Match and 20% off online menu deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}

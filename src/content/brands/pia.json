@@ -1,0 +1,16 @@
+{
+  "id": "pia",
+  "name": "PIA (Pakistan International Airlines)",
+  "slug": "pia",
+  "logo_url": "https://www.google.com/s2/favicons?domain=piac.com.pk&sz=128",
+  "website_url": "https://www.piac.com.pk/",
+  "country": "PK",
+  "categories": [
+    "travel-lifestyle"
+  ],
+  "short_bio": "National airline offering online booking discounts on domestic and international routes.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}

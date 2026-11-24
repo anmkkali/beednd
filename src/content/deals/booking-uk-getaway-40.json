@@ -1,0 +1,44 @@
+{
+  "id": "booking-uk-getaway-40",
+  "slug": "booking-uk-getaway-40",
+  "title": "Booking.com UK: Black Friday Getaway Sale Up to 40% Off",
+  "short_description": "Up to 40% off participating hotel stays and car rentals across the UK and Europe.",
+  "brand_id": "booking-com-uk",
+  "country": "GB",
+  "cities": [
+    "London"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "travel-lifestyle",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "UP TO 40% OFF",
+  "badge_text": "Up to 40% Off",
+  "numeric_discount_percent": 40,
+  "terms_and_conditions": [
+    "Verified from official brand portal or seasonal sale announcement.",
+    "Exclusions, caps, and validity are set by the brand or partner bank."
+  ],
+  "start_date": "2026-11-21T00:00:00Z",
+  "end_date": "2026-12-03T23:59:00Z",
+  "source_url": "https://www.booking.com/",
+  "affiliate_url": "https://www.booking.com/",
+  "last_verified_at": "2026-11-25T00:00:00Z",
+  "status": "active",
+  "is_trending": true,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=booking.com&sz=128",
+    "alt": "Booking.com UK: Black Friday Getaway Sale Up to 40% Off"
+  },
+  "tags": [
+    "hotels",
+    "car-rental"
+  ]
+}

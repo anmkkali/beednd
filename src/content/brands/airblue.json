@@ -1,0 +1,16 @@
+{
+  "id": "airblue",
+  "name": "Airblue",
+  "slug": "airblue",
+  "logo_url": "https://www.google.com/s2/favicons?domain=airblue.com&sz=128",
+  "website_url": "https://www.airblue.com/",
+  "country": "PK",
+  "categories": [
+    "travel-lifestyle"
+  ],
+  "short_bio": "Pakistani airline offering digital web-fare discounts and Blue Miles.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}

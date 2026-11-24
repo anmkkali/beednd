@@ -1,0 +1,16 @@
+{
+  "id": "careem",
+  "name": "Careem",
+  "slug": "careem",
+  "logo_url": "https://www.google.com/s2/favicons?domain=careem.com&sz=128",
+  "website_url": "https://www.careem.com/",
+  "country": "AE",
+  "categories": [
+    "food-dining"
+  ],
+  "short_bio": "UAE super app with Careem Plus discounts on rides, food, and groceries.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "just-eat-uk",
+  "name": "Just Eat UK",
+  "slug": "just-eat-uk",
+  "logo_url": "https://www.google.com/s2/favicons?domain=just-eat.co.uk&sz=128",
+  "website_url": "https://www.just-eat.co.uk/",
+  "country": "GB",
+  "categories": [
+    "food-dining"
+  ],
+  "short_bio": "UK food delivery app offering weekend restaurant discounts and promo codes.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}

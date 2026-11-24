@@ -1,0 +1,46 @@
+{
+  "id": "asda-uk-rollback",
+  "slug": "asda-uk-rollback",
+  "title": "Asda UK: November Rollback Groceries & George Home",
+  "short_description": "Rolling grocery price drops alongside George homeware and electricals seasonal deals.",
+  "brand_id": "asda",
+  "country": "GB",
+  "cities": [
+    "London",
+    "Birmingham"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "groceries-essentials",
+  "deal_type": "store-sale",
+  "channels": [
+    "online",
+    "in-store"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "ROLLBACK DEALS",
+  "badge_text": "Rollback Savings",
+  "numeric_discount_percent": 30,
+  "terms_and_conditions": [
+    "Verified from official brand portal or seasonal sale announcement.",
+    "Exclusions, caps, and validity are set by the brand or partner bank."
+  ],
+  "start_date": "2026-11-21T00:00:00Z",
+  "end_date": "2026-12-05T23:59:00Z",
+  "source_url": "https://www.asda.com/",
+  "affiliate_url": "https://www.asda.com/",
+  "last_verified_at": "2026-11-25T00:00:00Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=asda.com&sz=128",
+    "alt": "Asda UK: November Rollback Groceries & George Home"
+  },
+  "tags": [
+    "supermarkets",
+    "household"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "booking-com-us",
+  "name": "Booking.com US",
+  "slug": "booking-com-us",
+  "logo_url": "https://www.google.com/s2/favicons?domain=booking.com&sz=128",
+  "website_url": "https://www.booking.com/",
+  "country": "US",
+  "categories": [
+    "travel-lifestyle"
+  ],
+  "short_bio": "Global accommodation platform with Black Friday Deals starting at 30% off.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}

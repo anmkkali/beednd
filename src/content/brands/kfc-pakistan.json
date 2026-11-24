@@ -1,0 +1,16 @@
+{
+  "id": "kfc-pakistan",
+  "name": "KFC Pakistan",
+  "slug": "kfc-pakistan",
+  "logo_url": "https://www.google.com/s2/favicons?domain=kfcpakistan.com&sz=128",
+  "website_url": "https://www.kfcpakistan.com/",
+  "country": "PK",
+  "categories": [
+    "food-dining"
+  ],
+  "short_bio": "Fast food chain offering bank card and digital wallet deals across Pakistan.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}

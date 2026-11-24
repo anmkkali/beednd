@@ -1,0 +1,16 @@
+{
+  "id": "expedia",
+  "name": "Expedia",
+  "slug": "expedia",
+  "logo_url": "https://www.google.com/s2/favicons?domain=expedia.com&sz=128",
+  "website_url": "https://www.expedia.com/",
+  "country": "US",
+  "categories": [
+    "travel-lifestyle"
+  ],
+  "short_bio": "Travel booking platform offering Black Friday & Travel Tuesday hotel and bundle discounts.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}
