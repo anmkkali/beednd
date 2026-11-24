@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import DealBannerCard from '../components/deals/DealBannerCard.astro';
+import Pagination from '../components/common/Pagination.astro';
+import { getCollection } from 'astro:content';
+import { dealKind } from '../lib/deals';
+
+export async function getStaticPaths() {
+  const nowMs = Date.now();
+  const allDeals = (await getCollection('deals', ({ data }) => data.status === 'active'))
+    .filter((d) => !d.data.end_date || Number.isNaN(Date.parse(d.data.end_date)) || Date.parse(d.data.end_date) >= nowMs)
+    .sort((a, b) => Number(b.data.is_trending) - Number(a.data.is_trending) || b.data.last_verified_at.localeCompare(a.data.last_verified_at));
+
+  const brands = await getCollection('brands');
+  const brandMap = new Map(brands.map((b) => [b.data.id, b.data]));
+
+  const defs = [
+    {
+      slug: 'trending',
+      title: 'Trending Discounts & Deals',
+      description: 'Most popular and trending verified brand discounts, seasonal sales, and limited-time offers.',
+      filter: (d: any) => !!d.data.is_trending,
+    },
+    {
+      slug: 'free-trials',
+      title: 'Free Trials & Free Plans',
+      description: 'Verified free trials, starter credits, and free plans across AI tools and software.',
+      filter: (d: any) => dealKind(d.data) === 'trial',
+    },
+    {
+      slug: 'promo-codes',
+      title: 'Verified Promo Codes',
+      description: 'Working promo codes and coupon codes verified directly from official brand stores.',
+      filter: (d: any) => dealKind(d.data) === 'promo',
+    },
+    {
+      slug: 'vouchers',
+      title: 'Discount Vouchers & Bundles',
+      description: 'Active store vouchers, meal combos, and member-only bundle offers.',
+      filter: (d: any) => dealKind(d.data) === 'voucher',
+    },
+    {
+      slug: 'store-sales',
+      title: 'In-Store & Seasonal Sales',
+      description: 'Live in-store and online seasonal sales across fashion, electronics, groceries, and more.',
+      filter: (d: any) => d.data.deal_type === 'in-store' || (d.data.channels || []).includes('in-store'),
+    },
+  ];
+
+  return defs.map((def) => ({
+    params: { offerType: def.slug },
+    props: {
+      def,
+      deals: allDeals.filter(def.filter),
+      brandMap,
+    },
+  }));
+}
+
+const { def, deals, brandMap } = Astro.props;
+---
+
+<BaseLayout title={def.title} description={def.description} activeTopic={def.slug}>
+  <div class="mb-6 border-b editorial-rule pb-6">
+    <nav class="mb-3 flex items-center gap-2 text-[13px] text-ink-muted" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-ink hover:underline">Home</a>
+      <span>/</span>
+      <span class="text-ink">{def.title}</span>
+    </nav>
+    <h1 class="text-4xl sm:text-5xl leading-[1.04] text-ink">{def.title}</h1>
+    <p class="mt-2.5 max-w-2xl text-[15px] leading-relaxed text-ink-muted">{def.description}</p>
+  </div>
+
+  <div id="offer-type-feed" class="scroll-mt-24 border-t editorial-rule">
+    {deals.map((deal) => (
+      <div data-market={deal.data.country}>
+        <DealBannerCard
+          deal={deal.data}
+          brandName={brandMap.get(deal.data.brand_id)?.name}
+          brandLogo={brandMap.get(deal.data.brand_id)?.logo_url}
+        />
+      </div>
+    ))}
+  </div>
+  {deals.length === 0 && (
+    <p class="border-b editorial-rule py-12 text-center text-[15px] text-ink-muted">No active offers in this section right now.</p>
+  )}
+  <Pagination target="offer-type-feed" />
+</BaseLayout>

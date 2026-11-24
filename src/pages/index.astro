@@ -42,8 +42,8 @@ const filterPills = [
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: 'DealsSite',
-  url: 'https://dealssite.com',
+  name: 'BeeDND',
+  url: 'https://beednd.com',
 };
 ---
 
@@ -245,10 +245,6 @@ const structuredData = {
       buttons.forEach((button) =>
         button.addEventListener('click', () => {
           current = button.dataset.typeFilter || 'all';
-          const url = new URL(window.location.href);
-          if (current === 'all') url.searchParams.delete('type');
-          else url.searchParams.set('type', current);
-          history.replaceState({}, '', url);
           refresh();
         })
       );

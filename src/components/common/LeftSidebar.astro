@@ -51,20 +51,18 @@ categories.forEach((cat) => {
 
 const quickLinks = [
   { label: 'All offers', href: '/', icon: 'grid', key: 'all', i18n: 'all_offers' },
-  { label: 'Trending', href: '/?type=trending', icon: 'trending', key: 'trending', i18n: 'trending' },
-  { label: 'Browse Brands', href: '/brands', icon: 'store', key: 'brands', i18n: 'browse_brands' },
-  { label: 'Free trials', href: '/?type=trial', icon: 'sparkle', key: 'trial', i18n: 'free_trials' },
-  { label: 'Promo codes', href: '/?type=promo-code', icon: 'tag', key: 'promo-code', i18n: 'promo_codes' },
-  { label: 'Vouchers', href: '/?type=voucher', icon: 'tag', key: 'voucher', i18n: 'vouchers' },
-  { label: 'Store sales', href: '/?type=store-sale', icon: 'store', key: 'store-sale', i18n: 'store_sales' },
-  { label: 'Bank deals', href: '/banks', icon: 'card', key: 'bank-deals', i18n: 'bank_deals' },
+  { label: 'Trending', href: '/trending/', icon: 'trending', key: 'trending', i18n: 'trending' },
+  { label: 'Browse Brands', href: '/brands/', icon: 'store', key: 'brands', i18n: 'browse_brands' },
+  { label: 'Free trials', href: '/free-trials/', icon: 'sparkle', key: 'trial', i18n: 'free_trials' },
+  { label: 'Promo codes', href: '/promo-codes/', icon: 'tag', key: 'promo-code', i18n: 'promo_codes' },
+  { label: 'Vouchers', href: '/vouchers/', icon: 'tag', key: 'voucher', i18n: 'vouchers' },
+  { label: 'Store sales', href: '/store-sales/', icon: 'store', key: 'store-sale', i18n: 'store_sales' },
+  { label: 'Bank deals', href: '/banks/', icon: 'card', key: 'bank-deals', i18n: 'bank_deals' },
 ];
 
 const filterHref = (categoryId: string, groupId: string, filter: { sub?: string; kind?: string }) => {
-  const params = new URLSearchParams({ group: groupId });
-  if (filter.sub) params.set('sub', filter.sub);
-  if (filter.kind) params.set('kind', filter.kind);
-  return `/categories/${categoryId}?${params.toString()}`;
+  const leaf = filter.sub || filter.kind;
+  return leaf ? `/categories/${categoryId}/${groupId}/${leaf}/` : `/categories/${categoryId}/${groupId}/`;
 };
 ---
 

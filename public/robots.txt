@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /go/
+Disallow: /api/
 
-Sitemap: https://dealssite.com/sitemap.xml
+Sitemap: https://beednd.com/sitemap.xml
