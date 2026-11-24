@@ -1,0 +1,16 @@
+{
+  "id": "h-m-us",
+  "name": "H&M US",
+  "slug": "h-m-us",
+  "logo_url": "https://www.google.com/s2/favicons?domain=www2.hm.com&sz=128",
+  "website_url": "https://www2.hm.com/en_us/index.html",
+  "country": "US",
+  "categories": [
+    "clothing-fashion"
+  ],
+  "short_bio": "Verified US brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

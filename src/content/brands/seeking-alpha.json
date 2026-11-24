@@ -1,0 +1,16 @@
+{
+  "id": "seeking-alpha",
+  "name": "Seeking Alpha",
+  "slug": "seeking-alpha",
+  "logo_url": "https://www.google.com/s2/favicons?domain=seekingalpha.com&sz=128",
+  "website_url": "https://seekingalpha.com/subscriptions",
+  "country": "US",
+  "categories": [
+    "tech-electronics"
+  ],
+  "short_bio": "Verified US brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

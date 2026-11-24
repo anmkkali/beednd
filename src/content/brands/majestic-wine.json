@@ -1,0 +1,16 @@
+{
+  "id": "majestic-wine",
+  "name": "Majestic Wine",
+  "slug": "majestic-wine",
+  "logo_url": "https://www.google.com/s2/favicons?domain=majestic.co.uk&sz=128",
+  "website_url": "https://www.majestic.co.uk/latest-wine-offers",
+  "country": "GB",
+  "categories": [
+    "groceries-essentials"
+  ],
+  "short_bio": "Verified GB brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "nike",
+  "name": "Nike",
+  "slug": "nike",
+  "logo_url": "https://www.google.com/s2/favicons?domain=nike.com&sz=128",
+  "website_url": "https://www.nike.com/w/sale-3yaep",
+  "country": "US",
+  "categories": [
+    "clothing-fashion"
+  ],
+  "short_bio": "Verified US brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

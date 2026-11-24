@@ -1,0 +1,16 @@
+{
+  "id": "apple",
+  "name": "Apple",
+  "slug": "apple",
+  "logo_url": "https://www.google.com/s2/favicons?domain=apple.com&sz=128",
+  "website_url": "https://www.apple.com/store",
+  "country": "US",
+  "categories": [
+    "tech-electronics"
+  ],
+  "short_bio": "Verified US brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

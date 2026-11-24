@@ -1,0 +1,16 @@
+{
+  "id": "expedia-uk",
+  "name": "Expedia UK",
+  "slug": "expedia-uk",
+  "logo_url": "https://www.google.com/s2/favicons?domain=expedia.co.uk&sz=128",
+  "website_url": "https://www.expedia.co.uk/",
+  "country": "GB",
+  "categories": [
+    "travel-lifestyle"
+  ],
+  "short_bio": "Verified GB brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

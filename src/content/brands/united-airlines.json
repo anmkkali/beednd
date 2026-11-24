@@ -1,0 +1,16 @@
+{
+  "id": "united-airlines",
+  "name": "United Airlines",
+  "slug": "united-airlines",
+  "logo_url": "https://www.google.com/s2/favicons?domain=united.com&sz=128",
+  "website_url": "https://www.united.com/en/us/fly/travel/trip-planning/travel-deals.html",
+  "country": "US",
+  "categories": [
+    "travel-lifestyle"
+  ],
+  "short_bio": "Verified US brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

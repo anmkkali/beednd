@@ -1,0 +1,16 @@
+{
+  "id": "currys",
+  "name": "Currys",
+  "slug": "currys",
+  "logo_url": "https://www.google.com/s2/favicons?domain=currys.co.uk&sz=128",
+  "website_url": "https://www.currys.co.uk/sale.html",
+  "country": "GB",
+  "categories": [
+    "tech-electronics"
+  ],
+  "short_bio": "Verified GB brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

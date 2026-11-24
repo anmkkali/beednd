@@ -1,0 +1,37 @@
+{
+  "id": "asos-us-black-friday-soon",
+  "slug": "asos-us-black-friday-soon",
+  "title": "ASOS US: 4-Day Black Friday Sitewide Blowout",
+  "short_description": "Massive 4-day sitewide blowout across 850+ brands launching Friday, Nov 27 through Cyber Monday.",
+  "brand_id": "asos",
+  "country": "US",
+  "cities": [],
+  "areas": [],
+  "branch_info": [],
+  "category": "clothing-fashion",
+  "deal_type": "online",
+  "channels": ["online"],
+  "discount_type": "percentage",
+  "discount_value": "COMING SOON",
+  "badge_text": "Discount Coming Soon",
+  "numeric_discount_percent": 70,
+  "terms_and_conditions": [
+    "Launches Friday, November 27 through Cyber Monday, November 30, 2026.",
+    "Applies across 850+ brands on ASOS."
+  ],
+  "start_date": "2026-11-27T00:00:00Z",
+  "end_date": "2026-11-30T23:59:00Z",
+  "source_url": "https://www.asos.com/us/women/sale/cat/?cid=7046",
+  "affiliate_url": "https://www.asos.com/us/women/sale/cat/?cid=7046",
+  "last_verified_at": "2026-11-25T00:00:00Z",
+  "status": "active",
+  "is_trending": true,
+  "is_coming_soon": true,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=asos.com&sz=128",
+    "alt": "ASOS US Black Friday"
+  },
+  "tags": ["all-items"]
+}

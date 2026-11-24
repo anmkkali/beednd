@@ -1,0 +1,16 @@
+{
+  "id": "american-eagle",
+  "name": "American Eagle",
+  "slug": "american-eagle",
+  "logo_url": "https://www.google.com/s2/favicons?domain=ae.com&sz=128",
+  "website_url": "https://www.ae.com/us/en/x/clearance?menu=cat4840004",
+  "country": "US",
+  "categories": [
+    "clothing-fashion"
+  ],
+  "short_bio": "Verified US brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

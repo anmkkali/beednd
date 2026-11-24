@@ -1,0 +1,16 @@
+{
+  "id": "spicejet",
+  "name": "SpiceJet",
+  "slug": "spicejet",
+  "logo_url": "https://www.google.com/s2/favicons?domain=spicejet.com&sz=128",
+  "website_url": "https://www.spicejet.com/",
+  "country": "IN",
+  "categories": [
+    "travel-lifestyle"
+  ],
+  "short_bio": "Verified IN brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

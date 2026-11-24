@@ -1,0 +1,16 @@
+{
+  "id": "jbl",
+  "name": "JBL",
+  "slug": "jbl",
+  "logo_url": "https://www.google.com/s2/favicons?domain=jbl.com&sz=128",
+  "website_url": "https://www.jbl.com/sale/",
+  "country": "US",
+  "categories": [
+    "tech-electronics"
+  ],
+  "short_bio": "Verified US brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

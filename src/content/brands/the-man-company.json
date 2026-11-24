@@ -1,0 +1,16 @@
+{
+  "id": "the-man-company",
+  "name": "The Man Company",
+  "slug": "the-man-company",
+  "logo_url": "https://www.google.com/s2/favicons?domain=themancompany.com&sz=128",
+  "website_url": "https://www.themancompany.com/",
+  "country": "IN",
+  "categories": [
+    "beauty-wellness"
+  ],
+  "short_bio": "Verified IN brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "greggs",
+  "name": "Greggs",
+  "slug": "greggs",
+  "logo_url": "https://www.google.com/s2/favicons?domain=greggs.com&sz=128",
+  "website_url": "https://www.greggs.com/order",
+  "country": "GB",
+  "categories": [
+    "food-dining"
+  ],
+  "short_bio": "Verified GB brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

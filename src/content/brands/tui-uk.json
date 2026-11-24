@@ -1,0 +1,16 @@
+{
+  "id": "tui-uk",
+  "name": "TUI UK",
+  "slug": "tui-uk",
+  "logo_url": "https://www.google.com/s2/favicons?domain=tui.co.uk&sz=128",
+  "website_url": "https://www.tui.co.uk/discount-codes/",
+  "country": "GB",
+  "categories": [
+    "travel-lifestyle"
+  ],
+  "short_bio": "Verified GB brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

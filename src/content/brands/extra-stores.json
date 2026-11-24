@@ -1,0 +1,16 @@
+{
+  "id": "extra-stores",
+  "name": "eXtra Stores",
+  "slug": "extra-stores",
+  "logo_url": "https://www.google.com/s2/favicons?domain=extra.com&sz=128",
+  "website_url": "https://www.extra.com/en-sa/",
+  "country": "SA",
+  "categories": [
+    "tech-electronics"
+  ],
+  "short_bio": "Verified SA brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

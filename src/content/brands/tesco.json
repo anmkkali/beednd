@@ -1,0 +1,16 @@
+{
+  "id": "tesco",
+  "name": "Tesco",
+  "slug": "tesco",
+  "logo_url": "https://www.google.com/s2/favicons?domain=tesco.com&sz=128",
+  "website_url": "https://www.tesco.com/shop/en-GB/promotions",
+  "country": "GB",
+  "categories": [
+    "groceries-essentials"
+  ],
+  "short_bio": "Verified GB brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "kiehl-s-uk",
+  "name": "Kiehl's UK",
+  "slug": "kiehl-s-uk",
+  "logo_url": "https://www.google.com/s2/favicons?domain=kiehls.co.uk&sz=128",
+  "website_url": "https://www.kiehls.co.uk/offers.html",
+  "country": "GB",
+  "categories": [
+    "beauty-wellness"
+  ],
+  "short_bio": "Verified GB brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

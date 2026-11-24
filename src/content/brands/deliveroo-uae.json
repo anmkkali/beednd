@@ -1,0 +1,16 @@
+{
+  "id": "deliveroo-uae",
+  "name": "Deliveroo UAE",
+  "slug": "deliveroo-uae",
+  "logo_url": "https://www.google.com/s2/favicons?domain=deliveroo.ae&sz=128",
+  "website_url": "https://deliveroo.ae/",
+  "country": "AE",
+  "categories": [
+    "food-dining"
+  ],
+  "short_bio": "Verified AE brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

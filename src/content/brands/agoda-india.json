@@ -1,0 +1,16 @@
+{
+  "id": "agoda-india",
+  "name": "Agoda India",
+  "slug": "agoda-india",
+  "logo_url": "https://www.google.com/s2/favicons?domain=agoda.com&sz=128",
+  "website_url": "https://www.agoda.com/en-in/",
+  "country": "IN",
+  "categories": [
+    "travel-lifestyle"
+  ],
+  "short_bio": "Verified IN brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

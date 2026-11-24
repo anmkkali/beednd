@@ -1,0 +1,16 @@
+{
+  "id": "boots",
+  "name": "Boots",
+  "slug": "boots",
+  "logo_url": "https://www.google.com/s2/favicons?domain=boots.com&sz=128",
+  "website_url": "https://www.boots.com/offers",
+  "country": "GB",
+  "categories": [
+    "beauty-wellness"
+  ],
+  "short_bio": "Verified GB brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

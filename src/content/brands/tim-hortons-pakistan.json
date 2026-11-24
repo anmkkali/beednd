@@ -1,0 +1,16 @@
+{
+  "id": "tim-hortons-pakistan",
+  "name": "Tim Hortons Pakistan",
+  "slug": "tim-hortons-pakistan",
+  "logo_url": "https://www.google.com/s2/favicons?domain=timhortons.com.pk&sz=128",
+  "website_url": "https://www.timhortons.com.pk/",
+  "country": "PK",
+  "categories": [
+    "food-dining"
+  ],
+  "short_bio": "Verified PK brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

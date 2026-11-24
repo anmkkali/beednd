@@ -27,6 +27,7 @@ interface Props {
     end_date?: string | null;
     last_verified_at: string;
     is_trending?: boolean;
+    is_coming_soon?: boolean;
     limited_time?: boolean;
     offer_kind?: string;
     bank_details?: {
@@ -67,6 +68,7 @@ const expiry = expiryLabel(deal.end_date, !!deal.limited_time);
   data-deal-id={deal.id}
   data-market={deal.country || 'GLOBAL'}
   data-kind={kind}
+  data-category={deal.category}
   data-tokens={dealTokens(deal)}
 >
   <!-- Mobile layout (< 640px) — Compact, neat, zero vertical stretching or text squishing -->
@@ -84,8 +86,12 @@ const expiry = expiryLabel(deal.end_date, !!deal.limited_time);
           )}
         </div>
       </div>
-      <span class="editorial-pill shrink-0 whitespace-nowrap px-2 py-0.5 text-right text-[11px] font-semibold leading-tight text-ink">
-        {deal.badge_text || deal.discount_value}
+      <span class:list={['editorial-pill shrink-0 whitespace-nowrap px-2 py-0.5 text-right text-[11px] font-semibold leading-tight text-ink', deal.is_coming_soon && 'border-ink/40 bg-base-900']}>
+        {deal.is_coming_soon ? (
+          <span data-i18n="coming_soon">Discount Coming Soon</span>
+        ) : (
+          deal.badge_text || deal.discount_value
+        )}
       </span>
     </div>
 
@@ -97,10 +103,21 @@ const expiry = expiryLabel(deal.end_date, !!deal.limited_time);
     <!-- Description (compact) -->
     <p class="line-clamp-2 text-[12px] leading-relaxed text-ink-muted">{deal.short_description}</p>
 
-    <!-- Bottom row: Chips on left, View offer on right -->
+    <!-- Bottom row: Chips/Timer on left, View offer on right -->
     <div class="flex items-center justify-between gap-2 pt-0.5">
-      <div class="flex items-center gap-2 text-[11px] text-ink-muted truncate">
-        {deal.bank_details ? (
+      <div class="flex items-center gap-1.5 text-[11px] text-ink-muted truncate">
+        {deal.is_coming_soon ? (
+          <span class="inline-flex items-center gap-1.5 font-medium text-ink">
+            <span class="inline-flex items-center gap-1">
+              <Icon name="calendar" class="h-3 w-3 shrink-0" />
+              <span><span data-i18n="starts">Starts</span> {shortDate(deal.start_date)}</span>
+            </span>
+            <span data-countdown={deal.start_date} class="inline-flex items-center gap-1 rounded-full border editorial-rule bg-base-900/60 px-1.5 py-0.5 text-[10px] font-mono font-semibold text-ink">
+              <Icon name="clock" class="h-2.5 w-2.5 shrink-0" />
+              <span data-countdown-text>--d --h</span>
+            </span>
+          </span>
+        ) : deal.bank_details ? (
           <span class="inline-flex items-center gap-1 text-ink truncate">
             <Icon name="card" class="h-3 w-3 shrink-0" />
             <span class="truncate">{deal.bank_details.bank_id.toUpperCase()} +{deal.bank_details.cashback_percent}%</span>
@@ -125,7 +142,7 @@ const expiry = expiryLabel(deal.end_date, !!deal.limited_time);
           </button>
         )}
         <a href={`/deals/${deal.slug}`} class="btn-primary inline-flex items-center gap-1 whitespace-nowrap px-2.5 py-1 text-[11.5px] font-semibold">
-          View offer
+          <span data-i18n="view_offer">View offer</span>
           <Icon name="arrow" class="h-2.5 w-2.5" />
         </a>
       </div>
@@ -169,8 +186,18 @@ const expiry = expiryLabel(deal.end_date, !!deal.limited_time);
         )}
         <span class="inline-flex items-center gap-1">
           <Icon name="calendar" class="h-3 w-3" />
-          {shortDate(deal.last_verified_at)}
+          {deal.is_coming_soon ? (
+            <span><span data-i18n="starts">Starts</span> {shortDate(deal.start_date)}</span>
+          ) : (
+            shortDate(deal.last_verified_at)
+          )}
         </span>
+        {deal.is_coming_soon && (
+          <span data-countdown={deal.start_date} class="inline-flex items-center gap-1 rounded-full border editorial-rule bg-base-900/60 px-2 py-0.2 text-[10.5px] font-mono font-semibold text-ink">
+            <Icon name="clock" class="h-3 w-3" />
+            <span data-countdown-text>--d --h</span>
+          </span>
+        )}
         {deal.is_trending && (
           <span class="inline-flex items-center gap-1 font-semibold text-ink">
             <Icon name="trending" class="h-3 w-3" />
@@ -223,8 +250,12 @@ const expiry = expiryLabel(deal.end_date, !!deal.limited_time);
 
     <!-- Col 3: Right action column — badge at top, View offer & promo code at bottom -->
     <div class="flex shrink-0 flex-col justify-between items-end self-stretch gap-2 min-w-[8.5rem]">
-      <span class="editorial-pill whitespace-nowrap px-2.5 py-0.5 text-right text-[12px] font-semibold leading-tight text-ink">
-        {deal.badge_text || deal.discount_value}
+      <span class:list={['editorial-pill whitespace-nowrap px-2.5 py-0.5 text-right text-[12px] font-semibold leading-tight text-ink', deal.is_coming_soon && 'border-ink/40 bg-base-900']}>
+        {deal.is_coming_soon ? (
+          <span data-i18n="coming_soon">Discount Coming Soon</span>
+        ) : (
+          deal.badge_text || deal.discount_value
+        )}
       </span>
       <div class="mt-auto flex flex-wrap items-center justify-end gap-2">
         {deal.promo_code && (
@@ -233,7 +264,7 @@ const expiry = expiryLabel(deal.end_date, !!deal.limited_time);
           </button>
         )}
         <a href={`/deals/${deal.slug}`} class="btn-primary inline-flex items-center gap-1.5 whitespace-nowrap px-3 py-1.5 text-[12px] font-semibold">
-          View offer
+          <span data-i18n="view_offer">View offer</span>
           <Icon name="arrow" class="h-3 w-3" />
         </a>
       </div>
@@ -265,4 +296,27 @@ const expiry = expiryLabel(deal.end_date, !!deal.limited_time);
     if (text) text.textContent = label;
     el.classList.toggle('hidden', !label);
   });
+
+  // Live countdown timer for upcoming ("Discount Coming Soon") deals
+  function updateCountdowns() {
+    const t = Date.now();
+    document.querySelectorAll<HTMLElement>('[data-countdown]').forEach((el) => {
+      const target = Date.parse(el.dataset.countdown || '');
+      const textEl = el.querySelector('[data-countdown-text]');
+      if (!textEl || Number.isNaN(target)) return;
+      const diff = target - t;
+      if (diff <= 0) {
+        textEl.textContent = 'Live now';
+        return;
+      }
+      const d = Math.floor(diff / 86_400_000);
+      const h = Math.floor((diff % 86_400_000) / 3_600_000);
+      const m = Math.floor((diff % 3_600_000) / 60_000);
+      textEl.textContent = d > 0 ? `${d}d ${h}h ${m}m` : `${h}h ${m}m`;
+    });
+  }
+  updateCountdowns();
+  if (document.querySelector('[data-countdown]')) {
+    setInterval(updateCountdowns, 60_000);
+  }
 </script>

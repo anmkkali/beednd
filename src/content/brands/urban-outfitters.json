@@ -1,0 +1,16 @@
+{
+  "id": "urban-outfitters",
+  "name": "Urban Outfitters",
+  "slug": "urban-outfitters",
+  "logo_url": "https://www.google.com/s2/favicons?domain=urbanoutfitters.com&sz=128",
+  "website_url": "https://www.urbanoutfitters.com/sale",
+  "country": "US",
+  "categories": [
+    "clothing-fashion"
+  ],
+  "short_bio": "Verified US brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

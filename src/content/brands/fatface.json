@@ -1,0 +1,16 @@
+{
+  "id": "fatface",
+  "name": "FatFace",
+  "slug": "fatface",
+  "logo_url": "https://www.google.com/s2/favicons?domain=fatface.com&sz=128",
+  "website_url": "https://www.fatface.com/sales",
+  "country": "GB",
+  "categories": [
+    "clothing-fashion"
+  ],
+  "short_bio": "Verified GB brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "starquik",
+  "name": "StarQuik",
+  "slug": "starquik",
+  "logo_url": "https://www.google.com/s2/favicons?domain=starquik.com&sz=128",
+  "website_url": "https://www.starquik.com/",
+  "country": "IN",
+  "categories": [
+    "groceries-essentials"
+  ],
+  "short_bio": "Verified IN brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

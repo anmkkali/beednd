@@ -1,0 +1,16 @@
+{
+  "id": "sharkninja",
+  "name": "SharkNinja",
+  "slug": "sharkninja",
+  "logo_url": "https://www.google.com/s2/favicons?domain=sharkninja.com&sz=128",
+  "website_url": "https://www.sharkninja.com/sales-offers/shop-all-sale",
+  "country": "US",
+  "categories": [
+    "tech-electronics"
+  ],
+  "short_bio": "Verified US brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

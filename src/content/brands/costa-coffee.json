@@ -1,0 +1,16 @@
+{
+  "id": "costa-coffee",
+  "name": "Costa Coffee",
+  "slug": "costa-coffee",
+  "logo_url": "https://www.google.com/s2/favicons?domain=costa.co.uk&sz=128",
+  "website_url": "https://www.costa.co.uk/",
+  "country": "GB",
+  "categories": [
+    "food-dining"
+  ],
+  "short_bio": "Verified GB brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

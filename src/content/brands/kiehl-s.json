@@ -1,0 +1,16 @@
+{
+  "id": "kiehl-s",
+  "name": "Kiehl's",
+  "slug": "kiehl-s",
+  "logo_url": "https://www.google.com/s2/favicons?domain=kiehls.com&sz=128",
+  "website_url": "https://www.kiehls.com/offers.html",
+  "country": "US",
+  "categories": [
+    "beauty-wellness"
+  ],
+  "short_bio": "Verified US brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

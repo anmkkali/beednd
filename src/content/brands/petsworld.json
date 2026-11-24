@@ -1,0 +1,16 @@
+{
+  "id": "petsworld",
+  "name": "Petsworld",
+  "slug": "petsworld",
+  "logo_url": "https://www.google.com/s2/favicons?domain=petsworld.in&sz=128",
+  "website_url": "https://petsworld.in/",
+  "country": "IN",
+  "categories": [
+    "pets"
+  ],
+  "short_bio": "Verified IN brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

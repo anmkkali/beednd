@@ -1,0 +1,16 @@
+{
+  "id": "abercrombie-fitch",
+  "name": "Abercrombie & Fitch",
+  "slug": "abercrombie-fitch",
+  "logo_url": "https://www.google.com/s2/favicons?domain=abercrombie.com&sz=128",
+  "website_url": "https://www.abercrombie.com/shop/us/sale",
+  "country": "US",
+  "categories": [
+    "clothing-fashion"
+  ],
+  "short_bio": "Verified US brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

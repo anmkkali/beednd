@@ -1,0 +1,16 @@
+{
+  "id": "taco-bell-india",
+  "name": "Taco Bell India",
+  "slug": "taco-bell-india",
+  "logo_url": "https://www.google.com/s2/favicons?domain=tacobell.co.in&sz=128",
+  "website_url": "https://www.tacobell.co.in/",
+  "country": "IN",
+  "categories": [
+    "food-dining"
+  ],
+  "short_bio": "Verified IN brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

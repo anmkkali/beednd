@@ -1,0 +1,16 @@
+{
+  "id": "ranchers-cafe",
+  "name": "Ranchers Cafe",
+  "slug": "ranchers-cafe",
+  "logo_url": "https://www.google.com/s2/favicons?domain=rancherscafe.com&sz=128",
+  "website_url": "https://rancherscafe.com/",
+  "country": "PK",
+  "categories": [
+    "food-dining"
+  ],
+  "short_bio": "Verified PK brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

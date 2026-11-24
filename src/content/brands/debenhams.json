@@ -1,0 +1,16 @@
+{
+  "id": "debenhams",
+  "name": "Debenhams",
+  "slug": "debenhams",
+  "logo_url": "https://www.google.com/s2/favicons?domain=debenhams.com&sz=128",
+  "website_url": "https://www.debenhams.com/categories/sale",
+  "country": "GB",
+  "categories": [
+    "clothing-fashion"
+  ],
+  "short_bio": "Verified GB brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

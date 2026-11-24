@@ -1,0 +1,16 @@
+{
+  "id": "aldi-uk",
+  "name": "Aldi UK",
+  "slug": "aldi-uk",
+  "logo_url": "https://www.google.com/s2/favicons?domain=aldi.co.uk&sz=128",
+  "website_url": "https://www.aldi.co.uk/specialbuys",
+  "country": "GB",
+  "categories": [
+    "groceries-essentials"
+  ],
+  "short_bio": "Verified GB brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

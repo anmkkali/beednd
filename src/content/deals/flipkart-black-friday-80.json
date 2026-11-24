@@ -1,0 +1,42 @@
+{
+  "id": "flipkart-black-friday-80",
+  "slug": "flipkart-black-friday-80",
+  "title": "Flipkart: Black Friday Deals Up to 80% Off",
+  "short_description": "Up to 80% off consumer electronics, smartphones, appliances, and smart TVs.",
+  "brand_id": "flipkart",
+  "country": "IN",
+  "cities": [],
+  "areas": [],
+  "branch_info": [],
+  "category": "tech-electronics",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "UP TO 80% OFF",
+  "badge_text": "Up to 80% Off",
+  "numeric_discount_percent": 80,
+  "terms_and_conditions": [
+    "Verified from official brand sale announcement or seasonal campaign.",
+    "Dates, stock, and category exclusions are set by the brand.",
+    "Confirm final discount at checkout on the official store."
+  ],
+  "start_date": "2026-11-21T00:00:00Z",
+  "end_date": "2026-12-01T23:59:00Z",
+  "source_url": "https://www.flipkart.com/offers-store",
+  "affiliate_url": "https://www.flipkart.com/offers-store",
+  "last_verified_at": "2026-11-25T00:00:00Z",
+  "status": "active",
+  "is_trending": true,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=flipkart.com&sz=128",
+    "alt": "Flipkart: Black Friday Deals Up to 80% Off"
+  },
+  "tags": [
+    "all-items"
+  ]
+}

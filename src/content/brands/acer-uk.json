@@ -1,0 +1,16 @@
+{
+  "id": "acer-uk",
+  "name": "Acer UK",
+  "slug": "acer-uk",
+  "logo_url": "https://www.google.com/s2/favicons?domain=store.acer.com&sz=128",
+  "website_url": "https://store.acer.com/en-gb/",
+  "country": "GB",
+  "categories": [
+    "tech-electronics"
+  ],
+  "short_bio": "Verified GB brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

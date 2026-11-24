@@ -1,0 +1,16 @@
+{
+  "id": "easyjet",
+  "name": "easyJet",
+  "slug": "easyjet",
+  "logo_url": "https://www.google.com/s2/favicons?domain=easyjet.com&sz=128",
+  "website_url": "https://www.easyjet.com/en/cheap-flights",
+  "country": "GB",
+  "categories": [
+    "travel-lifestyle"
+  ],
+  "short_bio": "Verified GB brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

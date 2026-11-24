@@ -1,0 +1,16 @@
+{
+  "id": "british-airways",
+  "name": "British Airways",
+  "slug": "british-airways",
+  "logo_url": "https://www.google.com/s2/favicons?domain=britishairways.com&sz=128",
+  "website_url": "https://www.britishairways.com/content/offers/sale",
+  "country": "GB",
+  "categories": [
+    "travel-lifestyle"
+  ],
+  "short_bio": "Verified GB brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

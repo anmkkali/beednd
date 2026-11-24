@@ -85,8 +85,12 @@ const fontsUrl =
             'America/Mexico_City': 'MX', 'America/Sao_Paulo': 'BR', 'America/Argentina/Buenos_Aires': 'AR',
             'America/Bogota': 'CO', 'America/Lima': 'PE', 'America/Santiago': 'CL', 'America/Caracas': 'VE',
           };
-          const US = /^(America\/(New_York|Chicago|Denver|Los_Angeles|Phoenix|Detroit|Anchorage|Boise|Indiana|Kentucky|Juneau)|Pacific\/Honolulu|US\/)/;
+          const US = /^(America\/(New_York|Chicago|Denver|Los_Angeles|Phoenix|Detroit|Anchorage|Boise|Indiana|Kentucky|North_Dakota|Juneau|Nome|Sitka|Yakutat|Adak|Metlakatla|Menominee|Puerto_Rico)|Pacific\/Honolulu|US\/)/;
           const detect = () => {
+            try {
+              const ipCached = sessionStorage.getItem('dealssite_ip_country');
+              if (ipCached && /^[A-Z]{2}$/.test(ipCached)) return ipCached;
+            } catch {}
             const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
             if (TZ[tz]) return TZ[tz];
             if (US.test(tz)) return 'US';
@@ -164,6 +168,7 @@ const fontsUrl =
 
     <script>
       import { countries, countryByCode } from '../data/countries';
+      import { COUNTRY_DEFAULT_LANG, SUPPORTED_LANGUAGES, UI_TRANSLATIONS, type LangCode } from '../data/i18n';
 
       const root = document.documentElement;
       const visible = (el: Element) => getComputedStyle(el).display !== 'none';
@@ -242,18 +247,198 @@ const fontsUrl =
         selects.forEach((select) => (select.value = automatic ? 'AUTO' : market));
         renderCities(market);
         updateBell();
+        if (!localStorage.getItem('dealssite_lang')) {
+          const autoLang = COUNTRY_DEFAULT_LANG[market] || 'en';
+          applyLanguage(autoLang, true);
+        }
         window.dispatchEvent(new CustomEvent('dealssite:market-updated', { detail: { market } }));
       }
 
+      // Language switching & full-site translation
+      const langSelects = Array.from(document.querySelectorAll<HTMLSelectElement>('[data-lang-select]'));
+      const langLabels = Array.from(document.querySelectorAll<HTMLElement>('[data-lang-label]'));
+      const originalTexts = new WeakMap<Element, string>();
+
+      function getTrCache(lang: string): Record<string, string> {
+        try {
+          return JSON.parse(localStorage.getItem(`dealssite_tr_${lang}`) || '{}');
+        } catch {
+          return {};
+        }
+      }
+
+      function setTrCache(lang: string, cache: Record<string, string>) {
+        try {
+          const keys = Object.keys(cache);
+          if (keys.length > 400) {
+            keys.slice(0, keys.length - 400).forEach((k) => delete cache[k]);
+          }
+          localStorage.setItem(`dealssite_tr_${lang}`, JSON.stringify(cache));
+        } catch {}
+      }
+
+      async function translateDynamic(lang: LangCode) {
+        const targets = Array.from(
+          document.querySelectorAll<HTMLElement>(
+            'h1, h2, h3 a, [data-page-item] p, .sb-cat summary .sb-label, #hero-market-caption, [data-i18n-dyn]'
+          )
+        ).filter((el) => {
+          if (el.hasAttribute('data-i18n') || el.closest('[data-i18n]')) return false;
+          const txt = (originalTexts.get(el) ?? el.textContent ?? '').trim();
+          return txt.length >= 2 && txt.length <= 260;
+        });
+
+        targets.forEach((el) => {
+          if (!originalTexts.has(el)) originalTexts.set(el, (el.textContent || '').trim());
+        });
+
+        if (lang === 'en') {
+          targets.forEach((el) => {
+            const orig = originalTexts.get(el);
+            if (orig && el.textContent !== orig) el.textContent = orig;
+          });
+          return;
+        }
+
+        const cache = getTrCache(lang);
+        const missing = new Set<string>();
+        targets.forEach((el) => {
+          const orig = originalTexts.get(el) || '';
+          if (cache[orig]) el.textContent = cache[orig];
+          else if (orig) missing.add(orig);
+        });
+
+        const toFetch = Array.from(missing).slice(0, 45);
+        if (!toFetch.length) return;
+
+        // Translate in small batches via Google Translate public endpoint & cache locally
+        for (let i = 0; i < toFetch.length; i += 8) {
+          const batch = toFetch.slice(i, i + 8);
+          await Promise.all(
+            batch.map(async (text) => {
+              try {
+                const res = await fetch(
+                  `https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=${encodeURIComponent(lang)}&dt=t&q=${encodeURIComponent(text)}`
+                );
+                if (!res.ok) return;
+                const data = await res.json();
+                const translated = Array.isArray(data?.[0]) ? data[0].map((s: any) => s?.[0] || '').join('') : '';
+                if (translated) cache[text] = translated;
+              } catch {}
+            })
+          );
+          if (root.dataset.activeLang !== lang) return;
+          targets.forEach((el) => {
+            const orig = originalTexts.get(el) || '';
+            if (cache[orig]) el.textContent = cache[orig];
+          });
+        }
+        setTrCache(lang, cache);
+      }
+
+      function applyLanguage(lang: LangCode, automatic: boolean) {
+        const meta = SUPPORTED_LANGUAGES.find((l) => l.code === lang) || SUPPORTED_LANGUAGES[0];
+        root.lang = meta.code;
+        root.dir = meta.rtl ? 'rtl' : 'ltr';
+        root.dataset.activeLang = meta.code;
+
+        const dict = UI_TRANSLATIONS[meta.code] || UI_TRANSLATIONS.en;
+        document.querySelectorAll<HTMLElement>('[data-i18n]').forEach((el) => {
+          const key = el.dataset.i18n || '';
+          if (dict[key]) el.textContent = dict[key];
+        });
+
+        langLabels.forEach((el) => (el.textContent = meta.native));
+        langSelects.forEach((sel) => (sel.value = automatic ? 'AUTO' : meta.code));
+        translateDynamic(meta.code);
+      }
+
+      const savedLang = localStorage.getItem('dealssite_lang') as LangCode | null;
       const detect = (window as any).__detectMarket as (() => string) | undefined;
       const saved = localStorage.getItem('dealssite_market');
       const manual = saved && saved !== 'AUTO' && /^([A-Z]{2}|ALL)$/.test(saved);
-      applyMarket(manual ? saved! : detect ? detect() : 'ALL', !manual);
+      const initialMarket = manual ? saved! : detect ? detect() : 'ALL';
+      applyMarket(initialMarket, !manual);
+      if (savedLang && SUPPORTED_LANGUAGES.some((l) => l.code === savedLang)) {
+        applyLanguage(savedLang, false);
+      } else {
+        applyLanguage(COUNTRY_DEFAULT_LANG[initialMarket] || 'en', true);
+      }
+
+      langSelects.forEach((sel) =>
+        sel.addEventListener('change', () => {
+          if (sel.value === 'AUTO') {
+            localStorage.removeItem('dealssite_lang');
+            const m = root.dataset.activeMarket || 'ALL';
+            applyLanguage(COUNTRY_DEFAULT_LANG[m] || 'en', true);
+          } else {
+            const chosen = sel.value as LangCode;
+            localStorage.setItem('dealssite_lang', chosen);
+            applyLanguage(chosen, false);
+          }
+        })
+      );
+
+      // IP-based country detection (fixes users abroad seeing wrong timezone/country)
+      if (!manual) {
+        (async () => {
+          try {
+            let ipCountry = sessionStorage.getItem('dealssite_ip_country') || '';
+            if (!ipCountry) {
+              try {
+                const r = await fetch('/api/geo');
+                if (r.ok) {
+                  const j = await r.json();
+                  if (j?.country && /^[A-Z]{2}$/.test(j.country)) ipCountry = j.country;
+                }
+              } catch {}
+            }
+            if (!ipCountry) {
+              try {
+                const r2 = await fetch('https://api.country.is/');
+                if (r2.ok) {
+                  const j2 = await r2.json();
+                  if (j2?.country && /^[A-Z]{2}$/.test(j2.country)) ipCountry = j2.country;
+                }
+              } catch {}
+            }
+            if (ipCountry && /^[A-Z]{2}$/.test(ipCountry)) {
+              sessionStorage.setItem('dealssite_ip_country', ipCountry);
+              if (root.dataset.marketMode === 'auto' && root.dataset.activeMarket !== ipCountry) {
+                applyMarket(ipCountry, true);
+              }
+            }
+          } catch {}
+        })();
+      }
+
+      // User behavior interest tracking (used to personalize homepage All offers feed)
+      function recordInterest(cat: string, weight = 2) {
+        if (!cat) return;
+        try {
+          const map = JSON.parse(localStorage.getItem('dealssite_interest') || '{}');
+          map[cat] = (Number(map[cat]) || 0) + weight;
+          localStorage.setItem('dealssite_interest', JSON.stringify(map));
+        } catch {}
+      }
+
+      const catPathMatch = window.location.pathname.match(/^\/categories\/([^/]+)/);
+      if (catPathMatch?.[1]) recordInterest(catPathMatch[1], 3);
+
+      document.addEventListener('click', (e) => {
+        const target = e.target as HTMLElement | null;
+        if (!target) return;
+        const dealEl = target.closest<HTMLElement>('[data-category]');
+        if (dealEl?.dataset.category && target.closest('a, button')) {
+          recordInterest(dealEl.dataset.category, 2);
+        }
+      });
 
       selects.forEach((select) =>
         select.addEventListener('change', () => {
           if (select.value === 'AUTO') {
             localStorage.removeItem('dealssite_market');
+            sessionStorage.removeItem('dealssite_ip_country');
             applyMarket(detect ? detect() : 'ALL', true);
           } else {
             localStorage.setItem('dealssite_market', select.value);

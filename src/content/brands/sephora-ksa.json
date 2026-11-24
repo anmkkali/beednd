@@ -1,0 +1,16 @@
+{
+  "id": "sephora-ksa",
+  "name": "Sephora KSA",
+  "slug": "sephora-ksa",
+  "logo_url": "https://www.google.com/s2/favicons?domain=sephora.sa&sz=128",
+  "website_url": "https://www.sephora.sa/en/",
+  "country": "SA",
+  "categories": [
+    "beauty-wellness"
+  ],
+  "short_bio": "Verified SA brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

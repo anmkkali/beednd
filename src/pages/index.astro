@@ -51,22 +51,22 @@ const structuredData = {
 >
   <section class="mb-8 border-b editorial-rule pb-8">
     <div class="mb-3 flex flex-wrap items-center justify-between gap-2 text-[13px] text-ink-muted">
-      <span class="editorial-pill px-3 py-0.5 font-medium text-ink text-[12.5px]">Updated daily</span>
+      <span class="editorial-pill px-3 py-0.5 font-medium text-ink text-[12.5px]" data-i18n="hero_badge">Updated daily</span>
       <span id="hero-market-caption" class="font-medium text-[13px]">Offers for your location</span>
     </div>
     <!-- Two-column layout: text left, right reserved for future graphic -->
     <div class="flex flex-col gap-6 lg:flex-row lg:items-center lg:gap-10">
       <div class="lg:max-w-[55%]">
-        <h1 class="text-[32px] font-serif leading-[1.08] text-ink sm:text-[46px] lg:text-[58px]">Everyday discounts, curated simply.</h1>
-        <p class="mt-3 max-w-lg text-[14px] leading-relaxed text-ink-muted sm:mt-4 sm:text-[15.5px]">
+        <h1 class="text-[32px] font-serif leading-[1.08] text-ink sm:text-[46px] lg:text-[58px]" data-i18n="hero_title">Everyday discounts, curated simply.</h1>
+        <p class="mt-3 max-w-lg text-[14px] leading-relaxed text-ink-muted sm:mt-4 sm:text-[15.5px]" data-i18n="hero_subtitle">
           Brands and offers adjust to the country you open the site from. Browse by brand, category or city.
         </p>
         <div class="mt-4 flex flex-wrap items-center gap-2.5 sm:mt-5 sm:gap-3">
           <a href="/brands" class="btn-primary inline-flex items-center gap-2 px-5 py-2.5 text-[13.5px] font-semibold">
-            Browse Brands
+            <span data-i18n="browse_brands">Browse Brands</span>
             <Icon name="arrow" class="h-4 w-4" />
           </a>
-          <a href="/blog" class="btn-outline inline-flex items-center gap-2 px-5 py-2.5 text-[13.5px] font-semibold">Read Blog</a>
+          <a href="/blog" class="btn-outline inline-flex items-center gap-2 px-5 py-2.5 text-[13.5px] font-semibold" data-i18n="read_blog">Read Blog</a>
         </div>
       </div>
       <!-- Right side: reserved for future graphic / illustration -->
@@ -82,8 +82,8 @@ const structuredData = {
   <section class="mb-4" aria-labelledby="brands-heading">
     <div class="mb-5 flex items-end justify-between gap-4 border-b editorial-rule pb-3">
       <div>
-        <p class="text-[12px] font-semibold uppercase tracking-[0.16em] text-ink-muted">Brands with offers</p>
-        <h2 id="brands-heading" class="mt-1 text-3xl text-ink sm:text-4xl">Shop by brand</h2>
+        <p class="text-[12px] font-semibold uppercase tracking-[0.16em] text-ink-muted" data-i18n="brands_with_offers">Brands with offers</p>
+        <h2 id="brands-heading" class="mt-1 text-3xl text-ink sm:text-4xl" data-i18n="shop_by_brand">Shop by brand</h2>
       </div>
       <div class="flex items-center gap-2">
         <button type="button" data-brand-prev class="icon-btn border editorial-rule inline-flex" aria-label="Previous brands" title="Previous brands">
@@ -93,7 +93,7 @@ const structuredData = {
           <Icon name="arrow" class="h-4 w-4" />
         </button>
         <a href="/brands" class="inline-flex items-center gap-1.5 whitespace-nowrap text-[14px] sm:ml-1 font-semibold text-ink hover:underline">
-          All brands
+          <span data-i18n="all_brands">All brands</span>
           <Icon name="arrow" class="h-4 w-4" />
         </a>
       </div>
@@ -121,8 +121,8 @@ const structuredData = {
   <section aria-labelledby="deals-heading">
     <div class="mb-3 flex flex-col justify-between gap-4 lg:flex-row lg:items-end">
       <div>
-        <p class="text-[12px] font-semibold uppercase tracking-[0.16em] text-ink-muted">Verified markdowns</p>
-        <h2 id="deals-heading" class="mt-1 text-4xl text-ink">Active offers</h2>
+        <p class="text-[12px] font-semibold uppercase tracking-[0.16em] text-ink-muted" data-i18n="verified_markdowns">Verified markdowns</p>
+        <h2 id="deals-heading" class="mt-1 text-4xl text-ink" data-i18n="active_offers">Active offers</h2>
       </div>
       <div class="flex gap-1.5 overflow-x-auto pb-1 sm:flex-wrap sm:overflow-visible" id="deal-type-filters">
         {filterPills.map((filter) => (
@@ -148,6 +148,7 @@ const structuredData = {
           data-market={deal.data.country}
           data-deal-type={deal.data.deal_type}
           data-kind={dealKind(deal.data)}
+          data-category={deal.data.category}
           data-trending={deal.data.is_trending ? 'true' : 'false'}
           data-has-bank={deal.data.bank_details ? 'true' : 'false'}
         >
@@ -186,7 +187,42 @@ const structuredData = {
       return wrapper.dataset.dealType === type;
     }
 
+    const feed = document.getElementById('deal-feed');
+
+    function personalizeFeed() {
+      if (!feed || current !== 'all') return;
+      try {
+        const interest = JSON.parse(localStorage.getItem('dealssite_interest') || '{}') as Record<string, number>;
+        const sortedCats = Object.entries(interest).sort((a, b) => b[1] - a[1]);
+        const topCat = sortedCats[0]?.[0];
+        const topScore = sortedCats[0]?.[1] || 0;
+        if (!topCat || topScore < 2) return;
+
+        const preferred: HTMLElement[] = [];
+        const others: HTMLElement[] = [];
+        wrappers.forEach((w) => {
+          if (w.dataset.category === topCat) preferred.push(w);
+          else others.push(w);
+        });
+        if (!preferred.length || !others.length) return;
+
+        // Interleave: 3 preferred category deals, then 1 other category deal so user mostly sees what they browse
+        const frag = document.createDocumentFragment();
+        let pIdx = 0;
+        let oIdx = 0;
+        while (pIdx < preferred.length || oIdx < others.length) {
+          for (let k = 0; k < 3 && pIdx < preferred.length; k++) frag.appendChild(preferred[pIdx++]);
+          if (oIdx < others.length) frag.appendChild(others[oIdx++]);
+          if (pIdx >= preferred.length) {
+            while (oIdx < others.length) frag.appendChild(others[oIdx++]);
+          }
+        }
+        feed.appendChild(frag);
+      } catch {}
+    }
+
     function refresh() {
+      personalizeFeed();
       wrappers.forEach((wrapper) => wrapper.classList.toggle('hidden', !matches(wrapper, current)));
       buttons.forEach((button) => {
         const active = button.dataset.typeFilter === current;

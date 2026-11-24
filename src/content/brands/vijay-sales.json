@@ -1,0 +1,16 @@
+{
+  "id": "vijay-sales",
+  "name": "Vijay Sales",
+  "slug": "vijay-sales",
+  "logo_url": "https://www.google.com/s2/favicons?domain=vijaysales.com&sz=128",
+  "website_url": "https://www.vijaysales.com/",
+  "country": "IN",
+  "categories": [
+    "tech-electronics"
+  ],
+  "short_bio": "Verified IN brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

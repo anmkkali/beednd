@@ -1,0 +1,16 @@
+{
+  "id": "target",
+  "name": "Target",
+  "slug": "target",
+  "logo_url": "https://www.google.com/s2/favicons?domain=target.com&sz=128",
+  "website_url": "https://www.target.com/c/top-deals/-/N-4xw74",
+  "country": "US",
+  "categories": [
+    "groceries-essentials"
+  ],
+  "short_bio": "Verified US brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

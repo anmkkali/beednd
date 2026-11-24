@@ -1,0 +1,16 @@
+{
+  "id": "sainsbury-s",
+  "name": "Sainsbury's",
+  "slug": "sainsbury-s",
+  "logo_url": "https://www.google.com/s2/favicons?domain=sainsburys.co.uk&sz=128",
+  "website_url": "https://www.sainsburys.co.uk/gol-ui/offers",
+  "country": "GB",
+  "categories": [
+    "groceries-essentials"
+  ],
+  "short_bio": "Verified GB brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

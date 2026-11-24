@@ -1,0 +1,16 @@
+{
+  "id": "lush-uk",
+  "name": "Lush UK",
+  "slug": "lush-uk",
+  "logo_url": "https://www.google.com/s2/favicons?domain=lush.com&sz=128",
+  "website_url": "https://www.lush.com/uk/en",
+  "country": "GB",
+  "categories": [
+    "beauty-wellness"
+  ],
+  "short_bio": "Verified GB brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

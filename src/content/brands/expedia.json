@@ -1,0 +1,16 @@
+{
+  "id": "expedia",
+  "name": "Expedia",
+  "slug": "expedia",
+  "logo_url": "https://www.google.com/s2/favicons?domain=expedia.com&sz=128",
+  "website_url": "https://www.expedia.com/deals",
+  "country": "US",
+  "categories": [
+    "travel-lifestyle"
+  ],
+  "short_bio": "Verified US brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

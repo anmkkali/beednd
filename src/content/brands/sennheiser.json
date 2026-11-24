@@ -1,0 +1,16 @@
+{
+  "id": "sennheiser",
+  "name": "Sennheiser",
+  "slug": "sennheiser",
+  "logo_url": "https://www.google.com/s2/favicons?domain=us.sennheiser-hearing.com&sz=128",
+  "website_url": "https://us.sennheiser-hearing.com/collections/offers-collection",
+  "country": "US",
+  "categories": [
+    "tech-electronics"
+  ],
+  "short_bio": "Verified US brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

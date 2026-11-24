@@ -1,0 +1,16 @@
+{
+  "id": "three-uk",
+  "name": "Three UK",
+  "slug": "three-uk",
+  "logo_url": "https://www.google.com/s2/favicons?domain=three.co.uk&sz=128",
+  "website_url": "https://www.three.co.uk/offers/latest-offers",
+  "country": "GB",
+  "categories": [
+    "tech-electronics"
+  ],
+  "short_bio": "Verified GB brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

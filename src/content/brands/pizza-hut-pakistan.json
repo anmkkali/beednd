@@ -1,0 +1,16 @@
+{
+  "id": "pizza-hut-pakistan",
+  "name": "Pizza Hut Pakistan",
+  "slug": "pizza-hut-pakistan",
+  "logo_url": "https://www.google.com/s2/favicons?domain=pizzahutpakistan.com&sz=128",
+  "website_url": "https://www.pizzahutpakistan.com/en",
+  "country": "PK",
+  "categories": [
+    "food-dining"
+  ],
+  "short_bio": "Verified PK brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

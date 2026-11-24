@@ -1,0 +1,16 @@
+{
+  "id": "prezzo",
+  "name": "Prezzo",
+  "slug": "prezzo",
+  "logo_url": "https://www.google.com/s2/favicons?domain=prezzo.co.uk&sz=128",
+  "website_url": "https://www.prezzo.co.uk/about/offers/",
+  "country": "GB",
+  "categories": [
+    "food-dining"
+  ],
+  "short_bio": "Verified GB brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

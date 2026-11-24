@@ -1,0 +1,16 @@
+{
+  "id": "applebee-s",
+  "name": "Applebee's",
+  "slug": "applebee-s",
+  "logo_url": "https://www.google.com/s2/favicons?domain=applebees.com&sz=128",
+  "website_url": "https://www.applebees.com/en/specials",
+  "country": "US",
+  "categories": [
+    "food-dining"
+  ],
+  "short_bio": "Verified US brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

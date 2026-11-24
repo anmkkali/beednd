@@ -1,0 +1,16 @@
+{
+  "id": "zara-india",
+  "name": "Zara India",
+  "slug": "zara-india",
+  "logo_url": "https://www.google.com/s2/favicons?domain=zara.com&sz=128",
+  "website_url": "https://www.zara.com/in/en/woman-special-prices-l1314.html",
+  "country": "IN",
+  "categories": [
+    "clothing-fashion"
+  ],
+  "short_bio": "Verified IN brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

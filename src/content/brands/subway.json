@@ -1,0 +1,16 @@
+{
+  "id": "subway",
+  "name": "Subway",
+  "slug": "subway",
+  "logo_url": "https://www.google.com/s2/favicons?domain=subway.com&sz=128",
+  "website_url": "https://www.subway.com/",
+  "country": "US",
+  "categories": [
+    "food-dining"
+  ],
+  "short_bio": "Verified US brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

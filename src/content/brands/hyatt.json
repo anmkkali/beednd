@@ -1,0 +1,16 @@
+{
+  "id": "hyatt",
+  "name": "Hyatt",
+  "slug": "hyatt",
+  "logo_url": "https://www.google.com/s2/favicons?domain=world.hyatt.com&sz=128",
+  "website_url": "https://world.hyatt.com/content/gp/en/offers.html",
+  "country": "US",
+  "categories": [
+    "travel-lifestyle"
+  ],
+  "short_bio": "Verified US brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

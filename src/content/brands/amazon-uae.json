@@ -1,0 +1,16 @@
+{
+  "id": "amazon-uae",
+  "name": "Amazon UAE",
+  "slug": "amazon-uae",
+  "logo_url": "https://www.google.com/s2/favicons?domain=amazon.ae&sz=128",
+  "website_url": "https://www.amazon.ae/events/whitefriday",
+  "country": "AE",
+  "categories": [
+    "tech-electronics"
+  ],
+  "short_bio": "Verified AE brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

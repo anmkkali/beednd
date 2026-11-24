@@ -2,6 +2,7 @@
 import Icon from './Icon.astro';
 import Logo from './Logo.astro';
 import { categories } from '../../data/taxonomy';
+import { SUPPORTED_LANGUAGES } from '../../data/i18n';
 import { getCollection } from 'astro:content';
 import { dealKind } from '../../lib/deals';
 
@@ -30,14 +31,14 @@ categories.forEach((cat) => {
 });
 
 const quickLinks = [
-  { label: 'All offers', href: '/', icon: 'grid', key: 'all' },
-  { label: 'Trending', href: '/?type=trending', icon: 'trending', key: 'trending' },
-  { label: 'Browse Brands', href: '/brands', icon: 'store', key: 'brands' },
-  { label: 'Free trials', href: '/?type=trial', icon: 'sparkle', key: 'trial' },
-  { label: 'Promo codes', href: '/?type=promo-code', icon: 'tag', key: 'promo-code' },
-  { label: 'Vouchers', href: '/?type=voucher', icon: 'tag', key: 'voucher' },
-  { label: 'Store sales', href: '/?type=store-sale', icon: 'store', key: 'store-sale' },
-  { label: 'Bank deals', href: '/banks', icon: 'card', key: 'bank-deals' },
+  { label: 'All offers', href: '/', icon: 'grid', key: 'all', i18n: 'all_offers' },
+  { label: 'Trending', href: '/?type=trending', icon: 'trending', key: 'trending', i18n: 'trending' },
+  { label: 'Browse Brands', href: '/brands', icon: 'store', key: 'brands', i18n: 'browse_brands' },
+  { label: 'Free trials', href: '/?type=trial', icon: 'sparkle', key: 'trial', i18n: 'free_trials' },
+  { label: 'Promo codes', href: '/?type=promo-code', icon: 'tag', key: 'promo-code', i18n: 'promo_codes' },
+  { label: 'Vouchers', href: '/?type=voucher', icon: 'tag', key: 'voucher', i18n: 'vouchers' },
+  { label: 'Store sales', href: '/?type=store-sale', icon: 'store', key: 'store-sale', i18n: 'store_sales' },
+  { label: 'Bank deals', href: '/banks', icon: 'card', key: 'bank-deals', i18n: 'bank_deals' },
 ];
 
 const filterHref = (categoryId: string, groupId: string, filter: { sub?: string; kind?: string }) => {
@@ -71,7 +72,7 @@ const filterHref = (categoryId: string, groupId: string, filter: { sub?: string;
       {quickLinks.map((link) => (
         <a href={link.href} data-sb-link class="sb-link group" title={link.label}>
           <Icon name={link.icon} class="h-[18px] w-[18px] shrink-0" />
-          <span class="sb-label truncate">{link.label}</span>
+          <span class="sb-label truncate" data-i18n={link.i18n}>{link.label}</span>
           <span class="sb-badge ml-auto rounded-full bg-base-900 border editorial-rule px-2 py-0.5 text-[11px] font-mono font-medium text-ink-muted group-hover:text-ink">
             {counts[link.key] ?? 0}
           </span>
@@ -79,7 +80,7 @@ const filterHref = (categoryId: string, groupId: string, filter: { sub?: string;
       ))}
     </nav>
 
-    <p class="sb-heading mb-2 mt-7 px-3 text-[12px] font-semibold uppercase tracking-[0.16em] text-ink-muted">Categories</p>
+    <p class="sb-heading mb-2 mt-7 px-3 text-[12px] font-semibold uppercase tracking-[0.16em] text-ink-muted" data-i18n="categories">Categories</p>
 
     <nav class="space-y-0.5" aria-label="Categories">
       {categories.map((category) => (
@@ -119,19 +120,39 @@ const filterHref = (categoryId: string, groupId: string, filter: { sub?: string;
     </nav>
 
     <div class="mt-6 border-t editorial-rule pt-4">
-      <button type="button" data-notify-open class="sb-link" title="Notify me">
+      <!-- Language switcher (web & mobile) -->
+      <label class="sb-link relative cursor-pointer" title="Language">
+        <Icon name="globe" class="h-[18px] w-[18px] shrink-0" />
+        <span class="sb-label truncate" data-i18n="language">Language</span>
+        <span class="sb-label ml-auto flex items-center gap-1 text-[11.5px] font-semibold text-ink">
+          <span data-lang-label>English</span>
+          <Icon name="chevron" class="h-3 w-3 text-ink-muted" />
+        </span>
+        <select
+          data-lang-select
+          class="absolute inset-0 h-full w-full cursor-pointer opacity-0"
+          aria-label="Choose language"
+        >
+          <option value="AUTO">Auto (Country)</option>
+          {SUPPORTED_LANGUAGES.map((lang) => (
+            <option value={lang.code}>{lang.native} ({lang.label})</option>
+          ))}
+        </select>
+      </label>
+
+      <button type="button" data-notify-open class="sb-link mt-0.5" title="Notify me">
         <Icon name="bell" class="h-[18px] w-[18px] shrink-0" />
-        <span class="sb-label truncate">Notify me</span>
+        <span class="sb-label truncate" data-i18n="notify_me">Notify me</span>
       </button>
       <button type="button" data-theme-toggle class="sb-link mt-0.5" title="Switch light or dark mode">
         <span class="theme-icon-moon inline-flex"><Icon name="moon" class="h-[18px] w-[18px] shrink-0" /></span>
         <span class="theme-icon-sun"><Icon name="sun" class="h-[18px] w-[18px] shrink-0" /></span>
-        <span class="sb-label theme-text-dark truncate">Dark mode</span>
-        <span class="sb-label theme-text-light truncate">Light mode</span>
+        <span class="sb-label theme-text-dark truncate" data-i18n="dark_mode">Dark mode</span>
+        <span class="sb-label theme-text-light truncate" data-i18n="light_mode">Light mode</span>
       </button>
       <button type="button" data-submit-open class="sb-link mt-0.5" title="Submit deal">
         <Icon name="plus" class="h-[18px] w-[18px] shrink-0" />
-        <span class="sb-label truncate">Submit deal</span>
+        <span class="sb-label truncate" data-i18n="submit_deal">Submit deal</span>
       </button>
     </div>
   </div>
@@ -152,10 +173,8 @@ const filterHref = (categoryId: string, groupId: string, filter: { sub?: string;
     if (persist) localStorage.setItem('dealssite_sidebar', collapsed ? 'collapsed' : 'open');
   }
 
-  const header = document.querySelector('header');
   function openDrawer() {
-    // The drawer starts right under the header, so the cross button stays visible and clickable.
-    if (sidebar && header) sidebar.style.top = `${Math.round(header.getBoundingClientRect().bottom)}px`;
+    if (sidebar) sidebar.style.top = '0px';
     root.dataset.sidebarOpen = '';
   }
   function closeDrawer() {

@@ -1,0 +1,16 @@
+{
+  "id": "uniqlo-uk",
+  "name": "UNIQLO UK",
+  "slug": "uniqlo-uk",
+  "logo_url": "https://www.google.com/s2/favicons?domain=uniqlo.com&sz=128",
+  "website_url": "https://www.uniqlo.com/uk/en/",
+  "country": "GB",
+  "categories": [
+    "clothing-fashion"
+  ],
+  "short_bio": "Verified GB brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

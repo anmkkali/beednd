@@ -1,0 +1,16 @@
+{
+  "id": "zara-us",
+  "name": "Zara US",
+  "slug": "zara-us",
+  "logo_url": "https://www.google.com/s2/favicons?domain=zara.com&sz=128",
+  "website_url": "https://www.zara.com/us/en/woman-mkt1000.html",
+  "country": "US",
+  "categories": [
+    "clothing-fashion"
+  ],
+  "short_bio": "Verified US brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

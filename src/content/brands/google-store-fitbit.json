@@ -1,0 +1,16 @@
+{
+  "id": "google-store-fitbit",
+  "name": "Google Store / Fitbit",
+  "slug": "google-store-fitbit",
+  "logo_url": "https://www.google.com/s2/favicons?domain=store.google.com&sz=128",
+  "website_url": "https://store.google.com/us/collection/offers?hl=en-US",
+  "country": "US",
+  "categories": [
+    "tech-electronics"
+  ],
+  "short_bio": "Verified US brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

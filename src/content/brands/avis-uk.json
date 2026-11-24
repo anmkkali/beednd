@@ -1,0 +1,16 @@
+{
+  "id": "avis-uk",
+  "name": "Avis UK",
+  "slug": "avis-uk",
+  "logo_url": "https://www.google.com/s2/favicons?domain=avis.co.uk&sz=128",
+  "website_url": "https://www.avis.co.uk/car-hire-offers",
+  "country": "GB",
+  "categories": [
+    "travel-lifestyle"
+  ],
+  "short_bio": "Verified GB brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

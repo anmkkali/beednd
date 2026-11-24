@@ -1,0 +1,16 @@
+{
+  "id": "pet-drugs-online",
+  "name": "Pet Drugs Online",
+  "slug": "pet-drugs-online",
+  "logo_url": "https://www.google.com/s2/favicons?domain=petdrugsonline.co.uk&sz=128",
+  "website_url": "https://www.petdrugsonline.co.uk/offers-and-multibuys",
+  "country": "GB",
+  "categories": [
+    "pets"
+  ],
+  "short_bio": "Verified GB brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

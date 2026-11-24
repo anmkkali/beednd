@@ -1,0 +1,16 @@
+{
+  "id": "dyson",
+  "name": "Dyson",
+  "slug": "dyson",
+  "logo_url": "https://www.google.com/s2/favicons?domain=dyson.com&sz=128",
+  "website_url": "https://www.dyson.com/deals",
+  "country": "US",
+  "categories": [
+    "tech-electronics"
+  ],
+  "short_bio": "Verified US brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

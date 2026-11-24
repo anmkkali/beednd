@@ -1,0 +1,16 @@
+{
+  "id": "dyson-uk",
+  "name": "Dyson UK",
+  "slug": "dyson-uk",
+  "logo_url": "https://www.google.com/s2/favicons?domain=dyson.co.uk&sz=128",
+  "website_url": "https://www.dyson.co.uk/en",
+  "country": "GB",
+  "categories": [
+    "tech-electronics"
+  ],
+  "short_bio": "Verified GB brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

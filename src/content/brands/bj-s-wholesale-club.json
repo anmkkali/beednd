@@ -1,0 +1,16 @@
+{
+  "id": "bj-s-wholesale-club",
+  "name": "BJ's Wholesale Club",
+  "slug": "bj-s-wholesale-club",
+  "logo_url": "https://www.google.com/s2/favicons?domain=bjs.com&sz=128",
+  "website_url": "https://www.bjs.com/deals/",
+  "country": "US",
+  "categories": [
+    "groceries-essentials"
+  ],
+  "short_bio": "Verified US brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "sky",
+  "name": "Sky",
+  "slug": "sky",
+  "logo_url": "https://www.google.com/s2/favicons?domain=sky.com&sz=128",
+  "website_url": "https://www.sky.com/deals",
+  "country": "GB",
+  "categories": [
+    "tech-electronics"
+  ],
+  "short_bio": "Verified GB brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

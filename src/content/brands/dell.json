@@ -1,0 +1,16 @@
+{
+  "id": "dell",
+  "name": "Dell",
+  "slug": "dell",
+  "logo_url": "https://www.google.com/s2/favicons?domain=dell.com&sz=128",
+  "website_url": "https://www.dell.com/en-us/shop/deals/dc",
+  "country": "US",
+  "categories": [
+    "tech-electronics"
+  ],
+  "short_bio": "Verified US brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

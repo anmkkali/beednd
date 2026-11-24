@@ -1,0 +1,16 @@
+{
+  "id": "hotels-com-uk",
+  "name": "Hotels.com UK",
+  "slug": "hotels-com-uk",
+  "logo_url": "https://www.google.com/s2/favicons?domain=uk.hotels.com&sz=128",
+  "website_url": "https://uk.hotels.com/",
+  "country": "GB",
+  "categories": [
+    "travel-lifestyle"
+  ],
+  "short_bio": "Verified GB brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

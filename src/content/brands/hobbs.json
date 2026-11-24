@@ -1,0 +1,16 @@
+{
+  "id": "hobbs",
+  "name": "Hobbs",
+  "slug": "hobbs",
+  "logo_url": "https://www.google.com/s2/favicons?domain=hobbs.com&sz=128",
+  "website_url": "https://www.hobbs.com/sale/",
+  "country": "GB",
+  "categories": [
+    "clothing-fashion"
+  ],
+  "short_bio": "Verified GB brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

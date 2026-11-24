@@ -1,0 +1,16 @@
+{
+  "id": "mcdonald-s-pakistan",
+  "name": "McDonald's Pakistan",
+  "slug": "mcdonald-s-pakistan",
+  "logo_url": "https://www.google.com/s2/favicons?domain=mcdonalds.com.pk&sz=128",
+  "website_url": "https://www.mcdonalds.com.pk/",
+  "country": "PK",
+  "categories": [
+    "food-dining"
+  ],
+  "short_bio": "Verified PK brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

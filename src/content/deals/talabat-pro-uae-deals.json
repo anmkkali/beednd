@@ -1,0 +1,45 @@
+{
+  "id": "talabat-pro-uae-deals",
+  "slug": "talabat-pro-uae-deals",
+  "title": "Talabat UAE: Daily Restaurant Deals & Talabat Mart",
+  "short_description": "Free delivery with Talabat Pro and daily restaurant & grocery promo codes.",
+  "brand_id": "talabat",
+  "country": "AE",
+  "cities": [
+    "Dubai",
+    "Abu Dhabi"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "food-dining",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "UP TO 50% OFF",
+  "badge_text": "Up to 50% Off",
+  "numeric_discount_percent": 50,
+  "terms_and_conditions": [
+    "Verified from official brand sale announcement or seasonal campaign.",
+    "Dates, stock, and category exclusions are set by the brand.",
+    "Confirm final discount at checkout on the official store."
+  ],
+  "start_date": "2026-11-20T00:00:00Z",
+  "end_date": "2026-12-10T23:59:00Z",
+  "source_url": "https://www.talabat.com/uae",
+  "affiliate_url": "https://www.talabat.com/uae",
+  "last_verified_at": "2026-11-25T00:00:00Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=talabat.com&sz=128",
+    "alt": "Talabat UAE: Daily Restaurant Deals & Talabat Mart"
+  },
+  "tags": [
+    "all-items"
+  ]
+}

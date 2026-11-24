@@ -1,0 +1,16 @@
+{
+  "id": "mcdonald-s-india",
+  "name": "McDonald's India",
+  "slug": "mcdonald-s-india",
+  "logo_url": "https://www.google.com/s2/favicons?domain=mcdindia.com&sz=128",
+  "website_url": "https://mcdindia.com/",
+  "country": "IN",
+  "categories": [
+    "food-dining"
+  ],
+  "short_bio": "Verified IN brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

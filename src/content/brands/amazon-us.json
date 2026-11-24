@@ -1,0 +1,11 @@
+{
+  "id": "amazon-us",
+  "name": "Amazon US",
+  "slug": "amazon-us",
+  "logo_url": "https://www.google.com/s2/favicons?domain=amazon.com&sz=128",
+  "website_url": "https://www.amazon.com/blackfriday",
+  "country": "US",
+  "categories": ["tech-electronics"],
+  "short_bio": "Verified US marketplace offering Black Friday, Cyber Monday, and daily deals.",
+  "known_for": ["Black Friday", "Prime deals"]
+}

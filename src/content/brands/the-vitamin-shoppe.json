@@ -1,0 +1,16 @@
+{
+  "id": "the-vitamin-shoppe",
+  "name": "The Vitamin Shoppe",
+  "slug": "the-vitamin-shoppe",
+  "logo_url": "https://www.google.com/s2/favicons?domain=vitaminshoppe.com&sz=128",
+  "website_url": "https://www.vitaminshoppe.com/sv/sale",
+  "country": "US",
+  "categories": [
+    "beauty-wellness"
+  ],
+  "short_bio": "Verified US brand offering seasonal sales, promo codes, and deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}
