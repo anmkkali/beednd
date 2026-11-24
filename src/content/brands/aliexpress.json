@@ -1,0 +1,16 @@
+{
+  "id": "aliexpress",
+  "name": "AliExpress",
+  "slug": "aliexpress",
+  "logo_url": "https://www.google.com/s2/favicons?domain=aliexpress.com&sz=128",
+  "website_url": "https://www.aliexpress.com/",
+  "country": "CN",
+  "categories": [
+    "tech-electronics"
+  ],
+  "short_bio": "Global cross-border marketplace offering Cyber Week and seasonal flash deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified deals"
+  ]
+}

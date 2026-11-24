@@ -1,0 +1,16 @@
+{
+  "id": "grab-sg",
+  "name": "Grab",
+  "slug": "grab-sg",
+  "logo_url": "https://www.google.com/s2/favicons?domain=grab.com&sz=128",
+  "website_url": "https://www.grab.com/sg/",
+  "country": "SG",
+  "categories": [
+    "food-dining"
+  ],
+  "short_bio": "Southeast Asia super app with GrabFood, GrabMart, and GrabRewards deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified deals"
+  ]
+}

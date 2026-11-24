@@ -1,0 +1,16 @@
+{
+  "id": "turkish-airlines",
+  "name": "Turkish Airlines",
+  "slug": "turkish-airlines",
+  "logo_url": "https://www.google.com/s2/favicons?domain=turkishairlines.com&sz=128",
+  "website_url": "https://www.turkishairlines.com/",
+  "country": "TR",
+  "categories": [
+    "travel-lifestyle"
+  ],
+  "short_bio": "National carrier offering seasonal fare campaigns worldwide.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified deals"
+  ]
+}

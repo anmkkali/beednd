@@ -1,0 +1,47 @@
+{
+  "id": "takealot-za-blue-dot-soon",
+  "slug": "takealot-za-blue-dot-soon",
+  "title": "Takealot: Blue Dot Black Friday Main Event",
+  "short_description": "South Africa's flagship Blue Dot Sale launching Nov 27 on TVs, laptops, air fryers, and gaming consoles.",
+  "brand_id": "takealot",
+  "country": "ZA",
+  "cities": [
+    "Johannesburg",
+    "Cape Town",
+    "Durban"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "tech-electronics",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "COMING SOON",
+  "badge_text": "Discount Coming Soon",
+  "numeric_discount_percent": 60,
+  "terms_and_conditions": [
+    "Verified from official brand seasonal campaign.",
+    "Exclusions and dates are set by the brand."
+  ],
+  "start_date": "2026-11-27T00:00:00Z",
+  "end_date": "2026-12-01T23:59:00Z",
+  "source_url": "https://www.takealot.com/",
+  "affiliate_url": "https://www.takealot.com/",
+  "last_verified_at": "2026-11-25T00:00:00Z",
+  "status": "active",
+  "is_trending": true,
+  "is_coming_soon": true,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=takealot.com&sz=128",
+    "alt": "Takealot: Blue Dot Black Friday Main Event"
+  },
+  "tags": [
+    "mobiles",
+    "computers",
+    "appliances"
+  ]
+}

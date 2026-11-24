@@ -1,0 +1,45 @@
+{
+  "id": "shopee-sg-cyber-vouchers",
+  "slug": "shopee-sg-cyber-vouchers",
+  "title": "Shopee Singapore: Cyber Week Flash Sales & Vouchers",
+  "short_description": "Cross-border Black Friday flash deals, free shipping vouchers, and coins cashback.",
+  "brand_id": "shopee-sg",
+  "country": "SG",
+  "cities": [
+    "Singapore"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "tech-electronics",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "FLASH VOUCHERS",
+  "badge_text": "Flash Vouchers",
+  "numeric_discount_percent": 50,
+  "terms_and_conditions": [
+    "Verified from official brand seasonal campaign.",
+    "Exclusions and dates are set by the brand."
+  ],
+  "start_date": "2026-11-22T00:00:00Z",
+  "end_date": "2026-12-01T23:59:00Z",
+  "source_url": "https://shopee.sg/",
+  "affiliate_url": "https://shopee.sg/",
+  "last_verified_at": "2026-11-25T00:00:00Z",
+  "status": "active",
+  "is_trending": true,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "voucher",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=shopee.sg&sz=128",
+    "alt": "Shopee Singapore: Cyber Week Flash Sales & Vouchers"
+  },
+  "tags": [
+    "mobiles",
+    "computers",
+    "audio"
+  ]
+}

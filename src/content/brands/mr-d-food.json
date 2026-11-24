@@ -1,0 +1,16 @@
+{
+  "id": "mr-d-food",
+  "name": "Mr D Food",
+  "slug": "mr-d-food",
+  "logo_url": "https://www.google.com/s2/favicons?domain=mrdfood.com&sz=128",
+  "website_url": "https://www.mrdfood.com/",
+  "country": "ZA",
+  "categories": [
+    "food-dining"
+  ],
+  "short_bio": "South African food and grocery delivery app.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified deals"
+  ]
+}

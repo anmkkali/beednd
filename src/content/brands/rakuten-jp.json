@@ -1,0 +1,16 @@
+{
+  "id": "rakuten-jp",
+  "name": "Rakuten Japan",
+  "slug": "rakuten-jp",
+  "logo_url": "https://www.google.com/s2/favicons?domain=rakuten.co.jp&sz=128",
+  "website_url": "https://www.rakuten.co.jp/",
+  "country": "JP",
+  "categories": [
+    "clothing-fashion"
+  ],
+  "short_bio": "Japanese marketplace offering point multipliers and Black Friday coupons.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified deals"
+  ]
+}

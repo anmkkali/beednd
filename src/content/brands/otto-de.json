@@ -1,0 +1,16 @@
+{
+  "id": "otto-de",
+  "name": "OTTO",
+  "slug": "otto-de",
+  "logo_url": "https://www.google.com/s2/favicons?domain=otto.de&sz=128",
+  "website_url": "https://www.otto.de/",
+  "country": "DE",
+  "categories": [
+    "clothing-fashion"
+  ],
+  "short_bio": "Major German e-commerce platform for fashion, home, and electronics.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified deals"
+  ]
+}

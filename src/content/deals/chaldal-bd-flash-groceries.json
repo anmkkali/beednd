@@ -1,0 +1,46 @@
+{
+  "id": "chaldal-bd-flash-groceries",
+  "slug": "chaldal-bd-flash-groceries",
+  "title": "Chaldal: Winter Grocery Bundles & Flash Savings",
+  "short_description": "Daily bundle discounts and winter-prep grocery markdowns across Dhaka and Chattogram.",
+  "brand_id": "chaldal",
+  "country": "BD",
+  "cities": [
+    "Dhaka",
+    "Chittagong"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "groceries-essentials",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "UP TO 25% OFF",
+  "badge_text": "Up to 25% Off",
+  "numeric_discount_percent": 25,
+  "terms_and_conditions": [
+    "Verified from official brand seasonal campaign.",
+    "Exclusions and dates are set by the brand."
+  ],
+  "start_date": "2026-11-22T00:00:00Z",
+  "end_date": "2026-12-05T23:59:00Z",
+  "source_url": "https://chaldal.com/",
+  "affiliate_url": "https://chaldal.com/",
+  "last_verified_at": "2026-11-25T00:00:00Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=chaldal.com&sz=128",
+    "alt": "Chaldal: Winter Grocery Bundles & Flash Savings"
+  },
+  "tags": [
+    "supermarkets",
+    "fresh",
+    "household"
+  ]
+}

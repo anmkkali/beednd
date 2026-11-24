@@ -1,0 +1,16 @@
+{
+  "id": "ana-japan",
+  "name": "ANA (All Nippon Airways)",
+  "slug": "ana-japan",
+  "logo_url": "https://www.google.com/s2/favicons?domain=ana.co.jp&sz=128",
+  "website_url": "https://www.ana.co.jp/",
+  "country": "JP",
+  "categories": [
+    "travel-lifestyle"
+  ],
+  "short_bio": "Japanese airline offering domestic and international fare sales.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified deals"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "daraz-bd",
+  "name": "Daraz Bangladesh",
+  "slug": "daraz-bd",
+  "logo_url": "https://www.google.com/s2/favicons?domain=daraz.com.bd&sz=128",
+  "website_url": "https://www.daraz.com.bd/",
+  "country": "BD",
+  "categories": [
+    "tech-electronics"
+  ],
+  "short_bio": "Bangladesh's leading online marketplace for electronics, fashion, and home.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified deals"
+  ]
+}

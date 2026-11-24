@@ -1,0 +1,16 @@
+{
+  "id": "albert-heijn",
+  "name": "Albert Heijn",
+  "slug": "albert-heijn",
+  "logo_url": "https://www.google.com/s2/favicons?domain=ah.nl&sz=128",
+  "website_url": "https://www.ah.nl/bonus",
+  "country": "NL",
+  "categories": [
+    "groceries-essentials"
+  ],
+  "short_bio": "Largest Dutch supermarket chain with weekly Bonus grocery offers.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified deals"
+  ]
+}

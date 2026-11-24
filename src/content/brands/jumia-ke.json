@@ -1,0 +1,16 @@
+{
+  "id": "jumia-ke",
+  "name": "Jumia Kenya",
+  "slug": "jumia-ke",
+  "logo_url": "https://www.google.com/s2/favicons?domain=jumia.co.ke&sz=128",
+  "website_url": "https://www.jumia.co.ke/",
+  "country": "KE",
+  "categories": [
+    "tech-electronics"
+  ],
+  "short_bio": "Kenya's leading e-commerce store hosting Black Friday flash sales.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified deals"
+  ]
+}

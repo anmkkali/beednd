@@ -1,0 +1,46 @@
+{
+  "id": "hepsiburada-efsane-cuma-tech",
+  "slug": "hepsiburada-efsane-cuma-tech",
+  "title": "Hepsiburada: Efsane Cuma Tech & Appliance Deals",
+  "short_description": "Lowest prices of the year on smartphones, laptops, TVs, and home appliances with bank installment perks.",
+  "brand_id": "hepsiburada",
+  "country": "TR",
+  "cities": [
+    "Istanbul",
+    "Ankara"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "tech-electronics",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "UP TO 50% OFF",
+  "badge_text": "Up to 50% Off",
+  "numeric_discount_percent": 50,
+  "terms_and_conditions": [
+    "Verified from official brand seasonal campaign.",
+    "Exclusions and dates are set by the brand."
+  ],
+  "start_date": "2026-11-21T00:00:00Z",
+  "end_date": "2026-11-30T23:59:00Z",
+  "source_url": "https://www.hepsiburada.com/",
+  "affiliate_url": "https://www.hepsiburada.com/",
+  "last_verified_at": "2026-11-25T00:00:00Z",
+  "status": "active",
+  "is_trending": true,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=hepsiburada.com&sz=128",
+    "alt": "Hepsiburada: Efsane Cuma Tech & Appliance Deals"
+  },
+  "tags": [
+    "mobiles",
+    "computers",
+    "appliances"
+  ]
+}

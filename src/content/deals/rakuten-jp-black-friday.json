@@ -1,0 +1,46 @@
+{
+  "id": "rakuten-jp-black-friday",
+  "slug": "rakuten-jp-black-friday",
+  "title": "Rakuten Japan: Black Friday 10x+ Points & Coupons",
+  "short_description": "Shop-and-Earn point multipliers up to 10x+ back alongside stacked merchant discount coupons.",
+  "brand_id": "rakuten-jp",
+  "country": "JP",
+  "cities": [
+    "Tokyo",
+    "Osaka"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "clothing-fashion",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "10X POINTS + COUPONS",
+  "badge_text": "Point Back + Coupons",
+  "numeric_discount_percent": 30,
+  "terms_and_conditions": [
+    "Verified from official brand seasonal campaign.",
+    "Exclusions and dates are set by the brand."
+  ],
+  "start_date": "2026-11-21T00:00:00Z",
+  "end_date": "2026-11-30T23:59:00Z",
+  "source_url": "https://www.rakuten.co.jp/",
+  "affiliate_url": "https://www.rakuten.co.jp/",
+  "last_verified_at": "2026-11-25T00:00:00Z",
+  "status": "active",
+  "is_trending": true,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "voucher",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=rakuten.co.jp&sz=128",
+    "alt": "Rakuten Japan: Black Friday 10x+ Points & Coupons"
+  },
+  "tags": [
+    "men",
+    "women",
+    "western"
+  ]
+}

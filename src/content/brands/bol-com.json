@@ -1,0 +1,16 @@
+{
+  "id": "bol-com",
+  "name": "Bol.com",
+  "slug": "bol-com",
+  "logo_url": "https://www.google.com/s2/favicons?domain=bol.com&sz=128",
+  "website_url": "https://www.bol.com/",
+  "country": "NL",
+  "categories": [
+    "tech-electronics"
+  ],
+  "short_bio": "Leading Dutch marketplace for electronics, toys, homeware, and books.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified deals"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "jumia-ng-black-friday-60",
+  "slug": "jumia-ng-black-friday-60",
+  "title": "Jumia Nigeria: Black Friday Up to 60% Off Tech & Home",
+  "short_description": "Month-long Black Friday deals up to 60% off Xiaomi, Oraimo, Nivea, and home appliances.",
+  "brand_id": "jumia-ng",
+  "country": "NG",
+  "cities": [
+    "Lagos",
+    "Abuja"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "tech-electronics",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "UP TO 60% OFF",
+  "badge_text": "Up to 60% Off",
+  "numeric_discount_percent": 60,
+  "terms_and_conditions": [
+    "Verified from official brand seasonal campaign.",
+    "Exclusions and dates are set by the brand."
+  ],
+  "start_date": "2026-11-20T00:00:00Z",
+  "end_date": "2026-11-30T23:59:00Z",
+  "source_url": "https://www.jumia.com.ng/",
+  "affiliate_url": "https://www.jumia.com.ng/",
+  "last_verified_at": "2026-11-25T00:00:00Z",
+  "status": "active",
+  "is_trending": true,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=jumia.com.ng&sz=128",
+    "alt": "Jumia Nigeria: Black Friday Up to 60% Off Tech & Home"
+  },
+  "tags": [
+    "mobiles",
+    "appliances",
+    "audio"
+  ]
+}

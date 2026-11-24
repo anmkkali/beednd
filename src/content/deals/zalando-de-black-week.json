@@ -1,0 +1,47 @@
+{
+  "id": "zalando-de-black-week",
+  "slug": "zalando-de-black-week",
+  "title": "Zalando Germany: Black Week Fashion & Footwear Sale",
+  "short_description": "Steep markdowns across fashion, footwear, and accessories with Cyber Week basket discounts.",
+  "brand_id": "zalando-de",
+  "country": "DE",
+  "cities": [
+    "Berlin",
+    "Munich"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "clothing-fashion",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "UP TO 60% OFF",
+  "badge_text": "Up to 60% Off",
+  "numeric_discount_percent": 60,
+  "terms_and_conditions": [
+    "Verified from official brand seasonal campaign.",
+    "Exclusions and dates are set by the brand."
+  ],
+  "start_date": "2026-11-21T00:00:00Z",
+  "end_date": "2026-11-30T23:59:00Z",
+  "source_url": "https://www.zalando.de/",
+  "affiliate_url": "https://www.zalando.de/",
+  "last_verified_at": "2026-11-25T00:00:00Z",
+  "status": "active",
+  "is_trending": true,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=zalando.de&sz=128",
+    "alt": "Zalando Germany: Black Week Fashion & Footwear Sale"
+  },
+  "tags": [
+    "men",
+    "women",
+    "kids",
+    "footwear"
+  ]
+}

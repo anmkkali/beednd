@@ -1,0 +1,45 @@
+{
+  "id": "jumia-ke-black-friday-60",
+  "slug": "jumia-ke-black-friday-60",
+  "title": "Jumia Kenya: Black Friday Flash Sales Up to 60% Off",
+  "short_description": "Weekly Friday flash deals on smartphones, electronics, beauty, and groceries across Kenya.",
+  "brand_id": "jumia-ke",
+  "country": "KE",
+  "cities": [
+    "Nairobi",
+    "Mombasa"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "tech-electronics",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "UP TO 60% OFF",
+  "badge_text": "Up to 60% Off",
+  "numeric_discount_percent": 60,
+  "terms_and_conditions": [
+    "Verified from official brand seasonal campaign.",
+    "Exclusions and dates are set by the brand."
+  ],
+  "start_date": "2026-11-20T00:00:00Z",
+  "end_date": "2026-11-30T23:59:00Z",
+  "source_url": "https://www.jumia.co.ke/",
+  "affiliate_url": "https://www.jumia.co.ke/",
+  "last_verified_at": "2026-11-25T00:00:00Z",
+  "status": "active",
+  "is_trending": true,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=jumia.co.ke&sz=128",
+    "alt": "Jumia Kenya: Black Friday Flash Sales Up to 60% Off"
+  },
+  "tags": [
+    "mobiles",
+    "appliances"
+  ]
+}

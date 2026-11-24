@@ -1,0 +1,48 @@
+{
+  "id": "lc-waikiki-tr-winter-sale",
+  "slug": "lc-waikiki-tr-winter-sale",
+  "title": "LC Waikiki: Winter Apparel & Kids Collection Sale",
+  "short_description": "Seasonal markdowns across coats, knitwear, thermal wear, and children's clothing across Turkey.",
+  "brand_id": "lc-waikiki",
+  "country": "TR",
+  "cities": [
+    "Istanbul",
+    "Ankara"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "clothing-fashion",
+  "deal_type": "store-sale",
+  "channels": [
+    "online",
+    "in-store"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "UP TO 40% OFF",
+  "badge_text": "Up to 40% Off",
+  "numeric_discount_percent": 40,
+  "terms_and_conditions": [
+    "Verified from official brand seasonal campaign.",
+    "Exclusions and dates are set by the brand."
+  ],
+  "start_date": "2026-11-22T00:00:00Z",
+  "end_date": "2026-12-05T23:59:00Z",
+  "source_url": "https://www.lcw.com/",
+  "affiliate_url": "https://www.lcw.com/",
+  "last_verified_at": "2026-11-25T00:00:00Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=lcw.com&sz=128",
+    "alt": "LC Waikiki: Winter Apparel & Kids Collection Sale"
+  },
+  "tags": [
+    "men",
+    "women",
+    "kids",
+    "winter"
+  ]
+}

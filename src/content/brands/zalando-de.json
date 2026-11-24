@@ -1,0 +1,16 @@
+{
+  "id": "zalando-de",
+  "name": "Zalando Germany",
+  "slug": "zalando-de",
+  "logo_url": "https://www.google.com/s2/favicons?domain=zalando.de&sz=128",
+  "website_url": "https://www.zalando.de/",
+  "country": "DE",
+  "categories": [
+    "clothing-fashion"
+  ],
+  "short_bio": "European online fashion and footwear platform based in Germany.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified deals"
+  ]
+}

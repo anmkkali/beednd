@@ -14,6 +14,13 @@
     "url": "https://24mantraorganic.com/"
   },
   {
+    "id": "aarong",
+    "name": "Aarong",
+    "country": "BD",
+    "category": "clothing-fashion",
+    "url": "https://www.aarong.com/"
+  },
+  {
     "id": "abel-cole",
     "name": "Abel & Cole",
     "country": "GB",
@@ -168,6 +175,13 @@
     "url": "https://www.alaskaair.com/content/deals/flights/sale"
   },
   {
+    "id": "albert-heijn",
+    "name": "Albert Heijn",
+    "country": "NL",
+    "category": "groceries-essentials",
+    "url": "https://www.ah.nl/bonus"
+  },
+  {
     "id": "albertsons",
     "name": "Albertsons",
     "country": "US",
@@ -180,6 +194,13 @@
     "country": "GB",
     "category": "groceries-essentials",
     "url": "https://www.aldi.co.uk/specialbuys"
+  },
+  {
+    "id": "aliexpress",
+    "name": "AliExpress",
+    "country": "CN",
+    "category": "tech-electronics",
+    "url": "https://www.aliexpress.com/"
   },
   {
     "id": "alkaram-studio",
@@ -215,6 +236,13 @@
     "country": "US",
     "category": "clothing-fashion",
     "url": "https://www.aloyoga.com/collections/womens-sale-all"
+  },
+  {
+    "id": "amazon-jp",
+    "name": "Amazon Japan",
+    "country": "JP",
+    "category": "tech-electronics",
+    "url": "https://www.amazon.co.jp/blackfriday"
   },
   {
     "id": "amazon-saudi-arabia",
@@ -257,6 +285,13 @@
     "country": "US",
     "category": "clothing-fashion",
     "url": "https://www.ae.com/us/en/x/clearance?menu=cat4840004"
+  },
+  {
+    "id": "ana-japan",
+    "name": "ANA (All Nippon Airways)",
+    "country": "JP",
+    "category": "travel-lifestyle",
+    "url": "https://www.ana.co.jp/"
   },
   {
     "id": "animed-direct",
@@ -693,6 +728,13 @@
     "url": "https://www.boden.com/collections/sale-view-all"
   },
   {
+    "id": "bol-com",
+    "name": "Bol.com",
+    "country": "NL",
+    "category": "tech-electronics",
+    "url": "https://www.bol.com/"
+  },
+  {
     "id": "bolt",
     "name": "Bolt",
     "country": "GLOBAL",
@@ -1050,6 +1092,13 @@
     "url": "https://www.chaipoint.com/"
   },
   {
+    "id": "chaldal",
+    "name": "Chaldal",
+    "country": "BD",
+    "category": "groceries-essentials",
+    "url": "https://chaldal.com/"
+  },
+  {
     "id": "charcoal",
     "name": "Charcoal",
     "country": "PK",
@@ -1097,6 +1146,13 @@
     "country": "GLOBAL",
     "category": "ai-tools",
     "url": "https://chatgpt.com"
+  },
+  {
+    "id": "checkers-sixty60",
+    "name": "Checkers Sixty60",
+    "country": "ZA",
+    "category": "groceries-essentials",
+    "url": "https://www.checkers.co.za/"
   },
   {
     "id": "cheezious",
@@ -1239,6 +1295,13 @@
     "url": "https://www.converse.com/shop/sale"
   },
   {
+    "id": "coolblue",
+    "name": "Coolblue",
+    "country": "NL",
+    "category": "tech-electronics",
+    "url": "https://www.coolblue.nl/"
+  },
+  {
     "id": "copy-ai",
     "name": "Copy.ai",
     "country": "GLOBAL",
@@ -1356,6 +1419,13 @@
     "country": "PK",
     "category": "tech-electronics",
     "url": "https://www.daraz.pk/"
+  },
+  {
+    "id": "daraz-bd",
+    "name": "Daraz Bangladesh",
+    "country": "BD",
+    "category": "tech-electronics",
+    "url": "https://www.daraz.com.bd/"
   },
   {
     "id": "dari-mooch",
@@ -1855,6 +1925,13 @@
     "url": "https://www.flynas.com/en"
   },
   {
+    "id": "foodpanda-bd",
+    "name": "foodpanda Bangladesh",
+    "country": "BD",
+    "category": "food-dining",
+    "url": "https://www.foodpanda.com.bd/"
+  },
+  {
     "id": "foodpanda-pakistan",
     "name": "foodpanda Pakistan",
     "country": "PK",
@@ -1958,6 +2035,13 @@
     "country": "PK",
     "category": "clothing-fashion",
     "url": "https://generation.com.pk/collections/50-sale"
+  },
+  {
+    "id": "getir",
+    "name": "Getir",
+    "country": "TR",
+    "category": "groceries-essentials",
+    "url": "https://getir.com/"
   },
   {
     "id": "getyourguide",
@@ -2070,6 +2154,13 @@
     "country": "PK",
     "category": "travel-lifestyle",
     "url": "https://gozayaan.com/"
+  },
+  {
+    "id": "grab-sg",
+    "name": "Grab",
+    "country": "SG",
+    "category": "food-dining",
+    "url": "https://www.grab.com/sg/"
   },
   {
     "id": "grammarly",
@@ -2294,6 +2385,13 @@
     "country": "PK",
     "category": "beauty-wellness",
     "url": "https://pk.hemaniherbals.com/"
+  },
+  {
+    "id": "hepsiburada",
+    "name": "Hepsiburada",
+    "country": "TR",
+    "category": "tech-electronics",
+    "url": "https://www.hepsiburada.com/"
   },
   {
     "id": "herbiotics",
@@ -2695,6 +2793,20 @@
     "url": "https://www.julke.pk/collections/sale"
   },
   {
+    "id": "jumia-ke",
+    "name": "Jumia Kenya",
+    "country": "KE",
+    "category": "tech-electronics",
+    "url": "https://www.jumia.co.ke/"
+  },
+  {
+    "id": "jumia-ng",
+    "name": "Jumia Nigeria",
+    "country": "NG",
+    "category": "tech-electronics",
+    "url": "https://www.jumia.com.ng/"
+  },
+  {
     "id": "just-eat",
     "name": "Just Eat",
     "country": "GB",
@@ -2863,6 +2975,13 @@
     "url": "https://klingai.com"
   },
   {
+    "id": "klm",
+    "name": "KLM Royal Dutch Airlines",
+    "country": "NL",
+    "category": "travel-lifestyle",
+    "url": "https://www.klm.nl/"
+  },
+  {
     "id": "kong",
     "name": "KONG",
     "country": "US",
@@ -2952,6 +3071,13 @@
     "country": "PK",
     "category": "food-dining",
     "url": "https://layers.pk/"
+  },
+  {
+    "id": "lc-waikiki",
+    "name": "LC Waikiki",
+    "country": "TR",
+    "category": "clothing-fashion",
+    "url": "https://www.lcw.com/"
   },
   {
     "id": "leisure-club",
@@ -3059,6 +3185,13 @@
     "url": "https://www.lidl.co.uk/c/food-offers/s10023092"
   },
   {
+    "id": "lieferando",
+    "name": "Lieferando",
+    "country": "DE",
+    "category": "food-dining",
+    "url": "https://www.lieferando.de/"
+  },
+  {
     "id": "lifestyle-stores",
     "name": "Lifestyle Stores",
     "country": "IN",
@@ -3134,6 +3267,13 @@
     "country": "GB",
     "category": "travel-lifestyle",
     "url": "https://www.loveholidays.com/holidays/cheap-holidays.html"
+  },
+  {
+    "id": "lufthansa",
+    "name": "Lufthansa",
+    "country": "DE",
+    "category": "travel-lifestyle",
+    "url": "https://www.lufthansa.com/"
   },
   {
     "id": "lulu-hypermarket-uae",
@@ -3353,6 +3493,13 @@
     "url": "https://www.mcdonalds.com.pk/"
   },
   {
+    "id": "mediamarkt-de",
+    "name": "MediaMarkt Germany",
+    "country": "DE",
+    "category": "tech-electronics",
+    "url": "https://www.mediamarkt.de/"
+  },
+  {
     "id": "mega-pk",
     "name": "Mega.pk",
     "country": "PK",
@@ -3533,6 +3680,13 @@
     "country": "GB",
     "category": "clothing-fashion",
     "url": "https://www.mountainwarehouse.com/clearance/"
+  },
+  {
+    "id": "mr-d-food",
+    "name": "Mr D Food",
+    "country": "ZA",
+    "category": "food-dining",
+    "url": "https://www.mrdfood.com/"
   },
   {
     "id": "msi",
@@ -3932,6 +4086,13 @@
     "country": "GLOBAL",
     "category": "ai-tools",
     "url": "https://otter.ai"
+  },
+  {
+    "id": "otto-de",
+    "name": "OTTO",
+    "country": "DE",
+    "category": "clothing-fashion",
+    "url": "https://www.otto.de/"
   },
   {
     "id": "ounass-uae",
@@ -4415,6 +4576,13 @@
     "country": "PK",
     "category": "groceries-essentials",
     "url": "https://rainbowcc.com.pk/"
+  },
+  {
+    "id": "rakuten-jp",
+    "name": "Rakuten Japan",
+    "country": "JP",
+    "category": "clothing-fashion",
+    "url": "https://www.rakuten.co.jp/"
   },
   {
     "id": "ralph-lauren",
@@ -4914,11 +5082,25 @@
     "url": "https://www.sharkninja.co.uk/discount-codes.html"
   },
   {
+    "id": "shein-cn",
+    "name": "SHEIN",
+    "country": "CN",
+    "category": "clothing-fashion",
+    "url": "https://www.shein.com/"
+  },
+  {
     "id": "shoe-planet",
     "name": "Shoe Planet",
     "country": "PK",
     "category": "clothing-fashion",
     "url": "https://www.shoeplanet.pk/"
+  },
+  {
+    "id": "shopee-sg",
+    "name": "Shopee Singapore",
+    "country": "SG",
+    "category": "tech-electronics",
+    "url": "https://shopee.sg/"
   },
   {
     "id": "shophive",
@@ -5159,6 +5341,13 @@
     "url": "https://suno.com"
   },
   {
+    "id": "superbalist",
+    "name": "Superbalist",
+    "country": "ZA",
+    "category": "clothing-fashion",
+    "url": "https://superbalist.com/"
+  },
+  {
     "id": "superdrug",
     "name": "Superdrug",
     "country": "GB",
@@ -5241,6 +5430,13 @@
     "country": "IN",
     "category": "travel-lifestyle",
     "url": "https://www.tajhotels.com/en-in"
+  },
+  {
+    "id": "takealot",
+    "name": "Takealot",
+    "country": "ZA",
+    "category": "tech-electronics",
+    "url": "https://www.takealot.com/"
   },
   {
     "id": "talabat",
@@ -5460,6 +5656,13 @@
     "url": "https://thrivemarket.com/c/all-deals"
   },
   {
+    "id": "thuisbezorgd",
+    "name": "Thuisbezorgd.nl",
+    "country": "NL",
+    "category": "food-dining",
+    "url": "https://www.thuisbezorgd.nl/"
+  },
+  {
     "id": "tim-hortons-pakistan",
     "name": "Tim Hortons Pakistan",
     "country": "PK",
@@ -5558,11 +5761,32 @@
     "url": "https://trego.pk/"
   },
   {
+    "id": "trendyol",
+    "name": "Trendyol",
+    "country": "TR",
+    "category": "clothing-fashion",
+    "url": "https://www.trendyol.com/"
+  },
+  {
+    "id": "trip-com",
+    "name": "Trip.com",
+    "country": "CN",
+    "category": "travel-lifestyle",
+    "url": "https://www.trip.com/"
+  },
+  {
     "id": "tui-uk",
     "name": "TUI UK",
     "country": "GB",
     "category": "travel-lifestyle",
     "url": "https://www.tui.co.uk/discount-codes/"
+  },
+  {
+    "id": "turkish-airlines",
+    "name": "Turkish Airlines",
+    "country": "TR",
+    "category": "travel-lifestyle",
+    "url": "https://www.turkishairlines.com/"
   },
   {
     "id": "two-brothers-organic-farms",
@@ -5577,6 +5801,13 @@
     "country": "US",
     "category": "food-dining",
     "url": "https://www.ubereats.com/"
+  },
+  {
+    "id": "uber-eats-jp",
+    "name": "Uber Eats Japan",
+    "country": "JP",
+    "category": "food-dining",
+    "url": "https://www.ubereats.com/jp"
   },
   {
     "id": "uber-eats-uk",
@@ -5619,6 +5850,13 @@
     "country": "IN",
     "category": "clothing-fashion",
     "url": "https://www.uniqlo.com/in/en/"
+  },
+  {
+    "id": "uniqlo-jp",
+    "name": "Uniqlo Japan",
+    "country": "JP",
+    "category": "clothing-fashion",
+    "url": "https://www.uniqlo.com/jp/ja/"
   },
   {
     "id": "uniqlo-uk",
@@ -5976,6 +6214,13 @@
     "country": "PK",
     "category": "tech-electronics",
     "url": "https://zahcomputers.pk/"
+  },
+  {
+    "id": "zalando-de",
+    "name": "Zalando Germany",
+    "country": "DE",
+    "category": "clothing-fashion",
+    "url": "https://www.zalando.de/"
   },
   {
     "id": "zapp",

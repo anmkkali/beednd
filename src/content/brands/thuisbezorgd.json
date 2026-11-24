@@ -1,0 +1,16 @@
+{
+  "id": "thuisbezorgd",
+  "name": "Thuisbezorgd.nl",
+  "slug": "thuisbezorgd",
+  "logo_url": "https://www.google.com/s2/favicons?domain=thuisbezorgd.nl&sz=128",
+  "website_url": "https://www.thuisbezorgd.nl/",
+  "country": "NL",
+  "categories": [
+    "food-dining"
+  ],
+  "short_bio": "Netherlands food delivery platform with restaurant & meal vouchers.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified deals"
+  ]
+}

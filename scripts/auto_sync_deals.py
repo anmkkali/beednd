@@ -113,8 +113,10 @@ def scan_watchlist(active_brand_ids):
     with open(WATCHLIST_PATH, "r", encoding="utf-8") as f:
         watchlist = json.load(f)
 
-    # Rotate through watchlist batches every 12h (check ~120 brands without active deals per run)
+    # Prioritize focus markets in every 12h cycle
+    FOCUS_COUNTRIES = {"PK", "US", "GB", "IN", "AE", "SA", "TR", "NL", "DE", "JP", "CN", "BD", "ZA", "NG", "KE", "SG", "MY", "GLOBAL"}
     candidates = [b for b in watchlist if b["id"] not in active_brand_ids and b.get("url")]
+    candidates.sort(key=lambda b: (0 if b.get("country") in FOCUS_COUNTRIES else 1, b.get("country", "")))
     slot = int(NOW.timestamp() // (12 * 3600)) % max(1, (len(candidates) // 120) + 1)
     batch = candidates[slot * 120 : (slot + 1) * 120]
     if not batch and candidates:

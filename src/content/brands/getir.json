@@ -1,0 +1,16 @@
+{
+  "id": "getir",
+  "name": "Getir",
+  "slug": "getir",
+  "logo_url": "https://www.google.com/s2/favicons?domain=getir.com&sz=128",
+  "website_url": "https://getir.com/",
+  "country": "TR",
+  "categories": [
+    "groceries-essentials"
+  ],
+  "short_bio": "Rapid grocery, essentials, and food delivery across Turkey.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified deals"
+  ]
+}

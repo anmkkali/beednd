@@ -1,0 +1,46 @@
+{
+  "id": "getir-tr-flash-groceries",
+  "slug": "getir-tr-flash-groceries",
+  "title": "Getir: Flash Discounts on Groceries & Essentials",
+  "short_description": "Timed flash discounts, BOGO offers, and app coupons on groceries and daily essentials in minutes.",
+  "brand_id": "getir",
+  "country": "TR",
+  "cities": [
+    "Istanbul",
+    "Ankara"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "groceries-essentials",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "FLASH DEALS",
+  "badge_text": "Flash Vouchers",
+  "numeric_discount_percent": 30,
+  "terms_and_conditions": [
+    "Verified from official brand seasonal campaign.",
+    "Exclusions and dates are set by the brand."
+  ],
+  "start_date": "2026-11-23T00:00:00Z",
+  "end_date": "2026-12-05T23:59:00Z",
+  "source_url": "https://getir.com/",
+  "affiliate_url": "https://getir.com/",
+  "last_verified_at": "2026-11-25T00:00:00Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "voucher",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=getir.com&sz=128",
+    "alt": "Getir: Flash Discounts on Groceries & Essentials"
+  },
+  "tags": [
+    "supermarkets",
+    "fresh",
+    "household"
+  ]
+}

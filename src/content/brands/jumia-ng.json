@@ -1,0 +1,16 @@
+{
+  "id": "jumia-ng",
+  "name": "Jumia Nigeria",
+  "slug": "jumia-ng",
+  "logo_url": "https://www.google.com/s2/favicons?domain=jumia.com.ng&sz=128",
+  "website_url": "https://www.jumia.com.ng/",
+  "country": "NG",
+  "categories": [
+    "tech-electronics"
+  ],
+  "short_bio": "Nigeria's leading online marketplace running month-long Black Friday deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified deals"
+  ]
+}

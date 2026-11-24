@@ -1,0 +1,16 @@
+{
+  "id": "uniqlo-jp",
+  "name": "Uniqlo Japan",
+  "slug": "uniqlo-jp",
+  "logo_url": "https://www.google.com/s2/favicons?domain=uniqlo.com&sz=128",
+  "website_url": "https://www.uniqlo.com/jp/ja/",
+  "country": "JP",
+  "categories": [
+    "clothing-fashion"
+  ],
+  "short_bio": "Japanese apparel giant hosting Kanshasai Anniversary & HEATTECH sales.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified deals"
+  ]
+}

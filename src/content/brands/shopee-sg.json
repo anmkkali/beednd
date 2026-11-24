@@ -1,0 +1,16 @@
+{
+  "id": "shopee-sg",
+  "name": "Shopee Singapore",
+  "slug": "shopee-sg",
+  "logo_url": "https://www.google.com/s2/favicons?domain=shopee.sg&sz=128",
+  "website_url": "https://shopee.sg/",
+  "country": "SG",
+  "categories": [
+    "tech-electronics"
+  ],
+  "short_bio": "Southeast Asian marketplace with flash vouchers and cross-border deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified deals"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "klm",
+  "name": "KLM Royal Dutch Airlines",
+  "slug": "klm",
+  "logo_url": "https://www.google.com/s2/favicons?domain=klm.nl&sz=128",
+  "website_url": "https://www.klm.nl/",
+  "country": "NL",
+  "categories": [
+    "travel-lifestyle"
+  ],
+  "short_bio": "Dutch national airline offering seasonal flight deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified deals"
+  ]
+}

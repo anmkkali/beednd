@@ -1,0 +1,48 @@
+{
+  "id": "trendyol-efsane-kasim-70",
+  "slug": "trendyol-efsane-kasim-70",
+  "title": "Trendyol: Efsane Kas\u0131m Up to 70% Off + Coupons",
+  "short_description": "Massive multi-week Efsane Kas\u0131m markdowns up to 70% off fashion, beauty, and electronics plus daily Kuponlar\u0131m.",
+  "brand_id": "trendyol",
+  "country": "TR",
+  "cities": [
+    "Istanbul",
+    "Ankara",
+    "Izmir"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "clothing-fashion",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "UP TO 70% OFF",
+  "badge_text": "Up to 70% Off",
+  "numeric_discount_percent": 70,
+  "terms_and_conditions": [
+    "Verified from official brand seasonal campaign.",
+    "Exclusions and dates are set by the brand."
+  ],
+  "start_date": "2026-11-20T00:00:00Z",
+  "end_date": "2026-11-30T23:59:00Z",
+  "source_url": "https://www.trendyol.com/",
+  "affiliate_url": "https://www.trendyol.com/",
+  "last_verified_at": "2026-11-25T00:00:00Z",
+  "status": "active",
+  "is_trending": true,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=trendyol.com&sz=128",
+    "alt": "Trendyol: Efsane Kas\u0131m Up to 70% Off + Coupons"
+  },
+  "tags": [
+    "women",
+    "men",
+    "kids",
+    "western"
+  ]
+}

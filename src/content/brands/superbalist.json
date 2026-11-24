@@ -1,0 +1,16 @@
+{
+  "id": "superbalist",
+  "name": "Superbalist",
+  "slug": "superbalist",
+  "logo_url": "https://www.google.com/s2/favicons?domain=superbalist.com&sz=128",
+  "website_url": "https://superbalist.com/",
+  "country": "ZA",
+  "categories": [
+    "clothing-fashion"
+  ],
+  "short_bio": "South African fashion, footwear, and beauty e-commerce destination.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified deals"
+  ]
+}

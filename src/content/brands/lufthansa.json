@@ -1,0 +1,16 @@
+{
+  "id": "lufthansa",
+  "name": "Lufthansa",
+  "slug": "lufthansa",
+  "logo_url": "https://www.google.com/s2/favicons?domain=lufthansa.com&sz=128",
+  "website_url": "https://www.lufthansa.com/",
+  "country": "DE",
+  "categories": [
+    "travel-lifestyle"
+  ],
+  "short_bio": "German flag carrier offering seasonal international flight promos.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified deals"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "mediamarkt-de",
+  "name": "MediaMarkt Germany",
+  "slug": "mediamarkt-de",
+  "logo_url": "https://www.google.com/s2/favicons?domain=mediamarkt.de&sz=128",
+  "website_url": "https://www.mediamarkt.de/",
+  "country": "DE",
+  "categories": [
+    "tech-electronics"
+  ],
+  "short_bio": "Germany's leading consumer electronics and appliance retailer.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified deals"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "uber-eats-jp",
+  "name": "Uber Eats Japan",
+  "slug": "uber-eats-jp",
+  "logo_url": "https://www.google.com/s2/favicons?domain=ubereats.com&sz=128",
+  "website_url": "https://www.ubereats.com/jp",
+  "country": "JP",
+  "categories": [
+    "food-dining"
+  ],
+  "short_bio": "Food and convenience delivery across Tokyo, Osaka, and major cities.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified deals"
+  ]
+}

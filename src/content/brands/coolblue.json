@@ -1,0 +1,16 @@
+{
+  "id": "coolblue",
+  "name": "Coolblue",
+  "slug": "coolblue",
+  "logo_url": "https://www.google.com/s2/favicons?domain=coolblue.nl&sz=128",
+  "website_url": "https://www.coolblue.nl/",
+  "country": "NL",
+  "categories": [
+    "tech-electronics"
+  ],
+  "short_bio": "Dutch electronics and home appliance retailer known for Black Friday deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified deals"
+  ]
+}

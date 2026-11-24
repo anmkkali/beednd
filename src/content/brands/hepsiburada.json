@@ -1,0 +1,16 @@
+{
+  "id": "hepsiburada",
+  "name": "Hepsiburada",
+  "slug": "hepsiburada",
+  "logo_url": "https://www.google.com/s2/favicons?domain=hepsiburada.com&sz=128",
+  "website_url": "https://www.hepsiburada.com/",
+  "country": "TR",
+  "categories": [
+    "tech-electronics"
+  ],
+  "short_bio": "Leading Turkish e-commerce platform for tech, appliances, and home goods.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified deals"
+  ]
+}

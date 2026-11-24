@@ -1,0 +1,16 @@
+{
+  "id": "trendyol",
+  "name": "Trendyol",
+  "slug": "trendyol",
+  "logo_url": "https://www.google.com/s2/favicons?domain=trendyol.com&sz=128",
+  "website_url": "https://www.trendyol.com/",
+  "country": "TR",
+  "categories": [
+    "clothing-fashion"
+  ],
+  "short_bio": "Turkey's largest online marketplace for fashion, beauty, and electronics.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified deals"
+  ]
+}

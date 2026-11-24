@@ -1,0 +1,16 @@
+{
+  "id": "amazon-jp",
+  "name": "Amazon Japan",
+  "slug": "amazon-jp",
+  "logo_url": "https://www.google.com/s2/favicons?domain=amazon.co.jp&sz=128",
+  "website_url": "https://www.amazon.co.jp/blackfriday",
+  "country": "JP",
+  "categories": [
+    "tech-electronics"
+  ],
+  "short_bio": "Amazon Japan marketplace running Black Friday Hon-Sale deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified deals"
+  ]
+}

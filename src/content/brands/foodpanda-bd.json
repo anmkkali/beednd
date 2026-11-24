@@ -1,0 +1,16 @@
+{
+  "id": "foodpanda-bd",
+  "name": "foodpanda Bangladesh",
+  "slug": "foodpanda-bd",
+  "logo_url": "https://www.google.com/s2/favicons?domain=foodpanda.com.bd&sz=128",
+  "website_url": "https://www.foodpanda.com.bd/",
+  "country": "BD",
+  "categories": [
+    "food-dining"
+  ],
+  "short_bio": "Food and pandamart grocery delivery across Dhaka, Chattogram, and Sylhet.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified deals"
+  ]
+}

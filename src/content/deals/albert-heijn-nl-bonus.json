@@ -1,0 +1,45 @@
+{
+  "id": "albert-heijn-nl-bonus",
+  "slug": "albert-heijn-nl-bonus",
+  "title": "Albert Heijn: Weekly Bonus & 1+1 Free Grocery Deals",
+  "short_description": "Weekly Bonus offers and 1+1 Free promotions on fresh produce and household essentials.",
+  "brand_id": "albert-heijn",
+  "country": "NL",
+  "cities": [
+    "Amsterdam"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "groceries-essentials",
+  "deal_type": "store-sale",
+  "channels": [
+    "online",
+    "in-store"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "1+1 GRATIS",
+  "badge_text": "Bonus Deals",
+  "numeric_discount_percent": 50,
+  "terms_and_conditions": [
+    "Verified from official brand seasonal campaign.",
+    "Exclusions and dates are set by the brand."
+  ],
+  "start_date": "2026-11-23T00:00:00Z",
+  "end_date": "2026-12-06T23:59:00Z",
+  "source_url": "https://www.ah.nl/bonus",
+  "affiliate_url": "https://www.ah.nl/bonus",
+  "last_verified_at": "2026-11-25T00:00:00Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "voucher",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=ah.nl&sz=128",
+    "alt": "Albert Heijn: Weekly Bonus & 1+1 Free Grocery Deals"
+  },
+  "tags": [
+    "supermarkets",
+    "fresh"
+  ]
+}

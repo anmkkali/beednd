@@ -1,0 +1,16 @@
+{
+  "id": "lieferando",
+  "name": "Lieferando",
+  "slug": "lieferando",
+  "logo_url": "https://www.google.com/s2/favicons?domain=lieferando.de&sz=128",
+  "website_url": "https://www.lieferando.de/",
+  "country": "DE",
+  "categories": [
+    "food-dining"
+  ],
+  "short_bio": "Germany's top food delivery service with restaurant bundle deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified deals"
+  ]
+}

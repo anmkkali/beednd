@@ -1,0 +1,16 @@
+{
+  "id": "shein-cn",
+  "name": "SHEIN",
+  "slug": "shein-cn",
+  "logo_url": "https://www.google.com/s2/favicons?domain=shein.com&sz=128",
+  "website_url": "https://www.shein.com/",
+  "country": "CN",
+  "categories": [
+    "clothing-fashion"
+  ],
+  "short_bio": "Global fashion platform offering Black Friday markdowns and promo codes.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified deals"
+  ]
+}

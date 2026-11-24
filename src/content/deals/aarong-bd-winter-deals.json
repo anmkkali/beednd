@@ -1,0 +1,47 @@
+{
+  "id": "aarong-bd-winter-deals",
+  "slug": "aarong-bd-winter-deals",
+  "title": "Aarong: Seasonal Lifestyle & Ethnic Fashion Collection",
+  "short_description": "Curated seasonal offers across Bangladeshi ethnic wear, footwear, and accessories.",
+  "brand_id": "aarong",
+  "country": "BD",
+  "cities": [
+    "Dhaka",
+    "Chittagong"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "clothing-fashion",
+  "deal_type": "store-sale",
+  "channels": [
+    "online",
+    "in-store"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "SEASONAL OFFERS",
+  "badge_text": "Seasonal Offers",
+  "numeric_discount_percent": 20,
+  "terms_and_conditions": [
+    "Verified from official brand seasonal campaign.",
+    "Exclusions and dates are set by the brand."
+  ],
+  "start_date": "2026-11-23T00:00:00Z",
+  "end_date": "2026-12-05T23:59:00Z",
+  "source_url": "https://www.aarong.com/",
+  "affiliate_url": "https://www.aarong.com/",
+  "last_verified_at": "2026-11-25T00:00:00Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=aarong.com&sz=128",
+    "alt": "Aarong: Seasonal Lifestyle & Ethnic Fashion Collection"
+  },
+  "tags": [
+    "women",
+    "men",
+    "kids"
+  ]
+}

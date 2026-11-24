@@ -1,0 +1,16 @@
+{
+  "id": "takealot",
+  "name": "Takealot",
+  "slug": "takealot",
+  "logo_url": "https://www.google.com/s2/favicons?domain=takealot.com&sz=128",
+  "website_url": "https://www.takealot.com/",
+  "country": "ZA",
+  "categories": [
+    "tech-electronics"
+  ],
+  "short_bio": "South Africa's leading online store hosting the Blue Dot Black November sale.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified deals"
+  ]
+}

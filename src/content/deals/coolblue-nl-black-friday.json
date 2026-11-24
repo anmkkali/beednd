@@ -1,0 +1,47 @@
+{
+  "id": "coolblue-nl-black-friday",
+  "slug": "coolblue-nl-black-friday",
+  "title": "Coolblue: Black Friday Tech, Laptops & Appliances",
+  "short_description": "Extended November markdowns on laptops, smartphones, TVs, and white goods through Cyber Monday.",
+  "brand_id": "coolblue",
+  "country": "NL",
+  "cities": [
+    "Amsterdam",
+    "Rotterdam"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "tech-electronics",
+  "deal_type": "store-sale",
+  "channels": [
+    "online",
+    "in-store"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "BLACK FRIDAY",
+  "badge_text": "Black Friday Deals",
+  "numeric_discount_percent": 40,
+  "terms_and_conditions": [
+    "Verified from official brand seasonal campaign.",
+    "Exclusions and dates are set by the brand."
+  ],
+  "start_date": "2026-11-20T00:00:00Z",
+  "end_date": "2026-11-30T23:59:00Z",
+  "source_url": "https://www.coolblue.nl/",
+  "affiliate_url": "https://www.coolblue.nl/",
+  "last_verified_at": "2026-11-25T00:00:00Z",
+  "status": "active",
+  "is_trending": true,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=coolblue.nl&sz=128",
+    "alt": "Coolblue: Black Friday Tech, Laptops & Appliances"
+  },
+  "tags": [
+    "mobiles",
+    "computers",
+    "appliances"
+  ]
+}
