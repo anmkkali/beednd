@@ -65,8 +65,9 @@ const expiry = expiryLabel(deal.end_date, !!deal.limited_time);
 
 <article
   data-page-item
-  class="group border-b editorial-rule px-2 py-3 transition-colors hover:bg-base-900/45 sm:px-4 sm:py-3.5"
+  class="group cursor-pointer border-b editorial-rule px-2 py-3 transition-colors hover:bg-base-900/45 active:bg-base-900/65 sm:px-4 sm:py-3.5"
   data-deal-id={deal.id}
+  data-deal-href={`/deals/${deal.slug}/`}
   data-market={deal.country || 'GLOBAL'}
   data-kind={kind}
   data-category={deal.category}
@@ -334,6 +335,24 @@ const expiry = expiryLabel(deal.end_date, !!deal.limited_time);
     if (!(window as any).__dsCountdownTimer && document.querySelector('[data-countdown]')) {
       (window as any).__dsCountdownTimer = setInterval(updateCountdowns, 60_000);
     }
+  }
+
+  if (!(window as any).__dsCardClickBound) {
+    (window as any).__dsCardClickBound = true;
+    document.addEventListener('click', (event) => {
+      const target = event.target as HTMLElement | null;
+      if (!target) return;
+      if (target.closest('a, button, input, select, textarea, summary')) return;
+      if (window.getSelection()?.toString()) return;
+      const card = target.closest<HTMLElement>('[data-deal-href]');
+      if (!card) return;
+      const primaryLink = card.querySelector<HTMLAnchorElement>('a[href^="/deals/"]');
+      if (primaryLink) {
+        primaryLink.click();
+      } else if (card.dataset.dealHref) {
+        window.location.href = card.dataset.dealHref;
+      }
+    });
   }
 
   document.addEventListener('astro:page-load', initDealCards);
