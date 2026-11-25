@@ -128,10 +128,14 @@ const grouped = categories.map((cat) => {
       let activeCat = 'all';
 
       function updateBrandSections() {
+        const market = document.documentElement.dataset.activeMarket || 'ALL';
         sections.forEach((sec) => {
           const catMatch = activeCat === 'all' || sec.dataset.brandSection === activeCat;
           const items = Array.from(sec.querySelectorAll<HTMLElement>('[data-brand-item]'));
-          const visibleCount = items.filter((el) => getComputedStyle(el).display !== 'none').length;
+          const visibleCount = items.filter((el) => {
+            const m = el.dataset.market || 'ALL';
+            return market === 'ALL' || m === market || m === 'GLOBAL';
+          }).length;
           const countEl = sec.querySelector('[data-section-count]');
           if (countEl) countEl.textContent = String(visibleCount);
           sec.classList.toggle('hidden', !catMatch || visibleCount === 0);

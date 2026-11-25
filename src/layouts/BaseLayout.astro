@@ -151,7 +151,7 @@ const fontsUrl =
       <LeftSidebar activeTopic={activeTopic} activeCategory={activeCategory} />
 
       <div class="flex min-w-0 flex-1 flex-col">
-        <main class="mx-auto w-full max-w-6xl flex-1 px-4 pb-20 pt-6 sm:px-6 lg:px-10" transition:animate="fade">
+        <main class="mx-auto w-full max-w-6xl flex-1 px-4 pb-20 pt-6 sm:px-6 lg:px-10" transition:animate="none">
           <slot />
           {showBottom && (
             <>
@@ -164,9 +164,11 @@ const fontsUrl =
       </div>
     </div>
 
-    <PagefindModal />
-    <NotifyModal />
-    <SubmitDealModal />
+    <div transition:persist="app-modals">
+      <PagefindModal />
+      <NotifyModal />
+      <SubmitDealModal />
+    </div>
 
     <script>
       import { countries, countryByCode } from '../data/countries';
@@ -216,7 +218,11 @@ const fontsUrl =
       }
 
       function updateBell() {
-        const items = Array.from(document.querySelectorAll<HTMLElement>('[data-notif-item]')).filter(visible);
+        const market = root.dataset.activeMarket || 'ALL';
+        const items = Array.from(document.querySelectorAll<HTMLElement>('[data-notif-item]')).filter((el) => {
+          const m = el.dataset.market || 'GLOBAL';
+          return market === 'ALL' || m === market || m === 'GLOBAL';
+        });
         const count = items.length > 0 ? items.length : 8;
         const seen = Number(localStorage.getItem('dealssite_notif_seen') || 0);
         const unread = items.filter((item) => Number(item.dataset.ts) > seen).length;

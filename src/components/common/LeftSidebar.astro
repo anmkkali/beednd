@@ -94,7 +94,7 @@ const filterHref = (categoryId: string, groupId: string, filter: { sub?: string;
   <div class="min-h-0 flex-1 overflow-y-auto px-2 pb-8">
     <nav class="space-y-0.5 pt-3" aria-label="Offer types">
       {quickLinks.map((link) => (
-        <a href={link.href} data-sb-link class="sb-link group" title={link.label}>
+        <a href={link.href} data-sb-link data-astro-prefetch="viewport" class="sb-link group" title={link.label}>
           <Icon name={link.icon} class="h-[18px] w-[18px] shrink-0" />
           <span class="sb-label truncate" data-i18n={link.i18n}>{link.label}</span>
           <span data-sb-count={link.key} class="sb-badge ml-auto rounded-full bg-base-900 border editorial-rule px-2 py-0.5 text-[11px] font-mono font-medium text-ink-muted group-hover:text-ink">
@@ -220,6 +220,7 @@ const filterHref = (categoryId: string, groupId: string, filter: { sub?: string;
   function syncSidebarActive() {
     const currentPath = window.location.pathname;
     const currentFull = window.location.pathname + window.location.search;
+    document.querySelectorAll<HTMLElement>('[data-sb-summary]').forEach((s) => delete s.dataset.ancestor);
     document.querySelectorAll<HTMLAnchorElement>('[data-sb-link]').forEach((a) => {
       delete a.dataset.active;
       const href = a.getAttribute('href') || '';
@@ -240,20 +241,25 @@ const filterHref = (categoryId: string, groupId: string, filter: { sub?: string;
 
   document.addEventListener('astro:page-load', syncSidebarActive);
 
+  let cachedDealsMeta: any[] | null = null;
+  let cachedBrandsMeta: any[] | null = null;
+
   // Update sidebar counts dynamically based on the active country (market) and non-expired deals
   function updateSidebarCounts() {
     if (!sidebar) return;
     try {
+      if (!cachedDealsMeta) cachedDealsMeta = JSON.parse(sidebar.dataset.dealsMeta || '[]');
+      if (!cachedBrandsMeta) cachedBrandsMeta = JSON.parse(sidebar.dataset.brandsMeta || '[]');
       const market = root.dataset.activeMarket || 'ALL';
       const now = Date.now();
-      const deals = (JSON.parse(sidebar.dataset.dealsMeta || '[]') as any[]).filter((d) => {
+      const deals = cachedDealsMeta!.filter((d) => {
         if (d.ed) {
           const t = Date.parse(d.ed);
           if (!Number.isNaN(t) && t < now) return false;
         }
         return market === 'ALL' || d.m === market || d.m === 'GLOBAL';
       });
-      const brands = (JSON.parse(sidebar.dataset.brandsMeta || '[]') as any[]).filter(
+      const brands = cachedBrandsMeta!.filter(
         (b) => market === 'ALL' || b.m === market || b.m === 'GLOBAL'
       );
 
