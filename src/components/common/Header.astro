@@ -88,9 +88,10 @@ const latest = (await getCollection('deals', ({ data }) => data.status === 'acti
 
       <!-- Notification Bell -->
       <details class="relative shrink-0" data-dropdown data-bell>
-        <summary class="icon-btn relative h-9 w-9 cursor-pointer list-none rounded-full sm:h-10 sm:w-10" aria-label="New discounts" title="New discounts">
+        <summary class="icon-btn relative h-9 w-9 cursor-pointer list-none rounded-full sm:h-10 sm:w-10" title="New discounts">
           <Icon name="bell" class="h-4 w-4 sm:h-[18px] sm:w-[18px]" />
-          <span data-bell-badge class="absolute -right-0.5 -top-0.5 flex h-4 min-w-[1.05rem] items-center justify-center rounded-full bg-red-600 px-1 text-[10px] font-bold leading-none text-white shadow-sm">
+          <span class="sr-only">New discounts</span>
+          <span data-bell-badge aria-hidden="true" class="absolute -right-0.5 -top-0.5 flex h-4 min-w-[1.05rem] items-center justify-center rounded-full bg-red-600 px-1 text-[10px] font-bold leading-none text-white shadow-sm">
             {latest.length || 8}
           </span>
         </summary>

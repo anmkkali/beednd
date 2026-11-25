@@ -268,39 +268,51 @@ const structuredData = {
 </BaseLayout>
 
 <script>
-  // Brand strip: auto-drifts in continuous loop, pauses on hover / focus / touch, left/right buttons step smoothly
+  // Brand strip: auto-drifts smoothly with cached geometry (zero per-frame layout reflow)
   function initBrandTrack() {
     const track = document.getElementById('brand-track');
     if (!track || track.dataset.trackInit) return;
     track.dataset.trackInit = '1';
     const originalChildren = Array.from(track.children);
-    // Duplicate cards twice to ensure smooth infinite loop
-    for (let i = 0; i < 2; i++) {
-      originalChildren.forEach((card) => {
-        const clone = card.cloneNode(true) as HTMLElement;
-        clone.setAttribute('aria-hidden', 'true');
-        clone.tabIndex = -1;
-        track.appendChild(clone);
-      });
-    }
+    // Clone once for seamless loop
+    originalChildren.forEach((card) => {
+      const clone = card.cloneNode(true) as HTMLElement;
+      clone.setAttribute('aria-hidden', 'true');
+      clone.tabIndex = -1;
+      track.appendChild(clone);
+    });
 
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     let paused = false;
+    let inView = true;
     let resumeTimer = 0;
     let pos = track.scrollLeft;
     let last = 0;
+    let cachedBw = 0;
+    let canScroll = false;
 
-    const baseWidth = () => originalChildren.reduce((acc, el) => acc + (el as HTMLElement).offsetWidth, 0) || (track.scrollWidth / 3);
+    const measure = () => {
+      cachedBw = track.scrollWidth / 2;
+      canScroll = track.scrollWidth > track.clientWidth + 2;
+    };
+    requestAnimationFrame(measure);
+    window.addEventListener('resize', measure, { passive: true });
+    window.addEventListener('dealssite:market-updated', () => requestAnimationFrame(measure));
+
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver((entries) => {
+        inView = entries[0]?.isIntersecting ?? true;
+      }).observe(track);
+    }
 
     const wrap = () => {
-      const bw = baseWidth();
-      if (bw <= 0) return;
-      if (track.scrollLeft >= bw * 2) {
-        track.scrollLeft -= bw;
-        pos = track.scrollLeft;
-      } else if (track.scrollLeft <= 0) {
-        track.scrollLeft += bw;
-        pos = track.scrollLeft;
+      if (cachedBw <= 0) return;
+      if (pos >= cachedBw) {
+        pos -= cachedBw;
+        track.scrollLeft = pos;
+      } else if (track.scrollLeft <= 0 && pos < 0) {
+        pos += cachedBw;
+        track.scrollLeft = pos;
       }
     };
 
@@ -328,7 +340,6 @@ const structuredData = {
     track.addEventListener('touchstart', () => hold(4000), { passive: true });
     track.addEventListener('touchend', () => hold(1500), { passive: true });
     track.addEventListener('wheel', () => hold(2000), { passive: true });
-    track.addEventListener('scroll', wrap, { passive: true });
 
     const step = () => (track.querySelector<HTMLElement>('[data-brand-card]')?.offsetWidth || 240) * 2;
     const prevBtn = document.querySelector('[data-brand-prev]');
@@ -338,7 +349,7 @@ const structuredData = {
     prevBtn?.addEventListener('mouseleave', release);
     prevBtn?.addEventListener('click', () => {
       hold(2500);
-      wrap();
+      if (cachedBw > 0 && track.scrollLeft <= 4) track.scrollLeft += cachedBw;
       track.scrollBy({ left: -step(), behavior: 'smooth' });
     });
 
@@ -346,17 +357,17 @@ const structuredData = {
     nextBtn?.addEventListener('mouseleave', release);
     nextBtn?.addEventListener('click', () => {
       hold(2500);
-      wrap();
+      if (cachedBw > 0 && track.scrollLeft >= cachedBw) track.scrollLeft -= cachedBw;
       track.scrollBy({ left: step(), behavior: 'smooth' });
     });
 
     const tick = (t: number) => {
       const dt = last ? Math.min(t - last, 64) : 16;
       last = t;
-      if (!paused && !reduce && track.scrollWidth > track.clientWidth) {
+      if (!paused && inView && !document.hidden && !reduce && canScroll) {
         pos += dt * 0.075;
+        if (cachedBw > 0 && pos >= cachedBw) pos -= cachedBw;
         track.scrollLeft = pos;
-        wrap();
       }
       requestAnimationFrame(tick);
     };
