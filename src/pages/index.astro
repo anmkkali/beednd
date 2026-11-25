@@ -65,11 +65,11 @@ const structuredData = {
           Brands and offers adjust to the country you open the site from. Browse by brand, category or city.
         </p>
         <div class="mt-4 flex flex-wrap items-center gap-2.5 sm:mt-5 sm:gap-3">
-          <a href="/brands" class="btn-primary inline-flex items-center gap-2 px-5 py-2.5 text-[13.5px] font-semibold">
+          <a href="/brands/" class="btn-primary inline-flex items-center gap-2 px-5 py-2.5 text-[13.5px] font-semibold">
             <span data-i18n="browse_brands">Browse Brands</span>
             <Icon name="arrow" class="h-4 w-4" />
           </a>
-          <a href="/blog" class="btn-outline inline-flex items-center gap-2 px-5 py-2.5 text-[13.5px] font-semibold" data-i18n="read_blog">Read Blog</a>
+          <a href="/blog/" class="btn-outline inline-flex items-center gap-2 px-5 py-2.5 text-[13.5px] font-semibold" data-i18n="read_blog">Read Blog</a>
         </div>
       </div>
       <!-- Right side: reserved for future graphic / illustration -->
@@ -95,7 +95,7 @@ const structuredData = {
         <button type="button" data-brand-next class="icon-btn border editorial-rule inline-flex" aria-label="Next brands" title="Next brands">
           <Icon name="arrow" class="h-4 w-4" />
         </button>
-        <a href="/brands" class="inline-flex items-center gap-1.5 whitespace-nowrap text-[14px] sm:ml-1 font-semibold text-ink hover:underline">
+        <a href="/brands/" class="inline-flex items-center gap-1.5 whitespace-nowrap text-[14px] sm:ml-1 font-semibold text-ink hover:underline">
           <span data-i18n="all_brands">All brands</span>
           <Icon name="arrow" class="h-4 w-4" />
         </a>
@@ -179,9 +179,15 @@ const structuredData = {
       const wrappers = Array.from(document.querySelectorAll<HTMLElement>('[data-deal-wrapper]'));
       const emptyMsg = document.getElementById('deals-empty-msg');
       const caption = document.getElementById('hero-market-caption');
-      const shown = (el: Element) => getComputedStyle(el).display !== 'none';
+      const shown = (el: HTMLElement) => {
+        if (el.classList.contains('hidden')) return false;
+        const market = document.documentElement.dataset.activeMarket || 'ALL';
+        const m = el.dataset.market || 'GLOBAL';
+        return market === 'ALL' || m === market || m === 'GLOBAL';
+      };
 
       let current = 'all';
+      let personalizedOnce = false;
 
       function matches(wrapper: HTMLElement, type: string) {
         if (type === 'all') return true;
@@ -225,7 +231,10 @@ const structuredData = {
       }
 
       function refresh() {
-        personalizeFeed();
+        if (!personalizedOnce) {
+          personalizeFeed();
+          personalizedOnce = true;
+        }
         wrappers.forEach((wrapper) => wrapper.classList.toggle('hidden', !matches(wrapper, current)));
         buttons.forEach((button) => {
           const active = button.dataset.typeFilter === current;

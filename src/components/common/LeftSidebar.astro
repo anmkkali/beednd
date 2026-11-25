@@ -119,7 +119,7 @@ const filterHref = (categoryId: string, groupId: string, filter: { sub?: string;
           </summary>
 
           <div class="sb-nested ml-[1.4rem] border-l editorial-rule pl-2">
-            <a href={`/categories/${category.id}`} data-sb-link class="sb-link">
+            <a href={`/categories/${category.id}/`} data-sb-link data-astro-prefetch="viewport" class="sb-link">
               All {category.name}
             </a>
 
@@ -131,7 +131,7 @@ const filterHref = (categoryId: string, groupId: string, filter: { sub?: string;
                 </summary>
                 <div class="ml-3 border-l editorial-rule pl-2">
                   {group.filters.map((filter) => (
-                    <a href={filterHref(category.id, group.id, filter)} data-sb-link class="sb-link">
+                    <a href={filterHref(category.id, group.id, filter)} data-sb-link data-astro-prefetch="viewport" class="sb-link">
                       {filter.label}
                     </a>
                   ))}
