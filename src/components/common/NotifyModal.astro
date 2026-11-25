@@ -3,7 +3,9 @@ import Icon from './Icon.astro';
 import { subscribeEndpoint } from '../../data/site';
 import brandsWatchlist from '../../data/brandsWatchlist.json';
 
-const brands = [...brandsWatchlist].sort((a, b) => a.name.localeCompare(b.name));
+const brands = [...brandsWatchlist]
+  .map((b) => ({ id: b.id, name: b.name, country: b.country, category: b.category }))
+  .sort((a, b) => a.name.localeCompare(b.name));
 
 const categoryTags = [
   { id: 'all', label: 'All' },
@@ -54,7 +56,7 @@ const categoryTags = [
               aria-pressed={idx === 0 ? 'true' : 'false'}
               class={`border px-2.5 py-1 text-[11.5px] font-medium transition-colors ${
                 idx === 0
-                  ? 'border-ink bg-ink text-base-950'
+                  ? 'btn-primary border-ink'
                   : 'editorial-rule bg-transparent text-ink-muted hover:border-ink hover:text-ink'
               }`}
             >
@@ -63,26 +65,36 @@ const categoryTags = [
           ))}
         </div>
 
+        <input type="hidden" name="brand" id="notify-brand" value="any" />
+
         <div class="relative">
           <Icon name="search" class="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-ink-muted" />
           <input
             id="notify-brand-search"
-            type="search"
-            placeholder="Search brand..."
+            type="text"
+            placeholder="Search or pick a brand (default: Any brand)..."
             autocomplete="off"
-            aria-label="Search brands"
-            class="w-full border editorial-rule bg-transparent py-2 pl-9 pr-3 text-[14px] font-normal text-ink placeholder:text-ink-muted focus:border-ink focus:outline-none"
+            aria-label="Search or pick a brand"
+            aria-autocomplete="list"
+            aria-controls="notify-brand-suggestions"
+            class="w-full border editorial-rule bg-transparent py-2.5 pl-9 pr-9 text-[14px] font-normal text-ink placeholder:text-ink-muted focus:border-ink focus:outline-none"
           />
+          <button
+            type="button"
+            id="notify-brand-clear"
+            aria-label="Clear selected brand"
+            class="hidden absolute right-2 top-1/2 -translate-y-1/2 p-1 text-ink-muted hover:text-ink"
+          >
+            <Icon name="close" class="h-3.5 w-3.5" />
+          </button>
         </div>
 
-        <select name="brand" id="notify-brand" aria-label="Brand" class="w-full border editorial-rule bg-base-950 px-3 py-2.5 text-[15px] font-normal text-ink focus:border-ink focus:outline-none">
-          <option value="any" data-brand-market="ALL" data-brand-category="all">Any brand</option>
-          {brands.map((brand) => (
-            <option value={brand.id} data-brand-market={brand.country} data-brand-category={brand.category}>
-              {brand.name}
-            </option>
-          ))}
-        </select>
+        <div
+          id="notify-brand-suggestions"
+          role="listbox"
+          aria-label="Brand suggestions"
+          class="hidden max-h-44 overflow-y-auto border editorial-rule bg-base-950 divide-y divide-[rgb(var(--ink)/0.08)]"
+        ></div>
       </div>
 
       <button type="submit" class="btn-primary w-full px-4 py-3 text-[14px] font-semibold">Notify me</button>
@@ -92,16 +104,52 @@ const categoryTags = [
   </div>
 </div>
 
+<script type="application/json" id="notify-brands-data" set:html={JSON.stringify(brands)}></script>
+
 <script>
+  interface WatchBrand {
+    id: string;
+    name: string;
+    country: string;
+    category: string;
+  }
+
+  const CAT_LABELS: Record<string, string> = {
+    'clothing-fashion': 'Clothing',
+    'ai-tools': 'AI Tools',
+    'tech-electronics': 'Tech',
+    'beauty-wellness': 'Beauty',
+    'food-dining': 'Food',
+    'travel-lifestyle': 'Travel',
+    'pets': 'Pets',
+    'groceries-essentials': 'Groceries',
+  };
+
   const modal = document.getElementById('notify-modal');
   const form = document.getElementById('notify-form') as HTMLFormElement | null;
-  const brandSelect = document.getElementById('notify-brand') as HTMLSelectElement | null;
+  const brandInput = document.getElementById('notify-brand') as HTMLInputElement | null;
   const brandSearch = document.getElementById('notify-brand-search') as HTMLInputElement | null;
+  const brandClear = document.getElementById('notify-brand-clear');
+  const suggestionsBox = document.getElementById('notify-brand-suggestions');
   const brandCount = document.getElementById('notify-brand-count');
   const categoryContainer = document.getElementById('notify-category-tags');
   const message = document.getElementById('notify-message');
 
+  let allBrands: WatchBrand[] = [];
+  try {
+    allBrands = JSON.parse(document.getElementById('notify-brands-data')?.textContent || '[]');
+  } catch {}
+
   let activeCategory = 'all';
+  let selectedBrandName = '';
+
+  function getInterestScores(): Record<string, number> {
+    try {
+      return JSON.parse(localStorage.getItem('dealssite_interest') || '{}');
+    } catch {
+      return {};
+    }
+  }
 
   function show(text: string, ok: boolean) {
     if (!message) return;
@@ -119,70 +167,157 @@ const categoryTags = [
       btn.setAttribute('aria-pressed', selected ? 'true' : 'false');
       btn.className = `border px-2.5 py-1 text-[11.5px] font-medium transition-colors ${
         selected
-          ? 'border-ink bg-ink text-base-950'
+          ? 'btn-primary border-ink'
           : 'editorial-rule bg-transparent text-ink-muted hover:border-ink hover:text-ink'
       }`;
     });
   }
 
-  function filterNotifyBrands() {
-    if (!brandSelect) return;
-    const market = document.documentElement.dataset.activeMarket || 'ALL';
-    const query = (brandSearch?.value || '').trim().toLowerCase();
-    let visibleCount = 0;
-    let firstMatchValue = '';
+  function updateClearBtn() {
+    const hasVal = Boolean((brandSearch?.value || '').trim() || (brandInput && brandInput.value !== 'any'));
+    brandClear?.classList.toggle('hidden', !hasVal);
+  }
 
-    Array.from(brandSelect.options).forEach((opt) => {
-      if (opt.value === 'any') {
-        opt.hidden = false;
-        opt.disabled = false;
-        return;
-      }
-      const m = opt.dataset.brandMarket || 'ALL';
-      const cat = opt.dataset.brandCategory || '';
-      const marketMatch = market === 'ALL' || m === market || m === 'GLOBAL';
-      const catMatch = activeCategory === 'all' || cat === activeCategory;
-      const searchMatch = !query || (opt.textContent || '').toLowerCase().includes(query);
-      const showOpt = marketMatch && catMatch && searchMatch;
-      opt.hidden = !showOpt;
-      opt.disabled = !showOpt;
-      if (showOpt) {
-        visibleCount++;
-        if (!firstMatchValue) firstMatchValue = opt.value;
-      }
+  function getMatchingBrands(query: string): WatchBrand[] {
+    const market = document.documentElement.dataset.activeMarket || 'ALL';
+    const q = query.trim().toLowerCase();
+    const interest = getInterestScores();
+
+    const filtered = allBrands.filter((b) => {
+      const marketMatch = market === 'ALL' || b.country === market || b.country === 'GLOBAL';
+      const catMatch = activeCategory === 'all' || b.category === activeCategory;
+      const textMatch = !q || b.name.toLowerCase().includes(q);
+      return marketMatch && catMatch && textMatch;
     });
 
+    // Rank by prefix match -> word-start match -> user behavior interest score -> alphabetical
+    filtered.sort((a, b) => {
+      if (q) {
+        const an = a.name.toLowerCase();
+        const bn = b.name.toLowerCase();
+        const aStarts = an.startsWith(q) ? 0 : an.includes(` ${q}`) ? 1 : 2;
+        const bStarts = bn.startsWith(q) ? 0 : bn.includes(` ${q}`) ? 1 : 2;
+        if (aStarts !== bStarts) return aStarts - bStarts;
+      }
+      const aScore = Number(interest[a.category] || 0);
+      const bScore = Number(interest[b.category] || 0);
+      if (aScore !== bScore) return bScore - aScore;
+      return a.name.localeCompare(b.name);
+    });
+
+    return filtered;
+  }
+
+  function renderSuggestions(openList = true) {
+    if (!suggestionsBox || !brandInput) return;
+    const rawQuery = brandSearch?.value || '';
+    // If the input currently matches the already-selected brand name, show all category/market suggestions when opened
+    const effectiveQuery = selectedBrandName && rawQuery === selectedBrandName ? '' : rawQuery;
+    const matches = getMatchingBrands(effectiveQuery);
+
     if (brandCount) {
-      brandCount.textContent = `${visibleCount} ${visibleCount === 1 ? 'brand' : 'brands'}`;
+      brandCount.textContent = `${matches.length} ${matches.length === 1 ? 'brand' : 'brands'}`;
+    }
+    updateClearBtn();
+
+    if (!openList) {
+      suggestionsBox.classList.add('hidden');
+      return;
     }
 
-    const currentOpt = brandSelect.selectedOptions[0];
-    if (currentOpt && currentOpt.disabled) {
-      brandSelect.value = query && firstMatchValue ? firstMatchValue : 'any';
-    } else if (query && visibleCount === 1 && firstMatchValue && brandSelect.value === 'any') {
-      brandSelect.value = firstMatchValue;
+    const fragment = document.createDocumentFragment();
+
+    const anyBtn = document.createElement('button');
+    anyBtn.type = 'button';
+    anyBtn.setAttribute('role', 'option');
+    anyBtn.dataset.suggestId = 'any';
+    anyBtn.dataset.suggestName = '';
+    anyBtn.className = `flex w-full items-center justify-between px-3 py-2 text-left text-[13.5px] transition-colors hover:bg-[rgb(var(--ink)/0.06)] ${
+      brandInput.value === 'any' ? 'font-semibold text-ink bg-[rgb(var(--ink)/0.05)]' : 'text-ink-muted'
+    }`;
+    anyBtn.innerHTML = '<span>Any brand</span><span class="text-[11px] opacity-70">All matching offers</span>';
+    fragment.appendChild(anyBtn);
+
+    if (matches.length === 0) {
+      const empty = document.createElement('div');
+      empty.className = 'px-3 py-3 text-[13px] text-ink-muted';
+      empty.textContent = 'No matching brands found in this category/country.';
+      fragment.appendChild(empty);
+    } else {
+      matches.slice(0, 50).forEach((b) => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.setAttribute('role', 'option');
+        btn.dataset.suggestId = b.id;
+        btn.dataset.suggestName = b.name;
+        const isSelected = brandInput.value === b.id;
+        btn.className = `flex w-full items-center justify-between px-3 py-2 text-left text-[13.5px] transition-colors hover:bg-[rgb(var(--ink)/0.06)] ${
+          isSelected ? 'font-semibold text-ink bg-[rgb(var(--ink)/0.06)]' : 'text-ink'
+        }`;
+        const label = CAT_LABELS[b.category] || b.category;
+        btn.innerHTML = `<span class="truncate pr-2">${b.name}</span><span class="shrink-0 text-[11px] text-ink-muted">${label}</span>`;
+        fragment.appendChild(btn);
+      });
     }
+
+    suggestionsBox.replaceChildren(fragment);
+    suggestionsBox.classList.remove('hidden');
+  }
+
+  function selectBrand(id: string, name: string, closeList = true) {
+    if (brandInput) brandInput.value = id || 'any';
+    selectedBrandName = id && id !== 'any' ? name : '';
+    if (brandSearch) brandSearch.value = selectedBrandName;
+    updateClearBtn();
+    if (closeList) {
+      suggestionsBox?.classList.add('hidden');
+    } else {
+      renderSuggestions(true);
+    }
+  }
+
+  function filterNotifyBrands() {
+    renderSuggestions(!suggestionsBox?.classList.contains('hidden'));
   }
 
   function open(brand?: string) {
     activeCategory = 'all';
-    if (brandSearch) brandSearch.value = '';
     updateCategoryButtons();
-    filterNotifyBrands();
-    if (brandSelect) brandSelect.value = brand && [...brandSelect.options].some((o) => o.value === brand && !o.disabled) ? brand : 'any';
+    const matched = brand ? allBrands.find((b) => b.id === brand) : undefined;
+    selectBrand(matched ? matched.id : 'any', matched ? matched.name : '', true);
+    renderSuggestions(false);
     message?.classList.add('hidden');
     modal?.classList.remove('hidden');
     modal?.classList.add('flex');
     window.setTimeout(() => form?.querySelector<HTMLInputElement>('input[name="name"]')?.focus(), 10);
   }
 
-  brandSearch?.addEventListener('input', filterNotifyBrands);
+  brandSearch?.addEventListener('focus', () => renderSuggestions(true));
+  brandSearch?.addEventListener('input', () => {
+    if (selectedBrandName && brandSearch.value !== selectedBrandName) {
+      selectedBrandName = '';
+      if (brandInput) brandInput.value = 'any';
+    }
+    renderSuggestions(true);
+  });
+
+  brandClear?.addEventListener('click', () => {
+    selectBrand('any', '', false);
+    brandSearch?.focus();
+  });
+
+  suggestionsBox?.addEventListener('click', (event) => {
+    const btn = (event.target as HTMLElement).closest<HTMLButtonElement>('[data-suggest-id]');
+    if (!btn) return;
+    selectBrand(btn.dataset.suggestId || 'any', btn.dataset.suggestName || '', true);
+  });
+
   categoryContainer?.addEventListener('click', (event) => {
     const btn = (event.target as HTMLElement).closest<HTMLButtonElement>('[data-notify-cat]');
     if (!btn) return;
     activeCategory = btn.dataset.notifyCat || 'all';
     updateCategoryButtons();
-    filterNotifyBrands();
+    renderSuggestions(true);
   });
 
   window.addEventListener('dealssite:market-updated', filterNotifyBrands);
@@ -230,6 +365,7 @@ const categoryTags = [
       if (!response.ok) throw new Error(String(response.status));
       show('Thanks. We will email you when this brand has a new discount.', true);
       form.reset();
+      selectBrand('any', '', true);
     } catch {
       show('Sorry, something went wrong. Please try again in a moment.', false);
     }
