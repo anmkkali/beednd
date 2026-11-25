@@ -250,8 +250,8 @@ html[data-theme='dark'] .theme-icon-moon {
 @media (min-width: 1024px) {
   #app-sidebar {
     position: sticky;
-    top: 0;
-    height: 100vh;
+    top: var(--sticky-top-h, 96px);
+    height: calc(100vh - var(--sticky-top-h, 96px));
     width: 18rem;
     flex-shrink: 0;
   }

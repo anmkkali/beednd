@@ -121,16 +121,16 @@ const fontsUrl =
       })();
     </script>
 
-    <title>{title} | DealsSite</title>
+    <title>{title} | BeeDND</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
     {noindex && <meta name="robots" content="noindex, follow" />}
 
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="DealsSite" />
+    <meta property="og:site_name" content="BeeDND" />
     <meta property="og:url" content={canonicalURL} />
-    <meta property="og:title" content={`${title} | DealsSite`} />
+    <meta property="og:title" content={`${title} | BeeDND`} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={image} />
 
@@ -176,6 +176,14 @@ const fontsUrl =
 
       const root = document.documentElement;
       const visible = (el: Element) => getComputedStyle(el).display !== 'none';
+
+      function syncStickyTopHeight() {
+        const stickyTop = document.getElementById('sticky-top');
+        if (stickyTop) root.style.setProperty('--sticky-top-h', `${stickyTop.offsetHeight}px`);
+      }
+      syncStickyTopHeight();
+      window.addEventListener('resize', syncStickyTopHeight);
+      document.addEventListener('astro:page-load', syncStickyTopHeight);
 
       function updateFavicon(theme: string) {
         const fav = document.querySelector<HTMLLinkElement>('link[rel="icon"]');

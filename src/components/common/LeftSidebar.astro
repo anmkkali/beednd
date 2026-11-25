@@ -91,7 +91,7 @@ const filterHref = (categoryId: string, groupId: string, filter: { sub?: string;
     </button>
   </div>
 
-  <div class="min-h-0 flex-1 overflow-y-auto px-2 pb-8">
+  <div class="min-h-0 flex-1 overflow-y-auto overscroll-contain px-2 pb-8">
     <nav class="space-y-0.5 pt-3" aria-label="Offer types">
       {quickLinks.map((link) => (
         <a href={link.href} data-sb-link data-astro-prefetch="viewport" class="sb-link group" title={link.label}>
