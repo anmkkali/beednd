@@ -88,9 +88,12 @@ details > summary::-webkit-details-marker {
   border-radius: 9999px;
 }
 
-.btn-primary {
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:focus-visible,
+.btn-primary:active {
   background-color: rgb(var(--ink));
-  color: rgb(var(--ink-inverse));
+  color: rgb(var(--ink-inverse)) !important;
   transition: opacity 150ms ease;
 }
 
@@ -129,8 +132,11 @@ html[data-theme='dark'] .editorial-pill,
 
 /* Selected button / active pill in dark mode: solid bright pill with crisp dark text */
 html[data-theme='dark'] .btn-primary,
+html[data-theme='dark'] .btn-primary:hover,
 :root[data-theme='dark'] .btn-primary,
-html[data-theme='dark'] .editorial-pill.btn-primary {
+:root[data-theme='dark'] .btn-primary:hover,
+html[data-theme='dark'] .editorial-pill.btn-primary,
+html[data-theme='dark'] .editorial-pill.btn-primary:hover {
   background-color: rgb(236 236 240) !important;
   color: rgb(10 10 12) !important;
   border-color: rgb(236 236 240) !important;
