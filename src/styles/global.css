@@ -233,11 +233,20 @@ html[data-theme='dark'] .theme-icon-moon {
     width: 18rem;
     max-width: 86vw;
     height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
     box-shadow: 4px 0 24px rgba(0, 0, 0, 0.4);
     transform: translateX(-100%);
   }
+  #app-sidebar .sb-scroll {
+    touch-action: pan-y;
+    -webkit-overflow-scrolling: touch;
+  }
   html[data-sidebar-open] #app-sidebar {
     transform: none;
+  }
+  html[data-sidebar-open] body {
+    overflow: hidden;
   }
   #sidebar-backdrop {
     display: none;

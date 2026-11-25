@@ -66,7 +66,7 @@ const filterHref = (categoryId: string, groupId: string, filter: { sub?: string;
 };
 ---
 
-<div id="sidebar-backdrop" class="fixed inset-0 z-[75] bg-black/60 backdrop-blur-sm" data-sidebar-close></div>
+<div id="sidebar-backdrop" transition:persist="sidebar-backdrop" class="fixed inset-0 z-[75] bg-black/60 backdrop-blur-sm" data-sidebar-close></div>
 
 <aside
   id="app-sidebar"
@@ -91,7 +91,7 @@ const filterHref = (categoryId: string, groupId: string, filter: { sub?: string;
     </button>
   </div>
 
-  <div class="min-h-0 flex-1 overflow-y-auto overscroll-contain px-2 pb-8">
+  <div class="sb-scroll min-h-0 flex-1 overflow-y-auto overscroll-contain px-2 pb-10">
     <nav class="space-y-0.5 pt-3" aria-label="Offer types">
       {quickLinks.map((link) => (
         <a href={link.href} data-sb-link data-astro-prefetch="viewport" class="sb-link group" title={link.label}>
@@ -205,16 +205,23 @@ const filterHref = (categoryId: string, groupId: string, filter: { sub?: string;
     delete root.dataset.sidebarOpen;
   }
 
-  // Header menu button: collapses or expands the desktop rail, opens or closes the mobile drawer
-  document.querySelectorAll('[data-menu-toggle]').forEach((el) =>
-    el.addEventListener('click', () => {
-      if (isDesktop()) setCollapsed(!isCollapsed());
-      else if ('sidebarOpen' in root.dataset) closeDrawer();
-      else openDrawer();
-    })
-  );
-
-  document.querySelectorAll('[data-sidebar-close]').forEach((el) => el.addEventListener('click', closeDrawer));
+  // Delegated listeners so menu toggle & backdrop close always work after any ViewTransitions navigation
+  if (!(window as any).__dsSidebarBound) {
+    (window as any).__dsSidebarBound = true;
+    document.addEventListener('click', (event) => {
+      const target = event.target as HTMLElement | null;
+      if (!target) return;
+      if (target.closest('[data-menu-toggle]')) {
+        if (isDesktop()) setCollapsed(!isCollapsed());
+        else if ('sidebarOpen' in root.dataset) closeDrawer();
+        else openDrawer();
+        return;
+      }
+      if (target.closest('[data-sidebar-close]')) {
+        closeDrawer();
+      }
+    });
+  }
 
   // Highlight active link matching current path (updates smoothly without reloading sidebar)
   function syncSidebarActive() {
