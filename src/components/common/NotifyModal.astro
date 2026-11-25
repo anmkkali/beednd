@@ -4,10 +4,22 @@ import { subscribeEndpoint } from '../../data/site';
 import brandsWatchlist from '../../data/brandsWatchlist.json';
 
 const brands = [...brandsWatchlist].sort((a, b) => a.name.localeCompare(b.name));
+
+const categoryTags = [
+  { id: 'all', label: 'All' },
+  { id: 'clothing-fashion', label: 'Clothing' },
+  { id: 'ai-tools', label: 'AI Tools' },
+  { id: 'tech-electronics', label: 'Tech' },
+  { id: 'beauty-wellness', label: 'Beauty' },
+  { id: 'food-dining', label: 'Food' },
+  { id: 'travel-lifestyle', label: 'Travel' },
+  { id: 'pets', label: 'Pets' },
+  { id: 'groceries-essentials', label: 'Groceries' },
+];
 ---
 
 <div id="notify-modal" class="fixed inset-0 z-[80] hidden items-center justify-center bg-black/55 p-4">
-  <div class="relative w-full max-w-md border editorial-rule-strong bg-base-950 p-6 shadow-2xl" role="dialog" aria-modal="true" aria-labelledby="notify-title">
+  <div class="relative max-h-[90vh] w-full max-w-md overflow-y-auto border editorial-rule-strong bg-base-950 p-6 shadow-2xl" role="dialog" aria-modal="true" aria-labelledby="notify-title">
     <button type="button" data-notify-close class="icon-btn absolute right-2 top-2" aria-label="Close">
       <Icon name="close" class="h-5 w-5" />
     </button>
@@ -27,17 +39,52 @@ const brands = [...brandsWatchlist].sort((a, b) => a.name.localeCompare(b.name))
         Email
         <input name="email" type="email" required autocomplete="email" class="mt-1 w-full border editorial-rule bg-transparent px-3 py-2.5 text-[15px] font-normal text-ink focus:border-ink focus:outline-none" />
       </label>
-      <label class="block text-[13.5px] font-semibold text-ink">
-        Brand
-        <select name="brand" id="notify-brand" class="mt-1 w-full border editorial-rule bg-base-950 px-3 py-2.5 text-[15px] font-normal text-ink focus:border-ink focus:outline-none">
-          <option value="any" data-brand-market="ALL">Any brand</option>
+
+      <div class="space-y-2">
+        <div class="flex items-center justify-between">
+          <span class="text-[13.5px] font-semibold text-ink">Brand</span>
+          <span id="notify-brand-count" class="text-[11.5px] text-ink-muted"></span>
+        </div>
+
+        <div id="notify-category-tags" class="flex flex-wrap gap-1.5" role="group" aria-label="Filter brands by category">
+          {categoryTags.map((tag, idx) => (
+            <button
+              type="button"
+              data-notify-cat={tag.id}
+              aria-pressed={idx === 0 ? 'true' : 'false'}
+              class={`border px-2.5 py-1 text-[11.5px] font-medium transition-colors ${
+                idx === 0
+                  ? 'border-ink bg-ink text-base-950'
+                  : 'editorial-rule bg-transparent text-ink-muted hover:border-ink hover:text-ink'
+              }`}
+            >
+              {tag.label}
+            </button>
+          ))}
+        </div>
+
+        <div class="relative">
+          <Icon name="search" class="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-ink-muted" />
+          <input
+            id="notify-brand-search"
+            type="search"
+            placeholder="Search brand..."
+            autocomplete="off"
+            aria-label="Search brands"
+            class="w-full border editorial-rule bg-transparent py-2 pl-9 pr-3 text-[14px] font-normal text-ink placeholder:text-ink-muted focus:border-ink focus:outline-none"
+          />
+        </div>
+
+        <select name="brand" id="notify-brand" aria-label="Brand" class="w-full border editorial-rule bg-base-950 px-3 py-2.5 text-[15px] font-normal text-ink focus:border-ink focus:outline-none">
+          <option value="any" data-brand-market="ALL" data-brand-category="all">Any brand</option>
           {brands.map((brand) => (
-            <option value={brand.id} data-brand-market={brand.country}>
+            <option value={brand.id} data-brand-market={brand.country} data-brand-category={brand.category}>
               {brand.name}
             </option>
           ))}
         </select>
-      </label>
+      </div>
+
       <button type="submit" class="btn-primary w-full px-4 py-3 text-[14px] font-semibold">Notify me</button>
       <p id="notify-message" class="hidden text-[14px] leading-relaxed" role="status"></p>
       <p class="text-[12.5px] leading-relaxed text-ink-muted">We only use your details to send these alerts. You can unsubscribe at any time. See the <a href="/privacy-policy" class="underline">Privacy Policy</a>.</p>
@@ -49,7 +96,12 @@ const brands = [...brandsWatchlist].sort((a, b) => a.name.localeCompare(b.name))
   const modal = document.getElementById('notify-modal');
   const form = document.getElementById('notify-form') as HTMLFormElement | null;
   const brandSelect = document.getElementById('notify-brand') as HTMLSelectElement | null;
+  const brandSearch = document.getElementById('notify-brand-search') as HTMLInputElement | null;
+  const brandCount = document.getElementById('notify-brand-count');
+  const categoryContainer = document.getElementById('notify-category-tags');
   const message = document.getElementById('notify-message');
+
+  let activeCategory = 'all';
 
   function show(text: string, ok: boolean) {
     if (!message) return;
@@ -60,18 +112,62 @@ const brands = [...brandsWatchlist].sort((a, b) => a.name.localeCompare(b.name))
     message.classList.toggle('text-ink-muted', !ok);
   }
 
-  function filterNotifyBrands() {
-    if (!brandSelect) return;
-    const market = document.documentElement.dataset.activeMarket || 'ALL';
-    Array.from(brandSelect.options).forEach((opt) => {
-      const m = opt.dataset.brandMarket || 'ALL';
-      const showOpt = opt.value === 'any' || market === 'ALL' || m === market || m === 'GLOBAL';
-      opt.hidden = !showOpt;
-      opt.disabled = !showOpt;
+  function updateCategoryButtons() {
+    if (!categoryContainer) return;
+    categoryContainer.querySelectorAll<HTMLButtonElement>('[data-notify-cat]').forEach((btn) => {
+      const selected = (btn.dataset.notifyCat || 'all') === activeCategory;
+      btn.setAttribute('aria-pressed', selected ? 'true' : 'false');
+      btn.className = `border px-2.5 py-1 text-[11.5px] font-medium transition-colors ${
+        selected
+          ? 'border-ink bg-ink text-base-950'
+          : 'editorial-rule bg-transparent text-ink-muted hover:border-ink hover:text-ink'
+      }`;
     });
   }
 
+  function filterNotifyBrands() {
+    if (!brandSelect) return;
+    const market = document.documentElement.dataset.activeMarket || 'ALL';
+    const query = (brandSearch?.value || '').trim().toLowerCase();
+    let visibleCount = 0;
+    let firstMatchValue = '';
+
+    Array.from(brandSelect.options).forEach((opt) => {
+      if (opt.value === 'any') {
+        opt.hidden = false;
+        opt.disabled = false;
+        return;
+      }
+      const m = opt.dataset.brandMarket || 'ALL';
+      const cat = opt.dataset.brandCategory || '';
+      const marketMatch = market === 'ALL' || m === market || m === 'GLOBAL';
+      const catMatch = activeCategory === 'all' || cat === activeCategory;
+      const searchMatch = !query || (opt.textContent || '').toLowerCase().includes(query);
+      const showOpt = marketMatch && catMatch && searchMatch;
+      opt.hidden = !showOpt;
+      opt.disabled = !showOpt;
+      if (showOpt) {
+        visibleCount++;
+        if (!firstMatchValue) firstMatchValue = opt.value;
+      }
+    });
+
+    if (brandCount) {
+      brandCount.textContent = `${visibleCount} ${visibleCount === 1 ? 'brand' : 'brands'}`;
+    }
+
+    const currentOpt = brandSelect.selectedOptions[0];
+    if (currentOpt && currentOpt.disabled) {
+      brandSelect.value = query && firstMatchValue ? firstMatchValue : 'any';
+    } else if (query && visibleCount === 1 && firstMatchValue && brandSelect.value === 'any') {
+      brandSelect.value = firstMatchValue;
+    }
+  }
+
   function open(brand?: string) {
+    activeCategory = 'all';
+    if (brandSearch) brandSearch.value = '';
+    updateCategoryButtons();
     filterNotifyBrands();
     if (brandSelect) brandSelect.value = brand && [...brandSelect.options].some((o) => o.value === brand && !o.disabled) ? brand : 'any';
     message?.classList.add('hidden');
@@ -79,6 +175,15 @@ const brands = [...brandsWatchlist].sort((a, b) => a.name.localeCompare(b.name))
     modal?.classList.add('flex');
     window.setTimeout(() => form?.querySelector<HTMLInputElement>('input[name="name"]')?.focus(), 10);
   }
+
+  brandSearch?.addEventListener('input', filterNotifyBrands);
+  categoryContainer?.addEventListener('click', (event) => {
+    const btn = (event.target as HTMLElement).closest<HTMLButtonElement>('[data-notify-cat]');
+    if (!btn) return;
+    activeCategory = btn.dataset.notifyCat || 'all';
+    updateCategoryButtons();
+    filterNotifyBrands();
+  });
 
   window.addEventListener('dealssite:market-updated', filterNotifyBrands);
   document.addEventListener('astro:page-load', filterNotifyBrands);
