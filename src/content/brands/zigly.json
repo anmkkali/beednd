@@ -1,0 +1,16 @@
+{
+  "id": "zigly",
+  "name": "Zigly",
+  "slug": "zigly",
+  "logo_url": "https://www.google.com/s2/favicons?domain=zigly.com&sz=128",
+  "website_url": "https://zigly.com/",
+  "country": "IN",
+  "categories": [
+    "pets"
+  ],
+  "short_bio": "Verified IN brand offering seasonal sales and online discounts.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

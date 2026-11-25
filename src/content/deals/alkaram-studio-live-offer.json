@@ -1,0 +1,41 @@
+{
+  "id": "alkaram-studio-live-offer",
+  "slug": "alkaram-studio-live-offer",
+  "title": "Alkaram Studio: Up to 40% Off Seasonal Sale",
+  "short_description": "Verified active promotion detected on Alkaram Studio's official store (Up to 40% Off). Confirm exclusions at checkout.",
+  "brand_id": "alkaram-studio",
+  "country": "PK",
+  "cities": [],
+  "areas": [],
+  "branch_info": [],
+  "category": "clothing-fashion",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "UP TO 40% OFF",
+  "badge_text": "Up to 40% Off",
+  "numeric_discount_percent": 40,
+  "terms_and_conditions": [
+    "Auto-verified from Alkaram Studio official sale page.",
+    "Confirm final discount and exclusions on the official store."
+  ],
+  "start_date": "2026-11-25T21:30:07Z",
+  "end_date": "2026-12-09T23:59:00Z",
+  "source_url": "https://www.alkaramstudio.com/collections/unstitched-sale-1",
+  "affiliate_url": "https://www.alkaramstudio.com/collections/unstitched-sale-1",
+  "last_verified_at": "2026-11-25T21:30:07Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=alkaramstudio.com&sz=128",
+    "alt": "Alkaram Studio"
+  },
+  "tags": [
+    "all-items"
+  ]
+}
