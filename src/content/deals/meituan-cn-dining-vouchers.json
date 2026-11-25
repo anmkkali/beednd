@@ -1,0 +1,46 @@
+{
+  "id": "meituan-cn-dining-vouchers",
+  "slug": "meituan-cn-dining-vouchers",
+  "title": "Meituan: Restaurant & Food Delivery Vouchers",
+  "short_description": "Daily dining vouchers, group-buy meals, and instant delivery coupons.",
+  "brand_id": "meituan",
+  "country": "CN",
+  "cities": [
+    "Beijing",
+    "Shanghai",
+    "Shenzhen"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "food-dining",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "GROUP VOUCHERS",
+  "badge_text": "Dining Vouchers",
+  "numeric_discount_percent": 35,
+  "terms_and_conditions": [
+    "Verified from official brand seasonal campaign.",
+    "Exclusions and dates are set by the brand."
+  ],
+  "start_date": "2026-11-22T00:00:00Z",
+  "end_date": "2026-12-15T23:59:00Z",
+  "source_url": "https://www.meituan.com/",
+  "affiliate_url": "https://www.meituan.com/",
+  "last_verified_at": "2026-11-25T00:00:00Z",
+  "status": "active",
+  "is_trending": true,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "voucher",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=meituan.com&sz=128",
+    "alt": "Meituan: Restaurant & Food Delivery Vouchers"
+  },
+  "tags": [
+    "delivery",
+    "restaurants"
+  ]
+}

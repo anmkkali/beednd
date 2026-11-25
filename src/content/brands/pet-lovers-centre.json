@@ -1,0 +1,16 @@
+{
+  "id": "pet-lovers-centre",
+  "name": "Pet Lovers Centre",
+  "slug": "pet-lovers-centre",
+  "logo_url": "https://www.google.com/s2/favicons?domain=petloverscentre.com&sz=128",
+  "website_url": "https://www.petloverscentre.com/",
+  "country": "SG",
+  "categories": [
+    "pets"
+  ],
+  "short_bio": "Singapore's leading pet food and care retail chain.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}

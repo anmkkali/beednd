@@ -1,0 +1,16 @@
+{
+  "id": "sephora-uae",
+  "name": "Sephora UAE",
+  "slug": "sephora-uae",
+  "logo_url": "https://www.google.com/s2/favicons?domain=sephora.ae&sz=128",
+  "website_url": "https://www.sephora.ae/en/",
+  "country": "AE",
+  "categories": [
+    "beauty-wellness"
+  ],
+  "short_bio": "Leading beauty, skincare, and fragrance retailer across the UAE.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}

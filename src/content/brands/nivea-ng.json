@@ -1,0 +1,16 @@
+{
+  "id": "nivea-ng",
+  "name": "NIVEA Nigeria",
+  "slug": "nivea-ng",
+  "logo_url": "https://www.google.com/s2/favicons?domain=nivea.com.ng&sz=128",
+  "website_url": "https://www.nivea.com.ng/",
+  "country": "NG",
+  "categories": [
+    "beauty-wellness"
+  ],
+  "short_bio": "Trusted skincare and body care brand across Nigeria.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "sephora-sg",
+  "name": "Sephora Singapore",
+  "slug": "sephora-sg",
+  "logo_url": "https://www.google.com/s2/favicons?domain=sephora.sg&sz=128",
+  "website_url": "https://www.sephora.sg/",
+  "country": "SG",
+  "categories": [
+    "beauty-wellness"
+  ],
+  "short_bio": "Premier beauty, skincare, and makeup retailer in Singapore.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "rewe-de",
+  "name": "REWE",
+  "slug": "rewe-de",
+  "logo_url": "https://www.google.com/s2/favicons?domain=rewe.de&sz=128",
+  "website_url": "https://www.rewe.de/angebote/",
+  "country": "DE",
+  "categories": [
+    "groceries-essentials"
+  ],
+  "short_bio": "Major German supermarket chain with weekly grocery offers.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}

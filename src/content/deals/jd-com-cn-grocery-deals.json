@@ -1,0 +1,46 @@
+{
+  "id": "jd-com-cn-grocery-deals",
+  "slug": "jd-com-cn-grocery-deals",
+  "title": "JD.com: Fresh Grocery & Supermarket Bundles",
+  "short_description": "Same-day supermarket and fresh food bundle discounts across major Chinese cities.",
+  "brand_id": "jd-com",
+  "country": "CN",
+  "cities": [
+    "Beijing",
+    "Shanghai"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "groceries-essentials",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "UP TO 35% OFF",
+  "badge_text": "Grocery Bundles",
+  "numeric_discount_percent": 35,
+  "terms_and_conditions": [
+    "Verified from official brand seasonal campaign.",
+    "Exclusions and dates are set by the brand."
+  ],
+  "start_date": "2026-11-22T00:00:00Z",
+  "end_date": "2026-12-05T23:59:00Z",
+  "source_url": "https://www.jd.com/",
+  "affiliate_url": "https://www.jd.com/",
+  "last_verified_at": "2026-11-25T00:00:00Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=jd.com&sz=128",
+    "alt": "JD.com: Fresh Grocery & Supermarket Bundles"
+  },
+  "tags": [
+    "supermarkets",
+    "fresh",
+    "household"
+  ]
+}

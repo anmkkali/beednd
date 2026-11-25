@@ -1,0 +1,16 @@
+{
+  "id": "gratis-tr",
+  "name": "Gratis Turkey",
+  "slug": "gratis-tr",
+  "logo_url": "https://www.google.com/s2/favicons?domain=gratis.com&sz=128",
+  "website_url": "https://www.gratis.com/",
+  "country": "TR",
+  "categories": [
+    "beauty-wellness"
+  ],
+  "short_bio": "Turkey's top personal care, skincare, and cosmetics retail chain.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "shoprite-ng",
+  "name": "Shoprite Nigeria",
+  "slug": "shoprite-ng",
+  "logo_url": "https://www.google.com/s2/favicons?domain=shoprite.com.ng&sz=128",
+  "website_url": "https://www.shoprite.com.ng/",
+  "country": "NG",
+  "categories": [
+    "groceries-essentials"
+  ],
+  "short_bio": "Major supermarket chain in Nigeria with weekly grocery specials.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}

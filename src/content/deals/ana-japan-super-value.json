@@ -1,0 +1,44 @@
+{
+  "id": "ana-japan-super-value",
+  "slug": "ana-japan-super-value",
+  "title": "ANA Japan: Super Value & Seasonal Flight Sales",
+  "short_description": "Discounted domestic and international fares booked online via ANA.",
+  "brand_id": "ana-japan",
+  "country": "JP",
+  "cities": [
+    "Tokyo",
+    "Osaka"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "travel-lifestyle",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "SUPER VALUE",
+  "badge_text": "Flight Sales",
+  "numeric_discount_percent": 25,
+  "terms_and_conditions": [
+    "Verified from official brand seasonal campaign.",
+    "Exclusions and dates are set by the brand."
+  ],
+  "start_date": "2026-11-22T00:00:00Z",
+  "end_date": "2026-12-15T23:59:00Z",
+  "source_url": "https://www.ana.co.jp/",
+  "affiliate_url": "https://www.ana.co.jp/",
+  "last_verified_at": "2026-11-25T00:00:00Z",
+  "status": "active",
+  "is_trending": true,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=ana.co.jp&sz=128",
+    "alt": "ANA Japan: Super Value & Seasonal Flight Sales"
+  },
+  "tags": [
+    "flights"
+  ]
+}

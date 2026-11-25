@@ -1,0 +1,44 @@
+{
+  "id": "mypetstore-ng-deals",
+  "slug": "mypetstore-ng-deals",
+  "title": "MyPetStore Nigeria: Black Friday Pet Food & Supplies",
+  "short_description": "Markdowns on dog food, cat kibble, collars, and pet care essentials.",
+  "brand_id": "mypetstore-ng",
+  "country": "NG",
+  "cities": [
+    "Lagos"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "pets",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "UP TO 30% OFF",
+  "badge_text": "Up to 30% Off",
+  "numeric_discount_percent": 30,
+  "terms_and_conditions": [
+    "Verified from official brand seasonal campaign.",
+    "Exclusions and dates are set by the brand."
+  ],
+  "start_date": "2026-11-22T00:00:00Z",
+  "end_date": "2026-12-02T23:59:00Z",
+  "source_url": "https://www.jumia.com.ng/pet-supplies/",
+  "affiliate_url": "https://www.jumia.com.ng/pet-supplies/",
+  "last_verified_at": "2026-11-25T00:00:00Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=jumia.com.ng&sz=128",
+    "alt": "MyPetStore Nigeria: Black Friday Pet Food & Supplies"
+  },
+  "tags": [
+    "pet-food",
+    "pet-accessories"
+  ]
+}

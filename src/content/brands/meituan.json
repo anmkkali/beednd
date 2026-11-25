@@ -1,0 +1,16 @@
+{
+  "id": "meituan",
+  "name": "Meituan",
+  "slug": "meituan",
+  "logo_url": "https://www.google.com/s2/favicons?domain=meituan.com&sz=128",
+  "website_url": "https://www.meituan.com/",
+  "country": "CN",
+  "categories": [
+    "food-dining"
+  ],
+  "short_bio": "China's leading food delivery and local dining deals platform.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}

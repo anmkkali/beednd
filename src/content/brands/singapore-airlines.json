@@ -1,0 +1,16 @@
+{
+  "id": "singapore-airlines",
+  "name": "Singapore Airlines",
+  "slug": "singapore-airlines",
+  "logo_url": "https://www.google.com/s2/favicons?domain=singaporeair.com&sz=128",
+  "website_url": "https://www.singaporeair.com/",
+  "country": "SG",
+  "categories": [
+    "travel-lifestyle"
+  ],
+  "short_bio": "Flag carrier offering seasonal KrisFlyer and Time To Fly fare deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}

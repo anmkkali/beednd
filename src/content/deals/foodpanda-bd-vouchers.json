@@ -1,0 +1,46 @@
+{
+  "id": "foodpanda-bd-vouchers",
+  "slug": "foodpanda-bd-vouchers",
+  "title": "foodpanda Bangladesh: Restaurant & Pandamart Deals",
+  "short_description": "Daily meal discounts, bank card offers, and pandamart grocery vouchers in BD.",
+  "brand_id": "foodpanda-bd",
+  "country": "BD",
+  "cities": [
+    "Dhaka",
+    "Chittagong"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "food-dining",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "UP TO 40% OFF",
+  "badge_text": "Food & Mart Deals",
+  "numeric_discount_percent": 40,
+  "terms_and_conditions": [
+    "Verified from official brand seasonal campaign.",
+    "Exclusions and dates are set by the brand."
+  ],
+  "start_date": "2026-11-22T00:00:00Z",
+  "end_date": "2026-12-10T23:59:00Z",
+  "source_url": "https://www.foodpanda.com.bd/",
+  "affiliate_url": "https://www.foodpanda.com.bd/",
+  "last_verified_at": "2026-11-25T00:00:00Z",
+  "status": "active",
+  "is_trending": true,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "voucher",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=foodpanda.com.bd&sz=128",
+    "alt": "foodpanda Bangladesh: Restaurant & Pandamart Deals"
+  },
+  "tags": [
+    "delivery",
+    "restaurants",
+    "fast-food"
+  ]
+}

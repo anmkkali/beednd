@@ -1,0 +1,47 @@
+{
+  "id": "aeon-jp-black-friday",
+  "slug": "aeon-jp-black-friday",
+  "title": "AEON Japan: Black Friday Grocery & Home Sale",
+  "short_description": "AEON's annual Black Friday sale across fresh groceries, pantry staples, and household goods.",
+  "brand_id": "aeon-jp",
+  "country": "JP",
+  "cities": [
+    "Tokyo",
+    "Osaka"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "groceries-essentials",
+  "deal_type": "store-sale",
+  "channels": [
+    "online",
+    "in-store"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "BLACK FRIDAY",
+  "badge_text": "AEON Sale",
+  "numeric_discount_percent": 30,
+  "terms_and_conditions": [
+    "Verified from official brand seasonal campaign.",
+    "Exclusions and dates are set by the brand."
+  ],
+  "start_date": "2026-11-20T00:00:00Z",
+  "end_date": "2026-11-30T23:59:00Z",
+  "source_url": "https://www.aeon.com/",
+  "affiliate_url": "https://www.aeon.com/",
+  "last_verified_at": "2026-11-25T00:00:00Z",
+  "status": "active",
+  "is_trending": true,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=aeon.com&sz=128",
+    "alt": "AEON Japan: Black Friday Grocery & Home Sale"
+  },
+  "tags": [
+    "supermarkets",
+    "fresh",
+    "household"
+  ]
+}

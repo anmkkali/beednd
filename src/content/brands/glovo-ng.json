@@ -1,0 +1,16 @@
+{
+  "id": "glovo-ng",
+  "name": "Glovo Nigeria",
+  "slug": "glovo-ng",
+  "logo_url": "https://www.google.com/s2/favicons?domain=glovoapp.com&sz=128",
+  "website_url": "https://glovoapp.com/ng/en/",
+  "country": "NG",
+  "categories": [
+    "food-dining"
+  ],
+  "short_bio": "On-demand food and grocery delivery across Lagos and Abuja.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}

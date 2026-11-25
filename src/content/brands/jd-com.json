@@ -1,0 +1,16 @@
+{
+  "id": "jd-com",
+  "name": "JD.com",
+  "slug": "jd-com",
+  "logo_url": "https://www.google.com/s2/favicons?domain=jd.com&sz=128",
+  "website_url": "https://www.jd.com/",
+  "country": "CN",
+  "categories": [
+    "groceries-essentials"
+  ],
+  "short_bio": "Major Chinese e-commerce and fresh grocery delivery platform.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}

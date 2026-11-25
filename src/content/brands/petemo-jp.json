@@ -1,0 +1,16 @@
+{
+  "id": "petemo-jp",
+  "name": "Petemo (AEON Pet)",
+  "slug": "petemo-jp",
+  "logo_url": "https://www.google.com/s2/favicons?domain=aeonpet.com&sz=128",
+  "website_url": "https://www.aeonpet.com/",
+  "country": "JP",
+  "categories": [
+    "pets"
+  ],
+  "short_bio": "Japanese pet food, grooming, and supplies chain.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}

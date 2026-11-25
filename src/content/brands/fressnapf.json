@@ -1,0 +1,16 @@
+{
+  "id": "fressnapf",
+  "name": "Fressnapf",
+  "slug": "fressnapf",
+  "logo_url": "https://www.google.com/s2/favicons?domain=fressnapf.de&sz=128",
+  "website_url": "https://www.fressnapf.de/",
+  "country": "DE",
+  "categories": [
+    "pets"
+  ],
+  "short_bio": "Europe's largest pet supplies chain based in Germany.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}

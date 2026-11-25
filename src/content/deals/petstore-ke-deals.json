@@ -1,0 +1,44 @@
+{
+  "id": "petstore-ke-deals",
+  "slug": "petstore-ke-deals",
+  "title": "PetStore Kenya: Pet Food & Accessories Markdowns",
+  "short_description": "Seasonal discounts on dog and cat food, treats, and carriers in Kenya.",
+  "brand_id": "petstore-ke",
+  "country": "KE",
+  "cities": [
+    "Nairobi"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "pets",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "UP TO 30% OFF",
+  "badge_text": "Up to 30% Off",
+  "numeric_discount_percent": 30,
+  "terms_and_conditions": [
+    "Verified from official brand seasonal campaign.",
+    "Exclusions and dates are set by the brand."
+  ],
+  "start_date": "2026-11-22T00:00:00Z",
+  "end_date": "2026-12-05T23:59:00Z",
+  "source_url": "https://www.jumia.co.ke/pet-supplies/",
+  "affiliate_url": "https://www.jumia.co.ke/pet-supplies/",
+  "last_verified_at": "2026-11-25T00:00:00Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=jumia.co.ke&sz=128",
+    "alt": "PetStore Kenya: Pet Food & Accessories Markdowns"
+  },
+  "tags": [
+    "pet-food",
+    "pet-accessories"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "aeon-jp",
+  "name": "AEON Japan",
+  "slug": "aeon-jp",
+  "logo_url": "https://www.google.com/s2/favicons?domain=aeon.com&sz=128",
+  "website_url": "https://www.aeon.com/",
+  "country": "JP",
+  "categories": [
+    "groceries-essentials"
+  ],
+  "short_bio": "Major Japanese supermarket and retail chain.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}

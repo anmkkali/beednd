@@ -1,0 +1,45 @@
+{
+  "id": "trip-com-cn-hotel-deals",
+  "slug": "trip-com-cn-hotel-deals",
+  "title": "Trip.com: Global Hotel & Flight Seasonal Discounts",
+  "short_description": "Member-only hotel markdowns and flight promo codes across Asia and worldwide.",
+  "brand_id": "trip-com",
+  "country": "CN",
+  "cities": [
+    "Shanghai",
+    "Beijing"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "travel-lifestyle",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "UP TO 40% OFF",
+  "badge_text": "Up to 40% Off",
+  "numeric_discount_percent": 40,
+  "terms_and_conditions": [
+    "Verified from official brand seasonal campaign.",
+    "Exclusions and dates are set by the brand."
+  ],
+  "start_date": "2026-11-22T00:00:00Z",
+  "end_date": "2026-12-10T23:59:00Z",
+  "source_url": "https://www.trip.com/",
+  "affiliate_url": "https://www.trip.com/",
+  "last_verified_at": "2026-11-25T00:00:00Z",
+  "status": "active",
+  "is_trending": true,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=trip.com&sz=128",
+    "alt": "Trip.com: Global Hotel & Flight Seasonal Discounts"
+  },
+  "tags": [
+    "hotels",
+    "flights"
+  ]
+}

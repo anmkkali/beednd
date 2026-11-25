@@ -1,0 +1,46 @@
+{
+  "id": "thuisbezorgd-nl-deals",
+  "slug": "thuisbezorgd-nl-deals",
+  "title": "Thuisbezorgd.nl: Restaurant & Delivery Combo Deals",
+  "short_description": "Weekly restaurant discounts and meal bundle savings across the Netherlands.",
+  "brand_id": "thuisbezorgd",
+  "country": "NL",
+  "cities": [
+    "Amsterdam",
+    "Rotterdam"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "food-dining",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "UP TO 25% OFF",
+  "badge_text": "Food Vouchers",
+  "numeric_discount_percent": 25,
+  "terms_and_conditions": [
+    "Verified from official brand seasonal campaign.",
+    "Exclusions and dates are set by the brand."
+  ],
+  "start_date": "2026-11-22T00:00:00Z",
+  "end_date": "2026-12-10T23:59:00Z",
+  "source_url": "https://www.thuisbezorgd.nl/",
+  "affiliate_url": "https://www.thuisbezorgd.nl/",
+  "last_verified_at": "2026-11-25T00:00:00Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "voucher",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=thuisbezorgd.nl&sz=128",
+    "alt": "Thuisbezorgd.nl: Restaurant & Delivery Combo Deals"
+  },
+  "tags": [
+    "delivery",
+    "restaurants",
+    "fast-food"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "id": "lintons-ke-beauty-sale",
+  "slug": "lintons-ke-beauty-sale",
+  "title": "Lintons Beauty Kenya: Black Friday Skincare & Fragrance",
+  "short_description": "Up to 35% off makeup, skincare, and fragrances across Nairobi outlets and online.",
+  "brand_id": "lintons-beauty-ke",
+  "country": "KE",
+  "cities": [
+    "Nairobi"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "beauty-wellness",
+  "deal_type": "store-sale",
+  "channels": [
+    "online",
+    "in-store"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "UP TO 35% OFF",
+  "badge_text": "Up to 35% Off",
+  "numeric_discount_percent": 35,
+  "terms_and_conditions": [
+    "Verified from official brand seasonal campaign.",
+    "Exclusions and dates are set by the brand."
+  ],
+  "start_date": "2026-11-22T00:00:00Z",
+  "end_date": "2026-12-02T23:59:00Z",
+  "source_url": "https://lintonsbeauty.com/",
+  "affiliate_url": "https://lintonsbeauty.com/",
+  "last_verified_at": "2026-11-25T00:00:00Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=lintonsbeauty.com&sz=128",
+    "alt": "Lintons Beauty Kenya: Black Friday Skincare & Fragrance"
+  },
+  "tags": [
+    "women",
+    "skincare",
+    "makeup",
+    "fragrance"
+  ]
+}

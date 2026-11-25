@@ -42,6 +42,13 @@
     "url": "https://www.abhibus.com/"
   },
   {
+    "id": "absolute-pets",
+    "name": "Absolute Pets",
+    "country": "ZA",
+    "category": "pets",
+    "url": "https://www.absolutepets.com/"
+  },
+  {
     "id": "accessorize",
     "name": "Accessorize",
     "country": "GB",
@@ -82,6 +89,13 @@
     "country": "IN",
     "category": "clothing-fashion",
     "url": "https://www.adidas.co.in/"
+  },
+  {
+    "id": "aeon-jp",
+    "name": "AEON Japan",
+    "country": "JP",
+    "category": "groceries-essentials",
+    "url": "https://www.aeon.com/"
   },
   {
     "id": "aerie",
@@ -672,6 +686,13 @@
     "url": "https://bikanervala.com/"
   },
   {
+    "id": "biman-bangladesh",
+    "name": "Biman Bangladesh Airlines",
+    "country": "BD",
+    "category": "travel-lifestyle",
+    "url": "https://www.biman-airlines.com/"
+  },
+  {
     "id": "biotique",
     "name": "Biotique",
     "country": "IN",
@@ -838,6 +859,13 @@
     "country": "GB",
     "category": "beauty-wellness",
     "url": "https://www.boots.com/opticians-service/opticians-offers/"
+  },
+  {
+    "id": "boqii-pet",
+    "name": "Boqii Pet",
+    "country": "CN",
+    "category": "pets",
+    "url": "https://www.boqii.com/"
   },
   {
     "id": "borjan",
@@ -1043,6 +1071,13 @@
     "url": "https://www.carhartt.com/c/sale"
   },
   {
+    "id": "carrefour-ke",
+    "name": "Carrefour Kenya",
+    "country": "KE",
+    "category": "groceries-essentials",
+    "url": "https://www.carrefour.ke/"
+  },
+  {
     "id": "carrefour-pakistan",
     "name": "Carrefour Pakistan",
     "country": "PK",
@@ -1230,6 +1265,13 @@
     "country": "IN",
     "category": "travel-lifestyle",
     "url": "https://www.cleartrip.com/"
+  },
+  {
+    "id": "clicks-za",
+    "name": "Clicks South Africa",
+    "country": "ZA",
+    "category": "beauty-wellness",
+    "url": "https://clicks.co.za/"
   },
   {
     "id": "clinique",
@@ -1582,6 +1624,13 @@
     "url": "https://www.doordash.com/promos/"
   },
   {
+    "id": "douglas-de",
+    "name": "Douglas Germany",
+    "country": "DE",
+    "category": "beauty-wellness",
+    "url": "https://www.douglas.de/"
+  },
+  {
     "id": "dr-martens",
     "name": "Dr. Martens",
     "country": "GB",
@@ -1925,6 +1974,13 @@
     "url": "https://www.flynas.com/en"
   },
   {
+    "id": "flysafair",
+    "name": "FlySafair",
+    "country": "ZA",
+    "category": "travel-lifestyle",
+    "url": "https://www.flysafair.co.za/"
+  },
+  {
     "id": "foodpanda-bd",
     "name": "foodpanda Bangladesh",
     "country": "BD",
@@ -2000,6 +2056,13 @@
     "country": "IN",
     "category": "groceries-essentials",
     "url": "https://www.freshtohome.com/"
+  },
+  {
+    "id": "fressnapf",
+    "name": "Fressnapf",
+    "country": "DE",
+    "category": "pets",
+    "url": "https://www.fressnapf.de/"
   },
   {
     "id": "furor",
@@ -2093,6 +2156,20 @@
     "url": "https://www.glossier.com/"
   },
   {
+    "id": "glovo-ke",
+    "name": "Glovo Kenya",
+    "country": "KE",
+    "category": "food-dining",
+    "url": "https://glovoapp.com/ke/en/"
+  },
+  {
+    "id": "glovo-ng",
+    "name": "Glovo Nigeria",
+    "country": "NG",
+    "category": "food-dining",
+    "url": "https://glovoapp.com/ng/en/"
+  },
+  {
     "id": "gnc",
     "name": "GNC",
     "country": "US",
@@ -2168,6 +2245,13 @@
     "country": "GLOBAL",
     "category": "ai-tools",
     "url": "https://grammarly.com"
+  },
+  {
+    "id": "gratis-tr",
+    "name": "Gratis Turkey",
+    "country": "TR",
+    "category": "beauty-wellness",
+    "url": "https://www.gratis.com/"
   },
   {
     "id": "gree-dwp-home",
@@ -2702,6 +2786,13 @@
     "url": "https://www.jalalsons.com.pk/"
   },
   {
+    "id": "jambojet",
+    "name": "Jambojet",
+    "country": "KE",
+    "category": "travel-lifestyle",
+    "url": "https://www.jambojet.com/"
+  },
+  {
     "id": "jarir-bookstore",
     "name": "Jarir Bookstore",
     "country": "SA",
@@ -2728,6 +2819,13 @@
     "country": "GB",
     "category": "clothing-fashion",
     "url": "https://www.jdsports.co.uk/sale/"
+  },
+  {
+    "id": "jd-com",
+    "name": "JD.com",
+    "country": "CN",
+    "category": "groceries-essentials",
+    "url": "https://www.jd.com/"
   },
   {
     "id": "jenpharm",
@@ -2989,6 +3087,13 @@
     "url": "https://www.kongcompany.com/"
   },
   {
+    "id": "konga-ng",
+    "name": "Konga",
+    "country": "NG",
+    "category": "clothing-fashion",
+    "url": "https://www.konga.com/"
+  },
+  {
     "id": "krave-mart",
     "name": "Krave Mart",
     "country": "PK",
@@ -3211,6 +3316,13 @@
     "country": "PK",
     "category": "clothing-fashion",
     "url": "https://www.limelight.pk/collections/new-on-sale"
+  },
+  {
+    "id": "lintons-beauty-ke",
+    "name": "Lintons Beauty World",
+    "country": "KE",
+    "category": "beauty-wellness",
+    "url": "https://lintonsbeauty.com/"
   },
   {
     "id": "litter-robot-whisker",
@@ -3514,6 +3626,13 @@
     "url": "https://www.meijer.com/shopping/weekly-ad"
   },
   {
+    "id": "meituan",
+    "name": "Meituan",
+    "country": "CN",
+    "category": "food-dining",
+    "url": "https://www.meituan.com/"
+  },
+  {
     "id": "menu-foods",
     "name": "Menu Foods",
     "country": "PK",
@@ -3568,6 +3687,13 @@
     "country": "IN",
     "category": "clothing-fashion",
     "url": "https://www.metroshoes.com/"
+  },
+  {
+    "id": "mewmewshop-bd",
+    "name": "MewMewShop BD",
+    "country": "BD",
+    "category": "pets",
+    "url": "https://www.mewmewshopbd.com/"
   },
   {
     "id": "michael-kors",
@@ -3724,6 +3850,13 @@
     "url": "https://mypets.pk/"
   },
   {
+    "id": "mypetstore-ng",
+    "name": "MyPetStore Nigeria",
+    "country": "NG",
+    "category": "pets",
+    "url": "https://www.jumia.com.ng/pet-supplies/"
+  },
+  {
     "id": "myprotein",
     "name": "Myprotein",
     "country": "GB",
@@ -3864,6 +3997,13 @@
     "url": "https://nishatlinen.com/collections/sale26"
   },
   {
+    "id": "nivea-ng",
+    "name": "NIVEA Nigeria",
+    "country": "NG",
+    "category": "beauty-wellness",
+    "url": "https://www.nivea.com.ng/"
+  },
+  {
     "id": "noise",
     "name": "Noise",
     "country": "IN",
@@ -3918,6 +4058,13 @@
     "country": "GLOBAL",
     "category": "ai-tools",
     "url": "https://notion.com"
+  },
+  {
+    "id": "fairprice-sg",
+    "name": "NTUC FairPrice",
+    "country": "SG",
+    "category": "groceries-essentials",
+    "url": "https://www.fairprice.com.sg/"
   },
   {
     "id": "nutrifactor",
@@ -4235,6 +4382,13 @@
     "url": "https://www.onepeloton.com/offers"
   },
   {
+    "id": "perfect-diary",
+    "name": "Perfect Diary",
+    "country": "CN",
+    "category": "beauty-wellness",
+    "url": "https://www.perfectdiary.com/"
+  },
+  {
     "id": "perplexity",
     "name": "Perplexity",
     "country": "GLOBAL",
@@ -4247,6 +4401,13 @@
     "country": "GB",
     "category": "pets",
     "url": "https://www.petdrugsonline.co.uk/offers-and-multibuys"
+  },
+  {
+    "id": "pet-lovers-centre",
+    "name": "Pet Lovers Centre",
+    "country": "SG",
+    "category": "pets",
+    "url": "https://www.petloverscentre.com/"
   },
   {
     "id": "pet-supplies-plus",
@@ -4270,11 +4431,25 @@
     "url": "https://www.petco.com/category/top-deals"
   },
   {
+    "id": "petemo-jp",
+    "name": "Petemo (AEON Pet)",
+    "country": "JP",
+    "category": "pets",
+    "url": "https://www.aeonpet.com/"
+  },
+  {
     "id": "peter-england",
     "name": "Peter England",
     "country": "IN",
     "category": "clothing-fashion",
     "url": "https://peterengland.abfrl.in/"
+  },
+  {
+    "id": "petlebi",
+    "name": "Petlebi",
+    "country": "TR",
+    "category": "pets",
+    "url": "https://www.petlebi.com/"
   },
   {
     "id": "petlife-pk",
@@ -4352,6 +4527,13 @@
     "country": "PK",
     "category": "pets",
     "url": "https://petspark.pk/"
+  },
+  {
+    "id": "petstore-ke",
+    "name": "PetStore Kenya",
+    "country": "KE",
+    "category": "pets",
+    "url": "https://www.jumia.co.ke/pet-supplies/"
   },
   {
     "id": "petsworld",
@@ -4725,11 +4907,25 @@
     "url": "https://www.republicofcats.com/"
   },
   {
+    "id": "rewe-de",
+    "name": "REWE",
+    "country": "DE",
+    "category": "groceries-essentials",
+    "url": "https://www.rewe.de/angebote/"
+  },
+  {
     "id": "richer-sounds",
     "name": "Richer Sounds",
     "country": "GB",
     "category": "tech-electronics",
     "url": "https://www.richersounds.com/offers"
+  },
+  {
+    "id": "rituals-nl",
+    "name": "Rituals",
+    "country": "NL",
+    "category": "beauty-wellness",
+    "url": "https://www.rituals.com/nl-nl/home"
   },
   {
     "id": "rituals-uk",
@@ -5012,6 +5208,20 @@
     "url": "https://www.sephora.com/sale"
   },
   {
+    "id": "sephora-sg",
+    "name": "Sephora Singapore",
+    "country": "SG",
+    "category": "beauty-wellness",
+    "url": "https://www.sephora.sg/"
+  },
+  {
+    "id": "sephora-uae",
+    "name": "Sephora UAE",
+    "country": "AE",
+    "category": "beauty-wellness",
+    "url": "https://www.sephora.ae/en/"
+  },
+  {
     "id": "sephora-uk",
     "name": "Sephora UK",
     "country": "GB",
@@ -5045,6 +5255,13 @@
     "country": "PK",
     "category": "clothing-fashion",
     "url": "https://servis.pk/"
+  },
+  {
+    "id": "shajgoj",
+    "name": "Shajgoj",
+    "country": "BD",
+    "category": "beauty-wellness",
+    "url": "https://shop.shajgoj.com/"
   },
   {
     "id": "shakehands",
@@ -5089,6 +5306,13 @@
     "url": "https://www.shein.com/"
   },
   {
+    "id": "shiseido-jp",
+    "name": "Shiseido Japan",
+    "country": "JP",
+    "category": "beauty-wellness",
+    "url": "https://www.shiseido.co.jp/"
+  },
+  {
     "id": "shoe-planet",
     "name": "Shoe Planet",
     "country": "PK",
@@ -5115,6 +5339,20 @@
     "country": "IN",
     "category": "clothing-fashion",
     "url": "https://www.shoppersstop.com/"
+  },
+  {
+    "id": "shoprite-ng",
+    "name": "Shoprite Nigeria",
+    "country": "NG",
+    "category": "groceries-essentials",
+    "url": "https://www.shoprite.com.ng/"
+  },
+  {
+    "id": "singapore-airlines",
+    "name": "Singapore Airlines",
+    "country": "SG",
+    "category": "travel-lifestyle",
+    "url": "https://www.singaporeair.com/"
   },
   {
     "id": "sixt-uk",
@@ -5992,6 +6230,13 @@
     "url": "https://www.virginwines.co.uk/wines/special-offer"
   },
   {
+    "id": "vivo-fashion-ke",
+    "name": "Vivo Activewear Kenya",
+    "country": "KE",
+    "category": "clothing-fashion",
+    "url": "https://shop.vivo.co.ke/"
+  },
+  {
     "id": "vivo-india",
     "name": "Vivo India",
     "country": "IN",
@@ -6048,6 +6293,13 @@
     "url": "https://www.waitrose.com/ecom/shop/browse/offers"
   },
   {
+    "id": "wakanow",
+    "name": "Wakanow",
+    "country": "NG",
+    "category": "travel-lifestyle",
+    "url": "https://www.wakanow.com/"
+  },
+  {
     "id": "walmart",
     "name": "Walmart",
     "country": "US",
@@ -6060,6 +6312,13 @@
     "country": "US",
     "category": "groceries-essentials",
     "url": "https://www.wegmans.com/shop/coupons"
+  },
+  {
+    "id": "wehkamp",
+    "name": "Wehkamp",
+    "country": "NL",
+    "category": "clothing-fashion",
+    "url": "https://www.wehkamp.nl/"
   },
   {
     "id": "wendy-s",
@@ -6195,6 +6454,13 @@
     "url": "https://www.yatra.com/"
   },
   {
+    "id": "yemeksepeti",
+    "name": "Yemeksepeti",
+    "country": "TR",
+    "category": "food-dining",
+    "url": "https://www.yemeksepeti.com/"
+  },
+  {
     "id": "yo-sushi",
     "name": "YO! Sushi",
     "country": "GB",
@@ -6221,6 +6487,13 @@
     "country": "DE",
     "category": "clothing-fashion",
     "url": "https://www.zalando.de/"
+  },
+  {
+    "id": "zalora-sg",
+    "name": "ZALORA Singapore",
+    "country": "SG",
+    "category": "clothing-fashion",
+    "url": "https://www.zalora.sg/"
   },
   {
     "id": "zapp",
@@ -6326,6 +6599,13 @@
     "country": "IN",
     "category": "travel-lifestyle",
     "url": "https://www.zoomcar.com/"
+  },
+  {
+    "id": "zooplus-nl",
+    "name": "Zooplus NL",
+    "country": "NL",
+    "category": "pets",
+    "url": "https://www.zooplus.nl/"
   },
   {
     "id": "zooplus-uk",

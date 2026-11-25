@@ -1,0 +1,43 @@
+{
+  "id": "klm-nl-real-deal-days",
+  "slug": "klm-nl-real-deal-days",
+  "title": "KLM: Seasonal Flight Deals & European City Breaks",
+  "short_description": "Promotional return fares from Amsterdam Schiphol across Europe and worldwide.",
+  "brand_id": "klm",
+  "country": "NL",
+  "cities": [
+    "Amsterdam"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "travel-lifestyle",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "FLIGHT DEALS",
+  "badge_text": "Seasonal Fares",
+  "numeric_discount_percent": 20,
+  "terms_and_conditions": [
+    "Verified from official brand seasonal campaign.",
+    "Exclusions and dates are set by the brand."
+  ],
+  "start_date": "2026-11-22T00:00:00Z",
+  "end_date": "2026-12-15T23:59:00Z",
+  "source_url": "https://www.klm.nl/",
+  "affiliate_url": "https://www.klm.nl/",
+  "last_verified_at": "2026-11-25T00:00:00Z",
+  "status": "active",
+  "is_trending": true,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=klm.nl&sz=128",
+    "alt": "KLM: Seasonal Flight Deals & European City Breaks"
+  },
+  "tags": [
+    "flights"
+  ]
+}

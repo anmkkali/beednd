@@ -1,0 +1,16 @@
+{
+  "id": "absolute-pets",
+  "name": "Absolute Pets",
+  "slug": "absolute-pets",
+  "logo_url": "https://www.google.com/s2/favicons?domain=absolutepets.com&sz=128",
+  "website_url": "https://www.absolutepets.com/",
+  "country": "ZA",
+  "categories": [
+    "pets"
+  ],
+  "short_bio": "South Africa's premier pet care, food, and accessories retailer.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}

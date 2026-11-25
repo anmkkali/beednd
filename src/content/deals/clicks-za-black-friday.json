@@ -1,0 +1,49 @@
+{
+  "id": "clicks-za-black-friday",
+  "slug": "clicks-za-black-friday",
+  "title": "Clicks South Africa: Black Friday 3-for-2 & Beauty Deals",
+  "short_description": "3-for-2 specials and up to 50% off skincare, fragrances, and electrical beauty.",
+  "brand_id": "clicks-za",
+  "country": "ZA",
+  "cities": [
+    "Johannesburg",
+    "Cape Town",
+    "Durban"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "beauty-wellness",
+  "deal_type": "store-sale",
+  "channels": [
+    "online",
+    "in-store"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "UP TO 50% OFF",
+  "badge_text": "3-for-2 & 50% Off",
+  "numeric_discount_percent": 50,
+  "terms_and_conditions": [
+    "Verified from official brand seasonal campaign.",
+    "Exclusions and dates are set by the brand."
+  ],
+  "start_date": "2026-11-21T00:00:00Z",
+  "end_date": "2026-11-30T23:59:00Z",
+  "source_url": "https://clicks.co.za/",
+  "affiliate_url": "https://clicks.co.za/",
+  "last_verified_at": "2026-11-25T00:00:00Z",
+  "status": "active",
+  "is_trending": true,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=clicks.co.za&sz=128",
+    "alt": "Clicks South Africa: Black Friday 3-for-2 & Beauty Deals"
+  },
+  "tags": [
+    "women",
+    "men",
+    "skincare",
+    "fragrance"
+  ]
+}

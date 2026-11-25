@@ -1,0 +1,16 @@
+{
+  "id": "glovo-ke",
+  "name": "Glovo Kenya",
+  "slug": "glovo-ke",
+  "logo_url": "https://www.google.com/s2/favicons?domain=glovoapp.com&sz=128",
+  "website_url": "https://glovoapp.com/ke/en/",
+  "country": "KE",
+  "categories": [
+    "food-dining"
+  ],
+  "short_bio": "Food, restaurant, and supermarket delivery across Nairobi and Mombasa.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": "flysafair-za-black-friday",
+  "slug": "flysafair-za-black-friday",
+  "title": "FlySafair: Black Friday & Summer Flight Specials",
+  "short_description": "Low-fare domestic flight deals across Johannesburg, Cape Town, and Durban.",
+  "brand_id": "flysafair",
+  "country": "ZA",
+  "cities": [
+    "Johannesburg",
+    "Cape Town"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "travel-lifestyle",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "FLIGHT SPECIALS",
+  "badge_text": "Low Fare Sale",
+  "numeric_discount_percent": 30,
+  "terms_and_conditions": [
+    "Verified from official brand seasonal campaign.",
+    "Exclusions and dates are set by the brand."
+  ],
+  "start_date": "2026-11-22T00:00:00Z",
+  "end_date": "2026-12-02T23:59:00Z",
+  "source_url": "https://www.flysafair.co.za/",
+  "affiliate_url": "https://www.flysafair.co.za/",
+  "last_verified_at": "2026-11-25T00:00:00Z",
+  "status": "active",
+  "is_trending": true,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=flysafair.co.za&sz=128",
+    "alt": "FlySafair: Black Friday & Summer Flight Specials"
+  },
+  "tags": [
+    "flights"
+  ]
+}

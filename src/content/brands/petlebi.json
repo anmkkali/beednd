@@ -1,0 +1,16 @@
+{
+  "id": "petlebi",
+  "name": "Petlebi",
+  "slug": "petlebi",
+  "logo_url": "https://www.google.com/s2/favicons?domain=petlebi.com&sz=128",
+  "website_url": "https://www.petlebi.com/",
+  "country": "TR",
+  "categories": [
+    "pets"
+  ],
+  "short_bio": "Turkish online pet store for dog food, cat food, and accessories.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}

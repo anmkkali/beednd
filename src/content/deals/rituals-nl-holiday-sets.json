@@ -1,0 +1,48 @@
+{
+  "id": "rituals-nl-holiday-sets",
+  "slug": "rituals-nl-holiday-sets",
+  "title": "Rituals: Member Gift Sets & Black Friday Perks",
+  "short_description": "Complimentary gifts with purchase and seasonal savings on bath & body collections.",
+  "brand_id": "rituals-nl",
+  "country": "NL",
+  "cities": [
+    "Amsterdam",
+    "Rotterdam"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "beauty-wellness",
+  "deal_type": "store-sale",
+  "channels": [
+    "online",
+    "in-store"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "MEMBER PERKS",
+  "badge_text": "Gift & Savings",
+  "numeric_discount_percent": 25,
+  "terms_and_conditions": [
+    "Verified from official brand seasonal campaign.",
+    "Exclusions and dates are set by the brand."
+  ],
+  "start_date": "2026-11-22T00:00:00Z",
+  "end_date": "2026-12-05T23:59:00Z",
+  "source_url": "https://www.rituals.com/nl-nl/home",
+  "affiliate_url": "https://www.rituals.com/nl-nl/home",
+  "last_verified_at": "2026-11-25T00:00:00Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "voucher",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=rituals.com&sz=128",
+    "alt": "Rituals: Member Gift Sets & Black Friday Perks"
+  },
+  "tags": [
+    "women",
+    "men",
+    "skincare",
+    "fragrance"
+  ]
+}

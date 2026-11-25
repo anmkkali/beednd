@@ -1,0 +1,16 @@
+{
+  "id": "biman-bangladesh",
+  "name": "Biman Bangladesh Airlines",
+  "slug": "biman-bangladesh",
+  "logo_url": "https://www.google.com/s2/favicons?domain=biman-airlines.com&sz=128",
+  "website_url": "https://www.biman-airlines.com/",
+  "country": "BD",
+  "categories": [
+    "travel-lifestyle"
+  ],
+  "short_bio": "National flag carrier of Bangladesh offering seasonal web fares.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}

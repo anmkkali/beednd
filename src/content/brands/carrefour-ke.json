@@ -1,0 +1,16 @@
+{
+  "id": "carrefour-ke",
+  "name": "Carrefour Kenya",
+  "slug": "carrefour-ke",
+  "logo_url": "https://www.google.com/s2/favicons?domain=carrefour.ke&sz=128",
+  "website_url": "https://www.carrefour.ke/",
+  "country": "KE",
+  "categories": [
+    "groceries-essentials"
+  ],
+  "short_bio": "Major hypermarket chain in Kenya with weekly catalogue deals.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}

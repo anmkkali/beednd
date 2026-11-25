@@ -1,0 +1,47 @@
+{
+  "id": "shiseido-jp-winter-beauty",
+  "slug": "shiseido-jp-winter-beauty",
+  "title": "Shiseido Japan: Holiday Skincare & Point Back",
+  "short_description": "Seasonal holiday coffrets and Shiseido Beauty Key point-back offers.",
+  "brand_id": "shiseido-jp",
+  "country": "JP",
+  "cities": [
+    "Tokyo",
+    "Osaka"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "beauty-wellness",
+  "deal_type": "store-sale",
+  "channels": [
+    "online",
+    "in-store"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "HOLIDAY PERKS",
+  "badge_text": "Beauty Perks",
+  "numeric_discount_percent": 20,
+  "terms_and_conditions": [
+    "Verified from official brand seasonal campaign.",
+    "Exclusions and dates are set by the brand."
+  ],
+  "start_date": "2026-11-22T00:00:00Z",
+  "end_date": "2026-12-10T23:59:00Z",
+  "source_url": "https://www.shiseido.co.jp/",
+  "affiliate_url": "https://www.shiseido.co.jp/",
+  "last_verified_at": "2026-11-25T00:00:00Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "voucher",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=shiseido.co.jp&sz=128",
+    "alt": "Shiseido Japan: Holiday Skincare & Point Back"
+  },
+  "tags": [
+    "women",
+    "skincare",
+    "makeup"
+  ]
+}

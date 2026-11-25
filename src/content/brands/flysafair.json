@@ -1,0 +1,16 @@
+{
+  "id": "flysafair",
+  "name": "FlySafair",
+  "slug": "flysafair",
+  "logo_url": "https://www.google.com/s2/favicons?domain=flysafair.co.za&sz=128",
+  "website_url": "https://www.flysafair.co.za/",
+  "country": "ZA",
+  "categories": [
+    "travel-lifestyle"
+  ],
+  "short_bio": "South Africa's top low-cost airline with regular fare sales.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}

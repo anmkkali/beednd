@@ -1,0 +1,16 @@
+{
+  "id": "yemeksepeti",
+  "name": "Yemeksepeti",
+  "slug": "yemeksepeti",
+  "logo_url": "https://www.google.com/s2/favicons?domain=yemeksepeti.com&sz=128",
+  "website_url": "https://www.yemeksepeti.com/",
+  "country": "TR",
+  "categories": [
+    "food-dining"
+  ],
+  "short_bio": "Turkey's leading online food and grocery ordering platform.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}

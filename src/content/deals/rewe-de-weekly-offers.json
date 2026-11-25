@@ -1,0 +1,47 @@
+{
+  "id": "rewe-de-weekly-offers",
+  "slug": "rewe-de-weekly-offers",
+  "title": "REWE: Weekly Supermarket & Bonus Grocery Deals",
+  "short_description": "Weekly digital flyer discounts and REWE Bonus savings on groceries and fresh produce.",
+  "brand_id": "rewe-de",
+  "country": "DE",
+  "cities": [
+    "Berlin",
+    "Munich"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "groceries-essentials",
+  "deal_type": "store-sale",
+  "channels": [
+    "online",
+    "in-store"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "UP TO 35% OFF",
+  "badge_text": "Weekly Offers",
+  "numeric_discount_percent": 35,
+  "terms_and_conditions": [
+    "Verified from official brand seasonal campaign.",
+    "Exclusions and dates are set by the brand."
+  ],
+  "start_date": "2026-11-23T00:00:00Z",
+  "end_date": "2026-12-06T23:59:00Z",
+  "source_url": "https://www.rewe.de/angebote/",
+  "affiliate_url": "https://www.rewe.de/angebote/",
+  "last_verified_at": "2026-11-25T00:00:00Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=rewe.de&sz=128",
+    "alt": "REWE: Weekly Supermarket & Bonus Grocery Deals"
+  },
+  "tags": [
+    "supermarkets",
+    "fresh",
+    "household"
+  ]
+}

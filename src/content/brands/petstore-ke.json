@@ -1,0 +1,16 @@
+{
+  "id": "petstore-ke",
+  "name": "PetStore Kenya",
+  "slug": "petstore-ke",
+  "logo_url": "https://www.google.com/s2/favicons?domain=jumia.co.ke&sz=128",
+  "website_url": "https://www.jumia.co.ke/pet-supplies/",
+  "country": "KE",
+  "categories": [
+    "pets"
+  ],
+  "short_bio": "Online pet food, treats, and supplies in Kenya.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}

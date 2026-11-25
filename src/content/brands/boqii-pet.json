@@ -1,0 +1,16 @@
+{
+  "id": "boqii-pet",
+  "name": "Boqii Pet",
+  "slug": "boqii-pet",
+  "logo_url": "https://www.google.com/s2/favicons?domain=boqii.com&sz=128",
+  "website_url": "https://www.boqii.com/",
+  "country": "CN",
+  "categories": [
+    "pets"
+  ],
+  "short_bio": "Leading Chinese online pet supplies and pet food platform.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}

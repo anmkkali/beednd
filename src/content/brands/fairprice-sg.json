@@ -1,0 +1,16 @@
+{
+  "id": "fairprice-sg",
+  "name": "NTUC FairPrice",
+  "slug": "fairprice-sg",
+  "logo_url": "https://www.google.com/s2/favicons?domain=fairprice.com.sg&sz=128",
+  "website_url": "https://www.fairprice.com.sg/",
+  "country": "SG",
+  "categories": [
+    "groceries-essentials"
+  ],
+  "short_bio": "Singapore's largest supermarket chain with weekly member savings.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "zalora-sg",
+  "name": "ZALORA Singapore",
+  "slug": "zalora-sg",
+  "logo_url": "https://www.google.com/s2/favicons?domain=zalora.sg&sz=128",
+  "website_url": "https://www.zalora.sg/",
+  "country": "SG",
+  "categories": [
+    "clothing-fashion"
+  ],
+  "short_bio": "Southeast Asia's leading online fashion and footwear destination.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}

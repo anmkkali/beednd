@@ -1,0 +1,46 @@
+{
+  "id": "absolute-pets-za-deals",
+  "slug": "absolute-pets-za-deals",
+  "title": "Absolute Pets: Black November Pet Food & Gear Sale",
+  "short_description": "Up to 35% off premium dog/cat food, beds, and treats across South Africa.",
+  "brand_id": "absolute-pets",
+  "country": "ZA",
+  "cities": [
+    "Cape Town",
+    "Johannesburg"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "pets",
+  "deal_type": "store-sale",
+  "channels": [
+    "online",
+    "in-store"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "UP TO 35% OFF",
+  "badge_text": "Up to 35% Off",
+  "numeric_discount_percent": 35,
+  "terms_and_conditions": [
+    "Verified from official brand seasonal campaign.",
+    "Exclusions and dates are set by the brand."
+  ],
+  "start_date": "2026-11-21T00:00:00Z",
+  "end_date": "2026-11-30T23:59:00Z",
+  "source_url": "https://www.absolutepets.com/",
+  "affiliate_url": "https://www.absolutepets.com/",
+  "last_verified_at": "2026-11-25T00:00:00Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=absolutepets.com&sz=128",
+    "alt": "Absolute Pets: Black November Pet Food & Gear Sale"
+  },
+  "tags": [
+    "pet-food",
+    "pet-accessories"
+  ]
+}

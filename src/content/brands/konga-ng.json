@@ -1,0 +1,16 @@
+{
+  "id": "konga-ng",
+  "name": "Konga",
+  "slug": "konga-ng",
+  "logo_url": "https://www.google.com/s2/favicons?domain=konga.com&sz=128",
+  "website_url": "https://www.konga.com/",
+  "country": "NG",
+  "categories": [
+    "clothing-fashion"
+  ],
+  "short_bio": "Nigerian e-commerce platform for fashion, beauty, and electronics.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "jambojet",
+  "name": "Jambojet",
+  "slug": "jambojet",
+  "logo_url": "https://www.google.com/s2/favicons?domain=jambojet.com&sz=128",
+  "website_url": "https://www.jambojet.com/",
+  "country": "KE",
+  "categories": [
+    "travel-lifestyle"
+  ],
+  "short_bio": "Kenyan regional airline offering affordable domestic and regional fares.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}

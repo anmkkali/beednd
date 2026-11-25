@@ -1,0 +1,16 @@
+{
+  "id": "wakanow",
+  "name": "Wakanow",
+  "slug": "wakanow",
+  "logo_url": "https://www.google.com/s2/favicons?domain=wakanow.com&sz=128",
+  "website_url": "https://www.wakanow.com/",
+  "country": "NG",
+  "categories": [
+    "travel-lifestyle"
+  ],
+  "short_bio": "Nigeria's leading flight and hotel booking platform.",
+  "known_for": [
+    "Seasonal sales",
+    "Verified offers"
+  ]
+}
