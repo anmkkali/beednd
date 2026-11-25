@@ -1,0 +1,41 @@
+{
+  "id": "corsair-live-offer",
+  "slug": "corsair-live-offer",
+  "title": "Corsair: Up to 20% Off Seasonal Sale",
+  "short_description": "Verified active promotion detected on Corsair's official store (Black Friday). Confirm exclusions at checkout.",
+  "brand_id": "corsair",
+  "country": "US",
+  "cities": [],
+  "areas": [],
+  "branch_info": [],
+  "category": "tech-electronics",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "UP TO 20% OFF",
+  "badge_text": "Up to 20% Off",
+  "numeric_discount_percent": 20,
+  "terms_and_conditions": [
+    "Auto-verified from Corsair official sale page.",
+    "Confirm final discount and exclusions on the official store."
+  ],
+  "start_date": "2026-11-25T07:59:59Z",
+  "end_date": "2026-12-09T23:59:00Z",
+  "source_url": "https://www.corsair.com/us/en/s/black-friday",
+  "affiliate_url": "https://www.corsair.com/us/en/s/black-friday",
+  "last_verified_at": "2026-11-25T07:59:59Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=corsair.com&sz=128",
+    "alt": "Corsair"
+  },
+  "tags": [
+    "all-items"
+  ]
+}

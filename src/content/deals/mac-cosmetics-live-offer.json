@@ -1,0 +1,41 @@
+{
+  "id": "mac-cosmetics-live-offer",
+  "slug": "mac-cosmetics-live-offer",
+  "title": "MAC Cosmetics: Up to 40% Off Seasonal Sale",
+  "short_description": "Verified active promotion detected on MAC Cosmetics's official store (up to 40% off). Confirm exclusions at checkout.",
+  "brand_id": "mac-cosmetics",
+  "country": "US",
+  "cities": [],
+  "areas": [],
+  "branch_info": [],
+  "category": "beauty-wellness",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "UP TO 40% OFF",
+  "badge_text": "Up to 40% Off",
+  "numeric_discount_percent": 40,
+  "terms_and_conditions": [
+    "Auto-verified from MAC Cosmetics official sale page.",
+    "Confirm final discount and exclusions on the official store."
+  ],
+  "start_date": "2026-11-25T07:59:59Z",
+  "end_date": "2026-12-09T23:59:00Z",
+  "source_url": "https://www.maccosmetics.com/collections/sale",
+  "affiliate_url": "https://www.maccosmetics.com/collections/sale",
+  "last_verified_at": "2026-11-25T07:59:59Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=maccosmetics.com&sz=128",
+    "alt": "MAC Cosmetics"
+  },
+  "tags": [
+    "all-items"
+  ]
+}

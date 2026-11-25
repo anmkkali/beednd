@@ -1,0 +1,16 @@
+{
+  "id": "clinique",
+  "name": "Clinique",
+  "slug": "clinique",
+  "logo_url": "https://www.google.com/s2/favicons?domain=clinique.com&sz=128",
+  "website_url": "https://www.clinique.com/pages/offers",
+  "country": "US",
+  "categories": [
+    "beauty-wellness"
+  ],
+  "short_bio": "Verified US brand offering seasonal sales and online discounts.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

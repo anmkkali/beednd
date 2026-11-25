@@ -1,0 +1,16 @@
+{
+  "id": "skechers",
+  "name": "Skechers",
+  "slug": "skechers",
+  "logo_url": "https://www.google.com/s2/favicons?domain=skechers.com&sz=128",
+  "website_url": "https://www.skechers.com/sale/",
+  "country": "US",
+  "categories": [
+    "clothing-fashion"
+  ],
+  "short_bio": "Verified US brand offering seasonal sales and online discounts.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

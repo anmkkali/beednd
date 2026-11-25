@@ -1,0 +1,41 @@
+{
+  "id": "l-l-bean-live-offer",
+  "slug": "l-l-bean-live-offer",
+  "title": "L.L.Bean: Up to 15% Off Seasonal Sale",
+  "short_description": "Verified active promotion detected on L.L.Bean's official store (15% OFF). Confirm exclusions at checkout.",
+  "brand_id": "l-l-bean",
+  "country": "US",
+  "cities": [],
+  "areas": [],
+  "branch_info": [],
+  "category": "clothing-fashion",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "UP TO 15% OFF",
+  "badge_text": "Up to 15% Off",
+  "numeric_discount_percent": 15,
+  "terms_and_conditions": [
+    "Auto-verified from L.L.Bean official sale page.",
+    "Confirm final discount and exclusions on the official store."
+  ],
+  "start_date": "2026-11-25T07:59:59Z",
+  "end_date": "2026-12-09T23:59:00Z",
+  "source_url": "https://www.llbean.com/llb/shop/32?page=sale",
+  "affiliate_url": "https://www.llbean.com/llb/shop/32?page=sale",
+  "last_verified_at": "2026-11-25T07:59:59Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=llbean.com&sz=128",
+    "alt": "L.L.Bean"
+  },
+  "tags": [
+    "all-items"
+  ]
+}

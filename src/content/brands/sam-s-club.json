@@ -1,0 +1,16 @@
+{
+  "id": "sam-s-club",
+  "name": "Sam's Club",
+  "slug": "sam-s-club",
+  "logo_url": "https://www.google.com/s2/favicons?domain=samsclub.com&sz=128",
+  "website_url": "https://www.samsclub.com/",
+  "country": "US",
+  "categories": [
+    "groceries-essentials"
+  ],
+  "short_bio": "Verified US brand offering seasonal sales and online discounts.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}
