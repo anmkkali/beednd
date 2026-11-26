@@ -1,0 +1,16 @@
+{
+  "id": "samsung-pakistan",
+  "name": "Samsung Pakistan",
+  "slug": "samsung-pakistan",
+  "logo_url": "https://www.google.com/s2/favicons?domain=samsung.com&sz=128",
+  "website_url": "https://www.samsung.com/pk/offer/",
+  "country": "PK",
+  "categories": [
+    "tech-electronics"
+  ],
+  "short_bio": "Verified PK brand offering seasonal sales and online discounts.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

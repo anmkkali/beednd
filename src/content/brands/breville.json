@@ -1,0 +1,16 @@
+{
+  "id": "breville",
+  "name": "Breville",
+  "slug": "breville",
+  "logo_url": "https://www.google.com/s2/favicons?domain=breville.com&sz=128",
+  "website_url": "https://www.breville.com/en-us",
+  "country": "US",
+  "categories": [
+    "tech-electronics"
+  ],
+  "short_bio": "Verified US brand offering seasonal sales and online discounts.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

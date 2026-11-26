@@ -1,0 +1,16 @@
+{
+  "id": "the-pet-store-pk",
+  "name": "The Pet Store PK",
+  "slug": "the-pet-store-pk",
+  "logo_url": "https://www.google.com/s2/favicons?domain=thepetstorepk.com&sz=128",
+  "website_url": "https://www.thepetstorepk.com/",
+  "country": "PK",
+  "categories": [
+    "pets"
+  ],
+  "short_bio": "Verified PK brand offering seasonal sales and online discounts.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

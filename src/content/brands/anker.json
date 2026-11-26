@@ -1,0 +1,16 @@
+{
+  "id": "anker",
+  "name": "Anker",
+  "slug": "anker",
+  "logo_url": "https://www.google.com/s2/favicons?domain=anker.com&sz=128",
+  "website_url": "https://www.anker.com/",
+  "country": "US",
+  "categories": [
+    "tech-electronics"
+  ],
+  "short_bio": "Verified US brand offering seasonal sales and online discounts.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}
