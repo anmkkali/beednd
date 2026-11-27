@@ -1,7 +1,7 @@
 {
   "id": "samsung-pakistan-live-offer",
   "slug": "samsung-pakistan-live-offer",
-  "title": "Samsung Pakistan: Up to 20% Off Seasonal Sale",
+  "title": "Samsung Pakistan: Up to 25% Off Seasonal Sale",
   "short_description": "Verified active promotion detected on Samsung Pakistan's official store (Blessed Friday). Confirm exclusions at checkout.",
   "brand_id": "samsung-pakistan",
   "country": "PK",
@@ -14,18 +14,18 @@
     "online"
   ],
   "discount_type": "percentage",
-  "discount_value": "UP TO 20% OFF",
-  "badge_text": "Up to 20% Off",
-  "numeric_discount_percent": 20,
+  "discount_value": "UP TO 25% OFF",
+  "badge_text": "Up to 25% Off",
+  "numeric_discount_percent": 25,
   "terms_and_conditions": [
     "Auto-verified from Samsung Pakistan official sale page.",
     "Confirm final discount and exclusions on the official store."
   ],
-  "start_date": "2026-11-26T07:52:10Z",
-  "end_date": "2026-12-10T23:59:00Z",
+  "start_date": "2026-11-27T19:48:38Z",
+  "end_date": "2026-12-11T23:59:00Z",
   "source_url": "https://www.samsung.com/pk/offer/",
   "affiliate_url": "https://www.samsung.com/pk/offer/",
-  "last_verified_at": "2026-11-26T07:52:10Z",
+  "last_verified_at": "2026-11-27T19:48:38Z",
   "status": "active",
   "is_trending": false,
   "is_coming_soon": false,

@@ -1,0 +1,49 @@
+{
+  "id": "bachaa-party-live-offer",
+  "slug": "bachaa-party-live-offer",
+  "title": "Bachaa Party: Up to 50% Off Seasonal & Kids Sale",
+  "short_description": "Seasonal markdowns up to 50% off across kids' apparel, infant wear, shoes, and toys online and in stores nationwide.",
+  "brand_id": "bachaa-party",
+  "country": "PK",
+  "cities": [
+    "Karachi",
+    "Lahore",
+    "Islamabad"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "clothing-fashion",
+  "deal_type": "store-sale",
+  "channels": [
+    "online",
+    "in-store"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "UP TO 50% OFF",
+  "badge_text": "Up to 50% Off",
+  "numeric_discount_percent": 50,
+  "terms_and_conditions": [
+    "Valid on selected seasonal kids' fashion, footwear, and accessories.",
+    "Available online at bachaaparty.com and nationwide stores."
+  ],
+  "start_date": "2026-11-28T00:00:00Z",
+  "end_date": "2026-12-12T23:59:00Z",
+  "source_url": "https://bachaaparty.com/",
+  "affiliate_url": "https://bachaaparty.com/",
+  "last_verified_at": "2026-11-28T00:49:00Z",
+  "status": "active",
+  "is_trending": true,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=bachaaparty.com&sz=128",
+    "alt": "Bachaa Party"
+  },
+  "tags": [
+    "kids",
+    "apparel",
+    "shoes",
+    "all-items"
+  ]
+}

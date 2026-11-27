@@ -1,0 +1,41 @@
+{
+  "id": "haier-pakistan-live-offer",
+  "slug": "haier-pakistan-live-offer",
+  "title": "Haier Pakistan: Up to 25% Off Seasonal Sale",
+  "short_description": "Verified active promotion detected on Haier Pakistan's official store (up to 99%). Confirm exclusions at checkout.",
+  "brand_id": "haier-pakistan",
+  "country": "PK",
+  "cities": [],
+  "areas": [],
+  "branch_info": [],
+  "category": "tech-electronics",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "UP TO 25% OFF",
+  "badge_text": "Up to 25% Off",
+  "numeric_discount_percent": 25,
+  "terms_and_conditions": [
+    "Auto-verified from Haier Pakistan official sale page.",
+    "Confirm final discount and exclusions on the official store."
+  ],
+  "start_date": "2026-11-27T19:48:38Z",
+  "end_date": "2026-12-11T23:59:00Z",
+  "source_url": "https://www.haier.com/pk/",
+  "affiliate_url": "https://www.haier.com/pk/",
+  "last_verified_at": "2026-11-27T19:48:38Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=haier.com&sz=128",
+    "alt": "Haier Pakistan"
+  },
+  "tags": [
+    "all-items"
+  ]
+}

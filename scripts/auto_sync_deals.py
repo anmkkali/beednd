@@ -15,10 +15,10 @@ NOW = dt.datetime.now(dt.timezone.utc)
 NOW_ISO = NOW.strftime("%Y-%m-%dT%H:%M:%SZ")
 
 SALE_RE = re.compile(
-    r"(?:flat\s+\d{1,2}%\s*off|up\s+to\s+\d{1,2}%\s*off|\d{1,2}%\s*off|black\s+friday|white\s+friday|blessed\s+friday|cyber\s+monday|free\s+trial)",
+    r"(?:flat\s+\d{1,2}%\s*(?:off|discount)?|up\s+to\s+\d{1,2}%\s*(?:off|discount)?|save\s+(?:up\s+to\s+)?\d{1,2}%|\d{1,2}%\s*(?:off|discount)|black\s+friday|white\s+friday|blessed\s+friday|cyber\s+monday|winter\s+sale|summer\s+sale|mega\s+sale|flash\s+sale|end\s+of\s+season\s+sale|clearance\s+sale|free\s+trial|promo\s+code)",
     re.IGNORECASE,
 )
-PCT_RE = re.compile(r"(\d{1,2})\s*%\s*off", re.IGNORECASE)
+PCT_RE = re.compile(r"(?:flat|up\s+to|save)?\s*(\d{1,2})\s*%\s*(?:off|discount)?", re.IGNORECASE)
 
 
 def parse_iso(s):
@@ -83,23 +83,25 @@ def check_url(item):
         req = urllib.request.Request(
             url,
             headers={
-                "User-Agent": "Mozilla/5.0 (compatible; BeeDNDBot/1.0; +https://beednd.com)",
-                "Accept": "text/html,application/xhtml+xml",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+                "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+                "Accept-Language": "en-US,en;q=0.9",
             },
         )
-        with urllib.request.urlopen(req, timeout=8) as resp:
+        with urllib.request.urlopen(req, timeout=7) as resp:
             if resp.status != 200:
                 return None
-            html = resp.read(150_000).decode("utf-8", errors="ignore")
+            html = resp.read(200_000).decode("utf-8", errors="ignore")
+            html = re.sub(r"<(script|style|noscript)[^>]*>.*?</\1>", " ", html, flags=re.S | re.I)
             text = re.sub(r"<[^>]+>", " ", html)
             matches = SALE_RE.findall(text)
             if not matches:
                 return None
-            pcts = [int(p) for p in PCT_RE.findall(text) if 5 <= int(p) <= 90]
-            best_pct = max(pcts) if pcts else 20
+            pcts = [int(p) for p in PCT_RE.findall(text) if 10 <= int(p) <= 85]
+            best_pct = max(pcts) if pcts else 25
             return {
                 "item": item,
-                "signal": matches[0].strip(),
+                "signal": re.sub(r"\s+", " ", matches[0]).strip(),
                 "pct": best_pct,
             }
     except Exception:
@@ -117,15 +119,15 @@ def scan_watchlist(active_brand_ids):
     FOCUS_COUNTRIES = {"PK", "US", "GB", "IN", "AE", "SA", "TR", "NL", "DE", "JP", "CN", "BD", "ZA", "NG", "KE", "SG", "MY", "GLOBAL"}
     candidates = [b for b in watchlist if b["id"] not in active_brand_ids and b.get("url")]
     candidates.sort(key=lambda b: (0 if b.get("country") in FOCUS_COUNTRIES else 1, b.get("country", "")))
-    slot = int(NOW.timestamp() // (12 * 3600)) % max(1, (len(candidates) // 120) + 1)
-    batch = candidates[slot * 120 : (slot + 1) * 120]
+    slot = int(NOW.timestamp() // (12 * 3600)) % max(1, (len(candidates) // 400) + 1)
+    batch = candidates[slot * 400 : (slot + 1) * 400]
     if not batch and candidates:
-        batch = candidates[:120]
+        batch = candidates[:400]
 
     print(f"[scanner] checking {len(batch)} brands from watchlist (total candidates={len(candidates)})...")
     discovered = 0
 
-    with concurrent.futures.ThreadPoolExecutor(max_workers=12) as pool:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=24) as pool:
         for res in pool.map(check_url, batch):
             if not res:
                 continue

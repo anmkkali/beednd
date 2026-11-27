@@ -1,0 +1,41 @@
+{
+  "id": "1-800-petmeds-live-offer",
+  "slug": "1-800-petmeds-live-offer",
+  "title": "1-800-PetMeds: Up to 25% Off Seasonal Sale",
+  "short_description": "Verified active promotion detected on 1-800-PetMeds's official store (Clearance Sale). Confirm exclusions at checkout.",
+  "brand_id": "1-800-petmeds",
+  "country": "US",
+  "cities": [],
+  "areas": [],
+  "branch_info": [],
+  "category": "pets",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "UP TO 25% OFF",
+  "badge_text": "Up to 25% Off",
+  "numeric_discount_percent": 25,
+  "terms_and_conditions": [
+    "Auto-verified from 1-800-PetMeds official sale page.",
+    "Confirm final discount and exclusions on the official store."
+  ],
+  "start_date": "2026-11-27T19:48:38Z",
+  "end_date": "2026-12-11T23:59:00Z",
+  "source_url": "https://www.1800petmeds.com/deals.html",
+  "affiliate_url": "https://www.1800petmeds.com/deals.html",
+  "last_verified_at": "2026-11-27T19:48:38Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=1800petmeds.com&sz=128",
+    "alt": "1-800-PetMeds"
+  },
+  "tags": [
+    "all-items"
+  ]
+}

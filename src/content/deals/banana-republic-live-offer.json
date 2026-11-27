@@ -1,0 +1,41 @@
+{
+  "id": "banana-republic-live-offer",
+  "slug": "banana-republic-live-offer",
+  "title": "Banana Republic: Up to 25% Off Seasonal Sale",
+  "short_description": "Verified active promotion detected on Banana Republic's official store (25% Off). Confirm exclusions at checkout.",
+  "brand_id": "banana-republic",
+  "country": "US",
+  "cities": [],
+  "areas": [],
+  "branch_info": [],
+  "category": "clothing-fashion",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "UP TO 25% OFF",
+  "badge_text": "Up to 25% Off",
+  "numeric_discount_percent": 25,
+  "terms_and_conditions": [
+    "Auto-verified from Banana Republic official sale page.",
+    "Confirm final discount and exclusions on the official store."
+  ],
+  "start_date": "2026-11-27T19:48:38Z",
+  "end_date": "2026-12-11T23:59:00Z",
+  "source_url": "https://bananarepublic.gap.com/",
+  "affiliate_url": "https://bananarepublic.gap.com/",
+  "last_verified_at": "2026-11-27T19:48:38Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=bananarepublic.gap.com&sz=128",
+    "alt": "Banana Republic"
+  },
+  "tags": [
+    "all-items"
+  ]
+}

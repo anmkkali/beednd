@@ -1,0 +1,41 @@
+{
+  "id": "mercantile-apple-authorized-live-offer",
+  "slug": "mercantile-apple-authorized-live-offer",
+  "title": "Mercantile (Apple Authorized): Up to 10% Off Seasonal Sale",
+  "short_description": "Verified active promotion detected on Mercantile (Apple Authorized)'s official store (flat 10% discount). Confirm exclusions at checkout.",
+  "brand_id": "mercantile-apple-authorized",
+  "country": "PK",
+  "cities": [],
+  "areas": [],
+  "branch_info": [],
+  "category": "tech-electronics",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "UP TO 10% OFF",
+  "badge_text": "Up to 10% Off",
+  "numeric_discount_percent": 10,
+  "terms_and_conditions": [
+    "Auto-verified from Mercantile (Apple Authorized) official sale page.",
+    "Confirm final discount and exclusions on the official store."
+  ],
+  "start_date": "2026-11-27T19:48:38Z",
+  "end_date": "2026-12-11T23:59:00Z",
+  "source_url": "https://mercantile.com.pk/",
+  "affiliate_url": "https://mercantile.com.pk/",
+  "last_verified_at": "2026-11-27T19:48:38Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=mercantile.com.pk&sz=128",
+    "alt": "Mercantile (Apple Authorized)"
+  },
+  "tags": [
+    "all-items"
+  ]
+}
