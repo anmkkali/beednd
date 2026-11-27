@@ -1,8 +1,8 @@
 {
   "id": "bachaa-party-live-offer",
   "slug": "bachaa-party-live-offer",
-  "title": "Bachaa Party: Up to 50% Off Seasonal & Kids Sale",
-  "short_description": "Seasonal markdowns up to 50% off across kids' apparel, infant wear, shoes, and toys online and in stores nationwide.",
+  "title": "Bachaa Party: Kids Friday Sale Flat 25% Off",
+  "short_description": "Kids Friday Sale with flat 25% off across children's apparel, baby clothes, shoes, toys, and essentials online and in stores.",
   "brand_id": "bachaa-party",
   "country": "PK",
   "cities": [
@@ -19,9 +19,9 @@
     "in-store"
   ],
   "discount_type": "percentage",
-  "discount_value": "UP TO 50% OFF",
-  "badge_text": "Up to 50% Off",
-  "numeric_discount_percent": 50,
+  "discount_value": "FLAT 25% OFF",
+  "badge_text": "Flat 25% Off",
+  "numeric_discount_percent": 25,
   "terms_and_conditions": [
     "Valid on selected seasonal kids' fashion, footwear, and accessories.",
     "Available online at bachaaparty.com and nationwide stores."

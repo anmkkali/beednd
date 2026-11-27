@@ -18,7 +18,7 @@ SALE_RE = re.compile(
     r"(?:flat\s+\d{1,2}%\s*(?:off|discount)?|up\s+to\s+\d{1,2}%\s*(?:off|discount)?|save\s+(?:up\s+to\s+)?\d{1,2}%|\d{1,2}%\s*(?:off|discount)|black\s+friday|white\s+friday|blessed\s+friday|cyber\s+monday|winter\s+sale|summer\s+sale|mega\s+sale|flash\s+sale|end\s+of\s+season\s+sale|clearance\s+sale|free\s+trial|promo\s+code)",
     re.IGNORECASE,
 )
-PCT_RE = re.compile(r"(?:flat|up\s+to|save)?\s*(\d{1,2})\s*%\s*(?:off|discount)?", re.IGNORECASE)
+PCT_RE = re.compile(r"(?:(?:flat|up\s+to|save)\s+(\d{1,2})\s*%|\b(\d{1,2})\s*%\s*(?:off|discount))", re.IGNORECASE)
 
 
 def parse_iso(s):
@@ -97,7 +97,7 @@ def check_url(item):
             matches = SALE_RE.findall(text)
             if not matches:
                 return None
-            pcts = [int(p) for p in PCT_RE.findall(text) if 10 <= int(p) <= 85]
+            pcts = [int(p or q) for p, q in PCT_RE.findall(text) if 5 <= int(p or q) <= 85]
             best_pct = max(pcts) if pcts else 25
             return {
                 "item": item,
