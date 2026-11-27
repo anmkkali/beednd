@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import AdSlot from '../../components/ads/AdSlot.astro';
 import Icon from '../../components/common/Icon.astro';
 import { getCollection } from 'astro:content';
 
@@ -37,60 +38,56 @@ const structuredData = {
   structuredData={structuredData}
   showBottom={false}
 >
-  <article class="mx-auto max-w-3xl">
-    <nav class="mb-5 flex flex-wrap items-center gap-2 text-[13px] text-ink-muted" aria-label="Breadcrumb">
-      <a href="/" class="hover:text-ink hover:underline">Home</a>
-      <span>/</span>
-      <a href="/blog/" class="hover:text-ink hover:underline">Blog &amp; articles</a>
-      {post.data.tags?.[0] && (
-        <>
-          <span>/</span>
-          <span class="capitalize text-ink">{post.data.tags[0]}</span>
-        </>
-      )}
-    </nav>
+  <article class="mx-auto max-w-4xl">
+    <div class="mb-4 flex flex-wrap items-center justify-between gap-2 text-[13px] text-ink-muted">
+      <nav class="flex items-center gap-2" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-ink hover:underline">Home</a>
+        <span>/</span>
+        <a href="/blog/" class="hover:text-ink hover:underline">Blog &amp; articles</a>
+      </nav>
+      <span>{post.data.published_date.split('T')[0]} · {post.data.author}</span>
+    </div>
 
-    <header class="mb-7 border-b editorial-rule pb-7">
-      {post.data.tags?.[0] && (
-        <span class="mb-3 inline-block border editorial-rule px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-ink-muted">
-          {post.data.tags[0]}
-        </span>
-      )}
-      <h1 class="text-4xl leading-[1.05] text-ink sm:text-5xl">
+    <header class="mb-8 border-b editorial-rule pb-8 md:pl-[30%]">
+      <h1 class="text-4xl leading-[1.03] text-ink sm:text-5xl lg:text-[54px]">
         {post.data.title}
       </h1>
-      <p class="mt-3.5 text-[16.5px] leading-relaxed text-ink-muted">
+      <p class="mt-4 max-w-xl text-[16px] leading-relaxed text-ink-muted">
         {post.data.description}
-      </p>
-      <p class="mt-4 text-[12.5px] font-medium uppercase tracking-[0.12em] text-ink-muted">
-        By {post.data.author} · {post.data.published_date.split('T')[0]}
       </p>
     </header>
 
-    <div class="mb-8 aspect-[16/9] max-h-[400px] w-full overflow-hidden border editorial-rule bg-base-900">
+    <div class="mb-8 aspect-[16/9] max-h-[420px] w-full overflow-hidden border editorial-rule bg-base-900">
       <img
         src={post.data.hero_image}
         alt={post.data.title}
         class="h-full w-full object-cover"
         decoding="async"
-        onerror="this.parentElement.style.display='none';"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
       />
+      <div class="hidden h-full w-full items-center justify-center bg-base-900 p-8 text-center">
+        <span class="font-serif text-2xl text-ink-muted">{post.data.title}</span>
+      </div>
     </div>
 
-    <div class="editorial-prose max-w-none">
+    <div class="editorial-prose editorial-staggered max-w-none">
       <Content />
     </div>
   </article>
 
+  <div class="mx-auto mt-10 max-w-4xl">
+    <AdSlot slotType="leaderboard" />
+  </div>
+
   {relatedPosts.length > 0 && (
-    <section class="mt-14 border-t editorial-rule pt-8" aria-labelledby="more-articles-heading">
+    <section class="mx-auto mt-12 max-w-4xl border-t editorial-rule pt-8" aria-labelledby="more-articles-heading">
       <div class="mb-5 flex items-end justify-between border-b editorial-rule pb-2.5">
         <div>
-          <p class="text-[11.5px] font-semibold uppercase tracking-[0.16em] text-ink-muted">Blog &amp; articles</p>
-          <h2 id="more-articles-heading" class="mt-1 text-2xl text-ink sm:text-3xl">More guides and insights</h2>
+          <p class="text-[11.5px] font-semibold uppercase tracking-[0.16em] text-ink-muted">Journal</p>
+          <h2 id="more-articles-heading" class="mt-1 text-3xl text-ink">From the blog</h2>
         </div>
         <a href="/blog/" class="inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-ink hover:underline">
-          All articles
+          All posts
           <Icon name="arrow" class="h-4 w-4" />
         </a>
       </div>
@@ -131,3 +128,24 @@ const structuredData = {
     </section>
   )}
 </BaseLayout>
+
+<style is:global>
+  @media (min-width: 768px) {
+    .editorial-staggered > h2:nth-of-type(odd),
+    .editorial-staggered > h2:nth-of-type(odd) + p,
+    .editorial-staggered > h2:nth-of-type(odd) + p + ul,
+    .editorial-staggered > h2:nth-of-type(odd) + p + ol,
+    .editorial-staggered > h2:nth-of-type(odd) + ul,
+    .editorial-staggered > h2:nth-of-type(odd) + ol {
+      margin-left: 34%;
+    }
+    .editorial-staggered > h2:nth-of-type(even),
+    .editorial-staggered > h2:nth-of-type(even) + p,
+    .editorial-staggered > h2:nth-of-type(even) + p + ul,
+    .editorial-staggered > h2:nth-of-type(even) + p + ol,
+    .editorial-staggered > h2:nth-of-type(even) + ul,
+    .editorial-staggered > h2:nth-of-type(even) + ol {
+      max-width: 36rem;
+    }
+  }
+</style>
