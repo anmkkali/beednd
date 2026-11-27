@@ -45,17 +45,8 @@ const structuredData = {
         <span>/</span>
         <a href="/blog/" class="hover:text-ink hover:underline">Blog &amp; articles</a>
       </nav>
-      <span>{post.data.published_date.split('T')[0]} · {post.data.author}</span>
+      <span>{post.data.published_date.split('T')[0]}</span>
     </div>
-
-    <header class="mb-8 border-b editorial-rule pb-8 md:pl-[30%]">
-      <h1 class="text-4xl leading-[1.03] text-ink sm:text-5xl lg:text-[54px]">
-        {post.data.title}
-      </h1>
-      <p class="mt-4 max-w-xl text-[16px] leading-relaxed text-ink-muted">
-        {post.data.description}
-      </p>
-    </header>
 
     <div class="mb-8 aspect-[16/9] max-h-[420px] w-full overflow-hidden border editorial-rule bg-base-900">
       <img
@@ -69,6 +60,15 @@ const structuredData = {
         <span class="font-serif text-2xl text-ink-muted">{post.data.title}</span>
       </div>
     </div>
+
+    <header class="mb-8 border-b editorial-rule pb-8 md:pl-[30%]">
+      <h1 class="text-4xl leading-[1.03] text-ink sm:text-5xl lg:text-[54px]">
+        {post.data.title}
+      </h1>
+      <p class="mt-4 max-w-xl text-[16px] leading-relaxed text-ink-muted">
+        {post.data.description}
+      </p>
+    </header>
 
     <div class="editorial-prose editorial-staggered max-w-none">
       <Content />
