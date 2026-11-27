@@ -1,0 +1,41 @@
+{
+  "id": "the-farmer-s-dog-live-offer",
+  "slug": "the-farmer-s-dog-live-offer",
+  "title": "The Farmer's Dog: Up to 50% Off Seasonal Sale",
+  "short_description": "Verified active promotion detected on The Farmer's Dog's official store (50% off). Confirm exclusions at checkout.",
+  "brand_id": "the-farmer-s-dog",
+  "country": "US",
+  "cities": [],
+  "areas": [],
+  "branch_info": [],
+  "category": "pets",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "UP TO 50% OFF",
+  "badge_text": "Up to 50% Off",
+  "numeric_discount_percent": 50,
+  "terms_and_conditions": [
+    "Auto-verified from The Farmer's Dog official sale page.",
+    "Confirm final discount and exclusions on the official store."
+  ],
+  "start_date": "2026-11-27T20:58:53Z",
+  "end_date": "2026-12-11T23:59:00Z",
+  "source_url": "https://www.thefarmersdog.com/",
+  "affiliate_url": "https://www.thefarmersdog.com/",
+  "last_verified_at": "2026-11-27T20:58:53Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=thefarmersdog.com&sz=128",
+    "alt": "The Farmer's Dog"
+  },
+  "tags": [
+    "all-items"
+  ]
+}

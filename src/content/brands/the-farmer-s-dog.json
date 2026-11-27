@@ -1,0 +1,16 @@
+{
+  "id": "the-farmer-s-dog",
+  "name": "The Farmer's Dog",
+  "slug": "the-farmer-s-dog",
+  "logo_url": "https://www.google.com/s2/favicons?domain=thefarmersdog.com&sz=128",
+  "website_url": "https://www.thefarmersdog.com/",
+  "country": "US",
+  "categories": [
+    "pets"
+  ],
+  "short_bio": "Verified US brand offering seasonal sales and online discounts.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}
