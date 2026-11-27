@@ -230,21 +230,32 @@ def scan_watchlist(active_brand_ids):
             pct = res["pct"]
             is_flat = res.get("is_flat", False)
 
-            # Ensure brand file exists
+            # Ensure brand file exists with unique brand-specific bio
             bpath = os.path.join(BRANDS_DIR, f"{bid}.json")
             if not os.path.exists(bpath):
+                new_brand = {
+                    "id": bid,
+                    "name": b["name"],
+                    "slug": bid,
+                    "logo_url": f"https://www.google.com/s2/favicons?domain={dom}&sz=128",
+                    "website_url": url,
+                    "country": country,
+                    "categories": [cat],
+                    "short_bio": "",
+                    "known_for": [],
+                }
+                try:
+                    from enrich_brand_bios import build_original_bio, fetch_meta
+                    _, m_title, m_desc = fetch_meta(new_brand)
+                    short_bio, about, known = build_original_bio(new_brand, m_title, m_desc)
+                    new_brand["short_bio"] = short_bio
+                    new_brand["about"] = about
+                    new_brand["known_for"] = known
+                except Exception:
+                    new_brand["short_bio"] = f"{b['name']} is a retail brand in {country} tracked on BeeDND for verified seasonal sales and online offers."
+                    new_brand["known_for"] = ["Seasonal sales", "Online offers"]
                 with open(bpath, "w", encoding="utf-8") as bf:
-                    json.dump({
-                        "id": bid,
-                        "name": b["name"],
-                        "slug": bid,
-                        "logo_url": f"https://www.google.com/s2/favicons?domain={dom}&sz=128",
-                        "website_url": url,
-                        "country": country,
-                        "categories": [cat],
-                        "short_bio": f"Verified {country} brand offering seasonal sales and online discounts.",
-                        "known_for": ["Seasonal sales", "Online offers"],
-                    }, bf, indent=2)
+                    json.dump(new_brand, bf, indent=2)
 
             deal_id = f"{bid}-live-offer"
             dpath = os.path.join(DEALS_DIR, f"{deal_id}.json")

@@ -8,11 +8,10 @@
   "categories": [
     "ai-tools"
   ],
-  "short_bio": "AI interface generator from Vercel.",
-  "about": "v0 by Vercel generates user interfaces and front-end code from a text prompt, mainly for web apps built with React.",
+  "short_bio": "v0 by Vercel is a retail brand available worldwide, known for cat food & litter. Shoppers follow v0 by Vercel on BeeDND for verified seasonal markdowns, promo codes, and official store offers.",
+  "about": "v0 by Vercel offers cat food & litter tailored for customers worldwide. Whenever v0 by Vercel launches a seasonal sale, clearance event, or verified promo code, BeeDND lists the active offer details and official store link here.",
   "known_for": [
-    "Designing app screens",
-    "Front-end code",
-    "Prototyping"
+    "Cat food & litter",
+    "Pro plan discounts"
   ]
 }
