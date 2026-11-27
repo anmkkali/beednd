@@ -1,7 +1,7 @@
 {
   "id": "espa-live-offer",
   "slug": "espa-live-offer",
-  "title": "ESPA: Up to 50% Off Seasonal Sale",
+  "title": "ESPA: Up to 50% Off Sale",
   "short_description": "Verified active promotion detected on ESPA's official store (15% Off). Confirm exclusions at checkout.",
   "brand_id": "espa",
   "country": "GB",
@@ -22,10 +22,10 @@
     "Confirm final discount and exclusions on the official store."
   ],
   "start_date": "2026-11-27T07:52:35Z",
-  "end_date": "2026-12-11T23:59:00Z",
+  "end_date": "2026-11-30T23:59:00Z",
   "source_url": "https://www.espaskincare.com/c/offers/",
   "affiliate_url": "https://www.espaskincare.com/c/offers/",
-  "last_verified_at": "2026-11-27T07:52:35Z",
+  "last_verified_at": "2026-11-27T21:06:17Z",
   "status": "active",
   "is_trending": false,
   "is_coming_soon": false,

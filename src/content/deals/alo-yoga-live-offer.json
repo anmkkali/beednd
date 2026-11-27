@@ -1,7 +1,7 @@
 {
   "id": "alo-yoga-live-offer",
   "slug": "alo-yoga-live-offer",
-  "title": "Alo Yoga: Up to 30% Off Seasonal Sale",
+  "title": "Alo Yoga: Up to 30% Off Sale",
   "short_description": "Verified active promotion detected on Alo Yoga's official store (30% Off). Confirm exclusions at checkout.",
   "brand_id": "alo-yoga",
   "country": "US",
@@ -22,10 +22,10 @@
     "Confirm final discount and exclusions on the official store."
   ],
   "start_date": "2026-11-26T07:52:10Z",
-  "end_date": "2026-12-10T23:59:00Z",
+  "end_date": "2026-11-30T23:59:00Z",
   "source_url": "https://www.aloyoga.com/collections/womens-sale-all",
   "affiliate_url": "https://www.aloyoga.com/collections/womens-sale-all",
-  "last_verified_at": "2026-11-26T07:52:10Z",
+  "last_verified_at": "2026-11-27T21:06:17Z",
   "status": "active",
   "is_trending": false,
   "is_coming_soon": false,

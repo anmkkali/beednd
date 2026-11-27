@@ -3,6 +3,7 @@ import datetime as dt
 import json
 import os
 import re
+import urllib.error
 import urllib.request
 from urllib.parse import urlparse
 
@@ -90,22 +91,111 @@ def check_url(item):
         )
         with urllib.request.urlopen(req, timeout=7) as resp:
             if resp.status != 200:
-                return None
-            html = resp.read(200_000).decode("utf-8", errors="ignore")
+                return {"item": item, "state": "ended"} if resp.status in (404, 410) else None
+            html = resp.read(160_000).decode("utf-8", errors="ignore")
             html = re.sub(r"<(script|style|noscript)[^>]*>.*?</\1>", " ", html, flags=re.S | re.I)
-            text = re.sub(r"<[^>]+>", " ", html)
+            text = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", html)).strip()
             matches = SALE_RE.findall(text)
             if not matches:
-                return None
-            pcts = [int(p or q) for p, q in PCT_RE.findall(text) if 5 <= int(p or q) <= 85]
-            best_pct = max(pcts) if pcts else 25
+                return {"item": item, "state": "ended"}
+            top_text = text[:4000]
+            pcts = [int(p or q) for p, q in PCT_RE.findall(top_text) if 5 <= int(p or q) <= 85]
+            if not pcts:
+                pcts = [int(p or q) for p, q in PCT_RE.findall(text) if 5 <= int(p or q) <= 85]
+            best_pct = max(pcts) if pcts else None
+            sig = re.sub(r"\s+", " ", matches[0]).strip()
+            is_flat = bool(re.search(r"\bflat\b", top_text, re.I))
             return {
                 "item": item,
-                "signal": re.sub(r"\s+", " ", matches[0]).strip(),
+                "state": "live",
+                "signal": sig,
                 "pct": best_pct,
+                "is_flat": is_flat,
             }
+    except urllib.error.HTTPError as e:
+        if e.code in (404, 410):
+            return {"item": item, "state": "ended"}
+        return None
     except Exception:
         return None
+
+
+def format_offer_copy(name, cat, pct, is_flat):
+    is_ai = cat == "ai-tools"
+    if is_ai:
+        return (
+            f"{name}: Free Trial & Plan Discounts",
+            "FREE TRIAL",
+            "Free Trial",
+            pct or 0,
+            "trial",
+        )
+    if pct:
+        prefix = "Flat" if is_flat else "Up to"
+        return (
+            f"{name}: {prefix} {pct}% Off Sale",
+            f"{prefix.upper()} {pct}% OFF",
+            f"{prefix} {pct}% Off",
+            pct,
+            "discount",
+        )
+    return (
+        f"{name}: Seasonal Sale & Offers",
+        "SEASONAL SALE",
+        "Sale Live",
+        0,
+        "discount",
+    )
+
+
+def reverify_live_offers():
+    live_items = []
+    for fn in os.listdir(DEALS_DIR):
+        if not fn.endswith("-live-offer.json"):
+            continue
+        fp = os.path.join(DEALS_DIR, fn)
+        with open(fp, "r", encoding="utf-8") as f:
+            deal = json.load(f)
+        if deal.get("status") != "active" or not deal.get("source_url"):
+            continue
+        live_items.append({"fp": fp, "deal": deal, "url": deal["source_url"]})
+
+    if not live_items:
+        return
+
+    expired_now = 0
+    refreshed = 0
+    with concurrent.futures.ThreadPoolExecutor(max_workers=20) as pool:
+        for res in pool.map(check_url, live_items[:250]):
+            if not res:
+                continue
+            entry = res["item"]
+            fp = entry["fp"]
+            deal = entry["deal"]
+            if res["state"] == "ended":
+                deal["status"] = "expired"
+                deal["end_date"] = NOW_ISO
+                expired_now += 1
+            elif res["state"] == "live":
+                deal["last_verified_at"] = NOW_ISO
+                deal["end_date"] = (NOW + dt.timedelta(days=3)).strftime("%Y-%m-%dT23:59:00Z")
+                if res["pct"] is not None:
+                    title, disc_val, badge, num_pct, kind = format_offer_copy(
+                        deal.get("title", "").split(":")[0] or deal.get("brand_id", ""),
+                        deal.get("category", "clothing-fashion"),
+                        res["pct"],
+                        res.get("is_flat", False),
+                    )
+                    deal["title"] = title
+                    deal["discount_value"] = disc_val
+                    deal["badge_text"] = badge
+                    deal["numeric_discount_percent"] = num_pct
+                    deal["offer_kind"] = kind
+                refreshed += 1
+            with open(fp, "w", encoding="utf-8") as f:
+                json.dump(deal, f, indent=2)
+
+    print(f"[reverify] checked={min(len(live_items), 250)}, refreshed={refreshed}, ended_expired={expired_now}")
 
 
 def scan_watchlist(active_brand_ids):
@@ -129,7 +219,7 @@ def scan_watchlist(active_brand_ids):
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=24) as pool:
         for res in pool.map(check_url, batch):
-            if not res:
+            if not res or res.get("state") != "live":
                 continue
             b = res["item"]
             bid = b["id"]
@@ -138,6 +228,7 @@ def scan_watchlist(active_brand_ids):
             url = b["url"]
             dom = get_domain(url)
             pct = res["pct"]
+            is_flat = res.get("is_flat", False)
 
             # Ensure brand file exists
             bpath = os.path.join(BRANDS_DIR, f"{bid}.json")
@@ -160,13 +251,13 @@ def scan_watchlist(active_brand_ids):
             if os.path.exists(dpath):
                 continue
 
-            end_iso = (NOW + dt.timedelta(days=14)).strftime("%Y-%m-%dT23:59:00Z")
-            is_ai = cat == "ai-tools"
+            end_iso = (NOW + dt.timedelta(days=3)).strftime("%Y-%m-%dT23:59:00Z")
+            title, disc_val, badge, num_pct, offer_kind = format_offer_copy(b["name"], cat, pct, is_flat)
             with open(dpath, "w", encoding="utf-8") as df:
                 json.dump({
                     "id": deal_id,
                     "slug": deal_id,
-                    "title": f"{b['name']}: Up to {pct}% Off Seasonal Sale" if not is_ai else f"{b['name']}: Free Trial & Plan Discounts",
+                    "title": title,
                     "short_description": f"Verified active promotion detected on {b['name']}'s official store ({res['signal']}). Confirm exclusions at checkout.",
                     "brand_id": bid,
                     "country": country,
@@ -177,9 +268,9 @@ def scan_watchlist(active_brand_ids):
                     "deal_type": "online",
                     "channels": ["online"],
                     "discount_type": "percentage",
-                    "discount_value": f"UP TO {pct}% OFF" if not is_ai else "FREE TRIAL",
-                    "badge_text": f"Up to {pct}% Off" if not is_ai else "Free Trial",
-                    "numeric_discount_percent": pct,
+                    "discount_value": disc_val,
+                    "badge_text": badge,
+                    "numeric_discount_percent": num_pct,
                     "terms_and_conditions": [
                         f"Auto-verified from {b['name']} official sale page.",
                         "Confirm final discount and exclusions on the official store."
@@ -193,7 +284,7 @@ def scan_watchlist(active_brand_ids):
                     "is_trending": False,
                     "is_coming_soon": False,
                     "limited_time": True,
-                    "offer_kind": "trial" if is_ai else "discount",
+                    "offer_kind": offer_kind,
                     "image": {"src": f"https://www.google.com/s2/favicons?domain={dom}&sz=128", "alt": b["name"]},
                     "tags": ["all-items"],
                 }, df, indent=2)
@@ -204,5 +295,6 @@ def scan_watchlist(active_brand_ids):
 
 
 if __name__ == "__main__":
+    reverify_live_offers()
     active_ids = lifecycle_sync()
     scan_watchlist(active_ids)

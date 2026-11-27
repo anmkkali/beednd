@@ -1,7 +1,7 @@
 {
   "id": "daewoo-express-live-offer",
   "slug": "daewoo-express-live-offer",
-  "title": "Daewoo Express: Up to 75% Off Seasonal Sale",
+  "title": "Daewoo Express: Up to 75% Off Sale",
   "short_description": "Verified active promotion detected on Daewoo Express's official store (up to 75%). Confirm exclusions at checkout.",
   "brand_id": "daewoo-express",
   "country": "PK",
@@ -22,10 +22,10 @@
     "Confirm final discount and exclusions on the official store."
   ],
   "start_date": "2026-11-27T19:48:38Z",
-  "end_date": "2026-12-11T23:59:00Z",
+  "end_date": "2026-11-30T23:59:00Z",
   "source_url": "https://daewoo.com.pk/",
   "affiliate_url": "https://daewoo.com.pk/",
-  "last_verified_at": "2026-11-27T19:48:38Z",
+  "last_verified_at": "2026-11-27T21:06:17Z",
   "status": "active",
   "is_trending": false,
   "is_coming_soon": false,
