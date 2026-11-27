@@ -6,47 +6,201 @@ import { getCollection } from 'astro:content';
 const allPosts = (await getCollection('blog', ({ data }) => data.is_published)).sort((a, b) =>
   b.data.published_date.localeCompare(a.data.published_date)
 );
+
+const featuredPost = allPosts[0];
+const restPosts = allPosts.slice(1);
+
+const tagCounts = new Map<string, number>();
+allPosts.forEach((p) => {
+  (p.data.tags || []).forEach((t: string) => {
+    const key = t.trim();
+    if (key) tagCounts.set(key, (tagCounts.get(key) || 0) + 1);
+  });
+});
+const topTags = Array.from(tagCounts.entries())
+  .sort((a, b) => b[1] - a[1])
+  .slice(0, 5)
+  .map(([t]) => t);
 ---
 
-<BaseLayout title="Blog" description="Shopping calendars, discount guides and practical tips for saving money.">
-  <div class="mb-8 border-b editorial-rule pb-8">
-    <nav class="mb-3 flex items-center gap-2 text-[13.5px] text-ink-muted" aria-label="Breadcrumb">
+<BaseLayout
+  title="Blog & Articles — Shopping Guides, Sale Calendars & Savings Tips"
+  description="Practical guides on stacking seasonal brand sales, bank card discounts, promo codes, and AI tool trials on BeeDND."
+>
+  <div class="mb-7 border-b editorial-rule pb-6">
+    <nav class="mb-3 flex items-center gap-2 text-[13px] text-ink-muted" aria-label="Breadcrumb">
       <a href="/" class="hover:text-ink hover:underline">Home</a>
       <span>/</span>
-      <span class="text-ink">Blog</span>
+      <span class="text-ink">Blog &amp; articles</span>
     </nav>
-    <h1 class="text-5xl leading-[0.98] text-ink sm:text-6xl">Blog</h1>
-    <p class="mt-3 max-w-2xl text-[16px] leading-relaxed text-ink-muted">
+    <h1 class="text-4xl leading-[1.02] text-ink sm:text-5xl lg:text-6xl">Blog &amp; articles</h1>
+    <p class="mt-2.5 max-w-2xl text-[15px] leading-relaxed text-ink-muted">
       Sale calendars, card discount comparisons and practical notes on shopping smarter.
     </p>
+
+    {topTags.length > 0 && (
+      <div class="mt-5 flex flex-wrap gap-1.5" id="blog-tag-filters" role="group" aria-label="Filter articles by topic">
+        <button
+          type="button"
+          data-blog-tag="all"
+          aria-pressed="true"
+          class="btn-primary border border-ink px-3 py-1 text-[12px] font-semibold transition-colors"
+        >
+          All
+        </button>
+        {topTags.map((tag) => (
+          <button
+            type="button"
+            data-blog-tag={tag.toLowerCase()}
+            aria-pressed="false"
+            class="border editorial-rule bg-transparent px-3 py-1 text-[12px] font-medium capitalize text-ink-muted transition-colors hover:border-ink hover:text-ink"
+          >
+            {tag}
+          </button>
+        ))}
+      </div>
+    )}
   </div>
 
-  <div class="grid gap-4 sm:grid-cols-2 sm:gap-5 xl:grid-cols-3">
-    {allPosts.map((post) => (
-      <article data-market={post.data.target_country} class="group flex flex-col border editorial-rule bg-base-900/40 transition-colors hover:bg-base-900">
-        <a href={`/blog/${post.slug}`} class="block aspect-[16/10] overflow-hidden border-b editorial-rule bg-base-900">
-          <img
-            src={post.data.hero_image}
-            alt={post.data.title}
-            width="600"
-            height="375"
-            class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-            loading="lazy"
-            decoding="async"
-          />
-        </a>
-        <div class="flex flex-1 flex-col p-5">
-          <p class="mb-2 text-[12.5px] font-medium text-ink-muted">{post.data.published_date.split('T')[0]}</p>
-          <h2 class="text-[26px] leading-[1.12] text-ink group-hover:underline">
-            <a href={`/blog/${post.slug}`}>{post.data.title}</a>
-          </h2>
-          <p class="mt-2 text-[14.5px] leading-relaxed text-ink-muted">{post.data.description}</p>
-          <a href={`/blog/${post.slug}`} class="mt-auto inline-flex items-center gap-2 pt-5 text-[14px] font-semibold text-ink hover:underline">
+  {featuredPost && (
+    <article
+      data-blog-card
+      data-market={featuredPost.data.target_country}
+      data-tags={(featuredPost.data.tags || []).map((t: string) => t.toLowerCase()).join('|')}
+      class="group mb-10 grid cursor-pointer border editorial-rule bg-base-900/30 transition-colors hover:bg-base-900/70 lg:grid-cols-12"
+    >
+      <a
+        href={`/blog/${featuredPost.slug}/`}
+        class="relative block aspect-[16/10] overflow-hidden border-b editorial-rule bg-base-900 lg:col-span-7 lg:border-b-0 lg:border-r"
+      >
+        <img
+          src={featuredPost.data.hero_image}
+          alt={featuredPost.data.title}
+          width="840"
+          height="525"
+          class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+          decoding="async"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+        />
+        <div class="hidden h-full w-full items-center justify-center bg-base-900 p-8 text-center">
+          <span class="font-serif text-2xl text-ink-muted">{featuredPost.data.title}</span>
+        </div>
+      </a>
+      <div class="flex flex-col justify-center p-6 sm:p-8 lg:col-span-5">
+        {featuredPost.data.tags?.[0] && (
+          <span class="mb-3 inline-block w-fit border editorial-rule px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-ink-muted">
+            {featuredPost.data.tags[0]}
+          </span>
+        )}
+        <h2 class="text-[28px] leading-[1.12] text-ink group-hover:underline sm:text-[34px]">
+          <a href={`/blog/${featuredPost.slug}/`}>{featuredPost.data.title}</a>
+        </h2>
+        <p class="mt-3 line-clamp-2 text-[14.5px] leading-relaxed text-ink-muted">
+          {featuredPost.data.description}
+        </p>
+        <div class="mt-6">
+          <a href={`/blog/${featuredPost.slug}/`} class="btn-primary inline-flex items-center gap-2 px-4 py-2 text-[13px] font-semibold">
             Read article
-            <Icon name="arrow" class="h-4 w-4" />
+            <Icon name="arrow" class="h-3.5 w-3.5" />
           </a>
         </div>
-      </article>
-    ))}
-  </div>
+      </div>
+    </article>
+  )}
+
+  {restPosts.length > 0 && (
+    <section aria-labelledby="latest-articles-heading">
+      <div class="mb-5 flex items-end justify-between border-b editorial-rule pb-2.5">
+        <div>
+          <p class="text-[11.5px] font-semibold uppercase tracking-[0.16em] text-ink-muted">Blog &amp; articles</p>
+          <h2 id="latest-articles-heading" class="mt-1 text-2xl text-ink sm:text-3xl">Latest guides and insights</h2>
+        </div>
+      </div>
+
+      <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {restPosts.map((post) => (
+          <article
+            data-blog-card
+            data-market={post.data.target_country}
+            data-tags={(post.data.tags || []).map((t: string) => t.toLowerCase()).join('|')}
+            class="group flex cursor-pointer flex-col border editorial-rule bg-base-900/30 transition-colors hover:bg-base-900/70"
+          >
+            <a href={`/blog/${post.slug}/`} class="relative block aspect-[16/9] overflow-hidden border-b editorial-rule bg-base-900">
+              <img
+                src={post.data.hero_image}
+                alt={post.data.title}
+                width="600"
+                height="338"
+                class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                loading="lazy"
+                decoding="async"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+              />
+              <div class="hidden h-full w-full items-center justify-center bg-base-900 p-4 text-center">
+                <span class="font-serif text-base text-ink-muted line-clamp-2">{post.data.title}</span>
+              </div>
+            </a>
+            <div class="flex flex-1 flex-col p-4">
+              {post.data.tags?.[0] && (
+                <span class="mb-1.5 inline-block w-fit border editorial-rule px-2 py-0.5 text-[10.5px] font-semibold uppercase tracking-[0.1em] text-ink-muted">
+                  {post.data.tags[0]}
+                </span>
+              )}
+              <h3 class="line-clamp-2 text-[20px] leading-[1.18] text-ink group-hover:underline">
+                <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+              </h3>
+              <p class="mt-1.5 line-clamp-1 text-[13.5px] leading-snug text-ink-muted">{post.data.description}</p>
+              <a href={`/blog/${post.slug}/`} class="mt-auto inline-flex items-center gap-1.5 pt-3 text-[13px] font-semibold text-ink hover:underline">
+                Read article
+                <Icon name="arrow" class="h-3.5 w-3.5" />
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  )}
 </BaseLayout>
+
+<script>
+  function initBlogIndex() {
+    const filterBox = document.getElementById('blog-tag-filters');
+    const cards = Array.from(document.querySelectorAll<HTMLElement>('[data-blog-card]'));
+    if (!cards.length) return;
+
+    let activeTag = 'all';
+
+    function applyFilter() {
+      cards.forEach((card) => {
+        const tags = (card.dataset.tags || '').split('|').filter(Boolean);
+        const show = activeTag === 'all' || tags.includes(activeTag);
+        card.classList.toggle('hidden', !show);
+      });
+      filterBox?.querySelectorAll<HTMLButtonElement>('[data-blog-tag]').forEach((btn) => {
+        const on = (btn.dataset.blogTag || 'all') === activeTag;
+        btn.setAttribute('aria-pressed', String(on));
+        btn.className = `border px-3 py-1 text-[12px] capitalize transition-colors ${
+          on
+            ? 'btn-primary border-ink font-semibold'
+            : 'editorial-rule bg-transparent font-medium text-ink-muted hover:border-ink hover:text-ink'
+        }`;
+      });
+    }
+
+    filterBox?.addEventListener('click', (e) => {
+      const btn = (e.target as HTMLElement).closest<HTMLButtonElement>('[data-blog-tag]');
+      if (!btn) return;
+      activeTag = btn.dataset.blogTag || 'all';
+      applyFilter();
+    });
+
+    cards.forEach((card) => {
+      card.addEventListener('click', (e) => {
+        if ((e.target as HTMLElement).closest('a, button')) return;
+        card.querySelector<HTMLAnchorElement>('a[href^="/blog/"]')?.click();
+      });
+    });
+  }
+
+  document.addEventListener('astro:page-load', initBlogIndex);
+</script>

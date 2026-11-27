@@ -94,7 +94,7 @@ const filterHref = (categoryId: string, groupId: string, filter: { sub?: string;
   <div class="sb-scroll min-h-0 flex-1 overflow-y-auto overscroll-contain px-2 pb-10">
     <nav class="space-y-0.5 pt-3" aria-label="Offer types">
       {quickLinks.map((link) => (
-        <a href={link.href} data-sb-link data-astro-prefetch="viewport" class="sb-link group" title={link.label}>
+        <a href={link.href} data-sb-link data-astro-prefetch class="sb-link group" title={link.label}>
           <Icon name={link.icon} class="h-[18px] w-[18px] shrink-0" />
           <span class="sb-label truncate" data-i18n={link.i18n}>{link.label}</span>
           <span data-sb-count={link.key} class="sb-badge ml-auto rounded-full bg-base-900 border editorial-rule px-2 py-0.5 text-[11px] font-mono font-medium text-ink-muted group-hover:text-ink">
@@ -119,7 +119,7 @@ const filterHref = (categoryId: string, groupId: string, filter: { sub?: string;
           </summary>
 
           <div class="sb-nested ml-[1.4rem] border-l editorial-rule pl-2">
-            <a href={`/categories/${category.id}/`} data-sb-link data-astro-prefetch="viewport" class="sb-link">
+            <a href={`/categories/${category.id}/`} data-sb-link data-astro-prefetch class="sb-link">
               All {category.name}
             </a>
 
@@ -131,7 +131,7 @@ const filterHref = (categoryId: string, groupId: string, filter: { sub?: string;
                 </summary>
                 <div class="ml-3 border-l editorial-rule pl-2">
                   {group.filters.map((filter) => (
-                    <a href={filterHref(category.id, group.id, filter)} data-sb-link data-astro-prefetch="viewport" class="sb-link">
+                    <a href={filterHref(category.id, group.id, filter)} data-sb-link data-astro-prefetch class="sb-link">
                       {filter.label}
                     </a>
                   ))}

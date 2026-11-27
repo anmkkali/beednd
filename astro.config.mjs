@@ -65,7 +65,7 @@ export default defineConfig({
   site: SITE,
   devToolbar: { enabled: false },
   prefetch: {
-    prefetchAll: true,
+    prefetchAll: false,
     defaultStrategy: 'hover',
   },
   compressHTML: true,

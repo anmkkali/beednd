@@ -143,6 +143,7 @@ const fontsUrl =
     <ViewTransitions />
   </head>
   <body class="bg-base-950 text-ink">
+    <div id="nav-progress" transition:persist="nav-progress" class="pointer-events-none fixed left-0 top-0 z-[100] h-[2px] w-0 bg-ink opacity-0 transition-[width,opacity] duration-200"></div>
     <div id="sticky-top" class="sticky top-0 z-30 w-full" transition:persist="sticky-top">
       <SponsorBar />
       <Header />
@@ -459,7 +460,23 @@ const fontsUrl =
         }
       });
 
+      document.addEventListener('astro:before-preparation', () => {
+        const bar = document.getElementById('nav-progress');
+        if (bar) {
+          bar.style.opacity = '1';
+          bar.style.width = '72%';
+        }
+      });
+
       document.addEventListener('astro:page-load', () => {
+        const bar = document.getElementById('nav-progress');
+        if (bar) {
+          bar.style.width = '100%';
+          window.setTimeout(() => {
+            bar.style.opacity = '0';
+            bar.style.width = '0%';
+          }, 160);
+        }
         const m = window.location.pathname.match(/^\/categories\/([^/]+)/);
         if (m?.[1]) recordInterest(m[1], 3);
         const curLang = (root.dataset.activeLang || 'en') as LangCode;

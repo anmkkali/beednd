@@ -11,35 +11,42 @@ const posts = (await getCollection('blog', ({ data }) => data.is_published))
   <div class="mb-5 flex items-end justify-between border-b editorial-rule pb-3">
     <div>
       <p class="text-[12px] font-semibold uppercase tracking-[0.16em] text-ink-muted">Journal</p>
-      <h2 id="blog-strip-heading" class="mt-1 text-4xl text-ink">From the blog</h2>
+      <h2 id="blog-strip-heading" class="mt-1 text-4xl text-ink">Blog &amp; articles</h2>
     </div>
-    <a href="/blog" class="inline-flex items-center gap-1.5 text-[14px] font-semibold text-ink hover:underline">
-      All posts
+    <a href="/blog/" class="inline-flex items-center gap-1.5 text-[14px] font-semibold text-ink hover:underline">
+      All articles
       <Icon name="arrow" class="h-4 w-4" />
     </a>
   </div>
   <div class="grid gap-4 sm:gap-5 md:grid-cols-3">
     {posts.map((post) => (
       <a
-        href={`/blog/${post.slug}`}
+        href={`/blog/${post.slug}/`}
         data-market={post.data.target_country}
-        class="group flex flex-col border editorial-rule bg-base-900/40 transition-colors hover:bg-base-900"
+        class="group flex flex-col border editorial-rule bg-base-900/30 transition-colors hover:bg-base-900/70"
       >
-        <div class="aspect-[16/10] overflow-hidden border-b editorial-rule bg-base-900">
+        <div class="aspect-[16/9] overflow-hidden border-b editorial-rule bg-base-900">
           <img
             src={post.data.hero_image}
             alt={post.data.title}
             width="600"
-            height="375"
+            height="338"
             class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
             loading="lazy"
             decoding="async"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
           />
+          <div class="hidden h-full w-full items-center justify-center bg-base-900 p-4 text-center">
+            <span class="font-serif text-base text-ink-muted line-clamp-2">{post.data.title}</span>
+          </div>
         </div>
-        <div class="p-5">
-          <p class="mb-2 text-[12.5px] font-medium text-ink-muted">{post.data.published_date.split('T')[0]}</p>
-          <h3 class="text-[24px] leading-[1.15] text-ink group-hover:underline">{post.data.title}</h3>
-          <p class="mt-2 line-clamp-3 text-[14.5px] leading-relaxed text-ink-muted">{post.data.description}</p>
+        <div class="flex flex-1 flex-col p-4">
+          <h3 class="line-clamp-2 text-[20px] leading-[1.18] text-ink group-hover:underline">{post.data.title}</h3>
+          <p class="mt-1.5 line-clamp-1 text-[13.5px] leading-snug text-ink-muted">{post.data.description}</p>
+          <span class="mt-auto inline-flex items-center gap-1.5 pt-3 text-[13px] font-semibold text-ink group-hover:underline">
+            Read article
+            <Icon name="arrow" class="h-3.5 w-3.5" />
+          </span>
         </div>
       </a>
     ))}
