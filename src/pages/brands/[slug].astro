@@ -31,12 +31,40 @@ export async function getStaticPaths() {
 
 const { brand, deals, expiredDeals } = Astro.props;
 const countryName = brand.country === 'GLOBAL' ? 'Available worldwide' : countryByCode.get(brand.country)?.name || brand.country;
+const countryLabel = brand.country === 'GLOBAL' ? 'Worldwide' : countryByCode.get(brand.country)?.name || brand.country;
+const topOffer = deals[0]?.data.badge_text || deals[0]?.data.discount_value || 'Latest Sales & Promo Codes';
+const faqItems = [
+  {
+    q: `Does ${brand.name} have an active sale or discount right now?`,
+    a: deals.length > 0
+      ? `Yes — ${brand.name} currently has ${deals.length} verified ${deals.length === 1 ? 'offer' : 'offers'} live in ${countryLabel}, including ${topOffer}.`
+      : `There are no live ${brand.name} sales verified right now, though past offers are archived below. Use "Notify me" to get an alert as soon as the next sale goes live.`,
+  },
+  {
+    q: `How do I claim ${brand.name} discounts and promo codes in ${countryLabel}?`,
+    a: `Select any verified ${brand.name} deal on this page to view its terms, eligible cities or channels, and official store link where the discount applies automatically or via promo code.`,
+  },
+  {
+    q: `Where are ${brand.name} offers valid?`,
+    a: `${brand.name} deals on BeeDND apply in ${countryLabel}${brand.known_for?.length ? ` across ${brand.known_for.join(', ').toLowerCase()}` : ''}. Always confirm store exclusions on the official ${brand.name} website before checkout.`,
+  },
+];
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: { '@type': 'Answer', text: item.a },
+  })),
+};
 ---
 
 <BaseLayout
-  title={`${brand.name} Discounts and Promo Codes`}
-  description={`Browse active ${brand.name} discounts, promo codes and offers.`}
+  title={`${brand.name} — Latest Sale, Discounts & Promo Codes in ${countryLabel}`}
+  description={`Find verified ${brand.name} sales, ${topOffer.toLowerCase()}, promo codes, and seasonal offers in ${countryLabel}. ${brand.short_bio} Updated daily on BeeDND.`}
   noindex={deals.length === 0 && expiredDeals.length === 0}
+  structuredData={structuredData}
 >
   <div class="mb-6 border-b editorial-rule pb-6">
     <nav class="mb-4 flex items-center gap-2 text-[13.5px] text-ink-muted" aria-label="Breadcrumb">
@@ -101,4 +129,16 @@ const countryName = brand.country === 'GLOBAL' ? 'Available worldwide' : country
   )}
 
   <BrandAbout brand={brand} class="mt-10" />
+
+  <section class="mt-10 border-t editorial-rule pt-8" aria-labelledby="brand-faq-heading">
+    <h2 id="brand-faq-heading" class="mb-4 text-2xl text-ink">{brand.name} Sales &amp; Discounts — Frequently Asked Questions</h2>
+    <div class="divide-y divide-[rgb(var(--ink)/0.12)] border-t border-b editorial-rule">
+      {faqItems.map((item) => (
+        <div class="py-4">
+          <h3 class="text-[16px] font-semibold text-ink">{item.q}</h3>
+          <p class="mt-1.5 text-[14.5px] leading-relaxed text-ink-muted">{item.a}</p>
+        </div>
+      ))}
+    </div>
+  </section>
 </BaseLayout>

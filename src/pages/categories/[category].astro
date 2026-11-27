@@ -50,11 +50,12 @@ const labels = {
   subs: subLabels,
   kinds: ALL_KIND_LABELS,
 };
+const topCatBrands = categoryBrands.slice(0, 5).map((b) => b.data.name).join(', ');
 ---
 
 <BaseLayout
-  title={`${category.name} Discounts and Promo Codes`}
-  description={`Browse ${category.name.toLowerCase()} brands, discounts and promo codes.`}
+  title={`${category.name} — Latest Sales, Discounts, Promo Codes & Deals`}
+  description={`Explore ${deals.length} verified ${category.name.toLowerCase()} sales, seasonal discounts, and promo codes${topCatBrands ? ` from top brands like ${topCatBrands}` : ''}. Updated daily on BeeDND.`}
   activeTopic={category.id}
 >
   <div class="mb-6 border-b editorial-rule pb-6">

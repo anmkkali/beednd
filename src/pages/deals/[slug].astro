@@ -5,6 +5,7 @@ import BrandMark from '../../components/common/BrandMark.astro';
 import BrandAbout from '../../components/common/BrandAbout.astro';
 import Icon from '../../components/common/Icon.astro';
 import { getCollection } from 'astro:content';
+import { countryByCode } from '../../data/countries';
 
 export async function getStaticPaths() {
   const deals = await getCollection('deals');
@@ -21,6 +22,9 @@ export async function getStaticPaths() {
 }
 
 const { deal, brand } = Astro.props;
+const countryLabel = deal.country === 'GLOBAL' ? 'Worldwide' : countryByCode.get(deal.country)?.name || deal.country;
+const brandLabel = brand?.name || deal.brand_id;
+const cleanTitle = deal.title.toLowerCase().startsWith(brandLabel.toLowerCase()) ? deal.title : `${brandLabel} — ${deal.title}`;
 const isExpired =
   deal.status === 'expired' ||
   (deal.end_date && !Number.isNaN(Date.parse(deal.end_date)) && Date.parse(deal.end_date) < Date.now());
@@ -36,8 +40,8 @@ const structuredData = {
 ---
 
 <BaseLayout
-  title={`${deal.title} — ${brand?.name || ''}`}
-  description={deal.short_description}
+  title={`${cleanTitle} | Latest Sale & Discount (${countryLabel})`}
+  description={`${deal.short_description} Verified ${brandLabel} ${deal.badge_text || deal.discount_value} deal in ${countryLabel} — view terms, validity, and official store link on BeeDND.`}
   structuredData={structuredData}
 >
   <!-- Breadcrumb -->
