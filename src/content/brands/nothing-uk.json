@@ -1,0 +1,16 @@
+{
+  "id": "nothing-uk",
+  "name": "Nothing UK",
+  "slug": "nothing-uk",
+  "logo_url": "https://www.google.com/s2/favicons?domain=nothing.tech&sz=128",
+  "website_url": "https://nothing.tech/",
+  "country": "GB",
+  "categories": [
+    "tech-electronics"
+  ],
+  "short_bio": "Verified GB brand offering seasonal sales and online discounts.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "lg-uk",
+  "name": "LG UK",
+  "slug": "lg-uk",
+  "logo_url": "https://www.google.com/s2/favicons?domain=lg.com&sz=128",
+  "website_url": "https://www.lg.com/uk/promotion/",
+  "country": "GB",
+  "categories": [
+    "tech-electronics"
+  ],
+  "short_bio": "Verified GB brand offering seasonal sales and online discounts.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "laithwaites-wine",
+  "name": "Laithwaites Wine",
+  "slug": "laithwaites-wine",
+  "logo_url": "https://www.google.com/s2/favicons?domain=laithwaites.co.uk&sz=128",
+  "website_url": "https://www.laithwaites.co.uk/wine/on-offer-wine",
+  "country": "GB",
+  "categories": [
+    "groceries-essentials"
+  ],
+  "short_bio": "Verified GB brand offering seasonal sales and online discounts.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

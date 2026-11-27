@@ -1,0 +1,16 @@
+{
+  "id": "holland-barrett",
+  "name": "Holland & Barrett",
+  "slug": "holland-barrett",
+  "logo_url": "https://www.google.com/s2/favicons?domain=hollandandbarrett.com&sz=128",
+  "website_url": "https://www.hollandandbarrett.com/shop/offers/",
+  "country": "GB",
+  "categories": [
+    "beauty-wellness"
+  ],
+  "short_bio": "Verified GB brand offering seasonal sales and online discounts.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

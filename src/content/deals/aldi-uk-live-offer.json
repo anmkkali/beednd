@@ -1,0 +1,41 @@
+{
+  "id": "aldi-uk-live-offer",
+  "slug": "aldi-uk-live-offer",
+  "title": "Aldi UK: Up to 20% Off Seasonal Sale",
+  "short_description": "Verified active promotion detected on Aldi UK's official store (Black Friday). Confirm exclusions at checkout.",
+  "brand_id": "aldi-uk",
+  "country": "GB",
+  "cities": [],
+  "areas": [],
+  "branch_info": [],
+  "category": "groceries-essentials",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "UP TO 20% OFF",
+  "badge_text": "Up to 20% Off",
+  "numeric_discount_percent": 20,
+  "terms_and_conditions": [
+    "Auto-verified from Aldi UK official sale page.",
+    "Confirm final discount and exclusions on the official store."
+  ],
+  "start_date": "2026-11-27T07:52:35Z",
+  "end_date": "2026-12-11T23:59:00Z",
+  "source_url": "https://www.aldi.co.uk/specialbuys",
+  "affiliate_url": "https://www.aldi.co.uk/specialbuys",
+  "last_verified_at": "2026-11-27T07:52:35Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=aldi.co.uk&sz=128",
+    "alt": "Aldi UK"
+  },
+  "tags": [
+    "all-items"
+  ]
+}

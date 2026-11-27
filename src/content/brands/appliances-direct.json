@@ -1,0 +1,16 @@
+{
+  "id": "appliances-direct",
+  "name": "Appliances Direct",
+  "slug": "appliances-direct",
+  "logo_url": "https://www.google.com/s2/favicons?domain=appliancesdirect.co.uk&sz=128",
+  "website_url": "https://www.appliancesdirect.co.uk/content/deals",
+  "country": "GB",
+  "categories": [
+    "tech-electronics"
+  ],
+  "short_bio": "Verified GB brand offering seasonal sales and online discounts.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

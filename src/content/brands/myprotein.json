@@ -1,0 +1,16 @@
+{
+  "id": "myprotein",
+  "name": "Myprotein",
+  "slug": "myprotein",
+  "logo_url": "https://www.google.com/s2/favicons?domain=myprotein.com&sz=128",
+  "website_url": "https://www.myprotein.com/",
+  "country": "GB",
+  "categories": [
+    "beauty-wellness"
+  ],
+  "short_bio": "Verified GB brand offering seasonal sales and online discounts.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

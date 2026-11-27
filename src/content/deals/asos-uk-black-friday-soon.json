@@ -29,7 +29,7 @@
   "last_verified_at": "2026-11-25T00:00:00Z",
   "status": "active",
   "is_trending": true,
-  "is_coming_soon": true,
+  "is_coming_soon": false,
   "limited_time": true,
   "offer_kind": "discount",
   "image": {

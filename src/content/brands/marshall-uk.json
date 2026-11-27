@@ -1,0 +1,16 @@
+{
+  "id": "marshall-uk",
+  "name": "Marshall UK",
+  "slug": "marshall-uk",
+  "logo_url": "https://www.google.com/s2/favicons?domain=marshall.com&sz=128",
+  "website_url": "https://www.marshall.com/gb/en",
+  "country": "GB",
+  "categories": [
+    "tech-electronics"
+  ],
+  "short_bio": "Verified GB brand offering seasonal sales and online discounts.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}

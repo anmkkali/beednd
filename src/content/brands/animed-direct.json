@@ -1,0 +1,16 @@
+{
+  "id": "animed-direct",
+  "name": "Animed Direct",
+  "slug": "animed-direct",
+  "logo_url": "https://www.google.com/s2/favicons?domain=animed.co.uk&sz=128",
+  "website_url": "https://www.animed.co.uk/",
+  "country": "GB",
+  "categories": [
+    "pets"
+  ],
+  "short_bio": "Verified GB brand offering seasonal sales and online discounts.",
+  "known_for": [
+    "Seasonal sales",
+    "Online offers"
+  ]
+}
