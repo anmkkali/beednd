@@ -19,6 +19,7 @@ const dealsCollection = defineCollection({
     })).default([]),
     category: z.enum([
       'clothing-fashion',
+      'kids-baby',
       'tech-electronics',
       'ai-tools',
       'food-dining',

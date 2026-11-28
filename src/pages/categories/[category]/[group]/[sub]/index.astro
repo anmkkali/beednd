@@ -26,8 +26,8 @@ export async function getStaticPaths() {
           .filter((d) => {
             if (d.data.category !== category.id) return false;
             const t = dealTokens(d.data);
-            const gOk = t.includes(`|${group.id}|`) || t.includes('|all-items|');
-            const sOk = !filter.sub || t.includes(`|${filter.sub}|`) || t.includes('|all-items|');
+            const gOk = t.includes(`|${group.id}|`);
+            const sOk = !filter.sub || t.includes(`|${filter.sub}|`);
             const kOk = !filter.kind || dealKind(d.data) === filter.kind;
             return gOk && sOk && kOk;
           })

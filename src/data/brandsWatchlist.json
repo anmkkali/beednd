@@ -507,7 +507,7 @@
     "id": "bachaa-party",
     "name": "Bachaa Party",
     "country": "PK",
-    "category": "clothing-fashion",
+    "category": "kids-baby",
     "url": "https://bachaaparty.com/"
   },
   {
@@ -3741,7 +3741,7 @@
     "id": "minnie-minors",
     "name": "Minnie Minors",
     "country": "PK",
-    "category": "clothing-fashion",
+    "category": "kids-baby",
     "url": "https://www.minnieminors.com/collections/winter-sale"
   },
   {
@@ -6627,5 +6627,12 @@
     "country": "IN",
     "category": "travel-lifestyle",
     "url": "https://www.zostel.com/"
+  },
+  {
+    "id": "zubaidas",
+    "name": "Zubaida's",
+    "country": "PK",
+    "category": "kids-baby",
+    "url": "https://zubaidas.com/"
   }
 ]

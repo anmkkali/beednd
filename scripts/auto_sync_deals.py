@@ -126,6 +126,25 @@ def check_url(item):
         return None
 
 
+def infer_tags(name, cat, signal_text=""):
+    t = f"{name} {signal_text}".lower()
+    if cat == "kids-baby":
+        tags = ["kids-clothing", "baby-newborn", "kids-shoes-school", "boys", "girls", "baby", "toys", "footwear", "school"]
+        return tags
+    if cat == "clothing-fashion":
+        tags = []
+        if any(w in t for w in ("shoe", "footwear", "bata", "stylo", "hush puppies", "ecs", "insignia", "mocciani", "borjan", "metro", "sputnik", "sneaker", "crocs")):
+            tags.extend(["men", "women", "footwear"])
+        elif any(w in t for w in ("cambridge", "charcoal", "uniworth", "diners", "monark")):
+            tags.extend(["men", "shirts", "trousers", "kurta"])
+        elif any(w in t for w in ("sana safinaz", "maria b", "alkaram", "gul ahmed", "beechtree", "khaadi", "nishat", "limelight", "cross stitch", "zeen", "so kamal", "rang jah", "ethnic")):
+            tags.extend(["women", "unstitched", "pret", "winter"])
+        else:
+            tags.extend(["men", "women"])
+        return tags
+    return ["all-items"]
+
+
 def format_offer_copy(name, cat, pct, is_flat):
     is_ai = cat == "ai-tools"
     if is_ai:
@@ -303,7 +322,7 @@ def scan_watchlist(active_brand_ids):
                     "limited_time": True,
                     "offer_kind": offer_kind,
                     "image": {"src": f"https://www.google.com/s2/favicons?domain={dom}&sz=128", "alt": b["name"]},
-                    "tags": ["all-items"],
+                    "tags": infer_tags(b["name"], cat, res.get("signal", "")),
                 }, df, indent=2)
             discovered += 1
 

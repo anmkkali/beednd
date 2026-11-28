@@ -1,0 +1,59 @@
+{
+  "id": "zubaidas-live-offer",
+  "slug": "zubaidas-live-offer",
+  "title": "Zubaida's: Up to 50% Off Kids, Baby & Newborn Sale",
+  "short_description": "Seasonal markdowns from 10% to 50% off across newborn essentials, baby care, kids clothing, footwear, toys, and strollers online and in stores.",
+  "brand_id": "zubaidas",
+  "country": "PK",
+  "cities": [
+    "Karachi",
+    "Lahore",
+    "Islamabad",
+    "Rawalpindi",
+    "Faisalabad"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "kids-baby",
+  "deal_type": "store-sale",
+  "channels": [
+    "online",
+    "in-store"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "UP TO 50% OFF",
+  "badge_text": "Up to 50% Off",
+  "numeric_discount_percent": 50,
+  "terms_and_conditions": [
+    "Discounts from 10% to 50% off apply on selected baby, newborn, kids apparel, and toy collections.",
+    "Free nationwide delivery available on qualifying orders at zubaidas.com."
+  ],
+  "start_date": "2026-11-28T00:00:00Z",
+  "end_date": "2026-12-15T23:59:00Z",
+  "source_url": "https://zubaidas.com/",
+  "affiliate_url": "https://zubaidas.com/",
+  "last_verified_at": "2026-11-29T00:40:00Z",
+  "status": "active",
+  "is_trending": true,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=zubaidas.com&sz=128",
+    "alt": "Zubaida's"
+  },
+  "tags": [
+    "kids-clothing",
+    "baby-newborn",
+    "kids-shoes-school",
+    "boys",
+    "girls",
+    "newborn",
+    "baby",
+    "baby-care",
+    "toys",
+    "footwear",
+    "school",
+    "accessories"
+  ]
+}

@@ -14,7 +14,7 @@
   ],
   "areas": [],
   "branch_info": [],
-  "category": "clothing-fashion",
+  "category": "kids-baby",
   "deal_type": "store-sale",
   "channels": [
     "online",
@@ -43,12 +43,19 @@
     "alt": "Bachaa Party"
   },
   "tags": [
-    "kids",
+    "kids-clothing",
+    "baby-newborn",
+    "kids-shoes-school",
     "boys",
     "girls",
     "baby",
-    "apparel",
-    "shoes",
-    "all-items"
+    "newborn",
+    "school",
+    "winter",
+    "footwear",
+    "accessories",
+    "toys",
+    "baby-care",
+    "eastern"
   ]
 }

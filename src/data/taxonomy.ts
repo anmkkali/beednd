@@ -42,7 +42,7 @@ const baseCategories: Category[] = [
     id: 'clothing-fashion',
     name: 'Clothing & Fashion',
     icon: 'apparel',
-    blurb: 'Menswear, womenswear and kids. Pick a group, then narrow down to trousers, co-ord sets, footwear and more.',
+    blurb: 'Menswear, womenswear and footwear. Pick a group, then narrow down to trousers, co-ord sets, unstitched and more.',
     groups: [
       group('men', "Men's", "All men's clothing", [
         { label: 'Stitched (shalwar kameez)', sub: 'stitched' },
@@ -69,13 +69,29 @@ const baseCategories: Category[] = [
         { label: 'Bags', sub: 'bags' },
         { label: 'Jewellery & accessories', sub: 'accessories' },
       ]),
-      group('kids', "Kids'", "All kids' clothing", [
+    ],
+  },
+  {
+    id: 'kids-baby',
+    name: 'Kids & Baby',
+    icon: 'sparkle',
+    blurb: 'Dedicated kids fashion, baby and newborn care, toys, school wear, and children footwear brands.',
+    groups: [
+      group('kids-clothing', 'Kids Clothing', 'All kids clothing', [
         { label: 'Boys', sub: 'boys' },
         { label: 'Girls', sub: 'girls' },
-        { label: 'Baby & newborn', sub: 'baby' },
-        { label: 'School wear', sub: 'school' },
         { label: 'Winter wear', sub: 'winter' },
-        { label: 'Footwear', sub: 'footwear' },
+        { label: 'Eastern & festive', sub: 'eastern' },
+      ]),
+      group('baby-newborn', 'Baby & Newborn', 'All baby & newborn', [
+        { label: 'Newborn essentials', sub: 'newborn' },
+        { label: 'Baby clothes', sub: 'baby' },
+        { label: 'Baby care & gear', sub: 'baby-care' },
+        { label: 'Toys & games', sub: 'toys' },
+      ]),
+      group('kids-shoes-school', 'Shoes, School & Accessories', 'All shoes & school', [
+        { label: 'Kids footwear', sub: 'footwear' },
+        { label: 'School wear & bags', sub: 'school' },
         { label: 'Accessories', sub: 'accessories' },
       ]),
     ],
