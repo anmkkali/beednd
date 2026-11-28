@@ -1,14 +1,14 @@
 {
   "id": "metro-collection-shoes-live-offer",
   "slug": "metro-collection-shoes-live-offer",
-  "title": "Metro Collection Shoes: Flat 70% Off Sale",
+  "title": "Metro Collection Shoes: Flat 70% Off on Winter Wear",
   "short_description": "Verified active promotion detected on Metro Collection Shoes's official store (FLAT 25% OFF). Confirm exclusions at checkout.",
   "brand_id": "metro-collection-shoes",
   "country": "PK",
   "cities": [],
   "areas": [],
   "branch_info": [],
-  "category": "clothing-fashion",
+  "category": "footwear",
   "deal_type": "online",
   "channels": [
     "online"
@@ -25,7 +25,7 @@
   "end_date": "2026-12-01T23:59:00Z",
   "source_url": "https://metrocollectionshoes.com/",
   "affiliate_url": "https://metrocollectionshoes.com/",
-  "last_verified_at": "2026-11-28T07:21:54Z",
+  "last_verified_at": "2026-11-28T20:10:57Z",
   "status": "active",
   "is_trending": false,
   "is_coming_soon": false,
@@ -36,8 +36,14 @@
     "alt": "Metro Collection Shoes"
   },
   "tags": [
-    "men",
-    "women",
-    "footwear"
+    "mens-footwear",
+    "womens-footwear",
+    "sports-athletic",
+    "sneakers",
+    "formal",
+    "sandals",
+    "heels",
+    "flats",
+    "running"
   ]
 }

@@ -8,7 +8,7 @@
   "cities": [],
   "areas": [],
   "branch_info": [],
-  "category": "clothing-fashion",
+  "category": "footwear",
   "deal_type": "online",
   "channels": [
     "online"
@@ -25,7 +25,7 @@
   "end_date": "2026-12-01T23:59:00Z",
   "source_url": "https://www.crocs.com/c/sale",
   "affiliate_url": "https://www.crocs.com/c/sale",
-  "last_verified_at": "2026-11-28T07:21:54Z",
+  "last_verified_at": "2026-11-28T20:10:57Z",
   "status": "active",
   "is_trending": false,
   "is_coming_soon": false,
@@ -36,8 +36,14 @@
     "alt": "Crocs"
   },
   "tags": [
-    "men",
-    "women",
-    "footwear"
+    "mens-footwear",
+    "womens-footwear",
+    "sports-athletic",
+    "sneakers",
+    "formal",
+    "sandals",
+    "heels",
+    "flats",
+    "running"
   ]
 }

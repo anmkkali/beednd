@@ -1,7 +1,7 @@
 {
   "id": "athleta-live-offer",
   "slug": "athleta-live-offer",
-  "title": "Athleta: Up to 60% Off Sale",
+  "title": "Athleta: Up to 60% Off on Winter Wear",
   "short_description": "Verified active promotion detected on Athleta's official store (40% Off). Confirm exclusions at checkout.",
   "brand_id": "athleta",
   "country": "US",
@@ -25,7 +25,7 @@
   "end_date": "2026-12-01T23:59:00Z",
   "source_url": "https://athleta.gap.com/browse/sale/all-sale?cid=1023728",
   "affiliate_url": "https://athleta.gap.com/browse/sale/all-sale?cid=1023728",
-  "last_verified_at": "2026-11-28T07:21:54Z",
+  "last_verified_at": "2026-11-28T20:10:57Z",
   "status": "active",
   "is_trending": false,
   "is_coming_soon": false,

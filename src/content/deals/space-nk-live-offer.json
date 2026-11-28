@@ -1,7 +1,7 @@
 {
   "id": "space-nk-live-offer",
   "slug": "space-nk-live-offer",
-  "title": "Space NK: Seasonal Sale & Offers",
+  "title": "Space NK: Up to 30% Off Sale",
   "short_description": "Verified active promotion detected on Space NK's official store (Black Friday). Confirm exclusions at checkout.",
   "brand_id": "space-nk",
   "country": "GB",
@@ -14,9 +14,9 @@
     "online"
   ],
   "discount_type": "percentage",
-  "discount_value": "SEASONAL SALE",
-  "badge_text": "Sale Live",
-  "numeric_discount_percent": 0,
+  "discount_value": "UP TO 30% OFF",
+  "badge_text": "Up to 30% Off",
+  "numeric_discount_percent": 30,
   "terms_and_conditions": [
     "Auto-verified from Space NK official sale page.",
     "Confirm final discount and exclusions on the official store."
@@ -25,7 +25,7 @@
   "end_date": "2026-12-01T23:59:00Z",
   "source_url": "https://www.spacenk.com/uk/offers",
   "affiliate_url": "https://www.spacenk.com/uk/offers",
-  "last_verified_at": "2026-11-28T07:21:54Z",
+  "last_verified_at": "2026-11-28T20:10:57Z",
   "status": "active",
   "is_trending": false,
   "is_coming_soon": false,

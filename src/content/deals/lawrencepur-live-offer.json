@@ -1,0 +1,50 @@
+{
+  "id": "lawrencepur-live-offer",
+  "slug": "lawrencepur-live-offer",
+  "title": "Lawrencepur: Seasonal Offers on Shirts & Tops",
+  "short_description": "Verified active promotion detected on Lawrencepur's official store (Clearance Sale). Confirm exclusions at checkout.",
+  "brand_id": "lawrencepur",
+  "country": "PK",
+  "cities": [
+    "Karachi",
+    "Lahore",
+    "Islamabad",
+    "Rawalpindi"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "clothing-fashion",
+  "deal_type": "store-sale",
+  "channels": [
+    "online",
+    "in-store"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "SEASONAL SALE",
+  "badge_text": "Sale Live",
+  "numeric_discount_percent": 0,
+  "terms_and_conditions": [
+    "Auto-verified from Lawrencepur official sale page.",
+    "Confirm final discount and exclusions on the official store."
+  ],
+  "start_date": "2026-11-28T20:10:57Z",
+  "end_date": "2026-12-01T23:59:00Z",
+  "source_url": "https://lawrencepur.com/collections/sale",
+  "affiliate_url": "https://lawrencepur.com/collections/sale",
+  "last_verified_at": "2026-11-28T20:10:57Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=lawrencepur.com&sz=128",
+    "alt": "Lawrencepur"
+  },
+  "tags": [
+    "men",
+    "shirts",
+    "women",
+    "trousers"
+  ]
+}

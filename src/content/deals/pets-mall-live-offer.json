@@ -1,7 +1,7 @@
 {
   "id": "pets-mall-live-offer",
   "slug": "pets-mall-live-offer",
-  "title": "Pets Mall: Up to 20% Off Sale",
+  "title": "Pets Mall: Up to 20% Off on Toys & Games",
   "short_description": "Verified active promotion detected on Pets Mall's official store (Save 20%). Confirm exclusions at checkout.",
   "brand_id": "pets-mall",
   "country": "PK",
@@ -25,7 +25,7 @@
   "end_date": "2026-12-01T23:59:00Z",
   "source_url": "https://petsmall.pk/",
   "affiliate_url": "https://petsmall.pk/",
-  "last_verified_at": "2026-11-28T07:21:54Z",
+  "last_verified_at": "2026-11-28T20:10:57Z",
   "status": "active",
   "is_trending": false,
   "is_coming_soon": false,

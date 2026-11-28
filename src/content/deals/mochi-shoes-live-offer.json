@@ -1,14 +1,14 @@
 {
   "id": "mochi-shoes-live-offer",
   "slug": "mochi-shoes-live-offer",
-  "title": "Mochi Shoes: Up to 5% Off Sale",
+  "title": "Mochi Shoes: Up to 5% Off on Footwear",
   "short_description": "Verified active promotion detected on Mochi Shoes's official store (5% Off). Confirm exclusions at checkout.",
   "brand_id": "mochi-shoes",
   "country": "IN",
   "cities": [],
   "areas": [],
   "branch_info": [],
-  "category": "clothing-fashion",
+  "category": "footwear",
   "deal_type": "online",
   "channels": [
     "online"
@@ -25,7 +25,7 @@
   "end_date": "2026-12-01T23:59:00Z",
   "source_url": "https://www.mochishoes.com/",
   "affiliate_url": "https://www.mochishoes.com/",
-  "last_verified_at": "2026-11-28T07:21:54Z",
+  "last_verified_at": "2026-11-28T20:10:57Z",
   "status": "active",
   "is_trending": false,
   "is_coming_soon": false,
@@ -36,8 +36,14 @@
     "alt": "Mochi Shoes"
   },
   "tags": [
-    "men",
-    "women",
-    "footwear"
+    "mens-footwear",
+    "womens-footwear",
+    "sports-athletic",
+    "sneakers",
+    "formal",
+    "sandals",
+    "heels",
+    "flats",
+    "running"
   ]
 }

@@ -8,7 +8,7 @@
   "cities": [],
   "areas": [],
   "branch_info": [],
-  "category": "clothing-fashion",
+  "category": "footwear",
   "deal_type": "online",
   "channels": [
     "online"
@@ -37,10 +37,14 @@
     "alt": "Nike US: Cyber Monday Member Deals Drop"
   },
   "tags": [
-    "men",
-    "women",
-    "kids",
-    "activewear",
-    "footwear"
+    "mens-footwear",
+    "womens-footwear",
+    "sports-athletic",
+    "sneakers",
+    "formal",
+    "sandals",
+    "heels",
+    "flats",
+    "running"
   ]
 }

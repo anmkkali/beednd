@@ -1,7 +1,7 @@
 {
   "id": "save-mart-online-live-offer",
   "slug": "save-mart-online-live-offer",
-  "title": "Save Mart Online: Up to 50% Off Sale",
+  "title": "Save Mart Online: Up to 50% Off on Toys & Games",
   "short_description": "Verified active promotion detected on Save Mart Online's official store (UP TO 20% OFF). Confirm exclusions at checkout.",
   "brand_id": "save-mart-online",
   "country": "PK",
@@ -25,7 +25,7 @@
   "end_date": "2026-12-01T23:59:00Z",
   "source_url": "https://savemartonline.com/",
   "affiliate_url": "https://savemartonline.com/",
-  "last_verified_at": "2026-11-28T07:21:54Z",
+  "last_verified_at": "2026-11-28T20:10:57Z",
   "status": "active",
   "is_trending": false,
   "is_coming_soon": false,

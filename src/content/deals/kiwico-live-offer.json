@@ -1,0 +1,52 @@
+{
+  "id": "kiwico-live-offer",
+  "slug": "kiwico-live-offer",
+  "title": "KiwiCo: Up to 50% Off Sale",
+  "short_description": "Verified active promotion detected on KiwiCo's official store (50% off). Confirm exclusions at checkout.",
+  "brand_id": "kiwico",
+  "country": "US",
+  "cities": [
+    "New York",
+    "Los Angeles",
+    "Chicago",
+    "Houston"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "kids-baby",
+  "deal_type": "store-sale",
+  "channels": [
+    "online",
+    "in-store"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "UP TO 50% OFF",
+  "badge_text": "Up to 50% Off",
+  "numeric_discount_percent": 50,
+  "terms_and_conditions": [
+    "Auto-verified from KiwiCo official sale page.",
+    "Confirm final discount and exclusions on the official store."
+  ],
+  "start_date": "2026-11-28T20:10:57Z",
+  "end_date": "2026-12-01T23:59:00Z",
+  "source_url": "https://www.kiwico.com/",
+  "affiliate_url": "https://www.kiwico.com/",
+  "last_verified_at": "2026-11-28T20:10:57Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=kiwico.com&sz=128",
+    "alt": "KiwiCo"
+  },
+  "tags": [
+    "kids-clothing",
+    "baby-newborn",
+    "kids-shoes-school",
+    "boys",
+    "girls",
+    "baby"
+  ]
+}

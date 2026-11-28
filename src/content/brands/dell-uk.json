@@ -1,0 +1,17 @@
+{
+  "id": "dell-uk",
+  "name": "Dell UK",
+  "slug": "dell-uk",
+  "logo_url": "https://www.google.com/s2/favicons?domain=dell.com&sz=128",
+  "website_url": "https://www.dell.com/en-gb/shop/deals/dc",
+  "country": "GB",
+  "categories": [
+    "tech-electronics"
+  ],
+  "short_bio": "Dell UK is a retail brand popular with shoppers across the United Kingdom, known for laptops. Shoppers follow Dell UK on BeeDND for verified seasonal markdowns, promo codes, and official store offers.",
+  "known_for": [
+    "Laptops",
+    "Seasonal markdowns"
+  ],
+  "about": "Dell UK offers laptops tailored for customers in the United Kingdom. Whenever Dell UK launches a seasonal sale, clearance event, or verified promo code, BeeDND lists the active offer details and official store link here."
+}

@@ -1,0 +1,18 @@
+{
+  "id": "lego-us",
+  "name": "LEGO",
+  "slug": "lego-us",
+  "logo_url": "https://www.google.com/s2/favicons?domain=lego.com&sz=128",
+  "website_url": "https://www.lego.com/en-us/categories/sales-and-deals",
+  "country": "US",
+  "categories": [
+    "kids-baby"
+  ],
+  "short_bio": "LEGO is a retail brand popular with shoppers across the United States, known for apparel, footwear, and seasonal collections. Shoppers follow LEGO on BeeDND for verified seasonal markdowns, promo codes, and official store offers.",
+  "known_for": [
+    "Apparel & fashion",
+    "Seasonal collections",
+    "Online & store deals"
+  ],
+  "about": "LEGO offers apparel, footwear, and seasonal collections tailored for customers in the United States. Whenever LEGO launches a seasonal sale, clearance event, or verified promo code, BeeDND lists the active offer details and official store link here."
+}

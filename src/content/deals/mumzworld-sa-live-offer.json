@@ -1,0 +1,48 @@
+{
+  "id": "mumzworld-sa-live-offer",
+  "slug": "mumzworld-sa-live-offer",
+  "title": "Mumzworld KSA: Up to 35% Off on Baby, Newborn & Nursery Gear",
+  "short_description": "Seasonal markdowns up to 35% off baby, newborn & nursery gear at Mumzworld KSA. Valid on selected lines online and at participating SA stores.",
+  "brand_id": "mumzworld-sa",
+  "country": "SA",
+  "cities": [
+    "Riyadh"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "kids-baby",
+  "deal_type": "store-sale",
+  "channels": [
+    "online",
+    "in-store"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "UP TO 35% OFF",
+  "badge_text": "Up to 35% Off",
+  "numeric_discount_percent": 35,
+  "terms_and_conditions": [
+    "Valid on selected baby, newborn & nursery gear at Mumzworld KSA.",
+    "Confirm eligible sizes, styles, and delivery thresholds on the official store."
+  ],
+  "start_date": "2026-11-28T00:00:00Z",
+  "end_date": "2026-12-15T23:59:00Z",
+  "source_url": "https://www.mumzworld.com/sa-en/deals",
+  "affiliate_url": "https://www.mumzworld.com/sa-en/deals",
+  "last_verified_at": "2026-11-29T01:15:00Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=mumzworld.com&sz=128",
+    "alt": "Mumzworld KSA"
+  },
+  "tags": [
+    "baby-newborn",
+    "newborn",
+    "baby",
+    "baby-care",
+    "toys"
+  ]
+}

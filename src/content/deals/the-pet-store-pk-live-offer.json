@@ -1,7 +1,7 @@
 {
   "id": "the-pet-store-pk-live-offer",
   "slug": "the-pet-store-pk-live-offer",
-  "title": "The Pet Store PK: Up to 15% Off Sale",
+  "title": "The Pet Store PK: Up to 15% Off on Toys & Games",
   "short_description": "Verified active promotion detected on The Pet Store PK's official store (15% OFF). Confirm exclusions at checkout.",
   "brand_id": "the-pet-store-pk",
   "country": "PK",
@@ -25,7 +25,7 @@
   "end_date": "2026-12-01T23:59:00Z",
   "source_url": "https://www.thepetstorepk.com/",
   "affiliate_url": "https://www.thepetstorepk.com/",
-  "last_verified_at": "2026-11-28T07:21:54Z",
+  "last_verified_at": "2026-11-28T20:10:57Z",
   "status": "active",
   "is_trending": false,
   "is_coming_soon": false,

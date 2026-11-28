@@ -11,7 +11,7 @@
   ],
   "areas": [],
   "branch_info": [],
-  "category": "clothing-fashion",
+  "category": "footwear",
   "deal_type": "online",
   "channels": [
     "online"
@@ -39,9 +39,14 @@
     "alt": "Zalando Germany: Black Week Fashion & Footwear Sale"
   },
   "tags": [
-    "men",
-    "women",
-    "kids",
-    "footwear"
+    "mens-footwear",
+    "womens-footwear",
+    "sports-athletic",
+    "sneakers",
+    "formal",
+    "sandals",
+    "heels",
+    "flats",
+    "running"
   ]
 }

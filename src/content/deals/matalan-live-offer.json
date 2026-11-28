@@ -1,7 +1,7 @@
 {
   "id": "matalan-live-offer",
   "slug": "matalan-live-offer",
-  "title": "Matalan: Up to 50% Off Sale",
+  "title": "Matalan: Up to 50% Off on Winter Wear",
   "short_description": "Verified active promotion detected on Matalan's official store (up to 50% off). Confirm exclusions at checkout.",
   "brand_id": "matalan",
   "country": "GB",
@@ -25,7 +25,7 @@
   "end_date": "2026-12-01T23:59:00Z",
   "source_url": "https://www.matalan.co.uk/c/sale/",
   "affiliate_url": "https://www.matalan.co.uk/c/sale/",
-  "last_verified_at": "2026-11-28T07:21:54Z",
+  "last_verified_at": "2026-11-28T20:10:57Z",
   "status": "active",
   "is_trending": false,
   "is_coming_soon": false,

@@ -1,0 +1,18 @@
+{
+  "id": "build-a-bear",
+  "name": "Build-A-Bear",
+  "slug": "build-a-bear",
+  "logo_url": "https://www.google.com/s2/favicons?domain=buildabear.com&sz=128",
+  "website_url": "https://www.buildabear.com/offers",
+  "country": "US",
+  "categories": [
+    "kids-baby"
+  ],
+  "short_bio": "Build-A-Bear is a retail brand popular with shoppers across the United States, known for apparel, footwear, and seasonal collections. Shoppers follow Build-A-Bear on BeeDND for verified seasonal markdowns, promo codes, and official store offers.",
+  "known_for": [
+    "Apparel & fashion",
+    "Seasonal collections",
+    "Online & store deals"
+  ],
+  "about": "Build-A-Bear offers apparel, footwear, and seasonal collections tailored for customers in the United States. Whenever Build-A-Bear launches a seasonal sale, clearance event, or verified promo code, BeeDND lists the active offer details and official store link here."
+}

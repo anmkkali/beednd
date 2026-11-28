@@ -1,7 +1,7 @@
 {
   "id": "hobbs-live-offer",
   "slug": "hobbs-live-offer",
-  "title": "Hobbs: Up to 50% Off Sale",
+  "title": "Hobbs: Up to 50% Off on Winter Wear",
   "short_description": "Verified active promotion detected on Hobbs's official store (Up to 50% Off). Confirm exclusions at checkout.",
   "brand_id": "hobbs",
   "country": "GB",
@@ -25,7 +25,7 @@
   "end_date": "2026-12-01T23:59:00Z",
   "source_url": "https://www.hobbs.com/sale/",
   "affiliate_url": "https://www.hobbs.com/sale/",
-  "last_verified_at": "2026-11-28T07:21:54Z",
+  "last_verified_at": "2026-11-28T20:10:57Z",
   "status": "active",
   "is_trending": false,
   "is_coming_soon": false,

@@ -1,7 +1,7 @@
 {
   "id": "mountain-warehouse-live-offer",
   "slug": "mountain-warehouse-live-offer",
-  "title": "Mountain Warehouse: Up to 60% Off Sale",
+  "title": "Mountain Warehouse: Up to 60% Off on Winter Wear",
   "short_description": "Verified active promotion detected on Mountain Warehouse's official store (BLACK FRIDAY). Confirm exclusions at checkout.",
   "brand_id": "mountain-warehouse",
   "country": "GB",
@@ -25,7 +25,7 @@
   "end_date": "2026-12-01T23:59:00Z",
   "source_url": "https://www.mountainwarehouse.com/clearance/",
   "affiliate_url": "https://www.mountainwarehouse.com/clearance/",
-  "last_verified_at": "2026-11-28T07:21:54Z",
+  "last_verified_at": "2026-11-28T20:10:57Z",
   "status": "active",
   "is_trending": false,
   "is_coming_soon": false,

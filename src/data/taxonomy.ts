@@ -53,7 +53,6 @@ const baseCategories: Category[] = [
         { label: 'Kurta & waistcoats', sub: 'kurta' },
         { label: 'Winter wear', sub: 'winter' },
         { label: 'Activewear', sub: 'activewear' },
-        { label: 'Footwear', sub: 'footwear' },
         { label: 'Accessories', sub: 'accessories' },
       ]),
       group('women', "Women's", "All women's clothing", [
@@ -65,9 +64,33 @@ const baseCategories: Category[] = [
         { label: 'Bridal & formal', sub: 'formal' },
         { label: 'Winter wear', sub: 'winter' },
         { label: 'Activewear', sub: 'activewear' },
-        { label: 'Footwear', sub: 'footwear' },
         { label: 'Bags', sub: 'bags' },
         { label: 'Jewellery & accessories', sub: 'accessories' },
+      ]),
+    ],
+  },
+  {
+    id: 'footwear',
+    name: 'Footwear',
+    icon: 'tag',
+    blurb: "Men's, women's, and athletic footwear brands. Find seasonal shoe sales, sneakers, formals, and sandals.",
+    groups: [
+      group('mens-footwear', "Men's Footwear", "All men's footwear", [
+        { label: 'Sneakers', sub: 'sneakers' },
+        { label: 'Formal & loafers', sub: 'formal' },
+        { label: 'Sandals & Peshawari', sub: 'sandals' },
+        { label: 'Boots & winter', sub: 'boots' },
+      ]),
+      group('womens-footwear', "Women's Footwear", "All women's footwear", [
+        { label: 'Heels & formals', sub: 'heels' },
+        { label: 'Flats & khussas', sub: 'flats' },
+        { label: 'Sneakers & casual', sub: 'sneakers' },
+        { label: 'Boots & winter', sub: 'boots' },
+      ]),
+      group('sports-athletic', 'Sports & Athletic', 'All sports footwear', [
+        { label: 'Running shoes', sub: 'running' },
+        { label: 'Training & gym', sub: 'training' },
+        { label: 'Slippers & slides', sub: 'slides' },
       ]),
     ],
   },

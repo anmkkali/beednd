@@ -1,0 +1,53 @@
+{
+  "id": "babylist-live-offer",
+  "slug": "babylist-live-offer",
+  "title": "Babylist: Seasonal Offers on Baby Care & Apparel",
+  "short_description": "Verified active promotion detected on Babylist's official store (Black Friday). Confirm exclusions at checkout.",
+  "brand_id": "babylist",
+  "country": "US",
+  "cities": [
+    "New York",
+    "Los Angeles",
+    "Chicago",
+    "Houston"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "kids-baby",
+  "deal_type": "store-sale",
+  "channels": [
+    "online",
+    "in-store"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "SEASONAL SALE",
+  "badge_text": "Sale Live",
+  "numeric_discount_percent": 0,
+  "terms_and_conditions": [
+    "Auto-verified from Babylist official sale page.",
+    "Confirm final discount and exclusions on the official store."
+  ],
+  "start_date": "2026-11-28T20:10:57Z",
+  "end_date": "2026-12-01T23:59:00Z",
+  "source_url": "https://www.babylist.com/",
+  "affiliate_url": "https://www.babylist.com/",
+  "last_verified_at": "2026-11-28T20:10:57Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=babylist.com&sz=128",
+    "alt": "Babylist"
+  },
+  "tags": [
+    "baby-newborn",
+    "baby",
+    "baby-care",
+    "kids-clothing",
+    "kids-shoes-school",
+    "boys",
+    "girls"
+  ]
+}

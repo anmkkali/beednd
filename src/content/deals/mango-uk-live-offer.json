@@ -1,0 +1,51 @@
+{
+  "id": "mango-uk-live-offer",
+  "slug": "mango-uk-live-offer",
+  "title": "Mango UK: Up to 50% Off on Boys Apparel",
+  "short_description": "Verified active promotion detected on Mango UK's official store (Black Friday). Confirm exclusions at checkout.",
+  "brand_id": "mango-uk",
+  "country": "GB",
+  "cities": [
+    "London",
+    "Manchester",
+    "Birmingham",
+    "Leeds"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "clothing-fashion",
+  "deal_type": "store-sale",
+  "channels": [
+    "online",
+    "in-store"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "UP TO 50% OFF",
+  "badge_text": "Up to 50% Off",
+  "numeric_discount_percent": 50,
+  "terms_and_conditions": [
+    "Auto-verified from Mango UK official sale page.",
+    "Confirm final discount and exclusions on the official store."
+  ],
+  "start_date": "2026-11-28T20:10:57Z",
+  "end_date": "2026-12-01T23:59:00Z",
+  "source_url": "https://shop.mango.com/gb/en",
+  "affiliate_url": "https://shop.mango.com/gb/en",
+  "last_verified_at": "2026-11-28T20:10:57Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=shop.mango.com&sz=128",
+    "alt": "Mango UK"
+  },
+  "tags": [
+    "kids-clothing",
+    "boys",
+    "girls",
+    "men",
+    "women"
+  ]
+}

@@ -21,6 +21,13 @@
     "url": "https://www.aarong.com/"
   },
   {
+    "id": "aarong-kids-bd",
+    "name": "Aarong Kids",
+    "country": "BD",
+    "category": "kids-baby",
+    "url": "https://www.aarong.com/kids"
+  },
+  {
     "id": "abel-cole",
     "name": "Abel & Cole",
     "country": "GB",
@@ -77,10 +84,17 @@
     "url": "https://store.acer.com/en-gb/"
   },
   {
+    "id": "ackermans-kids-za",
+    "name": "Ackermans Kids",
+    "country": "ZA",
+    "category": "kids-baby",
+    "url": "https://www.ackermans.co.za/kids"
+  },
+  {
     "id": "adidas",
     "name": "Adidas",
     "country": "US",
-    "category": "clothing-fashion",
+    "category": "footwear",
     "url": "https://www.adidas.com/us/sale"
   },
   {
@@ -89,6 +103,13 @@
     "country": "IN",
     "category": "clothing-fashion",
     "url": "https://www.adidas.co.in/"
+  },
+  {
+    "id": "adidas-kids-us",
+    "name": "Adidas Kids",
+    "country": "US",
+    "category": "kids-baby",
+    "url": "https://www.adidas.com/us/kids-sale"
   },
   {
     "id": "aeon-jp",
@@ -154,6 +175,13 @@
     "url": "https://www.ajio.com/"
   },
   {
+    "id": "akachan-honpo-jp",
+    "name": "Akachan Honpo",
+    "country": "JP",
+    "category": "kids-baby",
+    "url": "https://www.akachan.jp/"
+  },
+  {
     "id": "akasa-air",
     "name": "Akasa Air",
     "country": "IN",
@@ -187,6 +215,13 @@
     "country": "US",
     "category": "travel-lifestyle",
     "url": "https://www.alaskaair.com/content/deals/flights/sale"
+  },
+  {
+    "id": "albee-baby",
+    "name": "Albee Baby",
+    "country": "US",
+    "category": "kids-baby",
+    "url": "https://www.albeebaby.com/sale-items.html"
   },
   {
     "id": "albert-heijn",
@@ -299,6 +334,13 @@
     "country": "US",
     "category": "clothing-fashion",
     "url": "https://www.ae.com/us/en/x/clearance?menu=cat4840004"
+  },
+  {
+    "id": "american-girl",
+    "name": "American Girl",
+    "country": "US",
+    "category": "kids-baby",
+    "url": "https://www.americangirl.com/collections/sale"
   },
   {
     "id": "ana-japan",
@@ -504,6 +546,76 @@
     "url": "https://www.bhphotovideo.com/c/browse/holiday-savings/ci/41102"
   },
   {
+    "id": "baby-city-za",
+    "name": "Baby City",
+    "country": "ZA",
+    "category": "kids-baby",
+    "url": "https://www.babycity.co.za/"
+  },
+  {
+    "id": "baby-planet-pk",
+    "name": "Baby Planet",
+    "country": "PK",
+    "category": "kids-baby",
+    "url": "https://www.babyplanet.pk/"
+  },
+  {
+    "id": "babyhug-in",
+    "name": "Babyhug",
+    "country": "IN",
+    "category": "kids-baby",
+    "url": "https://www.firstcry.com/babyhug/0/0/0/0/0/0/0/0/0?brand=babyhug"
+  },
+  {
+    "id": "babylist",
+    "name": "Babylist",
+    "country": "US",
+    "category": "kids-baby",
+    "url": "https://www.babylist.com/"
+  },
+  {
+    "id": "babymark-pk",
+    "name": "BabyMark",
+    "country": "PK",
+    "category": "kids-baby",
+    "url": "https://babymark.pk/"
+  },
+  {
+    "id": "babymarkt-de",
+    "name": "babymarkt.de",
+    "country": "DE",
+    "category": "kids-baby",
+    "url": "https://www.babymarkt.de/angebote/"
+  },
+  {
+    "id": "babyshop-ke",
+    "name": "Babyshop Kenya",
+    "country": "KE",
+    "category": "kids-baby",
+    "url": "https://babyshop.co.ke/"
+  },
+  {
+    "id": "babyshop-pk",
+    "name": "Babyshop Pakistan",
+    "country": "PK",
+    "category": "kids-baby",
+    "url": "https://babyshop.pk/"
+  },
+  {
+    "id": "babyshop-sa",
+    "name": "Babyshop Saudi Arabia",
+    "country": "SA",
+    "category": "kids-baby",
+    "url": "https://www.babyshopstores.com/sa/en/c/offers"
+  },
+  {
+    "id": "babyshop-ae",
+    "name": "Babyshop UAE",
+    "country": "AE",
+    "category": "kids-baby",
+    "url": "https://www.babyshopstores.com/ae/en/c/offers"
+  },
+  {
     "id": "bachaa-party",
     "name": "Bachaa Party",
     "country": "PK",
@@ -530,6 +642,13 @@
     "country": "IN",
     "category": "food-dining",
     "url": "https://www.bakingo.com/"
+  },
+  {
+    "id": "balabala-cn",
+    "name": "Balabala",
+    "country": "CN",
+    "category": "kids-baby",
+    "url": "https://www.balabala.com/"
   },
   {
     "id": "banana-republic",
@@ -577,14 +696,21 @@
     "id": "bata-india",
     "name": "Bata India",
     "country": "IN",
-    "category": "clothing-fashion",
+    "category": "footwear",
     "url": "https://www.bata.com/in/"
+  },
+  {
+    "id": "bata-kids-pk",
+    "name": "Bata Kids Pakistan",
+    "country": "PK",
+    "category": "kids-baby",
+    "url": "https://www.bata.com.pk/collections/kids"
   },
   {
     "id": "bata-pakistan",
     "name": "Bata Pakistan",
     "country": "PK",
-    "category": "clothing-fashion",
+    "category": "footwear",
     "url": "https://www.bata.com.pk/collections/super-sale"
   },
   {
@@ -878,7 +1004,7 @@
     "id": "borjan",
     "name": "Borjan",
     "country": "PK",
-    "category": "clothing-fashion",
+    "category": "footwear",
     "url": "https://www.borjan.com.pk/collections/sale"
   },
   {
@@ -908,6 +1034,13 @@
     "country": "PK",
     "category": "clothing-fashion",
     "url": "https://www.breakout.com.pk/collections/blessed-friday-sale"
+  },
+  {
+    "id": "breakout-kids",
+    "name": "Breakout Kids",
+    "country": "PK",
+    "category": "kids-baby",
+    "url": "https://breakout.com.pk/collections/kids"
   },
   {
     "id": "breville",
@@ -950,6 +1083,13 @@
     "country": "US",
     "category": "travel-lifestyle",
     "url": "https://www.budget.com/en/offers/us-offers"
+  },
+  {
+    "id": "build-a-bear",
+    "name": "Build-A-Bear",
+    "country": "US",
+    "category": "kids-baby",
+    "url": "https://www.buildabear.com/offers"
   },
   {
     "id": "bulk",
@@ -1001,6 +1141,13 @@
     "url": "https://burnspet.co.uk/"
   },
   {
+    "id": "burts-bees-baby",
+    "name": "Burt's Bees Baby",
+    "country": "US",
+    "category": "kids-baby",
+    "url": "https://www.burtsbeesbaby.com/sale"
+  },
+  {
     "id": "butternut-box",
     "name": "Butternut Box",
     "country": "GB",
@@ -1039,7 +1186,7 @@
     "id": "campus-shoes",
     "name": "Campus Shoes",
     "country": "IN",
-    "category": "clothing-fashion",
+    "category": "footwear",
     "url": "https://www.campusshoes.com/"
   },
   {
@@ -1104,6 +1251,13 @@
     "country": "US",
     "category": "clothing-fashion",
     "url": "https://www.carters.com/c/deals"
+  },
+  {
+    "id": "carters",
+    "name": "Carter's",
+    "country": "US",
+    "category": "kids-baby",
+    "url": "https://www.carters.com/carters-clearance"
   },
   {
     "id": "castore",
@@ -1211,6 +1365,20 @@
     "url": "https://www.chewy.com/deals/todays-deals-2723"
   },
   {
+    "id": "chicco-in",
+    "name": "Chicco India",
+    "country": "IN",
+    "category": "kids-baby",
+    "url": "https://www.chicco.in/"
+  },
+  {
+    "id": "chicco-pk",
+    "name": "Chicco Pakistan",
+    "country": "PK",
+    "category": "kids-baby",
+    "url": "https://chicco.pk/"
+  },
+  {
     "id": "chick-fil-a",
     "name": "Chick-fil-A",
     "country": "US",
@@ -1253,11 +1421,25 @@
     "url": "https://www.choicehotels.com/deals"
   },
   {
+    "id": "civil-tr",
+    "name": "Civil Kids",
+    "country": "TR",
+    "category": "kids-baby",
+    "url": "https://www.civilim.com/"
+  },
+  {
     "id": "clarks",
     "name": "Clarks",
     "country": "GB",
-    "category": "clothing-fashion",
+    "category": "footwear",
     "url": "https://www.clarks.com/en-gb/sale/sale_uk-c"
+  },
+  {
+    "id": "clarks-kids-uk",
+    "name": "Clarks Kids",
+    "country": "GB",
+    "category": "kids-baby",
+    "url": "https://www.clarks.com/en-gb/kids/kids-sale"
   },
   {
     "id": "claude",
@@ -1340,7 +1522,7 @@
     "id": "converse",
     "name": "Converse",
     "country": "US",
-    "category": "clothing-fashion",
+    "category": "footwear",
     "url": "https://www.converse.com/shop/sale"
   },
   {
@@ -1379,11 +1561,25 @@
     "url": "https://www.costco.com/o/-/warehouse-savings"
   },
   {
+    "id": "cotton-on-kids-za",
+    "name": "Cotton On Kids ZA",
+    "country": "ZA",
+    "category": "kids-baby",
+    "url": "https://cottonon.com/ZA/cottononkids/"
+  },
+  {
     "id": "cougar",
     "name": "Cougar",
     "country": "PK",
     "category": "clothing-fashion",
     "url": "https://cougar.com.pk/collections/flat-50-off"
+  },
+  {
+    "id": "cougar-kids",
+    "name": "Cougar Kids",
+    "country": "PK",
+    "category": "kids-baby",
+    "url": "https://www.cougar.com.pk/collections/kids"
   },
   {
     "id": "crew-clothing",
@@ -1396,7 +1592,7 @@
     "id": "crocs",
     "name": "Crocs",
     "country": "US",
-    "category": "clothing-fashion",
+    "category": "footwear",
     "url": "https://www.crocs.com/c/sale"
   },
   {
@@ -1641,7 +1837,7 @@
     "id": "dr-martens",
     "name": "Dr. Martens",
     "country": "GB",
-    "category": "clothing-fashion",
+    "category": "footwear",
     "url": "https://www.drmartens.com/uk/en_gb/"
   },
   {
@@ -1694,6 +1890,13 @@
     "url": "https://www.elfcosmetics.com/pages/promotion-details"
   },
   {
+    "id": "early-learning-centre",
+    "name": "Early Learning Centre",
+    "country": "GB",
+    "category": "kids-baby",
+    "url": "https://www.elc.co.uk/offers"
+  },
+  {
     "id": "easemytrip",
     "name": "EaseMyTrip",
     "country": "IN",
@@ -1722,6 +1925,13 @@
     "url": "https://www.eazydiner.com/"
   },
   {
+    "id": "ebebek-tr",
+    "name": "ebebek",
+    "country": "TR",
+    "category": "kids-baby",
+    "url": "https://www.ebebek.com/kampanyalar"
+  },
+  {
     "id": "ebuyer",
     "name": "Ebuyer",
     "country": "GB",
@@ -1732,8 +1942,15 @@
     "id": "ecs",
     "name": "ECS",
     "country": "PK",
-    "category": "clothing-fashion",
+    "category": "footwear",
     "url": "https://shopecs.com/collections/sale"
+  },
+  {
+    "id": "ed-a-mamma",
+    "name": "Ed-a-Mamma",
+    "country": "IN",
+    "category": "kids-baby",
+    "url": "https://edamamma.com/collections/sale"
   },
   {
     "id": "eddie-bauer",
@@ -1785,11 +2002,25 @@
     "url": "https://www.engine.com.pk"
   },
   {
+    "id": "engine-kids",
+    "name": "Engine Kids",
+    "country": "PK",
+    "category": "kids-baby",
+    "url": "https://engine.com.pk/collections/kids"
+  },
+  {
     "id": "enterprise-rent-a-car",
     "name": "Enterprise Rent-A-Car",
     "country": "US",
     "category": "travel-lifestyle",
     "url": "https://www.enterprise.com/en/car-rental/deals.html"
+  },
+  {
+    "id": "ernstings-family-de",
+    "name": "Ernsting's Family Kids",
+    "country": "DE",
+    "category": "kids-baby",
+    "url": "https://www.ernstings-family.de/kinder/sale"
   },
   {
     "id": "esajee-s",
@@ -1946,6 +2177,27 @@
     "url": "https://fireflies.ai"
   },
   {
+    "id": "firstcry-in",
+    "name": "FirstCry",
+    "country": "IN",
+    "category": "kids-baby",
+    "url": "https://www.firstcry.com/offers"
+  },
+  {
+    "id": "firstcry-sa",
+    "name": "FirstCry Saudi Arabia",
+    "country": "SA",
+    "category": "kids-baby",
+    "url": "https://www.firstcry.sa/"
+  },
+  {
+    "id": "firstcry-ae",
+    "name": "FirstCry UAE",
+    "country": "AE",
+    "category": "kids-baby",
+    "url": "https://www.firstcry.ae/"
+  },
+  {
     "id": "flannels",
     "name": "Flannels",
     "country": "GB",
@@ -2072,6 +2324,13 @@
     "url": "https://www.fressnapf.de/"
   },
   {
+    "id": "frugi-uk",
+    "name": "Frugi",
+    "country": "GB",
+    "category": "kids-baby",
+    "url": "https://www.welovefrugi.com/sale"
+  },
+  {
     "id": "furor",
     "name": "Furor",
     "country": "PK",
@@ -2093,6 +2352,13 @@
     "url": "https://www.gap.com/"
   },
   {
+    "id": "gap-kids-us",
+    "name": "Gap Kids",
+    "country": "US",
+    "category": "kids-baby",
+    "url": "https://www.gap.com/browse/category.do?cid=6170"
+  },
+  {
     "id": "garmin",
     "name": "Garmin",
     "country": "US",
@@ -2105,6 +2371,13 @@
     "country": "PK",
     "category": "clothing-fashion",
     "url": "https://generation.com.pk/collections/50-sale"
+  },
+  {
+    "id": "gerber-childrenswear",
+    "name": "Gerber Childrenswear",
+    "country": "US",
+    "category": "kids-baby",
+    "url": "https://www.gerberchildrenswear.com/collections/sale"
   },
   {
     "id": "getir",
@@ -2126,6 +2399,13 @@
     "country": "GB",
     "category": "tech-electronics",
     "url": "https://www.giffgaff.com/sim-only-deals"
+  },
+  {
+    "id": "gini-and-jony",
+    "name": "Gini & Jony",
+    "country": "IN",
+    "category": "kids-baby",
+    "url": "https://www.giniandjony.com/"
   },
   {
     "id": "github-copilot",
@@ -2189,6 +2469,13 @@
     "country": "IN",
     "category": "travel-lifestyle",
     "url": "https://www.goibibo.com/"
+  },
+  {
+    "id": "goodbaby-cn",
+    "name": "Goodbaby (gb)",
+    "country": "CN",
+    "category": "kids-baby",
+    "url": "https://www.goodbaby.com/"
   },
   {
     "id": "goofy-tails",
@@ -2317,6 +2604,13 @@
     "url": "https://www.gulahmedshop.com/collections/sale"
   },
   {
+    "id": "gymboree",
+    "name": "Gymboree",
+    "country": "US",
+    "category": "kids-baby",
+    "url": "https://www.gymboree.com/us/c/clearance"
+  },
+  {
     "id": "gymshark",
     "name": "Gymshark",
     "country": "US",
@@ -2373,11 +2667,25 @@
     "url": "https://www.haldiram.com/"
   },
   {
+    "id": "hamleys-in",
+    "name": "Hamleys India",
+    "country": "IN",
+    "category": "kids-baby",
+    "url": "https://www.hamleys.in/"
+  },
+  {
     "id": "hammer",
     "name": "Hammer",
     "country": "IN",
     "category": "tech-electronics",
     "url": "https://hammeronline.in/"
+  },
+  {
+    "id": "hanna-andersson",
+    "name": "Hanna Andersson",
+    "country": "US",
+    "category": "kids-baby",
+    "url": "https://www.hannaandersson.com/sale/"
   },
   {
     "id": "hardee-s-pakistan",
@@ -2469,6 +2777,13 @@
     "country": "GB",
     "category": "food-dining",
     "url": "https://www.hellofresh.co.uk/"
+  },
+  {
+    "id": "hema-kids-nl",
+    "name": "HEMA Kids",
+    "country": "NL",
+    "category": "kids-baby",
+    "url": "https://www.hema.nl/kinderen"
   },
   {
     "id": "hemani-herbals",
@@ -2569,11 +2884,32 @@
     "url": "https://www.hollisterco.com/shop/us/sale"
   },
   {
+    "id": "honest-baby",
+    "name": "Honest Baby Clothing",
+    "country": "US",
+    "category": "kids-baby",
+    "url": "https://honestbabyclothing.com/collections/sale"
+  },
+  {
     "id": "hopscotch",
     "name": "Hopscotch",
     "country": "PK",
     "category": "clothing-fashion",
     "url": "https://hopscotch.pk/"
+  },
+  {
+    "id": "hopscotch-pk",
+    "name": "Hopscotch",
+    "country": "PK",
+    "category": "kids-baby",
+    "url": "https://www.ilovehopscotch.com/collections/sale"
+  },
+  {
+    "id": "hopscotch-in",
+    "name": "Hopscotch India",
+    "country": "IN",
+    "category": "kids-baby",
+    "url": "https://www.hopscotch.in/"
   },
   {
     "id": "hotels-com",
@@ -2639,10 +2975,17 @@
     "url": "https://hungerstation.com/sa-en"
   },
   {
+    "id": "hush-puppies-kids-pk",
+    "name": "Hush Puppies Kids",
+    "country": "PK",
+    "category": "kids-baby",
+    "url": "https://www.hushpuppies.com.pk/collections/kids"
+  },
+  {
     "id": "hush-puppies-pakistan",
     "name": "Hush Puppies Pakistan",
     "country": "PK",
-    "category": "clothing-fashion",
+    "category": "footwear",
     "url": "https://www.hushpuppies.com.pk/"
   },
   {
@@ -2726,7 +3069,7 @@
     "id": "insignia",
     "name": "Insignia",
     "country": "PK",
-    "category": "clothing-fashion",
+    "category": "footwear",
     "url": "https://insignia.com.pk/"
   },
   {
@@ -2786,6 +3129,13 @@
     "url": "https://jafferjees.com/"
   },
   {
+    "id": "jakoo-de",
+    "name": "JAKO-O",
+    "country": "DE",
+    "category": "kids-baby",
+    "url": "https://www.jako-o.com/"
+  },
+  {
     "id": "jalal-sons",
     "name": "Jalal Sons",
     "country": "PK",
@@ -2798,6 +3148,13 @@
     "country": "KE",
     "category": "travel-lifestyle",
     "url": "https://www.jambojet.com/"
+  },
+  {
+    "id": "janie-and-jack",
+    "name": "Janie and Jack",
+    "country": "US",
+    "category": "kids-baby",
+    "url": "https://www.janieandjack.com/sale"
   },
   {
     "id": "jarir-bookstore",
@@ -2875,6 +3232,13 @@
     "country": "GB",
     "category": "clothing-fashion",
     "url": "https://www.johnlewis.com/special-offers/c50000110"
+  },
+  {
+    "id": "jojo-maman-bebe",
+    "name": "JoJo Maman B\u00e9b\u00e9",
+    "country": "GB",
+    "category": "kids-baby",
+    "url": "https://www.jojomamanbebe.co.uk/sale"
   },
   {
     "id": "jollyes",
@@ -3052,6 +3416,27 @@
     "url": "https://khasstores.com/"
   },
   {
+    "id": "kiddy-co-pk",
+    "name": "Kiddy Co",
+    "country": "PK",
+    "category": "kids-baby",
+    "url": "https://kiddyco.pk/"
+  },
+  {
+    "id": "kiddy-palace-sg",
+    "name": "Kiddy Palace",
+    "country": "SG",
+    "category": "kids-baby",
+    "url": "https://www.kiddypalace.com.sg/"
+  },
+  {
+    "id": "kids-and-mom-bd",
+    "name": "Kids & Mom BD",
+    "country": "BD",
+    "category": "kids-baby",
+    "url": "https://www.kidsandmombd.com/"
+  },
+  {
     "id": "kiehl-s",
     "name": "Kiehl's",
     "country": "US",
@@ -3071,6 +3456,20 @@
     "country": "US",
     "category": "tech-electronics",
     "url": "https://www.kitchenaid.com/"
+  },
+  {
+    "id": "kiwico",
+    "name": "KiwiCo",
+    "country": "US",
+    "category": "kids-baby",
+    "url": "https://www.kiwico.com/"
+  },
+  {
+    "id": "kleertjes-nl",
+    "name": "kleertjes.com",
+    "country": "NL",
+    "category": "kids-baby",
+    "url": "https://www.kleertjes.com/sale/"
   },
   {
     "id": "kling",
@@ -3099,6 +3498,13 @@
     "country": "NG",
     "category": "clothing-fashion",
     "url": "https://www.konga.com/"
+  },
+  {
+    "id": "koton-kids-tr",
+    "name": "Koton Kids",
+    "country": "TR",
+    "category": "kids-baby",
+    "url": "https://www.koton.com/cocuk-indirim"
   },
   {
     "id": "krave-mart",
@@ -3171,6 +3577,13 @@
     "url": "https://www.lastminute.com/deals"
   },
   {
+    "id": "mummy-and-me-ng",
+    "name": "Laterna Kids Nigeria",
+    "country": "NG",
+    "category": "kids-baby",
+    "url": "https://www.laternabooks.com/"
+  },
+  {
     "id": "lawrencepur",
     "name": "Lawrencepur",
     "country": "PK",
@@ -3190,6 +3603,20 @@
     "country": "TR",
     "category": "clothing-fashion",
     "url": "https://www.lcw.com/"
+  },
+  {
+    "id": "lc-waikiki-kids-tr",
+    "name": "LC Waikiki Kids",
+    "country": "TR",
+    "category": "kids-baby",
+    "url": "https://www.lcw.com/en-US/TR/tag/kids-outlet"
+  },
+  {
+    "id": "lego-us",
+    "name": "LEGO",
+    "country": "US",
+    "category": "kids-baby",
+    "url": "https://www.lego.com/en-us/categories/sales-and-deals"
   },
   {
     "id": "leisure-club",
@@ -3339,6 +3766,13 @@
     "url": "https://www.litter-robot.com/shop-holiday-offers.html"
   },
   {
+    "id": "little-me-pk",
+    "name": "Little Me Pakistan",
+    "country": "PK",
+    "category": "kids-baby",
+    "url": "https://littleme.pk/"
+  },
+  {
     "id": "liz-earle",
     "name": "Liz Earle",
     "country": "GB",
@@ -3465,6 +3899,13 @@
     "url": "https://magicpin.in/"
   },
   {
+    "id": "maisonette",
+    "name": "Maisonette",
+    "country": "US",
+    "category": "kids-baby",
+    "url": "https://www.maisonette.com/sale"
+  },
+  {
     "id": "majestic-wine",
     "name": "Majestic Wine",
     "country": "GB",
@@ -3491,6 +3932,27 @@
     "country": "IN",
     "category": "beauty-wellness",
     "url": "https://mamaearth.in/"
+  },
+  {
+    "id": "mamas-and-papas",
+    "name": "Mamas & Papas",
+    "country": "GB",
+    "category": "kids-baby",
+    "url": "https://www.mamasandpapas.com/collections/offers"
+  },
+  {
+    "id": "mamas-and-papas-sa",
+    "name": "Mamas & Papas KSA",
+    "country": "SA",
+    "category": "kids-baby",
+    "url": "https://www.mamasandpapas.sa/en/sale/"
+  },
+  {
+    "id": "mamas-and-papas-ae",
+    "name": "Mamas & Papas UAE",
+    "country": "AE",
+    "category": "kids-baby",
+    "url": "https://www.mamasandpapas.ae/en/sale/"
   },
   {
     "id": "mango-uk",
@@ -3619,6 +4081,13 @@
     "url": "https://www.mediamarkt.de/"
   },
   {
+    "id": "meemee-in",
+    "name": "MeeMee",
+    "country": "IN",
+    "category": "kids-baby",
+    "url": "https://www.meemee.in/"
+  },
+  {
     "id": "mega-pk",
     "name": "Mega.pk",
     "country": "PK",
@@ -3638,6 +4107,13 @@
     "country": "CN",
     "category": "food-dining",
     "url": "https://www.meituan.com/"
+  },
+  {
+    "id": "melissa-and-doug",
+    "name": "Melissa & Doug",
+    "country": "US",
+    "category": "kids-baby",
+    "url": "https://www.melissaanddoug.com/collections/sale"
   },
   {
     "id": "menu-foods",
@@ -3678,7 +4154,7 @@
     "id": "metro-collection-shoes",
     "name": "Metro Collection Shoes",
     "country": "PK",
-    "category": "clothing-fashion",
+    "category": "footwear",
     "url": "https://metrocollectionshoes.com/"
   },
   {
@@ -3692,7 +4168,7 @@
     "id": "metro-shoes",
     "name": "Metro Shoes",
     "country": "IN",
-    "category": "clothing-fashion",
+    "category": "footwear",
     "url": "https://www.metroshoes.com/"
   },
   {
@@ -3717,6 +4193,13 @@
     "url": "https://www.microcenter.com/site/content/top-deals.aspx"
   },
   {
+    "id": "miki-house-jp",
+    "name": "Miki House",
+    "country": "JP",
+    "category": "kids-baby",
+    "url": "https://www.mikihouse.co.jp/"
+  },
+  {
     "id": "milkbasket",
     "name": "Milkbasket",
     "country": "IN",
@@ -3729,6 +4212,13 @@
     "country": "GB",
     "category": "food-dining",
     "url": "https://www.millerandcarter.co.uk/offers"
+  },
+  {
+    "id": "mini-boden",
+    "name": "Mini Boden",
+    "country": "GB",
+    "category": "kids-baby",
+    "url": "https://www.boden.co.uk/en-gb/clearance/kids"
   },
   {
     "id": "minimalist",
@@ -3762,14 +4252,14 @@
     "id": "mocciani",
     "name": "Mocciani",
     "country": "PK",
-    "category": "clothing-fashion",
+    "category": "footwear",
     "url": "https://mocciani.com.pk/"
   },
   {
     "id": "mochi-shoes",
     "name": "Mochi Shoes",
     "country": "IN",
-    "category": "clothing-fashion",
+    "category": "footwear",
     "url": "https://www.mochishoes.com/"
   },
   {
@@ -3787,11 +4277,25 @@
     "url": "https://monark.com.pk/collections/sale"
   },
   {
+    "id": "monica-and-andy",
+    "name": "Monica + Andy",
+    "country": "US",
+    "category": "kids-baby",
+    "url": "https://monicaandandy.com/collections/sale"
+  },
+  {
     "id": "monsoon",
     "name": "Monsoon",
     "country": "GB",
     "category": "clothing-fashion",
     "url": "https://www.monsoon.co.uk/sale/"
+  },
+  {
+    "id": "mori-uk",
+    "name": "MORI",
+    "country": "GB",
+    "category": "kids-baby",
+    "url": "https://babymori.com/collections/sale"
   },
   {
     "id": "morrisons",
@@ -3806,6 +4310,41 @@
     "country": "GB",
     "category": "clothing-fashion",
     "url": "https://www.moss.co.uk/sale"
+  },
+  {
+    "id": "mothercare-pk",
+    "name": "Mothercare Pakistan",
+    "country": "PK",
+    "category": "kids-baby",
+    "url": "https://www.mothercare.pk/"
+  },
+  {
+    "id": "mothercare-sa",
+    "name": "Mothercare Saudi Arabia",
+    "country": "SA",
+    "category": "kids-baby",
+    "url": "https://www.mothercare.com.sa/en/offers/"
+  },
+  {
+    "id": "mothercare-sg",
+    "name": "Mothercare Singapore",
+    "country": "SG",
+    "category": "kids-baby",
+    "url": "https://www.mothercare.com.sg/collections/sale"
+  },
+  {
+    "id": "mothercare-ae",
+    "name": "Mothercare UAE",
+    "country": "AE",
+    "category": "kids-baby",
+    "url": "https://www.mothercare.ae/en/offers/"
+  },
+  {
+    "id": "mothercare-uk",
+    "name": "Mothercare UK",
+    "country": "GB",
+    "category": "kids-baby",
+    "url": "https://www.mothercare.com/"
   },
   {
     "id": "mountain-warehouse",
@@ -3827,6 +4366,20 @@
     "country": "US",
     "category": "tech-electronics",
     "url": "https://us-store.msi.com/dealsanddiscounts"
+  },
+  {
+    "id": "mumzworld-ae",
+    "name": "Mumzworld",
+    "country": "AE",
+    "category": "kids-baby",
+    "url": "https://www.mumzworld.com/en/deals"
+  },
+  {
+    "id": "mumzworld-sa",
+    "name": "Mumzworld KSA",
+    "country": "SA",
+    "category": "kids-baby",
+    "url": "https://www.mumzworld.com/sa-en/deals"
   },
   {
     "id": "murf",
@@ -3937,8 +4490,15 @@
     "id": "ndure",
     "name": "Ndure",
     "country": "PK",
-    "category": "clothing-fashion",
+    "category": "footwear",
     "url": "https://www.ndure.com/collections/sale"
+  },
+  {
+    "id": "ndure-kids",
+    "name": "Ndure Kids",
+    "country": "PK",
+    "category": "kids-baby",
+    "url": "https://www.ndure.com/collections/kids"
   },
   {
     "id": "neal-s-yard-remedies",
@@ -3951,7 +4511,7 @@
     "id": "new-balance",
     "name": "New Balance",
     "country": "US",
-    "category": "clothing-fashion",
+    "category": "footwear",
     "url": "https://www.newbalance.com/"
   },
   {
@@ -3976,10 +4536,17 @@
     "url": "https://www.next.co.uk/nextsale"
   },
   {
+    "id": "next-kids-uk",
+    "name": "Next Kids",
+    "country": "GB",
+    "category": "kids-baby",
+    "url": "https://www.next.co.uk/shop/gender-youngerboys-gender-youngergirls/srt-clearance"
+  },
+  {
     "id": "nike",
     "name": "Nike",
     "country": "US",
-    "category": "clothing-fashion",
+    "category": "footwear",
     "url": "https://www.nike.com/w/sale-3yaep"
   },
   {
@@ -3988,6 +4555,13 @@
     "country": "IN",
     "category": "clothing-fashion",
     "url": "https://www.nike.in/men/men-s-shoes/c/92564"
+  },
+  {
+    "id": "nike-kids-us",
+    "name": "Nike Kids",
+    "country": "US",
+    "category": "kids-baby",
+    "url": "https://www.nike.com/w/sale-kids-3yaepzv4dh"
   },
   {
     "id": "nirvana-botanics",
@@ -4002,6 +4576,13 @@
     "country": "PK",
     "category": "clothing-fashion",
     "url": "https://nishatlinen.com/collections/sale26"
+  },
+  {
+    "id": "nishimatsuya-jp",
+    "name": "Nishimatsuya",
+    "country": "JP",
+    "category": "kids-baby",
+    "url": "https://www.24028.jp/"
   },
   {
     "id": "nivea-ng",
@@ -4137,6 +4718,13 @@
     "url": "https://oldnavy.gap.com/"
   },
   {
+    "id": "old-navy-kids",
+    "name": "Old Navy Kids",
+    "country": "US",
+    "category": "kids-baby",
+    "url": "https://oldnavy.gap.com/browse/category.do?cid=6172"
+  },
+  {
     "id": "olive-garden",
     "name": "Olive Garden",
     "country": "US",
@@ -4235,6 +4823,13 @@
     "url": "https://www.carters.com/b/oshkosh/c/deals"
   },
   {
+    "id": "oshkosh-bgosh",
+    "name": "OshKosh B'gosh",
+    "country": "US",
+    "category": "kids-baby",
+    "url": "https://www.oshkosh.com/oshkosh-clearance"
+  },
+  {
     "id": "otter",
     "name": "Otter.ai",
     "country": "GLOBAL",
@@ -4261,6 +4856,13 @@
     "country": "PK",
     "category": "clothing-fashion",
     "url": "https://outfitters.com.pk/collections/women-season-end-sale-upto-50-off"
+  },
+  {
+    "id": "outfitters-junior",
+    "name": "Outfitters Junior",
+    "country": "PK",
+    "category": "kids-baby",
+    "url": "https://outfitters.com.pk/collections/kids-sale"
   },
   {
     "id": "oven-story-pizza",
@@ -4326,6 +4928,13 @@
     "url": "https://www.pantaloons.com/"
   },
   {
+    "id": "panco-tr",
+    "name": "Pan\u00e7o",
+    "country": "TR",
+    "category": "kids-baby",
+    "url": "https://www.panco.com.tr/"
+  },
+  {
     "id": "papa-johns",
     "name": "Papa Johns",
     "country": "US",
@@ -4387,6 +4996,13 @@
     "country": "US",
     "category": "beauty-wellness",
     "url": "https://www.onepeloton.com/offers"
+  },
+  {
+    "id": "pepperland-pk",
+    "name": "Pepperland",
+    "country": "PK",
+    "category": "kids-baby",
+    "url": "https://pepperland.pk/collections/sale"
   },
   {
     "id": "perfect-diary",
@@ -4585,6 +5201,13 @@
     "url": "https://www.piac.com.pk/"
   },
   {
+    "id": "pigeon-pk",
+    "name": "Pigeon Pakistan",
+    "country": "PK",
+    "category": "kids-baby",
+    "url": "https://pigeon.pk/"
+  },
+  {
     "id": "pika",
     "name": "Pika",
     "country": "GLOBAL",
@@ -4718,6 +5341,20 @@
     "url": "https://www.primark.com/en-gb/c/sale/all"
   },
   {
+    "id": "primary-kids",
+    "name": "Primary",
+    "country": "US",
+    "category": "kids-baby",
+    "url": "https://www.primary.com/collections/sale"
+  },
+  {
+    "id": "prenatal-nl",
+    "name": "Pr\u00e9natal",
+    "country": "NL",
+    "category": "kids-baby",
+    "url": "https://www.prenatal.nl/aanbiedingen/"
+  },
+  {
     "id": "publix",
     "name": "Publix",
     "country": "US",
@@ -4728,7 +5365,7 @@
     "id": "puma",
     "name": "Puma",
     "country": "US",
-    "category": "clothing-fashion",
+    "category": "footwear",
     "url": "https://us.puma.com/us/en/sale/all-sale"
   },
   {
@@ -4737,6 +5374,13 @@
     "country": "IN",
     "category": "clothing-fashion",
     "url": "https://in.puma.com/in/en"
+  },
+  {
+    "id": "pupsik-sg",
+    "name": "Pupsik Studio",
+    "country": "SG",
+    "category": "kids-baby",
+    "url": "https://www.pupsikstudio.com/sale.html"
   },
   {
     "id": "purina",
@@ -4758,6 +5402,13 @@
     "country": "IN",
     "category": "beauty-wellness",
     "url": "https://www.purplle.com/"
+  },
+  {
+    "id": "r-for-rabbit",
+    "name": "R for Rabbit",
+    "country": "IN",
+    "category": "kids-baby",
+    "url": "https://rforrabbit.com/collections/offers"
   },
   {
     "id": "rainbow-cash-carry",
@@ -4861,7 +5512,7 @@
     "id": "reebok",
     "name": "Reebok",
     "country": "US",
-    "category": "clothing-fashion",
+    "category": "footwear",
     "url": "https://www.reebok.com/collections/sale"
   },
   {
@@ -5010,6 +5661,13 @@
     "country": "PK",
     "category": "clothing-fashion",
     "url": "https://royaltag.com.pk/collections/sale"
+  },
+  {
+    "id": "ruff-n-tumble-ng",
+    "name": "Ruff 'n' Tumble",
+    "country": "NG",
+    "category": "kids-baby",
+    "url": "https://www.ruffntumblekids.com/"
   },
   {
     "id": "ruffwear",
@@ -5260,8 +5918,15 @@
     "id": "servis",
     "name": "Servis",
     "country": "PK",
-    "category": "clothing-fashion",
+    "category": "footwear",
     "url": "https://servis.pk/"
+  },
+  {
+    "id": "servis-cheetah-kids",
+    "name": "Servis Cheetah Kids",
+    "country": "PK",
+    "category": "kids-baby",
+    "url": "https://servis.pk/collections/kids"
   },
   {
     "id": "shajgoj",
@@ -5323,7 +5988,7 @@
     "id": "shoe-planet",
     "name": "Shoe Planet",
     "country": "PK",
-    "category": "clothing-fashion",
+    "category": "footwear",
     "url": "https://www.shoeplanet.pk/"
   },
   {
@@ -5379,7 +6044,7 @@
     "id": "skechers",
     "name": "Skechers",
     "country": "US",
-    "category": "clothing-fashion",
+    "category": "footwear",
     "url": "https://www.skechers.com/sale/"
   },
   {
@@ -5402,6 +6067,13 @@
     "country": "GB",
     "category": "tech-electronics",
     "url": "https://smarty.co.uk/sim-only"
+  },
+  {
+    "id": "smyths-toys-uk",
+    "name": "Smyths Toys",
+    "country": "GB",
+    "category": "kids-baby",
+    "url": "https://www.smythstoys.com/uk/en-gb/offers"
   },
   {
     "id": "smytten",
@@ -5526,7 +6198,7 @@
     "id": "sputnik-footwear",
     "name": "Sputnik Footwear",
     "country": "PK",
-    "category": "clothing-fashion",
+    "category": "footwear",
     "url": "https://sputnikfootwear.com/"
   },
   {
@@ -5551,10 +6223,31 @@
     "url": "https://www.starquik.com/"
   },
   {
+    "id": "start-rite-shoes",
+    "name": "Start-Rite Shoes",
+    "country": "GB",
+    "category": "kids-baby",
+    "url": "https://www.startriteshoes.com/outlet"
+  },
+  {
+    "id": "sterntaler-de",
+    "name": "Sterntaler",
+    "country": "DE",
+    "category": "kids-baby",
+    "url": "https://www.sterntaler.com/"
+  },
+  {
+    "id": "stride-rite",
+    "name": "Stride Rite",
+    "country": "US",
+    "category": "kids-baby",
+    "url": "https://www.striderite.com/collections/sale"
+  },
+  {
     "id": "stylo",
     "name": "Stylo",
     "country": "PK",
-    "category": "clothing-fashion",
+    "category": "footwear",
     "url": "https://stylo.pk/collections/sale"
   },
   {
@@ -5768,11 +6461,25 @@
     "url": "https://www.tesco.com/shop/en-GB/promotions"
   },
   {
+    "id": "textbook-centre-school-ke",
+    "name": "Text Book Centre School",
+    "country": "KE",
+    "category": "kids-baby",
+    "url": "https://textbookcentre.com/"
+  },
+  {
     "id": "the-body-shop",
     "name": "The Body Shop",
     "country": "GB",
     "category": "beauty-wellness",
     "url": "https://www.thebodyshop.com/pages/offers/sale-offers"
+  },
+  {
+    "id": "the-childrens-place",
+    "name": "The Children's Place",
+    "country": "US",
+    "category": "kids-baby",
+    "url": "https://www.childrensplace.com/us/c/clearance"
   },
   {
     "id": "the-coffee-bean-tea-leaf-pakistan",
@@ -5787,6 +6494,20 @@
     "country": "IN",
     "category": "beauty-wellness",
     "url": "https://thedermaco.com/"
+  },
+  {
+    "id": "the-entertainer-pk",
+    "name": "The Entertainer Pakistan",
+    "country": "PK",
+    "category": "kids-baby",
+    "url": "https://www.theentertainer.pk/"
+  },
+  {
+    "id": "the-entertainer-uk",
+    "name": "The Entertainer UK",
+    "country": "GB",
+    "category": "kids-baby",
+    "url": "https://www.thetoyshop.com/offers"
   },
   {
     "id": "the-farmer-s-dog",
@@ -5918,8 +6639,15 @@
     "id": "timberland",
     "name": "Timberland",
     "country": "US",
-    "category": "clothing-fashion",
+    "category": "footwear",
     "url": "https://www.timberland.com/en-us/holiday-deals"
+  },
+  {
+    "id": "tiny-tots-pk",
+    "name": "Tiny Tots Pakistan",
+    "country": "PK",
+    "category": "kids-baby",
+    "url": "https://tinytots.pk/"
   },
   {
     "id": "tira-beauty",
@@ -5948,6 +6676,20 @@
     "country": "US",
     "category": "clothing-fashion",
     "url": "https://usa.tommy.com/en/sale"
+  },
+  {
+    "id": "toys-r-us-ae",
+    "name": "Toys R Us UAE",
+    "country": "AE",
+    "category": "kids-baby",
+    "url": "https://www.toysrusmena.com/en-ae/offers/"
+  },
+  {
+    "id": "toys-r-us-za",
+    "name": "Toys R Us ZA",
+    "country": "ZA",
+    "category": "kids-baby",
+    "url": "https://www.toysrus.co.za/"
   },
   {
     "id": "tractor-supply-co",
@@ -6018,6 +6760,13 @@
     "country": "CN",
     "category": "travel-lifestyle",
     "url": "https://www.trip.com/"
+  },
+  {
+    "id": "trotters-uk",
+    "name": "Trotters London",
+    "country": "GB",
+    "category": "kids-baby",
+    "url": "https://www.trotters.co.uk/collections/sale"
   },
   {
     "id": "tui-uk",
@@ -6104,6 +6853,13 @@
     "url": "https://www.uniqlo.com/jp/ja/"
   },
   {
+    "id": "uniqlo-kids-jp",
+    "name": "Uniqlo Kids JP",
+    "country": "JP",
+    "category": "kids-baby",
+    "url": "https://www.uniqlo.com/jp/ja/kids"
+  },
+  {
     "id": "uniqlo-uk",
     "name": "UNIQLO UK",
     "country": "GB",
@@ -6139,6 +6895,13 @@
     "url": "https://unze.com.pk/collections/women-sale"
   },
   {
+    "id": "uppababy",
+    "name": "UPPAbaby",
+    "country": "US",
+    "category": "kids-baby",
+    "url": "https://uppababy.com/"
+  },
+  {
     "id": "urban-outfitters",
     "name": "Urban Outfitters",
     "country": "US",
@@ -6170,7 +6933,7 @@
     "id": "vans",
     "name": "Vans",
     "country": "US",
-    "category": "clothing-fashion",
+    "category": "footwear",
     "url": "https://www.vans.com/en-us/c/sale-5410"
   },
   {
@@ -6461,6 +7224,13 @@
     "url": "https://www.yatra.com/"
   },
   {
+    "id": "yellow-kids-bd",
+    "name": "Yellow Kids BD",
+    "country": "BD",
+    "category": "kids-baby",
+    "url": "https://www.yellowclothing.net/collections/kids"
+  },
+  {
     "id": "yemeksepeti",
     "name": "Yemeksepeti",
     "country": "TR",
@@ -6543,6 +7313,13 @@
     "country": "PK",
     "category": "beauty-wellness",
     "url": "https://pk.zaybeauty.com/"
+  },
+  {
+    "id": "zeeman-kids-nl",
+    "name": "Zeeman Kids",
+    "country": "NL",
+    "category": "kids-baby",
+    "url": "https://www.zeeman.com/nl/kinderen.html"
   },
   {
     "id": "zeen",

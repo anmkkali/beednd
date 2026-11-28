@@ -1,14 +1,14 @@
 {
   "id": "sputnik-footwear-live-offer",
   "slug": "sputnik-footwear-live-offer",
-  "title": "Sputnik Footwear: Flat 50% Off Sale",
+  "title": "Sputnik Footwear: Flat 50% Off on Footwear",
   "short_description": "Verified active promotion detected on Sputnik Footwear's official store (Blessed Friday). Confirm exclusions at checkout.",
   "brand_id": "sputnik-footwear",
   "country": "PK",
   "cities": [],
   "areas": [],
   "branch_info": [],
-  "category": "clothing-fashion",
+  "category": "footwear",
   "deal_type": "online",
   "channels": [
     "online"
@@ -25,7 +25,7 @@
   "end_date": "2026-12-01T23:59:00Z",
   "source_url": "https://sputnikfootwear.com/",
   "affiliate_url": "https://sputnikfootwear.com/",
-  "last_verified_at": "2026-11-28T07:21:54Z",
+  "last_verified_at": "2026-11-28T20:10:57Z",
   "status": "active",
   "is_trending": false,
   "is_coming_soon": false,
@@ -36,8 +36,14 @@
     "alt": "Sputnik Footwear"
   },
   "tags": [
-    "men",
-    "women",
-    "footwear"
+    "mens-footwear",
+    "womens-footwear",
+    "sports-athletic",
+    "sneakers",
+    "formal",
+    "sandals",
+    "heels",
+    "flats",
+    "running"
   ]
 }

@@ -1,0 +1,50 @@
+{
+  "id": "smyths-toys-uk-live-offer",
+  "slug": "smyths-toys-uk-live-offer",
+  "title": "Smyths Toys: Up to 25% Off on Toys, Games & Learning Kits",
+  "short_description": "Seasonal markdowns up to 25% off toys, games & learning kits at Smyths Toys. Valid on selected lines online and at participating GB stores.",
+  "brand_id": "smyths-toys-uk",
+  "country": "GB",
+  "cities": [
+    "London",
+    "Manchester",
+    "Birmingham",
+    "Leeds",
+    "Glasgow"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "kids-baby",
+  "deal_type": "store-sale",
+  "channels": [
+    "online",
+    "in-store"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "UP TO 25% OFF",
+  "badge_text": "Up to 25% Off",
+  "numeric_discount_percent": 25,
+  "terms_and_conditions": [
+    "Valid on selected toys, games & learning kits at Smyths Toys.",
+    "Confirm eligible sizes, styles, and delivery thresholds on the official store."
+  ],
+  "start_date": "2026-11-28T00:00:00Z",
+  "end_date": "2026-12-15T23:59:00Z",
+  "source_url": "https://www.smythstoys.com/uk/en-gb/offers",
+  "affiliate_url": "https://www.smythstoys.com/uk/en-gb/offers",
+  "last_verified_at": "2026-11-29T01:15:00Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=smythstoys.com&sz=128",
+    "alt": "Smyths Toys"
+  },
+  "tags": [
+    "baby-newborn",
+    "toys",
+    "kids-shoes-school"
+  ]
+}

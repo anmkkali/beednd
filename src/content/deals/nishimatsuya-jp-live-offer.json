@@ -1,0 +1,51 @@
+{
+  "id": "nishimatsuya-jp-live-offer",
+  "slug": "nishimatsuya-jp-live-offer",
+  "title": "Nishimatsuya: Seasonal Offers Sale",
+  "short_description": "Verified active promotion detected on Nishimatsuya's official store (BLACK FRIDAY). Confirm exclusions at checkout.",
+  "brand_id": "nishimatsuya-jp",
+  "country": "JP",
+  "cities": [
+    "Tokyo",
+    "Osaka",
+    "Kyoto"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "kids-baby",
+  "deal_type": "store-sale",
+  "channels": [
+    "online",
+    "in-store"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "SEASONAL SALE",
+  "badge_text": "Sale Live",
+  "numeric_discount_percent": 0,
+  "terms_and_conditions": [
+    "Auto-verified from Nishimatsuya official sale page.",
+    "Confirm final discount and exclusions on the official store."
+  ],
+  "start_date": "2026-11-28T20:10:57Z",
+  "end_date": "2026-12-01T23:59:00Z",
+  "source_url": "https://www.24028.jp/",
+  "affiliate_url": "https://www.24028.jp/",
+  "last_verified_at": "2026-11-28T20:10:57Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=24028.jp&sz=128",
+    "alt": "Nishimatsuya"
+  },
+  "tags": [
+    "kids-clothing",
+    "baby-newborn",
+    "kids-shoes-school",
+    "boys",
+    "girls",
+    "baby"
+  ]
+}

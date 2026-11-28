@@ -17,7 +17,9 @@ COUNTRY_NAMES = {
 }
 
 CAT_CONTEXT = {
-    "clothing-fashion": ("apparel, footwear, and seasonal collections", ["Apparel & fashion", "Seasonal collections", "Online & store deals"]),
+    "clothing-fashion": ("apparel, seasonal collections, and fashion essentials", ["Apparel & fashion", "Seasonal collections", "Online & store deals"]),
+    "footwear": ("men's, women's, and athletic footwear, sneakers, and formals", ["Footwear & sneakers", "Formal & casual shoes", "Seasonal sales"]),
+    "kids-baby": ("kids' clothing, baby & newborn care, toys, and children's footwear", ["Kids apparel", "Baby & newborn", "Toys & school gear"]),
     "tech-electronics": ("consumer electronics, gadgets, and smart devices", ["Electronics & tech", "Gadgets & accessories", "Seasonal markdowns"]),
     "ai-tools": ("AI productivity tools, software plans, and cloud subscriptions", ["AI software", "Free trials", "Pro plan discounts"]),
     "food-dining": ("fresh meals, restaurant dining, and food delivery", ["Dining & delivery", "Meal combos", "App vouchers"]),

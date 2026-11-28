@@ -1,0 +1,56 @@
+{
+  "id": "chicco-in-live-offer",
+  "slug": "chicco-in-live-offer",
+  "title": "Chicco India: Up to 10% Off on Winter Wear",
+  "short_description": "Verified active promotion detected on Chicco India's official store (10% discount). Confirm exclusions at checkout.",
+  "brand_id": "chicco-in",
+  "country": "IN",
+  "cities": [
+    "Mumbai",
+    "Delhi",
+    "Bengaluru",
+    "Hyderabad"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "kids-baby",
+  "deal_type": "store-sale",
+  "channels": [
+    "online",
+    "in-store"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "UP TO 10% OFF",
+  "badge_text": "Up to 10% Off",
+  "numeric_discount_percent": 10,
+  "terms_and_conditions": [
+    "Auto-verified from Chicco India official sale page.",
+    "Confirm final discount and exclusions on the official store."
+  ],
+  "start_date": "2026-11-28T20:10:57Z",
+  "end_date": "2026-12-01T23:59:00Z",
+  "source_url": "https://www.chicco.in/",
+  "affiliate_url": "https://www.chicco.in/",
+  "last_verified_at": "2026-11-28T20:10:57Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=chicco.in&sz=128",
+    "alt": "Chicco India"
+  },
+  "tags": [
+    "winter",
+    "baby-newborn",
+    "newborn",
+    "baby",
+    "kids-clothing",
+    "boys",
+    "girls",
+    "baby-care",
+    "men",
+    "shirts"
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "id": "old-navy-live-offer",
   "slug": "old-navy-live-offer",
-  "title": "Old Navy: Up to 60% Off Sale",
+  "title": "Old Navy: Up to 60% Off on Boys Apparel",
   "short_description": "Verified active promotion detected on Old Navy's official store (50% Off). Confirm exclusions at checkout.",
   "brand_id": "old-navy",
   "country": "US",
@@ -25,7 +25,7 @@
   "end_date": "2026-12-01T23:59:00Z",
   "source_url": "https://oldnavy.gap.com/",
   "affiliate_url": "https://oldnavy.gap.com/",
-  "last_verified_at": "2026-11-28T07:21:54Z",
+  "last_verified_at": "2026-11-28T20:10:57Z",
   "status": "active",
   "is_trending": false,
   "is_coming_soon": false,

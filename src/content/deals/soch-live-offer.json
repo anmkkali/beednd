@@ -1,7 +1,7 @@
 {
   "id": "soch-live-offer",
   "slug": "soch-live-offer",
-  "title": "Soch: Flat 60% Off Sale",
+  "title": "Soch: Flat 60% Off on Unstitched Collection",
   "short_description": "Verified active promotion detected on Soch's official store (Flat 20% Off). Confirm exclusions at checkout.",
   "brand_id": "soch",
   "country": "IN",
@@ -25,7 +25,7 @@
   "end_date": "2026-12-01T23:59:00Z",
   "source_url": "https://www.soch.com/in/",
   "affiliate_url": "https://www.soch.com/in/",
-  "last_verified_at": "2026-11-28T07:21:54Z",
+  "last_verified_at": "2026-11-28T20:10:57Z",
   "status": "active",
   "is_trending": false,
   "is_coming_soon": false,

@@ -37,14 +37,44 @@ const displayBadge =
       : 'SALE LIVE'
     : deal.discount_value;
 
-const structuredData = {
-  '@context': 'https://schema.org',
-  '@type': 'Offer',
-  name: deal.title,
-  description: deal.short_description,
-  category: deal.category,
-  url: deal.affiliate_url,
-};
+const dealFaqs = [
+  {
+    q: `How do I claim this ${brandLabel} ${displayBadge} offer?`,
+    a: deal.promo_code
+      ? `Copy the promo code ${deal.promo_code} above and apply it at checkout on the official ${brandLabel} store link (${countryLabel}).`
+      : `Click "Visit Store" above to go directly to ${brandLabel}'s official offer page — no code is needed, as the discount applies directly on eligible items.`,
+  },
+  {
+    q: `Where is this ${brandLabel} deal valid?`,
+    a: deal.cities?.length
+      ? `This offer is valid in ${countryLabel}, including ${deal.cities.join(', ')}${deal.channels?.length ? ` (${deal.channels.join(' & ')})` : ''}.`
+      : `This offer is available for ${countryLabel} shoppers on ${brandLabel}'s official website. Always check product exclusions at checkout.`,
+  },
+  {
+    q: `Is this ${brandLabel} discount verified?`,
+    a: `Yes — BeeDND verified this offer from ${brandLabel}'s official announcement on ${deal.last_verified_at.split('T')[0]}.`,
+  },
+];
+
+const structuredData = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Offer',
+    name: deal.title,
+    description: deal.short_description,
+    category: deal.category,
+    url: deal.affiliate_url,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: dealFaqs.map((item) => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: { '@type': 'Answer', text: item.a },
+    })),
+  },
+];
 ---
 
 <BaseLayout
@@ -177,4 +207,16 @@ const structuredData = {
   </article>
 
   {brand && <BrandAbout brand={brand} class="mt-8" />}
+
+  <section class="mt-8 border-t editorial-rule pt-7" aria-labelledby="deal-faq-heading">
+    <h2 id="deal-faq-heading" class="mb-4 text-2xl text-ink">{brandLabel} Offer — Frequently Asked Questions</h2>
+    <div class="divide-y divide-[rgb(var(--ink)/0.12)] border-t border-b editorial-rule">
+      {dealFaqs.map((item) => (
+        <div class="py-4">
+          <h3 class="text-[16px] font-semibold text-ink">{item.q}</h3>
+          <p class="mt-1.5 text-[14.5px] leading-relaxed text-ink-muted">{item.a}</p>
+        </div>
+      ))}
+    </div>
+  </section>
 </BaseLayout>

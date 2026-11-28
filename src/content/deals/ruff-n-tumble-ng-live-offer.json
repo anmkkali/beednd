@@ -1,0 +1,54 @@
+{
+  "id": "ruff-n-tumble-ng-live-offer",
+  "slug": "ruff-n-tumble-ng-live-offer",
+  "title": "Ruff 'n' Tumble: Seasonal Offers on Footwear",
+  "short_description": "Verified active promotion detected on Ruff 'n' Tumble's official store (black friday). Confirm exclusions at checkout.",
+  "brand_id": "ruff-n-tumble-ng",
+  "country": "NG",
+  "cities": [
+    "Lagos",
+    "Abuja"
+  ],
+  "areas": [],
+  "branch_info": [],
+  "category": "kids-baby",
+  "deal_type": "store-sale",
+  "channels": [
+    "online",
+    "in-store"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "SEASONAL SALE",
+  "badge_text": "Sale Live",
+  "numeric_discount_percent": 0,
+  "terms_and_conditions": [
+    "Auto-verified from Ruff 'n' Tumble official sale page.",
+    "Confirm final discount and exclusions on the official store."
+  ],
+  "start_date": "2026-11-28T20:10:57Z",
+  "end_date": "2026-12-01T23:59:00Z",
+  "source_url": "https://www.ruffntumblekids.com/",
+  "affiliate_url": "https://www.ruffntumblekids.com/",
+  "last_verified_at": "2026-11-28T20:10:57Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=ruffntumblekids.com&sz=128",
+    "alt": "Ruff 'n' Tumble"
+  },
+  "tags": [
+    "footwear",
+    "kids-shoes-school",
+    "school",
+    "kids-clothing",
+    "boys",
+    "girls",
+    "baby-newborn",
+    "baby",
+    "baby-care",
+    "men"
+  ]
+}
