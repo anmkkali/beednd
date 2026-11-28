@@ -542,6 +542,162 @@ const fontsUrl =
           delete root.dataset.sidebarOpen;
         }
       });
+
+      // Smooth 3D Bee cursor follower (desktop fine-pointer only, zero layout reflow)
+      (() => {
+        if (
+          (window as any).__dsBeeBound ||
+          !window.matchMedia('(pointer: fine)').matches ||
+          window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        ) {
+          return;
+        }
+        (window as any).__dsBeeBound = true;
+        const bee = document.getElementById('bee-cursor');
+        const beeInner = bee?.querySelector<HTMLElement>('.bee-3d-wrap');
+        if (!bee || !beeInner) return;
+
+        let tx = -100, ty = -100;
+        let cx = -100, cy = -100;
+        let angle = -12;
+        let visibleBee = false;
+        let hovering = false;
+        let rafId = 0;
+
+        const tick = () => {
+          const dx = tx - cx;
+          const dy = ty - cy;
+          cx += dx * 0.16;
+          cy += dy * 0.16;
+
+          const speed = Math.hypot(dx, dy);
+          if (speed > 0.35) {
+            const targetAngle = Math.max(-35, Math.min(35, dx * 0.85)) - 8;
+            angle += (targetAngle - angle) * 0.18;
+          } else {
+            angle += (-8 - angle) * 0.08;
+          }
+
+          const bankX = Math.max(-18, Math.min(18, dy * 0.45));
+          const bankY = Math.max(-22, Math.min(22, dx * 0.55));
+          const sc = hovering ? 1.16 : 1;
+
+          bee.style.transform = `translate3d(${(cx + 14).toFixed(1)}px, ${(cy + 14).toFixed(1)}px, 0)`;
+          beeInner.style.transform = `perspective(180px) rotateX(${bankX.toFixed(1)}deg) rotateY(${bankY.toFixed(1)}deg) rotateZ(${angle.toFixed(1)}deg) scale(${sc})`;
+
+          if (speed > 0.15) {
+            rafId = requestAnimationFrame(tick);
+          } else {
+            rafId = 0;
+          }
+        };
+
+        const kick = () => {
+          if (!rafId && visibleBee && !document.hidden) {
+            rafId = requestAnimationFrame(tick);
+          }
+        };
+
+        document.addEventListener(
+          'pointermove',
+          (e) => {
+            if (e.pointerType && e.pointerType !== 'mouse') return;
+            tx = e.clientX;
+            ty = e.clientY;
+            if (!visibleBee) {
+              cx = tx;
+              cy = ty;
+              visibleBee = true;
+              bee.style.opacity = '1';
+            }
+            const t = e.target as HTMLElement | null;
+            hovering = Boolean(t?.closest('a, button, summary, [data-deal-href]'));
+            bee.classList.toggle('is-hover', hovering);
+            kick();
+          },
+          { passive: true }
+        );
+
+        document.addEventListener('pointerleave', () => {
+          visibleBee = false;
+          bee.style.opacity = '0';
+        });
+      })();
     </script>
+
+    <!-- 3D Bee Mouse Follower (Desktop only) -->
+    <div
+      id="bee-cursor"
+      transition:persist="bee-cursor"
+      aria-hidden="true"
+      class="pointer-events-none fixed left-0 top-0 z-[95] hidden opacity-0 transition-opacity duration-200 lg:block"
+      style="will-change: transform;"
+    >
+      <div class="bee-3d-wrap" style="transform-style: preserve-3d; will-change: transform;">
+        <svg class="bee-svg h-7 w-7 drop-shadow-[0_6px_8px_rgba(0,0,0,0.32)]" viewBox="0 0 64 64" fill="none">
+          <defs>
+            <radialGradient id="beeBody3d" cx="38%" cy="32%" r="68%">
+              <stop offset="0%" stop-color="#FFE066" />
+              <stop offset="55%" stop-color="#F59E0B" />
+              <stop offset="100%" stop-color="#B45309" />
+            </radialGradient>
+            <linearGradient id="beeWing3d" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95" />
+              <stop offset="100%" stop-color="#CBD5E1" stop-opacity="0.55" />
+            </linearGradient>
+          </defs>
+          <!-- Left & Right 3D Flapping Wings -->
+          <ellipse class="bee-wing-l" cx="25" cy="21" rx="11" ry="7" transform="rotate(-28 25 21)" fill="url(#beeWing3d)" stroke="#94A3B8" stroke-width="1" />
+          <ellipse class="bee-wing-r" cx="39" cy="21" rx="11" ry="7" transform="rotate(28 39 21)" fill="url(#beeWing3d)" stroke="#94A3B8" stroke-width="1" />
+          <!-- Stinger -->
+          <path d="M32 52 L29 45 L35 45 Z" fill="#1A1917" />
+          <!-- 3D Abdomen / Body -->
+          <ellipse cx="32" cy="35" rx="12" ry="13.5" fill="url(#beeBody3d)" stroke="#1A1917" stroke-width="1.6" />
+          <!-- Stripes -->
+          <path d="M21 31 Q32 34 43 31" stroke="#1A1917" stroke-width="3.4" stroke-linecap="round" />
+          <path d="M20.5 37.5 Q32 40.5 43.5 37.5" stroke="#1A1917" stroke-width="3.4" stroke-linecap="round" />
+          <path d="M23 43.5 Q32 46 41 43.5" stroke="#1A1917" stroke-width="2.6" stroke-linecap="round" />
+          <!-- Glossy 3D highlight -->
+          <ellipse cx="28" cy="28" rx="4.5" ry="2.2" transform="rotate(-20 28 28)" fill="#FFFFFF" fill-opacity="0.45" />
+          <!-- Head -->
+          <circle cx="32" cy="21" r="7.2" fill="#1A1917" />
+          <circle cx="29.5" cy="20" r="1.4" fill="#FFFFFF" />
+          <circle cx="34.5" cy="20" r="1.4" fill="#FFFFFF" />
+          <!-- Antennae -->
+          <path d="M29 15 Q26 10 23 11" stroke="#1A1917" stroke-width="1.6" stroke-linecap="round" />
+          <path d="M35 15 Q38 10 41 11" stroke="#1A1917" stroke-width="1.6" stroke-linecap="round" />
+        </svg>
+      </div>
+    </div>
+
+    <style is:global>
+      @keyframes beeHover {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-3px); }
+      }
+      @keyframes beeWingL {
+        0%, 100% { transform: rotate(-28deg) scaleY(1); }
+        50% { transform: rotate(-42deg) scaleY(0.55); }
+      }
+      @keyframes beeWingR {
+        0%, 100% { transform: rotate(28deg) scaleY(1); }
+        50% { transform: rotate(42deg) scaleY(0.55); }
+      }
+      #bee-cursor .bee-svg {
+        animation: beeHover 1.6s ease-in-out infinite;
+      }
+      #bee-cursor .bee-wing-l {
+        transform-origin: 30px 23px;
+        animation: beeWingL 0.14s ease-in-out infinite;
+      }
+      #bee-cursor .bee-wing-r {
+        transform-origin: 34px 23px;
+        animation: beeWingR 0.14s ease-in-out infinite;
+      }
+      #bee-cursor.is-hover .bee-wing-l,
+      #bee-cursor.is-hover .bee-wing-r {
+        animation-duration: 0.08s;
+      }
+    </style>
   </body>
 </html>
