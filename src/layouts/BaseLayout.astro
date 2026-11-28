@@ -452,6 +452,7 @@ const fontsUrl =
         if (root.dataset.activeMarket) nr.dataset.activeMarket = root.dataset.activeMarket;
         if (root.dataset.marketMode) nr.dataset.marketMode = root.dataset.marketMode;
         if (root.dataset.activeLang) nr.dataset.activeLang = root.dataset.activeLang;
+        if (root.classList.contains('has-bee-cursor')) nr.classList.add('has-bee-cursor');
         nr.lang = root.lang;
         nr.dir = root.dir;
         const mStyle = document.getElementById('market-style');
@@ -624,6 +625,7 @@ const fontsUrl =
               cx = tx;
               cy = ty;
               visibleBee = true;
+              (window as any).__dsBeeVisible = true;
               document.documentElement.classList.add('has-bee-cursor');
               bee.classList.remove('opacity-0');
               bee.style.opacity = '1';
@@ -651,8 +653,15 @@ const fontsUrl =
 
         document.addEventListener('pointerleave', () => {
           visibleBee = false;
+          (window as any).__dsBeeVisible = false;
           bee.style.opacity = '0';
           document.documentElement.classList.remove('has-bee-cursor');
+        });
+
+        document.addEventListener('astro:page-load', () => {
+          if ((window as any).__dsBeeVisible) {
+            document.documentElement.classList.add('has-bee-cursor');
+          }
         });
       })();
 
