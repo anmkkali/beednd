@@ -1,0 +1,18 @@
+{
+  "id": "primark-uk",
+  "name": "Primark UK",
+  "slug": "primark-uk",
+  "logo_url": "https://www.google.com/s2/favicons?domain=primark.com&sz=128",
+  "website_url": "https://www.primark.com/en-gb/c/sale/all",
+  "country": "GB",
+  "categories": [
+    "clothing-fashion"
+  ],
+  "short_bio": "Primark UK is a retail brand popular with shoppers across the United Kingdom, known for apparel, footwear, and seasonal collections. Shoppers follow Primark UK on BeeDND for verified seasonal markdowns, promo codes, and official store offers.",
+  "known_for": [
+    "Apparel & fashion",
+    "Seasonal collections",
+    "Online & store deals"
+  ],
+  "about": "Primark UK offers apparel, footwear, and seasonal collections tailored for customers in the United Kingdom. Whenever Primark UK launches a seasonal sale, clearance event, or verified promo code, BeeDND lists the active offer details and official store link here."
+}

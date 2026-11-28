@@ -1,0 +1,41 @@
+{
+  "id": "hp-india-live-offer",
+  "slug": "hp-india-live-offer",
+  "title": "HP India: Flat 5% Off Sale",
+  "short_description": "Verified active promotion detected on HP India's official store (Flat 5% discount). Confirm exclusions at checkout.",
+  "brand_id": "hp-india",
+  "country": "IN",
+  "cities": [],
+  "areas": [],
+  "branch_info": [],
+  "category": "tech-electronics",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "FLAT 5% OFF",
+  "badge_text": "Flat 5% Off",
+  "numeric_discount_percent": 5,
+  "terms_and_conditions": [
+    "Auto-verified from HP India official sale page.",
+    "Confirm final discount and exclusions on the official store."
+  ],
+  "start_date": "2026-11-28T07:21:54Z",
+  "end_date": "2026-12-01T23:59:00Z",
+  "source_url": "https://www.hp.com/in-en/shop/",
+  "affiliate_url": "https://www.hp.com/in-en/shop/",
+  "last_verified_at": "2026-11-28T07:21:54Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=hp.com&sz=128",
+    "alt": "HP India"
+  },
+  "tags": [
+    "all-items"
+  ]
+}

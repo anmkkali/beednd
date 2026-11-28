@@ -1,0 +1,17 @@
+{
+  "id": "three-uk",
+  "name": "Three UK",
+  "slug": "three-uk",
+  "logo_url": "https://www.google.com/s2/favicons?domain=three.co.uk&sz=128",
+  "website_url": "https://www.three.co.uk/offers/latest-offers",
+  "country": "GB",
+  "categories": [
+    "tech-electronics"
+  ],
+  "short_bio": "Three UK is a retail brand popular with shoppers across the United Kingdom, known for smartphones. Shoppers follow Three UK on BeeDND for verified seasonal markdowns, promo codes, and official store offers.",
+  "known_for": [
+    "Smartphones",
+    "Seasonal markdowns"
+  ],
+  "about": "Three UK offers smartphones tailored for customers in the United Kingdom. Whenever Three UK launches a seasonal sale, clearance event, or verified promo code, BeeDND lists the active offer details and official store link here."
+}

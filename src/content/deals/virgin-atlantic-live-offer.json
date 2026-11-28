@@ -1,0 +1,41 @@
+{
+  "id": "virgin-atlantic-live-offer",
+  "slug": "virgin-atlantic-live-offer",
+  "title": "Virgin Atlantic: Seasonal Sale & Offers",
+  "short_description": "Verified active promotion detected on Virgin Atlantic's official store (promo code). Confirm exclusions at checkout.",
+  "brand_id": "virgin-atlantic",
+  "country": "GB",
+  "cities": [],
+  "areas": [],
+  "branch_info": [],
+  "category": "travel-lifestyle",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "SEASONAL SALE",
+  "badge_text": "Sale Live",
+  "numeric_discount_percent": 0,
+  "terms_and_conditions": [
+    "Auto-verified from Virgin Atlantic official sale page.",
+    "Confirm final discount and exclusions on the official store."
+  ],
+  "start_date": "2026-11-28T07:21:54Z",
+  "end_date": "2026-12-01T23:59:00Z",
+  "source_url": "https://flights.virginatlantic.com/en-gb/",
+  "affiliate_url": "https://flights.virginatlantic.com/en-gb/",
+  "last_verified_at": "2026-11-28T07:21:54Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=flights.virginatlantic.com&sz=128",
+    "alt": "Virgin Atlantic"
+  },
+  "tags": [
+    "all-items"
+  ]
+}

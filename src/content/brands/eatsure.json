@@ -1,0 +1,19 @@
+{
+  "id": "eatsure",
+  "name": "EatSure",
+  "slug": "eatsure",
+  "logo_url": "https://www.google.com/s2/favicons?domain=eatsure.com&sz=128",
+  "website_url": "https://www.eatsure.com/",
+  "country": "IN",
+  "categories": [
+    "food-dining"
+  ],
+  "short_bio": "EatSure is a retail brand popular with shoppers across India, known for pizza & combos, fast food and home textiles. Shoppers follow EatSure on BeeDND for verified seasonal markdowns, promo codes, and official store offers.",
+  "known_for": [
+    "Pizza & combos",
+    "Fast food",
+    "Home textiles",
+    "App vouchers"
+  ],
+  "about": "EatSure offers pizza & combos, fast food and home textiles tailored for customers in India. Whenever EatSure launches a seasonal sale, clearance event, or verified promo code, BeeDND lists the active offer details and official store link here."
+}

@@ -1,0 +1,41 @@
+{
+  "id": "science-in-sport-live-offer",
+  "slug": "science-in-sport-live-offer",
+  "title": "Science in Sport: Seasonal Sale & Offers",
+  "short_description": "Verified active promotion detected on Science in Sport's official store (BLACK FRIDAY). Confirm exclusions at checkout.",
+  "brand_id": "science-in-sport",
+  "country": "GB",
+  "cities": [],
+  "areas": [],
+  "branch_info": [],
+  "category": "beauty-wellness",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "SEASONAL SALE",
+  "badge_text": "Sale Live",
+  "numeric_discount_percent": 0,
+  "terms_and_conditions": [
+    "Auto-verified from Science in Sport official sale page.",
+    "Confirm final discount and exclusions on the official store."
+  ],
+  "start_date": "2026-11-28T07:21:54Z",
+  "end_date": "2026-12-01T23:59:00Z",
+  "source_url": "https://www.scienceinsport.com/special-offers",
+  "affiliate_url": "https://www.scienceinsport.com/special-offers",
+  "last_verified_at": "2026-11-28T07:21:54Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=scienceinsport.com&sz=128",
+    "alt": "Science in Sport"
+  },
+  "tags": [
+    "all-items"
+  ]
+}

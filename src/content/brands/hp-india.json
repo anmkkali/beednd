@@ -1,0 +1,17 @@
+{
+  "id": "hp-india",
+  "name": "HP India",
+  "slug": "hp-india",
+  "logo_url": "https://www.google.com/s2/favicons?domain=hp.com&sz=128",
+  "website_url": "https://www.hp.com/in-en/shop/",
+  "country": "IN",
+  "categories": [
+    "tech-electronics"
+  ],
+  "short_bio": "HP India is a retail brand popular with shoppers across India, known for laptops. Shoppers follow HP India on BeeDND for verified seasonal markdowns, promo codes, and official store offers.",
+  "known_for": [
+    "Laptops",
+    "Seasonal markdowns"
+  ],
+  "about": "HP India offers laptops tailored for customers in India. Whenever HP India launches a seasonal sale, clearance event, or verified promo code, BeeDND lists the active offer details and official store link here."
+}

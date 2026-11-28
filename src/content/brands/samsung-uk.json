@@ -1,0 +1,19 @@
+{
+  "id": "samsung-uk",
+  "name": "Samsung UK",
+  "slug": "samsung-uk",
+  "logo_url": "https://www.google.com/s2/favicons?domain=samsung.com&sz=128",
+  "website_url": "https://www.samsung.com/uk/offer/",
+  "country": "GB",
+  "categories": [
+    "tech-electronics"
+  ],
+  "short_bio": "Samsung UK is a retail brand popular with shoppers across the United Kingdom, known for laptops, smartphones and home appliances. Shoppers follow Samsung UK on BeeDND for verified seasonal markdowns, promo codes, and official store offers.",
+  "known_for": [
+    "Laptops",
+    "Smartphones",
+    "Home appliances",
+    "Seasonal markdowns"
+  ],
+  "about": "Samsung UK offers laptops, smartphones and home appliances tailored for customers in the United Kingdom. Whenever Samsung UK launches a seasonal sale, clearance event, or verified promo code, BeeDND lists the active offer details and official store link here."
+}

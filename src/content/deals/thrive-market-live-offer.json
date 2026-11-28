@@ -1,7 +1,7 @@
 {
   "id": "thrive-market-live-offer",
   "slug": "thrive-market-live-offer",
-  "title": "Thrive Market: Up to 30% Off Seasonal Sale",
+  "title": "Thrive Market: Up to 30% Off Sale",
   "short_description": "Verified active promotion detected on Thrive Market's official store (30% Off). Confirm exclusions at checkout.",
   "brand_id": "thrive-market",
   "country": "US",
@@ -22,10 +22,10 @@
     "Confirm final discount and exclusions on the official store."
   ],
   "start_date": "2026-11-27T20:58:53Z",
-  "end_date": "2026-12-11T23:59:00Z",
+  "end_date": "2026-12-01T23:59:00Z",
   "source_url": "https://thrivemarket.com/c/all-deals",
   "affiliate_url": "https://thrivemarket.com/c/all-deals",
-  "last_verified_at": "2026-11-27T20:58:53Z",
+  "last_verified_at": "2026-11-28T07:21:54Z",
   "status": "active",
   "is_trending": false,
   "is_coming_soon": false,

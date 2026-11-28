@@ -1,0 +1,17 @@
+{
+  "id": "virgin-media",
+  "name": "Virgin Media",
+  "slug": "virgin-media",
+  "logo_url": "https://www.google.com/s2/favicons?domain=virginmedia.com&sz=128",
+  "website_url": "https://www.virginmedia.com/",
+  "country": "GB",
+  "categories": [
+    "tech-electronics"
+  ],
+  "short_bio": "Virgin Media is a retail brand popular with shoppers across the United Kingdom, known for home textiles. Shoppers follow Virgin Media on BeeDND for verified seasonal markdowns, promo codes, and official store offers.",
+  "known_for": [
+    "Home textiles",
+    "Seasonal markdowns"
+  ],
+  "about": "Virgin Media offers home textiles tailored for customers in the United Kingdom. Whenever Virgin Media launches a seasonal sale, clearance event, or verified promo code, BeeDND lists the active offer details and official store link here."
+}

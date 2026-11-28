@@ -1,0 +1,41 @@
+{
+  "id": "pooch-mutt-live-offer",
+  "slug": "pooch-mutt-live-offer",
+  "title": "Pooch & Mutt: Seasonal Sale & Offers",
+  "short_description": "Verified active promotion detected on Pooch & Mutt's official store (Black Friday). Confirm exclusions at checkout.",
+  "brand_id": "pooch-mutt",
+  "country": "GB",
+  "cities": [],
+  "areas": [],
+  "branch_info": [],
+  "category": "pets",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "SEASONAL SALE",
+  "badge_text": "Sale Live",
+  "numeric_discount_percent": 0,
+  "terms_and_conditions": [
+    "Auto-verified from Pooch & Mutt official sale page.",
+    "Confirm final discount and exclusions on the official store."
+  ],
+  "start_date": "2026-11-28T07:21:54Z",
+  "end_date": "2026-12-01T23:59:00Z",
+  "source_url": "https://www.poochandmutt.co.uk/collections/landing/sale",
+  "affiliate_url": "https://www.poochandmutt.co.uk/collections/landing/sale",
+  "last_verified_at": "2026-11-28T07:21:54Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=poochandmutt.co.uk&sz=128",
+    "alt": "Pooch & Mutt"
+  },
+  "tags": [
+    "all-items"
+  ]
+}

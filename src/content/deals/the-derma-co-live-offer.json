@@ -1,0 +1,41 @@
+{
+  "id": "the-derma-co-live-offer",
+  "slug": "the-derma-co-live-offer",
+  "title": "The Derma Co: Flat 30% Off Sale",
+  "short_description": "Verified active promotion detected on The Derma Co's official store (Flat 30% Off). Confirm exclusions at checkout.",
+  "brand_id": "the-derma-co",
+  "country": "IN",
+  "cities": [],
+  "areas": [],
+  "branch_info": [],
+  "category": "beauty-wellness",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "FLAT 30% OFF",
+  "badge_text": "Flat 30% Off",
+  "numeric_discount_percent": 30,
+  "terms_and_conditions": [
+    "Auto-verified from The Derma Co official sale page.",
+    "Confirm final discount and exclusions on the official store."
+  ],
+  "start_date": "2026-11-28T07:21:54Z",
+  "end_date": "2026-12-01T23:59:00Z",
+  "source_url": "https://thedermaco.com/",
+  "affiliate_url": "https://thedermaco.com/",
+  "last_verified_at": "2026-11-28T07:21:54Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=thedermaco.com&sz=128",
+    "alt": "The Derma Co"
+  },
+  "tags": [
+    "all-items"
+  ]
+}

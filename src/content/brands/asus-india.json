@@ -1,0 +1,17 @@
+{
+  "id": "asus-india",
+  "name": "ASUS India",
+  "slug": "asus-india",
+  "logo_url": "https://www.google.com/s2/favicons?domain=asus.com&sz=128",
+  "website_url": "https://www.asus.com/in/",
+  "country": "IN",
+  "categories": [
+    "tech-electronics"
+  ],
+  "short_bio": "ASUS India is a retail brand popular with shoppers across India, known for laptops. Shoppers follow ASUS India on BeeDND for verified seasonal markdowns, promo codes, and official store offers.",
+  "known_for": [
+    "Laptops",
+    "Seasonal markdowns"
+  ],
+  "about": "ASUS India offers laptops tailored for customers in India. Whenever ASUS India launches a seasonal sale, clearance event, or verified promo code, BeeDND lists the active offer details and official store link here."
+}

@@ -1,0 +1,18 @@
+{
+  "id": "treebo",
+  "name": "Treebo",
+  "slug": "treebo",
+  "logo_url": "https://www.google.com/s2/favicons?domain=treebo.com&sz=128",
+  "website_url": "https://www.treebo.com/",
+  "country": "IN",
+  "categories": [
+    "travel-lifestyle"
+  ],
+  "short_bio": "Treebo is a retail brand popular with shoppers across India, known for flights, hotel stays, and travel bookings. Shoppers follow Treebo on BeeDND for verified seasonal markdowns, promo codes, and official store offers.",
+  "known_for": [
+    "Flights & hotels",
+    "Travel packages",
+    "Seasonal fares"
+  ],
+  "about": "Treebo offers flights, hotel stays, and travel bookings tailored for customers in India. Whenever Treebo launches a seasonal sale, clearance event, or verified promo code, BeeDND lists the active offer details and official store link here."
+}

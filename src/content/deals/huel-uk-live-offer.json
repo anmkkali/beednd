@@ -1,7 +1,7 @@
 {
   "id": "huel-uk-live-offer",
   "slug": "huel-uk-live-offer",
-  "title": "Huel UK: Up to 15% Off Sale",
+  "title": "Huel UK: Up to 25% Off Sale",
   "short_description": "Verified active promotion detected on Huel UK's official store (Black Friday). Confirm exclusions at checkout.",
   "brand_id": "huel-uk",
   "country": "GB",
@@ -14,18 +14,18 @@
     "online"
   ],
   "discount_type": "percentage",
-  "discount_value": "UP TO 15% OFF",
-  "badge_text": "Up to 15% Off",
-  "numeric_discount_percent": 15,
+  "discount_value": "UP TO 25% OFF",
+  "badge_text": "Up to 25% Off",
+  "numeric_discount_percent": 25,
   "terms_and_conditions": [
     "Auto-verified from Huel UK official sale page.",
     "Confirm final discount and exclusions on the official store."
   ],
   "start_date": "2026-11-27T07:52:35Z",
-  "end_date": "2026-11-30T23:59:00Z",
+  "end_date": "2026-12-01T23:59:00Z",
   "source_url": "https://uk.huel.com/",
   "affiliate_url": "https://uk.huel.com/",
-  "last_verified_at": "2026-11-27T21:06:17Z",
+  "last_verified_at": "2026-11-28T07:21:54Z",
   "status": "active",
   "is_trending": false,
   "is_coming_soon": false,

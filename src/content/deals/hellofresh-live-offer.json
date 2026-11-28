@@ -1,7 +1,7 @@
 {
   "id": "hellofresh-live-offer",
   "slug": "hellofresh-live-offer",
-  "title": "HelloFresh: Up to 60% Off Seasonal Sale",
+  "title": "HelloFresh: Up to 60% Off Sale",
   "short_description": "Verified active promotion detected on HelloFresh's official store (Promo Code). Confirm exclusions at checkout.",
   "brand_id": "hellofresh",
   "country": "US",
@@ -22,10 +22,10 @@
     "Confirm final discount and exclusions on the official store."
   ],
   "start_date": "2026-11-27T20:58:53Z",
-  "end_date": "2026-12-11T23:59:00Z",
+  "end_date": "2026-12-01T23:59:00Z",
   "source_url": "https://www.hellofresh.com/eat/coupon-codes-and-promotions",
   "affiliate_url": "https://www.hellofresh.com/eat/coupon-codes-and-promotions",
-  "last_verified_at": "2026-11-27T20:58:53Z",
+  "last_verified_at": "2026-11-28T07:21:54Z",
   "status": "active",
   "is_trending": false,
   "is_coming_soon": false,

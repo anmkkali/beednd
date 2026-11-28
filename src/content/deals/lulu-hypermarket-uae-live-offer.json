@@ -1,0 +1,41 @@
+{
+  "id": "lulu-hypermarket-uae-live-offer",
+  "slug": "lulu-hypermarket-uae-live-offer",
+  "title": "Lulu Hypermarket UAE: Seasonal Sale & Offers",
+  "short_description": "Verified active promotion detected on Lulu Hypermarket UAE's official store (promo code). Confirm exclusions at checkout.",
+  "brand_id": "lulu-hypermarket-uae",
+  "country": "AE",
+  "cities": [],
+  "areas": [],
+  "branch_info": [],
+  "category": "groceries-essentials",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "SEASONAL SALE",
+  "badge_text": "Sale Live",
+  "numeric_discount_percent": 0,
+  "terms_and_conditions": [
+    "Auto-verified from Lulu Hypermarket UAE official sale page.",
+    "Confirm final discount and exclusions on the official store."
+  ],
+  "start_date": "2026-11-28T07:21:54Z",
+  "end_date": "2026-12-01T23:59:00Z",
+  "source_url": "https://www.luluhypermarket.com/en-ae",
+  "affiliate_url": "https://www.luluhypermarket.com/en-ae",
+  "last_verified_at": "2026-11-28T07:21:54Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=luluhypermarket.com&sz=128",
+    "alt": "Lulu Hypermarket UAE"
+  },
+  "tags": [
+    "all-items"
+  ]
+}

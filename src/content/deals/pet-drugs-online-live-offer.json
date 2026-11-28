@@ -1,0 +1,41 @@
+{
+  "id": "pet-drugs-online-live-offer",
+  "slug": "pet-drugs-online-live-offer",
+  "title": "Pet Drugs Online: Up to 25% Off Sale",
+  "short_description": "Verified active promotion detected on Pet Drugs Online's official store (Black Friday). Confirm exclusions at checkout.",
+  "brand_id": "pet-drugs-online",
+  "country": "GB",
+  "cities": [],
+  "areas": [],
+  "branch_info": [],
+  "category": "pets",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "UP TO 25% OFF",
+  "badge_text": "Up to 25% Off",
+  "numeric_discount_percent": 25,
+  "terms_and_conditions": [
+    "Auto-verified from Pet Drugs Online official sale page.",
+    "Confirm final discount and exclusions on the official store."
+  ],
+  "start_date": "2026-11-28T07:21:54Z",
+  "end_date": "2026-12-01T23:59:00Z",
+  "source_url": "https://www.petdrugsonline.co.uk/offers-and-multibuys",
+  "affiliate_url": "https://www.petdrugsonline.co.uk/offers-and-multibuys",
+  "last_verified_at": "2026-11-28T07:21:54Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=petdrugsonline.co.uk&sz=128",
+    "alt": "Pet Drugs Online"
+  },
+  "tags": [
+    "all-items"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "id": "primark-uk-live-offer",
+  "slug": "primark-uk-live-offer",
+  "title": "Primark UK: Seasonal Sale & Offers",
+  "short_description": "Verified active promotion detected on Primark UK's official store (Black Friday). Confirm exclusions at checkout.",
+  "brand_id": "primark-uk",
+  "country": "GB",
+  "cities": [],
+  "areas": [],
+  "branch_info": [],
+  "category": "clothing-fashion",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "SEASONAL SALE",
+  "badge_text": "Sale Live",
+  "numeric_discount_percent": 0,
+  "terms_and_conditions": [
+    "Auto-verified from Primark UK official sale page.",
+    "Confirm final discount and exclusions on the official store."
+  ],
+  "start_date": "2026-11-28T07:21:54Z",
+  "end_date": "2026-12-01T23:59:00Z",
+  "source_url": "https://www.primark.com/en-gb/c/sale/all",
+  "affiliate_url": "https://www.primark.com/en-gb/c/sale/all",
+  "last_verified_at": "2026-11-28T07:21:54Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=primark.com&sz=128",
+    "alt": "Primark UK"
+  },
+  "tags": [
+    "all-items"
+  ]
+}

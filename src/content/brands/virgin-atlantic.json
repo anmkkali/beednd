@@ -1,0 +1,18 @@
+{
+  "id": "virgin-atlantic",
+  "name": "Virgin Atlantic",
+  "slug": "virgin-atlantic",
+  "logo_url": "https://www.google.com/s2/favicons?domain=flights.virginatlantic.com&sz=128",
+  "website_url": "https://flights.virginatlantic.com/en-gb/",
+  "country": "GB",
+  "categories": [
+    "travel-lifestyle"
+  ],
+  "short_bio": "Virgin Atlantic is a retail brand popular with shoppers across the United Kingdom, known for flights, hotel stays, and travel bookings. Shoppers follow Virgin Atlantic on BeeDND for verified seasonal markdowns, promo codes, and official store offers.",
+  "known_for": [
+    "Flights & hotels",
+    "Travel packages",
+    "Seasonal fares"
+  ],
+  "about": "Virgin Atlantic offers flights, hotel stays, and travel bookings tailored for customers in the United Kingdom. Whenever Virgin Atlantic launches a seasonal sale, clearance event, or verified promo code, BeeDND lists the active offer details and official store link here."
+}

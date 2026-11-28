@@ -1,0 +1,17 @@
+{
+  "id": "premier-inn",
+  "name": "Premier Inn",
+  "slug": "premier-inn",
+  "logo_url": "https://www.google.com/s2/favicons?domain=premierinn.com&sz=128",
+  "website_url": "https://www.premierinn.com/gb/en/home.html",
+  "country": "GB",
+  "categories": [
+    "travel-lifestyle"
+  ],
+  "short_bio": "Premier Inn is a retail brand popular with shoppers across the United Kingdom, known for hotel stays. Shoppers follow Premier Inn on BeeDND for verified seasonal markdowns, promo codes, and official store offers.",
+  "known_for": [
+    "Hotel stays",
+    "Seasonal fares"
+  ],
+  "about": "Premier Inn offers hotel stays tailored for customers in the United Kingdom. Whenever Premier Inn launches a seasonal sale, clearance event, or verified promo code, BeeDND lists the active offer details and official store link here."
+}

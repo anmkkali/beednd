@@ -1,0 +1,18 @@
+{
+  "id": "lg-india",
+  "name": "LG India",
+  "slug": "lg-india",
+  "logo_url": "https://www.google.com/s2/favicons?domain=lg.com&sz=128",
+  "website_url": "https://www.lg.com/in/",
+  "country": "IN",
+  "categories": [
+    "tech-electronics"
+  ],
+  "short_bio": "LG India is a retail brand popular with shoppers across India, known for home appliances and home textiles. Shoppers follow LG India on BeeDND for verified seasonal markdowns, promo codes, and official store offers.",
+  "known_for": [
+    "Home appliances",
+    "Home textiles",
+    "Seasonal markdowns"
+  ],
+  "about": "LG India offers home appliances and home textiles tailored for customers in India. Whenever LG India launches a seasonal sale, clearance event, or verified promo code, BeeDND lists the active offer details and official store link here."
+}

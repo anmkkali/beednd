@@ -1,0 +1,41 @@
+{
+  "id": "giva-live-offer",
+  "slug": "giva-live-offer",
+  "title": "GIVA: Flat 15% Off Sale",
+  "short_description": "Verified active promotion detected on GIVA's official store (Flat 15% off). Confirm exclusions at checkout.",
+  "brand_id": "giva",
+  "country": "IN",
+  "cities": [],
+  "areas": [],
+  "branch_info": [],
+  "category": "clothing-fashion",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "FLAT 15% OFF",
+  "badge_text": "Flat 15% Off",
+  "numeric_discount_percent": 15,
+  "terms_and_conditions": [
+    "Auto-verified from GIVA official sale page.",
+    "Confirm final discount and exclusions on the official store."
+  ],
+  "start_date": "2026-11-28T07:21:54Z",
+  "end_date": "2026-12-01T23:59:00Z",
+  "source_url": "https://www.giva.co/",
+  "affiliate_url": "https://www.giva.co/",
+  "last_verified_at": "2026-11-28T07:21:54Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "discount",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=giva.co&sz=128",
+    "alt": "GIVA"
+  },
+  "tags": [
+    "all-items"
+  ]
+}
