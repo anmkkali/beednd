@@ -2,7 +2,7 @@
   "id": "petshoppak-winter-sale",
   "slug": "petshoppak-winter-sale",
   "title": "PetShopPak: Upcoming Blessed Friday Pet Supplies Sale",
-  "short_description": "Upcoming seasonal discounts on dog and cat kibble, winter pet beds, and grooming essentials.",
+  "short_description": "Live seasonal discounts on dog and cat kibble, winter pet beds, and grooming essentials.",
   "brand_id": "petshoppak",
   "country": "PK",
   "cities": [
@@ -18,8 +18,8 @@
     "online"
   ],
   "discount_type": "percentage",
-  "discount_value": "COMING SOON",
-  "badge_text": "Discount Coming Soon",
+  "discount_value": "UP TO 30% OFF",
+  "badge_text": "Up to 30% Off",
   "numeric_discount_percent": 30,
   "terms_and_conditions": [
     "Launches Nov 27, 2026 for Blessed Friday weekend."

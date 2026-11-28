@@ -503,6 +503,11 @@ const fontsUrl =
             localStorage.setItem('dealssite_market', select.value);
             applyMarket(select.value, false);
           }
+          // If viewing a specific brand, deal, or city page, navigate home so the new country's brands & offers are shown
+          const p = window.location.pathname;
+          if (/^\/(brands\/.+|deals\/.+|city\/.+)/.test(p)) {
+            window.location.href = '/';
+          }
         })
       );
 
@@ -543,11 +548,11 @@ const fontsUrl =
         }
       });
 
-      // Smooth 3D Bee cursor follower (desktop fine-pointer only, zero layout reflow)
+      // Smooth 3D Bee cursor follower (replaces default mouse cursor, stings on click)
       (() => {
         if (
           (window as any).__dsBeeBound ||
-          !window.matchMedia('(pointer: fine)').matches ||
+          !window.matchMedia('(any-pointer: fine)').matches ||
           window.matchMedia('(prefers-reduced-motion: reduce)').matches
         ) {
           return;
@@ -559,33 +564,35 @@ const fontsUrl =
 
         let tx = -100, ty = -100;
         let cx = -100, cy = -100;
-        let angle = -12;
+        let angle = -14;
         let visibleBee = false;
         let hovering = false;
+        let stinging = false;
         let rafId = 0;
 
         const tick = () => {
           const dx = tx - cx;
           const dy = ty - cy;
-          cx += dx * 0.16;
-          cy += dy * 0.16;
+          cx += dx * 0.24;
+          cy += dy * 0.24;
 
           const speed = Math.hypot(dx, dy);
           if (speed > 0.35) {
-            const targetAngle = Math.max(-35, Math.min(35, dx * 0.85)) - 8;
-            angle += (targetAngle - angle) * 0.18;
+            const targetAngle = Math.max(-35, Math.min(35, dx * 0.85)) - 10;
+            angle += (targetAngle - angle) * 0.22;
           } else {
-            angle += (-8 - angle) * 0.08;
+            angle += (-10 - angle) * 0.1;
           }
 
-          const bankX = Math.max(-18, Math.min(18, dy * 0.45));
+          const bankX = stinging ? 32 : Math.max(-18, Math.min(18, dy * 0.45));
           const bankY = Math.max(-22, Math.min(22, dx * 0.55));
-          const sc = hovering ? 1.16 : 1;
+          const rotZ = stinging ? angle - 22 : angle;
+          const sc = stinging ? 0.78 : hovering ? 1.28 : 1;
 
-          bee.style.transform = `translate3d(${(cx + 14).toFixed(1)}px, ${(cy + 14).toFixed(1)}px, 0)`;
-          beeInner.style.transform = `perspective(180px) rotateX(${bankX.toFixed(1)}deg) rotateY(${bankY.toFixed(1)}deg) rotateZ(${angle.toFixed(1)}deg) scale(${sc})`;
+          bee.style.transform = `translate3d(${(cx - 14).toFixed(1)}px, ${(cy - 14).toFixed(1)}px, 0)`;
+          beeInner.style.transform = `perspective(180px) rotateX(${bankX.toFixed(1)}deg) rotateY(${bankY.toFixed(1)}deg) rotateZ(${rotZ.toFixed(1)}deg) scale(${sc})`;
 
-          if (speed > 0.15) {
+          if (speed > 0.15 || stinging) {
             rafId = requestAnimationFrame(tick);
           } else {
             rafId = 0;
@@ -598,6 +605,15 @@ const fontsUrl =
           }
         };
 
+        function spawnStingSpark(x: number, y: number) {
+          const spark = document.createElement('span');
+          spark.className = 'bee-sting-spark';
+          spark.style.left = `${x}px`;
+          spark.style.top = `${y}px`;
+          document.body.appendChild(spark);
+          window.setTimeout(() => spark.remove(), 320);
+        }
+
         document.addEventListener(
           'pointermove',
           (e) => {
@@ -608,29 +624,66 @@ const fontsUrl =
               cx = tx;
               cy = ty;
               visibleBee = true;
+              document.documentElement.classList.add('has-bee-cursor');
+              bee.classList.remove('opacity-0');
               bee.style.opacity = '1';
             }
             const t = e.target as HTMLElement | null;
-            hovering = Boolean(t?.closest('a, button, summary, [data-deal-href]'));
+            hovering = Boolean(t?.closest('a, button, summary, select, [data-deal-href], .sb-link'));
             bee.classList.toggle('is-hover', hovering);
             kick();
           },
           { passive: true }
         );
 
+        document.addEventListener('pointerdown', (e) => {
+          if (e.pointerType && e.pointerType !== 'mouse') return;
+          stinging = true;
+          bee.classList.add('is-sting');
+          spawnStingSpark(e.clientX, e.clientY);
+          kick();
+          window.setTimeout(() => {
+            stinging = false;
+            bee.classList.remove('is-sting');
+            kick();
+          }, 150);
+        });
+
         document.addEventListener('pointerleave', () => {
           visibleBee = false;
           bee.style.opacity = '0';
+          document.documentElement.classList.remove('has-bee-cursor');
         });
       })();
+
+      // Speculative prefetch on pointerdown/touchstart (gives ~100ms head-start before click)
+      if (!(window as any).__dsDownPrefetch) {
+        (window as any).__dsDownPrefetch = true;
+        const prefetched = new Set<string>();
+        document.addEventListener(
+          'pointerdown',
+          (e) => {
+            const target = e.target as HTMLElement | null;
+            const link = target?.closest<HTMLAnchorElement>('a[href^="/"]');
+            const href = link?.getAttribute('href') || target?.closest<HTMLElement>('[data-deal-href]')?.dataset.dealHref;
+            if (!href || href.startsWith('/go/') || prefetched.has(href)) return;
+            prefetched.add(href);
+            const l = document.createElement('link');
+            l.rel = 'prefetch';
+            l.href = href;
+            document.head.appendChild(l);
+          },
+          { passive: true }
+        );
+      }
     </script>
 
-    <!-- 3D Bee Mouse Follower (Desktop only) -->
+    <!-- 3D Bee Mouse Follower (Desktop/Mouse only) -->
     <div
       id="bee-cursor"
       transition:persist="bee-cursor"
       aria-hidden="true"
-      class="pointer-events-none fixed left-0 top-0 z-[95] hidden opacity-0 transition-opacity duration-200 lg:block"
+      class="pointer-events-none fixed left-0 top-0 z-[999] opacity-0 transition-opacity duration-200"
       style="will-change: transform;"
     >
       <div class="bee-3d-wrap" style="transform-style: preserve-3d; will-change: transform;">
@@ -696,7 +749,26 @@ const fontsUrl =
       }
       #bee-cursor.is-hover .bee-wing-l,
       #bee-cursor.is-hover .bee-wing-r {
-        animation-duration: 0.08s;
+        animation-duration: 0.07s;
+      }
+      html.has-bee-cursor,
+      html.has-bee-cursor * {
+        cursor: none !important;
+      }
+      @keyframes beeStingSpark {
+        0% { transform: translate(-50%, -50%) scale(0.3); opacity: 0.95; }
+        100% { transform: translate(-50%, -50%) scale(2.1); opacity: 0; }
+      }
+      .bee-sting-spark {
+        position: fixed;
+        width: 18px;
+        height: 18px;
+        border-radius: 9999px;
+        border: 2px solid #F59E0B;
+        box-shadow: 0 0 8px rgba(245, 158, 11, 0.65);
+        pointer-events: none;
+        z-index: 998;
+        animation: beeStingSpark 280ms ease-out forwards;
       }
     </style>
   </body>

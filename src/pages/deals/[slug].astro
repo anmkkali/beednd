@@ -29,6 +29,14 @@ const isExpired =
   deal.status === 'expired' ||
   (deal.end_date && !Number.isNaN(Date.parse(deal.end_date)) && Date.parse(deal.end_date) < Date.now());
 
+const isLiveNow = !deal.is_coming_soon && (!deal.start_date || Number.isNaN(Date.parse(deal.start_date)) || Date.parse(deal.start_date) <= Date.now());
+const displayBadge =
+  isLiveNow && /coming soon/i.test(deal.discount_value || '')
+    ? deal.numeric_discount_percent
+      ? `UP TO ${deal.numeric_discount_percent}% OFF`
+      : 'SALE LIVE'
+    : deal.discount_value;
+
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'Offer',
@@ -84,7 +92,7 @@ const structuredData = {
       </div>
 
       <span class="editorial-pill px-4 py-1.5 text-[14px] font-semibold text-ink">
-        {deal.discount_value}
+        {displayBadge}
       </span>
     </div>
 

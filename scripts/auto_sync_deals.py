@@ -62,6 +62,12 @@ def lifecycle_sync():
 
         if deal.get("status") == "active" and deal.get("is_coming_soon") and start_dt and start_dt <= NOW:
             deal["is_coming_soon"] = False
+            if "COMING SOON" in (deal.get("discount_value") or "").upper():
+                pct = deal.get("numeric_discount_percent") or 0
+                deal["discount_value"] = f"UP TO {pct}% OFF" if pct else "SALE LIVE"
+                deal["badge_text"] = f"Up to {pct}% Off" if pct else "Sale Live"
+            if (deal.get("short_description") or "").startswith("Upcoming "):
+                deal["short_description"] = "Live " + deal["short_description"][9:]
             changed = True
             activated_count += 1
 
@@ -156,7 +162,7 @@ def reverify_live_offers():
         fp = os.path.join(DEALS_DIR, fn)
         with open(fp, "r", encoding="utf-8") as f:
             deal = json.load(f)
-        if deal.get("status") != "active" or not deal.get("source_url"):
+        if deal.get("status") != "active" or deal.get("is_trending") or not deal.get("source_url"):
             continue
         live_items.append({"fp": fp, "deal": deal, "url": deal["source_url"]})
 

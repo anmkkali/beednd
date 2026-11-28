@@ -2,7 +2,7 @@
   "id": "petplanet-uk-black-friday",
   "slug": "petplanet-uk-black-friday",
   "title": "PetPlanet UK: Upcoming Black Friday Up to 40% Off",
-  "short_description": "Upcoming Black Friday discounts on dog beds, cat trees, crates, food and winter pet gear.",
+  "short_description": "Live Black Friday discounts on dog beds, cat trees, crates, food and winter pet gear.",
   "brand_id": "petplanet",
   "country": "GB",
   "cities": [
@@ -17,8 +17,8 @@
     "online"
   ],
   "discount_type": "percentage",
-  "discount_value": "COMING SOON",
-  "badge_text": "Discount Coming Soon",
+  "discount_value": "UP TO 40% OFF",
+  "badge_text": "Up to 40% Off",
   "numeric_discount_percent": 40,
   "terms_and_conditions": [
     "Starts Nov 27, 2026 for Black Friday weekend."

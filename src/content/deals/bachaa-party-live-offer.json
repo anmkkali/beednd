@@ -8,7 +8,9 @@
   "cities": [
     "Karachi",
     "Lahore",
-    "Islamabad"
+    "Islamabad",
+    "Rawalpindi",
+    "Faisalabad"
   ],
   "areas": [],
   "branch_info": [],
@@ -27,11 +29,11 @@
     "Available online at bachaaparty.com and nationwide stores."
   ],
   "start_date": "2026-11-28T00:00:00Z",
-  "end_date": "2026-11-27T21:06:17Z",
+  "end_date": "2026-12-15T23:59:00Z",
   "source_url": "https://bachaaparty.com/",
   "affiliate_url": "https://bachaaparty.com/",
-  "last_verified_at": "2026-11-28T00:49:00Z",
-  "status": "expired",
+  "last_verified_at": "2026-11-29T00:30:00Z",
+  "status": "active",
   "is_trending": true,
   "is_coming_soon": false,
   "limited_time": true,
@@ -42,6 +44,9 @@
   },
   "tags": [
     "kids",
+    "boys",
+    "girls",
+    "baby",
     "apparel",
     "shoes",
     "all-items"
