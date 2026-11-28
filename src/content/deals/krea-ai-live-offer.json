@@ -1,0 +1,43 @@
+{
+  "id": "krea-ai-live-offer",
+  "slug": "krea-ai-live-offer",
+  "title": "Krea AI: Free Daily Generations & Plan Offers",
+  "short_description": "Krea AI provides real-time image generation, upscaling, and video synthesis with daily free generations.",
+  "brand_id": "krea-ai",
+  "country": "GLOBAL",
+  "cities": [],
+  "areas": [],
+  "branch_info": [],
+  "category": "ai-tools",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "freebie",
+  "discount_value": "FREE DAILY GEN",
+  "badge_text": "Free Daily Generations",
+  "numeric_discount_percent": 0,
+  "terms_and_conditions": [
+    "Verified directly from Krea AI's official pricing page.",
+    "Free tier credit limits and Pro renewal pricing apply."
+  ],
+  "start_date": "2026-11-28T00:00:00Z",
+  "end_date": "2026-12-31T23:59:00Z",
+  "source_url": "https://www.krea.ai/pricing",
+  "affiliate_url": "https://www.krea.ai/pricing",
+  "last_verified_at": "2026-11-29T01:50:00Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": false,
+  "offer_kind": "free",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=krea.ai&sz=128",
+    "alt": "Krea AI"
+  },
+  "tags": [
+    "image",
+    "video",
+    "free"
+  ]
+}

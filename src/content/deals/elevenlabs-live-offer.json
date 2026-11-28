@@ -1,0 +1,42 @@
+{
+  "id": "elevenlabs-live-offer",
+  "slug": "elevenlabs-live-offer",
+  "title": "ElevenLabs: Free + 55% Off Annual & Starter Credits",
+  "short_description": "Verified active AI offer on ElevenLabs (55% off). Confirm plan limits and billing terms on the official pricing page.",
+  "brand_id": "elevenlabs",
+  "country": "GLOBAL",
+  "cities": [],
+  "areas": [],
+  "branch_info": [],
+  "category": "ai-tools",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "UP TO 55% OFF",
+  "badge_text": "Free + 55% Off Annual",
+  "numeric_discount_percent": 55,
+  "terms_and_conditions": [
+    "Auto-verified from ElevenLabs official pricing/home page.",
+    "Confirm current credit limits and renewal terms before upgrading."
+  ],
+  "start_date": "2026-11-28T20:51:08Z",
+  "end_date": "2026-12-05T23:59:00Z",
+  "source_url": "https://elevenlabs.io/pricing",
+  "affiliate_url": "https://elevenlabs.io/pricing",
+  "last_verified_at": "2026-11-28T20:51:08Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "trial",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=elevenlabs.io&sz=128",
+    "alt": "ElevenLabs"
+  },
+  "tags": [
+    "voice",
+    "trial"
+  ]
+}

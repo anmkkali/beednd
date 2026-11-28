@@ -3,7 +3,7 @@ title: "Kids Winter Shopping Guide: Timing End-of-Season & Festive Sales"
 description: "How parents save up to 50% on kids winter jackets, thermals, and footwear by timing brand markdowns and sizing up smartly."
 published_date: "2026-11-24"
 author: "Editorial Team"
-hero_image: "/og-image.jpg"
+hero_image: "/images/blog/kids-winter.jpg"
 target_country: "GLOBAL"
 featured_deal_ids:
   - "minnie-minors-winter-50"

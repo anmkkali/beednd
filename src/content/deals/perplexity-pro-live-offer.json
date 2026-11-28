@@ -1,0 +1,43 @@
+{
+  "id": "perplexity-pro-live-offer",
+  "slug": "perplexity-pro-live-offer",
+  "title": "Perplexity AI: Free Plan & Pro Trial & Plan Offers",
+  "short_description": "Perplexity AI pairs live web search with frontier models, offering unlimited basic search free and Pro student/annual discounts.",
+  "brand_id": "perplexity-pro",
+  "country": "GLOBAL",
+  "cities": [],
+  "areas": [],
+  "branch_info": [],
+  "category": "ai-tools",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "freebie",
+  "discount_value": "FREE + PRO TRIAL",
+  "badge_text": "Free Plan & Pro Trial",
+  "numeric_discount_percent": 0,
+  "terms_and_conditions": [
+    "Verified directly from Perplexity AI's official pricing page.",
+    "Free tier credit limits and Pro renewal pricing apply."
+  ],
+  "start_date": "2026-11-28T00:00:00Z",
+  "end_date": "2026-12-31T23:59:00Z",
+  "source_url": "https://www.perplexity.ai/pro",
+  "affiliate_url": "https://www.perplexity.ai/pro",
+  "last_verified_at": "2026-11-29T01:50:00Z",
+  "status": "active",
+  "is_trending": true,
+  "is_coming_soon": false,
+  "limited_time": false,
+  "offer_kind": "trial",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=perplexity.ai&sz=128",
+    "alt": "Perplexity AI"
+  },
+  "tags": [
+    "productivity",
+    "writing",
+    "free"
+  ]
+}

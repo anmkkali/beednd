@@ -1,0 +1,42 @@
+{
+  "id": "pika-live-offer",
+  "slug": "pika-live-offer",
+  "title": "Pika: Free + 60% Off Annual & Starter Credits",
+  "short_description": "Verified active AI offer on Pika (60% off). Confirm plan limits and billing terms on the official pricing page.",
+  "brand_id": "pika",
+  "country": "GLOBAL",
+  "cities": [],
+  "areas": [],
+  "branch_info": [],
+  "category": "ai-tools",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "UP TO 60% OFF",
+  "badge_text": "Free + 60% Off Annual",
+  "numeric_discount_percent": 60,
+  "terms_and_conditions": [
+    "Auto-verified from Pika official pricing/home page.",
+    "Confirm current credit limits and renewal terms before upgrading."
+  ],
+  "start_date": "2026-11-28T20:51:08Z",
+  "end_date": "2026-12-05T23:59:00Z",
+  "source_url": "https://pika.art",
+  "affiliate_url": "https://pika.art",
+  "last_verified_at": "2026-11-28T20:51:08Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "trial",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=pika.art&sz=128",
+    "alt": "Pika"
+  },
+  "tags": [
+    "video",
+    "trial"
+  ]
+}

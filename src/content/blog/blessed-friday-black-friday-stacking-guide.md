@@ -3,7 +3,7 @@ title: "Blessed Friday & Black Friday 2026: How to Stack Brand Sales with Bank C
 description: "A practical guide to combining seasonal storewide markdowns with credit/debit card cashback in Pakistan, UAE, Saudi Arabia, US, UK, and India."
 published_date: "2026-11-24"
 author: "Editorial Team"
-hero_image: "/og-image.jpg"
+hero_image: "/images/blog/us-shopping.jpg"
 target_country: "GLOBAL"
 featured_deal_ids:
   - "engine-brandwide-30-off"

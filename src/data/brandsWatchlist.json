@@ -840,6 +840,13 @@
     "url": "https://www.bjs.com/deals/"
   },
   {
+    "id": "black-forest-labs",
+    "name": "Black Forest Labs (Flux)",
+    "country": "GLOBAL",
+    "category": "ai-tools",
+    "url": "https://blackforestlabs.ai/"
+  },
+  {
     "id": "blinkit",
     "name": "Blinkit",
     "country": "IN",
@@ -1741,6 +1748,13 @@
     "country": "GLOBAL",
     "category": "ai-tools",
     "url": "https://descript.com"
+  },
+  {
+    "id": "devin-cognition",
+    "name": "Devin",
+    "country": "GLOBAL",
+    "category": "ai-tools",
+    "url": "https://devin.ai/pricing"
   },
   {
     "id": "diners",
@@ -2660,6 +2674,13 @@
     "url": "https://www.haier.com/pk/"
   },
   {
+    "id": "hailuo-minimax",
+    "name": "Hailuo AI (MiniMax)",
+    "country": "GLOBAL",
+    "category": "ai-tools",
+    "url": "https://hailuoai.video/"
+  },
+  {
     "id": "haldiram-s",
     "name": "Haldiram's",
     "country": "IN",
@@ -3514,6 +3535,13 @@
     "url": "https://kravemart.com/"
   },
   {
+    "id": "krea-ai",
+    "name": "Krea AI",
+    "country": "GLOBAL",
+    "category": "ai-tools",
+    "url": "https://www.krea.ai/pricing"
+  },
+  {
     "id": "krispy-kreme",
     "name": "Krispy Kreme",
     "country": "US",
@@ -4144,6 +4172,13 @@
     "url": "https://www.meshy.ai"
   },
   {
+    "id": "meshy-ai",
+    "name": "Meshy AI",
+    "country": "GLOBAL",
+    "category": "ai-tools",
+    "url": "https://www.meshy.ai/pricing"
+  },
+  {
     "id": "metro-cash-carry-pk",
     "name": "Metro Cash & Carry Pakistan",
     "country": "PK",
@@ -4394,6 +4429,13 @@
     "country": "IN",
     "category": "beauty-wellness",
     "url": "https://www.muscleblaze.com/"
+  },
+  {
+    "id": "muse-ai",
+    "name": "Muse AI",
+    "country": "GLOBAL",
+    "category": "ai-tools",
+    "url": "https://muse.ai/"
   },
   {
     "id": "myntra",
@@ -5019,6 +5061,13 @@
     "url": "https://perplexity.ai"
   },
   {
+    "id": "perplexity-pro",
+    "name": "Perplexity AI",
+    "country": "GLOBAL",
+    "category": "ai-tools",
+    "url": "https://www.perplexity.ai/pro"
+  },
+  {
     "id": "pet-drugs-online",
     "name": "Pet Drugs Online",
     "country": "GB",
@@ -5493,6 +5542,13 @@
     "country": "PK",
     "category": "tech-electronics",
     "url": "https://www.realme.com/pk/"
+  },
+  {
+    "id": "recraft-ai",
+    "name": "Recraft",
+    "country": "GLOBAL",
+    "category": "ai-tools",
+    "url": "https://www.recraft.ai/pricing"
   },
   {
     "id": "redbus",
@@ -6279,6 +6335,13 @@
     "url": "https://suno.com"
   },
   {
+    "id": "suno-ai",
+    "name": "Suno",
+    "country": "GLOBAL",
+    "category": "ai-tools",
+    "url": "https://suno.com/pricing"
+  },
+  {
     "id": "superbalist",
     "name": "Superbalist",
     "country": "ZA",
@@ -6762,6 +6825,13 @@
     "url": "https://www.trip.com/"
   },
   {
+    "id": "tripo-3d",
+    "name": "Tripo 3D",
+    "country": "GLOBAL",
+    "category": "ai-tools",
+    "url": "https://www.tripo3d.ai/pricing"
+  },
+  {
     "id": "trotters-uk",
     "name": "Trotters London",
     "country": "GB",
@@ -6816,6 +6886,13 @@
     "country": "US",
     "category": "food-dining",
     "url": "https://www.ubereats.com/"
+  },
+  {
+    "id": "udio-ai",
+    "name": "Udio",
+    "country": "GLOBAL",
+    "category": "ai-tools",
+    "url": "https://www.udio.com/pricing"
   },
   {
     "id": "ugg",
@@ -7159,6 +7236,13 @@
     "country": "IN",
     "category": "clothing-fashion",
     "url": "https://wildcraft.com/"
+  },
+  {
+    "id": "windsurf-codeium",
+    "name": "Windsurf",
+    "country": "GLOBAL",
+    "category": "ai-tools",
+    "url": "https://windsurf.com/pricing"
   },
   {
     "id": "woodland",

@@ -1,0 +1,18 @@
+{
+  "id": "udio-ai",
+  "name": "Udio",
+  "slug": "udio-ai",
+  "logo_url": "https://www.google.com/s2/favicons?domain=udio.com&sz=128",
+  "website_url": "https://www.udio.com/pricing",
+  "country": "GLOBAL",
+  "categories": [
+    "ai-tools"
+  ],
+  "short_bio": "Udio generates studio-grade AI music tracks and stems with a free monthly credit allowance and pro discounts.",
+  "about": "Udio generates studio-grade AI music tracks and stems with a free monthly credit allowance and pro discounts. Check BeeDND for verified Udio free plans, trial credits, and annual subscription savings.",
+  "known_for": [
+    "AI software",
+    "Free credits & trials",
+    "Creator & dev workflows"
+  ]
+}

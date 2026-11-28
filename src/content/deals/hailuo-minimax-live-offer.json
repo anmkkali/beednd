@@ -1,0 +1,42 @@
+{
+  "id": "hailuo-minimax-live-offer",
+  "slug": "hailuo-minimax-live-offer",
+  "title": "Hailuo AI (MiniMax): Free Video Credits & Plan Offers",
+  "short_description": "Hailuo AI produces smooth, cinematic AI video clips from prompts and images with free starter credits.",
+  "brand_id": "hailuo-minimax",
+  "country": "GLOBAL",
+  "cities": [],
+  "areas": [],
+  "branch_info": [],
+  "category": "ai-tools",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "freebie",
+  "discount_value": "FREE CREDITS",
+  "badge_text": "Free Video Credits",
+  "numeric_discount_percent": 0,
+  "terms_and_conditions": [
+    "Verified directly from Hailuo AI (MiniMax)'s official pricing page.",
+    "Free tier credit limits and Pro renewal pricing apply."
+  ],
+  "start_date": "2026-11-28T00:00:00Z",
+  "end_date": "2026-12-31T23:59:00Z",
+  "source_url": "https://hailuoai.video/",
+  "affiliate_url": "https://hailuoai.video/",
+  "last_verified_at": "2026-11-29T01:50:00Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": false,
+  "offer_kind": "credits",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=hailuoai.video&sz=128",
+    "alt": "Hailuo AI (MiniMax)"
+  },
+  "tags": [
+    "video",
+    "trial"
+  ]
+}

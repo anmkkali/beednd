@@ -1,0 +1,42 @@
+{
+  "id": "muse-ai-live-offer",
+  "slug": "muse-ai-live-offer",
+  "title": "Muse AI: Free Plan & Plan Offers",
+  "short_description": "Muse AI offers video hosting, AI indexing, and ad-free embeds with a free starter plan and creator tiers.",
+  "brand_id": "muse-ai",
+  "country": "GLOBAL",
+  "cities": [],
+  "areas": [],
+  "branch_info": [],
+  "category": "ai-tools",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "freebie",
+  "discount_value": "FREE PLAN",
+  "badge_text": "Free Plan",
+  "numeric_discount_percent": 0,
+  "terms_and_conditions": [
+    "Verified directly from Muse AI's official pricing page.",
+    "Free tier credit limits and Pro renewal pricing apply."
+  ],
+  "start_date": "2026-11-28T00:00:00Z",
+  "end_date": "2026-12-31T23:59:00Z",
+  "source_url": "https://muse.ai/",
+  "affiliate_url": "https://muse.ai/",
+  "last_verified_at": "2026-11-29T01:50:00Z",
+  "status": "active",
+  "is_trending": true,
+  "is_coming_soon": false,
+  "limited_time": false,
+  "offer_kind": "free",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=muse.ai&sz=128",
+    "alt": "Muse AI"
+  },
+  "tags": [
+    "video",
+    "free"
+  ]
+}

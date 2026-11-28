@@ -1,0 +1,47 @@
+name: Auto Sync AI Tools & Free Trials (Every 12 Hours)
+
+on:
+  schedule:
+    - cron: '30 */12 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync-ai:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Scan AI Video, Image, Coding & Model tools
+        run: python scripts/auto_sync_ai_tools.py
+
+      - name: Set up Node.js & verify build
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies & build check
+        run: |
+          npm ci
+          ASTRO_TELEMETRY_DISABLED=1 npm run build
+
+      - name: Commit and push new AI offers
+        run: |
+          git config user.name "BeeDND AI Bot"
+          git config user.email "bot@beednd.com"
+          git add src/content/brands src/content/deals
+          if git diff --staged --quiet; then
+            echo "No new AI deals in this cycle."
+          else
+            git commit -m "chore(ai-bot): sync AI free trials, video/image generators & discounts"
+            git push
+          fi

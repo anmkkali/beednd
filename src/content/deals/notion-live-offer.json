@@ -1,0 +1,43 @@
+{
+  "id": "notion-live-offer",
+  "slug": "notion-live-offer",
+  "title": "Notion: Free + 20% Off Annual & Starter Credits",
+  "short_description": "Verified active AI offer on Notion (Free plan). Confirm plan limits and billing terms on the official pricing page.",
+  "brand_id": "notion",
+  "country": "GLOBAL",
+  "cities": [],
+  "areas": [],
+  "branch_info": [],
+  "category": "ai-tools",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "UP TO 20% OFF",
+  "badge_text": "Free + 20% Off Annual",
+  "numeric_discount_percent": 20,
+  "terms_and_conditions": [
+    "Auto-verified from Notion official pricing/home page.",
+    "Confirm current credit limits and renewal terms before upgrading."
+  ],
+  "start_date": "2026-11-28T20:51:08Z",
+  "end_date": "2026-12-05T23:59:00Z",
+  "source_url": "https://notion.com/pricing",
+  "affiliate_url": "https://notion.com/pricing",
+  "last_verified_at": "2026-11-28T20:51:08Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "trial",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=notion.com&sz=128",
+    "alt": "Notion"
+  },
+  "tags": [
+    "writing",
+    "productivity",
+    "trial"
+  ]
+}

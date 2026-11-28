@@ -3,7 +3,7 @@ title: "When Fashion & Tech Brands Drop Their Biggest Discounts"
 description: "A clean month-by-month calendar for shopping clothing clearance events, software renewals, and seasonal store markdowns without overpaying."
 published_date: "2026-11-18T09:00:00Z"
 author: "Editorial Desk"
-hero_image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80"
+hero_image: "/images/blog/uk-fashion.jpg"
 target_country: "GLOBAL"
 featured_deal_ids: ["khaadi-summer-clearance-50-off", "nike-members-extra-25-off"]
 tags: ["shopping calendar", "fashion sales", "seasonal discounts"]

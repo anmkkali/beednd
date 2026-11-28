@@ -3,7 +3,7 @@ title: "Pet Food & Supplies: Why Autoship & Combo Bundles Beat Single-Bag Prices
 description: "How pet owners save 25% to 40% on dog food, cat kibble, and litter using first-order autoship discounts and combo packs."
 published_date: "2026-11-24"
 author: "Editorial Team"
-hero_image: "/og-image.jpg"
+hero_image: "/images/blog/pets-care.jpg"
 target_country: "GLOBAL"
 featured_deal_ids:
   - "chewy-us-black-friday-40"

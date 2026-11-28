@@ -1,0 +1,18 @@
+{
+  "id": "suno-ai",
+  "name": "Suno",
+  "slug": "suno-ai",
+  "logo_url": "https://www.google.com/s2/favicons?domain=suno.com&sz=128",
+  "website_url": "https://suno.com/pricing",
+  "country": "GLOBAL",
+  "categories": [
+    "ai-tools"
+  ],
+  "short_bio": "Suno creates full AI songs and studio vocals with 50 free daily credits and 20% off annual creator plans.",
+  "about": "Suno creates full AI songs and studio vocals with 50 free daily credits and 20% off annual creator plans. Check BeeDND for verified Suno free plans, trial credits, and annual subscription savings.",
+  "known_for": [
+    "AI software",
+    "Free credits & trials",
+    "Creator & dev workflows"
+  ]
+}

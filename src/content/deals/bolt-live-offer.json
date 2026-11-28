@@ -1,0 +1,42 @@
+{
+  "id": "bolt-live-offer",
+  "slug": "bolt-live-offer",
+  "title": "Bolt: Free + 28% Off Annual & Starter Credits",
+  "short_description": "Verified active AI offer on Bolt (Start for free). Confirm plan limits and billing terms on the official pricing page.",
+  "brand_id": "bolt",
+  "country": "GLOBAL",
+  "cities": [],
+  "areas": [],
+  "branch_info": [],
+  "category": "ai-tools",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "UP TO 28% OFF",
+  "badge_text": "Free + 28% Off Annual",
+  "numeric_discount_percent": 28,
+  "terms_and_conditions": [
+    "Auto-verified from Bolt official pricing/home page.",
+    "Confirm current credit limits and renewal terms before upgrading."
+  ],
+  "start_date": "2026-11-28T20:51:08Z",
+  "end_date": "2026-12-05T23:59:00Z",
+  "source_url": "https://bolt.new/pricing",
+  "affiliate_url": "https://bolt.new/pricing",
+  "last_verified_at": "2026-11-28T20:51:08Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "trial",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=bolt.new&sz=128",
+    "alt": "Bolt"
+  },
+  "tags": [
+    "coding",
+    "trial"
+  ]
+}

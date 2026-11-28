@@ -1,0 +1,42 @@
+{
+  "id": "suno-ai-live-offer",
+  "slug": "suno-ai-live-offer",
+  "title": "Suno: Free Daily Credits & Plan Offers",
+  "short_description": "Suno creates full AI songs and studio vocals with 50 free daily credits and 20% off annual creator plans.",
+  "brand_id": "suno-ai",
+  "country": "GLOBAL",
+  "cities": [],
+  "areas": [],
+  "branch_info": [],
+  "category": "ai-tools",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "freebie",
+  "discount_value": "50 FREE CREDITS/DAY",
+  "badge_text": "Free Daily Credits",
+  "numeric_discount_percent": 0,
+  "terms_and_conditions": [
+    "Verified directly from Suno's official pricing page.",
+    "Free tier credit limits and Pro renewal pricing apply."
+  ],
+  "start_date": "2026-11-28T00:00:00Z",
+  "end_date": "2026-12-31T23:59:00Z",
+  "source_url": "https://suno.com/pricing",
+  "affiliate_url": "https://suno.com/pricing",
+  "last_verified_at": "2026-11-29T01:50:00Z",
+  "status": "active",
+  "is_trending": true,
+  "is_coming_soon": false,
+  "limited_time": false,
+  "offer_kind": "credits",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=suno.com&sz=128",
+    "alt": "Suno"
+  },
+  "tags": [
+    "voice",
+    "free"
+  ]
+}

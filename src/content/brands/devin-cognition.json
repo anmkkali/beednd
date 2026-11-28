@@ -1,0 +1,18 @@
+{
+  "id": "devin-cognition",
+  "name": "Devin",
+  "slug": "devin-cognition",
+  "logo_url": "https://www.google.com/s2/favicons?domain=devin.ai&sz=128",
+  "website_url": "https://devin.ai/pricing",
+  "country": "GLOBAL",
+  "categories": [
+    "ai-tools"
+  ],
+  "short_bio": "Devin is an autonomous AI software engineer for codebases, migrations, and PRs with pay-as-you-go starter plans.",
+  "about": "Devin is an autonomous AI software engineer for codebases, migrations, and PRs with pay-as-you-go starter plans. Check BeeDND for verified Devin free plans, trial credits, and annual subscription savings.",
+  "known_for": [
+    "AI software",
+    "Free credits & trials",
+    "Creator & dev workflows"
+  ]
+}

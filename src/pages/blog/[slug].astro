@@ -52,7 +52,11 @@ const structuredData = {
       <img
         src={post.data.hero_image}
         alt={post.data.title}
+        width="1200"
+        height="675"
         class="h-full w-full object-cover"
+        loading="eager"
+        fetchpriority="high"
         decoding="async"
         onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
       />

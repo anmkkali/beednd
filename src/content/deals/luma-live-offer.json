@@ -1,0 +1,42 @@
+{
+  "id": "luma-live-offer",
+  "slug": "luma-live-offer",
+  "title": "Luma AI: Free Trial & Starter Credits",
+  "short_description": "Verified active AI offer on Luma AI (Try Free). Confirm plan limits and billing terms on the official pricing page.",
+  "brand_id": "luma",
+  "country": "GLOBAL",
+  "cities": [],
+  "areas": [],
+  "branch_info": [],
+  "category": "ai-tools",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "freebie",
+  "discount_value": "FREE TRIAL",
+  "badge_text": "Free Trial",
+  "numeric_discount_percent": 0,
+  "terms_and_conditions": [
+    "Auto-verified from Luma AI official pricing/home page.",
+    "Confirm current credit limits and renewal terms before upgrading."
+  ],
+  "start_date": "2026-11-28T20:51:08Z",
+  "end_date": "2026-12-05T23:59:00Z",
+  "source_url": "https://lumalabs.ai",
+  "affiliate_url": "https://lumalabs.ai",
+  "last_verified_at": "2026-11-28T20:51:08Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "trial",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=lumalabs.ai&sz=128",
+    "alt": "Luma AI"
+  },
+  "tags": [
+    "video",
+    "trial"
+  ]
+}

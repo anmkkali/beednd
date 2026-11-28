@@ -1,0 +1,42 @@
+{
+  "id": "udio-ai-live-offer",
+  "slug": "udio-ai-live-offer",
+  "title": "Udio: Free Starter Tier & Plan Offers",
+  "short_description": "Udio generates studio-grade AI music tracks and stems with a free monthly credit allowance and pro discounts.",
+  "brand_id": "udio-ai",
+  "country": "GLOBAL",
+  "cities": [],
+  "areas": [],
+  "branch_info": [],
+  "category": "ai-tools",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "freebie",
+  "discount_value": "FREE TIER",
+  "badge_text": "Free Starter Tier",
+  "numeric_discount_percent": 0,
+  "terms_and_conditions": [
+    "Verified directly from Udio's official pricing page.",
+    "Free tier credit limits and Pro renewal pricing apply."
+  ],
+  "start_date": "2026-11-28T00:00:00Z",
+  "end_date": "2026-12-31T23:59:00Z",
+  "source_url": "https://www.udio.com/pricing",
+  "affiliate_url": "https://www.udio.com/pricing",
+  "last_verified_at": "2026-11-29T01:50:00Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": false,
+  "offer_kind": "free",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=udio.com&sz=128",
+    "alt": "Udio"
+  },
+  "tags": [
+    "voice",
+    "free"
+  ]
+}

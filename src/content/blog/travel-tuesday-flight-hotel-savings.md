@@ -3,7 +3,7 @@ title: "Travel Tuesday & Airline Flash Sales: Booking Flights and Hotels for Les
 description: "How seasonal airline sales, digital railcards, and loyalty tiers cut flight and hotel booking costs across domestic and international routes."
 published_date: "2026-11-24"
 author: "Editorial Team"
-hero_image: "/og-image.jpg"
+hero_image: "/images/blog/travel-deals.jpg"
 target_country: "GLOBAL"
 featured_deal_ids:
   - "expedia-us-black-friday-50"

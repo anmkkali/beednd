@@ -1,0 +1,42 @@
+{
+  "id": "ideogram-live-offer",
+  "slug": "ideogram-live-offer",
+  "title": "Ideogram: Free Trial & Starter Credits",
+  "short_description": "Verified active AI offer on Ideogram (OPEN SOURCE). Confirm plan limits and billing terms on the official pricing page.",
+  "brand_id": "ideogram",
+  "country": "GLOBAL",
+  "cities": [],
+  "areas": [],
+  "branch_info": [],
+  "category": "ai-tools",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "freebie",
+  "discount_value": "FREE TRIAL",
+  "badge_text": "Free Trial",
+  "numeric_discount_percent": 0,
+  "terms_and_conditions": [
+    "Auto-verified from Ideogram official pricing/home page.",
+    "Confirm current credit limits and renewal terms before upgrading."
+  ],
+  "start_date": "2026-11-28T20:51:08Z",
+  "end_date": "2026-12-05T23:59:00Z",
+  "source_url": "https://ideogram.ai",
+  "affiliate_url": "https://ideogram.ai",
+  "last_verified_at": "2026-11-28T20:51:08Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "trial",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=ideogram.ai&sz=128",
+    "alt": "Ideogram"
+  },
+  "tags": [
+    "image",
+    "free"
+  ]
+}

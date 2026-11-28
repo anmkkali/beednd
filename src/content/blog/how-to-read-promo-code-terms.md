@@ -3,7 +3,7 @@ title: "How to Read Promo Code Terms Before You Buy"
 description: "A short checklist for spotting minimum spends, excluded items, expiry dates and renewal pricing before you apply a discount code."
 published_date: "2026-11-19T09:00:00Z"
 author: "Editorial Desk"
-hero_image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=80"
+hero_image: "/images/blog/bank-cards.jpg"
 target_country: "GLOBAL"
 featured_deal_ids: []
 tags: ["promo codes", "shopping tips", "subscriptions"]

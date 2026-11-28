@@ -1,0 +1,42 @@
+{
+  "id": "github-copilot-live-offer",
+  "slug": "github-copilot-live-offer",
+  "title": "GitHub Copilot: Free + 30% Off Annual & Starter Credits",
+  "short_description": "Verified active AI offer on GitHub Copilot (30% off). Confirm plan limits and billing terms on the official pricing page.",
+  "brand_id": "github-copilot",
+  "country": "GLOBAL",
+  "cities": [],
+  "areas": [],
+  "branch_info": [],
+  "category": "ai-tools",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "percentage",
+  "discount_value": "UP TO 30% OFF",
+  "badge_text": "Free + 30% Off Annual",
+  "numeric_discount_percent": 30,
+  "terms_and_conditions": [
+    "Auto-verified from GitHub Copilot official pricing/home page.",
+    "Confirm current credit limits and renewal terms before upgrading."
+  ],
+  "start_date": "2026-11-28T20:51:08Z",
+  "end_date": "2026-12-05T23:59:00Z",
+  "source_url": "https://github.com/features/copilot",
+  "affiliate_url": "https://github.com/features/copilot",
+  "last_verified_at": "2026-11-28T20:51:08Z",
+  "status": "active",
+  "is_trending": false,
+  "is_coming_soon": false,
+  "limited_time": true,
+  "offer_kind": "trial",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=github.com&sz=128",
+    "alt": "GitHub Copilot"
+  },
+  "tags": [
+    "coding",
+    "trial"
+  ]
+}

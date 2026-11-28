@@ -1,0 +1,42 @@
+{
+  "id": "recraft-ai-live-offer",
+  "slug": "recraft-ai-live-offer",
+  "title": "Recraft: Free Daily Credits & Plan Offers",
+  "short_description": "Recraft generates vector art, icons, and photorealistic brand visuals with daily free credits for designers.",
+  "brand_id": "recraft-ai",
+  "country": "GLOBAL",
+  "cities": [],
+  "areas": [],
+  "branch_info": [],
+  "category": "ai-tools",
+  "deal_type": "online",
+  "channels": [
+    "online"
+  ],
+  "discount_type": "freebie",
+  "discount_value": "FREE CREDITS",
+  "badge_text": "Free Daily Credits",
+  "numeric_discount_percent": 0,
+  "terms_and_conditions": [
+    "Verified directly from Recraft's official pricing page.",
+    "Free tier credit limits and Pro renewal pricing apply."
+  ],
+  "start_date": "2026-11-28T00:00:00Z",
+  "end_date": "2026-12-31T23:59:00Z",
+  "source_url": "https://www.recraft.ai/pricing",
+  "affiliate_url": "https://www.recraft.ai/pricing",
+  "last_verified_at": "2026-11-29T01:50:00Z",
+  "status": "active",
+  "is_trending": true,
+  "is_coming_soon": false,
+  "limited_time": false,
+  "offer_kind": "credits",
+  "image": {
+    "src": "https://www.google.com/s2/favicons?domain=recraft.ai&sz=128",
+    "alt": "Recraft"
+  },
+  "tags": [
+    "image",
+    "free"
+  ]
+}

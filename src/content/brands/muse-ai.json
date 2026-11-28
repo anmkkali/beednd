@@ -1,0 +1,18 @@
+{
+  "id": "muse-ai",
+  "name": "Muse AI",
+  "slug": "muse-ai",
+  "logo_url": "https://www.google.com/s2/favicons?domain=muse.ai&sz=128",
+  "website_url": "https://muse.ai/",
+  "country": "GLOBAL",
+  "categories": [
+    "ai-tools"
+  ],
+  "short_bio": "Muse AI offers video hosting, AI indexing, and ad-free embeds with a free starter plan and creator tiers.",
+  "about": "Muse AI offers video hosting, AI indexing, and ad-free embeds with a free starter plan and creator tiers. Check BeeDND for verified Muse AI free plans, trial credits, and annual subscription savings.",
+  "known_for": [
+    "AI software",
+    "Free credits & trials",
+    "Creator & dev workflows"
+  ]
+}

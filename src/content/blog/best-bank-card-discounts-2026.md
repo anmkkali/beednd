@@ -3,7 +3,7 @@ title: "Best Bank Card Discounts in Pakistan (2026): HBL vs Meezan vs Alfalah"
 description: "Comprehensive guide comparing the biggest dining, shopping, and fuel discounts on HBL, Meezan, and Bank Alfalah debit and credit cards."
 published_date: "2026-11-20T10:00:00Z"
 author: "Finance & Savings Editor"
-hero_image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1200&q=80"
+hero_image: "/images/blog/bank-cards.jpg"
 target_country: "PK"
 featured_deal_ids: ["khaadi-summer-clearance-50-off", "sapphire-ready-to-wear-20-off"]
 tags: ["bank discounts", "hbl", "meezan", "alfalah", "credit cards", "pakistan shopping"]

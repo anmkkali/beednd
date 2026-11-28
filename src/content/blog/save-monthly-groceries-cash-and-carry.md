@@ -3,7 +3,7 @@ title: "How to Save 20% on Monthly Groceries at Cash & Carries Using Bank Deals"
 description: "Practical ways families save on monthly supermarket and cash-and-carry bills using weekend bank cards, loyalty clubs, and bulk bundles."
 published_date: "2026-11-24"
 author: "Editorial Team"
-hero_image: "/og-image.jpg"
+hero_image: "/images/blog/groceries.jpg"
 target_country: "PK"
 featured_deal_ids:
   - "metro-pk-weekend-cashback"
